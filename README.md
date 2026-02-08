@@ -6,9 +6,11 @@ A simple Python CLI agent that manages barber appointment bookings with notifica
 
 - **Register barbers** with their available time slots
 - **Book appointments** by selecting a barber, date, and open slot
-- **View all bookings** (upcoming and past)
+- **Token numbers** assigned to each booking for easy reference and lookup
+- **Look up bookings** by token number
+- **View all bookings** (upcoming and past) with token numbers
 - **Cancel bookings** with confirmation
-- **Notifications** printed to both the barber and the client on booking/cancellation
+- **Notifications** printed to both the barber and the client on booking/cancellation (includes token numbers)
 
 ## Requirements
 

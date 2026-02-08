@@ -16,7 +16,7 @@ def load_bookings():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
             return json.load(f)
-    return {"barbers": {}, "bookings": []}
+    return {"barbers": {}, "bookings": [], "next_token": 1}
 
 
 def save_bookings(data):
@@ -143,8 +143,13 @@ def book_appointment(data):
         print("Name cannot be empty.")
         return
 
+    # Assign token number
+    token = data.get("next_token", 1)
+    data["next_token"] = token + 1
+
     # Save booking
     booking = {
+        "token": token,
         "barber": barber,
         "client": client_name,
         "date": date_str,
@@ -154,16 +159,18 @@ def book_appointment(data):
     data["bookings"].append(booking)
     save_bookings(data)
 
+    print(f"\nYour token number is: #{token}")
+
     # Notify both parties
     notify(
         "barber",
         barber,
-        f"New appointment! {client_name} booked on {date_str} at {selected_slot}.",
+        f"New appointment! Token #{token} - {client_name} booked on {date_str} at {selected_slot}.",
     )
     notify(
         "client",
         client_name,
-        f"Confirmed! Your appointment with {barber} is on {date_str} at {selected_slot}.",
+        f"Confirmed! Token #{token} - Your appointment with {barber} is on {date_str} at {selected_slot}.",
     )
 
 
@@ -181,12 +188,14 @@ def view_bookings(data):
     if upcoming:
         print("Upcoming:")
         for b in sorted(upcoming, key=lambda x: (x["date"], x["time"])):
-            print(f"  {b['date']} {b['time']} - {b['client']} with {b['barber']}")
+            token = b.get("token", "N/A")
+            print(f"  [Token #{token}] {b['date']} {b['time']} - {b['client']} with {b['barber']}")
 
     if past:
         print("Past:")
         for b in sorted(past, key=lambda x: (x["date"], x["time"])):
-            print(f"  {b['date']} {b['time']} - {b['client']} with {b['barber']}")
+            token = b.get("token", "N/A")
+            print(f"  [Token #{token}] {b['date']} {b['time']} - {b['client']} with {b['barber']}")
 
 
 def cancel_booking(data):
@@ -197,7 +206,8 @@ def cancel_booking(data):
         return
 
     for i, b in enumerate(data["bookings"], 1):
-        print(f"  {i}. {b['date']} {b['time']} - {b['client']} with {b['barber']}")
+        token = b.get("token", "N/A")
+        print(f"  {i}. [Token #{token}] {b['date']} {b['time']} - {b['client']} with {b['barber']}")
 
     choice = input("Select booking to cancel (number): ").strip()
     try:
@@ -207,7 +217,8 @@ def cancel_booking(data):
         print("Invalid selection.")
         return
 
-    confirm = input(f"Cancel {booking['client']}'s appointment on {booking['date']} at {booking['time']}? (y/n): ").strip().lower()
+    token = booking.get("token", "N/A")
+    confirm = input(f"Cancel Token #{token} - {booking['client']}'s appointment on {booking['date']} at {booking['time']}? (y/n): ").strip().lower()
     if confirm != "y":
         print("Cancellation aborted.")
         return
@@ -215,16 +226,48 @@ def cancel_booking(data):
     removed = data["bookings"].pop(idx)
     save_bookings(data)
 
+    removed_token = removed.get("token", "N/A")
     notify(
         "barber",
         removed["barber"],
-        f"Cancelled: {removed['client']}'s appointment on {removed['date']} at {removed['time']}.",
+        f"Cancelled: Token #{removed_token} - {removed['client']}'s appointment on {removed['date']} at {removed['time']}.",
     )
     notify(
         "client",
         removed["client"],
-        f"Your appointment with {removed['barber']} on {removed['date']} at {removed['time']} has been cancelled.",
+        f"Token #{removed_token} - Your appointment with {removed['barber']} on {removed['date']} at {removed['time']} has been cancelled.",
     )
+
+
+# ── Token lookup ──────────────────────────────────────────────────
+
+
+def lookup_by_token(data):
+    """Look up a booking by its token number."""
+    print("\n== Look Up Booking by Token ==")
+    if not data["bookings"]:
+        print("No bookings yet.")
+        return
+
+    token_input = input("Enter token number: ").strip().lstrip("#")
+    try:
+        token_num = int(token_input)
+    except ValueError:
+        print("Invalid token number.")
+        return
+
+    found = [b for b in data["bookings"] if b.get("token") == token_num]
+    if not found:
+        print(f"No booking found with Token #{token_num}.")
+        return
+
+    for b in found:
+        print(f"\n  Token:   #{b['token']}")
+        print(f"  Client:  {b['client']}")
+        print(f"  Barber:  {b['barber']}")
+        print(f"  Date:    {b['date']}")
+        print(f"  Time:    {b['time']}")
+        print(f"  Booked:  {b['booked_at']}")
 
 
 # ── Main menu ──────────────────────────────────────────────────────
@@ -239,7 +282,8 @@ MENU = """
   3. Book an appointment
   4. View bookings
   5. Cancel a booking
-  6. Exit
+  6. Look up booking by token
+  7. Exit
 ============================="""
 
 
@@ -261,6 +305,8 @@ def main():
         elif choice == "5":
             cancel_booking(data)
         elif choice == "6":
+            lookup_by_token(data)
+        elif choice == "7":
             print("Goodbye!")
             break
         else:
