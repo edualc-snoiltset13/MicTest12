@@ -14,7 +14,7 @@ import json
 import os
 import smtplib
 from email.mime.text import MIMEText
-from datetime import datetime
+from datetime import datetime, timedelta
 
 DATA_FILE = "bookings.json"
 
@@ -451,6 +451,69 @@ def search_bookings(data):
         print(f"  {b['date']} {b['time']} - {b['client']} with {b['barber']}{svc_text}")
 
 
+# ── Reminders ──────────────────────────────────────────────────────
+
+
+def daily_reminders(data):
+    """List imminent bookings and optionally email reminders."""
+    print("\n== Daily Reminders ==")
+    if not data["bookings"]:
+        print("No bookings yet.")
+        return
+
+    horizon = input("Horizon — 'today', 'tomorrow', or number of days ahead [1]: ").strip().lower()
+    today = datetime.now().date()
+    if horizon == "today":
+        start, end = today, today
+    elif horizon in ("", "tomorrow", "1"):
+        start, end = today, today + timedelta(days=1)
+    else:
+        try:
+            n = max(0, int(horizon))
+        except ValueError:
+            print("Invalid horizon.")
+            return
+        start, end = today, today + timedelta(days=n)
+
+    def in_window(b):
+        try:
+            d = datetime.strptime(b["date"], "%Y-%m-%d").date()
+        except ValueError:
+            return False
+        return start <= d <= end
+
+    upcoming = sorted(
+        [b for b in data["bookings"] if in_window(b)],
+        key=lambda x: (x["date"], x["time"]),
+    )
+    if not upcoming:
+        print("No upcoming appointments in this window.")
+        return
+
+    print(f"{len(upcoming)} appointment(s) between {start} and {end}:")
+    for b in upcoming:
+        svc = b.get("service")
+        svc_text = f" [{svc} ${b.get('price', 0):.2f}]" if svc else ""
+        print(f"  {b['date']} {b['time']} - {b['client']} with {b['barber']}{svc_text}")
+
+    if input("Send email reminders? (y/n): ").strip().lower() != "y":
+        return
+
+    for b in upcoming:
+        svc = b.get("service")
+        svc_text = f" for {svc}" if svc else ""
+        notify(
+            "barber", b["barber"],
+            f"Reminder: {b['client']} is booked on {b['date']} at {b['time']}{svc_text}.",
+            email=_barber_email(data, b["barber"]),
+        )
+        notify(
+            "client", b["client"],
+            f"Reminder: your appointment with {b['barber']} is on {b['date']} at {b['time']}{svc_text}.",
+            email=b.get("client_email"),
+        )
+
+
 # ── Main menu ──────────────────────────────────────────────────────
 
 
@@ -465,7 +528,8 @@ MENU = """
   5. Cancel a booking
   6. Reschedule a booking
   7. Search bookings
-  8. Exit
+  8. Daily reminders
+  9. Exit
 ========================================"""
 
 
@@ -491,6 +555,8 @@ def main():
         elif choice == "7":
             search_bookings(data)
         elif choice == "8":
+            daily_reminders(data)
+        elif choice == "9":
             print("Goodbye!")
             break
         else:

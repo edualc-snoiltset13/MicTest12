@@ -10,6 +10,7 @@ A simple Python CLI agent that manages barber appointment bookings with notifica
 - **View all bookings** (upcoming and past) with service details
 - **Cancel bookings** with confirmation
 - **Search bookings** by barber or client name
+- **Daily reminders** for appointments today, tomorrow, or the next N days, with optional email reminders to clients and barbers
 - **Notifications** printed to console on every booking, reschedule, or cancellation
 - **Email notifications** sent automatically when SMTP is configured
 
@@ -37,7 +38,8 @@ Follow the interactive menu:
   5. Cancel a booking
   6. Reschedule a booking
   7. Search bookings
-  8. Exit
+  8. Daily reminders
+  9. Exit
 ========================================
 ```
 
