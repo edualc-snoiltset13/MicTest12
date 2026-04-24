@@ -30,12 +30,12 @@ class ShoppingCart {
       throw new Error('Item quantity must be a positive integer');
     }
 
-    const quantity = item.quantity || 1;
-    const existing = this.items.find(i => i.name === item.name);
-    if (existing) {
-      existing.quantity += quantity;
+    const qty = item.quantity || 1;
+    const match = this.items.find(existing => existing.name === item.name);
+    if (match) {
+      match.quantity += qty;
     } else {
-      this.items.push({ name: item.name, price: item.price, quantity });
+      this.items.push({ name: item.name, price: item.price, quantity: qty });
     }
 
     return this;
@@ -49,12 +49,12 @@ class ShoppingCart {
       throw new Error('Item name must be a non-empty string');
     }
 
-    const index = this.items.findIndex(i => i.name === name);
-    if (index === -1) {
+    const idx = this.items.findIndex(item => item.name === name);
+    if (idx === -1) {
       throw new Error(`Item "${name}" not found in cart`);
     }
 
-    this.items.splice(index, 1);
+    this.items.splice(idx, 1);
     return this;
   }
 
@@ -66,22 +66,23 @@ class ShoppingCart {
       throw new Error('Discount code must be a non-empty string');
     }
 
-    const discount = DISCOUNT_CODES[code.toUpperCase()];
+    const normalized = code.toUpperCase();
+    const discount = DISCOUNT_CODES[normalized];
     if (!discount) {
       throw new Error(`Invalid discount code: "${code}"`);
     }
 
-    this.discountCode = { code: code.toUpperCase(), ...discount };
+    this.discountCode = { code: normalized, ...discount };
     return this;
   }
 
   getSubtotal() {
-    return this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
   getDiscount() {
-    const subtotal = this.getSubtotal();
     if (!this.discountCode) return 0;
+    const subtotal = this.getSubtotal();
 
     if (this.discountCode.type === 'percentage') {
       return Math.round(subtotal * this.discountCode.value) / 100;
@@ -90,13 +91,12 @@ class ShoppingCart {
   }
 
   calculateTotal() {
-    const subtotal = this.getSubtotal();
-    const discount = this.getDiscount();
-    return Math.round((subtotal - discount) * 100) / 100;
+    const result = this.getSubtotal() - this.getDiscount();
+    return Math.round(result * 100) / 100;
   }
 
   getItemCount() {
-    return this.items.reduce((count, item) => count + item.quantity, 0);
+    return this.items.reduce((sum, item) => sum + item.quantity, 0);
   }
 
   checkout() {
@@ -110,7 +110,7 @@ class ShoppingCart {
     this.checkedOut = true;
 
     return {
-      items: this.items.map(i => ({ ...i })),
+      items: this.items.map(item => ({ ...item })),
       subtotal: this.getSubtotal(),
       discount: this.getDiscount(),
       total: this.calculateTotal(),
