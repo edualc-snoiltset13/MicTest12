@@ -21,8 +21,6 @@ describe('ShoppingCart', () => {
     });
   });
 
-  // ─── addItem ──────────────────────────────────────────────────────────
-
   describe('addItem', () => {
     it('adds a single item to the cart', () => {
       cart.addItem({ name: 'Apple', price: 1.5 });
@@ -126,8 +124,6 @@ describe('ShoppingCart', () => {
     });
   });
 
-  // ─── removeItem ───────────────────────────────────────────────────────
-
   describe('removeItem', () => {
     beforeEach(() => {
       cart.addItem({ name: 'Apple', price: 1.5 });
@@ -190,8 +186,6 @@ describe('ShoppingCart', () => {
     });
   });
 
-  // ─── applyDiscount ────────────────────────────────────────────────────
-
   describe('applyDiscount', () => {
     it('applies a valid percentage discount code', () => {
       cart.applyDiscount('SAVE10');
@@ -246,8 +240,6 @@ describe('ShoppingCart', () => {
       expect(() => cart.applyDiscount('SAVE10')).toThrow('Cannot modify a checked-out cart');
     });
   });
-
-  // ─── calculateTotal ───────────────────────────────────────────────────
 
   describe('calculateTotal', () => {
     it('returns 0 for an empty cart', () => {
@@ -310,14 +302,12 @@ describe('ShoppingCart', () => {
       cart.addItem({ name: 'Apple', price: 2, quantity: 5 });
       cart.addItem({ name: 'Banana', price: 3, quantity: 2 });
       cart.applyDiscount('SAVE10');
-      // subtotal = 10 + 6 = 16, discount = 1.6, total = 14.4
       expect(cart.calculateTotal()).toBe(14.4);
     });
 
     it('rounds to two decimal places', () => {
       cart.addItem({ name: 'Item', price: 10.33 });
       cart.applyDiscount('SAVE10');
-      // subtotal = 10.33, discount = 1.033 => rounds to 1.03, total = 9.3
       expect(cart.calculateTotal()).toBeCloseTo(9.3, 2);
     });
 
@@ -327,8 +317,6 @@ describe('ShoppingCart', () => {
       expect(cart.calculateTotal()).toBe(30);
     });
   });
-
-  // ─── getSubtotal ──────────────────────────────────────────────────────
 
   describe('getSubtotal', () => {
     it('returns 0 for an empty cart', () => {
@@ -346,8 +334,6 @@ describe('ShoppingCart', () => {
       expect(cart.getSubtotal()).toBe(4.5);
     });
   });
-
-  // ─── getDiscount ──────────────────────────────────────────────────────
 
   describe('getDiscount', () => {
     it('returns 0 when no discount code is applied', () => {
@@ -379,8 +365,6 @@ describe('ShoppingCart', () => {
     });
   });
 
-  // ─── getItemCount ─────────────────────────────────────────────────────
-
   describe('getItemCount', () => {
     it('returns 0 for an empty cart', () => {
       expect(cart.getItemCount()).toBe(0);
@@ -403,8 +387,6 @@ describe('ShoppingCart', () => {
       expect(cart.getItemCount()).toBe(5);
     });
   });
-
-  // ─── checkout ─────────────────────────────────────────────────────────
 
   describe('checkout', () => {
     it('returns an order summary object', () => {
@@ -493,8 +475,6 @@ describe('ShoppingCart', () => {
     });
   });
 
-  // ─── Integration / workflow tests ─────────────────────────────────────
-
   describe('integration workflows', () => {
     it('supports a full add-discount-checkout workflow', () => {
       cart.addItem({ name: 'Book', price: 12.99 });
@@ -555,8 +535,6 @@ describe('ShoppingCart', () => {
       expect(order.total).toBe(45);
     });
   });
-
-  // ─── DISCOUNT_CODES export ────────────────────────────────────────────
 
   describe('DISCOUNT_CODES', () => {
     it('exports all expected discount codes', () => {
