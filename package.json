@@ -1,0 +1,19 @@
+{
+  "name": "mictest12",
+  "version": "1.0.0",
+  "description": "A simple Python CLI agent that manages barber appointment bookings with notifications for both the barber and the client.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:34893/git/edualc-snoiltset13/MicTest12"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
