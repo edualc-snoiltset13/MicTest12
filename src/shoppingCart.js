@@ -86,15 +86,13 @@ class ShoppingCart {
     if (this.discountCode.type === 'percentage') {
       return Math.round(subtotal * this.discountCode.value) / 100;
     }
-    // Fixed discount cannot exceed subtotal
     return Math.min(this.discountCode.value, subtotal);
   }
 
   calculateTotal() {
     const subtotal = this.getSubtotal();
     const discount = this.getDiscount();
-    const total = subtotal - discount;
-    return Math.round(total * 100) / 100;
+    return Math.round((subtotal - discount) * 100) / 100;
   }
 
   getItemCount() {

@@ -71,8 +71,6 @@ describe('ShoppingCart', () => {
       expect(cart.items[0].price).toBe(0);
     });
 
-    // Validation errors
-
     it('throws when item is null', () => {
       expect(() => cart.addItem(null)).toThrow('Item must be an object');
     });
@@ -185,6 +183,11 @@ describe('ShoppingCart', () => {
       cart.checkout();
       expect(() => cart.removeItem('Apple')).toThrow('Cannot modify a checked-out cart');
     });
+
+    it('supports chaining remove with add', () => {
+      cart.removeItem('Apple').addItem({ name: 'Mango', price: 2.5 });
+      expect(cart.items.map(i => i.name)).toEqual(['Banana', 'Cherry', 'Mango']);
+    });
   });
 
   // ─── applyDiscount ────────────────────────────────────────────────────
@@ -210,7 +213,7 @@ describe('ShoppingCart', () => {
       expect(cart.discountCode.code).toBe('FLAT15');
     });
 
-    it('replaces previously applied discount code', () => {
+    it('replaces a previously applied discount code', () => {
       cart.applyDiscount('SAVE10');
       cart.applyDiscount('SAVE20');
       expect(cart.discountCode.code).toBe('SAVE20');
@@ -267,46 +270,40 @@ describe('ShoppingCart', () => {
       expect(cart.calculateTotal()).toBe(4.5);
     });
 
-    it('applies percentage discount correctly', () => {
+    it('applies a 10% discount correctly', () => {
       cart.addItem({ name: 'Shirt', price: 50 });
       cart.applyDiscount('SAVE10');
       expect(cart.calculateTotal()).toBe(45);
     });
 
-    it('applies 20% discount correctly', () => {
+    it('applies a 20% discount correctly', () => {
       cart.addItem({ name: 'Shirt', price: 100 });
       cart.applyDiscount('SAVE20');
       expect(cart.calculateTotal()).toBe(80);
     });
 
-    it('applies 50% discount correctly', () => {
+    it('applies a 50% discount correctly', () => {
       cart.addItem({ name: 'Shirt', price: 80 });
       cart.applyDiscount('HALF');
       expect(cart.calculateTotal()).toBe(40);
     });
 
-    it('applies fixed discount correctly', () => {
+    it('applies a fixed $5 discount correctly', () => {
       cart.addItem({ name: 'Shirt', price: 50 });
       cart.applyDiscount('FLAT5');
       expect(cart.calculateTotal()).toBe(45);
     });
 
-    it('applies larger fixed discount correctly', () => {
+    it('applies a fixed $15 discount correctly', () => {
       cart.addItem({ name: 'Shirt', price: 50 });
       cart.applyDiscount('FLAT15');
       expect(cart.calculateTotal()).toBe(35);
     });
 
-    it('does not let fixed discount exceed subtotal', () => {
+    it('does not let fixed discount reduce total below zero', () => {
       cart.addItem({ name: 'Candy', price: 3 });
       cart.applyDiscount('FLAT5');
       expect(cart.calculateTotal()).toBe(0);
-    });
-
-    it('does not let fixed discount make total negative', () => {
-      cart.addItem({ name: 'Candy', price: 2 });
-      cart.applyDiscount('FLAT15');
-      expect(cart.calculateTotal()).toBeGreaterThanOrEqual(0);
     });
 
     it('handles percentage discount on multiple items with quantities', () => {
@@ -320,7 +317,7 @@ describe('ShoppingCart', () => {
     it('rounds to two decimal places', () => {
       cart.addItem({ name: 'Item', price: 10.33 });
       cart.applyDiscount('SAVE10');
-      // subtotal = 10.33, discount = 1.033, total = 9.297 => 9.3
+      // subtotal = 10.33, discount = 1.033 => rounds to 1.03, total = 9.3
       expect(cart.calculateTotal()).toBeCloseTo(9.3, 2);
     });
 
@@ -338,7 +335,7 @@ describe('ShoppingCart', () => {
       expect(cart.getSubtotal()).toBe(0);
     });
 
-    it('returns price * quantity for each item', () => {
+    it('returns price * quantity for a single item', () => {
       cart.addItem({ name: 'Apple', price: 2, quantity: 4 });
       expect(cart.getSubtotal()).toBe(8);
     });
@@ -358,25 +355,25 @@ describe('ShoppingCart', () => {
       expect(cart.getDiscount()).toBe(0);
     });
 
-    it('returns percentage-based discount amount', () => {
+    it('returns the correct percentage-based discount amount', () => {
       cart.addItem({ name: 'Apple', price: 100 });
       cart.applyDiscount('SAVE20');
       expect(cart.getDiscount()).toBe(20);
     });
 
-    it('returns fixed discount amount', () => {
+    it('returns the correct fixed discount amount', () => {
       cart.addItem({ name: 'Apple', price: 100 });
       cart.applyDiscount('FLAT15');
       expect(cart.getDiscount()).toBe(15);
     });
 
-    it('caps fixed discount at subtotal', () => {
+    it('caps fixed discount at the subtotal', () => {
       cart.addItem({ name: 'Candy', price: 3 });
       cart.applyDiscount('FLAT5');
       expect(cart.getDiscount()).toBe(3);
     });
 
-    it('returns 0 discount on empty cart with code applied', () => {
+    it('returns 0 discount on an empty cart even with a code applied', () => {
       cart.applyDiscount('SAVE10');
       expect(cart.getDiscount()).toBe(0);
     });
@@ -389,7 +386,7 @@ describe('ShoppingCart', () => {
       expect(cart.getItemCount()).toBe(0);
     });
 
-    it('returns correct count for single item', () => {
+    it('returns 1 for a single item with default quantity', () => {
       cart.addItem({ name: 'Apple', price: 1.5 });
       expect(cart.getItemCount()).toBe(1);
     });
@@ -400,7 +397,7 @@ describe('ShoppingCart', () => {
       expect(cart.getItemCount()).toBe(5);
     });
 
-    it('reflects merged quantities', () => {
+    it('reflects merged quantities for duplicate items', () => {
       cart.addItem({ name: 'Apple', price: 1.5 });
       cart.addItem({ name: 'Apple', price: 1.5, quantity: 4 });
       expect(cart.getItemCount()).toBe(5);
@@ -423,7 +420,7 @@ describe('ShoppingCart', () => {
       });
     });
 
-    it('includes discount information in the order', () => {
+    it('includes discount information in the order summary', () => {
       cart.addItem({ name: 'Shirt', price: 100 });
       cart.applyDiscount('SAVE20');
       const order = cart.checkout();
@@ -437,7 +434,7 @@ describe('ShoppingCart', () => {
       });
     });
 
-    it('returns a copy of items, not a reference', () => {
+    it('returns a shallow copy of items, not a live reference', () => {
       cart.addItem({ name: 'Shirt', price: 25 });
       const order = cart.checkout();
       order.items[0].name = 'Modified';
@@ -478,7 +475,7 @@ describe('ShoppingCart', () => {
       expect(() => cart.applyDiscount('SAVE10')).toThrow('Cannot modify a checked-out cart');
     });
 
-    it('handles a complex multi-item order with discount', () => {
+    it('handles a complex multi-item order with a discount', () => {
       cart
         .addItem({ name: 'Laptop', price: 999.99 })
         .addItem({ name: 'Mouse', price: 29.99, quantity: 2 })
@@ -488,9 +485,7 @@ describe('ShoppingCart', () => {
       const order = cart.checkout();
 
       expect(order.itemCount).toBe(6);
-      // subtotal = 999.99 + 59.98 + 29.97 = 1089.94
       expect(order.subtotal).toBeCloseTo(1089.94, 2);
-      // 10% of 1089.94 = 108.994
       expect(order.discount).toBeCloseTo(108.99, 1);
       expect(order.total).toBeCloseTo(order.subtotal - order.discount, 2);
       expect(order.discountCode).toBe('SAVE10');
@@ -524,7 +519,7 @@ describe('ShoppingCart', () => {
       expect(order.total).toBe(40);
     });
 
-    it('supports replacing discount before checkout', () => {
+    it('supports replacing a discount before checkout', () => {
       cart.addItem({ name: 'Item', price: 100 });
       cart.applyDiscount('SAVE10');
       expect(cart.calculateTotal()).toBe(90);
@@ -537,7 +532,7 @@ describe('ShoppingCart', () => {
       expect(order.discountCode).toBe('SAVE20');
     });
 
-    it('can create multiple independent cart instances', () => {
+    it('multiple independent cart instances do not share state', () => {
       const cart2 = new ShoppingCart();
       cart.addItem({ name: 'A', price: 10 });
       cart2.addItem({ name: 'B', price: 20 });
