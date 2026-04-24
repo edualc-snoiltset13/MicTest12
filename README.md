@@ -58,3 +58,19 @@ When configured, emails are sent to both the barber and the client on booking, r
 ## Data Storage
 
 All bookings are persisted in a local `bookings.json` file so they survive between sessions.
+
+## Image Analysis Script
+
+Analyze an image using Claude's vision API. Standard library only — no pip install needed.
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+python analyze_image.py path/to/image.jpg
+python analyze_image.py photo.png --prompt "What text appears in this image?"
+python analyze_image.py photo.webp --model claude-opus-4-7 --max-tokens 2048
+python analyze_image.py photo.gif --json    # raw API response
+```
+
+Supported formats: JPEG, PNG, GIF, WebP (max 20 MB). Default model: `claude-sonnet-4-6`.
+
+Exit codes: `0` success · `2` bad args / missing key · `3` image error · `4` API error · `5` network error.
