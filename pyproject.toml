@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "barber-booking"
+version = "0.2.0"
+description = "Barber appointment booking CLI agent."
+requires-python = ">=3.10"
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "mypy>=1.10"]
+
+[project.scripts]
+barber-booking = "barber_booking.cli:run"
+
+[tool.setuptools.packages.find]
+include = ["barber_booking*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=barber_booking --cov-report=term-missing --cov-fail-under=90"
+
+[tool.coverage.run]
+branch = true
+source = ["barber_booking"]
+omit = ["barber_booking/__main__.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
+show_missing = true
+
+[tool.mypy]
+strict = true
+files = ["barber_booking"]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = true
