@@ -14,7 +14,10 @@ import json
 import os
 import smtplib
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from datetime import datetime
+
+from email_template import render_booking_email
 
 DATA_FILE = "bookings.json"
 
@@ -39,8 +42,10 @@ def save_bookings(data):
 # ── Notifications ──────────────────────────────────────────────────
 
 
-def send_email_notification(to_addr, subject, body):
+def send_email_notification(to_addr, subject, text_body, html_body=None):
     """Send an email notification using SMTP settings from env vars.
+
+    Sends multipart/alternative when html_body is provided, otherwise plain text.
 
     Required env vars: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
     Optional: SMTP_FROM (defaults to SMTP_USER)
@@ -54,7 +59,12 @@ def send_email_notification(to_addr, subject, body):
     if not all([host, port, user, password, to_addr]):
         return False
 
-    msg = MIMEText(body)
+    if html_body:
+        msg = MIMEMultipart("alternative")
+        msg.attach(MIMEText(text_body, "plain"))
+        msg.attach(MIMEText(html_body, "html"))
+    else:
+        msg = MIMEText(text_body)
     msg["Subject"] = subject
     msg["From"] = sender
     msg["To"] = to_addr
@@ -70,14 +80,24 @@ def send_email_notification(to_addr, subject, body):
         return False
 
 
-def notify(recipient_type, name, message, email=None):
-    """Print a console notification and optionally send an email."""
+def notify(recipient_type, name, message, email=None, event=None, booking=None, previous=None):
+    """Print a console notification and optionally send an email.
+
+    When `event` and `booking` are provided, the email is rendered using the
+    professional HTML template; otherwise a plain-text fallback is used.
+    """
     tag = "BARBER" if recipient_type == "barber" else "CLIENT"
     print(f"\n--- Notification [{tag}] ---")
     print(f"To: {name}")
     print(f"Message: {message}")
     if email:
-        sent = send_email_notification(email, f"Barber Booking - {tag}", message)
+        if event and booking:
+            subject, text_body, html_body = render_booking_email(
+                event, recipient_type, booking, previous=previous
+            )
+            sent = send_email_notification(email, subject, text_body, html_body)
+        else:
+            sent = send_email_notification(email, f"Barber Booking - {tag}", message)
         if sent:
             print(f"Email sent to: {email}")
         else:
@@ -298,11 +318,13 @@ def book_appointment(data):
         "barber", barber,
         f"New appointment! {client_name} booked on {date_str} at {selected_slot}{svc_text}.",
         email=_barber_email(data, barber),
+        event="confirmed", booking=booking,
     )
     notify(
         "client", client_name,
         f"Confirmed! Your appointment with {barber} is on {date_str} at {selected_slot}{svc_text}.",
         email=client_email,
+        event="confirmed", booking=booking,
     )
 
 
@@ -375,11 +397,13 @@ def cancel_booking(data):
         "barber", removed["barber"],
         f"Cancelled: {removed['client']}'s appointment on {removed['date']} at {removed['time']}.",
         email=_barber_email(data, removed["barber"]),
+        event="cancelled", booking=removed,
     )
     notify(
         "client", removed["client"],
         f"Your appointment with {removed['barber']} on {removed['date']} at {removed['time']} has been cancelled.",
         email=removed.get("client_email"),
+        event="cancelled", booking=removed,
     )
 
 
@@ -415,15 +439,18 @@ def reschedule_booking(data):
     svc = booking.get("service")
     svc_text = f" for {svc}" if svc else ""
 
+    previous = {"date": old_date, "time": old_time}
     notify(
         "barber", barber,
         f"Rescheduled: {booking['client']}'s appointment moved from {old_date} {old_time} to {new_date} {new_slot}{svc_text}.",
         email=_barber_email(data, barber),
+        event="rescheduled", booking=booking, previous=previous,
     )
     notify(
         "client", booking["client"],
         f"Rescheduled! Your appointment with {barber} moved from {old_date} {old_time} to {new_date} {new_slot}{svc_text}.",
         email=booking.get("client_email"),
+        event="rescheduled", booking=booking, previous=previous,
     )
 
 
