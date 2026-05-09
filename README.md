@@ -74,3 +74,13 @@ python analyze_image.py photo.gif --json    # raw API response
 Supported formats: JPEG, PNG, GIF, WebP (max 20 MB). Default model: `claude-sonnet-4-6`.
 
 Exit codes: `0` success · `2` bad args / missing key · `3` image error · `4` API error · `5` network error.
+
+## Running Tests
+
+The test suite uses only the standard library:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Tests cover persistence, slot-conflict logic, email notifications (with mocked SMTP), search, and the `analyze_image.py` CLI's argument and format validation paths.
