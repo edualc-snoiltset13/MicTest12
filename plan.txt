@@ -1,0 +1,30 @@
+PROJECT PLAN
+============
+
+Date: 2026-05-15
+Project: MicTest12
+
+OBJECTIVES
+----------
+1. Create a simple HTML landing page
+2. Document the development plan in a text file
+3. Demonstrate file creation workflow in Claude Code
+
+TASKS
+-----
+[x] Create page.html with basic structure
+[x] Add inline CSS styling
+[x] Create plan.txt with project outline
+[ ] Review and iterate based on feedback
+[ ] Commit and push changes to branch
+
+DELIVERABLES
+------------
+- page.html: A styled HTML landing page
+- plan.txt: This planning document
+
+NOTES
+-----
+- HTML uses inline CSS for portability
+- Both files are kept simple for demonstration purposes
+- Changes are tracked on branch: claude/create-html-plan-files-N1zYd
