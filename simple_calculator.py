@@ -54,6 +54,9 @@ class Calculator:
     def clear_memory(self):
         self.memory = 0
 
+    # TODO: expose recorded history. The class collects entries via
+    # _record() and offers clear_history(), but callers have no read
+    # accessor and the REPL has no way to display past operations.
     def clear_history(self):
         self.history.clear()
 
