@@ -54,9 +54,10 @@ class Calculator:
     def clear_memory(self):
         self.memory = 0
 
-    # TODO: expose recorded history. The class collects entries via
-    # _record() and offers clear_history(), but callers have no read
-    # accessor and the REPL has no way to display past operations.
+    def get_history(self):
+        # Defensive copy so callers can't mutate internal state.
+        return [dict(entry) for entry in self.history]
+
     def clear_history(self):
         self.history.clear()
 
@@ -71,7 +72,8 @@ def main():
         "*": calc.multiply, "/": calc.divide,
         "**": calc.power, "%": calc.modulo,
     }
-    print("Simple Calculator — enter '<a> <op> <b>' (e.g. '3 + 4'), or 'quit'.")
+    print("Simple Calculator — enter '<a> <op> <b>' (e.g. '3 + 4'),")
+    print("or 'history', 'clear', or 'quit'.")
     while True:
         try:
             line = input("> ").strip()
@@ -80,6 +82,18 @@ def main():
             return
         if line in ("quit", "exit", ""):
             return
+        if line == "history":
+            entries = calc.get_history()
+            if not entries:
+                print("(no history)")
+            else:
+                for i, e in enumerate(entries, 1):
+                    print(f"{i}. {e['a']} {e['op']} {e['b']} = {e['result']}")
+            continue
+        if line == "clear":
+            calc.clear_history()
+            print("(history cleared)")
+            continue
         parts = line.split()
         if len(parts) != 3 or parts[1] not in ops:
             print(f"error: expected '<number> <{'/'.join(ops)}> <number>'")
