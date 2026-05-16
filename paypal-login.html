@@ -234,27 +234,73 @@
     <script>
         (function () {
             var form = document.getElementById('login-form');
-            var emailField = document.getElementById('email-field');
             var passwordField = document.getElementById('password-field');
             var emailInput = document.getElementById('email');
             var passwordInput = document.getElementById('password');
             var submitBtn = document.getElementById('submit-btn');
             var step = 'email';
 
-            form.addEventListener('submit', function (e) {
+            // The local demo server uses the loopback interface only.
+            var apiEnabled = location.protocol === 'http:' &&
+                (location.hostname === '127.0.0.1' || location.hostname === 'localhost');
+
+            function setStatus(text) {
+                submitBtn.textContent = text;
+            }
+
+            async function callApi(path) {
+                var res = await fetch(path, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: emailInput.value.trim(),
+                        password: passwordInput.value
+                    })
+                });
+                var data = await res.json().catch(function () { return {}; });
+                return { ok: res.ok && data.ok, status: res.status, data: data };
+            }
+
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (step === 'email') {
-                    if (!emailInput.value.trim()) {
-                        emailInput.focus();
-                        return;
-                    }
+                    if (!emailInput.value.trim()) { emailInput.focus(); return; }
                     passwordField.hidden = false;
-                    submitBtn.textContent = 'Log In';
+                    setStatus('Log In');
                     step = 'password';
                     passwordInput.focus();
-                } else {
+                    return;
+                }
+
+                if (!apiEnabled) {
                     submitBtn.disabled = true;
-                    submitBtn.textContent = 'Demo only — nothing submitted';
+                    setStatus('Demo only — nothing submitted');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                setStatus('Checking…');
+                try {
+                    var login = await callApi('/api/login');
+                    if (login.ok) {
+                        setStatus('Logged in (demo account)');
+                        return;
+                    }
+                    if (login.status === 401) {
+                        // Try to register the email as a new demo account.
+                        var reg = await callApi('/api/register');
+                        if (reg.ok) {
+                            setStatus('Registered new demo account');
+                        } else {
+                            setStatus('Invalid credentials');
+                        }
+                    } else {
+                        setStatus('Error: ' + (login.data.error || login.status));
+                    }
+                } catch (err) {
+                    setStatus('Network error');
+                } finally {
+                    setTimeout(function () { submitBtn.disabled = false; }, 1500);
                 }
             });
         })();

@@ -156,11 +156,114 @@ includes guardrails so it can't be repurposed for credential capture:
    no analytics, no third-party scripts.
 4. Footer copyright reads "Recreation. Not affiliated with PayPal."
 
+## 11. Optional backend (`paypal_demo_db.py`)
+
+For a slightly more realistic demo, `paypal_demo_db.py` adds a tiny
+backend. It is stdlib-only (`sqlite3` + `http.server` + `hashlib`) and
+binds only to the loopback interface.
+
+### Schema
+
+```sql
+CREATE TABLE users (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    email       TEXT    NOT NULL UNIQUE COLLATE NOCASE,
+    salt        BLOB    NOT NULL,
+    pw_hash     BLOB    NOT NULL,
+    created_at  TEXT    NOT NULL DEFAULT (datetime('now'))
+);
+```
+
+`COLLATE NOCASE` makes email uniqueness and lookup case-insensitive,
+matching how real services usually behave.
+
+### Password storage
+
+Passwords are hashed with `hashlib.scrypt` using a fresh 16-byte salt
+per user. Verification uses `hmac.compare_digest` for constant-time
+comparison, and authentication runs `scrypt` even for unknown emails
+so timing doesn't leak which accounts exist.
+
+```python
+SCRYPT_N = 2 ** 14   # CPU/memory cost
+SCRYPT_R = 8         # block size
+SCRYPT_P = 1         # parallelism
+```
+
+### Parameterized SQL
+
+Every query passes user input as a parameter, never as string
+interpolation, so the SQLite driver handles escaping:
+
+```python
+conn.execute("SELECT salt, pw_hash FROM users WHERE email = ?", (email,))
+```
+
+### Local-only HTTP server
+
+`serve()` runs a `http.server.HTTPServer` and refuses any host other
+than `127.0.0.1`, `localhost`, or `::1`:
+
+```python
+if host not in ("127.0.0.1", "localhost", "::1"):
+    raise ValueError("refusing to bind to non-loopback host for safety")
+```
+
+The handler exposes:
+
+| Route | Method | Purpose |
+| --- | --- | --- |
+| `/` | GET | Serves `paypal-login.html` |
+| `/api/register` | POST | Create a demo account |
+| `/api/login` | POST | Verify demo credentials |
+
+Static-file serving canonicalizes the path with `Path.resolve()` and
+checks the result is still under the project root, so a request like
+`/../../etc/passwd` cannot escape the directory.
+
+### Front-end wiring
+
+The form's submit handler only calls the API when the page is loaded
+over HTTP from loopback:
+
+```js
+var apiEnabled = location.protocol === 'http:' &&
+    (location.hostname === '127.0.0.1' || location.hostname === 'localhost');
+```
+
+Opened directly from disk (`file://`), the page falls back to the
+original "Demo only — nothing submitted" behavior. When the API is
+available, an unknown email auto-registers as a fresh demo account.
+
+### CLI
+
+```
+python paypal_demo_db.py init
+python paypal_demo_db.py register alice@example.com hunter22-demo
+python paypal_demo_db.py login    alice@example.com hunter22-demo
+python paypal_demo_db.py list
+python paypal_demo_db.py serve --port 8000
+```
+
+### Tests
+
+`tests/test_paypal_demo_db.py` covers:
+
+- Salt uniqueness and password round-trips
+- Insert/lookup with case-insensitive email
+- Validation errors (short password, malformed email, duplicate email)
+- CLI exit codes
+- An end-to-end test that boots the server on an ephemeral port and
+  hits `/api/register` and `/api/login` over HTTP
+- A guard test that `serve(host="0.0.0.0")` is rejected
+
 ## File map
 
 | File | Role |
 | --- | --- |
 | `paypal-login.html` | The page itself (HTML + CSS + JS) |
+| `paypal_demo_db.py` | SQLite demo store + loopback HTTP server |
+| `tests/test_paypal_demo_db.py` | Unit + integration tests |
 | `plan.txt` | Planning document with design tokens and structure |
 | `paypal-login-methods.md` | This file |
 | `index.html` | Updated to link to the demo page |
