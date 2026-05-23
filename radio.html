@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse FM — Live Online Radio</title>
+    <style>
+        :root {
+            --bg: #0b0d17;
+            --bg-soft: #141727;
+            --accent: #ff3d7f;
+            --accent-2: #6c5ce7;
+            --text: #f4f4f8;
+            --muted: #a0a3b8;
+            --radius: 12px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(11, 13, 23, 0.85);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .cta-btn {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 61, 127, 0.3);
+        }
+
+        .hero {
+            padding: 5rem 5% 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            padding: 0.6rem 1.4rem;
+            border: 1px solid var(--muted);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .player {
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .player-art {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player-art::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent 60%);
+        }
+
+        .now-playing {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+
+        .track-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .track-artist { color: var(--muted); margin-bottom: 1.5rem; }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .ctrl-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+        }
+
+        .play-btn {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-size: 1.5rem;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 61, 127, 0.15);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .stations {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .station-card {
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .station-card:hover {
+            transform: translateY(-4px);
+            background: #1a1e33;
+        }
+
+        .station-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: grid;
+            place-items: center;
+            font-size: 3rem;
+        }
+
+        .s1 { background: linear-gradient(135deg, #ff6b6b, #feca57); }
+        .s2 { background: linear-gradient(135deg, #48dbfb, #0abde3); }
+        .s3 { background: linear-gradient(135deg, #5f27cd, #341f97); }
+        .s4 { background: linear-gradient(135deg, #00d2d3, #54a0ff); }
+        .s5 { background: linear-gradient(135deg, #ee5a6f, #f29c79); }
+        .s6 { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
+
+        .station-name { font-weight: 700; margin-bottom: 0.25rem; }
+        .station-genre { color: var(--muted); font-size: 0.9rem; }
+
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--bg-soft);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; padding: 3rem 5%; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Pulse FM</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#stations">Stations</a></li>
+            <li><a href="#">Shows</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <button class="cta-btn">Sign In</button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                LIVE NOW
+            </div>
+            <h1>Your sound, <span>everywhere</span> you go.</h1>
+            <p>Stream hand-curated stations from around the world. Discover new artists, ride your favorite genres, and never miss a beat.</p>
+            <div class="hero-actions">
+                <button class="cta-btn">Start Listening</button>
+                <button class="btn-secondary">Browse Stations</button>
+            </div>
+        </div>
+
+        <div class="player">
+            <div class="player-art">&#9835;</div>
+            <div class="now-playing">Now Playing</div>
+            <div class="track-title">Midnight Drive</div>
+            <div class="track-artist">Neon Skyline</div>
+            <div class="controls">
+                <button class="ctrl-btn">&#9198;</button>
+                <button class="ctrl-btn play-btn">&#9654;</button>
+                <button class="ctrl-btn">&#9197;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="stations" id="stations">
+        <h2 class="section-title">Popular Stations</h2>
+        <div class="stations-grid">
+            <div class="station-card">
+                <div class="station-cover s1">&#127908;</div>
+                <div class="station-name">Sunset Lounge</div>
+                <div class="station-genre">Chillout &middot; 12.4k listening</div>
+            </div>
+            <div class="station-card">
+                <div class="station-cover s2">&#127911;</div>
+                <div class="station-name">Deep Currents</div>
+                <div class="station-genre">Electronic &middot; 8.9k listening</div>
+            </div>
+            <div class="station-card">
+                <div class="station-cover s3">&#127925;</div>
+                <div class="station-name">Velvet Hours</div>
+                <div class="station-genre">Jazz &middot; 5.2k listening</div>
+            </div>
+            <div class="station-card">
+                <div class="station-cover s4">&#127926;</div>
+                <div class="station-name">Wave Theory</div>
+                <div class="station-genre">Indie &middot; 7.1k listening</div>
+            </div>
+            <div class="station-card">
+                <div class="station-cover s5">&#127932;</div>
+                <div class="station-name">Riff Republic</div>
+                <div class="station-genre">Rock &middot; 9.3k listening</div>
+            </div>
+            <div class="station-card">
+                <div class="station-cover s6">&#127881;</div>
+                <div class="station-name">Beat Bazaar</div>
+                <div class="station-genre">Hip-Hop &middot; 11.6k listening</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Pulse FM &middot; Crafted for listeners.
+    </footer>
+
+    <script>
+        const playBtn = document.querySelector('.play-btn');
+        let isPlaying = false;
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            playBtn.innerHTML = isPlaying ? '&#10074;&#10074;' : '&#9654;';
+        });
+
+        document.querySelectorAll('.station-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const name = card.querySelector('.station-name').textContent;
+                document.querySelector('.track-title').textContent = name;
+                document.querySelector('.track-artist').textContent = 'Live broadcast';
+            });
+        });
+    </script>
+</body>
+</html>
