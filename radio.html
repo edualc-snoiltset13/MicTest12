@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Player</title>
+    <style>
+        :root {
+            --bg: #0f1115;
+            --panel: #1a1d24;
+            --panel-2: #232732;
+            --text: #e8eaf0;
+            --muted: #8a92a3;
+            --accent: #6ee7b7;
+            --accent-2: #38bdf8;
+            --danger: #f87171;
+            --border: #2b2f3a;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem; }
+        h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }
+        nav a { margin-right: 1rem; color: var(--accent-2); text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { text-decoration: underline; }
+        .player {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .now-playing { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+        .art {
+            width: 72px; height: 72px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; flex-shrink: 0;
+        }
+        .meta { min-width: 0; flex: 1; }
+        .station-name { font-weight: 600; font-size: 1.15rem; margin: 0 0 0.2rem; }
+        .station-desc { color: var(--muted); font-size: 0.9rem; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .status { color: var(--muted); font-size: 0.8rem; margin-top: 0.4rem; }
+        .status.error { color: var(--danger); }
+        .controls { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        button.play-btn {
+            background: var(--accent);
+            color: #0f1115;
+            border: none;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.1s;
+        }
+        button.play-btn:hover { transform: scale(1.05); }
+        button.play-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .volume { display: flex; align-items: center; gap: 0.5rem; flex: 1; min-width: 180px; }
+        .volume label { color: var(--muted); font-size: 0.85rem; }
+        input[type="range"] { flex: 1; accent-color: var(--accent); }
+        h2 { font-size: 1.1rem; margin: 0 0 0.75rem; color: var(--muted); font-weight: 500; }
+        .stations { display: grid; gap: 0.5rem; }
+        .station {
+            background: var(--panel-2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: border-color 0.15s, background 0.15s;
+        }
+        .station:hover { border-color: var(--accent-2); }
+        .station.active { border-color: var(--accent); background: #1f2a25; }
+        .station-title { font-weight: 500; }
+        .station-genre { color: var(--muted); font-size: 0.85rem; }
+        footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Radio Player</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="radio.html">Radio</a>
+            </nav>
+        </header>
+
+        <div class="player">
+            <div class="now-playing">
+                <div class="art" id="art">&#9835;</div>
+                <div class="meta">
+                    <p class="station-name" id="stationName">Select a station</p>
+                    <p class="station-desc" id="stationDesc">Pick one of the stations below to start listening</p>
+                    <p class="status" id="status">Idle</p>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="play-btn" id="playBtn" disabled aria-label="Play/Pause">&#9654;</button>
+                <div class="volume">
+                    <label for="vol">Volume</label>
+                    <input type="range" id="vol" min="0" max="100" value="70">
+                </div>
+            </div>
+        </div>
+
+        <h2>Stations</h2>
+        <div class="stations" id="stations"></div>
+
+        <footer>
+            Streams are provided by their respective broadcasters. Playback requires an internet connection and a browser with HTML5 audio support.
+        </footer>
+    </div>
+
+    <audio id="audio" preload="none" crossorigin="anonymous"></audio>
+
+    <script>
+        const STATIONS = [
+            { id: 'groovesalad', name: 'Groove Salad',     genre: 'Ambient / Downtempo', desc: 'A nicely chilled plate of ambient/downtempo beats and grooves',     url: 'https://ice1.somafm.com/groovesalad-128-mp3' },
+            { id: 'dronezone',   name: 'Drone Zone',       genre: 'Ambient',             desc: 'Served best chilled, safe with most medications. Atmospheric textures',  url: 'https://ice1.somafm.com/dronezone-128-mp3' },
+            { id: 'indiepop',    name: 'Indie Pop Rocks!', genre: 'Indie Pop',           desc: 'New and classic indie pop tracks',                                       url: 'https://ice1.somafm.com/indiepop-128-mp3' },
+            { id: 'lush',        name: 'Lush',             genre: 'Vocals',              desc: 'Sensuous and mellow vocals, mostly female, with an electronic influence', url: 'https://ice1.somafm.com/lush-128-mp3' },
+            { id: 'secretagent', name: 'Secret Agent',     genre: 'Lounge / Jazz',       desc: 'The soundtrack for your stylish, mysterious, dangerous life',            url: 'https://ice1.somafm.com/secretagent-128-mp3' },
+            { id: 'deepspaceone',name: 'Deep Space One',   genre: 'Space Ambient',       desc: 'Deep ambient electronic, experimental and space music',                  url: 'https://ice1.somafm.com/deepspaceone-128-mp3' },
+        ];
+
+        const audio       = document.getElementById('audio');
+        const playBtn     = document.getElementById('playBtn');
+        const stationsEl  = document.getElementById('stations');
+        const stationName = document.getElementById('stationName');
+        const stationDesc = document.getElementById('stationDesc');
+        const statusEl    = document.getElementById('status');
+        const volSlider   = document.getElementById('vol');
+
+        let current = null;
+
+        function renderStations() {
+            stationsEl.innerHTML = '';
+            STATIONS.forEach(s => {
+                const el = document.createElement('div');
+                el.className = 'station';
+                el.dataset.id = s.id;
+                el.innerHTML = `
+                    <div>
+                        <div class="station-title">${s.name}</div>
+                        <div class="station-genre">${s.genre}</div>
+                    </div>
+                    <div>&#9658;</div>
+                `;
+                el.addEventListener('click', () => selectStation(s));
+                stationsEl.appendChild(el);
+            });
+        }
+
+        function setActive(id) {
+            document.querySelectorAll('.station').forEach(el => {
+                el.classList.toggle('active', el.dataset.id === id);
+            });
+        }
+
+        function setStatus(text, isError = false) {
+            statusEl.textContent = text;
+            statusEl.classList.toggle('error', isError);
+        }
+
+        function selectStation(s) {
+            current = s;
+            stationName.textContent = s.name;
+            stationDesc.textContent = s.desc;
+            setActive(s.id);
+            audio.src = s.url;
+            playBtn.disabled = false;
+            setStatus('Loading…');
+            audio.play().catch(err => {
+                setStatus('Tap play to start', false);
+            });
+        }
+
+        playBtn.addEventListener('click', () => {
+            if (!current) return;
+            if (audio.paused) {
+                audio.play().catch(err => setStatus('Playback failed: ' + err.message, true));
+            } else {
+                audio.pause();
+            }
+        });
+
+        volSlider.addEventListener('input', e => {
+            audio.volume = e.target.value / 100;
+        });
+        audio.volume = volSlider.value / 100;
+
+        audio.addEventListener('playing', () => { setStatus('Live • Playing'); playBtn.innerHTML = '&#10074;&#10074;'; });
+        audio.addEventListener('pause',   () => { setStatus('Paused');             playBtn.innerHTML = '&#9654;'; });
+        audio.addEventListener('waiting', () => setStatus('Buffering…'));
+        audio.addEventListener('error',   () => setStatus('Stream unavailable', true));
+        audio.addEventListener('stalled', () => setStatus('Stalled — reconnecting…'));
+
+        renderStations();
+    </script>
+</body>
+</html>
