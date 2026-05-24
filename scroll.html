@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Page</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #1f2937;
+            line-height: 1.7;
+            background: #f9fafb;
+        }
+
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 1000;
+            transition: width 0.05s linear;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 2rem;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { font-size: 1.1rem; font-weight: 600; }
+        nav a {
+            margin-left: 1rem;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        nav a:hover { color: #667eea; }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+        }
+        .hero h2 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; }
+        .hero .arrow {
+            margin-top: 3rem;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        section p { margin-bottom: 1rem; color: #4b5563; }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        .card h4 { margin-bottom: 0.5rem; color: #667eea; }
+
+        .alt { background: #eef2ff; }
+
+        #top-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: #667eea;
+            color: #fff;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        #top-btn.visible { opacity: 1; pointer-events: auto; }
+        #top-btn:hover { background: #5a67d8; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1f2937;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress"></div>
+
+    <header>
+        <h1>Scrollable Demo</h1>
+        <nav>
+            <a href="#intro">Intro</a>
+            <a href="#features">Features</a>
+            <a href="#details">Details</a>
+            <a href="#end">End</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Scroll Down</h2>
+        <p>A demo page with smooth scrolling, a sticky header, scroll progress, and a back-to-top button.</p>
+        <div class="arrow">&#x2193;</div>
+    </div>
+
+    <section id="intro">
+        <h3>Introduction</h3>
+        <p>This page demonstrates a few common scroll patterns in a single file. As you scroll, watch the progress bar at the top fill in, and notice how the header stays pinned. Once you scroll past the hero, a back-to-top button appears in the bottom right.</p>
+        <p>Click any nav link to jump smoothly to that section. Everything works with no dependencies — just open the file in a browser.</p>
+    </section>
+
+    <section id="features" class="alt" style="max-width:none;">
+        <div style="max-width:800px;margin:0 auto;">
+            <h3>Features</h3>
+            <div class="card-grid">
+                <div class="card"><h4>Sticky Header</h4><p>Stays visible as you scroll.</p></div>
+                <div class="card"><h4>Progress Bar</h4><p>Tracks how far you've read.</p></div>
+                <div class="card"><h4>Smooth Anchors</h4><p>Nav links scroll instead of jump.</p></div>
+                <div class="card"><h4>Back to Top</h4><p>One-click return to the top.</p></div>
+                <div class="card"><h4>Responsive Grid</h4><p>Cards adapt to width.</p></div>
+                <div class="card"><h4>Zero Deps</h4><p>One file, no libraries.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details">
+        <h3>Details</h3>
+        <p>The scroll progress bar uses the document's <code>scrollTop</code> divided by the total scrollable height. It's recalculated on every scroll event and applied as a CSS width.</p>
+        <p>The sticky header uses <code>position: sticky; top: 0</code> with a translucent background and a backdrop blur — a small touch that keeps text underneath readable as it scrolls past.</p>
+        <p>Smooth scrolling comes from <code>html { scroll-behavior: smooth }</code> — no JS needed for the anchor links.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+    </section>
+
+    <section id="end" class="alt" style="max-width:none;">
+        <div style="max-width:800px;margin:0 auto;">
+            <h3>You made it!</h3>
+            <p>You've reached the bottom of the page. The progress bar at the top should now be full.</p>
+            <p>Click the arrow button in the bottom right to scroll back up.</p>
+        </div>
+    </section>
+
+    <footer>Built as a single HTML file &middot; No build step required</footer>
+
+    <button id="top-btn" aria-label="Back to top">&uarr;</button>
+
+    <script>
+        const progress = document.getElementById("progress");
+        const topBtn = document.getElementById("top-btn");
+
+        function onScroll() {
+            const h = document.documentElement;
+            const scrolled = h.scrollTop;
+            const max = h.scrollHeight - h.clientHeight;
+            const pct = max > 0 ? (scrolled / max) * 100 : 0;
+            progress.style.width = pct + "%";
+            topBtn.classList.toggle("visible", scrolled > 400);
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        onScroll();
+    </script>
+</body>
+</html>
