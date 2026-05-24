@@ -311,6 +311,57 @@
     margin-bottom: 6px;
   }
   .three-col p { font-size: 0.92rem; }
+  .three-col article p + p { text-indent: 1.2em; }
+
+  /* banner heading above a three-column block */
+  .deck-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 3px double var(--ink);
+    border-bottom: 3px double var(--ink);
+    padding: 4px 0;
+    margin-bottom: 18px;
+  }
+  .deck-banner .label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1rem;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 4px 14px;
+  }
+  .deck-banner .tag {
+    font-family: 'Special Elite', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+  .deck-banner .pages {
+    font-family: 'Special Elite', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* dateline inline */
+  .dateline {
+    font-family: 'Old Standard TT', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+  }
+  .dateline::after {
+    content: " — ";
+    font-weight: normal;
+    letter-spacing: 0;
+  }
 
   /* ---------- centerpiece feature ---------- */
   .feature {
@@ -717,7 +768,12 @@
     </aside>
   </section>
 
-  <!-- ============== THREE-COLUMN STORIES ============== -->
+  <!-- ============== THREE-COLUMN STORIES :: NATION & ABROAD ============== -->
+  <div class="deck-banner">
+    <span class="label">Nation &amp; Abroad</span>
+    <span class="tag">Saturday's Wire &middot; Compiled by the Foreign Desk</span>
+    <span class="pages">Pages A2 — A3</span>
+  </div>
   <section class="three-col" id="nation">
 
     <article>
@@ -725,8 +781,9 @@
       <h3>Pacific Bloc Resumes Stalled Trade Talks</h3>
       <div class="byline">By Daniel Pham</div>
       <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">Diplomatic motorcade arriving at the summit</span></div>
-      <p>The twelve-nation Pacific Trade Council reconvened on Saturday for the first time since negotiations stalled in February. Diplomats are expected to focus on digital-goods tariffs, port-of-call modernisation, and a new framework for semiconductor supply-chain transparency.</p>
-      <p>The talks are taking place under unusual public scrutiny, as several member states approach domestic elections in which trade policy has become a defining issue.</p>
+      <p><span class="dateline">Singapore</span>The twelve-nation Pacific Trade Council reconvened on Saturday for the first time since negotiations stalled in February. Diplomats are expected to focus on digital-goods tariffs, port-of-call modernisation, and a new framework for semiconductor supply-chain transparency.</p>
+      <p>The talks are taking place under unusual public scrutiny, as several member states approach domestic elections in which trade policy has become a defining issue. Observers in Canberra and Wellington note that any draft text agreed this week will still require domestic ratification before the autumn recess.</p>
+      <p>A working-group session on rules-of-origin for advanced-node semiconductors is scheduled to begin Monday morning local time.</p>
     </article>
 
     <article id="business">
@@ -734,8 +791,9 @@
       <h3>Energy Markets Rebound From Three-Week Slump</h3>
       <div class="byline">By Sarah Whitman</div>
       <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">A trader at his terminal at the closing bell</span></div>
-      <p>Brent crude closed at $74.20 a barrel on Friday, recovering nearly eight per cent from monthly lows on news of revised OPEC+ production schedules and stronger-than-expected manufacturing data from the eurozone.</p>
+      <p><span class="dateline">New York</span>Brent crude closed at $74.20 a barrel on Friday, recovering nearly eight per cent from monthly lows on news of revised OPEC+ production schedules and stronger-than-expected manufacturing data from the eurozone.</p>
       <p>Refiners on the Gulf Coast reported their highest utilisation rate since October, a development analysts attribute to seasonal demand and easing rail-network congestion.</p>
+      <p>Natural-gas futures rose four per cent on the week, though storage levels remain comfortably above their five-year average for this point in the spring.</p>
     </article>
 
     <article id="tech">
@@ -743,8 +801,48 @@
       <h3>Quantum Network Holds Across Eight Hundred Kilometres</h3>
       <div class="byline">By Naomi Bergstrom</div>
       <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">Cryogenic apparatus at the Delft entanglement laboratory</span></div>
-      <p>A consortium of European research institutes reports the longest successful quantum-entanglement transmission to date, edging closer to the goal of a continent-spanning, eavesdrop-proof communications backbone.</p>
+      <p><span class="dateline">Delft</span>A consortium of European research institutes reports the longest successful quantum-entanglement transmission to date, edging closer to the goal of a continent-spanning, eavesdrop-proof communications backbone.</p>
       <p>The team transmitted entangled photon pairs over an existing fibre route between Delft and Hamburg, using a chain of trusted repeaters developed in partnership with the Max Planck Institute.</p>
+      <p>A parallel collaboration in the United States is expected to publish comparable results before the end of the summer.</p>
+    </article>
+  </section>
+
+  <!-- ============== THREE-COLUMN STORIES :: POLITICS & POWER ============== -->
+  <div class="deck-banner">
+    <span class="label">Politics &amp; Power</span>
+    <span class="tag">Capitals, campaigns, and the corridors between them</span>
+    <span class="pages">Pages A5 — A7</span>
+  </div>
+  <section class="three-col">
+
+    <article>
+      <div class="kicker">Capitol Hill &middot; Washington</div>
+      <h3>Senate Readies Implementation Package For Geneva Pact</h3>
+      <div class="byline">By Howard Lin</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">Senators conferring outside the chamber on Friday</span></div>
+      <p><span class="dateline">Washington</span>Senate leadership signalled on Friday that legislation translating the newly-signed Geneva climate commitments into domestic statute will be introduced within a fortnight, with markup expected before the Memorial Day recess ends.</p>
+      <p>The bill is widely expected to bundle a clean-energy investment tax credit, methane-reduction mandates for the oil-and-gas sector, and a revised border-adjustment mechanism for carbon-intensive imports.</p>
+      <p>Two senators from energy-producing states said they would withhold judgment until the full text is available, but called the leadership's outreach &ldquo;professional and substantive.&rdquo;</p>
+    </article>
+
+    <article>
+      <div class="kicker">Statehouse &middot; Sacramento</div>
+      <h3>California Advances Bill On Generative Media Disclosure</h3>
+      <div class="byline">By Renata Ortiz</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">The state assembly chamber, Friday afternoon</span></div>
+      <p><span class="dateline">Sacramento</span>State assembly members voted 54 to 21 on Friday to advance a bill that would require visible disclosure on any political advertisement containing synthetic audio, video, or photographic content.</p>
+      <p>The legislation, the third of its kind to reach a floor vote in as many years, contains a narrower set of exemptions than its predecessors and faces a less organised industry coalition opposing it.</p>
+      <p>The governor's office declined to comment but has not previously vetoed similar measures.</p>
+    </article>
+
+    <article>
+      <div class="kicker">Campaign Trail &middot; Des Moines</div>
+      <h3>Primary Field Narrows As Iowa Forum Concludes</h3>
+      <div class="byline">By Theodore Marsh</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">Candidates greet supporters after the forum</span></div>
+      <p><span class="dateline">Des Moines</span>Two more candidates suspended their campaigns over the weekend following a poorly received candidates' forum in Des Moines on Thursday evening, leaving the field at seven for the August convention.</p>
+      <p>Polling conducted by the Chronicle and the Hawkeye Institute shows the top three contenders separated by fewer than four percentage points, with roughly one in five likely caucus-goers still undecided.</p>
+      <p>A second forum is scheduled for next Wednesday in Cedar Rapids.</p>
     </article>
   </section>
 
@@ -812,6 +910,84 @@
     <div class="cell"><div class="num">$500B</div><div class="lbl">Adaptation Fund Pledged</div></div>
     <div class="cell"><div class="num">2:04:09</div><div class="lbl">New Marathon Record</div></div>
     <div class="cell"><div class="num">87%</div><div class="lbl">Flu Vaccine Efficacy</div></div>
+  </section>
+
+  <!-- ============== THREE-COLUMN STORIES :: AROUND THE WORLD ============== -->
+  <div class="deck-banner">
+    <span class="label">Around The World</span>
+    <span class="tag">Dispatches from our foreign correspondents</span>
+    <span class="pages">Pages A8 — A10</span>
+  </div>
+  <section class="three-col">
+
+    <article>
+      <div class="kicker">Europe &middot; Brussels</div>
+      <h3>EU Reaches Provisional Deal On Asylum Reform</h3>
+      <div class="byline">By Margaux Vidal</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">Negotiators emerge from a 14-hour session in Brussels</span></div>
+      <p><span class="dateline">Brussels</span>European Union member states reached a provisional agreement early Saturday on a long-debated package of asylum-procedure reforms, after a final fourteen-hour session of trilogue negotiations.</p>
+      <p>The deal preserves a redistribution mechanism for first-arrival countries but allows member states to opt out by funding reception capacity elsewhere in the bloc, an arrangement officials in Rome and Athens described as &ldquo;workable, not ideal.&rdquo;</p>
+      <p>Civil-society groups have already signalled they will challenge several procedural clauses in the European Court of Justice once the text is formally adopted.</p>
+    </article>
+
+    <article>
+      <div class="kicker">Asia &middot; Tokyo</div>
+      <h3>Japan's Wage Growth Outpaces Inflation For Third Month</h3>
+      <div class="byline">By Kenji Watanabe</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">Commuters at Shinjuku Station, Friday evening</span></div>
+      <p><span class="dateline">Tokyo</span>Japanese nominal wages rose three-and-one-tenth per cent year-on-year in April, outpacing consumer price growth for the third consecutive month and easing pressure on the Bank of Japan to delay its next policy move.</p>
+      <p>The figures, released by the Ministry of Health, Labour and Welfare, represent the most sustained real-wage expansion in nearly a decade and are expected to feature prominently in next month's monetary-policy meeting.</p>
+      <p>Household consumption data, due Wednesday, will provide a fuller picture.</p>
+    </article>
+
+    <article>
+      <div class="kicker">Americas &middot; Buenos Aires</div>
+      <h3>Argentine Soy Harvest Beats Forecasts Despite Drought</h3>
+      <div class="byline">By Lucía Romero</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">A harvester moves through fields in Córdoba province</span></div>
+      <p><span class="dateline">Buenos Aires</span>Argentina's soy harvest is on track to exceed pre-season forecasts by roughly nine per cent, the Rosario grain exchange said Friday, despite a third consecutive year of below-average rainfall in the central provinces.</p>
+      <p>Producers attributed the resilience to wider adoption of drought-tolerant varieties and a shift in planting calendars that has gained ground in Córdoba and Santa Fe over the past two seasons.</p>
+      <p>Export receipts could ease pressure on the country's foreign-exchange reserves, central-bank officials confirmed.</p>
+    </article>
+  </section>
+
+  <!-- ============== THREE-COLUMN STORIES :: SCIENCE & DISCOVERY ============== -->
+  <div class="deck-banner">
+    <span class="label">Science &amp; Discovery</span>
+    <span class="tag">From laboratories, observatories, and field stations</span>
+    <span class="pages">Pages B2 — B4</span>
+  </div>
+  <section class="three-col">
+
+    <article>
+      <div class="kicker">Astronomy &middot; La Palma</div>
+      <h3>Brightest Optical Transient Of The Year Confirmed</h3>
+      <div class="byline">By Dr. Alia Faruq</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">A wide-field plate from the Roque de los Muchachos observatory</span></div>
+      <p><span class="dateline">La Palma</span>Observers at the Roque de los Muchachos observatory confirmed on Friday that a transient detected last week is the brightest optical event of the year so far, with a peak apparent magnitude of -19.4 at a redshift of 0.013.</p>
+      <p>The most likely classification is a Type Ia supernova in a previously catalogued spiral galaxy, but follow-up spectroscopy from facilities in Chile and Hawai&lsquo;i is expected to refine that identification within days.</p>
+      <p>The event is well-placed for amateur observation throughout the coming week.</p>
+    </article>
+
+    <article>
+      <div class="kicker">Biology &middot; Cape Cod</div>
+      <h3>Right Whale Calf Sightings Reach 20-Year High</h3>
+      <div class="byline">By Camille Ostrowski</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">A North Atlantic right whale and calf surfacing</span></div>
+      <p><span class="dateline">Woods Hole</span>Aerial-survey teams have recorded thirty-one North Atlantic right whale calves in the species' calving grounds this season, the highest count since the early 2000s, the New England Aquarium reported on Friday.</p>
+      <p>Biologists cautioned that the figure remains well below what is required for population stability, but described the trend as the first clear positive signal in more than a decade.</p>
+      <p>Vessel-strike mortality continues to be the largest single threat to recovery.</p>
+    </article>
+
+    <article>
+      <div class="kicker">Archaeology &middot; Konya</div>
+      <h3>Neolithic Mural Uncovered At Çatalhöyük Dig</h3>
+      <div class="byline">By Dr. Selim Aksoy</div>
+      <div class="cut h-md" style="margin-bottom:10px;"><span class="caption">Excavators clear earth around the painted plaster wall</span></div>
+      <p><span class="dateline">Konya</span>An international team excavating at the Çatalhöyük settlement in central Anatolia announced on Saturday the discovery of an unusually well-preserved figurative mural dating to roughly 7,400 BCE.</p>
+      <p>The painting, recovered from the eastern mound, depicts a procession of human figures around what may be a stylised volcanic landscape, a motif previously reported only from fragmentary examples.</p>
+      <p>Conservation work will continue through the summer field season.</p>
+    </article>
   </section>
 
   <!-- ============== WEATHER + SPORTS + TECH ============== -->
