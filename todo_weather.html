@@ -47,15 +47,25 @@
     display: flex;
     gap: 8px;
     margin-bottom: 16px;
+    flex-wrap: wrap;
   }
-  .todo-input-row input {
-    flex: 1;
+  .todo-input-row input[type="text"] {
+    flex: 1 1 160px;
     padding: 10px 12px;
     border: 2px solid #dfe6e9;
     border-radius: 8px;
     font-size: 14px;
     outline: none;
     transition: border-color 0.2s;
+  }
+  .todo-input-row input[type="date"] {
+    padding: 10px 12px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    color: #2d3436;
+    background: #fff;
   }
   .todo-input-row input:focus { border-color: #74b9ff; }
   button {
@@ -86,15 +96,49 @@
     cursor: pointer;
     accent-color: #6c5ce7;
   }
-  #todoList .task-text {
+  #todoList .task-main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  #todoList .task-text {
     font-size: 15px;
     word-break: break-word;
+    cursor: text;
+    padding: 2px 4px;
+    border-radius: 4px;
+    outline: none;
+  }
+  #todoList .task-text[contenteditable="true"] {
+    background: #f1f2f6;
+    box-shadow: 0 0 0 2px #74b9ff inset;
+  }
+  #todoList .task-due {
+    font-size: 12px;
+    color: #b2bec3;
+  }
+  #todoList .task-due.overdue {
+    color: #d63031;
+    font-weight: 600;
   }
   #todoList li.done .task-text {
     text-decoration: line-through;
     color: #b2bec3;
   }
+  #todoList li.done .task-due.overdue {
+    color: #b2bec3;
+    font-weight: normal;
+  }
+  .icon-btn {
+    background: transparent;
+    padding: 4px 8px;
+    font-size: 16px;
+    line-height: 1;
+    color: #636e72;
+  }
+  .icon-btn:hover { background: #f1f2f6; }
   .delete-btn {
     background: transparent;
     color: #d63031;
@@ -159,6 +203,7 @@
       <h2>To-Do List</h2>
       <form class="todo-input-row" id="todoForm">
         <input type="text" id="todoInput" placeholder="Add a task..." maxlength="200" required />
+        <input type="date" id="todoDate" title="Optional due date" />
         <button type="submit">Add</button>
       </form>
       <ul id="todoList"></ul>
@@ -182,12 +227,43 @@
   const STORAGE_KEY = 'todo_weather_tasks';
   const todoForm = document.getElementById('todoForm');
   const todoInput = document.getElementById('todoInput');
+  const todoDate = document.getElementById('todoDate');
   const todoList = document.getElementById('todoList');
 
   let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 
   function saveTasks() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  }
+
+  function todayISO() {
+    const d = new Date();
+    const tz = d.getTimezoneOffset() * 60000;
+    return new Date(d - tz).toISOString().slice(0, 10);
+  }
+
+  function formatDue(dateStr) {
+    const today = todayISO();
+    if (dateStr === today) return 'Today';
+    const d = new Date(dateStr + 'T00:00:00');
+    const t = new Date(today + 'T00:00:00');
+    const diffDays = Math.round((d - t) / 86400000);
+    if (diffDays === 1) return 'Tomorrow';
+    if (diffDays === -1) return 'Yesterday';
+    if (diffDays < 0) return `${Math.abs(diffDays)} days ago`;
+    if (diffDays > 0 && diffDays < 7) return `In ${diffDays} days`;
+    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: d.getFullYear() !== t.getFullYear() ? 'numeric' : undefined });
+  }
+
+  function commitEdit(idx, newText, span) {
+    const trimmed = newText.trim();
+    if (!trimmed) {
+      // Empty edit: revert
+      span.textContent = tasks[idx].text;
+      return;
+    }
+    tasks[idx].text = trimmed;
+    saveTasks();
   }
 
   function renderTasks() {
@@ -199,6 +275,7 @@
       todoList.appendChild(empty);
       return;
     }
+    const today = todayISO();
     tasks.forEach((task, idx) => {
       const li = document.createElement('li');
       if (task.done) li.classList.add('done');
@@ -212,11 +289,59 @@
         renderTasks();
       });
 
+      const main = document.createElement('div');
+      main.className = 'task-main';
+
       const span = document.createElement('span');
       span.className = 'task-text';
       span.textContent = task.text;
+      span.title = 'Double-click to edit';
+      span.addEventListener('dblclick', () => {
+        span.contentEditable = 'true';
+        span.focus();
+        const range = document.createRange();
+        range.selectNodeContents(span);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      });
+      span.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          span.blur();
+        } else if (e.key === 'Escape') {
+          span.textContent = tasks[idx].text;
+          span.blur();
+        }
+      });
+      span.addEventListener('blur', () => {
+        if (span.contentEditable === 'true') {
+          span.contentEditable = 'false';
+          commitEdit(idx, span.textContent, span);
+        }
+      });
+
+      main.appendChild(span);
+
+      if (task.due) {
+        const dueEl = document.createElement('span');
+        dueEl.className = 'task-due';
+        if (!task.done && task.due < today) dueEl.classList.add('overdue');
+        dueEl.textContent = '📅 ' + formatDue(task.due);
+        main.appendChild(dueEl);
+      }
+
+      const editBtn = document.createElement('button');
+      editBtn.type = 'button';
+      editBtn.className = 'icon-btn';
+      editBtn.textContent = '✎';
+      editBtn.title = 'Edit task';
+      editBtn.addEventListener('click', () => {
+        span.dispatchEvent(new MouseEvent('dblclick'));
+      });
 
       const del = document.createElement('button');
+      del.type = 'button';
       del.className = 'delete-btn';
       del.textContent = '×';
       del.title = 'Delete task';
@@ -226,7 +351,7 @@
         renderTasks();
       });
 
-      li.append(checkbox, span, del);
+      li.append(checkbox, main, editBtn, del);
       todoList.appendChild(li);
     });
   }
@@ -235,9 +360,11 @@
     e.preventDefault();
     const text = todoInput.value.trim();
     if (!text) return;
-    tasks.push({ text, done: false });
+    const due = todoDate.value || null;
+    tasks.push({ text, done: false, due });
     saveTasks();
     todoInput.value = '';
+    todoDate.value = '';
     renderTasks();
   });
 
