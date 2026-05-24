@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Messages - Python Website{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Submitted messages</h1>
+    {% if messages %}
+        <ul class="messages">
+            {% for m in messages %}
+                <li class="card">
+                    <div class="meta"><strong>{{ m.name }}</strong> &lt;{{ m.email }}&gt; &middot; <span>{{ m.submitted_at }}</span></div>
+                    <p>{{ m.message }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages yet. Be the first to <a href="{{ url_for('contact') }}">send one</a>.</p>
+    {% endif %}
+</section>
+{% endblock %}

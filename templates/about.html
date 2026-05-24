@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}About - Python Website{% endblock %}
+
+{% block content %}
+<section>
+    <h1>About</h1>
+    <p>This website is a minimal example of a Python web application using the Flask framework.
+       It illustrates how a few small files can produce a fully working multi-page site.</p>
+
+    <h2>Stack</h2>
+    <ul>
+        <li><strong>Python 3</strong> - the language</li>
+        <li><strong>Flask</strong> - the web framework</li>
+        <li><strong>Jinja2</strong> - templating engine (bundled with Flask)</li>
+        <li><strong>Plain CSS</strong> - styling, no build step required</li>
+    </ul>
+
+    <h2>Run it locally</h2>
+    <pre><code>pip install -r requirements.txt
+python app.py</code></pre>
+    <p>Then open <code>http://localhost:5000</code> in your browser.</p>
+</section>
+{% endblock %}

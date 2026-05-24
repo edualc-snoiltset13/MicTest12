@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Python Website{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Contact us</h1>
+    <p>Fill out the form below and we'll get back to you.</p>
+
+    <form method="post" class="form">
+        <label>
+            Name
+            <input type="text" name="name" required>
+        </label>
+        <label>
+            Email
+            <input type="email" name="email" required>
+        </label>
+        <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send message</button>
+    </form>
+</section>
+{% endblock %}

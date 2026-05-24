@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Python Website{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Welcome to a Python-Powered Website</h1>
+    <p>A small website built with Flask, demonstrating routing, templates, forms, and static assets.</p>
+    <a class="btn" href="{{ url_for('contact') }}">Get in touch</a>
+</section>
+
+<section class="features">
+    <h2>What's inside</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Flask Routing</h3>
+            <p>Multiple pages served by a single Python application using clean URL routes.</p>
+        </div>
+        <div class="card">
+            <h3>Jinja Templates</h3>
+            <p>Reusable layouts with template inheritance so every page shares the same shell.</p>
+        </div>
+        <div class="card">
+            <h3>Forms &amp; Flash</h3>
+            <p>A contact form with server-side validation and user-friendly flash messages.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
