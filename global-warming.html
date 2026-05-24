@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Warming — Causes, Effects, and Solutions</title>
+  <style>
+    :root {
+      --bg: #f4f7f5;
+      --surface: #ffffff;
+      --ink: #1d2a32;
+      --muted: #5a6b73;
+      --accent: #1f7a5a;
+      --accent-dark: #135940;
+      --warn: #c0533a;
+      --border: #e2e8e3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #135940 0%, #1f7a5a 60%, #2f8fb8 100%);
+      color: #fff;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header.hero h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: -0.02em;
+    }
+
+    header.hero p.lead {
+      margin: 0 auto;
+      max-width: 42rem;
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+
+    main {
+      max-width: 60rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: var(--accent-dark);
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    section h3 {
+      color: var(--accent-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    ul { padding-left: 1.25rem; }
+    li { margin-bottom: 0.4rem; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .stat {
+      background: #eef5f1;
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .stat .num {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .callout {
+      background: #fdf1ed;
+      border-left: 4px solid var(--warn);
+      padding: 0.9rem 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      color: #5a2418;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--accent-dark); }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Global Warming</h1>
+    <p class="lead">
+      The long-term rise in Earth's average surface temperature, driven primarily
+      by human emissions of greenhouse gases — and what we can do about it.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>What Is Global Warming?</h2>
+      <p>
+        Global warming refers to the gradual increase in the average temperature
+        of Earth's atmosphere and oceans since the late 19th century. It is the
+        most prominent symptom of broader <em>climate change</em>, the term
+        scientists use to describe the wider set of shifts in weather patterns,
+        sea level, and ecosystems caused by a warming planet.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <span class="num">+1.1&nbsp;°C</span>
+          <span class="label">Warming since pre-industrial times (IPCC AR6)</span>
+        </div>
+        <div class="stat">
+          <span class="num">420+ ppm</span>
+          <span class="label">Atmospheric CO₂ — highest in 800,000 years</span>
+        </div>
+        <div class="stat">
+          <span class="num">~21 cm</span>
+          <span class="label">Global mean sea-level rise since 1900</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Main Causes</h2>
+      <p>
+        Human activity is the dominant cause of warming observed since the
+        mid-20th century. The main contributors are:
+      </p>
+      <ul>
+        <li><strong>Burning fossil fuels</strong> — coal, oil, and natural gas for electricity, transport, and industry release carbon dioxide (CO₂).</li>
+        <li><strong>Deforestation</strong> — clearing forests removes carbon sinks and releases stored carbon back into the atmosphere.</li>
+        <li><strong>Agriculture and livestock</strong> — produce methane (CH₄) and nitrous oxide (N₂O), both powerful greenhouse gases.</li>
+        <li><strong>Industrial processes</strong> — cement production, refrigerants, and certain chemicals add long-lived warming gases.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Observed and Projected Effects</h2>
+      <h3>Climate</h3>
+      <ul>
+        <li>More frequent and intense heatwaves, droughts, and wildfires.</li>
+        <li>Heavier rainfall events and flooding in many regions.</li>
+        <li>Shifts in seasonal patterns and growing zones.</li>
+      </ul>
+      <h3>Oceans and Ice</h3>
+      <ul>
+        <li>Retreating glaciers and shrinking Arctic sea ice.</li>
+        <li>Ocean warming, acidification, and coral bleaching.</li>
+        <li>Rising sea levels threatening coastal communities.</li>
+      </ul>
+      <h3>People and Ecosystems</h3>
+      <ul>
+        <li>Food and water insecurity in vulnerable regions.</li>
+        <li>Displacement of communities from extreme weather and sea-level rise.</li>
+        <li>Loss of biodiversity as species struggle to adapt or migrate.</li>
+      </ul>
+      <div class="callout">
+        <strong>Why 1.5&nbsp;°C matters:</strong> The IPCC finds that limiting
+        warming to 1.5&nbsp;°C above pre-industrial levels — rather than 2&nbsp;°C
+        — substantially reduces risks to ecosystems, food systems, and human health.
+      </div>
+    </section>
+
+    <section>
+      <h2>What We Can Do</h2>
+      <h3>Systemic Action</h3>
+      <ul>
+        <li>Transition electricity grids to wind, solar, hydro, and nuclear.</li>
+        <li>Electrify transport, heating, and industry.</li>
+        <li>Protect and restore forests, wetlands, and soils.</li>
+        <li>Price carbon and end fossil fuel subsidies.</li>
+        <li>Invest in research for storage, carbon removal, and sustainable agriculture.</li>
+      </ul>
+      <h3>Individual Action</h3>
+      <ul>
+        <li>Use energy-efficient appliances and insulate your home.</li>
+        <li>Walk, cycle, or use public transit; consider an electric vehicle.</li>
+        <li>Reduce food waste and eat more plant-based meals.</li>
+        <li>Support climate-aware policies, businesses, and candidates.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Sources &amp; Further Reading</h2>
+      <ul>
+        <li>NASA — <em>Climate Change: Vital Signs of the Planet</em> (climate.nasa.gov)</li>
+        <li>IPCC — <em>Sixth Assessment Report (AR6)</em> (ipcc.ch)</li>
+        <li>NOAA — <em>Global Climate Dashboard</em> (climate.gov)</li>
+        <li>UN — <em>Climate Action</em> (un.org/climatechange)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>An educational overview. Data figures cited from IPCC AR6 and NOAA.</p>
+  </footer>
+</body>
+</html>
