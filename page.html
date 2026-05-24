@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python + HTML Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 520px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 16px;
+            font-size: 28px;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .counter {
+            background: #f4f6fb;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .counter-value {
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        button {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 8px;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .status {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Hello from Python!</h1>
+        <p>This page is served by a Python HTTP server. Click the buttons to interact with the backend.</p>
+
+        <div class="counter">
+            <div>Counter value</div>
+            <div class="counter-value" id="value">0</div>
+        </div>
+
+        <button onclick="update('increment')">Increment</button>
+        <button onclick="update('decrement')">Decrement</button>
+        <button onclick="update('reset')">Reset</button>
+
+        <div class="status" id="status">Ready.</div>
+    </div>
+
+    <script>
+        async function update(action) {
+            try {
+                const res = await fetch('/api/counter?action=' + action);
+                const data = await res.json();
+                document.getElementById('value').textContent = data.value;
+                document.getElementById('status').textContent = 'Last action: ' + action;
+            } catch (err) {
+                document.getElementById('status').textContent = 'Error: ' + err.message;
+            }
+        }
+
+        update('get');
+    </script>
+</body>
+</html>
