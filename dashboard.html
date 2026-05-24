@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FinPulse — Portfolio Dashboard</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0d1117;
+    --surface:  #161b22;
+    --border:   #21262d;
+    --text:     #e6edf3;
+    --muted:    #8b949e;
+    --green:    #3fb950;
+    --red:      #f85149;
+    --blue:     #58a6ff;
+    --yellow:   #d29922;
+    --purple:   #bc8cff;
+    --accent:   #1f6feb;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    min-height: 100vh;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    height: 54px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--blue); letter-spacing: .03em; }
+  .logo span { color: var(--text); }
+  .topbar-right { display: flex; align-items: center; gap: 1.2rem; }
+  .topbar-right .badge {
+    background: var(--accent);
+    color: white;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .2rem .55rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .topbar-right .time { color: var(--muted); font-size: .8rem; }
+  .avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .8rem;
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 1400px; margin: 0 auto; padding: 1.4rem 1.5rem; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.4rem; }
+
+  .main-row { display: grid; grid-template-columns: 1fr 340px; gap: 1.2rem; margin-bottom: 1.2rem; }
+
+  .bottom-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.2rem; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .card-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .85rem 1rem .6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-hd h2 { font-size: .82rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+  .card-hd .pill {
+    font-size: .7rem;
+    padding: .15rem .5rem;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .pill-green { background: rgba(63,185,80,.15); color: var(--green); }
+  .pill-red   { background: rgba(248,81,73,.15);  color: var(--red); }
+  .pill-blue  { background: rgba(88,166,255,.12); color: var(--blue); }
+  .card-body  { padding: 1rem; }
+
+  /* ── KPI CARDS ── */
+  .kpi { padding: 1rem 1.1rem 1rem; }
+  .kpi .label { font-size: .75rem; color: var(--muted); margin-bottom: .35rem; }
+  .kpi .value { font-size: 1.7rem; font-weight: 700; letter-spacing: -.02em; line-height: 1; margin-bottom: .35rem; }
+  .kpi .change { font-size: .78rem; font-weight: 600; display: flex; align-items: center; gap: .25rem; }
+  .kpi .sub   { font-size: .75rem; color: var(--muted); margin-top: .25rem; }
+  .up   { color: var(--green); }
+  .dn   { color: var(--red); }
+  .neutral { color: var(--muted); }
+
+  /* Sparkline */
+  .spark-wrap { padding: 0 0 .6rem; }
+  .spark-svg { display: block; width: 100%; }
+
+  /* ── PORTFOLIO CHART (SVG area chart) ── */
+  .chart-wrap { padding: .5rem 0 0; }
+  .chart-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: .3rem 1rem 0;
+    font-size: .7rem;
+    color: var(--muted);
+  }
+  .period-tabs { display: flex; gap: .3rem; }
+  .period-tabs button {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .72rem;
+    padding: .2rem .55rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all .15s;
+  }
+  .period-tabs button.active,
+  .period-tabs button:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+  /* ── HOLDINGS TABLE ── */
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    text-align: left;
+    font-size: .7rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: .5rem .9rem;
+    border-bottom: 1px solid var(--border);
+  }
+  thead th:not(:first-child) { text-align: right; }
+  tbody tr { transition: background .1s; }
+  tbody tr:hover { background: rgba(255,255,255,.03); }
+  tbody td {
+    padding: .65rem .9rem;
+    border-bottom: 1px solid rgba(33,38,45,.6);
+    font-size: .82rem;
+    vertical-align: middle;
+  }
+  tbody td:not(:first-child) { text-align: right; }
+  tbody tr:last-child td { border-bottom: none; }
+  .ticker-badge {
+    display: inline-block;
+    background: rgba(88,166,255,.1);
+    color: var(--blue);
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .15rem .45rem;
+    border-radius: 4px;
+    letter-spacing: .04em;
+    margin-right: .5rem;
+  }
+  .company-name { color: var(--muted); font-size: .75rem; }
+
+  /* Inline mini bar */
+  .mini-bar-wrap { display: flex; align-items: center; gap: .5rem; }
+  .mini-bar-bg { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .mini-bar-fill { height: 100%; border-radius: 2px; }
+
+  /* ── ALLOCATION DONUT (SVG) ── */
+  .donut-wrap { display: flex; align-items: center; gap: 1rem; padding: .5rem 0; }
+  .donut-legend { display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+  .legend-row { display: flex; align-items: center; gap: .55rem; font-size: .78rem; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .legend-name { flex: 1; color: var(--muted); }
+  .legend-pct  { font-weight: 600; }
+
+  /* ── MARKET MOVERS ── */
+  .mover-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .mover-row:last-child { border-bottom: none; }
+  .mover-left { display: flex; align-items: center; gap: .65rem; }
+  .mover-icon {
+    width: 32px; height: 32px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .mover-ticker { font-size: .8rem; font-weight: 700; }
+  .mover-name   { font-size: .72rem; color: var(--muted); }
+  .mover-price  { text-align: right; }
+  .mover-price .p   { font-size: .85rem; font-weight: 600; }
+  .mover-price .chg { font-size: .75rem; font-weight: 600; }
+
+  /* ── TRANSACTIONS ── */
+  .tx-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .tx-row:last-child { border-bottom: none; }
+  .tx-icon {
+    width: 30px; height: 30px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .85rem; margin-right: .65rem; flex-shrink: 0;
+  }
+  .tx-buy  { background: rgba(63,185,80,.15); }
+  .tx-sell { background: rgba(248,81,73,.15);  }
+  .tx-div  { background: rgba(88,166,255,.12); }
+  .tx-body { flex: 1; }
+  .tx-body .t1 { font-size: .82rem; font-weight: 600; }
+  .tx-body .t2 { font-size: .72rem; color: var(--muted); }
+  .tx-right { text-align: right; }
+  .tx-right .amt { font-size: .85rem; font-weight: 600; }
+  .tx-right .dt  { font-size: .7rem;  color: var(--muted); }
+
+  /* ── NEWS FEED ── */
+  .news-item {
+    padding: .7rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item .ntag {
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--blue);
+    margin-bottom: .2rem;
+  }
+  .news-item h4 { font-size: .82rem; line-height: 1.4; margin-bottom: .2rem; }
+  .news-item .nmeta { font-size: .7rem; color: var(--muted); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .main-row   { grid-template-columns: 1fr; }
+    .bottom-row { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 740px) {
+    .kpi-row    { grid-template-columns: 1fr 1fr; }
+    .bottom-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .kpi-row { grid-template-columns: 1fr; }
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="logo">Fin<span>Pulse</span></div>
+  <div class="topbar-right">
+    <span class="badge">● Live</span>
+    <span class="time" id="clock">--:-- --</span>
+    <div class="avatar">JD</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- KPI ROW -->
+  <div class="kpi-row">
+
+    <div class="card">
+      <div class="kpi">
+        <div class="label">Portfolio Value</div>
+        <div class="value">$284,937</div>
+        <div class="change up">▲ $2,418.50 today</div>
+        <div class="sub">As of market close · May 23, 2025</div>
+      </div>
+      <div class="spark-wrap">
+        <svg class="spark-svg" height="40" viewBox="0 0 200 40" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gGreen" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3fb950" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,35 L20,30 L40,28 L60,32 L80,20 L100,18 L120,22 L140,14 L160,10 L180,8 L200,5 L200,40 L0,40 Z" fill="url(#gGreen)"/>
+          <path d="M0,35 L20,30 L40,28 L60,32 L80,20 L100,18 L120,22 L140,14 L160,10 L180,8 L200,5" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="kpi">
+        <div class="label">Day's P&amp;L</div>
+        <div class="value up">+$2,418</div>
+        <div class="change up">▲ +0.86% vs yesterday</div>
+        <div class="sub">Realised: $640 · Unrealised: $1,778</div>
+      </div>
+      <div class="spark-wrap">
+        <svg class="spark-svg" height="40" viewBox="0 0 200 40" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gGreen2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3fb950" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,38 L30,36 L60,30 L80,34 L100,25 L130,18 L160,12 L200,6 L200,40 L0,40 Z" fill="url(#gGreen2)"/>
+          <path d="M0,38 L30,36 L60,30 L80,34 L100,25 L130,18 L160,12 L200,6" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="kpi">
+        <div class="label">Total Return</div>
+        <div class="value up">+34.2%</div>
+        <div class="change up">▲ +$72,510 all-time</div>
+        <div class="sub">Since Jan 2022 · Benchmark: +21.4%</div>
+      </div>
+      <div class="spark-wrap">
+        <svg class="spark-svg" height="40" viewBox="0 0 200 40" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gBlue" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#58a6ff" stop-opacity=".3"/>
+              <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,36 L25,34 L50,32 L75,28 L100,22 L125,20 L150,14 L175,10 L200,7 L200,40 L0,40 Z" fill="url(#gBlue)"/>
+          <path d="M0,36 L25,34 L50,32 L75,28 L100,22 L125,20 L150,14 L175,10 L200,7" fill="none" stroke="#58a6ff" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="kpi">
+        <div class="label">Cash &amp; Buying Power</div>
+        <div class="value">$18,204</div>
+        <div class="change neutral">— 6.4% of portfolio</div>
+        <div class="sub">Margin available: $36,408</div>
+      </div>
+      <div class="spark-wrap">
+        <svg class="spark-svg" height="40" viewBox="0 0 200 40" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gYellow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d29922" stop-opacity=".3"/>
+              <stop offset="100%" stop-color="#d29922" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,20 L30,22 L60,18 L90,24 L120,15 L150,20 L180,18 L200,16 L200,40 L0,40 Z" fill="url(#gYellow)"/>
+          <path d="M0,20 L30,22 L60,18 L90,24 L120,15 L150,20 L180,18 L200,16" fill="none" stroke="#d29922" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+
+  </div><!-- /kpi-row -->
+
+  <!-- MAIN ROW: Chart + Allocation -->
+  <div class="main-row">
+
+    <!-- PORTFOLIO CHART -->
+    <div class="card">
+      <div class="card-hd">
+        <h2>Portfolio Performance</h2>
+        <div class="period-tabs">
+          <button>1W</button>
+          <button>1M</button>
+          <button class="active">3M</button>
+          <button>1Y</button>
+          <button>All</button>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <svg width="100%" height="220" viewBox="0 0 800 220" preserveAspectRatio="none" style="display:block;">
+          <defs>
+            <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#1f6feb" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#1f6feb" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="benchGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#8b949e" stop-opacity=".2"/>
+              <stop offset="100%" stop-color="#8b949e" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- grid lines -->
+          <line x1="0" y1="40"  x2="800" y2="40"  stroke="#21262d" stroke-width="1"/>
+          <line x1="0" y1="80"  x2="800" y2="80"  stroke="#21262d" stroke-width="1"/>
+          <line x1="0" y1="120" x2="800" y2="120" stroke="#21262d" stroke-width="1"/>
+          <line x1="0" y1="160" x2="800" y2="160" stroke="#21262d" stroke-width="1"/>
+          <!-- benchmark -->
+          <path d="M0,160 L80,155 L160,150 L240,145 L320,140 L400,138 L480,130 L560,125 L640,118 L720,112 L800,108
+                   L800,220 L0,220 Z" fill="url(#benchGrad)"/>
+          <path d="M0,160 L80,155 L160,150 L240,145 L320,140 L400,138 L480,130 L560,125 L640,118 L720,112 L800,108"
+                fill="none" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 3"/>
+          <!-- portfolio area -->
+          <path d="M0,165 L60,158 L120,150 L180,155 L240,140 L300,128 L360,120 L420,110 L480,100 L540,88 L600,82 L660,70 L720,60 L800,48
+                   L800,220 L0,220 Z" fill="url(#areaGrad)"/>
+          <path d="M0,165 L60,158 L120,150 L180,155 L240,140 L300,128 L360,120 L420,110 L480,100 L540,88 L600,82 L660,70 L720,60 L800,48"
+                fill="none" stroke="#58a6ff" stroke-width="2"/>
+          <!-- dot at current -->
+          <circle cx="800" cy="48" r="5" fill="#58a6ff"/>
+          <!-- y-axis labels -->
+          <text x="8" y="38"  fill="#8b949e" font-size="10" font-family="sans-serif">$310k</text>
+          <text x="8" y="78"  fill="#8b949e" font-size="10" font-family="sans-serif">$290k</text>
+          <text x="8" y="118" fill="#8b949e" font-size="10" font-family="sans-serif">$270k</text>
+          <text x="8" y="158" fill="#8b949e" font-size="10" font-family="sans-serif">$250k</text>
+          <!-- legend -->
+          <rect x="630" y="10" width="10" height="3" rx="1" fill="#58a6ff"/>
+          <text x="645" y="15" fill="#8b949e" font-size="10" font-family="sans-serif">Portfolio</text>
+          <rect x="700" y="10" width="10" height="3" rx="1" fill="#8b949e"/>
+          <text x="715" y="15" fill="#8b949e" font-size="10" font-family="sans-serif">S&amp;P 500</text>
+        </svg>
+        <div class="chart-labels">
+          <span>Mar 1</span><span>Mar 15</span><span>Apr 1</span><span>Apr 15</span><span>May 1</span><span>May 15</span><span>May 23</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALLOCATION DONUT -->
+    <div class="card">
+      <div class="card-hd">
+        <h2>Allocation</h2>
+        <span class="pill pill-blue">7 positions</span>
+      </div>
+      <div class="card-body">
+        <div class="donut-wrap">
+          <svg width="130" height="130" viewBox="0 0 130 130" style="flex-shrink:0;">
+            <!-- donut segments (stroke-dasharray trick, r=50, circumference≈314) -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#21262d" stroke-width="18"/>
+            <!-- NVDA 28% → 88 -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#58a6ff" stroke-width="18"
+              stroke-dasharray="88 226" stroke-dashoffset="0" transform="rotate(-90 65 65)"/>
+            <!-- MSFT 22% → 69 -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#3fb950" stroke-width="18"
+              stroke-dasharray="69 245" stroke-dashoffset="-88" transform="rotate(-90 65 65)"/>
+            <!-- AAPL 18% → 57 -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#bc8cff" stroke-width="18"
+              stroke-dasharray="57 257" stroke-dashoffset="-157" transform="rotate(-90 65 65)"/>
+            <!-- GOOGL 14% → 44 -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#d29922" stroke-width="18"
+              stroke-dasharray="44 270" stroke-dashoffset="-214" transform="rotate(-90 65 65)"/>
+            <!-- AMZN 10% → 31 -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#f85149" stroke-width="18"
+              stroke-dasharray="31 283" stroke-dashoffset="-258" transform="rotate(-90 65 65)"/>
+            <!-- META 5% → 16 -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#16c784" stroke-width="18"
+              stroke-dasharray="16 298" stroke-dashoffset="-289" transform="rotate(-90 65 65)"/>
+            <!-- Cash 3% → 9 -->
+            <circle cx="65" cy="65" r="50" fill="none" stroke="#8b949e" stroke-width="18"
+              stroke-dasharray="9 305" stroke-dashoffset="-305" transform="rotate(-90 65 65)"/>
+            <text x="65" y="61" text-anchor="middle" fill="#e6edf3" font-size="13" font-weight="700" font-family="sans-serif">93.6%</text>
+            <text x="65" y="75" text-anchor="middle" fill="#8b949e" font-size="9" font-family="sans-serif">Invested</text>
+          </svg>
+          <div class="donut-legend">
+            <div class="legend-row"><div class="legend-dot" style="background:#58a6ff;"></div><span class="legend-name">NVDA</span><span class="legend-pct">28%</span></div>
+            <div class="legend-row"><div class="legend-dot" style="background:#3fb950;"></div><span class="legend-name">MSFT</span><span class="legend-pct">22%</span></div>
+            <div class="legend-row"><div class="legend-dot" style="background:#bc8cff;"></div><span class="legend-name">AAPL</span><span class="legend-pct">18%</span></div>
+            <div class="legend-row"><div class="legend-dot" style="background:#d29922;"></div><span class="legend-name">GOOGL</span><span class="legend-pct">14%</span></div>
+            <div class="legend-row"><div class="legend-dot" style="background:#f85149;"></div><span class="legend-name">AMZN</span><span class="legend-pct">10%</span></div>
+            <div class="legend-row"><div class="legend-dot" style="background:#16c784;"></div><span class="legend-name">META</span><span class="legend-pct">5%</span></div>
+            <div class="legend-row"><div class="legend-dot" style="background:#8b949e;"></div><span class="legend-name">Cash</span><span class="legend-pct">3%</span></div>
+          </div>
+        </div>
+        <div style="margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border);">
+          <div style="display:flex;justify-content:space-between;font-size:.75rem;margin-bottom:.4rem;">
+            <span style="color:var(--muted);">Tech Concentration</span>
+            <span style="font-weight:600;color:var(--yellow);">97%</span>
+          </div>
+          <div class="mini-bar-bg" style="height:6px;"><div class="mini-bar-fill" style="width:97%;background:var(--yellow);"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:.75rem;margin-top:.7rem;margin-bottom:.4rem;">
+            <span style="color:var(--muted);">Beta (vs S&amp;P 500)</span>
+            <span style="font-weight:600;">1.32</span>
+          </div>
+          <div class="mini-bar-bg" style="height:6px;"><div class="mini-bar-fill" style="width:66%;background:var(--blue);"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-row -->
+
+  <!-- BOTTOM ROW: Holdings + Movers + Transactions -->
+  <div class="bottom-row">
+
+    <!-- HOLDINGS TABLE -->
+    <div class="card">
+      <div class="card-hd">
+        <h2>Holdings</h2>
+        <span class="pill pill-green">Market Open</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Mkt Value</th>
+            <th>Day Chg</th>
+            <th>Total P&amp;L</th>
+            <th>Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ticker-badge">NVDA</span><br><span class="company-name">Nvidia Corp.</span></td>
+            <td>$1,087.40</td>
+            <td>73</td>
+            <td>$79,380</td>
+            <td class="up">+2.14%</td>
+            <td class="up">+$31,200</td>
+            <td>
+              <div class="mini-bar-wrap">
+                <span>28%</span>
+                <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:100%;background:#58a6ff;"></div></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="ticker-badge">MSFT</span><br><span class="company-name">Microsoft Corp.</span></td>
+            <td>$448.20</td>
+            <td>140</td>
+            <td>$62,748</td>
+            <td class="up">+0.87%</td>
+            <td class="up">+$18,440</td>
+            <td>
+              <div class="mini-bar-wrap">
+                <span>22%</span>
+                <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:79%;background:#3fb950;"></div></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="ticker-badge">AAPL</span><br><span class="company-name">Apple Inc.</span></td>
+            <td>$214.80</td>
+            <td>235</td>
+            <td>$50,478</td>
+            <td class="dn">-0.32%</td>
+            <td class="up">+$9,880</td>
+            <td>
+              <div class="mini-bar-wrap">
+                <span>18%</span>
+                <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:64%;background:#bc8cff;"></div></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="ticker-badge">GOOGL</span><br><span class="company-name">Alphabet Inc.</span></td>
+            <td>$182.60</td>
+            <td>218</td>
+            <td>$39,807</td>
+            <td class="up">+1.05%</td>
+            <td class="up">+$7,630</td>
+            <td>
+              <div class="mini-bar-wrap">
+                <span>14%</span>
+                <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:50%;background:#d29922;"></div></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="ticker-badge">AMZN</span><br><span class="company-name">Amazon.com Inc.</span></td>
+            <td>$211.50</td>
+            <td>134</td>
+            <td>$28,341</td>
+            <td class="dn">-0.65%</td>
+            <td class="up">+$4,120</td>
+            <td>
+              <div class="mini-bar-wrap">
+                <span>10%</span>
+                <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:36%;background:#f85149;"></div></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="ticker-badge">META</span><br><span class="company-name">Meta Platforms</span></td>
+            <td>$582.30</td>
+            <td>24</td>
+            <td>$13,975</td>
+            <td class="up">+1.42%</td>
+            <td class="up">+$1,240</td>
+            <td>
+              <div class="mini-bar-wrap">
+                <span>5%</span>
+                <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:18%;background:#16c784;"></div></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MARKET MOVERS -->
+    <div class="card">
+      <div class="card-hd">
+        <h2>Market Movers</h2>
+        <span class="pill pill-blue">Today</span>
+      </div>
+      <div class="card-body">
+
+        <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Top Gainers</div>
+
+        <div class="mover-row">
+          <div class="mover-left">
+            <div class="mover-icon" style="background:rgba(63,185,80,.15);">🚀</div>
+            <div><div class="mover-ticker">SMCI</div><div class="mover-name">Super Micro Computer</div></div>
+          </div>
+          <div class="mover-price"><div class="p">$874.20</div><div class="chg up">▲ +8.34%</div></div>
+        </div>
+
+        <div class="mover-row">
+          <div class="mover-left">
+            <div class="mover-icon" style="background:rgba(63,185,80,.15);">📡</div>
+            <div><div class="mover-ticker">ARM</div><div class="mover-name">Arm Holdings</div></div>
+          </div>
+          <div class="mover-price"><div class="p">$168.50</div><div class="chg up">▲ +5.72%</div></div>
+        </div>
+
+        <div class="mover-row">
+          <div class="mover-left">
+            <div class="mover-icon" style="background:rgba(63,185,80,.15);">⚡</div>
+            <div><div class="mover-ticker">MSTR</div><div class="mover-name">MicroStrategy</div></div>
+          </div>
+          <div class="mover-price"><div class="p">$1,640.00</div><div class="chg up">▲ +4.18%</div></div>
+        </div>
+
+        <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.9rem 0 .5rem;">Top Losers</div>
+
+        <div class="mover-row">
+          <div class="mover-left">
+            <div class="mover-icon" style="background:rgba(248,81,73,.12);">📉</div>
+            <div><div class="mover-ticker">INTC</div><div class="mover-name">Intel Corporation</div></div>
+          </div>
+          <div class="mover-price"><div class="p">$21.40</div><div class="chg dn">▼ -4.82%</div></div>
+        </div>
+
+        <div class="mover-row">
+          <div class="mover-left">
+            <div class="mover-icon" style="background:rgba(248,81,73,.12);">🛢️</div>
+            <div><div class="mover-ticker">XOM</div><div class="mover-name">Exxon Mobil</div></div>
+          </div>
+          <div class="mover-price"><div class="p">$108.70</div><div class="chg dn">▼ -2.94%</div></div>
+        </div>
+
+        <div class="mover-row">
+          <div class="mover-left">
+            <div class="mover-icon" style="background:rgba(248,81,73,.12);">🏦</div>
+            <div><div class="mover-ticker">WFC</div><div class="mover-name">Wells Fargo</div></div>
+          </div>
+          <div class="mover-price"><div class="p">$62.15</div><div class="chg dn">▼ -1.76%</div></div>
+        </div>
+
+        <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.9rem 0 .5rem;">Indices</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+          <div style="background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.2);border-radius:6px;padding:.55rem .7rem;">
+            <div style="font-size:.7rem;color:var(--muted);">S&amp;P 500</div>
+            <div style="font-weight:700;font-size:.9rem;">5,924</div>
+            <div style="font-size:.75rem;" class="up">▲ +0.84%</div>
+          </div>
+          <div style="background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.2);border-radius:6px;padding:.55rem .7rem;">
+            <div style="font-size:.7rem;color:var(--muted);">NASDAQ</div>
+            <div style="font-weight:700;font-size:.9rem;">19,341</div>
+            <div style="font-size:.75rem;" class="up">▲ +1.21%</div>
+          </div>
+          <div style="background:rgba(248,81,73,.08);border:1px solid rgba(248,81,73,.2);border-radius:6px;padding:.55rem .7rem;">
+            <div style="font-size:.7rem;color:var(--muted);">VIX</div>
+            <div style="font-weight:700;font-size:.9rem;">14.82</div>
+            <div style="font-size:.75rem;" class="dn">▼ -3.40%</div>
+          </div>
+          <div style="background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.2);border-radius:6px;padding:.55rem .7rem;">
+            <div style="font-size:.7rem;color:var(--muted);">10Y Yield</div>
+            <div style="font-weight:700;font-size:.9rem;">4.38%</div>
+            <div style="font-size:.75rem;" class="up">▲ +0.02</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RECENT TRANSACTIONS + NEWS -->
+    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+
+      <div class="card">
+        <div class="card-hd">
+          <h2>Recent Transactions</h2>
+          <span style="font-size:.75rem;color:var(--blue);cursor:pointer;">View all →</span>
+        </div>
+        <div class="card-body">
+
+          <div class="tx-row">
+            <div class="tx-icon tx-buy">📈</div>
+            <div class="tx-body">
+              <div class="t1">Bought NVDA × 10</div>
+              <div class="t2">@ $1,042.00 · Market order</div>
+            </div>
+            <div class="tx-right">
+              <div class="amt dn">-$10,420</div>
+              <div class="dt">May 20</div>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon tx-div">💰</div>
+            <div class="tx-body">
+              <div class="t1">Dividend — MSFT</div>
+              <div class="t2">$0.75/share · 140 shares</div>
+            </div>
+            <div class="tx-right">
+              <div class="amt up">+$105</div>
+              <div class="dt">May 15</div>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon tx-sell">📉</div>
+            <div class="tx-body">
+              <div class="t1">Sold INTC × 200</div>
+              <div class="t2">@ $24.10 · Stop-loss</div>
+            </div>
+            <div class="tx-right">
+              <div class="amt up">+$4,820</div>
+              <div class="dt">May 12</div>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon tx-buy">📈</div>
+            <div class="tx-body">
+              <div class="t1">Bought META × 8</div>
+              <div class="t2">@ $558.40 · Limit order</div>
+            </div>
+            <div class="tx-right">
+              <div class="amt dn">-$4,467</div>
+              <div class="dt">May 8</div>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon tx-div">💰</div>
+            <div class="tx-body">
+              <div class="t1">Dividend — AAPL</div>
+              <div class="t2">$0.25/share · 235 shares</div>
+            </div>
+            <div class="tx-right">
+              <div class="amt up">+$58.75</div>
+              <div class="dt">May 5</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-hd">
+          <h2>Market News</h2>
+          <span class="pill pill-blue">Live</span>
+        </div>
+        <div class="card-body">
+
+          <div class="news-item">
+            <div class="ntag">NVDA · Earnings</div>
+            <h4>Nvidia Q1 FY2026 EPS Beats by $0.44; Data Center Revenue Up 78% YoY</h4>
+            <div class="nmeta">Bloomberg · 2h ago</div>
+          </div>
+
+          <div class="news-item">
+            <div class="ntag">Fed · Macro</div>
+            <h4>Fed Minutes Signal Two Rate Cuts in 2025 as Inflation Nears 2% Target</h4>
+            <div class="nmeta">Reuters · 4h ago</div>
+          </div>
+
+          <div class="news-item">
+            <div class="ntag">AAPL · Product</div>
+            <h4>Apple Intelligence 2.0 Ships — Analysts Raise iPhone 17 Super-Cycle Forecasts</h4>
+            <div class="nmeta">CNBC · 6h ago</div>
+          </div>
+
+          <div class="news-item">
+            <div class="ntag">MSFT · AI</div>
+            <h4>Microsoft Copilot Reaches 400M Monthly Active Users — Azure AI Revenue Doubles</h4>
+            <div class="nmeta">WSJ · 8h ago</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /bottom-row -->
+
+</div><!-- /page -->
+
+<script>
+  // Live clock
+  function tick() {
+    const now = new Date();
+    const h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    const hh = (h % 12 || 12).toString().padStart(2,'0');
+    const mm = m.toString().padStart(2,'0');
+    const ss = s.toString().padStart(2,'0');
+    document.getElementById('clock').textContent = `${hh}:${mm}:${ss} ${ampm}`;
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Period tab switching
+  document.querySelectorAll('.period-tabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.period-tabs').querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Simulate live price flicker every 4s
+  const cells = document.querySelectorAll('tbody td:nth-child(2)');
+  setInterval(() => {
+    cells.forEach(cell => {
+      const base = parseFloat(cell.textContent.replace('$','').replace(',',''));
+      const delta = (Math.random() - 0.5) * 2;
+      const newVal = (base + delta).toFixed(2);
+      cell.textContent = '$' + parseFloat(newVal).toLocaleString('en-US', {minimumFractionDigits:2});
+      cell.style.color = delta >= 0 ? 'var(--green)' : 'var(--red)';
+      setTimeout(() => cell.style.color = '', 600);
+    });
+  }, 4000);
+</script>
+
+</body>
+</html>
