@@ -1,0 +1,18 @@
+{
+  "name": "mictest12",
+  "version": "1.0.0",
+  "description": "CSV to JSON parser with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/papaparse": "^5.3.14",
+    "typescript": "^5.4.5"
+  }
+}
