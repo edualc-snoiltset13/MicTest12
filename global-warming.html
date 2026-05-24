@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Warming Planet — Understanding the Climate Crisis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(220, 80, 30, 0.85), rgba(180, 40, 20, 0.85)),
+                        url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600') center/cover;
+            color: white;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: -1px;
+        }
+
+        .hero p.tagline {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            max-width: 700px;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: #fff;
+            color: #c0392b;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        nav .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #1a252f;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #e74c3c;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            opacity: 0.85;
+        }
+
+        /* Main Content */
+        section.content {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a252f;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #e74c3c;
+            margin-top: 0.5rem;
+        }
+
+        section.content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        /* Causes Grid */
+        .causes {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .causes-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .causes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cause-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #e74c3c;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cause-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .cause-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cause-card h3 {
+            color: #1a252f;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Action Section */
+        .action {
+            background: linear-gradient(135deg, #16a085, #27ae60);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .action h2 {
+            color: white;
+        }
+
+        .action h2::after {
+            background: white;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .action-list {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .action-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .action-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d1418;
+            color: #95a5a6;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <nav>
+            <div class="logo">CLIMATE.NOW</div>
+            <ul>
+                <li><a href="#causes">Causes</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#action">Take Action</a></li>
+            </ul>
+        </nav>
+
+        <h1>Our Planet is Warming</h1>
+        <p class="tagline">Earth's climate is changing faster than at any point in modern history. Understanding what's happening — and acting on it — has never been more urgent.</p>
+        <a href="#action" class="cta-button">Take Action Today</a>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="number">1.2°C</span>
+                <div class="label">Average global temperature rise since 1880</div>
+            </div>
+            <div class="stat-card">
+                <span class="number">421</span>
+                <div class="label">Parts per million of CO₂ in the atmosphere</div>
+            </div>
+            <div class="stat-card">
+                <span class="number">10</span>
+                <div class="label">Warmest years on record all occurred in the last decade</div>
+            </div>
+            <div class="stat-card">
+                <span class="number">3.4mm</span>
+                <div class="label">Annual sea level rise — and accelerating</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="impact">
+        <h2>What is Global Warming?</h2>
+        <p>Global warming refers to the long-term heating of Earth's climate system observed since the pre-industrial period, primarily due to human activities — especially the burning of fossil fuels — which raises heat-trapping greenhouse gas levels in the atmosphere.</p>
+        <p>The effects are no longer a distant warning. Heatwaves are more intense, wildfires burn longer, hurricanes carry more rain, glaciers are retreating, and coastal communities face existential threat from rising seas. Ecosystems that took millennia to evolve are collapsing in a span of decades.</p>
+    </section>
+
+    <section class="causes" id="causes">
+        <div class="causes-inner">
+            <h2>What's Driving It?</h2>
+            <p>Global warming is driven primarily by human-caused emissions of greenhouse gases. Here are the largest contributors:</p>
+
+            <div class="causes-grid">
+                <div class="cause-card">
+                    <div class="icon">⛽</div>
+                    <h3>Fossil Fuels</h3>
+                    <p>Burning coal, oil, and gas for electricity, transport, and industry releases enormous amounts of CO₂ — the single largest driver of warming.</p>
+                </div>
+                <div class="cause-card">
+                    <div class="icon">🌳</div>
+                    <h3>Deforestation</h3>
+                    <p>Forests absorb CO₂. When they're cleared for agriculture or development, that stored carbon is released and future absorption is lost.</p>
+                </div>
+                <div class="cause-card">
+                    <div class="icon">🐄</div>
+                    <h3>Agriculture</h3>
+                    <p>Livestock produce methane, a greenhouse gas over 25 times more potent than CO₂. Fertilizers release nitrous oxide, another powerful warmer.</p>
+                </div>
+                <div class="cause-card">
+                    <div class="icon">🏭</div>
+                    <h3>Industry</h3>
+                    <p>Cement, steel, and chemical production are carbon-intensive. Industrial processes account for roughly a quarter of global emissions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="action" id="action">
+        <h2 style="display:inline-block;">What You Can Do</h2>
+        <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.15rem;">Individual choices matter — but systemic change matters more. Here's where you can make a difference:</p>
+
+        <div class="action-list">
+            <div class="action-item">
+                <h4>🚲 Rethink Transport</h4>
+                <p>Walk, bike, use public transit, or switch to an electric vehicle when possible.</p>
+            </div>
+            <div class="action-item">
+                <h4>🥗 Eat Less Meat</h4>
+                <p>Reducing meat consumption — especially beef — significantly lowers your carbon footprint.</p>
+            </div>
+            <div class="action-item">
+                <h4>⚡ Save Energy</h4>
+                <p>Better insulation, efficient appliances, and renewable electricity tariffs add up.</p>
+            </div>
+            <div class="action-item">
+                <h4>🗳️ Vote & Advocate</h4>
+                <p>Support climate-conscious leaders and policies. Collective action drives systemic change.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Data sourced from NASA, IPCC, and NOAA.</p>
+        <p>This page was created for educational purposes. Learn more at <a href="https://climate.nasa.gov">climate.nasa.gov</a>.</p>
+    </footer>
+
+</body>
+</html>
