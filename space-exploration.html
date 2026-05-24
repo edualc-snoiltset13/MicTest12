@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Exploration — Humanity's Greatest Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #020409;
+      --surface:  #06101D;
+      --surface2: #0A1728;
+      --border:   rgba(255,255,255,0.07);
+      --purple:   #7C3AED;
+      --purple-l: #A78BFA;
+      --blue:     #2563EB;
+      --blue-l:   #60A5FA;
+      --gold:     #F59E0B;
+      --gold-l:   #FCD34D;
+      --text:     #F8FAFC;
+      --text-2:   #94A3B8;
+      --text-3:   #475569;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITIES ─────────────────────────────── */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+    .section    { padding: 6rem 0; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--purple-l);
+      margin-bottom: 1rem;
+    }
+    .eyebrow::before {
+      content: ''; width: 22px; height: 2px; background: var(--purple);
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 800; line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--text-2); font-weight: 300;
+      font-size: 1.05rem; line-height: 1.8; max-width: 600px;
+    }
+    .section-header { margin-bottom: 3.5rem; }
+
+    /* scroll fade-in */
+    .fi { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .fi.on { opacity: 1; transform: none; }
+    .fi-d1 { transition-delay: .10s; }
+    .fi-d2 { transition-delay: .20s; }
+    .fi-d3 { transition-delay: .30s; }
+    .fi-d4 { transition-delay: .40s; }
+
+    /* ── HERO ───────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 5rem 1.5rem;
+    }
+
+    /* deep-space gradient */
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50%  0%,  rgba(124,58,237,.22) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 15%  30%, rgba(37,99,235,.14)  0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85%  25%, rgba(124,58,237,.10) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(14,9,36,.9)    0%, transparent 70%),
+        linear-gradient(180deg, #020409 0%, #060C1C 60%, #020409 100%);
+    }
+
+    /* star field via box-shadow on ::before pseudo */
+    .hero-stars {
+      position: absolute; inset: 0; pointer-events: none;
+      /* Layers of star dots rendered with background-image radial-gradients */
+      background-image:
+        /* tiny stars */
+        radial-gradient(1px 1px at  5% 12%, rgba(255,255,255,.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10%  5%, rgba(255,255,255,.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 18% 22%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25%  8%, rgba(255,255,255,.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 32% 18%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40%  3%, rgba(255,255,255,.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 48% 14%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55%  9%, rgba(255,255,255,.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 63% 20%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70%  6%, rgba(255,255,255,.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85%  4%, rgba(255,255,255,.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 92% 24%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 96% 11%, rgba(255,255,255,.6) 0%, transparent 100%),
+        /* mid stars */
+        radial-gradient(1.3px 1.3px at  8% 40%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 22% 35%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 35% 45%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 50% 38%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 65% 42%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 80% 36%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 93% 48%, rgba(255,255,255,.5) 0%, transparent 100%),
+        /* golden stars */
+        radial-gradient(1.5px 1.5px at 30% 28%, rgba(252,211,77,.8) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 68% 32%, rgba(167,139,250,.7) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 15% 55%, rgba(252,211,77,.6) 0%, transparent 100%),
+        radial-gradient(2px   2px   at 88% 20%, rgba(167,139,250,.8) 0%, transparent 100%);
+    }
+
+    /* slow rotation nebula blobs */
+    .nebula {
+      position: absolute; border-radius: 50%; filter: blur(80px);
+      pointer-events: none; animation: nebula-drift 30s ease-in-out infinite alternate;
+    }
+    .nebula-1 {
+      width: 500px; height: 300px; top: -60px; left: -80px;
+      background: radial-gradient(ellipse, rgba(124,58,237,.18), transparent 70%);
+    }
+    .nebula-2 {
+      width: 400px; height: 400px; top: 10%; right: -100px;
+      background: radial-gradient(ellipse, rgba(37,99,235,.14), transparent 70%);
+      animation-delay: -15s;
+    }
+    @keyframes nebula-drift {
+      from { transform: translateY(0) scale(1);    opacity: .7; }
+      to   { transform: translateY(30px) scale(1.1); opacity: 1; }
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 860px;
+      animation: rise .9s ease-out both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,58,237,.14);
+      border: 1px solid rgba(124,58,237,.35);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: .72rem; font-weight: 700;
+      color: var(--purple-l); letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .pill-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--purple-l);
+      animation: dot-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes dot-pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .3; transform: scale(1.7); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7.5vw, 5.8rem);
+      font-weight: 900; line-height: 1.04;
+      letter-spacing: -0.035em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #A78BFA 10%, #7C3AED 50%, #60A5FA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(.95rem, 2.3vw, 1.2rem);
+      font-weight: 300; color: var(--text-2);
+      max-width: 620px; margin: 0 auto 3rem;
+      line-height: 1.85;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+
+    /* orbit ring CTA buttons */
+    .hero-ctas {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #7C3AED, #6D28D9);
+      color: #fff; font-weight: 700; font-size: .92rem;
+      padding: 13px 28px; border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(124,58,237,.38);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 38px rgba(124,58,237,.52); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(167,139,250,.35);
+      color: var(--purple-l); font-weight: 600; font-size: .92rem;
+      padding: 13px 28px; border-radius: 100px;
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: var(--purple-l); background: rgba(124,58,237,.1); }
+
+    /* scroll cue */
+    .scroll-cue {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: var(--text-3); font-size: .68rem; letter-spacing: .12em;
+      text-transform: uppercase;
+      animation: rise .9s .6s ease-out both;
+    }
+    .scroll-caret {
+      width: 16px; height: 16px;
+      border-right: 2px solid var(--purple);
+      border-bottom: 2px solid var(--purple);
+      transform: rotate(45deg);
+      animation: caret-bounce 2.4s ease-in-out infinite;
+    }
+    @keyframes caret-bounce {
+      0%,100% { transform: rotate(45deg) translateY(0);   opacity: .3; }
+      50%      { transform: rotate(45deg) translateY(7px); opacity: 1; }
+    }
+
+    /* ── STATS BAND ──────────────────────────────── */
+    .stats-band {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-cell {
+      padding: 2.75rem 1.5rem;
+      border-right: 1px solid var(--border);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,.06), transparent 70%);
+      opacity: 0; transition: opacity .4s;
+    }
+    .stat-cell:hover::before { opacity: 1; }
+    .stat-icon  { font-size: 1.75rem; display: block; margin-bottom: .75rem; }
+    .stat-value {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 900; line-height: 1;
+      letter-spacing: -0.025em; margin-bottom: .4rem;
+    }
+    .c-purple { background: linear-gradient(135deg,#A78BFA,#7C3AED); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .c-blue   { background: linear-gradient(135deg,#93C5FD,#2563EB); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .c-gold   { background: linear-gradient(135deg,#FCD34D,#F59E0B); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .c-teal   { background: linear-gradient(135deg,#5EEAD4,#0D9488); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .stat-label { color: var(--text-2); font-size: .82rem; line-height: 1.45; }
+
+    /* ── TIMELINE ────────────────────────────────── */
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    /* vertical line */
+    .timeline::before {
+      content: '';
+      position: absolute; top: 0; bottom: 0; left: 0;
+      width: 2px;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(124,58,237,.6) 8%,
+        rgba(124,58,237,.6) 92%,
+        transparent 100%);
+    }
+    .tl-item {
+      position: relative;
+      padding: 0 0 3rem 2rem;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    /* dot on the line */
+    .tl-item::before {
+      content: '';
+      position: absolute; left: -2.6rem; top: .35rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--purple);
+      box-shadow: 0 0 10px rgba(124,58,237,.5);
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .tl-item:hover::before {
+      border-color: var(--purple-l);
+      box-shadow: 0 0 18px rgba(167,139,250,.7);
+    }
+    /* connector to dot */
+    .tl-item::after {
+      content: '';
+      position: absolute; left: -2.03rem; top: .96rem;
+      width: 1.6rem; height: 1px;
+      background: linear-gradient(90deg, rgba(124,58,237,.4), rgba(124,58,237,.1));
+    }
+    .tl-year {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      color: var(--purple-l); text-transform: uppercase;
+      margin-bottom: .45rem;
+    }
+    .tl-mission {
+      font-size: 1.1rem; font-weight: 700; margin-bottom: .45rem;
+    }
+    .tl-body {
+      color: var(--text-2); font-size: .9rem; line-height: 1.7;
+      max-width: 560px;
+    }
+    .tl-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: .65rem;
+      padding: 3px 10px; border-radius: 100px;
+      font-size: .7rem; font-weight: 600; letter-spacing: .06em;
+    }
+    .badge-ussr  { background: rgba(239,68,68,.1);  border: 1px solid rgba(239,68,68,.25);  color: #F87171; }
+    .badge-usa   { background: rgba(37,99,235,.1);  border: 1px solid rgba(37,99,235,.25);  color: #60A5FA; }
+    .badge-joint { background: rgba(20,184,166,.1); border: 1px solid rgba(20,184,166,.25); color: #5EEAD4; }
+    .badge-priv  { background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.25); color: #FCD34D; }
+    .badge-esa   { background: rgba(124,58,237,.1); border: 1px solid rgba(124,58,237,.25); color: #A78BFA; }
+
+    /* two-column timeline layout */
+    .tl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 5rem;
+    }
+    @media (max-width: 768px) {
+      .tl-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── CTA ─────────────────────────────────────── */
+    .cta-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .cta-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .cta-inner .section-desc { margin: 0 auto; }
+    }
+    .cta-panel {
+      background: var(--surface2);
+      border: 1px solid rgba(124,58,237,.2);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+    .cta-panel h3 {
+      font-size: 1.4rem; font-weight: 800;
+      margin-bottom: 1.5rem; line-height: 1.2;
+    }
+    .cta-links-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: .65rem;
+    }
+    .cta-links-list li a {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .85rem 1rem;
+      background: rgba(124,58,237,.05);
+      border: 1px solid rgba(124,58,237,.12);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-2); font-size: .88rem;
+      transition: border-color .25s, background .25s, color .25s;
+    }
+    .cta-links-list li a:hover {
+      border-color: rgba(167,139,250,.4);
+      background: rgba(124,58,237,.1);
+      color: var(--text);
+    }
+    .cta-links-list .link-icon {
+      font-size: 1.1rem; width: 28px; text-align: center; flex-shrink: 0;
+    }
+    .cta-links-list .link-label { font-weight: 600; display: block; margin-bottom: 1px; }
+    .cta-links-list .link-desc  { font-size: .76rem; color: var(--text-3); }
+
+    /* ── ORBIT ANIMATION (decorative) ──────────────── */
+    .orbit-wrap {
+      position: relative; margin: 0 auto;
+      width: 260px; height: 260px;
+    }
+    .orbit-core {
+      position: absolute; inset: 50%; transform: translate(-50%,-50%);
+      width: 64px; height: 64px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,.7), rgba(37,99,235,.5));
+      box-shadow: 0 0 40px rgba(124,58,237,.5), 0 0 80px rgba(37,99,235,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .orbit-ring {
+      position: absolute; inset: 50%; border-radius: 50%;
+      border: 1px dashed rgba(167,139,250,.25);
+    }
+    .orbit-ring-1 {
+      width: 130px; height: 130px;
+      transform: translate(-50%,-50%);
+      animation: orbit-spin 12s linear infinite;
+    }
+    .orbit-ring-2 {
+      width: 210px; height: 210px;
+      transform: translate(-50%,-50%);
+      animation: orbit-spin 20s linear infinite reverse;
+    }
+    .orbit-dot {
+      position: absolute; width: 10px; height: 10px; border-radius: 50%;
+      top: -5px; left: 50%; transform: translateX(-50%);
+    }
+    .dot-1 { background: var(--gold-l); box-shadow: 0 0 8px var(--gold); }
+    .dot-2 { background: var(--blue-l); box-shadow: 0 0 8px var(--blue); }
+    @keyframes orbit-spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: #010307;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-3);
+      font-size: .82rem; line-height: 1.7;
+    }
+    footer strong { color: var(--text-2); }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 900px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell  { border-bottom: 1px solid var(--border); }
+      .stat-cell:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 500px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-cell  { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stars"></div>
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-pill">
+      <span class="pill-dot"></span>
+      Humanity's Greatest Journey
+    </div>
+
+    <h1>
+      We Were Born<br/>
+      to <em>Reach the Stars</em>
+    </h1>
+
+    <p class="hero-sub">
+      In just <strong>67 years</strong> we went from a rusting satellite orbiting at
+      215 km to a telescope capturing light from the edge of the observable universe —
+      <strong>13.4 billion light-years away</strong>. The story of space exploration is
+      the story of what humans do when curiosity overcomes fear.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#timeline" class="btn-primary">
+        <span>Explore the Timeline</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#explore" class="btn-outline">
+        Key Facts
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2.5 7h9M7 2.5l4.5 4.5L7 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-caret"></div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     KEY FACTS & STATS
+════════════════════════════════════════ -->
+<div id="explore" class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+
+      <div class="stat-cell fi">
+        <span class="stat-icon">🌌</span>
+        <div class="stat-value c-purple">93 Bn</div>
+        <div class="stat-label">Light-years across<br/>the observable universe</div>
+      </div>
+
+      <div class="stat-cell fi fi-d1">
+        <span class="stat-icon">🪐</span>
+        <div class="stat-value c-blue">5,600+</div>
+        <div class="stat-label">Confirmed exoplanets<br/>found beyond our solar system</div>
+      </div>
+
+      <div class="stat-cell fi fi-d2">
+        <span class="stat-icon">🧑‍🚀</span>
+        <div class="stat-value c-gold">650+</div>
+        <div class="stat-label">Humans have<br/>travelled to space</div>
+      </div>
+
+      <div class="stat-cell fi fi-d3">
+        <span class="stat-icon">⏱️</span>
+        <div class="stat-value c-teal">8 m 20 s</div>
+        <div class="stat-label">Time for sunlight<br/>to reach Earth</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     MISSION TIMELINE
+════════════════════════════════════════ -->
+<section id="timeline" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow fi">Mission Timeline</div>
+      <h2 class="section-title fi fi-d1">
+        From Sputnik<br/>to the Webb Telescope
+      </h2>
+      <p class="section-desc fi fi-d2">
+        Seven decades of missions that redefined what it means to be human —
+        and what it means to be small.
+      </p>
+    </div>
+
+    <div class="tl-grid">
+
+      <!-- COLUMN 1 -->
+      <div class="timeline fi">
+
+        <div class="tl-item">
+          <span class="tl-year">1957</span>
+          <div class="tl-mission">Sputnik 1 — The First Satellite</div>
+          <p class="tl-body">A 83 kg aluminium sphere launched by the Soviet Union on 4 October 1957. Its radio beeps, audible by amateur operators worldwide, announced the dawn of the Space Age.</p>
+          <span class="tl-badge badge-ussr">🇷🇺 USSR</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1961</span>
+          <div class="tl-mission">Vostok 1 — First Human in Space</div>
+          <p class="tl-body">Yuri Gagarin completed one orbit of Earth in 108 minutes. "The Earth is blue," he reported. It remains one of the most significant moments in human history.</p>
+          <span class="tl-badge badge-ussr">🇷🇺 USSR</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1969</span>
+          <div class="tl-mission">Apollo 11 — Moon Landing</div>
+          <p class="tl-body">Neil Armstrong and Buzz Aldrin became the first humans to set foot on another world. An estimated 530 million people watched on television. "One giant leap for mankind."</p>
+          <span class="tl-badge badge-usa">🇺🇸 NASA</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1990</span>
+          <div class="tl-mission">Hubble Space Telescope</div>
+          <p class="tl-body">Deployed into low Earth orbit, Hubble fundamentally changed our understanding of the universe — measuring the age of the cosmos, discovering dark energy, and photographing distant galaxies.</p>
+          <span class="tl-badge badge-usa">🇺🇸 NASA / ESA</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2004</span>
+          <div class="tl-mission">Mars Rovers — Spirit &amp; Opportunity</div>
+          <p class="tl-body">Designed for 90-day missions, Opportunity survived for 15 years. Together they confirmed that liquid water once flowed on Mars, fundamentally changing the search for extraterrestrial life.</p>
+          <span class="tl-badge badge-usa">🇺🇸 NASA / JPL</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2015</span>
+          <div class="tl-mission">New Horizons — Pluto Flyby</div>
+          <p class="tl-body">After a 9-year, 5-billion km journey, New Horizons revealed Pluto as a complex world with mountains of ice and a vast nitrogen heart. Every pixel of those images took 4.5 hours to arrive at Earth.</p>
+          <span class="tl-badge badge-usa">🇺🇸 NASA</span>
+        </div>
+
+      </div>
+
+      <!-- COLUMN 2 -->
+      <div class="timeline fi fi-d2">
+
+        <div class="tl-item">
+          <span class="tl-year">1971</span>
+          <div class="tl-mission">Salyut 1 — First Space Station</div>
+          <p class="tl-body">The Soviet Union launched the first crewed space station. It proved humans could live and work in orbit for extended periods — the precursor to everything that followed.</p>
+          <span class="tl-badge badge-ussr">🇷🇺 USSR</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1998</span>
+          <div class="tl-mission">ISS — Continuous Human Presence</div>
+          <p class="tl-body">Construction of the International Space Station began, involving 15 nations. Since November 2000, humans have lived aboard continuously — the longest unbroken human presence off Earth.</p>
+          <span class="tl-badge badge-joint">🌍 15 Nations</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2012</span>
+          <div class="tl-mission">Curiosity — Roving on Mars</div>
+          <p class="tl-body">A car-sized nuclear-powered rover, Curiosity has driven over 30 km across Gale Crater. It confirmed Mars was once habitable — with the right chemistry and liquid water for microbial life.</p>
+          <span class="tl-badge badge-usa">🇺🇸 NASA / JPL</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2020</span>
+          <div class="tl-mission">SpaceX Crew Dragon</div>
+          <p class="tl-body">The first commercially operated crewed spacecraft to reach the ISS marked the beginning of the commercial spaceflight era — making access to orbit a competitive market for the first time.</p>
+          <span class="tl-badge badge-priv">🚀 SpaceX</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2021</span>
+          <div class="tl-mission">James Webb Space Telescope</div>
+          <p class="tl-body">JWST's first deep-field image contained thousands of galaxies in a patch of sky the size of a grain of sand held at arm's length — including light from just 600 million years after the Big Bang.</p>
+          <span class="tl-badge badge-joint">🌍 NASA / ESA / CSA</span>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2024 →</span>
+          <div class="tl-mission">Artemis — Return to the Moon</div>
+          <p class="tl-body">NASA's Artemis programme aims to return humans to the lunar surface for the first time since 1972 — including the first woman and first person of colour to walk on the Moon. Mars follows.</p>
+          <span class="tl-badge badge-usa">🇺🇸 NASA</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     CTA
+════════════════════════════════════════ -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-inner">
+
+      <!-- left: text + orbit animation -->
+      <div>
+        <div class="eyebrow fi">Keep Exploring</div>
+        <h2 class="section-title fi fi-d1">
+          The Universe Is<br/>Waiting for You
+        </h2>
+        <p class="section-desc fi fi-d2" style="margin-bottom: 2.5rem;">
+          Space exploration is no longer reserved for superpowers or astronauts.
+          You can track satellites, process real mission data, and follow humanity's
+          next steps to the Moon and Mars in real time.
+        </p>
+        <!-- orbit illustration -->
+        <div class="orbit-wrap fi fi-d3">
+          <div class="orbit-ring orbit-ring-1">
+            <div class="orbit-dot dot-1"></div>
+          </div>
+          <div class="orbit-ring orbit-ring-2">
+            <div class="orbit-dot dot-2"></div>
+          </div>
+          <div class="orbit-core">🌍</div>
+        </div>
+      </div>
+
+      <!-- right: link panel -->
+      <div class="cta-panel fi fi-d2">
+        <h3>Start Your Journey</h3>
+        <ul class="cta-links-list">
+          <li>
+            <a href="https://www.nasa.gov" target="_blank" rel="noopener">
+              <span class="link-icon">🚀</span>
+              <div>
+                <span class="link-label">NASA.gov</span>
+                <span class="link-desc">Mission news, live streams, and open data from 70+ years of exploration</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://esahubble.org" target="_blank" rel="noopener">
+              <span class="link-icon">🔭</span>
+              <div>
+                <span class="link-label">ESA Hubble &amp; JWST</span>
+                <span class="link-desc">Stunning deep-field images and the science behind them</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://heavens-above.com" target="_blank" rel="noopener">
+              <span class="link-icon">🛰️</span>
+              <div>
+                <span class="link-label">Heavens-Above</span>
+                <span class="link-desc">Track the ISS and satellites passing over your exact location tonight</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.zooniverse.org/projects?tag=space" target="_blank" rel="noopener">
+              <span class="link-icon">🧬</span>
+              <div>
+                <span class="link-label">Zooniverse — Citizen Science</span>
+                <span class="link-desc">Classify real galaxies, craters, and exoplanet transits from your browser</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <p>
+      <strong>Space Exploration — An Informational Resource</strong><br/>
+      Mission data from NASA, ESA, Roscosmos, and SpaceX public records.
+      Universe statistics from ESA Planck mission and NASA Hubble / JWST teams.<br/>
+      Built to share the wonder of humanity's greatest adventure.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const fiEls = document.querySelectorAll('.fi');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  fiEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
