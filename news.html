@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Daily Pulse &mdash; May 24, 2026</title>
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --paper: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #5c5c5c;
+    --accent: #b91c1c;
+    --accent-soft: #fde8e8;
+    --border: #d9d4c7;
+    --highlight: #fff8e1;
+    --link: #1d4ed8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  header.masthead {
+    background: var(--paper);
+    border-bottom: 3px double var(--ink);
+    padding: 24px 20px 12px;
+    text-align: center;
+  }
+  .masthead .brand {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+  .masthead .tagline {
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .masthead .meta {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    margin-top: 14px;
+    padding-top: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  nav.topics {
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 10px 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav.topics a { color: #fff; text-decoration: none; }
+  nav.topics a:hover { color: #ffb4b4; }
+
+  main {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+  }
+  @media (max-width: 880px) { main { grid-template-columns: 1fr; } }
+
+  section.section {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 24px;
+    margin-bottom: 22px;
+  }
+  section.section h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 28px;
+    margin: 0 0 4px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+  }
+  section.section .kicker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    color: var(--accent);
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom: 8px;
+  }
+  article {
+    border-bottom: 1px dashed var(--border);
+    padding: 16px 0;
+  }
+  article:last-child { border-bottom: none; }
+  article h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+  }
+  article .byline {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  article p { margin: 8px 0; }
+  article .lead { font-size: 16px; }
+  .tag {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 11px;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-right: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  aside .widget {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 16px;
+    margin-bottom: 22px;
+  }
+  aside .widget h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    margin: 0 0 10px;
+    font-size: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+  ul.tight { padding-left: 18px; margin: 6px 0; }
+  ul.tight li { margin-bottom: 6px; }
+
+  .breaking {
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .breaking span.badge {
+    background: #fff;
+    color: var(--accent);
+    padding: 2px 8px;
+    margin-right: 10px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+
+  table.markets {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+  }
+  table.markets th, table.markets td {
+    border-bottom: 1px solid var(--border);
+    padding: 6px 4px;
+    text-align: left;
+  }
+  table.markets td.up { color: #15803d; font-weight: bold; }
+  table.markets td.down { color: var(--accent); font-weight: bold; }
+
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  .weather-grid div { background: var(--highlight); padding: 8px; }
+
+  .pull-quote {
+    border-left: 4px solid var(--accent);
+    margin: 14px 0;
+    padding: 6px 14px;
+    font-style: italic;
+    color: var(--muted);
+    background: var(--highlight);
+  }
+
+  footer {
+    background: var(--ink);
+    color: #ddd;
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 30px;
+  }
+  footer a { color: #ffb4b4; }
+
+  .opinion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 600px) { .opinion-grid { grid-template-columns: 1fr; } }
+  .opinion-card {
+    background: var(--highlight);
+    padding: 14px;
+    border-left: 3px solid var(--ink);
+  }
+  .opinion-card h4 { margin: 0 0 6px; font-size: 17px; }
+  .opinion-card .author { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1 class="brand">The Daily Pulse</h1>
+  <div class="tagline">All the news worth reading, in one place</div>
+  <div class="meta">
+    <span>Sunday, May 24, 2026</span>
+    <span>Vol. XXIV &middot; No. 144</span>
+    <span>Late Edition</span>
+  </div>
+</header>
+
+<nav class="topics">
+  <a href="#world">World</a>
+  <a href="#politics">Politics</a>
+  <a href="#business">Business</a>
+  <a href="#tech">Technology</a>
+  <a href="#science">Science</a>
+  <a href="#health">Health</a>
+  <a href="#climate">Climate</a>
+  <a href="#sports">Sports</a>
+  <a href="#culture">Culture</a>
+  <a href="#opinion">Opinion</a>
+</nav>
+
+<div class="breaking">
+  <span class="badge">BREAKING</span>
+  Global AI Safety Treaty advances to a final vote in Geneva as 47 nations sign on overnight.
+</div>
+
+<main>
+
+  <div class="content">
+
+    <section class="section" id="world">
+      <div class="kicker">World</div>
+      <h2>Across the Globe</h2>
+
+      <article>
+        <span class="tag">Geneva</span><span class="tag">AI Policy</span>
+        <h3>47 nations back landmark AI safety treaty in surprise overnight breakthrough</h3>
+        <div class="byline">By Lena Mwangi &middot; Filed 06:14 GMT</div>
+        <p class="lead">Negotiators in Geneva agreed to a binding framework that requires
+        independent auditing of frontier AI models above a defined compute threshold,
+        with mandatory disclosure of catastrophic-risk evaluations. The accord, two
+        years in the making, will now go to a ratification vote on Tuesday.</p>
+        <p>The treaty draws heavily from the joint U.S.-EU-China working group
+        recommendations published last September. Notably absent from the signatories
+        list are India and Brazil, both of which requested an additional 30-day review.</p>
+        <div class="pull-quote">&ldquo;This is the first time the international community
+          has agreed that the most powerful AI systems require the same level of
+          oversight as nuclear materials.&rdquo; &mdash; UN Secretary-General</div>
+      </article>
+
+      <article>
+        <span class="tag">Brussels</span>
+        <h3>EU finalizes digital euro rollout for Q4</h3>
+        <div class="byline">By Mateo Russo &middot; Filed 09:02 CEST</div>
+        <p>The European Central Bank confirmed today that the digital euro will enter
+        a phased rollout beginning in October, with offline functionality available
+        on launch day. Retailers above &euro;2M in revenue will be required to accept
+        the currency by January 2027.</p>
+      </article>
+
+      <article>
+        <span class="tag">Tokyo</span>
+        <h3>Japan unveils &yen;14 trillion stimulus aimed at semiconductor and robotics manufacturing</h3>
+        <div class="byline">By Hana Sato</div>
+        <p>Prime Minister Asano's cabinet approved a multi-year industrial package that
+        includes targeted tax credits for chip foundries and humanoid-robotics
+        producers. Markets in Asia rallied on the news, with the Nikkei closing up 2.1%.</p>
+      </article>
+
+      <article>
+        <span class="tag">Buenos Aires</span>
+        <h3>Argentina returns to investment-grade status after seven-year climb</h3>
+        <div class="byline">By Sofia Cabral</div>
+        <p>Moody's upgraded Argentina's sovereign rating to Baa3, citing sustained
+        fiscal discipline, falling inflation, and a stabilized peso. The change is
+        expected to lower borrowing costs significantly.</p>
+      </article>
+    </section>
+
+    <section class="section" id="politics">
+      <div class="kicker">Politics</div>
+      <h2>Politics &amp; Policy</h2>
+
+      <article>
+        <span class="tag">U.S. Congress</span>
+        <h3>Bipartisan privacy bill clears Senate committee, heads to floor next week</h3>
+        <div class="byline">By Marcus Pell</div>
+        <p>The American Data Protection Act, which would create a federal baseline for
+        consumer data rights and preempt the patchwork of state laws, passed the
+        Commerce Committee 17&ndash;5. The bill grants individuals a private right of
+        action capped at $5,000 per violation.</p>
+        <p>Industry groups have shifted from opposition to cautious support after
+        provisions on data brokers were softened in committee markup.</p>
+      </article>
+
+      <article>
+        <span class="tag">U.K.</span>
+        <h3>U.K. announces snap review of judicial appointments process</h3>
+        <div class="byline">By Eve Whittingham</div>
+        <p>The Lord Chancellor will lead a six-month review following criticism that
+        the current panel structure has slowed appointments to a near-halt.</p>
+      </article>
+
+      <article>
+        <span class="tag">Election Watch</span>
+        <h3>Polling roundup: tight three-way race in Canada with five weeks to go</h3>
+        <div class="byline">By Daniel Croix</div>
+        <p>Aggregated polling shows the Liberals at 31%, Conservatives at 30%, and
+        NDP at 22% &mdash; the closest spread in a Canadian federal election in over
+        three decades. Quebec remains the decisive battleground.</p>
+      </article>
+    </section>
+
+    <section class="section" id="business">
+      <div class="kicker">Business</div>
+      <h2>Business &amp; Markets</h2>
+
+      <article>
+        <span class="tag">Markets</span>
+        <h3>Wall Street finishes mixed as oil tumbles and tech rallies</h3>
+        <div class="byline">By Priya Anand</div>
+        <p class="lead">The S&amp;P 500 closed up 0.4% on Friday, led by chipmakers
+        and cloud-infrastructure stocks. Brent crude fell to $61.20 a barrel after
+        OPEC+ signaled it would maintain current production targets through Q3.</p>
+        <p>Investors are bracing for the Federal Reserve's June meeting, where
+        Chair Powell is widely expected to hold rates steady but soften forward
+        guidance after last week's mild inflation print.</p>
+      </article>
+
+      <article>
+        <span class="tag">M&amp;A</span>
+        <h3>Stripe acquires identity-verification startup Veridian for $1.9B</h3>
+        <div class="byline">By Owen Becker</div>
+        <p>The all-stock deal positions Stripe to compete more directly with Plaid
+        and Persona in the embedded-finance stack. Veridian's 220 employees will
+        join Stripe's Dublin office.</p>
+      </article>
+
+      <article>
+        <span class="tag">Energy</span>
+        <h3>Largest U.S. battery storage project comes online in Arizona</h3>
+        <div class="byline">By Camille Reyes</div>
+        <p>The 2.4 GWh facility outside Tucson is now feeding the regional grid and
+        is expected to supply roughly 600,000 homes during peak hours. It is the
+        first project under the federal grid-storage incentive program.</p>
+      </article>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="kicker">Technology</div>
+      <h2>Technology</h2>
+
+      <article>
+        <span class="tag">AI</span><span class="tag">Models</span>
+        <h3>Open-source community releases competitive 600B-parameter model under permissive license</h3>
+        <div class="byline">By Jordan Liu</div>
+        <p>A collaboration of European universities and three private labs has
+        published a frontier model whose benchmark scores rival the leading closed
+        systems on reasoning and coding tasks. The release includes training data
+        provenance documentation, which the authors say sets a new standard.</p>
+      </article>
+
+      <article>
+        <span class="tag">Devices</span>
+        <h3>Apple confirms September event; AR glasses widely expected</h3>
+        <div class="byline">By Renee Park</div>
+        <p>Supply-chain leaks point to a lightweight head-worn device with on-board
+        compute for translation, navigation, and contextual messaging. Apple has
+        not commented.</p>
+      </article>
+
+      <article>
+        <span class="tag">Cybersecurity</span>
+        <h3>Major npm package compromise resolved within hours after coordinated disclosure</h3>
+        <div class="byline">By Idris Olawale</div>
+        <p>A widely used logging utility was found to contain a malicious post-install
+        script for less than nine hours before maintainers and registry operators
+        pulled it. Affected enterprises are advised to rotate any credentials touched
+        by build pipelines that ran during the window.</p>
+      </article>
+
+      <article>
+        <span class="tag">Startups</span>
+        <h3>Robotics darling Figmenta raises $410M Series D</h3>
+        <div class="byline">By Sasha Bell</div>
+        <p>The valuation roughly doubles from a year ago. The company plans to scale
+        production of its warehouse-picking robots to 40,000 units annually.</p>
+      </article>
+    </section>
+
+    <section class="section" id="science">
+      <div class="kicker">Science</div>
+      <h2>Science</h2>
+
+      <article>
+        <span class="tag">Space</span>
+        <h3>NASA's lunar South Pole rover transmits first samples analysis</h3>
+        <div class="byline">By Dr. Anika Vance</div>
+        <p>The VIPER-2 mission confirmed water-ice deposits at concentrations higher
+        than previously modeled, a finding that materially improves the feasibility
+        of long-duration crewed missions later this decade.</p>
+      </article>
+
+      <article>
+        <span class="tag">Physics</span>
+        <h3>Room-temperature superconductor claim survives independent replication</h3>
+        <div class="byline">By Henrik Lund</div>
+        <p>Three labs across Germany, South Korea, and Argentina have now reproduced
+        the zero-resistance transition in the copper-sulfur compound first reported
+        in February. Caveats about pressure thresholds remain.</p>
+      </article>
+
+      <article>
+        <span class="tag">Biology</span>
+        <h3>CRISPR cures inherited form of blindness in 8-of-9 patient trial</h3>
+        <div class="byline">By Dr. Eliza Bowman</div>
+        <p>A one-time gene therapy restored functional vision to eight of nine
+        participants with Leber congenital amaurosis, with effects sustained at the
+        18-month follow-up.</p>
+      </article>
+    </section>
+
+    <section class="section" id="health">
+      <div class="kicker">Health</div>
+      <h2>Health</h2>
+
+      <article>
+        <span class="tag">Public Health</span>
+        <h3>WHO declares end to most recent mpox emergency</h3>
+        <div class="byline">By Talia Erez</div>
+        <p>Case counts have fallen below the threshold for nine consecutive weeks,
+        and surveillance networks remain in place. Officials warned that complacency
+        on vaccination access could allow resurgence.</p>
+      </article>
+
+      <article>
+        <span class="tag">Mental Health</span>
+        <h3>Large meta-analysis links short-form video use to attention span decline in teens</h3>
+        <div class="byline">By Jamie Okafor</div>
+        <p>A study aggregating data from 71 trials and 230,000 adolescents found a
+        dose-dependent association between daily short-form video consumption and
+        decreased sustained-attention performance, even when controlling for sleep.</p>
+      </article>
+
+      <article>
+        <span class="tag">Nutrition</span>
+        <h3>FDA finalizes added-sugar labeling rules for restaurant menus</h3>
+        <div class="byline">By Lucas Ferrar</div>
+        <p>Chains with 20 or more locations will be required to disclose added sugars
+        per menu item starting in March 2027.</p>
+      </article>
+    </section>
+
+    <section class="section" id="climate">
+      <div class="kicker">Climate</div>
+      <h2>Climate &amp; Environment</h2>
+
+      <article>
+        <span class="tag">Emissions</span>
+        <h3>Global emissions flat for the second year as renewables overtake coal</h3>
+        <div class="byline">By Robin Avery</div>
+        <p class="lead">The International Energy Agency reported that 2025 ended
+        with effectively zero growth in CO&#8322; emissions despite a 3.1% expansion
+        in the global economy &mdash; a first in modern record-keeping.</p>
+        <p>Solar additions led the shift, with China alone deploying 380 GW of new
+        capacity. Methane reductions in the oil and gas sector exceeded targets in
+        the U.S., Canada, and Norway.</p>
+      </article>
+
+      <article>
+        <span class="tag">Wildlife</span>
+        <h3>North Atlantic right whale population posts first measurable rebound</h3>
+        <div class="byline">By Priya Banerjee</div>
+        <p>Updated census numbers show 372 individuals, up from 358 last year,
+        following expanded shipping-lane restrictions and gear-modification
+        requirements in U.S. and Canadian waters.</p>
+      </article>
+    </section>
+
+    <section class="section" id="sports">
+      <div class="kicker">Sports</div>
+      <h2>Sports</h2>
+
+      <article>
+        <span class="tag">Football</span>
+        <h3>Champions League final set: Real Madrid vs. Bayern Munich in Wembley</h3>
+        <div class="byline">By Tom Larsen</div>
+        <p>Real edged Manchester City 1&ndash;0 on aggregate, while Bayern overturned
+        a two-goal deficit against Inter on Friday. Kickoff is at 8 p.m. BST on June 7.</p>
+      </article>
+
+      <article>
+        <span class="tag">Tennis</span>
+        <h3>French Open: top seeds advance without dropping a set</h3>
+        <div class="byline">By Renata Vega</div>
+        <p>Defending champion Iga &Sacute;wi&aogon;tek dispatched her third-round opponent
+        in 51 minutes, while Jannik Sinner cruised in straight sets on Court Suzanne-Lenglen.</p>
+      </article>
+
+      <article>
+        <span class="tag">NBA</span>
+        <h3>Conference Finals Game 4 tips off tonight</h3>
+        <div class="byline">By Bryce Hammond</div>
+        <p>Boston leads Indiana 2&ndash;1 in the East, while Oklahoma City and Minnesota
+        are knotted at two apiece in the West.</p>
+      </article>
+    </section>
+
+    <section class="section" id="culture">
+      <div class="kicker">Culture</div>
+      <h2>Arts &amp; Culture</h2>
+
+      <article>
+        <span class="tag">Film</span>
+        <h3>Cannes wraps with a Palme d'Or for a quiet debut</h3>
+        <div class="byline">By Margaux Tellier</div>
+        <p>First-time director Amaru Sol&iacute;s took home the top prize for &ldquo;The
+        Salt Light,&rdquo; a meditative Andean drama. Jury president praised its
+        &ldquo;refusal to hurry.&rdquo;</p>
+      </article>
+
+      <article>
+        <span class="tag">Books</span>
+        <h3>This week's bestsellers: literary fiction dominates the top five</h3>
+        <div class="byline">By Cara Holloway</div>
+        <ul class="tight">
+          <li><em>The Long Quiet</em> &mdash; Mira Daley</li>
+          <li><em>House of Saltwater</em> &mdash; Theo Mendez</li>
+          <li><em>What the River Knew</em> &mdash; Adaeze Okeke</li>
+          <li><em>Threshold</em> &mdash; Henry Park</li>
+          <li><em>Small Reasons</em> &mdash; J. R. Halloran</li>
+        </ul>
+      </article>
+
+      <article>
+        <span class="tag">Music</span>
+        <h3>Glastonbury lineup expanded with three surprise headliners</h3>
+        <div class="byline">By Felix Tran</div>
+        <p>Organizers added a reunited indie-rock trio, a global pop superstar, and a
+        Grammy-sweeping jazz collective to the bill, set for late June.</p>
+      </article>
+    </section>
+
+    <section class="section" id="opinion">
+      <div class="kicker">Opinion</div>
+      <h2>Opinion &amp; Editorial</h2>
+
+      <div class="opinion-grid">
+        <div class="opinion-card">
+          <h4>Why the AI treaty is only the beginning</h4>
+          <div class="author">By Lena Mwangi, Editorial Board</div>
+          <p>A framework is not enforcement. The real test arrives when a major
+          signatory's homegrown lab tries to ship a model that fails a mandatory
+          eval.</p>
+        </div>
+        <div class="opinion-card">
+          <h4>The case for boring monetary policy</h4>
+          <div class="author">By Daniel Croix, Columnist</div>
+          <p>Predictability has value. The Fed should resist the temptation to
+          re-litigate its strategy every time a single data point lands oddly.</p>
+        </div>
+        <div class="opinion-card">
+          <h4>Letting kids be bored, again</h4>
+          <div class="author">By Jamie Okafor</div>
+          <p>The latest attention-span study isn't a moral panic &mdash; it is a
+          permission slip for parents to push back on the algorithm.</p>
+        </div>
+        <div class="opinion-card">
+          <h4>Argentina's quiet miracle</h4>
+          <div class="author">By Sofia Cabral, Guest Contributor</div>
+          <p>Seven years of fiscal restraint don't make headlines. They do make
+          credit ratings.</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /content -->
+
+  <aside>
+
+    <div class="widget">
+      <h3>Top Stories Right Now</h3>
+      <ul class="tight">
+        <li>Global AI Safety Treaty advances in Geneva</li>
+        <li>Digital euro to launch Q4 2026</li>
+        <li>Stripe acquires Veridian for $1.9B</li>
+        <li>Arizona battery storage project goes live</li>
+        <li>Real Madrid v. Bayern in Champions League final</li>
+        <li>NASA confirms expanded lunar ice deposits</li>
+        <li>CRISPR therapy restores vision in trial</li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h3>Markets at a Glance</h3>
+      <table class="markets">
+        <thead>
+          <tr><th>Index</th><th>Last</th><th>Chg</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>S&amp;P 500</td><td>5,842</td><td class="up">+0.40%</td></tr>
+          <tr><td>Dow Jones</td><td>42,180</td><td class="up">+0.18%</td></tr>
+          <tr><td>Nasdaq</td><td>19,604</td><td class="up">+0.72%</td></tr>
+          <tr><td>FTSE 100</td><td>8,420</td><td class="down">-0.11%</td></tr>
+          <tr><td>Nikkei 225</td><td>40,915</td><td class="up">+2.10%</td></tr>
+          <tr><td>Brent Crude</td><td>$61.20</td><td class="down">-1.80%</td></tr>
+          <tr><td>Gold</td><td>$2,371</td><td class="up">+0.30%</td></tr>
+          <tr><td>BTC/USD</td><td>$84,910</td><td class="down">-0.95%</td></tr>
+          <tr><td>10Y Treasury</td><td>4.21%</td><td class="down">-3 bps</td></tr>
+          <tr><td>EUR/USD</td><td>1.092</td><td class="up">+0.20%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="widget">
+      <h3>Weather Today</h3>
+      <div class="weather-grid">
+        <div><strong>New York</strong><br />72&deg;F &middot; Sunny</div>
+        <div><strong>London</strong><br />18&deg;C &middot; Cloudy</div>
+        <div><strong>Tokyo</strong><br />24&deg;C &middot; Light rain</div>
+        <div><strong>Sydney</strong><br />15&deg;C &middot; Clear</div>
+        <div><strong>Berlin</strong><br />19&deg;C &middot; Partly cloudy</div>
+        <div><strong>Dubai</strong><br />38&deg;C &middot; Hot</div>
+        <div><strong>Sao Paulo</strong><br />21&deg;C &middot; Showers</div>
+        <div><strong>Nairobi</strong><br />23&deg;C &middot; Mild</div>
+      </div>
+    </div>
+
+    <div class="widget">
+      <h3>On This Day</h3>
+      <ul class="tight">
+        <li><strong>1844</strong> &mdash; Morse sends &ldquo;What hath God wrought&rdquo;</li>
+        <li><strong>1883</strong> &mdash; Brooklyn Bridge opens to traffic</li>
+        <li><strong>1976</strong> &mdash; Concorde begins service to the U.S.</li>
+        <li><strong>2000</strong> &mdash; Israel withdraws troops from Lebanon</li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h3>Quote of the Day</h3>
+      <div class="pull-quote">
+        &ldquo;The future is already here &mdash; it's just not very evenly distributed.&rdquo;
+        <br /><span style="font-style:normal">&mdash; William Gibson</span>
+      </div>
+    </div>
+
+    <div class="widget">
+      <h3>Most Read This Week</h3>
+      <ol class="tight">
+        <li>Inside the Geneva AI talks: how the deal got done</li>
+        <li>The 600B model that changed open source</li>
+        <li>Why Argentina's upgrade matters for emerging markets</li>
+        <li>What Apple's AR glasses might actually do</li>
+        <li>The right whale comeback, in numbers</li>
+      </ol>
+    </div>
+
+    <div class="widget">
+      <h3>Newsletter</h3>
+      <p style="font-size:13px">Get The Daily Pulse delivered every morning.
+      Concise, ad-light, and human-edited.</p>
+      <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
+        <input type="email" placeholder="you@example.com" required
+          style="width:100%; padding:8px; border:1px solid var(--border); margin-bottom:6px; font-family:inherit;" />
+        <button type="submit"
+          style="width:100%; padding:8px; background:var(--ink); color:#fff; border:0; cursor:pointer; font-family:Helvetica,Arial,sans-serif; letter-spacing:1px;">
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+
+  </aside>
+
+</main>
+
+<footer>
+  &copy; 2026 The Daily Pulse. All rights reserved. &middot;
+  <a href="#world">Top</a> &middot;
+  Editorial standards &middot; Corrections &middot; Contact
+  <br /><br />
+  <em>This page is a static, single-file demonstration; all stories, figures, and
+  bylines are illustrative.</em>
+</footer>
+
+</body>
+</html>
