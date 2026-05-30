@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSPRING &mdash; Sign In</title>
+    <style>
+        :root {
+            --brand: #4f46e5;
+            --brand-dark: #3730a3;
+            --bg: #f5f6fb;
+            --text: #1f2433;
+            --muted: #6b7280;
+            --border: #e2e4ee;
+            --danger: #dc2626;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(160deg, #eef0fb 0%, #f7f8fc 100%);
+            color: var(--text);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(79, 70, 229, 0.12);
+            padding: 2.25rem 2rem;
+            border: 1px solid var(--border);
+        }
+        .brand {
+            text-align: center;
+            margin-bottom: 1.75rem;
+        }
+        .brand .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 100%);
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+        .brand h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            letter-spacing: 0.12em;
+        }
+        .brand p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.9rem; }
+
+        label { display: block; font-size: 0.85rem; font-weight: 600; margin: 0.9rem 0 0.35rem; }
+        input, select {
+            width: 100%;
+            padding: 0.7rem 0.85rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            background: #fbfbfe;
+        }
+        input:focus, select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); }
+
+        .role-toggle { display: flex; gap: 0.5rem; margin-top: 0.35rem; }
+        .role-toggle button {
+            flex: 1;
+            padding: 0.65rem;
+            border: 1px solid var(--border);
+            background: #fbfbfe;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--muted);
+            transition: all 0.15s;
+        }
+        .role-toggle button.active {
+            border-color: var(--brand);
+            background: rgba(79,70,229,0.08);
+            color: var(--brand-dark);
+        }
+
+        .submit {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 10px;
+            background: var(--brand);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .submit:hover { background: var(--brand-dark); }
+
+        .error { color: var(--danger); font-size: 0.85rem; margin-top: 0.75rem; min-height: 1rem; }
+        .hint {
+            margin-top: 1.25rem;
+            font-size: 0.78rem;
+            color: var(--muted);
+            background: #f7f7fc;
+            border: 1px dashed var(--border);
+            border-radius: 10px;
+            padding: 0.75rem;
+            line-height: 1.5;
+        }
+        .hint code { background: #ecedf6; padding: 0.05rem 0.3rem; border-radius: 4px; }
+        footer { text-align: center; margin-top: 1.25rem; color: var(--muted); font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="brand">
+            <div class="logo">U</div>
+            <h1>UPSPRING</h1>
+            <p>Class Discussion Platform</p>
+        </div>
+
+        <form id="signin-form" novalidate>
+            <label for="name">Display name</label>
+            <input type="text" id="name" placeholder="e.g. Jordan Lee" autocomplete="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@school.edu" autocomplete="email" required>
+
+            <label for="access">Access code</label>
+            <input type="password" id="access" placeholder="Class or moderator access code" required>
+
+            <label>Sign in as</label>
+            <div class="role-toggle" id="role-toggle">
+                <button type="button" data-role="contributor" class="active">Contributor</button>
+                <button type="button" data-role="moderator">Moderator</button>
+            </div>
+
+            <button type="submit" class="submit">Enter discussion</button>
+            <div class="error" id="error"></div>
+        </form>
+
+        <div class="hint">
+            <strong>Demo access codes</strong><br>
+            Contributor: <code>class2026</code><br>
+            Moderator: <code>mod-upspring</code>
+        </div>
+
+        <footer>&copy; 2026 UPSPRING &middot; Educational use</footer>
+    </div>
+
+    <script>
+        // Demo-only client-side auth. In production, validation happens server-side.
+        const ACCESS_CODES = {
+            contributor: "class2026",
+            moderator: "mod-upspring"
+        };
+
+        let selectedRole = "contributor";
+        const toggle = document.getElementById("role-toggle");
+        toggle.addEventListener("click", (e) => {
+            const btn = e.target.closest("button[data-role]");
+            if (!btn) return;
+            selectedRole = btn.dataset.role;
+            [...toggle.children].forEach(b => b.classList.toggle("active", b === btn));
+        });
+
+        const form = document.getElementById("signin-form");
+        const errorEl = document.getElementById("error");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            errorEl.textContent = "";
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const access = document.getElementById("access").value.trim();
+
+            if (!name || !email || !access) {
+                errorEl.textContent = "Please fill in every field.";
+                return;
+            }
+            if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+                errorEl.textContent = "Please enter a valid email address.";
+                return;
+            }
+            if (access !== ACCESS_CODES[selectedRole]) {
+                errorEl.textContent = "Access code does not match the selected role.";
+                return;
+            }
+
+            const session = {
+                name,
+                email,
+                role: selectedRole,
+                signedInAt: new Date().toISOString()
+            };
+            localStorage.setItem("upspring_session", JSON.stringify(session));
+            window.location.href = "discussion.html";
+        });
+    </script>
+</body>
+</html>

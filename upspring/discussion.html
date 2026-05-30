@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSPRING &mdash; Class Discussion</title>
+    <style>
+        :root {
+            --brand: #4f46e5;
+            --brand-dark: #3730a3;
+            --bg: #f5f6fb;
+            --text: #1f2433;
+            --muted: #6b7280;
+            --border: #e2e4ee;
+            --danger: #dc2626;
+            --pin: #d97706;
+            --ok: #059669;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.55;
+        }
+        header {
+            background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 100%);
+            color: #fff;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        header .title { display: flex; align-items: center; gap: 0.7rem; }
+        header .logo {
+            width: 38px; height: 38px; border-radius: 10px;
+            background: rgba(255,255,255,0.18);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.2rem;
+        }
+        header h1 { margin: 0; font-size: 1.15rem; letter-spacing: 0.1em; }
+        header .sub { font-size: 0.78rem; opacity: 0.85; }
+        .userbox { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; }
+        .badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .badge.moderator { background: #fde68a; color: #92400e; }
+        .badge.contributor { background: #c7d2fe; color: #3730a3; }
+        .signout {
+            background: rgba(255,255,255,0.16);
+            border: none; color: #fff;
+            padding: 0.4rem 0.8rem; border-radius: 8px;
+            cursor: pointer; font-size: 0.8rem;
+        }
+        .signout:hover { background: rgba(255,255,255,0.28); }
+
+        main { max-width: 820px; margin: 1.5rem auto; padding: 0 1rem 3rem; }
+
+        .composer {
+            background: #fff; border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.1rem; margin-bottom: 1.5rem;
+        }
+        .composer h2 { margin: 0 0 0.6rem; font-size: 1rem; }
+        .composer input, .composer textarea {
+            width: 100%; padding: 0.65rem 0.8rem;
+            border: 1px solid var(--border); border-radius: 9px;
+            font-size: 0.92rem; font-family: inherit; margin-bottom: 0.55rem;
+            background: #fbfbfe;
+        }
+        .composer textarea { resize: vertical; min-height: 80px; }
+        .composer input:focus, .composer textarea:focus {
+            outline: none; border-color: var(--brand);
+            box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+        }
+        .btn {
+            border: none; border-radius: 9px; cursor: pointer;
+            font-weight: 600; font-size: 0.88rem; padding: 0.55rem 1rem;
+        }
+        .btn-primary { background: var(--brand); color: #fff; }
+        .btn-primary:hover { background: var(--brand-dark); }
+
+        .thread {
+            background: #fff; border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.1rem 1.2rem; margin-bottom: 1rem;
+            position: relative;
+        }
+        .thread.pinned { border-color: var(--pin); box-shadow: 0 0 0 1px var(--pin) inset; }
+        .thread.locked { opacity: 0.92; }
+        .thread-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+        .thread-title { margin: 0; font-size: 1.08rem; }
+        .thread-meta { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+        .tag {
+            display: inline-block; font-size: 0.68rem; font-weight: 700;
+            padding: 0.1rem 0.5rem; border-radius: 999px; margin-left: 0.4rem;
+            vertical-align: middle;
+        }
+        .tag.pin { background: #fef3c7; color: var(--pin); }
+        .tag.lock { background: #fee2e2; color: var(--danger); }
+        .thread-body { margin: 0.6rem 0 0.4rem; white-space: pre-wrap; }
+
+        .actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+        .action {
+            background: #f3f4f9; border: 1px solid var(--border);
+            border-radius: 7px; padding: 0.3rem 0.6rem;
+            font-size: 0.76rem; cursor: pointer; color: var(--muted); font-weight: 600;
+        }
+        .action:hover { background: #e8eaf3; color: var(--text); }
+        .action.danger:hover { background: #fee2e2; color: var(--danger); border-color: #fca5a5; }
+
+        .replies { margin-top: 0.9rem; border-top: 1px solid var(--border); padding-top: 0.8rem; }
+        .reply {
+            display: flex; gap: 0.6rem; padding: 0.5rem 0;
+            border-bottom: 1px dashed #eef0f6;
+        }
+        .reply:last-child { border-bottom: none; }
+        .reply .avatar {
+            width: 30px; height: 30px; border-radius: 50%;
+            background: #e0e3f2; color: var(--brand-dark);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.8rem; flex-shrink: 0;
+        }
+        .reply .who { font-size: 0.82rem; font-weight: 600; }
+        .reply .who .mod-mark { color: var(--pin); font-size: 0.7rem; margin-left: 0.3rem; }
+        .reply .when { font-size: 0.72rem; color: var(--muted); margin-left: 0.4rem; font-weight: 400; }
+        .reply .text { font-size: 0.9rem; margin-top: 0.1rem; white-space: pre-wrap; }
+        .reply-del {
+            margin-left: auto; background: none; border: none; cursor: pointer;
+            color: var(--muted); font-size: 0.95rem; align-self: flex-start;
+        }
+        .reply-del:hover { color: var(--danger); }
+
+        .reply-form { display: flex; gap: 0.5rem; margin-top: 0.7rem; }
+        .reply-form input {
+            flex: 1; padding: 0.5rem 0.7rem; border: 1px solid var(--border);
+            border-radius: 8px; font-size: 0.88rem; background: #fbfbfe;
+        }
+        .reply-form input:focus { outline: none; border-color: var(--brand); }
+        .locked-note { font-size: 0.8rem; color: var(--danger); margin-top: 0.7rem; font-style: italic; }
+
+        .empty { text-align: center; color: var(--muted); padding: 2.5rem 1rem; }
+        .role-note {
+            background: #eef2ff; border: 1px solid #c7d2fe; color: var(--brand-dark);
+            border-radius: 10px; padding: 0.6rem 0.9rem; font-size: 0.82rem; margin-bottom: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <div class="logo">U</div>
+            <div>
+                <h1>UPSPRING</h1>
+                <div class="sub">Class Discussion</div>
+            </div>
+        </div>
+        <div class="userbox" id="userbox"></div>
+    </header>
+
+    <main>
+        <div class="role-note" id="role-note"></div>
+
+        <section class="composer">
+            <h2>Start a new discussion</h2>
+            <input type="text" id="new-title" placeholder="Discussion title" maxlength="140">
+            <textarea id="new-body" placeholder="Share a question, prompt, or idea with the class&hellip;"></textarea>
+            <button class="btn btn-primary" id="post-thread">Post discussion</button>
+        </section>
+
+        <div id="threads"></div>
+    </main>
+
+    <script>
+        const STORE_KEY = "upspring_threads";
+
+        // --- session guard ---
+        const session = JSON.parse(localStorage.getItem("upspring_session") || "null");
+        if (!session) { window.location.href = "signin.html"; }
+        const isModerator = session && session.role === "moderator";
+
+        // --- header / role note ---
+        function initials(name) {
+            return name.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+        }
+        document.getElementById("userbox").innerHTML = `
+            <span>${escapeHtml(session.name)}</span>
+            <span class="badge ${session.role}">${session.role}</span>
+            <button class="signout" id="signout">Sign out</button>`;
+        document.getElementById("signout").addEventListener("click", () => {
+            localStorage.removeItem("upspring_session");
+            window.location.href = "signin.html";
+        });
+        document.getElementById("role-note").innerHTML = isModerator
+            ? "<strong>Moderator view:</strong> you can pin, lock, and remove any discussion or reply."
+            : "<strong>Contributor view:</strong> you can post discussions and replies, and remove your own contributions.";
+
+        // --- seed data on first load ---
+        function load() { return JSON.parse(localStorage.getItem(STORE_KEY) || "null"); }
+        function save(data) { localStorage.setItem(STORE_KEY, JSON.stringify(data)); }
+
+        if (!load()) {
+            save([{
+                id: id(),
+                title: "Welcome to the UPSPRING class discussion",
+                body: "Use this space to ask questions and respond to your classmates. Moderators will pin key threads and keep things on track.",
+                author: "Prof. Rivera",
+                role: "moderator",
+                createdAt: new Date(Date.now() - 86400000).toISOString(),
+                pinned: true,
+                locked: false,
+                replies: [{
+                    id: id(), author: "Sam Patel", role: "contributor",
+                    text: "Excited to be here!", createdAt: new Date(Date.now() - 80000000).toISOString()
+                }]
+            }]);
+        }
+
+        // --- helpers ---
+        function id() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, c => ({
+                "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+            }[c]));
+        }
+        function timeAgo(iso) {
+            const diff = (Date.now() - new Date(iso)) / 1000;
+            if (diff < 60) return "just now";
+            if (diff < 3600) return Math.floor(diff / 60) + "m ago";
+            if (diff < 86400) return Math.floor(diff / 3600) + "h ago";
+            return Math.floor(diff / 86400) + "d ago";
+        }
+        function canRemove(authorEmail) {
+            return isModerator || authorEmail === session.email;
+        }
+
+        // --- rendering ---
+        function render() {
+            const threads = load();
+            // pinned first, then newest
+            threads.sort((a, b) =>
+                (b.pinned - a.pinned) || (new Date(b.createdAt) - new Date(a.createdAt)));
+            const wrap = document.getElementById("threads");
+
+            if (!threads.length) {
+                wrap.innerHTML = '<div class="empty">No discussions yet. Start the conversation above.</div>';
+                return;
+            }
+
+            wrap.innerHTML = threads.map(t => `
+                <article class="thread ${t.pinned ? "pinned" : ""} ${t.locked ? "locked" : ""}" data-id="${t.id}">
+                    <div class="thread-head">
+                        <div>
+                            <h3 class="thread-title">${escapeHtml(t.title)}
+                                ${t.pinned ? '<span class="tag pin">Pinned</span>' : ""}
+                                ${t.locked ? '<span class="tag lock">Locked</span>' : ""}
+                            </h3>
+                            <div class="thread-meta">${escapeHtml(t.author)}${t.role === "moderator" ? " (moderator)" : ""} &middot; ${timeAgo(t.createdAt)}</div>
+                        </div>
+                        <div class="actions">
+                            ${isModerator ? `
+                                <button class="action" data-act="pin">${t.pinned ? "Unpin" : "Pin"}</button>
+                                <button class="action" data-act="lock">${t.locked ? "Unlock" : "Lock"}</button>` : ""}
+                            ${canRemove(t.authorEmail) ? '<button class="action danger" data-act="del-thread">Delete</button>' : ""}
+                        </div>
+                    </div>
+                    <p class="thread-body">${escapeHtml(t.body)}</p>
+
+                    <div class="replies">
+                        ${t.replies.map(r => `
+                            <div class="reply" data-rid="${r.id}">
+                                <div class="avatar">${initials(r.author)}</div>
+                                <div style="flex:1">
+                                    <div class="who">${escapeHtml(r.author)}${r.role === "moderator" ? '<span class="mod-mark">&#9733; mod</span>' : ""}<span class="when">${timeAgo(r.createdAt)}</span></div>
+                                    <div class="text">${escapeHtml(r.text)}</div>
+                                </div>
+                                ${canRemove(r.authorEmail) ? '<button class="reply-del" data-act="del-reply" title="Remove reply">&times;</button>' : ""}
+                            </div>`).join("") || '<div style="font-size:0.82rem;color:var(--muted)">No replies yet.</div>'}
+                    </div>
+
+                    ${t.locked
+                        ? '<div class="locked-note">This discussion is locked. New replies are disabled.</div>'
+                        : `<div class="reply-form">
+                                <input type="text" placeholder="Write a reply&hellip;" data-reply-input>
+                                <button class="btn btn-primary" data-act="reply">Reply</button>
+                           </div>`}
+                </article>`).join("");
+        }
+
+        // --- new thread ---
+        document.getElementById("post-thread").addEventListener("click", () => {
+            const titleEl = document.getElementById("new-title");
+            const bodyEl = document.getElementById("new-body");
+            const title = titleEl.value.trim();
+            const body = bodyEl.value.trim();
+            if (!title || !body) { alert("Please add both a title and a message."); return; }
+
+            const threads = load();
+            threads.push({
+                id: id(), title, body,
+                author: session.name, authorEmail: session.email, role: session.role,
+                createdAt: new Date().toISOString(),
+                pinned: false, locked: false, replies: []
+            });
+            save(threads);
+            titleEl.value = ""; bodyEl.value = "";
+            render();
+        });
+
+        // --- event delegation for thread actions ---
+        document.getElementById("threads").addEventListener("click", (e) => {
+            const btn = e.target.closest("[data-act]");
+            if (!btn) return;
+            const article = btn.closest(".thread");
+            const tid = article.dataset.id;
+            const act = btn.dataset.act;
+            let threads = load();
+            const thread = threads.find(t => t.id === tid);
+            if (!thread) return;
+
+            if (act === "pin" && isModerator) {
+                thread.pinned = !thread.pinned;
+            } else if (act === "lock" && isModerator) {
+                thread.locked = !thread.locked;
+            } else if (act === "del-thread" && canRemove(thread.authorEmail)) {
+                if (!confirm("Delete this discussion and all replies?")) return;
+                threads = threads.filter(t => t.id !== tid);
+            } else if (act === "reply") {
+                if (thread.locked) return;
+                const input = article.querySelector("[data-reply-input]");
+                const text = input.value.trim();
+                if (!text) return;
+                thread.replies.push({
+                    id: id(), author: session.name, authorEmail: session.email,
+                    role: session.role, text, createdAt: new Date().toISOString()
+                });
+            } else if (act === "del-reply") {
+                const rid = btn.closest(".reply").dataset.rid;
+                const reply = thread.replies.find(r => r.id === rid);
+                if (!reply || !canRemove(reply.authorEmail)) return;
+                thread.replies = thread.replies.filter(r => r.id !== rid);
+            } else {
+                return; // unauthorized / unknown
+            }
+            save(threads);
+            render();
+        });
+
+        // allow Enter-to-reply
+        document.getElementById("threads").addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && e.target.matches("[data-reply-input]")) {
+                e.preventDefault();
+                e.target.closest(".reply-form").querySelector('[data-act="reply"]').click();
+            }
+        });
+
+        render();
+    </script>
+</body>
+</html>
