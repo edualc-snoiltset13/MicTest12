@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Crust Bakery — Freshly Baked Every Day</title>
+    <style>
+        :root {
+            --cream: #fdf6ec;
+            --crust: #b9722e;
+            --crust-dark: #8c5320;
+            --dough: #f3e0c7;
+            --cocoa: #4a2f1b;
+            --accent: #e0a458;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: "Georgia", "Times New Roman", serif;
+            color: var(--cocoa);
+            background: var(--cream);
+            line-height: 1.6;
+        }
+        a { color: var(--crust-dark); text-decoration: none; }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--cocoa);
+            color: var(--cream);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+        nav .logo span { color: var(--accent); }
+        nav ul { display: flex; gap: 1.5rem; list-style: none; }
+        nav ul a { color: var(--cream); font-family: sans-serif; font-size: 0.95rem; }
+        nav ul a:hover { color: var(--accent); }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 5rem 1.5rem;
+            background: linear-gradient(rgba(74,47,27,0.55), rgba(74,47,27,0.55)),
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23b9722e'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%238c5320'/%3E%3C/svg%3E");
+            color: var(--cream);
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem; }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--cocoa);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-family: sans-serif;
+            font-weight: bold;
+            transition: transform 0.15s, background 0.15s;
+        }
+        .btn:hover { background: #f0b86a; transform: translateY(-2px); }
+
+        /* Sections */
+        section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 2.5rem; color: var(--crust-dark); }
+
+        /* Products grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid var(--dough);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(140,83,32,0.08);
+            transition: transform 0.15s;
+        }
+        .card:hover { transform: translateY(-4px); }
+        .card .emoji { font-size: 3rem; }
+        .card h3 { margin: 0.75rem 0 0.5rem; color: var(--crust-dark); }
+        .card .price { font-family: sans-serif; font-weight: bold; color: var(--crust); }
+
+        /* About */
+        .about { background: var(--dough); }
+        .about-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+
+        /* CTA */
+        .cta { text-align: center; background: var(--cocoa); color: var(--cream); }
+        .cta h2 { color: var(--accent); margin-bottom: 1rem; }
+
+        footer {
+            background: #2f1d10;
+            color: #d8c3aa;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Golden <span>Crust</span></div>
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#visit">Visit</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Freshly Baked, Made with Love</h1>
+        <p>Artisan breads, flaky pastries, and decadent cakes baked fresh every morning in our little neighborhood bakery.</p>
+        <a class="btn" href="#menu">Explore Our Menu</a>
+    </header>
+
+    <section id="menu">
+        <h2 class="section-title">Our Daily Favorites</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="emoji">🥐</div>
+                <h3>Butter Croissants</h3>
+                <p>Golden, flaky, and laminated with French butter.</p>
+                <p class="price">$3.50</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🍞</div>
+                <h3>Sourdough Loaf</h3>
+                <p>Naturally leavened with a 24-hour slow ferment.</p>
+                <p class="price">$6.00</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🥖</div>
+                <h3>Crusty Baguette</h3>
+                <p>Crisp crust, airy crumb — perfect with everything.</p>
+                <p class="price">$4.00</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🧁</div>
+                <h3>Vanilla Cupcakes</h3>
+                <p>Topped with silky buttercream swirls.</p>
+                <p class="price">$2.75</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🍩</div>
+                <h3>Glazed Donuts</h3>
+                <p>Pillowy soft and dipped in sweet vanilla glaze.</p>
+                <p class="price">$2.25</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🎂</div>
+                <h3>Celebration Cakes</h3>
+                <p>Custom cakes for birthdays and special days.</p>
+                <p class="price">from $28</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-inner">
+            <h2 class="section-title">Our Story</h2>
+            <p>Since 2008, Golden Crust has been the heart of the neighborhood — a place where the smell of warm bread greets you at the door. We mill our own flour, ferment our dough slowly, and never use shortcuts. Every loaf and pastry is a little piece of craft, made by hands that care.</p>
+        </div>
+    </section>
+
+    <section id="visit" class="cta">
+        <h2>Come Say Hello</h2>
+        <p>123 Baker Street &middot; Open Tue–Sun, 7am – 6pm</p>
+        <p style="margin-bottom: 1.5rem;">Fresh batches out of the oven every hour.</p>
+        <a class="btn" href="mailto:hello@goldencrust.example">Order Ahead</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Golden Crust Bakery. Baked fresh, served warm.</p>
+        <p><a href="#menu">Menu</a> &middot; <a href="#about">About</a> &middot; <a href="#visit">Visit</a></p>
+    </footer>
+</body>
+</html>
