@@ -3,54 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us — Barber Booking Agent</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-        header { border-bottom: 2px solid #333; padding-bottom: 1rem; margin-bottom: 2rem; }
-        nav a { margin-right: 1rem; color: #0066cc; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        h1 { margin: 0 0 0.5rem; }
-        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #777; font-size: 0.9rem; }
-    </style>
+    <meta name="description" content="The story behind Golden Crust Bakery — slow-fermented dough, freshly milled flour, and craft made by hand since 2008.">
+    <title>About — Golden Crust Bakery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>About Us</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-        </nav>
+    <nav aria-label="Main navigation">
+        <div class="logo">Golden <span>Crust</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Our Story</h1>
+        <p>A little neighborhood bakery built on patience, good flour, and the smell of warm bread.</p>
     </header>
 
-    <main>
-        <section>
-            <h2>Our Mission</h2>
-            <p>We built the Barber Booking Agent to make appointment management painless for independent barbers and their clients. No bloated software, no heavy infrastructure — just a clean Python tool that runs anywhere Python does.</p>
-        </section>
+    <section class="about">
+        <div class="about-inner">
+            <h2 class="section-title">Baked with Care Since 2008</h2>
+            <p>Golden Crust began with a single oven and a simple belief: good bread takes time. Since 2008, we've been the heart of the neighborhood — a place where the smell of warm bread greets you at the door each morning.</p>
+            <p>We mill our own flour, ferment our dough slowly, and never use shortcuts. Every loaf and pastry is a little piece of craft, made by hands that care.</p>
+            <p>From our sourdough's 24-hour ferment to buttery croissants folded by hand, we bake everything fresh in small batches throughout the day — so what you take home is always at its best.</p>
+        </div>
+    </section>
 
-        <section>
-            <h2>What We Do</h2>
-            <p>The Barber Booking Agent is a lightweight command-line application that helps barbers manage their schedules, services, and clients. Bookings are stored locally in JSON, and notifications can be delivered via console output or email through any SMTP provider.</p>
-        </section>
+    <section>
+        <h2 class="section-title">What We Believe</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="emoji" role="img" aria-label="Wheat">🌾</div>
+                <h3>Real Ingredients</h3>
+                <p>Freshly milled flour, French butter, and nothing artificial.</p>
+            </div>
+            <div class="card">
+                <div class="emoji" role="img" aria-label="Clock">⏰</div>
+                <h3>Slow &amp; Steady</h3>
+                <p>We give our dough the time it needs to develop deep flavor.</p>
+            </div>
+            <div class="card">
+                <div class="emoji" role="img" aria-label="Heart">❤️</div>
+                <h3>Made by Hand</h3>
+                <p>Every item is shaped, folded, and baked by our own bakers.</p>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Why It's Different</h2>
-            <ul>
-                <li><strong>Zero dependencies</strong> — uses only the Python standard library.</li>
-                <li><strong>Portable</strong> — runs on any machine with Python 3.7 or newer.</li>
-                <li><strong>Transparent</strong> — your data lives in a plain JSON file you control.</li>
-                <li><strong>Open</strong> — easy to read, modify, and extend.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>Questions or feedback? Open an issue on the project repository.</p>
-        </section>
-    </main>
+    <section class="cta">
+        <h2>Come Visit Us</h2>
+        <p style="margin-bottom: 1.5rem;">123 Baker Street &middot; Open Tue–Sun, 7am – 6pm</p>
+        <a class="btn" href="contact.html">Get in Touch</a>
+    </section>
 
     <footer>
-        &copy; 2026 Barber Booking Agent
+        <p>&copy; 2026 Golden Crust Bakery. Baked fresh, served warm.</p>
+        <p><a href="index.html">Home</a> &middot; <a href="menu.html">Menu</a> &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a></p>
     </footer>
 </body>
 </html>
