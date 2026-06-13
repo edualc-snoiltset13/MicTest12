@@ -142,6 +142,8 @@ def eval_rpn(rpn):
                 stack.append(BINARY_OPS[value](a, b))
             except ZeroDivisionError:
                 raise ValueError("division by zero")
+            except OverflowError:
+                raise ValueError("numeric overflow")
     if len(stack) != 1:
         raise ValueError("invalid expression")
     return stack[0]
