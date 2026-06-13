@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTME Physics Syllabus</title>
+    <style>
+        :root { --accent: #0066cc; --line: #ddd; }
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
+        header { border-bottom: 2px solid #333; padding-bottom: 1rem; margin-bottom: 2rem; }
+        nav a { margin-right: 1rem; color: var(--accent); text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        h1 { margin: 0 0 0.5rem; }
+        h2 { margin-top: 0; }
+        ul { padding-left: 1.25rem; }
+
+        .lead { color: #444; }
+        .objectives-aim { background: #f4f8ff; border: 1px solid #d6e6ff; border-radius: 6px; padding: 1rem 1.25rem; }
+
+        .toc { background: #fafafa; border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 2.5rem; }
+        .toc h2 { font-size: 1.1rem; }
+        .toc ol { columns: 2; column-gap: 2rem; padding-left: 1.25rem; margin: 0; }
+        .toc a { color: var(--accent); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+
+        .topic { border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; scroll-margin-top: 1rem; }
+        .topic h3 { margin: 0 0 0.75rem; font-size: 1.2rem; }
+        .topic h3 .num { color: var(--accent); font-weight: 700; margin-right: 0.4rem; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .grid h4 { margin: 0 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.78rem; color: #666; }
+        .grid ul { margin: 0; }
+        .grid li { margin-bottom: 0.25rem; }
+        .formula { font-style: italic; color: #555; }
+        .top-link { float: right; font-size: 0.8rem; }
+
+        .refs li { margin-bottom: 0.5rem; }
+
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: #777; font-size: 0.9rem; }
+
+        @media (max-width: 680px) {
+            .grid { grid-template-columns: 1fr; gap: 1rem; }
+            .toc ol { columns: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>UTME Physics Syllabus</h1>
+        <p class="lead">Unified Tertiary Matriculation Examination — detailed contents and objectives.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="physics.html">Physics Syllabus</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="objectives-aim">
+            <h2>General Objectives</h2>
+            <p>The aim of the UTME syllabus in Physics is to prepare candidates for the Board's
+            examination. It is designed to test their achievement of the course objectives, which are to:</p>
+            <ol>
+                <li>sustain their interest in physics;</li>
+                <li>develop attitude relevant to physics that encourage accuracy, precision and objectivity;</li>
+                <li>interpret physical phenomena, laws, definitions, concepts and other theories;</li>
+                <li>demonstrate the ability to solve correctly physics problems using relevant theories and concepts.</li>
+            </ol>
+        </section>
+
+        <nav class="toc" aria-label="Table of contents">
+            <h2>Topics</h2>
+            <ol>
+                <li><a href="#t1">Measurements and Units</a></li>
+                <li><a href="#t2">Scalars and Vectors</a></li>
+                <li><a href="#t3">Motion</a></li>
+                <li><a href="#t4">Gravitational Field</a></li>
+                <li><a href="#t5">Equilibrium of Forces</a></li>
+                <li><a href="#t6">Work, Energy and Power</a></li>
+                <li><a href="#t7">Friction</a></li>
+                <li><a href="#t8">Simple Machines</a></li>
+                <li><a href="#t9">Elasticity</a></li>
+                <li><a href="#t10">Pressure</a></li>
+                <li><a href="#t11">Liquids at Rest</a></li>
+                <li><a href="#t12">Temperature and Its Measurement</a></li>
+                <li><a href="#t13">Thermal Expansion</a></li>
+                <li><a href="#t14">Gas Laws</a></li>
+                <li><a href="#t15">Quantity of Heat</a></li>
+                <li><a href="#t16">Change of State</a></li>
+                <li><a href="#t17">Vapours</a></li>
+                <li><a href="#t18">Structure of Matter and Kinetic Theory</a></li>
+                <li><a href="#t19">Heat Transfer</a></li>
+                <li><a href="#t20">Waves</a></li>
+                <li><a href="#t21">Propagation of Sound Waves</a></li>
+                <li><a href="#t22">Characteristics of Sound Waves</a></li>
+                <li><a href="#t23">Light Energy</a></li>
+                <li><a href="#t24">Reflection of Light at Plane and Curved Surfaces</a></li>
+                <li><a href="#t25">Refraction of Light</a></li>
+                <li><a href="#t26">Optical Instruments</a></li>
+                <li><a href="#t27">Dispersion of Light and Electromagnetic Spectrum</a></li>
+                <li><a href="#t28">Electrostatics</a></li>
+                <li><a href="#t29">Capacitors</a></li>
+                <li><a href="#t30">Electric Cells</a></li>
+                <li><a href="#t31">Current Electricity</a></li>
+                <li><a href="#t32">Electrical Energy and Power</a></li>
+                <li><a href="#t33">Magnets and Magnetic Fields</a></li>
+                <li><a href="#t34">Force on a Current-Carrying Conductor in a Magnetic Field</a></li>
+                <li><a href="#t35">Electromagnetic Induction</a></li>
+                <li><a href="#t36">Simple A.C. Circuits</a></li>
+                <li><a href="#t37">Conduction of Electricity Through Liquids and Gases</a></li>
+                <li><a href="#t38">Elementary Modern Physics</a></li>
+                <li><a href="#t39">Introductory Electronics</a></li>
+            </ol>
+        </nav>
+
+        <article class="topic" id="t1">
+            <h3><span class="num">1.</span>Measurements and Units<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Length, area and volume: metre rule, vernier calipers, micrometer screw-gauge</li>
+                        <li>Mass: unit of mass; use of simple beam balance</li>
+                        <li>Time: unit of time; time-measuring devices</li>
+                        <li>Fundamental physical quantities</li>
+                        <li>Derived physical quantities and their units</li>
+                        <li>Dimensions: definition and simple examples</li>
+                        <li>Limitations of experimental measurements: accuracy, errors, significant figures, standard form</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify the units of length, area and volume;</li>
+                        <li>use different measuring instruments;</li>
+                        <li>determine lengths, surface areas and volumes of regular and irregular bodies;</li>
+                        <li>identify the unit of mass and use simple beam balances;</li>
+                        <li>identify the unit of time and use time-measuring devices;</li>
+                        <li>relate fundamental physical quantities to their units;</li>
+                        <li>deduce the units of derived physical quantities;</li>
+                        <li>determine the dimensions of physical quantities and test the homogeneity of an equation;</li>
+                        <li>determine accuracy of instruments, estimate simple errors and express measurements in standard form.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t2">
+            <h3><span class="num">2.</span>Scalars and Vectors<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Definition of scalar and vector quantities</li>
+                        <li>Examples of scalar and vector quantities</li>
+                        <li>Relative velocity</li>
+                        <li>Resolution of vectors into two perpendicular directions, including graphical methods</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>distinguish between scalar and vector quantities;</li>
+                        <li>give examples of scalar and vector quantities;</li>
+                        <li>determine the resultant of two or more vectors;</li>
+                        <li>determine relative velocity;</li>
+                        <li>resolve vectors into two perpendicular components;</li>
+                        <li>use graphical methods to solve vector problems.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t3">
+            <h3><span class="num">3.</span>Motion<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Types of motion: translational, oscillatory, rotational, spin and random</li>
+                        <li>Linear motion: speed, velocity, acceleration; equations of uniformly accelerated motion; motion under gravity; distance-time and velocity-time graphs; instantaneous velocity and acceleration</li>
+                        <li>Projectiles: range, maximum height, time of flight and applications</li>
+                        <li>Newton's laws of motion: inertia, mass and force; mass-acceleration relationship; impulse and momentum; conservation of linear momentum</li>
+                        <li>Motion in a circle: angular velocity and acceleration; centripetal and centrifugal forces; applications</li>
+                        <li>Simple Harmonic Motion: definition, examples, period, frequency, amplitude, velocity, acceleration and energy changes</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify different types of motion;</li>
+                        <li>differentiate between speed, velocity and acceleration;</li>
+                        <li>deduce equations of uniformly accelerated motion;</li>
+                        <li>solve problems of motion under gravity;</li>
+                        <li>interpret distance-time and velocity-time graphs;</li>
+                        <li>compute instantaneous velocity and acceleration;</li>
+                        <li>establish expressions for range, maximum height and time of flight of projectiles;</li>
+                        <li>solve problems involving projectile motion;</li>
+                        <li>interpret Newton's laws of motion and compare inertia, mass and force;</li>
+                        <li>deduce the relationship between mass and acceleration;</li>
+                        <li>solve numerical problems involving impulse and momentum;</li>
+                        <li>interpret the law of conservation of linear momentum;</li>
+                        <li>establish expressions for angular velocity, angular acceleration and centripetal force;</li>
+                        <li>solve numerical problems involving motion in a circle;</li>
+                        <li>establish the relationship between period and frequency and analyse energy changes during S.H.M.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t4">
+            <h3><span class="num">4.</span>Gravitational Field<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Newton's law of universal gravitation</li>
+                        <li>Gravitational potential</li>
+                        <li>Conservative and non-conservative fields</li>
+                        <li>Acceleration due to gravity <span class="formula">(g = GM/R&sup2;)</span></li>
+                        <li>Variation of g on the earth's surface</li>
+                        <li>Distinction between mass and weight</li>
+                        <li>Escape velocity</li>
+                        <li>Parking orbit and weightlessness</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify the expression for gravitational force between two bodies;</li>
+                        <li>apply Newton's law of universal gravitation;</li>
+                        <li>give examples of conservative and non-conservative fields;</li>
+                        <li>deduce the expression for gravitational field potential;</li>
+                        <li>identify the causes of variation of g on the earth's surface;</li>
+                        <li>differentiate between mass and weight;</li>
+                        <li>determine escape velocity.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t5">
+            <h3><span class="num">5.</span>Equilibrium of Forces<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Equilibrium of particles: coplanar forces; triangle and polygon of forces; Lami's theorem</li>
+                        <li>Principle of moments: moment of a force; moment of a couple (torque); applications</li>
+                        <li>Conditions for equilibrium of rigid bodies under parallel and non-parallel forces; resolution and composition of forces; resultant and equilibrant</li>
+                        <li>Centre of gravity and stability: stable, unstable and neutral equilibria</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>apply the conditions for equilibrium of coplanar forces to solve problems;</li>
+                        <li>use triangle and polygon laws of forces to solve equilibrium problems;</li>
+                        <li>use Lami's theorem to solve problems;</li>
+                        <li>analyse the principle of moment of a force;</li>
+                        <li>determine moment of a force and couple;</li>
+                        <li>describe applications of moment of a force and couple;</li>
+                        <li>apply the conditions for equilibrium of rigid bodies to solve problems;</li>
+                        <li>resolve forces into two perpendicular directions;</li>
+                        <li>determine the resultant and equilibrant of forces;</li>
+                        <li>differentiate between stable, unstable and neutral equilibria.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t6">
+            <h3><span class="num">6.</span>Work, Energy and Power<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Definition of work, energy and power</li>
+                        <li>Forms of energy</li>
+                        <li>Conservation of energy</li>
+                        <li>Qualitative treatment of the transformation between different forms of energy</li>
+                        <li>Interpretation of area under the force-distance curve</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between work, energy and power;</li>
+                        <li>compare different forms of energy, giving examples;</li>
+                        <li>apply the principle of conservation of energy;</li>
+                        <li>examine the transformation between different forms of energy;</li>
+                        <li>interpret the area under the force-distance curve.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t7">
+            <h3><span class="num">7.</span>Friction<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Static and dynamic friction</li>
+                        <li>Coefficient of limiting friction and its determination</li>
+                        <li>Advantages and disadvantages of friction</li>
+                        <li>Reduction of friction</li>
+                        <li>Qualitative treatment of viscosity and terminal velocity</li>
+                        <li>Stoke's law</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between static and dynamic friction;</li>
+                        <li>determine the coefficient of limiting friction;</li>
+                        <li>compare the advantages and disadvantages of friction;</li>
+                        <li>suggest ways by which friction can be reduced;</li>
+                        <li>analyse factors that affect viscosity and terminal velocity;</li>
+                        <li>apply Stoke's law.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t8">
+            <h3><span class="num">8.</span>Simple Machines<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Definition of machine</li>
+                        <li>Types of machines</li>
+                        <li>Mechanical advantage, velocity ratio and efficiency of machines</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify different types of machines;</li>
+                        <li>solve problems involving simple machines.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t9">
+            <h3><span class="num">9.</span>Elasticity<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Elastic limit, yield point, breaking point, Hooke's law and Young's modulus</li>
+                        <li>The spring balance as a device for measuring force</li>
+                        <li>Work done in springs and elastic strings</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>interpret force-extension curves;</li>
+                        <li>interpret Hooke's law and Young's modulus of a material;</li>
+                        <li>use a spring balance to measure force;</li>
+                        <li>determine the work done in springs and elastic strings.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t10">
+            <h3><span class="num">10.</span>Pressure<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Atmospheric pressure: definition; S.I. units; measurement; simple mercury barometer, aneroid barometer and manometer; variation of pressure with height; barometer as an altimeter</li>
+                        <li>Pressure in liquids: relationship between pressure, depth and density <span class="formula">(P = &rho;gh)</span>; transmission of pressure (Pascal's principle); applications</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>recognize the S.I. units of pressure;</li>
+                        <li>identify pressure-measuring instruments;</li>
+                        <li>relate the variation of pressure to height;</li>
+                        <li>use a barometer as an altimeter;</li>
+                        <li>determine the relationship between pressure, depth and density;</li>
+                        <li>apply the principle of transmission of pressure in liquids to solve problems;</li>
+                        <li>determine the applications of pressure in liquids.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t11">
+            <h3><span class="num">11.</span>Liquids at Rest<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Determination of density of solids and liquids</li>
+                        <li>Definition of relative density</li>
+                        <li>Upthrust on a body immersed in a liquid</li>
+                        <li>Archimedes' principle and law of floatation and applications, e.g. ships and hydrometers</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>distinguish between density and relative density of substances;</li>
+                        <li>determine the upthrust on a body immersed in a liquid;</li>
+                        <li>apply Archimedes' principle and the law of floatation to solve problems.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t12">
+            <h3><span class="num">12.</span>Temperature and Its Measurement<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Concept of temperature</li>
+                        <li>Thermometric properties</li>
+                        <li>Calibration of thermometers</li>
+                        <li>Temperature scales — Celsius and Kelvin</li>
+                        <li>Types of thermometers</li>
+                        <li>Conversion from one temperature scale to another</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify thermometric properties of materials used for different thermometers;</li>
+                        <li>calibrate thermometers;</li>
+                        <li>differentiate between temperature scales, e.g. Celsius and Kelvin;</li>
+                        <li>compare the types of thermometers;</li>
+                        <li>convert from one scale of temperature to another.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t13">
+            <h3><span class="num">13.</span>Thermal Expansion<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Solids: linear, volume and area expansivities; effects and applications (e.g. expansion in building strips and railway lines); relationship between expansivities</li>
+                        <li>Liquids: volume expansivity; real and apparent expansivities; determination of volume expansivity; anomalous expansion of water</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>determine linear and volume expansivities;</li>
+                        <li>assess the effects and applications of thermal expansivities;</li>
+                        <li>determine the relationship between different expansivities;</li>
+                        <li>determine volume, apparent and real expansivities of liquids;</li>
+                        <li>analyse the anomalous expansion of water.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t14">
+            <h3><span class="num">14.</span>Gas Laws<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Boyle's law <span class="formula">(PV = constant)</span></li>
+                        <li>Charles' law <span class="formula">(V/T = constant)</span></li>
+                        <li>Pressure law <span class="formula">(P/T = constant)</span></li>
+                        <li>Absolute zero of temperature</li>
+                        <li>General gas equation <span class="formula">(PV/T = constant)</span></li>
+                        <li>Ideal gas equation <span class="formula">(PV = nRT)</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>interpret the gas laws;</li>
+                        <li>use expressions of these laws to solve numerical problems.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t15">
+            <h3><span class="num">15.</span>Quantity of Heat<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Heat as a form of energy</li>
+                        <li>Definition of heat capacity and specific heat capacity of solids and liquids</li>
+                        <li>Determination of heat capacity and specific heat capacity by simple methods, e.g. method of mixtures and electrical method</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between heat capacity and specific heat capacity;</li>
+                        <li>determine heat capacity and specific heat capacity using simple methods;</li>
+                        <li>examine some numerical problems.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t16">
+            <h3><span class="num">16.</span>Change of State<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Latent heat</li>
+                        <li>Specific latent heats of fusion and vaporization</li>
+                        <li>Melting, evaporation and boiling</li>
+                        <li>Influence of pressure and dissolved substances on boiling and melting points</li>
+                        <li>Application in appliances</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between latent heat and specific latent heat of fusion and vaporization;</li>
+                        <li>differentiate between melting, evaporation and boiling;</li>
+                        <li>examine the effects of pressure and dissolved substances on boiling and melting points.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t17">
+            <h3><span class="num">17.</span>Vapours<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Unsaturated and saturated vapours</li>
+                        <li>Relationship between saturated vapour pressure (S.V.P) and boiling</li>
+                        <li>Determination of S.V.P by barometer tube method</li>
+                        <li>Formation of dew, mist, fog and rain</li>
+                        <li>Dew point, humidity and relative humidity</li>
+                        <li>Hygrometry: estimation of humidity using wet and dry bulb hygrometers</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>distinguish between saturated and unsaturated vapours;</li>
+                        <li>relate saturated vapour pressure to boiling point;</li>
+                        <li>determine S.V.P by the barometer tube method;</li>
+                        <li>differentiate between dew point, humidity and relative humidity;</li>
+                        <li>estimate the humidity of the atmosphere using wet and dry bulb hygrometers.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t18">
+            <h3><span class="num">18.</span>Structure of Matter and Kinetic Theory<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Molecular nature of matter: atoms and molecules; molecular theory (Brownian motion, diffusion, surface tension, capillarity, adhesion, cohesion and angles of contact); examples and applications</li>
+                        <li>Kinetic theory: assumptions of the kinetic theory; using the theory to explain gas pressure, Boyle's law, Charles' law, melting, boiling, vaporization, change in temperature, evaporation, etc.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between atoms and molecules;</li>
+                        <li>use molecular theory to explain Brownian motion, diffusion, surface tension, capillarity, adhesion, cohesion and angle of contact;</li>
+                        <li>examine the assumptions of kinetic theory;</li>
+                        <li>interpret, using kinetic theory, the pressure exerted by gases, Boyle's law, Charles' law, melting, boiling, vaporization, change in temperature, evaporation, etc.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t19">
+            <h3><span class="num">19.</span>Heat Transfer<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Conduction, convection and radiation as modes of heat transfer</li>
+                        <li>Temperature gradient, thermal conductivity and heat flux</li>
+                        <li>Effect of the nature of the surface on energy radiated and absorbed</li>
+                        <li>Conductivities of common materials</li>
+                        <li>The thermos flask</li>
+                        <li>Land and sea breeze</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between conduction, convection and radiation as modes of heat transfer;</li>
+                        <li>determine temperature gradient, thermal conductivity and heat flux;</li>
+                        <li>assess the effect of the nature of the surface on the energy radiated and absorbed;</li>
+                        <li>compare the conductivities of common materials;</li>
+                        <li>relate the component parts of the working of the thermos flask;</li>
+                        <li>differentiate between land and sea breeze.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t20">
+            <h3><span class="num">20.</span>Waves<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Production and propagation: wave motion; vibrating systems as source of waves; waves as a mode of energy transfer; particle motion vs wave motion; relationship between frequency, wavelength and velocity <span class="formula">(V = f&lambda;)</span>; phase difference; progressive wave equation <span class="formula">(y = A sin 2&pi;(vt + x)/&lambda;)</span></li>
+                        <li>Classification: mechanical and electromagnetic waves; longitudinal and transverse waves; stationary and progressive waves; examples from springs, ropes, stretched strings and the ripple tank</li>
+                        <li>Characteristics/properties: reflection, refraction, diffraction and plane polarization; superposition of waves (e.g. interference)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>interpret wave motion;</li>
+                        <li>identify vibrating systems as sources of waves;</li>
+                        <li>use waves as a mode of energy transfer;</li>
+                        <li>distinguish between particle motion and wave motion;</li>
+                        <li>relate frequency and wavelength to wave velocity;</li>
+                        <li>determine phase difference;</li>
+                        <li>use the progressive wave equation to compute basic wave parameters;</li>
+                        <li>differentiate between mechanical and electromagnetic waves;</li>
+                        <li>differentiate between longitudinal and transverse waves;</li>
+                        <li>distinguish between stationary and progressive waves;</li>
+                        <li>indicate examples of waves generated from springs, ropes, stretched strings and the ripple tank;</li>
+                        <li>differentiate between reflection, refraction, diffraction and plane polarization of waves;</li>
+                        <li>analyse the principle of superposition of waves.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t21">
+            <h3><span class="num">21.</span>Propagation of Sound Waves<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>The necessity for a material medium</li>
+                        <li>Speed of sound in solids, liquids and air</li>
+                        <li>Reflection of sound: echoes, reverberation and their applications</li>
+                        <li>Disadvantages of echoes and reverberations</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>determine the need for a material medium in the propagation of sound waves;</li>
+                        <li>compare the speed of sound in solids, liquids and air;</li>
+                        <li>relate the effects of temperature and pressure to the speed of sound in air;</li>
+                        <li>solve problems on echoes and reverberation;</li>
+                        <li>compare the disadvantages of echoes.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t22">
+            <h3><span class="num">22.</span>Characteristics of Sound Waves<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Noise and musical notes</li>
+                        <li>Quality, pitch, intensity and loudness and their application to musical instruments</li>
+                        <li>Simple treatment of overtones produced by vibrating strings and columns <span class="formula">(F&#8320; = (1/2L)&radic;(T/m))</span></li>
+                        <li>Acoustic examples of resonance</li>
+                        <li>Frequency of a note emitted by air columns in closed and open pipes in relation to their lengths</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between noise and musical notes;</li>
+                        <li>analyse quality, pitch, intensity and loudness of sound notes;</li>
+                        <li>evaluate their application in the construction of musical instruments;</li>
+                        <li>identify overtones from vibrating strings and air columns;</li>
+                        <li>itemize acoustical examples of resonance;</li>
+                        <li>determine the frequencies of notes emitted by air columns in open and closed pipes in relation to their lengths.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t23">
+            <h3><span class="num">23.</span>Light Energy<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Sources of light: natural and artificial; luminous and non-luminous objects</li>
+                        <li>Propagation of light: speed, frequency and wavelength; formation of shadows and eclipses; the pin-hole camera</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>compare the natural and artificial sources of light;</li>
+                        <li>differentiate between luminous and non-luminous objects;</li>
+                        <li>relate the speed, frequency and wavelength of light;</li>
+                        <li>interpret the formation of shadows and eclipses;</li>
+                        <li>solve problems using the principle of operation of a pin-hole camera.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t24">
+            <h3><span class="num">24.</span>Reflection of Light at Plane and Curved Surfaces<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Laws of reflection</li>
+                        <li>Applications of reflection of light</li>
+                        <li>Formation of images by plane, concave and convex mirrors and ray diagrams</li>
+                        <li>Use of the mirror formula <span class="formula">(1/f = 1/u + 1/v)</span></li>
+                        <li>Linear magnification</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>interpret the laws of reflection;</li>
+                        <li>illustrate the formation of images by plane, concave and convex mirrors;</li>
+                        <li>apply the mirror formula to solve optical problems;</li>
+                        <li>determine the linear magnification;</li>
+                        <li>apply the laws of reflection to the working of the periscope, kaleidoscope and sextant.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t25">
+            <h3><span class="num">25.</span>Refraction of Light<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Plane and curved surfaces: explanation of refraction in terms of velocity of light in the media; laws of refraction; refractive index of a medium; determination of refractive index of glass and liquid using Snell's law; real and apparent depth and lateral displacement; critical angle and total internal reflection</li>
+                        <li>Glass prism: minimum deviation formula <span class="formula">(&micro; = sin((A+D)/2) / sin(A/2))</span>; types of lenses; lens formula <span class="formula">(1/f = 1/u + 1/v)</span>; magnification</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>interpret the laws of refraction;</li>
+                        <li>determine the refractive index of glass and liquid using Snell's law;</li>
+                        <li>determine the refractive index using the principle of real and apparent depth;</li>
+                        <li>determine the conditions necessary for total internal reflection;</li>
+                        <li>examine the use of the periscope, prism, binoculars and optical fibre;</li>
+                        <li>apply the principles of total internal reflection to the formation of a mirage;</li>
+                        <li>use the lens formula and ray diagrams to solve optical numerical problems;</li>
+                        <li>determine the magnification of an image;</li>
+                        <li>calculate the refractive index of a glass prism using the minimum deviation formula.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t26">
+            <h3><span class="num">26.</span>Optical Instruments<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Principles of microscopes, telescopes, projectors, cameras and the human eye (physiological details of the eye are not required)</li>
+                        <li>Power of a lens</li>
+                        <li>Angular magnification</li>
+                        <li>Near and far points</li>
+                        <li>Sight defects and their corrections</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>apply the principles of operation of optical instruments to solve problems;</li>
+                        <li>distinguish between the human eye and the camera;</li>
+                        <li>calculate the power of a lens;</li>
+                        <li>determine the angular magnification of optical instruments;</li>
+                        <li>determine the near and far points;</li>
+                        <li>detect sight defects and their corrections.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t27">
+            <h3><span class="num">27.</span>Dispersion of Light and Electromagnetic Spectrum<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Dispersion of light and colours: dispersion of white light by a triangular prism; production of pure spectrum; colour mixing by addition and subtraction; colour of objects and colour filters</li>
+                        <li>Electromagnetic spectrum: description of sources and uses of various types of radiation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>describe the dispersion of white light by a triangular prism;</li>
+                        <li>describe the production of a pure spectrum;</li>
+                        <li>identify primary colours and obtain secondary colours by mixing;</li>
+                        <li>deduce why objects have colours;</li>
+                        <li>analyse colours using colour filters;</li>
+                        <li>analyse the electromagnetic spectrum in relation to wavelengths, sources, detection and uses.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t28">
+            <h3><span class="num">28.</span>Electrostatics<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Existence of positive and negative charges in matter</li>
+                        <li>Charging a body by friction, contact and induction</li>
+                        <li>Electroscope</li>
+                        <li>Coulomb's inverse square law</li>
+                        <li>Electric field and potential</li>
+                        <li>Electric discharge and lightning</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify charges;</li>
+                        <li>examine uses of an electroscope;</li>
+                        <li>apply Coulomb's inverse square law of electrostatics to solve problems;</li>
+                        <li>deduce expressions for electric field and potential;</li>
+                        <li>identify electric field flux patterns of isolated and interacting charges;</li>
+                        <li>analyse the distribution of charges on a conductor and how it is used in lightning conductors.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t29">
+            <h3><span class="num">29.</span>Capacitors<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Functions of capacitors</li>
+                        <li>Parallel plate capacitors</li>
+                        <li>Capacitance of a capacitor</li>
+                        <li>Relationship between capacitance, area, separation of plates and medium <span class="formula">(C = &epsilon;A/d)</span></li>
+                        <li>Capacitors in series and parallel</li>
+                        <li>Energy stored in a capacitor</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>determine uses of capacitors;</li>
+                        <li>analyse parallel plate capacitors;</li>
+                        <li>determine the capacitance of a capacitor;</li>
+                        <li>analyse the factors that affect the capacitance of a capacitor;</li>
+                        <li>solve problems involving the arrangement of capacitors;</li>
+                        <li>determine the energy stored in capacitors.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t30">
+            <h3><span class="num">30.</span>Electric Cells<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Simple voltaic cell and its defects</li>
+                        <li>Daniel cell, Leclanche cell (wet and dry)</li>
+                        <li>Lead-acid accumulator and Nickel-Iron (Nife), Lithium-ion and Mercury-cadmium cells</li>
+                        <li>Maintenance of cells and batteries (detailed cell chemistry not required)</li>
+                        <li>Arrangement of cells</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify the defects of the simple voltaic cell and how they are corrected;</li>
+                        <li>compare different types of cells, including the solar cell;</li>
+                        <li>compare the advantages of lead-acid and Nickel-Iron accumulators;</li>
+                        <li>solve problems involving series and parallel combination of cells.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t31">
+            <h3><span class="num">31.</span>Current Electricity<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Electromotive force (emf), potential difference (p.d.), current, internal resistance of a cell and lost volts</li>
+                        <li>Ohm's law</li>
+                        <li>Measurement of resistance</li>
+                        <li>Metre bridge</li>
+                        <li>Resistance in series and parallel and their combination</li>
+                        <li>The potentiometer method of measuring emf, current and internal resistance of a cell</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between emf, p.d., current and internal resistance of a cell;</li>
+                        <li>apply Ohm's law to solve problems;</li>
+                        <li>use the metre bridge to calculate resistance;</li>
+                        <li>compute effective total resistance of both parallel and series arrangements of resistors;</li>
+                        <li>determine the resistivity and conductivity of a conductor;</li>
+                        <li>measure emf, current and internal resistance of a cell using the potentiometer.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t32">
+            <h3><span class="num">32.</span>Electrical Energy and Power<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Concepts of electrical energy and power</li>
+                        <li>Commercial unit of electric energy and power</li>
+                        <li>Electric power transmission</li>
+                        <li>Heating effects of electric current</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>apply the expressions of electrical energy and power to solve problems;</li>
+                        <li>analyse how power is transmitted from the power station to the consumer;</li>
+                        <li>identify the heating effects of current and their uses.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t33">
+            <h3><span class="num">33.</span>Magnets and Magnetic Fields<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Natural and artificial magnets</li>
+                        <li>Magnetic properties of soft iron and steel</li>
+                        <li>Methods of making magnets and demagnetization</li>
+                        <li>Concept of magnetic field; field of a permanent magnet</li>
+                        <li>Magnetic field round a straight current-carrying conductor, circular wire and solenoid</li>
+                        <li>Properties of the earth's magnetic field; magnetic meridian, angle of dip and declination</li>
+                        <li>Flux and flux density; variation of magnetic field intensity over the earth's surface</li>
+                        <li>Applications: earth's magnetic field in navigation and mineral exploration</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>give examples of natural and artificial magnets;</li>
+                        <li>differentiate between the magnetic properties of soft iron and steel;</li>
+                        <li>identify the various methods of making and demagnetizing magnets;</li>
+                        <li>describe how to keep a magnet from losing its magnetism;</li>
+                        <li>determine the flux pattern when two magnets are placed pole to pole;</li>
+                        <li>determine the flux of a current-carrying conductor, circular wire and solenoid, including solenoid polarity;</li>
+                        <li>determine the flux pattern of a magnet placed in the earth's magnetic field;</li>
+                        <li>identify the magnetic elements of the earth's flux;</li>
+                        <li>determine the variation of the earth's magnetic field over its surface;</li>
+                        <li>examine the applications of the earth's magnetic field.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t34">
+            <h3><span class="num">34.</span>Force on a Current-Carrying Conductor in a Magnetic Field<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Quantitative treatment of force between two parallel current-carrying conductors</li>
+                        <li>Force on a charge moving in a magnetic field</li>
+                        <li>The d.c. motor</li>
+                        <li>Electromagnets</li>
+                        <li>Carbon microphone</li>
+                        <li>Moving coil and moving iron instruments</li>
+                        <li>Conversion of galvanometers to ammeters and voltmeters using shunts and multipliers</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>determine the direction of force on a current-carrying conductor using Fleming's left-hand rule;</li>
+                        <li>interpret the attractive and repulsive forces between two parallel current-carrying conductors using diagrams;</li>
+                        <li>determine the relationship between force, magnetic field strength, velocity and the angle through which the charge enters the field;</li>
+                        <li>interpret the working of the d.c. motor;</li>
+                        <li>analyse the principle of electromagnets and give examples of their application;</li>
+                        <li>compare moving iron and moving coil instruments;</li>
+                        <li>convert a galvanometer into an ammeter or a voltmeter.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t35">
+            <h3><span class="num">35.</span>Electromagnetic Induction<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Faraday's laws of electromagnetic induction</li>
+                        <li>Factors affecting induced emf</li>
+                        <li>Lenz's law as an illustration of conservation of energy</li>
+                        <li>a.c. and d.c. generators</li>
+                        <li>Transformers; the induction coil</li>
+                        <li>Inductance: explanation, unit, energy stored in an inductor <span class="formula">(E = &frac12;I&sup2;L)</span>, applications</li>
+                        <li>Eddy current: reduction and applications</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>interpret the laws of electromagnetic induction;</li>
+                        <li>identify factors affecting induced emf;</li>
+                        <li>recognize how Lenz's law illustrates conservation of energy;</li>
+                        <li>interpret the diagrammatic set-up of a.c. generators;</li>
+                        <li>identify the types of transformer and examine the principles of their operation;</li>
+                        <li>assess the functions of an induction coil and draw conclusions from its operation;</li>
+                        <li>interpret the inductance of an inductor and recognize units of inductance;</li>
+                        <li>calculate the effective total inductance in series and parallel arrangements;</li>
+                        <li>deduce the expression for energy stored in an inductor and examine applications of inductors;</li>
+                        <li>describe how eddy current losses can be reduced and how eddy currents can be used.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t36">
+            <h3><span class="num">36.</span>Simple A.C. Circuits<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Explanation of a.c. current and voltage</li>
+                        <li>Peak and r.m.s. values</li>
+                        <li>a.c. source connected to a resistor, capacitor (capacitive reactance) and inductor (inductive reactance)</li>
+                        <li>Series R-L-C circuits; vector diagram</li>
+                        <li>Reactance and impedance of alternating quantities</li>
+                        <li>Effective voltage in an R-L-C circuit</li>
+                        <li>Resonance and resonant frequency <span class="formula">(F&#8320; = 1/(2&pi;&radic;(LC)))</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify a.c. current and a.c. voltage;</li>
+                        <li>differentiate between the peak and r.m.s. values of a.c.;</li>
+                        <li>determine the phase difference between current and voltage;</li>
+                        <li>interpret series R-L-C circuits;</li>
+                        <li>analyse vector diagrams;</li>
+                        <li>calculate the effective voltage, reactance and impedance;</li>
+                        <li>recognize the condition by which the circuit is at resonance;</li>
+                        <li>determine the resonant frequency of an R-L-C arrangement;</li>
+                        <li>determine the instantaneous power, average power and power factor in a.c. circuits.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t37">
+            <h3><span class="num">37.</span>Conduction of Electricity Through Liquids and Gases<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Liquids: electrolytes and non-electrolytes; concept of electrolysis; Faraday's laws of electrolysis; applications, e.g. electroplating, calibration of ammeter</li>
+                        <li>Gases: discharge through gases (quantitative treatment only); applications of conduction of electricity through gases</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>distinguish between electrolytes and non-electrolytes;</li>
+                        <li>analyse the processes of electrolysis;</li>
+                        <li>apply Faraday's laws of electrolysis to solve problems;</li>
+                        <li>analyse discharge through gases;</li>
+                        <li>determine some applications of conduction of electricity through gases.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t38">
+            <h3><span class="num">38.</span>Elementary Modern Physics<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Models of the atom and their limitations; elementary structure of the atom</li>
+                        <li>Energy levels and spectra</li>
+                        <li>Thermionic and photoelectric emissions; Einstein's equation and stopping potential; applications</li>
+                        <li>Simple method of production of x-rays</li>
+                        <li>Properties and applications of alpha, beta and gamma rays; half-life and decay constant</li>
+                        <li>Simple ideas of energy production by fusion and fission</li>
+                        <li>Binding energy, mass defect and Einstein's energy equation <span class="formula">(&Delta;E = &Delta;Mc&sup2;)</span></li>
+                        <li>Wave-particle paradox (duality of matter); electron diffraction; the uncertainty principle</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>identify the models of the atom and state their limitations;</li>
+                        <li>describe the elementary structure of the atom;</li>
+                        <li>differentiate between the energy levels and spectra of atoms;</li>
+                        <li>compare thermionic and photoelectric emissions;</li>
+                        <li>apply Einstein's equation to solve photoelectric effect problems and calculate stopping potential;</li>
+                        <li>relate some applications of thermionic emission and photoelectric effects;</li>
+                        <li>interpret the process involved in the production of x-rays and identify their properties and applications;</li>
+                        <li>analyse elementary radioactivity; distinguish between stable and unstable nuclei; identify isotopes;</li>
+                        <li>compare the properties of alpha, beta and gamma rays; relate half-life and decay constant;</li>
+                        <li>determine binding energy, mass defect and apply Einstein's energy equation;</li>
+                        <li>analyse wave-particle duality and solve numerical problems based on the uncertainty principle.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic" id="t39">
+            <h3><span class="num">39.</span>Introductory Electronics<a class="top-link" href="#top">top &uarr;</a></h3>
+            <div class="grid">
+                <div>
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Distinction between metals, semiconductors and insulators (elementary knowledge of band gap required)</li>
+                        <li>Intrinsic and extrinsic semiconductors</li>
+                        <li>Uses of semiconductors and diodes in rectification and transistors in amplification</li>
+                        <li>n-type and p-type semiconductors</li>
+                        <li>Elementary knowledge of diodes and transistors</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <ul>
+                        <li>differentiate between conductors, semiconductors and insulators;</li>
+                        <li>distinguish between intrinsic and extrinsic semiconductors;</li>
+                        <li>distinguish between electron and hole carriers;</li>
+                        <li>distinguish between n-type and p-type semiconductors;</li>
+                        <li>analyse diodes and transistors (detailed characteristics of transistors not required);</li>
+                        <li>relate diodes to rectification and transistors to amplification.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <section class="refs">
+            <h2>Recommended Texts</h2>
+            <ul>
+                <li>Nelkon, M. (1977). <em>Fundamentals of Physics</em>. Great Britain: Hart-Davis Educational.</li>
+                <li>Nelkon, M. and Parker (1989). <em>Advanced Level Physics</em> (Sixth Edition). Heinemann.</li>
+                <li>Okeke, P. N. and Anyakoha, M. W. (2000). <em>Senior Secondary School Physics</em>. Lagos: Pacific Printers.</li>
+                <li>Olumuyiwa, A. and Ogunkoya, O. O. (1992). <em>Comprehensive Certificate Physics</em>. Ibadan: University Press Plc.</li>
+                <li>Ike, E. E. (2006). <em>Essential Principles of Physics</em>. Aba: Enic Publishers.</li>
+                <li>Ike, E. E. (2005). <em>Numerical Problems and Solutions in Physics</em>. Aba: Enic Publishers.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        UTME Physics Syllabus &mdash; reproduced for study reference.
+    </footer>
+</body>
+</html>
