@@ -33,5 +33,21 @@ class BasicArithmeticTests(unittest.TestCase):
                 self.assertAlmostEqual(evaluate(expr), expected, places=9)
 
 
+class ErrorHandlingTests(unittest.TestCase):
+    # Arithmetic errors should surface as ValueError with a clean message
+    # rather than crashing with an unhandled traceback.
+    error_cases = [
+        ("10 / 0",     "division by zero"),
+        ("2 ** 10000", "numeric overflow"),
+    ]
+
+    def test_arithmetic_errors_raise_valueerror(self):
+        for expr, message in self.error_cases:
+            with self.subTest(expr=expr):
+                with self.assertRaises(ValueError) as ctx:
+                    evaluate(expr)
+                self.assertEqual(str(ctx.exception), message)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
