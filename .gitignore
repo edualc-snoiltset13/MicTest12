@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 bookings.json
+.coverage
+htmlcov/
