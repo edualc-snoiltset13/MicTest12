@@ -33,6 +33,13 @@ class Calculator:
         self._record("divide", a, b, result)
         return result
 
+    def floor_divide(self, a, b):
+        if b == 0:
+            raise ValueError("division by zero")
+        result = a // b
+        self._record("floor_divide", a, b, result)
+        return result
+
     def power(self, a, b):
         result = a ** b
         self._record("power", a, b, result)
@@ -66,6 +73,7 @@ def main():
     ops = {
         "+": calc.add, "-": calc.subtract,
         "*": calc.multiply, "/": calc.divide,
+        "//": calc.floor_divide,
         "**": calc.power, "%": calc.modulo,
     }
     print("Simple Calculator — enter '<a> <op> <b>' (e.g. '3 + 4'), or 'quit'.")
