@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flour & Crumb — Artisan Bakery</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #faf3e7;
+    --warm: #f5e6c8;
+    --crust: #8b5e3c;
+    --crust-dark: #5c3a1e;
+    --berry: #c44569;
+    --olive: #7a8450;
+    --ink: #2b1d14;
+    --muted: #7a6a5a;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250, 243, 231, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(139, 94, 60, 0.15);
+    padding: 16px 32px;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--crust-dark);
+    letter-spacing: 1px;
+  }
+  .brand span { color: var(--berry); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--berry); }
+  .nav-cta {
+    background: var(--crust-dark);
+    color: var(--cream);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--berry); }
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 32px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 110px; }
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--warm);
+    color: var(--crust-dark);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    color: var(--crust-dark);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .hero h1 em { color: var(--berry); font-style: italic; }
+  .hero p {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-bottom: 28px;
+    max-width: 480px;
+  }
+  @media (max-width: 860px) { .hero p { margin: 0 auto 28px; } }
+  .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+  @media (max-width: 860px) { .hero-buttons { justify-content: center; } }
+  .btn {
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: var(--crust-dark);
+    color: var(--cream);
+  }
+  .btn-primary:hover { background: var(--berry); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--crust-dark);
+    color: var(--crust-dark);
+  }
+  .btn-outline:hover { background: var(--crust-dark); color: var(--cream); }
+
+  .hero-visual {
+    aspect-ratio: 1;
+    background: radial-gradient(circle at 30% 30%, #f4d49d 0%, #d4a574 50%, #8b5e3c 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(8rem, 20vw, 14rem);
+    box-shadow: 0 40px 80px rgba(139, 94, 60, 0.3);
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .hero-visual::before, .hero-visual::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+  .hero-visual::before {
+    width: 60px; height: 60px;
+    background: var(--berry);
+    top: 10%; right: 10%;
+    box-shadow: 0 8px 20px rgba(196, 69, 105, 0.4);
+  }
+  .hero-visual::after {
+    width: 40px; height: 40px;
+    background: var(--olive);
+    bottom: 15%; left: 8%;
+    box-shadow: 0 8px 20px rgba(122, 132, 80, 0.4);
+  }
+
+  /* Sections */
+  section { padding: 80px 32px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-label {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--berry);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--crust-dark);
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+  .section-header p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Features bar */
+  .features {
+    background: var(--crust-dark);
+    color: var(--cream);
+    padding: 40px 32px;
+  }
+  .features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  @media (max-width: 720px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .feature .icon { font-size: 2rem; margin-bottom: 8px; }
+  .feature h3 { font-size: 1rem; margin-bottom: 4px; }
+  .feature p { font-size: 0.85rem; opacity: 0.8; }
+
+  /* Products */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .product {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(139, 94, 60, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(139, 94, 60, 0.1);
+  }
+  .product:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(139, 94, 60, 0.15);
+  }
+  .product-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    background: var(--warm);
+    position: relative;
+  }
+  .product:nth-child(1) .product-image { background: linear-gradient(135deg, #f4d49d, #d4a574); }
+  .product:nth-child(2) .product-image { background: linear-gradient(135deg, #f8c8d8, #e8a5b8); }
+  .product:nth-child(3) .product-image { background: linear-gradient(135deg, #e8d4a0, #c4a878); }
+  .product:nth-child(4) .product-image { background: linear-gradient(135deg, #d4b896, #b89870); }
+  .product:nth-child(5) .product-image { background: linear-gradient(135deg, #f5d8b8, #d4b088); }
+  .product:nth-child(6) .product-image { background: linear-gradient(135deg, #c9b896, #a89878); }
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--berry);
+    color: #fff;
+    font-family: -apple-system, sans-serif;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+  .product-body { padding: 20px; }
+  .product h3 {
+    font-size: 1.25rem;
+    color: var(--crust-dark);
+    margin-bottom: 6px;
+  }
+  .product-desc {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 12px;
+    min-height: 48px;
+  }
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed rgba(139, 94, 60, 0.2);
+    padding-top: 12px;
+  }
+  .product-price {
+    font-size: 1.2rem;
+    color: var(--berry);
+    font-weight: 700;
+  }
+  .product-add {
+    background: var(--crust-dark);
+    color: var(--cream);
+    border: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-family: -apple-system, sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .product-add:hover { background: var(--berry); }
+
+  /* About */
+  .about {
+    background: var(--warm);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-image {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #d4a574, #8b5e3c);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    box-shadow: 0 20px 40px rgba(139, 94, 60, 0.2);
+  }
+  .about h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--crust-dark);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .about p { color: var(--muted); margin-bottom: 16px; }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .stat { text-align: center; }
+  .stat .num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--berry);
+    display: block;
+  }
+  .stat .lbl {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .testimonial {
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(139, 94, 60, 0.08);
+    border-left: 4px solid var(--berry);
+  }
+  .testimonial .stars { color: #ffb800; margin-bottom: 12px; letter-spacing: 2px; }
+  .testimonial blockquote {
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--crust-dark);
+  }
+  .testimonial-author .name { font-weight: 700; color: var(--crust-dark); }
+  .testimonial-author .role { font-size: 0.85rem; color: var(--muted); }
+
+  /* Gallery */
+  .gallery {
+    background: var(--warm);
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 720px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .gallery-item {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .gallery-item:hover { transform: scale(1.05); }
+  .gallery-item:nth-child(1) { background: linear-gradient(135deg, #f4d49d, #d4a574); }
+  .gallery-item:nth-child(2) { background: linear-gradient(135deg, #f8c8d8, #e8a5b8); }
+  .gallery-item:nth-child(3) { background: linear-gradient(135deg, #c9b896, #a89878); }
+  .gallery-item:nth-child(4) { background: linear-gradient(135deg, #d4b896, #b89870); }
+  .gallery-item:nth-child(5) { background: linear-gradient(135deg, #e8d4a0, #c4a878); }
+  .gallery-item:nth-child(6) { background: linear-gradient(135deg, #f5d8b8, #d4b088); }
+  .gallery-item:nth-child(7) { background: linear-gradient(135deg, #c4a878, #8b5e3c); }
+  .gallery-item:nth-child(8) { background: linear-gradient(135deg, #f8d4a0, #d4a574); }
+
+  /* CTA */
+  .cta-section {
+    background: var(--crust-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 80px 32px;
+  }
+  .cta-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .cta-section p { margin-bottom: 28px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .cta-section .btn-primary { background: var(--berry); }
+  .cta-section .btn-primary:hover { background: var(--cream); color: var(--crust-dark); }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info h3 {
+    font-size: 1.4rem;
+    color: var(--crust-dark);
+    margin-bottom: 20px;
+  }
+  .contact-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+  .contact-item .icon {
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    background: var(--warm);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-item .lbl { font-weight: 700; color: var(--crust-dark); margin-bottom: 2px; }
+  .contact-item .val { color: var(--muted); font-size: 0.95rem; }
+  .contact-form {
+    background: #fff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(139, 94, 60, 0.08);
+  }
+  .contact-form label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--crust-dark);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(139, 94, 60, 0.2);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--berry); }
+  .contact-form textarea { resize: vertical; min-height: 100px; }
+  .contact-form button {
+    background: var(--crust-dark);
+    color: var(--cream);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+  }
+  .contact-form button:hover { background: var(--berry); }
+  .form-msg {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 48px 32px 24px;
+  }
+  .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  .footer-brand { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+  .footer-brand span { color: var(--berry); }
+  .footer-grid p, .footer-grid li { font-size: 0.9rem; opacity: 0.8; line-height: 1.8; }
+  .footer-grid h4 { margin-bottom: 12px; color: var(--warm); font-weight: 600; }
+  .footer-grid ul { list-style: none; }
+  .footer-grid a { color: var(--cream); text-decoration: none; opacity: 0.8; }
+  .footer-grid a:hover { opacity: 1; color: var(--berry); }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(250, 243, 231, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+
+  /* Cart badge */
+  .cart-badge {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--berry);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(196, 69, 105, 0.4);
+    font-family: -apple-system, sans-serif;
+    font-weight: 600;
+    z-index: 50;
+    cursor: pointer;
+    transform: translateY(120px);
+    transition: transform 0.3s;
+  }
+  .cart-badge.visible { transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Flour <span>&amp;</span> Crumb</div>
+    <ul class="nav-links sans">
+      <li><a href="#products">Menu</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView()">Order Now</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <span class="hero-tag sans">★ Established 1987 · Family-owned</span>
+    <h1>Baked fresh<br /><em>every morning</em></h1>
+    <p>Hand-crafted breads, pastries and cakes made with locally-sourced flour, real butter, and zero shortcuts. The way bakery should be.</p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn btn-primary">View the Menu</a>
+      <a href="#about" class="btn btn-outline">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-visual">🥐</div>
+</section>
+
+<section class="features sans">
+  <div class="features-grid">
+    <div class="feature">
+      <div class="icon">🌾</div>
+      <h3>Local Flour</h3>
+      <p>From Hadley Farms, milled weekly</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🧈</div>
+      <h3>Real Butter</h3>
+      <p>European-style, no substitutes</p>
+    </div>
+    <div class="feature">
+      <div class="icon">⏰</div>
+      <h3>Slow Fermented</h3>
+      <p>24 to 72-hour rises</p>
+    </div>
+    <div class="feature">
+      <div class="icon">❤️</div>
+      <h3>Family Recipes</h3>
+      <p>Three generations strong</p>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label sans">Today's Bake</div>
+      <h2>Freshly out of the oven</h2>
+      <p>A rotating selection of breads, pastries and cakes — what you see is baked today.</p>
+    </div>
+    <div class="products">
+      <div class="product">
+        <div class="product-image">🥖<span class="product-badge">Bestseller</span></div>
+        <div class="product-body">
+          <h3>Sourdough Country Loaf</h3>
+          <p class="product-desc">Slow-fermented 72 hours. Crackly crust, open crumb, deep tang.</p>
+          <div class="product-footer">
+            <span class="product-price">$8.50</span>
+            <button class="product-add" data-name="Sourdough Country Loaf" data-price="8.50">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">🧁<span class="product-badge">New</span></div>
+        <div class="product-body">
+          <h3>Raspberry Cardamom Bun</h3>
+          <p class="product-desc">Buttery laminated dough swirled with raspberry jam and ground cardamom.</p>
+          <div class="product-footer">
+            <span class="product-price">$5.25</span>
+            <button class="product-add" data-name="Raspberry Cardamom Bun" data-price="5.25">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">🥐</div>
+        <div class="product-body">
+          <h3>Butter Croissant</h3>
+          <p class="product-desc">81% French butter, 27 layers. The platonic ideal of a croissant.</p>
+          <div class="product-footer">
+            <span class="product-price">$4.50</span>
+            <button class="product-add" data-name="Butter Croissant" data-price="4.50">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">🍰</div>
+        <div class="product-body">
+          <h3>Olive Oil Citrus Cake</h3>
+          <p class="product-desc">Moist olive oil cake with candied orange and a light citrus glaze.</p>
+          <div class="product-footer">
+            <span class="product-price">$32.00</span>
+            <button class="product-add" data-name="Olive Oil Citrus Cake" data-price="32.00">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">🥨<span class="product-badge">Weekend</span></div>
+        <div class="product-body">
+          <h3>Soft Bavarian Pretzel</h3>
+          <p class="product-desc">Lye-bathed, hand-twisted, finished with flaky sea salt. Weekends only.</p>
+          <div class="product-footer">
+            <span class="product-price">$4.00</span>
+            <button class="product-add" data-name="Soft Bavarian Pretzel" data-price="4.00">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">🍪</div>
+        <div class="product-body">
+          <h3>Brown Butter Chocolate Chip</h3>
+          <p class="product-desc">Crisp edges, gooey middle, brown-butter depth. Pack of 4.</p>
+          <div class="product-footer">
+            <span class="product-price">$9.00</span>
+            <button class="product-add" data-name="Brown Butter Chocolate Chip" data-price="9.00">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">👨‍🍳</div>
+      <div>
+        <div class="section-label sans">Our Story</div>
+        <h2>Three generations<br />of dough and patience</h2>
+        <p>It started in 1987 when Nonna Elena set up a small oven in the back of her grocery, baking just enough bread for the neighborhood. Word spread. The oven got bigger. The grocery turned into a bakery.</p>
+        <p>Today, her grandkids run the place — same recipes, same long fermentations, same insistence on doing things the slow way because that's the only way it's worth doing.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="num">37</span>
+            <span class="lbl sans">Years baking</span>
+          </div>
+          <div class="stat">
+            <span class="num">42</span>
+            <span class="lbl sans">Daily items</span>
+          </div>
+          <div class="stat">
+            <span class="num">5am</span>
+            <span class="lbl sans">First loaf out</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label sans">From the Bakery</div>
+      <h2>A peek inside</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">🥖</div>
+      <div class="gallery-item">🥐</div>
+      <div class="gallery-item">🧁</div>
+      <div class="gallery-item">🍞</div>
+      <div class="gallery-item">🍰</div>
+      <div class="gallery-item">🥨</div>
+      <div class="gallery-item">🍪</div>
+      <div class="gallery-item">🥯</div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label sans">Kind Words</div>
+      <h2>What our regulars say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The sourdough is the best I've had outside of a trip to San Francisco. Honestly, it might be better."</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">MR</div>
+          <div>
+            <div class="name">Maya R.</div>
+            <div class="role sans">Regular since 2019</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I drive 40 minutes every Saturday for their pretzels and croissants. Worth every mile."</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">DL</div>
+          <div>
+            <div class="name">David L.</div>
+            <div class="role sans">Weekend customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Got my wedding cake here last summer. Beautiful, delicious, and everyone asked where it was from."</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">SP</div>
+          <div>
+            <div class="name">Sara P.</div>
+            <div class="role sans">Custom order</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Order ahead for pickup</h2>
+  <p>Loaves and pastries sell out by mid-afternoon. Reserve yours by 9am for guaranteed pickup the same day.</p>
+  <a href="#contact" class="btn btn-primary">Place an Order</a>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label sans">Visit Us</div>
+      <h2>Find us in the neighborhood</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Hours &amp; Location</h3>
+        <div class="contact-item">
+          <div class="icon">📍</div>
+          <div>
+            <div class="lbl">Address</div>
+            <div class="val">412 Mulberry Lane<br />Northside, OH 45224</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">🕐</div>
+          <div>
+            <div class="lbl">Hours</div>
+            <div class="val">Tue–Fri · 7am – 6pm<br />Sat–Sun · 7am – 3pm<br />Closed Mondays</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">📞</div>
+          <div>
+            <div class="lbl">Phone</div>
+            <div class="val">(513) 555-0142</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">✉️</div>
+          <div>
+            <div class="lbl">Email</div>
+            <div class="val">hello@flourandcrumb.com</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form sans" id="contactForm">
+        <div class="form-msg" id="formMsg">Thanks! We'll get back to you within 24 hours.</div>
+        <label for="cName">Your name</label>
+        <input type="text" id="cName" required />
+        <label for="cEmail">Email</label>
+        <input type="email" id="cEmail" required />
+        <label for="cMsg">Message or order details</label>
+        <textarea id="cMsg" placeholder="Tell us what you're after — a cake order, a question, a hello..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="sans">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Flour <span>&amp;</span> Crumb</div>
+      <p>A small family bakery doing things the slow way since 1987. Real ingredients, real time, real bread.</p>
+    </div>
+    <div>
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#products">Breads</a></li>
+        <li><a href="#products">Pastries</a></li>
+        <li><a href="#products">Cakes</a></li>
+        <li><a href="#products">Cookies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About</h4>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul>
+        <li>412 Mulberry Lane</li>
+        <li>Northside, OH 45224</li>
+        <li>(513) 555-0142</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Flour &amp; Crumb Bakery · Made with butter and care
+  </div>
+</footer>
+
+<div class="cart-badge" id="cartBadge">🛒 <span id="cartCount">0</span> items · $<span id="cartTotal">0.00</span></div>
+
+<script>
+  let cartCount = 0;
+  let cartTotal = 0;
+  const cartBadge = document.getElementById('cartBadge');
+  const cartCountEl = document.getElementById('cartCount');
+  const cartTotalEl = document.getElementById('cartTotal');
+
+  document.querySelectorAll('.product-add').forEach(btn => {
+    btn.addEventListener('click', () => {
+      cartCount++;
+      cartTotal += parseFloat(btn.dataset.price);
+      cartCountEl.textContent = cartCount;
+      cartTotalEl.textContent = cartTotal.toFixed(2);
+      cartBadge.classList.add('visible');
+      const original = btn.textContent;
+      btn.textContent = 'Added ✓';
+      btn.style.background = 'var(--olive)';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+      }, 1200);
+    });
+  });
+
+  cartBadge.addEventListener('click', () => {
+    alert(`Your order: ${cartCount} item(s), $${cartTotal.toFixed(2)} total.\n\nIn a real bakery, this would take you to checkout!`);
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('formMsg').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      document.getElementById('formMsg').style.display = 'none';
+    }, 4000);
+  });
+</script>
+</body>
+</html>

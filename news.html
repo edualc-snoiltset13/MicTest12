@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>News Dashboard</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0f1419;
+    --panel: #1a2028;
+    --panel-2: #232b36;
+    --border: #2d3742;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #ff6600;
+    --accent-2: #58a6ff;
+    --good: #3fb950;
+    --bad: #f85149;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+  }
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-badge {
+    background: var(--accent);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .header-stats {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 13px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .header-stats .live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--good);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .search-box {
+    flex: 1 1 240px;
+    max-width: 360px;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 8px 12px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+  }
+  .search-box input:focus { border-color: var(--accent-2); }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+  }
+  @media (max-width: 960px) {
+    .container { grid-template-columns: 1fr; }
+  }
+
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .tab {
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .tab .count {
+    background: var(--panel-2);
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-size: 11px;
+    margin-left: 4px;
+    color: var(--muted);
+  }
+  .tab.active .count { background: var(--accent); color: #fff; }
+
+  .story-list { display: flex; flex-direction: column; gap: 8px; }
+  .story {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 14px;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .story:hover { border-color: var(--accent-2); transform: translateY(-1px); }
+  .story-rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .story-score {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .story-content { min-width: 0; }
+  .story-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .story-title a { color: var(--text); }
+  .story-title a:hover { color: var(--accent-2); }
+  .story-domain {
+    color: var(--muted);
+    font-size: 12px;
+    margin-left: 6px;
+  }
+  .story-meta {
+    color: var(--muted);
+    font-size: 12px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .story-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .story-text {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #c9d1d9;
+    background: var(--panel-2);
+    padding: 8px 10px;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent);
+    max-height: 120px;
+    overflow: hidden;
+    position: relative;
+  }
+  .story-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(transparent, var(--panel-2));
+    pointer-events: none;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .widget {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .widget h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .stat {
+    background: var(--panel-2);
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .stat .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .stat .label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .trending-list { list-style: none; }
+  .trending-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .trending-list li:last-child { border-bottom: none; }
+  .trending-list .domain-name { color: var(--text); font-weight: 500; }
+  .trending-list .domain-count {
+    float: right;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 6px 12px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn:hover { background: var(--border); }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .btn.primary:hover { background: #e55a00; }
+
+  .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .toggle input { cursor: pointer; }
+
+  .loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+  }
+  .spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-banner {
+    background: rgba(248, 81, 73, 0.1);
+    border: 1px solid var(--bad);
+    color: var(--bad);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+
+  footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-badge">HN</span>
+      News Dashboard
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Filter loaded stories..." />
+    </div>
+    <div class="header-stats">
+      <span class="live"><span class="dot"></span> Live</span>
+      <span id="lastUpdate">Loading...</span>
+      <label class="toggle">
+        <input type="checkbox" id="autoRefresh" /> Auto-refresh (60s)
+      </label>
+      <button class="btn primary" id="refreshBtn">Refresh</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <main>
+    <div class="tabs" id="tabs"></div>
+    <div id="storyContainer">
+      <div class="loading"><span class="spinner"></span> Loading the latest from Hacker News...</div>
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="widget">
+      <h3>Snapshot</h3>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="value" id="statStories">—</div>
+          <div class="label">Stories</div>
+        </div>
+        <div class="stat">
+          <div class="value" id="statTotalScore">—</div>
+          <div class="label">Total points</div>
+        </div>
+        <div class="stat">
+          <div class="value" id="statAvgScore">—</div>
+          <div class="label">Avg points</div>
+        </div>
+        <div class="stat">
+          <div class="value" id="statComments">—</div>
+          <div class="label">Comments</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget">
+      <h3>Top Domains</h3>
+      <ul class="trending-list" id="topDomains">
+        <li style="color: var(--muted);">Loading...</li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h3>Top Authors</h3>
+      <ul class="trending-list" id="topAuthors">
+        <li style="color: var(--muted);">Loading...</li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h3>About</h3>
+      <p style="font-size: 13px; color: var(--muted);">
+        Live data from the public
+        <a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">Hacker News Firebase API</a>.
+        No API key required. Stories link out to their original sources;
+        click "comments" to read the HN discussion.
+      </p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  Data © Y Combinator · Built as a static single-file dashboard
+</footer>
+
+<script>
+const HN_BASE = 'https://hacker-news.firebaseio.com/v0';
+const STORIES_PER_FEED = 25;
+
+const FEEDS = [
+  { id: 'topstories',  label: 'Top' },
+  { id: 'newstories',  label: 'New' },
+  { id: 'beststories', label: 'Best' },
+  { id: 'askstories',  label: 'Ask HN' },
+  { id: 'showstories', label: 'Show HN' },
+  { id: 'jobstories',  label: 'Jobs' }
+];
+
+const cache = {};               // feedId -> array of story objects
+const counts = {};              // feedId -> number
+let activeFeed = 'topstories';
+let searchTerm = '';
+let autoRefreshTimer = null;
+
+const tabsEl = document.getElementById('tabs');
+const storyContainer = document.getElementById('storyContainer');
+const searchInput = document.getElementById('searchInput');
+const lastUpdate = document.getElementById('lastUpdate');
+const refreshBtn = document.getElementById('refreshBtn');
+const autoRefreshToggle = document.getElementById('autoRefresh');
+
+function timeAgo(ts) {
+  const s = Math.floor(Date.now() / 1000 - ts);
+  if (s < 60) return s + 's ago';
+  if (s < 3600) return Math.floor(s / 60) + 'm ago';
+  if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+  return Math.floor(s / 86400) + 'd ago';
+}
+
+function getDomain(url) {
+  if (!url) return '';
+  try { return new URL(url).hostname.replace(/^www\./, ''); }
+  catch { return ''; }
+}
+
+function escapeHTML(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// HN text fields contain HTML; sanitize to safe-ish subset
+function sanitizeText(html) {
+  if (!html) return '';
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  tmp.querySelectorAll('script, iframe, style, link, meta').forEach(n => n.remove());
+  tmp.querySelectorAll('*').forEach(el => {
+    [...el.attributes].forEach(a => {
+      if (a.name.startsWith('on') || (a.name === 'href' && /^javascript:/i.test(a.value))) {
+        el.removeAttribute(a.name);
+      }
+    });
+    if (el.tagName === 'A') {
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener');
+    }
+  });
+  return tmp.innerHTML;
+}
+
+async function fetchJSON(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+async function loadFeed(feedId) {
+  try {
+    const ids = await fetchJSON(`${HN_BASE}/${feedId}.json`);
+    const slice = ids.slice(0, STORIES_PER_FEED);
+    const stories = await Promise.all(
+      slice.map(id => fetchJSON(`${HN_BASE}/item/${id}.json`).catch(() => null))
+    );
+    const valid = stories.filter(Boolean);
+    cache[feedId] = valid;
+    counts[feedId] = valid.length;
+    return valid;
+  } catch (err) {
+    cache[feedId] = [];
+    throw err;
+  }
+}
+
+function renderTabs() {
+  tabsEl.innerHTML = '';
+  FEEDS.forEach(feed => {
+    const btn = document.createElement('button');
+    btn.className = 'tab' + (feed.id === activeFeed ? ' active' : '');
+    btn.innerHTML = `${feed.label}<span class="count">${counts[feed.id] ?? '·'}</span>`;
+    btn.addEventListener('click', () => {
+      activeFeed = feed.id;
+      renderTabs();
+      renderStories();
+    });
+    tabsEl.appendChild(btn);
+  });
+}
+
+function renderStories() {
+  const stories = cache[activeFeed] || [];
+  const filtered = searchTerm
+    ? stories.filter(s => (s.title || '').toLowerCase().includes(searchTerm) ||
+                          (s.by || '').toLowerCase().includes(searchTerm) ||
+                          getDomain(s.url).toLowerCase().includes(searchTerm))
+    : stories;
+
+  if (filtered.length === 0) {
+    storyContainer.innerHTML = `<div class="loading">${searchTerm ? 'No stories match your filter.' : 'No stories.'}</div>`;
+    return;
+  }
+
+  const html = filtered.map((s, i) => {
+    const domain = getDomain(s.url);
+    const url = s.url || `https://news.ycombinator.com/item?id=${s.id}`;
+    const titleHTML = `<a href="${escapeHTML(url)}" target="_blank" rel="noopener">${escapeHTML(s.title || '(untitled)')}</a>` +
+      (domain ? `<span class="story-domain">(${escapeHTML(domain)})</span>` : '');
+    const textHTML = s.text ? `<div class="story-text">${sanitizeText(s.text)}</div>` : '';
+
+    return `
+      <article class="story">
+        <div class="story-rank">
+          <div class="story-score">${s.score ?? 0}</div>
+          <div>#${i + 1}</div>
+        </div>
+        <div class="story-content">
+          <div class="story-title">${titleHTML}</div>
+          ${textHTML}
+          <div class="story-meta">
+            <span>👤 ${escapeHTML(s.by || 'unknown')}</span>
+            <span>🕒 ${timeAgo(s.time)}</span>
+            <span>💬 <a href="https://news.ycombinator.com/item?id=${s.id}" target="_blank" rel="noopener">${s.descendants ?? 0} comments</a></span>
+            ${s.type && s.type !== 'story' ? `<span>📌 ${escapeHTML(s.type)}</span>` : ''}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  storyContainer.innerHTML = `<div class="story-list">${html}</div>`;
+}
+
+function renderSidebar() {
+  const all = Object.values(cache).flat();
+  if (all.length === 0) return;
+
+  const totalScore = all.reduce((sum, s) => sum + (s.score || 0), 0);
+  const totalComments = all.reduce((sum, s) => sum + (s.descendants || 0), 0);
+  const avg = Math.round(totalScore / all.length);
+
+  document.getElementById('statStories').textContent = all.length;
+  document.getElementById('statTotalScore').textContent = totalScore.toLocaleString();
+  document.getElementById('statAvgScore').textContent = avg;
+  document.getElementById('statComments').textContent = totalComments.toLocaleString();
+
+  const domainCounts = {};
+  const authorCounts = {};
+  all.forEach(s => {
+    const d = getDomain(s.url);
+    if (d) domainCounts[d] = (domainCounts[d] || 0) + 1;
+    if (s.by) authorCounts[s.by] = (authorCounts[s.by] || 0) + 1;
+  });
+
+  const topDomains = Object.entries(domainCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  const topAuthors = Object.entries(authorCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+  document.getElementById('topDomains').innerHTML = topDomains.length
+    ? topDomains.map(([d, n]) => `<li><span class="domain-name">${escapeHTML(d)}</span><span class="domain-count">${n}</span></li>`).join('')
+    : '<li style="color: var(--muted);">No data</li>';
+
+  document.getElementById('topAuthors').innerHTML = topAuthors.length
+    ? topAuthors.map(([a, n]) => `<li><span class="domain-name">${escapeHTML(a)}</span><span class="domain-count">${n}</span></li>`).join('')
+    : '<li style="color: var(--muted);">No data</li>';
+}
+
+async function refreshAll() {
+  storyContainer.innerHTML = '<div class="loading"><span class="spinner"></span> Fetching fresh stories...</div>';
+  const results = await Promise.allSettled(FEEDS.map(f => loadFeed(f.id)));
+
+  const failed = results.filter(r => r.status === 'rejected');
+  if (failed.length === FEEDS.length) {
+    storyContainer.innerHTML = `<div class="error-banner">Could not reach the Hacker News API. Check your connection and try again.</div>`;
+    return;
+  }
+  if (failed.length > 0) {
+    const banner = `<div class="error-banner">${failed.length} of ${FEEDS.length} feeds failed to load.</div>`;
+    storyContainer.insertAdjacentHTML('afterbegin', banner);
+  }
+
+  renderTabs();
+  renderStories();
+  renderSidebar();
+  lastUpdate.textContent = 'Updated ' + new Date().toLocaleTimeString();
+}
+
+searchInput.addEventListener('input', (e) => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  renderStories();
+});
+
+refreshBtn.addEventListener('click', refreshAll);
+
+autoRefreshToggle.addEventListener('change', (e) => {
+  if (autoRefreshTimer) {
+    clearInterval(autoRefreshTimer);
+    autoRefreshTimer = null;
+  }
+  if (e.target.checked) {
+    autoRefreshTimer = setInterval(refreshAll, 60000);
+  }
+});
+
+renderTabs();
+refreshAll();
+</script>
+</body>
+</html>
