@@ -6,27 +6,45 @@ Pure standard library.
 """
 
 
+def _as_number(name, value):
+    """Validate that ``value`` is a real number and return it.
+
+    Rejects ``bool`` (a subclass of ``int``) and any non-numeric type so
+    that arithmetic methods never silently fall back to string/sequence
+    behaviour (e.g. ``"a" + "b"`` or ``"x" * 3``).
+    """
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise TypeError(
+            f"{name} must be an int or float, got {type(value).__name__}"
+        )
+    return value
+
+
 class Calculator:
     def __init__(self):
         self.memory = 0
         self.history = []
 
     def add(self, a, b):
+        a, b = _as_number("a", a), _as_number("b", b)
         result = a + b
         self._record("add", a, b, result)
         return result
 
     def subtract(self, a, b):
+        a, b = _as_number("a", a), _as_number("b", b)
         result = a - b
         self._record("subtract", a, b, result)
         return result
 
     def multiply(self, a, b):
+        a, b = _as_number("a", a), _as_number("b", b)
         result = a * b
         self._record("multiply", a, b, result)
         return result
 
     def divide(self, a, b):
+        a, b = _as_number("a", a), _as_number("b", b)
         if b == 0:
             raise ValueError("division by zero")
         result = a / b
@@ -34,11 +52,13 @@ class Calculator:
         return result
 
     def power(self, a, b):
+        a, b = _as_number("a", a), _as_number("b", b)
         result = a ** b
         self._record("power", a, b, result)
         return result
 
     def modulo(self, a, b):
+        a, b = _as_number("a", a), _as_number("b", b)
         if b == 0:
             raise ValueError("modulo by zero")
         result = a % b
@@ -46,7 +66,7 @@ class Calculator:
         return result
 
     def store(self, value):
-        self.memory = value
+        self.memory = _as_number("value", value)
 
     def recall(self):
         return self.memory
