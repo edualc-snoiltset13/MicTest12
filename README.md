@@ -75,6 +75,27 @@ Supported formats: JPEG, PNG, GIF, WebP (max 20 MB). Default model: `claude-sonn
 
 Exit codes: `0` success · `2` bad args / missing key · `3` image error · `4` API error · `5` network error.
 
+## Compression Utility
+
+`compression.py` provides streaming gzip helpers built on the standard library.
+Files are read and written in fixed-size chunks (1 MiB by default), so inputs
+much larger than available memory can be processed safely.
+
+```python
+from compression import compress_file, decompress_file
+
+# Compress data.json -> data.json.gz (returns the path plus byte sizes)
+dst, original, compressed = compress_file("data.json")
+print(f"{original} -> {compressed} bytes")
+
+# Decompress back to data.json
+decompress_file("data.json.gz")
+```
+
+When `dst_path` is omitted, `compress_file` appends `.gz` and `decompress_file`
+strips a trailing `.gz`. The compression `level` (1–9, default 6) and
+`chunk_size` are both configurable.
+
 ## Running Tests
 
 The test suite uses only the standard library:
