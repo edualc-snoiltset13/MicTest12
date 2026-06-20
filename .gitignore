@@ -1,3 +1,8 @@
 __pycache__/
 *.pyc
 bookings.json
+paypal_demo.db
+.playwright-tmp.db
+node_modules/
+playwright-report/
+test-results/

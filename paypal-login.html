@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in to your PayPal account</title>
+    <style>
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            font-family: "PayPal Sans", "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #2c2e2f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .demo-banner {
+            background: #fff8d6;
+            border-bottom: 1px solid #f3e7a6;
+            color: #6b5e00;
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3rem 1rem 2rem;
+        }
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 460px;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 3rem 3rem 2rem;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .logo svg { height: 36px; }
+        h1 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            text-align: center;
+            margin: 0 0 1.75rem;
+            color: #2c2e2f;
+        }
+        .field {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        .field input {
+            width: 100%;
+            height: 56px;
+            padding: 1.25rem 0.85rem 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #9da3a6;
+            border-radius: 8px;
+            background: #fff;
+            outline: none;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .field input:focus {
+            border-color: #0070ba;
+            box-shadow: 0 0 0 1px #0070ba;
+        }
+        .field label {
+            position: absolute;
+            left: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c7378;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: transform 0.15s ease, font-size 0.15s ease, top 0.15s ease;
+            background: transparent;
+            padding: 0 0.15rem;
+        }
+        .field input:focus + label,
+        .field input:not(:placeholder-shown) + label {
+            top: 0.95rem;
+            font-size: 0.75rem;
+            color: #6c7378;
+            transform: translateY(-50%) scale(0.95);
+        }
+        .field-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: #0070ba;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .field-link:hover { text-decoration: underline; }
+        .btn {
+            display: block;
+            width: 100%;
+            height: 48px;
+            border-radius: 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background 0.15s ease, border-color 0.15s ease;
+            margin-top: 1.25rem;
+        }
+        .btn-primary {
+            background: #0070ba;
+            color: #ffffff;
+        }
+        .btn-primary:hover { background: #003087; }
+        .btn-secondary {
+            background: #ffffff;
+            color: #0070ba;
+            border-color: #0070ba;
+        }
+        .btn-secondary:hover { background: #f5faff; }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #6c7378;
+            font-size: 0.875rem;
+        }
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #d1d4d6;
+        }
+        .divider span { padding: 0 0.75rem; }
+        .legal {
+            margin-top: 2rem;
+            padding-top: 1.25rem;
+            text-align: center;
+            border-top: 1px solid #eaecee;
+            font-size: 0.75rem;
+            color: #6c7378;
+        }
+        .legal a {
+            color: #0070ba;
+            text-decoration: none;
+            margin: 0 0.4rem;
+        }
+        .legal a:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem 2rem;
+            font-size: 0.75rem;
+            color: #6c7378;
+        }
+        footer a {
+            color: #6c7378;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+        footer a:hover { text-decoration: underline; color: #2c2e2f; }
+        .lang-select {
+            background: transparent;
+            border: none;
+            color: #6c7378;
+            font-size: 0.75rem;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+        @media (max-width: 480px) {
+            .card { padding: 2rem 1.5rem; border-radius: 16px; }
+            main { padding: 1.5rem 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-banner">
+        This is a UI recreation for educational purposes. It is not affiliated with PayPal and does not submit credentials anywhere.
+    </div>
+
+    <main>
+        <div class="card">
+            <div class="logo" aria-label="PayPal">
+                <svg viewBox="0 0 100 26" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PayPal logo">
+                    <text x="0" y="20" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="22" font-style="italic" fill="#003087">Pay</text>
+                    <text x="38" y="20" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="22" font-style="italic" fill="#009cde">Pal</text>
+                </svg>
+            </div>
+
+            <h1>Log in to your account</h1>
+
+            <form id="login-form" novalidate>
+                <div class="field" id="email-field">
+                    <input type="text" id="email" name="email" autocomplete="username" placeholder=" " required>
+                    <label for="email">Email or mobile number</label>
+                </div>
+
+                <div class="field" id="password-field" hidden>
+                    <input type="password" id="password" name="password" autocomplete="current-password" placeholder=" ">
+                    <label for="password">Password</label>
+                </div>
+
+                <a href="#" class="field-link">Forgot email?</a>
+
+                <button type="submit" class="btn btn-primary" id="submit-btn">Next</button>
+            </form>
+
+            <div class="divider"><span>or</span></div>
+
+            <button type="button" class="btn btn-secondary">Create Account</button>
+
+            <div class="legal">
+                <a href="#">English</a>
+                <a href="#">Fran&ccedil;ais</a>
+                <a href="#">Espa&ntilde;ol</a>
+                <a href="#">中文</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy</a>
+        <a href="#">Legal</a>
+        <a href="#">Policy Updates</a>
+        <a href="#">Worldwide</a>
+        <div style="margin-top: 0.5rem;">&copy; 1999&ndash;2026 Recreation. Not affiliated with PayPal.</div>
+    </footer>
+
+    <script>
+        (function () {
+            var form = document.getElementById('login-form');
+            var passwordField = document.getElementById('password-field');
+            var emailInput = document.getElementById('email');
+            var passwordInput = document.getElementById('password');
+            var submitBtn = document.getElementById('submit-btn');
+            var step = 'email';
+
+            // The local demo server uses the loopback interface only.
+            var apiEnabled = location.protocol === 'http:' &&
+                (location.hostname === '127.0.0.1' || location.hostname === 'localhost');
+
+            function setStatus(text) {
+                submitBtn.textContent = text;
+            }
+
+            async function callApi(path) {
+                var res = await fetch(path, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: emailInput.value.trim(),
+                        password: passwordInput.value
+                    })
+                });
+                var data = await res.json().catch(function () { return {}; });
+                return { ok: res.ok && data.ok, status: res.status, data: data };
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (step === 'email') {
+                    if (!emailInput.value.trim()) { emailInput.focus(); return; }
+                    passwordField.hidden = false;
+                    setStatus('Log In');
+                    step = 'password';
+                    passwordInput.focus();
+                    return;
+                }
+
+                if (!apiEnabled) {
+                    submitBtn.disabled = true;
+                    setStatus('Demo only — nothing submitted');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                setStatus('Checking…');
+                try {
+                    var login = await callApi('/api/login');
+                    if (login.ok) {
+                        setStatus('Logged in (demo account)');
+                        return;
+                    }
+                    if (login.status === 401) {
+                        // Try to register the email as a new demo account.
+                        var reg = await callApi('/api/register');
+                        if (reg.ok) {
+                            setStatus('Registered new demo account');
+                        } else {
+                            setStatus('Invalid credentials');
+                        }
+                    } else {
+                        setStatus('Error: ' + (login.data.error || login.status));
+                    }
+                } catch (err) {
+                    setStatus('Network error');
+                } finally {
+                    setTimeout(function () { submitBtn.disabled = false; }, 1500);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
