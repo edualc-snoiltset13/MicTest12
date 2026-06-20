@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlobalPulse — Today's News</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #c0392b;
+      --dark:   #1a1a2e;
+      --navy:   #16213e;
+      --accent: #e74c3c;
+      --gold:   #f39c12;
+      --teal:   #1abc9c;
+      --blue:   #2980b9;
+      --text:   #2c2c2c;
+      --muted:  #7f8c8d;
+      --bg:     #f4f5f7;
+      --card:   #ffffff;
+    }
+
+    body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--dark);
+      color: #aaa;
+      font-size: .75rem;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .35rem 2rem;
+    }
+    .topbar a { color: #ccc; text-decoration: none; margin-left: 1rem; }
+    .topbar a:hover { color: #fff; }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 1.4rem 2rem .9rem;
+      border-bottom: 4px solid var(--accent);
+    }
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: .08em;
+      font-family: 'Times New Roman', serif;
+    }
+    header h1 span { color: var(--accent); }
+    header p { font-size: .85rem; color: #aaa; font-family: Arial, sans-serif; margin-top: .25rem; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--red);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: .65rem 1.2rem;
+      font-family: Arial, sans-serif;
+      font-size: .82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      transition: background .2s;
+    }
+    nav a:hover { background: rgba(255,255,255,.18); }
+
+    /* ── BREAKING TICKER ── */
+    .ticker-wrap {
+      background: var(--accent);
+      color: white;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+    .ticker-label {
+      background: var(--dark);
+      padding: .45rem .9rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .ticker-content {
+      display: flex;
+      animation: tickerScroll 45s linear infinite;
+      white-space: nowrap;
+      padding: .45rem 0;
+    }
+    .ticker-content span { margin-right: 4rem; }
+    .ticker-content span::before { content: "◆  "; }
+    @keyframes tickerScroll {
+      0%   { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 1.5rem 1.2rem; }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 1.8rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-main {
+      background: var(--card);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    .hero-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2980b9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+    .hero-body { padding: 1.2rem; }
+    .hero-body .cat { font-size: .72rem; font-family: Arial, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); }
+    .hero-body h2 { font-size: 1.6rem; line-height: 1.3; margin: .4rem 0 .6rem; }
+    .hero-body p  { font-size: .9rem; color: var(--muted); }
+
+    .hero-stack { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-small {
+      background: var(--card);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      gap: .8rem;
+      padding: .8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    }
+    .hero-small .thumb {
+      width: 90px;
+      height: 70px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .hero-small .info .cat { font-size: .68rem; font-family: Arial, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .hero-small .info h3  { font-size: .95rem; line-height: 1.3; margin: .2rem 0; }
+    .hero-small .info .meta { font-size: .72rem; color: var(--muted); font-family: Arial, sans-serif; }
+
+    /* ── SECTION HEADER ── */
+    .section-hd {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--text);
+      padding-bottom: .4rem;
+    }
+    .section-hd h2 { font-size: 1.15rem; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+    .section-hd .bar { flex: 1; height: 3px; background: var(--bg); }
+
+    /* ── ARTICLE GRID ── */
+    .art-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-bottom: 2rem; }
+    .art-card {
+      background: var(--card);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .art-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.13); }
+    .art-card .thumb {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .art-card .body { padding: .85rem; }
+    .art-card .cat { font-size: .68rem; font-family: Arial, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; }
+    .art-card h3 { font-size: 1rem; line-height: 1.35; margin: .3rem 0 .5rem; }
+    .art-card p  { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+    .art-card .meta { font-size: .72rem; color: var(--muted); font-family: Arial, sans-serif; margin-top: .6rem; border-top: 1px solid #eee; padding-top: .5rem; }
+
+    /* ── TWO-COL SECTION ── */
+    .art-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 2rem; }
+
+    /* ── LIST ARTICLES ── */
+    .art-list { display: flex; flex-direction: column; gap: .8rem; margin-bottom: 2rem; }
+    .art-row {
+      background: var(--card);
+      border-radius: 6px;
+      display: flex;
+      gap: 1rem;
+      padding: .9rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+      align-items: flex-start;
+    }
+    .art-row .thumb {
+      width: 110px;
+      height: 78px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+    .art-row .cat { font-size: .68rem; font-family: Arial, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .art-row h3  { font-size: 1.05rem; margin: .2rem 0 .35rem; line-height: 1.3; }
+    .art-row p   { font-size: .82rem; color: var(--muted); line-height: 1.45; }
+    .art-row .meta { font-size: .72rem; color: var(--muted); font-family: Arial, sans-serif; margin-top: .35rem; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+
+    .sidebar-widget {
+      background: var(--card);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    }
+    .widget-hd {
+      background: var(--dark);
+      color: white;
+      padding: .65rem 1rem;
+      font-family: Arial, sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .widget-body { padding: .9rem; }
+
+    /* trending */
+    .trending-item {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      padding: .6rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .trending-item:last-child { border-bottom: none; }
+    .trend-num {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ddd;
+      line-height: 1;
+      min-width: 28px;
+      font-family: Arial, sans-serif;
+    }
+    .trending-item h4 { font-size: .88rem; line-height: 1.3; }
+    .trending-item .meta { font-size: .72rem; color: var(--muted); font-family: Arial, sans-serif; }
+
+    /* weather */
+    .weather-row { display: flex; justify-content: space-between; align-items: center; padding: .5rem 0; border-bottom: 1px solid #f0f0f0; font-family: Arial, sans-serif; }
+    .weather-row:last-child { border-bottom: none; }
+    .weather-row .city { font-size: .85rem; font-weight: 600; }
+    .weather-row .temp { font-size: .85rem; color: var(--muted); }
+    .weather-row .icon { font-size: 1.3rem; }
+
+    /* opinion */
+    .opinion-card { padding: .7rem 0; border-bottom: 1px solid #f0f0f0; }
+    .opinion-card:last-child { border-bottom: none; }
+    .opinion-card .author { font-size: .72rem; font-family: Arial, sans-serif; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+    .opinion-card h4 { font-size: .9rem; margin: .2rem 0; line-height: 1.3; }
+    .opinion-card p { font-size: .78rem; color: var(--muted); font-style: italic; line-height: 1.4; }
+
+    /* market */
+    .market-row { display: flex; justify-content: space-between; align-items: center; padding: .45rem 0; border-bottom: 1px solid #f0f0f0; font-family: Arial, sans-serif; font-size: .82rem; }
+    .market-row:last-child { border-bottom: none; }
+    .market-row .ticker-name { font-weight: 700; }
+    .up   { color: #27ae60; font-weight: 700; }
+    .down { color: var(--accent); font-weight: 700; }
+
+    /* tags */
+    .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag {
+      background: var(--bg);
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: .3rem .65rem;
+      font-size: .75rem;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .tag:hover { background: var(--dark); color: white; border-color: var(--dark); }
+
+    /* ── QUOTE BANNER ── */
+    .quote-banner {
+      background: linear-gradient(135deg, var(--dark) 0%, #2c3e50 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .quote-banner blockquote { font-size: 1.25rem; font-style: italic; line-height: 1.5; margin-bottom: .7rem; }
+    .quote-banner cite { font-size: .8rem; color: #aaa; font-family: Arial, sans-serif; font-style: normal; }
+
+    /* ── COLOR HELPERS ── */
+    .c-world    { color: var(--accent); }
+    .c-tech     { color: var(--blue); }
+    .c-science  { color: var(--teal); }
+    .c-business { color: var(--gold); }
+    .c-sports   { color: #8e44ad; }
+    .c-health   { color: #27ae60; }
+    .c-climate  { color: #16a085; }
+    .c-culture  { color: #d35400; }
+    .c-opinion  { color: var(--red); }
+
+    .bg-world    { background: linear-gradient(135deg,#c0392b,#e74c3c); }
+    .bg-tech     { background: linear-gradient(135deg,#1a3a6b,#2980b9); }
+    .bg-science  { background: linear-gradient(135deg,#0f5132,#1abc9c); }
+    .bg-business { background: linear-gradient(135deg,#7d4a00,#f39c12); }
+    .bg-sports   { background: linear-gradient(135deg,#5b2c8d,#8e44ad); }
+    .bg-health   { background: linear-gradient(135deg,#145a32,#27ae60); }
+    .bg-climate  { background: linear-gradient(135deg,#0a4a3a,#16a085); }
+    .bg-culture  { background: linear-gradient(135deg,#7d2c00,#d35400); }
+
+    /* ── AD STRIP ── */
+    .ad-strip {
+      background: #fff;
+      border: 1px dashed #ccc;
+      text-align: center;
+      padding: .8rem;
+      font-family: Arial, sans-serif;
+      font-size: .75rem;
+      color: var(--muted);
+      border-radius: 4px;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #bbb;
+      padding: 2.5rem 2rem 1.2rem;
+      font-family: Arial, sans-serif;
+      font-size: .82rem;
+    }
+    .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; margin-bottom: 2rem; }
+    .footer-col h4 { color: white; font-size: .85rem; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .8rem; border-bottom: 1px solid #444; padding-bottom: .4rem; }
+    .footer-col a { display: block; color: #aaa; text-decoration: none; margin-bottom: .4rem; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #333; padding-top: .9rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+    .footer-bottom .brand { font-size: 1.1rem; font-weight: 700; color: white; font-family: 'Times New Roman', serif; }
+    .footer-bottom .brand span { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .sidebar { grid-row: 1; }
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .hero { grid-template-columns: 1fr; }
+      .art-grid { grid-template-columns: 1fr; }
+      .art-2col { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .art-row { flex-direction: column; }
+      .art-row .thumb { width: 100%; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>Sunday, May 25, 2025 &nbsp;|&nbsp; Edition 1,842</span>
+  <div>
+    <a href="#">Subscribe</a>
+    <a href="#">Newsletter</a>
+    <a href="#">Podcasts</a>
+    <a href="#">Apps</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <h1>Global<span>Pulse</span></h1>
+  <p>Trusted Journalism &nbsp;·&nbsp; Independent Reporting &nbsp;·&nbsp; Since 1981</p>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#world">World</a>
+  <a href="#technology">Technology</a>
+  <a href="#science">Science</a>
+  <a href="#business">Business</a>
+  <a href="#sports">Sports</a>
+  <a href="#health">Health</a>
+  <a href="#climate">Climate</a>
+  <a href="#culture">Culture</a>
+  <a href="#opinion">Opinion</a>
+</nav>
+
+<!-- BREAKING NEWS TICKER -->
+<div class="ticker-wrap">
+  <span class="ticker-label">🔴 Breaking</span>
+  <div class="ticker-content">
+    <span>G7 Leaders reach landmark climate financing deal in Rome</span>
+    <span>AI regulation framework passes EU Parliament with record majority</span>
+    <span>SpaceX successfully lands crew on lunar south pole</span>
+    <span>Federal Reserve holds rates steady; signals two cuts in Q3</span>
+    <span>WHO declares new mpox variant "variant of interest" in West Africa</span>
+    <span>India–Pakistan ceasefire holds for third straight day</span>
+    <span>Nvidia market cap surpasses $4 trillion for the first time</span>
+    <span>Australia records hottest autumn on record; evacuations underway</span>
+    <span>OpenAI announces GPT-5 integration with 12 national health services</span>
+    <span>World Cup 2026 qualifying matches deliver major upsets</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="main-grid">
+
+    <!-- LEFT: ARTICLES -->
+    <main>
+
+      <!-- ── HERO SECTION ── -->
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-img bg-world">🌍</div>
+          <div class="hero-body">
+            <div class="cat c-world">World &nbsp;·&nbsp; Top Story</div>
+            <h2>G7 Summit: Historic $500 Billion Climate Fund Agreed as Leaders Warn of "Last Window" to Act</h2>
+            <p>World leaders gathered in Rome have signed off on the largest multilateral climate financing package in history, directing funds toward clean energy transitions in over 80 developing nations. The deal, brokered after 36 hours of tense negotiations, also includes binding commitments on methane reduction targets that scientists say could shave 0.2°C off projected warming by 2050.</p>
+            <p style="margin-top:.6rem;font-size:.78rem;color:var(--muted);font-family:Arial,sans-serif;">By <strong>Elena Marchetti</strong> &nbsp;·&nbsp; May 25, 2025, 09:14 UTC &nbsp;·&nbsp; 8 min read</p>
+          </div>
+        </div>
+
+        <div class="hero-stack">
+          <div class="hero-small">
+            <div class="thumb bg-tech" style="border-radius:4px;">🤖</div>
+            <div class="info">
+              <div class="cat c-tech">Technology</div>
+              <h3>Anthropic's Claude 4 Opus Tops Every Major AI Benchmark, Challenging Assumption of AGI Timelines</h3>
+              <div class="meta">May 24 &nbsp;·&nbsp; 6 min read</div>
+            </div>
+          </div>
+          <div class="hero-small">
+            <div class="thumb bg-science" style="border-radius:4px;">🚀</div>
+            <div class="info">
+              <div class="cat c-science">Science</div>
+              <h3>SpaceX Artemis III Crew Steps on the Lunar Surface — "One Giant Leap" Echoes Again</h3>
+              <div class="meta">May 23 &nbsp;·&nbsp; 5 min read</div>
+            </div>
+          </div>
+          <div class="hero-small">
+            <div class="thumb bg-health" style="border-radius:4px;">💊</div>
+            <div class="info">
+              <div class="cat c-health">Health</div>
+              <h3>Breakthrough mRNA Cancer Vaccine Shows 94% Remission Rate in Phase III Trial</h3>
+              <div class="meta">May 24 &nbsp;·&nbsp; 7 min read</div>
+            </div>
+          </div>
+          <div class="hero-small">
+            <div class="thumb bg-business" style="border-radius:4px;">📈</div>
+            <div class="info">
+              <div class="cat c-business">Business</div>
+              <h3>Nvidia Crosses $4 Trillion Market Cap as Blackwell Ultra Demand Overwhelms Supply</h3>
+              <div class="meta">May 24 &nbsp;·&nbsp; 4 min read</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── WORLD NEWS ── -->
+      <section id="world">
+        <div class="section-hd">
+          <h2>🌍 World</h2><div class="bar"></div>
+        </div>
+        <div class="art-grid">
+
+          <div class="art-card">
+            <div class="thumb bg-world">🕊️</div>
+            <div class="body">
+              <div class="cat c-world">World</div>
+              <h3>India–Pakistan Ceasefire Extends as UN Monitors Deploy Along Line of Control</h3>
+              <p>The fragile ceasefire brokered last week by US Secretary of State Daniel Barr continues to hold, with UN peacekeepers now stationed at 14 flashpoint positions across the disputed frontier.</p>
+              <div class="meta">By Priya Sharma &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-world">🗳️</div>
+            <div class="body">
+              <div class="cat c-world">World</div>
+              <h3>French Snap Election: Le Pen's National Rally Leads Polls by 9 Points Ahead of June Vote</h3>
+              <p>A new IFOP poll shows the far-right party pulling ahead amid public anger over pension reform, energy costs, and record immigration levels that have dominated the pre-campaign debate.</p>
+              <div class="meta">By Julien Moreau &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-world">🌊</div>
+            <div class="body">
+              <div class="cat c-world">World</div>
+              <h3>Philippines Typhoon Butchoy: Death Toll Rises to 230 as Search Teams Reach Isolated Villages</h3>
+              <p>Relief operations intensified on Sunday as the Philippine Air Force deployed additional helicopters to areas where flooding has cut road access for over four days following the powerful storm.</p>
+              <div class="meta">By Maria Santos &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-world">🛢️</div>
+            <div class="body">
+              <div class="cat c-world">World</div>
+              <h3>OPEC+ Cuts Production Targets Again as Oil Slips Below $68 Per Barrel</h3>
+              <p>The cartel's emergency meeting in Vienna yielded a further 1.2 million barrel-per-day reduction beginning June 1, as demand concerns from a slowing Chinese economy weigh on crude markets.</p>
+              <div class="meta">By Ahmed Al-Rashid &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-world">🇺🇦</div>
+            <div class="body">
+              <div class="cat c-world">World</div>
+              <h3>Ukraine Peace Talks: Kyiv Rejects Russian Proposal Requiring Territory Concessions</h3>
+              <p>Ukrainian officials dismissed Moscow's framework as "capitulation dressed as diplomacy," while EU foreign ministers called for intensified pressure through new sanctions targeting the Kremlin's financial networks.</p>
+              <div class="meta">By Olena Kovalenko &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-world">🏛️</div>
+            <div class="body">
+              <div class="cat c-world">World</div>
+              <h3>ICC Issues Arrest Warrant for Sudan's Janjaweed Commander Over Darfur Atrocities</h3>
+              <p>The International Criminal Court's decision, welcomed by human rights groups, targets General Omar Khalid amid fresh evidence of mass civilian killings during the ongoing conflict in west Sudan.</p>
+              <div class="meta">By Fatima Hassan &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── TECHNOLOGY ── -->
+      <section id="technology">
+        <div class="section-hd">
+          <h2>💻 Technology</h2><div class="bar"></div>
+        </div>
+        <div class="art-grid">
+
+          <div class="art-card">
+            <div class="thumb bg-tech">🧠</div>
+            <div class="body">
+              <div class="cat c-tech">Technology</div>
+              <h3>EU AI Act Enforcement Begins: Brussels Fines Three US Companies a Combined €840 Million</h3>
+              <p>The first wave of AI Act penalties targets vendors of "high-risk" systems used in credit scoring and hiring decisions, signaling that the bloc's regulatory framework has real teeth.</p>
+              <div class="meta">By Hans Weber &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-tech">📱</div>
+            <div class="body">
+              <div class="cat c-tech">Technology</div>
+              <h3>Apple Intelligence 2.0 Launches with On-Device AI That Rewrites Emails in Your Own Voice</h3>
+              <p>The update, rolling out to iPhone 17 and later, uses a locally-running large language model to assist with writing, coding, and proactive suggestions — with Apple emphasizing no data leaves the device.</p>
+              <div class="meta">By Sophie Chen &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-tech">🔒</div>
+            <div class="body">
+              <div class="cat c-tech">Technology</div>
+              <h3>Salt Typhoon Hackers Linked to Fresh Breach of Five European Telecom Operators</h3>
+              <p>Cybersecurity firm Mandiant attributes the campaign, which compromised backbone routing equipment at carriers in Germany, France, Sweden, Spain, and Poland, to a PRC state-sponsored group.</p>
+              <div class="meta">By Chloe Rivera &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-tech">⚡</div>
+            <div class="body">
+              <div class="cat c-tech">Technology</div>
+              <h3>Quantum Computing Milestone: Google's Willow-2 Chip Solves Problem in Minutes vs. 10,000 Years</h3>
+              <p>The 1,000-qubit processor achieves what Google calls "practical quantum advantage" on drug discovery optimization problems, a step toward real-world pharmaceutical applications.</p>
+              <div class="meta">By Daniel Park &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-tech">🚗</div>
+            <div class="body">
+              <div class="cat c-tech">Technology</div>
+              <h3>Waymo Expands Robotaxi Service to 12 New US Cities by Year-End, Bypassing Permits in Two States</h3>
+              <p>The Alphabet subsidiary's rapid rollout has reignited debate over federal versus state regulation of autonomous vehicles after it began operating without local permits in Texas and Florida.</p>
+              <div class="meta">By Lisa Nguyen &nbsp;·&nbsp; May 22, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-tech">🛰️</div>
+            <div class="body">
+              <div class="cat c-tech">Technology</div>
+              <h3>Starlink Gen 3 Delivers 1 Gbps Broadband to Remote Schools — But at What Environmental Cost?</h3>
+              <p>SpaceX's latest constellation upgrade promises unprecedented rural connectivity, but astronomers and regulators are pushing back on the proliferation of LEO satellites now numbering over 12,000.</p>
+              <div class="meta">By Tom Higgins &nbsp;·&nbsp; May 22, 2025</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- AD STRIP -->
+      <div class="ad-strip">[ Advertisement ]</div>
+
+      <!-- ── SCIENCE ── -->
+      <section id="science">
+        <div class="section-hd">
+          <h2>🔬 Science</h2><div class="bar"></div>
+        </div>
+        <div class="art-list">
+
+          <div class="art-row">
+            <div class="thumb bg-science" style="border-radius:4px;">🌕</div>
+            <div>
+              <div class="cat c-science">Science / Space</div>
+              <h3>Lunar South Pole: SpaceX Artemis III Crew Discovers Water Ice Just 30 cm Below Regolith Surface</h3>
+              <p>Preliminary analysis from a portable drill carried by mission specialists confirms water ice concentrations far higher than orbital data predicted, potentially transforming the economics of a permanent lunar presence. "This changes everything," said mission commander Col. Sarah Okafor in a downlink broadcast from the Moon's shadow region.</p>
+              <div class="meta">By James Liu &nbsp;·&nbsp; May 23, 2025 &nbsp;·&nbsp; 9 min read</div>
+            </div>
+          </div>
+
+          <div class="art-row">
+            <div class="thumb bg-science" style="border-radius:4px;">🦠</div>
+            <div>
+              <div class="cat c-science">Science / Medicine</div>
+              <h3>CRISPR 3.0 'Prime Editing' Corrects Sickle Cell Disease in 97 Patients With No Off-Target Effects</h3>
+              <p>A multinational Phase III trial published in <em>The Lancet</em> reports near-complete remission with a single treatment — no chemotherapy conditioning required — marking the most significant advance in genetic medicine since the approval of Casgevy in 2023.</p>
+              <div class="meta">By Dr. Ngozi Adeyemi &nbsp;·&nbsp; May 24, 2025 &nbsp;·&nbsp; 11 min read</div>
+            </div>
+          </div>
+
+          <div class="art-row">
+            <div class="thumb bg-science" style="border-radius:4px;">🌌</div>
+            <div>
+              <div class="cat c-science">Science / Astronomy</div>
+              <h3>James Webb Telescope Confirms Biosignature Gases in Atmosphere of Exoplanet K2-18c</h3>
+              <p>The detection of dimethyl sulfide — a compound produced almost exclusively by living organisms on Earth — in the atmosphere of a hycean world 120 light-years away has reignited the debate over extraterrestrial life. Researchers caution that non-biological abiotic explanations have not been fully ruled out.</p>
+              <div class="meta">By Sarah Mitchell &nbsp;·&nbsp; May 22, 2025 &nbsp;·&nbsp; 10 min read</div>
+            </div>
+          </div>
+
+          <div class="art-row">
+            <div class="thumb bg-science" style="border-radius:4px;">🧬</div>
+            <div>
+              <div class="cat c-science">Science / Biology</div>
+              <h3>Scientists Grow Functional Human Kidney in Pig Embryo — Ethics Boards Convene Worldwide</h3>
+              <p>A breakthrough from the Salk Institute and Yokohama City University shows a viable human kidney cultured inside a modified pig embryo, offering hope to the 800,000 patients on transplant waiting lists globally while raising urgent bioethical questions.</p>
+              <div class="meta">By Prof. Hiroshi Nakamura &nbsp;·&nbsp; May 21, 2025 &nbsp;·&nbsp; 8 min read</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BUSINESS ── -->
+      <section id="business">
+        <div class="section-hd">
+          <h2>📊 Business</h2><div class="bar"></div>
+        </div>
+        <div class="art-2col">
+
+          <div class="art-card">
+            <div class="thumb bg-business">💹</div>
+            <div class="body">
+              <div class="cat c-business">Business / Finance</div>
+              <h3>Federal Reserve Holds Rates at 4.25%–4.5%; Two Cuts Now Expected in Q3 as Inflation Cools to 2.3%</h3>
+              <p>Chair Powell pointed to softening labor market conditions and an easing supply chain as evidence that the Fed's restrictive stance is working, but cautioned that tariff-related price pressures remain a wildcard heading into summer.</p>
+              <div class="meta">By Robert Finch &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-business">🏭</div>
+            <div class="body">
+              <div class="cat c-business">Business / Trade</div>
+              <h3>US–China Tech Decoupling Accelerates: 143 More Chinese Companies Added to Commerce Blacklist</h3>
+              <p>The sweeping export controls, covering advanced semiconductors, AI training hardware, and quantum components, are expected to cost American firms up to $22 billion in lost revenue this fiscal year while Beijing vows "symmetric retaliation."</p>
+              <div class="meta">By Grace Yuan &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-business">🏦</div>
+            <div class="body">
+              <div class="cat c-business">Business / Banking</div>
+              <h3>JPMorgan and Goldman Sachs Warn of "Concentrated Risk" as AI Stocks Account for 38% of S&amp;P 500</h3>
+              <p>Both Wall Street giants issued investor notes citing dangerous levels of index concentration, with Nvidia, Microsoft, and Alphabet alone comprising a quarter of the benchmark index — the highest ever recorded.</p>
+              <div class="meta">By Marcus Webb &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-business">✈️</div>
+            <div class="body">
+              <div class="cat c-business">Business / Aviation</div>
+              <h3>Boeing 797 "NMA" Finally Gets FAA Approval After Three-Year Safety Review — Orders Surge</h3>
+              <p>The mid-market aircraft, which features a composite fuselage and next-generation GE9X-derived engines, already has 840 orders from 22 airlines, providing the embattled manufacturer its first major commercial win since the 737 MAX crisis.</p>
+              <div class="meta">By Carla Johnson &nbsp;·&nbsp; May 22, 2025</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── QUOTE BANNER ── -->
+      <div class="quote-banner">
+        <blockquote>"The question is not whether artificial intelligence will change the world — it already has. The question is whether we will be wise enough to guide it."</blockquote>
+        <cite>— Geoffrey Hinton, Nobel Laureate in Physics 2024, speaking at the Geneva AI Safety Summit, May 2025</cite>
+      </div>
+
+      <!-- ── SPORTS ── -->
+      <section id="sports">
+        <div class="section-hd">
+          <h2>🏆 Sports</h2><div class="bar"></div>
+        </div>
+        <div class="art-grid">
+
+          <div class="art-card">
+            <div class="thumb bg-sports">⚽</div>
+            <div class="body">
+              <div class="cat c-sports">Sports / Football</div>
+              <h3>Champions League Final: Inter Milan Beat Real Madrid 3–2 in an Extraordinary Munich Comeback</h3>
+              <p>Lautaro Martínez's hat-trick — including a stunning bicycle kick in extra time — secured Inter their first European Cup since 2010 in a match already being called the greatest final of the modern era.</p>
+              <div class="meta">By Marco Rossi &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-sports">🏀</div>
+            <div class="body">
+              <div class="cat c-sports">Sports / NBA</div>
+              <h3>NBA Playoffs: Oklahoma City Thunder Eliminate Boston Celtics 4–2, Set Up Dream Finals vs. Warriors</h3>
+              <p>Shai Gilgeous-Alexander's 42-point Game 6 masterclass extinguished Boston's title defence as the youngest roster to reach the Finals in 30 years prepares to face a resurgent Golden State squad.</p>
+              <div class="meta">By Darius Bell &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-sports">🎾</div>
+            <div class="body">
+              <div class="cat c-sports">Sports / Tennis</div>
+              <h3>French Open: Jannik Sinner Reaches His First Roland Garros Final After Defeating Djokovic in Four Sets</h3>
+              <p>The world No. 1 Italian overcame a second-set blip and a hostile crowd to outlast the veteran Serb in a semi-final that lasted four hours and 22 minutes on a rain-delayed Court Philippe-Chatrier.</p>
+              <div class="meta">By Claire Dubois &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-sports">🏎️</div>
+            <div class="body">
+              <div class="cat c-sports">Sports / F1</div>
+              <h3>Monaco Grand Prix: Max Verstappen Denies Rivals a Street-Circuit Win for the Third Year Running</h3>
+              <p>Red Bull's dominance in the Principality endures despite a new tyre compound and a Safety Car period that handed Ferrari a brief strategic advantage before the champion sealed victory with clinical final-stint pace.</p>
+              <div class="meta">By Pierre Laurent &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-sports">⚾</div>
+            <div class="body">
+              <div class="cat c-sports">Sports / Baseball</div>
+              <h3>MLB: Shohei Ohtani Records 30th Homer of 2025 Season — On Pace for Historic 70-Home-Run Year</h3>
+              <p>The Los Angeles Dodgers superstar continues to rewrite record books, adding a towering 467-foot shot to his tally as debates rage across the sport about whether he can surpass the all-time single-season mark.</p>
+              <div class="meta">By Kevin Park &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-sports">🥊</div>
+            <div class="body">
+              <div class="cat c-sports">Sports / Boxing</div>
+              <h3>Fury vs. Usyk Rematch Set for Las Vegas in August — Undisputed Heavyweight Crown on the Line Again</h3>
+              <p>Promoters confirmed the blockbuster bout after weeks of negotiation, with Usyk's team insisting on the unified belts being defended while Fury's camp agreed to a third-knockdown rule change requested by Nevada State Athletic Commission.</p>
+              <div class="meta">By Ray Collins &nbsp;·&nbsp; May 22, 2025</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── HEALTH ── -->
+      <section id="health">
+        <div class="section-hd">
+          <h2>🏥 Health</h2><div class="bar"></div>
+        </div>
+        <div class="art-list">
+
+          <div class="art-row">
+            <div class="thumb bg-health" style="border-radius:4px;">💉</div>
+            <div>
+              <div class="cat c-health">Health / Medicine</div>
+              <h3>mRNA Cancer Vaccine MRNA-4157 Achieves 94% Remission in Melanoma — Moderna Files for FDA Approval</h3>
+              <p>Combined with pembrolizumab, Moderna's personalised mRNA vaccine demonstrated a near-complete response rate that stunned oncologists. The filing triggers a Priority Review designation, with a potential approval decision expected before year-end.</p>
+              <div class="meta">By Dr. Aisha Okonkwo &nbsp;·&nbsp; May 24, 2025 &nbsp;·&nbsp; 10 min read</div>
+            </div>
+          </div>
+
+          <div class="art-row">
+            <div class="thumb bg-health" style="border-radius:4px;">🧪</div>
+            <div>
+              <div class="cat c-health">Health / Research</div>
+              <h3>New Alzheimer's Drug Lecanemab-X Slows Cognitive Decline by 47% in Largest Trial Yet</h3>
+              <p>Data from a 4,200-patient trial spanning 18 countries shows that the second-generation tau-targeting biologic meaningfully delays transition from mild cognitive impairment to moderate dementia — a finding neurologists are calling a paradigm shift.</p>
+              <div class="meta">By Dr. Sandra Müller &nbsp;·&nbsp; May 23, 2025 &nbsp;·&nbsp; 8 min read</div>
+            </div>
+          </div>
+
+          <div class="art-row">
+            <div class="thumb bg-health" style="border-radius:4px;">😷</div>
+            <div>
+              <div class="cat c-health">Health / Public Health</div>
+              <h3>WHO Declares Mpox Variant IIb Surge in DRC, Nigeria, and Uganda a "Variant of Interest"</h3>
+              <p>The updated classification falls short of a Public Health Emergency of International Concern but triggers enhanced genomic surveillance and unlocks emergency vaccine stockpile deployment from the African Vaccine Acquisition Trust reserves.</p>
+              <div class="meta">By WHO Correspondent &nbsp;·&nbsp; May 25, 2025 &nbsp;·&nbsp; 6 min read</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CLIMATE ── -->
+      <section id="climate">
+        <div class="section-hd">
+          <h2>🌱 Climate &amp; Environment</h2><div class="bar"></div>
+        </div>
+        <div class="art-2col">
+
+          <div class="art-card">
+            <div class="thumb bg-climate">🌡️</div>
+            <div class="body">
+              <div class="cat c-climate">Climate</div>
+              <h3>Earth's Average Temperature Hits +1.58°C Above Pre-Industrial Baseline — Hottest Month Ever Recorded</h3>
+              <p>Copernicus Climate Change Service data shows April 2025 as the 22nd consecutive month to breach the 1.5°C threshold, prompting urgent calls to accelerate COP30 commitments ahead of November's summit in Belém, Brazil.</p>
+              <div class="meta">By Astrid Svensson &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-climate">🌊</div>
+            <div class="body">
+              <div class="cat c-climate">Climate</div>
+              <h3>Antarctica's Thwaites Glacier: New Fracture Detected That Could Accelerate "Doomsday" Collapse Timeline</h3>
+              <p>Satellite imagery analyzed by British Antarctic Survey reveals a 70-km rift forming in the ice shelf's eastern buttress, which scientists warn could cause the glacier to double its melt rate within the next decade.</p>
+              <div class="meta">By Prof. Robert Scott &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-climate">⚡</div>
+            <div class="body">
+              <div class="cat c-climate">Climate</div>
+              <h3>Solar Power Now the World's Cheapest Electricity Source in 130 Countries, IEA Report Confirms</h3>
+              <p>The landmark International Energy Agency analysis shows utility-scale solar now averaging $24/MWh globally, undercutting coal and gas even without subsidies — a shift that analysts say will accelerate retirement of fossil fuel plants.</p>
+              <div class="meta">By Emma Clarke &nbsp;·&nbsp; May 22, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-climate">🐋</div>
+            <div class="body">
+              <div class="cat c-climate">Environment</div>
+              <h3>Ocean Dead Zones Now Cover an Area Larger Than the European Union, UN Report Warns</h3>
+              <p>Hypoxic zones caused by agricultural runoff, warming seas, and reduced ocean circulation have expanded 25% since 2015, devastating fisheries that 3.3 billion people depend on for protein, the UN Environment Programme reports.</p>
+              <div class="meta">By UNEP Correspondent &nbsp;·&nbsp; May 21, 2025</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CULTURE ── -->
+      <section id="culture">
+        <div class="section-hd">
+          <h2>🎨 Culture &amp; Arts</h2><div class="bar"></div>
+        </div>
+        <div class="art-grid">
+
+          <div class="art-card">
+            <div class="thumb bg-culture">🎬</div>
+            <div class="body">
+              <div class="cat c-culture">Culture / Film</div>
+              <h3>Cannes 2025: Christopher Nolan's "Meridian" Takes Palme d'Or in Emotional Standing Ovation</h3>
+              <p>The British director's meditation on memory, colonialism, and time won over the jury with what president Isabelle Huppert called "a film that breathes like a living thing." The ensemble cast includes Cate Blanchett and Denzel Washington.</p>
+              <div class="meta">By Isabelle Renard &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-culture">🎵</div>
+            <div class="body">
+              <div class="cat c-culture">Culture / Music</div>
+              <h3>Taylor Swift's "Eras Tour: Part II" Becomes the Highest-Grossing Concert Tour in History at $2.1 Billion</h3>
+              <p>The extended world tour surpassed the original's own record after just 68 dates, with sold-out stadium shows across Southeast Asia and Africa representing new markets for the pop phenomenon's global footprint.</p>
+              <div class="meta">By Dana Brooks &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="thumb bg-culture">📚</div>
+            <div class="body">
+              <div class="cat c-culture">Culture / Books</div>
+              <h3>Booker Prize Longlist Sparks Debate After Three of 13 Novels Were Co-Written With AI Assistance</h3>
+              <p>The Prize's board has confirmed all three works comply with its updated guidelines requiring disclosure of AI collaboration, but traditionalists have called for a separate category — reigniting the fiercest row in the award's 56-year history.</p>
+              <div class="meta">By Nigel Harrington &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── OPINION ── -->
+      <section id="opinion">
+        <div class="section-hd">
+          <h2>✍️ Opinion &amp; Analysis</h2><div class="bar"></div>
+        </div>
+        <div class="art-list">
+
+          <div class="art-row">
+            <div class="thumb" style="background:linear-gradient(135deg,#7d0000,#c0392b);border-radius:4px;font-size:2.2rem;">✍️</div>
+            <div>
+              <div class="cat c-opinion">Opinion</div>
+              <h3>We Are Sleepwalking Into an AI Governance Vacuum — And the Window to Act Is Closing Fast</h3>
+              <p>While Brussels fires its first enforcement salvos and Washington argues over committee jurisdiction, the systems reshaping employment, education, and warfare are being deployed at a pace that outstrips every regulatory mechanism humans have ever created. The G7's AI code of conduct is a start — but a whisper against a hurricane.</p>
+              <div class="meta">Mariana Costa, Senior Fellow, Carnegie Endowment &nbsp;·&nbsp; May 25, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-row">
+            <div class="thumb" style="background:linear-gradient(135deg,#7d0000,#c0392b);border-radius:4px;font-size:2.2rem;">✍️</div>
+            <div>
+              <div class="cat c-opinion">Analysis</div>
+              <h3>The Lunar Ice Discovery Changes the Strategic Math for Every Space-Faring Nation</h3>
+              <p>Water ice at the Moon's south pole is not just a scientific curiosity — it is rocket fuel, drinking water, and oxygen. Nations that establish extraction infrastructure in the next decade will hold leverage over every subsequent mission to cislunar space and beyond. The 1967 Outer Space Treaty was never designed for this reality.</p>
+              <div class="meta">Dr. Elara Voss, Professor of Space Law, LSE &nbsp;·&nbsp; May 24, 2025</div>
+            </div>
+          </div>
+
+          <div class="art-row">
+            <div class="thumb" style="background:linear-gradient(135deg,#7d0000,#c0392b);border-radius:4px;font-size:2.2rem;">✍️</div>
+            <div>
+              <div class="cat c-opinion">Commentary</div>
+              <h3>The Champions League Has Never Been More Global — And European Clubs Have Never Been More Worried</h3>
+              <p>As Saudi Pro League and MLS clubs continue to hoover up talent with wage offers that dwarf what even Bayern Munich can match, UEFA's revised Financial Sustainability Rules are fighting last decade's war. The beautiful game's geography is shifting irreversibly, and European traditionalists have only themselves to blame.</p>
+              <div class="meta">Felipe Andrade, Football Correspondent &nbsp;·&nbsp; May 23, 2025</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+
+      <!-- TRENDING -->
+      <div class="sidebar-widget">
+        <div class="widget-hd">🔥 Trending Now</div>
+        <div class="widget-body">
+
+          <div class="trending-item">
+            <div class="trend-num">1</div>
+            <div>
+              <h4>SpaceX Moon Landing: What Did They Actually Find?</h4>
+              <div class="meta">184,000 reading now</div>
+            </div>
+          </div>
+
+          <div class="trending-item">
+            <div class="trend-num">2</div>
+            <div>
+              <h4>Champions League Final Highlights: Martínez Bicycle Kick in Full</h4>
+              <div class="meta">142,000 reading now</div>
+            </div>
+          </div>
+
+          <div class="trending-item">
+            <div class="trend-num">3</div>
+            <div>
+              <h4>What Is the New Mpox Variant — And Should You Be Worried?</h4>
+              <div class="meta">98,000 reading now</div>
+            </div>
+          </div>
+
+          <div class="trending-item">
+            <div class="trend-num">4</div>
+            <div>
+              <h4>Nvidia $4 Trillion: The Full Story Behind the AI Chip Giant</h4>
+              <div class="meta">87,000 reading now</div>
+            </div>
+          </div>
+
+          <div class="trending-item">
+            <div class="trend-num">5</div>
+            <div>
+              <h4>G7 Climate Deal: What It Means for Your Energy Bills</h4>
+              <div class="meta">74,000 reading now</div>
+            </div>
+          </div>
+
+          <div class="trending-item">
+            <div class="trend-num">6</div>
+            <div>
+              <h4>Monaco GP: Verstappen's Genius Strategy Explained Lap by Lap</h4>
+              <div class="meta">61,000 reading now</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WEATHER -->
+      <div class="sidebar-widget">
+        <div class="widget-hd">🌤️ World Weather</div>
+        <div class="widget-body">
+          <div class="weather-row">
+            <span class="city">New York</span>
+            <span class="icon">⛅</span>
+            <span class="temp">22°C / 72°F</span>
+          </div>
+          <div class="weather-row">
+            <span class="city">London</span>
+            <span class="icon">🌦️</span>
+            <span class="temp">16°C / 61°F</span>
+          </div>
+          <div class="weather-row">
+            <span class="city">Paris</span>
+            <span class="icon">☀️</span>
+            <span class="temp">24°C / 75°F</span>
+          </div>
+          <div class="weather-row">
+            <span class="city">Tokyo</span>
+            <span class="icon">🌤️</span>
+            <span class="temp">28°C / 82°F</span>
+          </div>
+          <div class="weather-row">
+            <span class="city">Dubai</span>
+            <span class="icon">☀️</span>
+            <span class="temp">41°C / 106°F</span>
+          </div>
+          <div class="weather-row">
+            <span class="city">Sydney</span>
+            <span class="icon">🌧️</span>
+            <span class="temp">13°C / 55°F</span>
+          </div>
+          <div class="weather-row">
+            <span class="city">São Paulo</span>
+            <span class="icon">⛈️</span>
+            <span class="temp">19°C / 66°F</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARKETS -->
+      <div class="sidebar-widget">
+        <div class="widget-hd">📈 Markets at a Glance</div>
+        <div class="widget-body">
+          <div class="market-row"><span class="ticker-name">S&amp;P 500</span><span>5,924.18</span><span class="up">▲ 0.84%</span></div>
+          <div class="market-row"><span class="ticker-name">NASDAQ</span><span>19,341.02</span><span class="up">▲ 1.21%</span></div>
+          <div class="market-row"><span class="ticker-name">DJIA</span><span>42,107.55</span><span class="up">▲ 0.42%</span></div>
+          <div class="market-row"><span class="ticker-name">FTSE 100</span><span>8,673.14</span><span class="down">▼ 0.18%</span></div>
+          <div class="market-row"><span class="ticker-name">Nikkei 225</span><span>38,544.30</span><span class="up">▲ 0.57%</span></div>
+          <div class="market-row"><span class="ticker-name">Brent Crude</span><span>$67.88</span><span class="down">▼ 1.34%</span></div>
+          <div class="market-row"><span class="ticker-name">Gold</span><span>$3,248.60</span><span class="up">▲ 0.29%</span></div>
+          <div class="market-row"><span class="ticker-name">Bitcoin</span><span>$108,420</span><span class="up">▲ 2.17%</span></div>
+          <div class="market-row"><span class="ticker-name">EUR/USD</span><span>1.0852</span><span class="down">▼ 0.11%</span></div>
+        </div>
+      </div>
+
+      <!-- OPINION -->
+      <div class="sidebar-widget">
+        <div class="widget-hd">✍️ Today's Columnists</div>
+        <div class="widget-body">
+          <div class="opinion-card">
+            <div class="author">Mariana Costa</div>
+            <h4>The AI Governance Vacuum</h4>
+            <p>"Every month we delay binding international rules, the moat around the most capable systems grows wider."</p>
+          </div>
+          <div class="opinion-card">
+            <div class="author">Dr. Elara Voss</div>
+            <h4>Moon Ice Changes Everything</h4>
+            <p>"The 1967 Outer Space Treaty was never designed for a world where water on the Moon is strategically contested."</p>
+          </div>
+          <div class="opinion-card">
+            <div class="author">Felipe Andrade</div>
+            <h4>Football's Shifting Geography</h4>
+            <p>"Saudi and US leagues are winning the wage war. UEFA's response amounts to rearranging deck chairs."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAGS -->
+      <div class="sidebar-widget">
+        <div class="widget-hd">🏷️ Popular Topics</div>
+        <div class="widget-body">
+          <div class="tags">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">SpaceX</span>
+            <span class="tag">Climate Change</span>
+            <span class="tag">Champions League</span>
+            <span class="tag">mRNA Vaccines</span>
+            <span class="tag">Nvidia</span>
+            <span class="tag">Ukraine War</span>
+            <span class="tag">G7 Summit</span>
+            <span class="tag">Federal Reserve</span>
+            <span class="tag">James Webb</span>
+            <span class="tag">French Open</span>
+            <span class="tag">CRISPR</span>
+            <span class="tag">Quantum Computing</span>
+            <span class="tag">Moon Landing</span>
+            <span class="tag">Mpox</span>
+            <span class="tag">Bitcoin</span>
+            <span class="tag">Waymo</span>
+            <span class="tag">Shohei Ohtani</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="sidebar-widget" style="background:var(--dark);color:white;">
+        <div class="widget-hd" style="background:var(--accent);">📬 Morning Briefing</div>
+        <div class="widget-body">
+          <p style="font-size:.83rem;line-height:1.5;margin-bottom:.8rem;">Get the five stories that matter, curated every morning at 6 AM. No noise, no clickbait.</p>
+          <input type="email" placeholder="Your email address" style="width:100%;padding:.5rem .7rem;border:none;border-radius:4px;font-size:.82rem;margin-bottom:.6rem;" />
+          <button style="width:100%;background:var(--accent);color:white;border:none;padding:.55rem;border-radius:4px;font-family:Arial,sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.06em;">Subscribe Free</button>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>World</h4>
+      <a href="#">Europe</a>
+      <a href="#">Asia Pacific</a>
+      <a href="#">Middle East</a>
+      <a href="#">Africa</a>
+      <a href="#">Americas</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="#">Technology</a>
+      <a href="#">Science</a>
+      <a href="#">Business</a>
+      <a href="#">Health</a>
+      <a href="#">Climate</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Editorial Standards</a>
+      <a href="#">Advertise</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Settings</a>
+      <a href="#">Corrections</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="brand">Global<span>Pulse</span></div>
+    <div>© 2025 GlobalPulse Media Ltd. All rights reserved.</div>
+    <div>Independent since 1981</div>
+  </div>
+</footer>
+
+</body>
+</html>

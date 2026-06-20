@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lumina — Create Without Limits</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #05060f;
+  --surface: #0c0e1e;
+  --border:  rgba(255,255,255,.08);
+  --text:    #f0f0ff;
+  --muted:   #8888aa;
+  --purple:  #a855f7;
+  --pink:    #ec4899;
+  --blue:    #38bdf8;
+  --grad:    linear-gradient(135deg, #a855f7, #ec4899);
+  --grad2:   linear-gradient(135deg, #38bdf8, #a855f7);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 4rem;
+  background: rgba(5,6,15,.7);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-size: 1.35rem; font-weight: 800; letter-spacing: -.02em;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .88rem; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--grad); border: none; color: white;
+  padding: .55rem 1.4rem; border-radius: 40px;
+  font-weight: 700; font-size: .85rem; cursor: pointer;
+  transition: opacity .2s, transform .15s;
+}
+.nav-cta:hover { opacity: .88; transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 7rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* animated background orbs */
+.orb {
+  position: absolute; border-radius: 50%; filter: blur(80px); opacity: .35; pointer-events: none;
+  animation: drift 10s ease-in-out infinite alternate;
+}
+.orb1 { width: 520px; height: 520px; background: #a855f7; top: -120px; left: -100px; animation-delay: 0s; }
+.orb2 { width: 420px; height: 420px; background: #ec4899; bottom: -80px; right: -80px; animation-delay: -3s; }
+.orb3 { width: 300px; height: 300px; background: #38bdf8; top: 40%; left: 50%; transform: translate(-50%,-50%); animation-delay: -6s; }
+
+@keyframes drift {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(30px, 40px) scale(1.08); }
+}
+
+/* star field */
+.stars { position: absolute; inset: 0; pointer-events: none; }
+.star { position: absolute; background: white; border-radius: 50%; animation: twinkle 3s ease-in-out infinite; }
+@keyframes twinkle {
+  0%,100% { opacity: .15; } 50% { opacity: .9; }
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(168,85,247,.15); border: 1px solid rgba(168,85,247,.3);
+  padding: .35rem 1rem; border-radius: 40px;
+  font-size: .78rem; font-weight: 600; color: #d8a4ff;
+  margin-bottom: 1.6rem; position: relative; z-index: 1;
+  animation: fadeUp .6s ease both;
+}
+.hero-badge .dot { width: 7px; height: 7px; background: #a855f7; border-radius: 50%; animation: pulse 1.5s ease infinite; }
+@keyframes pulse { 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.6); opacity:.5; } }
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 900; line-height: 1.05; letter-spacing: -.04em;
+  position: relative; z-index: 1;
+  animation: fadeUp .7s .1s ease both;
+}
+.hero h1 .grad { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.hero-sub {
+  max-width: 560px; margin: 1.4rem auto 2.4rem;
+  color: var(--muted); font-size: 1.1rem; line-height: 1.65;
+  position: relative; z-index: 1;
+  animation: fadeUp .7s .2s ease both;
+}
+
+.hero-actions {
+  display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 1;
+  animation: fadeUp .7s .3s ease both;
+}
+.btn-primary {
+  background: var(--grad); border: none; color: white;
+  padding: .85rem 2.2rem; border-radius: 40px;
+  font-weight: 700; font-size: 1rem; cursor: pointer;
+  box-shadow: 0 0 30px rgba(168,85,247,.4);
+  transition: transform .15s, box-shadow .2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(168,85,247,.6); }
+.btn-ghost {
+  background: none; border: 1px solid var(--border); color: var(--text);
+  padding: .85rem 2rem; border-radius: 40px;
+  font-weight: 600; font-size: 1rem; cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.btn-ghost:hover { border-color: rgba(168,85,247,.5); background: rgba(168,85,247,.07); }
+
+.hero-note { font-size: .78rem; color: var(--muted); margin-top: 1rem; position: relative; z-index:1; animation: fadeUp .7s .4s ease both; }
+
+/* hero mockup */
+.hero-mockup {
+  margin-top: 4.5rem; position: relative; z-index: 1; width: 100%; max-width: 880px;
+  animation: fadeUp .8s .45s ease both;
+}
+.mockup-window {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04);
+}
+.mockup-bar {
+  background: rgba(255,255,255,.04); padding: .6rem 1rem;
+  display: flex; align-items: center; gap: .5rem; border-bottom: 1px solid var(--border);
+}
+.dot-red   { width:10px;height:10px;border-radius:50%;background:#f85149; }
+.dot-yel   { width:10px;height:10px;border-radius:50%;background:#d29922; }
+.dot-grn   { width:10px;height:10px;border-radius:50%;background:#3fb950; }
+.mockup-url { flex:1; background:rgba(255,255,255,.06); border-radius:6px; padding:.25rem .8rem; font-size:.75rem; color:var(--muted); text-align:center; }
+.mockup-body { padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.mock-card {
+  border-radius: 10px; overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+  cursor: pointer;
+}
+.mock-card:hover .mock-overlay { opacity: 1; }
+.mock-img { width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3.5rem; }
+.mock-overlay {
+  position: absolute; inset: 0; background: rgba(168,85,247,.3);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .2s;
+  font-size: .8rem; font-weight: 700; color: white;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LOGOS ── */
+.logos-section { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); }
+.logos-label { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1.8rem; }
+.logos-row { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; opacity: .45; filter: grayscale(1); }
+.logos-row span { font-size: 1.1rem; font-weight: 800; letter-spacing: -.02em; color: white; }
+
+/* ── SECTIONS ── */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag {
+  display: inline-block; background: rgba(168,85,247,.12); border: 1px solid rgba(168,85,247,.25);
+  color: #c084fc; font-size: .73rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  padding: .3rem .9rem; border-radius: 40px; margin-bottom: 1rem;
+}
+.section-title { font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 800; line-height: 1.15; letter-spacing: -.03em; margin-bottom: 1rem; }
+.section-sub { color: var(--muted); font-size: 1.05rem; line-height: 1.65; max-width: 520px; }
+
+/* ── FEATURES ── */
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; margin-top: 3.5rem; }
+.feat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.8rem;
+  transition: border-color .2s, transform .2s;
+  position: relative; overflow: hidden;
+}
+.feat-card::before {
+  content:''; position:absolute; inset:0; opacity:0;
+  background: radial-gradient(circle at top left, rgba(168,85,247,.12), transparent 60%);
+  transition: opacity .3s;
+}
+.feat-card:hover { border-color: rgba(168,85,247,.35); transform: translateY(-4px); }
+.feat-card:hover::before { opacity: 1; }
+.feat-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--grad); display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 1.1rem;
+}
+.feat-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .5rem; }
+.feat-card p  { font-size: .87rem; color: var(--muted); line-height: 1.6; }
+
+/* ── STATS ── */
+.stats-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+.stat-item {
+  padding: 2.5rem 2rem; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-size: 2.8rem; font-weight: 900; letter-spacing: -.04em;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: .3rem;
+}
+.stat-label { font-size: .85rem; color: var(--muted); }
+
+/* ── HOW IT WORKS ── */
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3.5rem; position: relative; }
+.steps::before {
+  content:''; position:absolute; top: 36px; left: 16%; right: 16%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple), var(--pink), transparent);
+}
+.step { text-align: center; padding-top: 1rem; }
+.step-num {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--grad); display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 1.1rem; margin: 0 auto 1.2rem;
+  box-shadow: 0 0 24px rgba(168,85,247,.4);
+}
+.step h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+.step p  { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+/* ── TESTIMONIALS ── */
+.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.3rem; margin-top: 3.5rem; }
+.testi-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.6rem;
+  transition: border-color .2s;
+}
+.testi-card:hover { border-color: rgba(168,85,247,.3); }
+.testi-stars { color: #f59e0b; font-size: .85rem; margin-bottom: .9rem; }
+.testi-text { font-size: .9rem; line-height: 1.65; color: #c8c8e0; margin-bottom: 1.2rem; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: .75rem; }
+.testi-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .85rem; flex-shrink: 0;
+}
+.testi-name { font-size: .85rem; font-weight: 700; }
+.testi-role { font-size: .75rem; color: var(--muted); }
+
+/* ── PRICING ── */
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; margin-top: 3.5rem; align-items: start; }
+.price-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem;
+  transition: transform .2s;
+}
+.price-card:hover { transform: translateY(-4px); }
+.price-card.popular {
+  border-color: rgba(168,85,247,.5);
+  background: linear-gradient(145deg, rgba(168,85,247,.1), var(--surface));
+  position: relative;
+}
+.popular-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--grad); color: white; font-size: .7rem; font-weight: 800;
+  padding: .25rem .9rem; border-radius: 20px; text-transform: uppercase; letter-spacing: .06em;
+}
+.price-name { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .6rem; }
+.price-num {
+  font-size: 2.8rem; font-weight: 900; letter-spacing: -.04em; line-height: 1; margin-bottom: .3rem;
+}
+.price-num span { font-size: 1rem; font-weight: 600; color: var(--muted); }
+.price-period { font-size: .8rem; color: var(--muted); margin-bottom: 1.4rem; }
+.price-features { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.6rem; }
+.price-features li { font-size: .87rem; color: #ccc; display: flex; align-items: center; gap: .55rem; }
+.price-features li::before { content: '✓'; color: var(--purple); font-weight: 700; flex-shrink: 0; }
+.price-features li.off { color: var(--muted); }
+.price-features li.off::before { content: '×'; color: var(--muted); }
+.btn-price-primary {
+  width: 100%; background: var(--grad); border: none; color: white;
+  padding: .75rem; border-radius: 40px; font-weight: 700; font-size: .9rem;
+  cursor: pointer; transition: opacity .2s;
+}
+.btn-price-primary:hover { opacity: .85; }
+.btn-price-ghost {
+  width: 100%; background: none; border: 1px solid var(--border); color: var(--text);
+  padding: .75rem; border-radius: 40px; font-weight: 600; font-size: .9rem;
+  cursor: pointer; transition: border-color .2s;
+}
+.btn-price-ghost:hover { border-color: rgba(168,85,247,.4); }
+
+/* ── CTA ── */
+.cta-section {
+  text-align: center; position: relative; overflow: hidden;
+  padding: 7rem 2rem;
+}
+.cta-section .orb { opacity: .25; }
+.cta-section h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1;
+  letter-spacing: -.04em; position: relative; z-index: 1; margin-bottom: 1.2rem;
+}
+.cta-section h2 .grad { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.cta-section p { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin: 0 auto 2.2rem; position: relative; z-index:1; }
+.cta-input-row {
+  display: flex; gap: .6rem; max-width: 420px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+.cta-input {
+  flex: 1; background: rgba(255,255,255,.07); border: 1px solid var(--border);
+  color: white; padding: .8rem 1.2rem; border-radius: 40px;
+  font-size: .9rem; outline: none; transition: border-color .2s;
+}
+.cta-input:focus { border-color: rgba(168,85,247,.5); }
+.cta-input::placeholder { color: var(--muted); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding: 3.5rem 2rem 1.5rem;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+.footer-brand p { font-size: .84rem; color: var(--muted); margin-top: .7rem; line-height: 1.6; max-width: 240px; }
+.footer-col h4 { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); margin-bottom: .9rem; }
+.footer-col a { display: block; font-size: .84rem; color: #9999bb; text-decoration: none; margin-bottom: .5rem; transition: color .15s; }
+.footer-col a:hover { color: white; }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.footer-bottom p { font-size: .78rem; color: var(--muted); }
+.social-row { display: flex; gap: .7rem; }
+.social-btn {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(255,255,255,.06); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem; cursor: pointer; transition: background .15s;
+  text-decoration: none;
+}
+.social-btn:hover { background: rgba(168,85,247,.2); border-color: rgba(168,85,247,.4); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .features-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .steps { grid-template-columns: 1fr; }
+  .steps::before { display: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .mockup-body { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  section { padding: 4rem 1.2rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .cta-input-row { flex-direction: column; }
+  .mockup-body { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lumina</div>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta">Start Free</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <!-- orbs -->
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <!-- stars (generated by JS below) -->
+  <div class="stars" id="stars"></div>
+
+  <div class="hero-badge"><div class="dot"></div> Introducing Lumina 3.0 — Now with Video Generation</div>
+
+  <h1>Create <span class="grad">anything</span><br/>you can imagine.</h1>
+
+  <p class="hero-sub">Lumina is the AI creative studio that turns your ideas into stunning visuals, animations, music, and copy — in seconds.</p>
+
+  <div class="hero-actions">
+    <button class="btn-primary">Start Creating Free</button>
+    <button class="btn-ghost">▶ Watch Demo</button>
+  </div>
+
+  <p class="hero-note">No credit card required &nbsp;·&nbsp; 14-day free trial &nbsp;·&nbsp; Cancel anytime</p>
+
+  <!-- Mockup window -->
+  <div class="hero-mockup">
+    <div class="mockup-window">
+      <div class="mockup-bar">
+        <div class="dot-red"></div>
+        <div class="dot-yel"></div>
+        <div class="dot-grn"></div>
+        <div class="mockup-url">app.lumina.ai/studio</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mock-card"><div class="mock-img" style="background:linear-gradient(135deg,#1a0533,#7c3aed);">🌌</div><div class="mock-overlay">Cosmos Series</div></div>
+        <div class="mock-card"><div class="mock-img" style="background:linear-gradient(135deg,#0f2027,#e91e8c);">🌸</div><div class="mock-overlay">Bloom Collection</div></div>
+        <div class="mock-card"><div class="mock-img" style="background:linear-gradient(135deg,#0d1b2a,#38bdf8);">🌊</div><div class="mock-overlay">Ocean Dreams</div></div>
+        <div class="mock-card"><div class="mock-img" style="background:linear-gradient(135deg,#1a0a00,#f97316);">🔥</div><div class="mock-overlay">Ember Works</div></div>
+        <div class="mock-card"><div class="mock-img" style="background:linear-gradient(135deg,#000d1a,#10b981);">🌿</div><div class="mock-overlay">Botanical AI</div></div>
+        <div class="mock-card"><div class="mock-img" style="background:linear-gradient(135deg,#1a001a,#d946ef);">✨</div><div class="mock-overlay">Stardust</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-section">
+  <p class="logos-label">Trusted by teams at</p>
+  <div class="logos-row">
+    <span>Adobe</span>
+    <span>Shopify</span>
+    <span>Notion</span>
+    <span>Figma</span>
+    <span>Stripe</span>
+    <span>Linear</span>
+    <span>Vercel</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:.5rem;">
+      <span class="section-tag">Features</span>
+    </div>
+    <h2 class="section-title" style="text-align:center;margin:0 auto 1rem;">Everything you need<br/>to create at the speed of thought.</h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto;">From first idea to finished asset — Lumina handles every step of your creative workflow so you never hit a wall.</p>
+
+    <div class="features-grid">
+
+      <div class="feat-card">
+        <div class="feat-icon">🎨</div>
+        <h3>AI Image Generation</h3>
+        <p>Generate photorealistic images, illustrations, and concept art from plain text. Choose from 40+ artistic styles or build your own.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">🎬</div>
+        <h3>Video &amp; Animation</h3>
+        <p>Bring your images to life with cinematic AI animations. Create 4K video clips up to 60 seconds with a single prompt.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">🎵</div>
+        <h3>Music &amp; Sound</h3>
+        <p>Compose original soundtracks, ambient sounds, and voice-overs that perfectly match the mood of your visuals.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">✍️</div>
+        <h3>Copy &amp; Captions</h3>
+        <p>Generate on-brand copy, ad scripts, product descriptions, and social captions that convert — in 50+ languages.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">🖌️</div>
+        <h3>Style Transfer</h3>
+        <p>Upload any reference and apply its visual style to new creations. Build a consistent brand aesthetic across every asset.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">🤝</div>
+        <h3>Real-time Collaboration</h3>
+        <p>Invite your team to a shared canvas. Comment, remix, and ship assets together — no file exports required.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="section-inner">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">4.2M+</div>
+        <div class="stat-label">Active Creators</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1B+</div>
+        <div class="stat-label">Assets Generated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Customer Satisfaction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0.8s</div>
+        <div class="stat-label">Average Generation Time</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">How It Works</span>
+    <h2 class="section-title" style="margin: .5rem auto 1rem;">Three steps to your<br/>best creative work.</h2>
+    <p class="section-sub" style="margin: 0 auto;">No design skills needed. No hours of editing. Just describe what you want and Lumina does the rest.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Describe Your Vision</h3>
+        <p>Type a prompt, upload a reference image, or choose from 500+ starting templates curated by professional designers.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Lumina Creates</h3>
+        <p>Our models generate multiple high-quality variations in under a second. Tweak style, palette, mood, and format with simple sliders.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Export &amp; Publish</h3>
+        <p>Download in any format — PNG, SVG, MP4, or WebP — or push directly to Figma, Canva, Shopify, or your CMS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-inner">
+    <div style="text-align:center;">
+      <span class="section-tag">Testimonials</span>
+      <h2 class="section-title" style="margin:.5rem auto 1rem;">Loved by creators worldwide.</h2>
+      <p class="section-sub" style="margin:0 auto 3.5rem;">From solo artists to Fortune 500 marketing teams — here's what they say.</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Lumina cut our campaign asset production time from two weeks to two hours. I genuinely cannot imagine going back to the old workflow."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,#ec4899);">SL</div>
+          <div><div class="testi-name">Sofia Larsson</div><div class="testi-role">Creative Director, Ogilvy</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"As a solo indie game developer, I used to spend 60% of my time on art. Lumina gave that time back to me and the quality is frankly unbelievable."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);">KP</div>
+          <div><div class="testi-name">Kenji Park</div><div class="testi-role">Indie Game Developer</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"We ran an A/B test: Lumina-generated ad creatives vs. our studio. Lumina's variants had 34% higher click-through. Safe to say we're all in now."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#16a34a,#14b8a6);">AR</div>
+          <div><div class="testi-name">Anika Reddy</div><div class="testi-role">Head of Growth, Zara Digital</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I'm a musician, not a designer. Lumina lets me create album artwork that actually reflects the feel of my music. Total game-changer."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#d97706,#f43f5e);">MF</div>
+          <div><div class="testi-name">Marcus Flynn</div><div class="testi-role">Independent Artist, Spotify</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The collaboration features are exceptional. My team in three timezones can all work on the same creative canvas simultaneously. Nothing else does this."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,#2563eb);">JC</div>
+          <div><div class="testi-name">Julia Castillo</div><div class="testi-role">Brand Lead, Notion</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"We ship product marketing pages in a day now. Lumina drafts all hero images, writes the copy, and even suggests the colour palette. Astonishing."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#db2777,#9333ea);">TN</div>
+          <div><div class="testi-name">Tom Nakamura</div><div class="testi-role">VP Marketing, Linear</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div style="text-align:center;">
+      <span class="section-tag">Pricing</span>
+      <h2 class="section-title" style="margin:.5rem auto 1rem;">Simple, transparent pricing.</h2>
+      <p class="section-sub" style="margin:0 auto;">Start free. Scale as you grow. No hidden fees, ever.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-name">Starter</div>
+        <div class="price-num">$0 <span>/mo</span></div>
+        <div class="price-period">Free forever</div>
+        <ul class="price-features">
+          <li>50 image generations / month</li>
+          <li>5 video clips / month</li>
+          <li>720p export resolution</li>
+          <li>10 GB cloud storage</li>
+          <li class="off">Custom style models</li>
+          <li class="off">Team collaboration</li>
+          <li class="off">API access</li>
+        </ul>
+        <button class="btn-price-ghost">Get Started Free</button>
+      </div>
+
+      <div class="price-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="price-name">Pro</div>
+        <div class="price-num">$29 <span>/mo</span></div>
+        <div class="price-period">Billed annually · save 30%</div>
+        <ul class="price-features">
+          <li>Unlimited image generations</li>
+          <li>100 video clips / month</li>
+          <li>4K export resolution</li>
+          <li>100 GB cloud storage</li>
+          <li>5 custom style models</li>
+          <li>Up to 5 team members</li>
+          <li class="off">API access</li>
+        </ul>
+        <button class="btn-price-primary">Start Pro Trial</button>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Business</div>
+        <div class="price-num">$99 <span>/mo</span></div>
+        <div class="price-period">Per workspace, billed annually</div>
+        <ul class="price-features">
+          <li>Unlimited everything</li>
+          <li>Unlimited video generation</li>
+          <li>8K export + RAW formats</li>
+          <li>Unlimited storage</li>
+          <li>Unlimited style models</li>
+          <li>Unlimited team members</li>
+          <li>Full API access + SSO</li>
+        </ul>
+        <button class="btn-price-ghost">Contact Sales</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="orb orb1" style="top:-200px;left:-150px;"></div>
+  <div class="orb orb2" style="bottom:-200px;right:-150px;"></div>
+  <h2>Your next big idea<br/>starts <span class="grad">right now.</span></h2>
+  <p>Join 4.2 million creators who use Lumina to bring their imagination to life.</p>
+  <div class="cta-input-row">
+    <input class="cta-input" type="email" placeholder="Enter your email…"/>
+    <button class="btn-primary" style="white-space:nowrap;">Get Started →</button>
+  </div>
+  <p style="font-size:.75rem;color:var(--muted);margin-top:.9rem;position:relative;z-index:1;">Free for 14 days · No credit card · Cancel anytime</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo" style="font-size:1.2rem;">Lumina</div>
+        <p>The AI creative studio for designers, marketers, developers, and dreamers. Create without limits.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Changelog</a>
+        <a href="#">Roadmap</a>
+        <a href="#">Integrations</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Press Kit</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Lumina AI, Inc. All rights reserved.</p>
+      <div class="social-row">
+        <a class="social-btn" href="#">𝕏</a>
+        <a class="social-btn" href="#">in</a>
+        <a class="social-btn" href="#">▶</a>
+        <a class="social-btn" href="#">📸</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Generate star field
+  const container = document.getElementById('stars');
+  for (let i = 0; i < 120; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2 + 1;
+    s.style.cssText = `
+      width:${size}px; height:${size}px;
+      top:${Math.random()*100}%; left:${Math.random()*100}%;
+      animation-delay:${(Math.random()*4).toFixed(2)}s;
+      animation-duration:${(2+Math.random()*3).toFixed(2)}s;
+    `;
+    container.appendChild(s);
+  }
+
+  // Smooth nav active state on scroll
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#'+e.target.id ? 'white' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => observer.observe(s));
+
+  // Animate stat numbers on scroll
+  const statNums = document.querySelectorAll('.stat-num');
+  const numObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animation = 'fadeUp .5s ease both';
+        numObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  statNums.forEach(n => numObserver.observe(n));
+</script>
+
+</body>
+</html>
