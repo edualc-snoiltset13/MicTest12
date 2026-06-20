@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Notes</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: #222;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        header {
+            padding: 1.5rem 2rem;
+            background: #1f2937;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { font-size: 1.25rem; font-weight: 600; }
+        header .count { font-size: 0.85rem; opacity: 0.7; }
+        .input-row {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+        input[type="text"]:focus { border-color: #667eea; }
+        button {
+            padding: 0.75rem 1.25rem;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        button:hover { background: #5a67d8; }
+        ul#list { list-style: none; padding: 0.5rem 0; max-height: 50vh; overflow-y: auto; }
+        ul#list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 2rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        ul#list li:last-child { border-bottom: none; }
+        ul#list li.done span.text { text-decoration: line-through; color: #9ca3af; }
+        ul#list li span.text { flex: 1; word-break: break-word; }
+        ul#list li input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+        ul#list li button.del {
+            background: transparent;
+            color: #ef4444;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.85rem;
+        }
+        ul#list li button.del:hover { background: #fee2e2; }
+        .empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #9ca3af;
+        }
+        footer {
+            padding: 1rem 2rem;
+            background: #f9fafb;
+            font-size: 0.85rem;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer a { color: #667eea; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quick Notes</h1>
+            <span class="count" id="count">0 items</span>
+        </header>
+        <div class="input-row">
+            <input type="text" id="note" placeholder="Type a note and press Enter..." autofocus>
+            <button id="add">Add</button>
+        </div>
+        <ul id="list"></ul>
+        <footer>
+            <span>Saved locally in your browser</span>
+            <a id="clear">Clear all</a>
+        </footer>
+    </div>
+    <script>
+        const STORAGE_KEY = "quick-notes";
+        const listEl = document.getElementById("list");
+        const inputEl = document.getElementById("note");
+        const countEl = document.getElementById("count");
+
+        let notes = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+        function save() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+        }
+
+        function render() {
+            listEl.innerHTML = "";
+            if (notes.length === 0) {
+                const empty = document.createElement("li");
+                empty.className = "empty";
+                empty.textContent = "No notes yet. Add one above.";
+                listEl.appendChild(empty);
+            } else {
+                notes.forEach((n, i) => {
+                    const li = document.createElement("li");
+                    if (n.done) li.classList.add("done");
+
+                    const cb = document.createElement("input");
+                    cb.type = "checkbox";
+                    cb.checked = n.done;
+                    cb.addEventListener("change", () => {
+                        notes[i].done = cb.checked;
+                        save();
+                        render();
+                    });
+
+                    const span = document.createElement("span");
+                    span.className = "text";
+                    span.textContent = n.text;
+
+                    const del = document.createElement("button");
+                    del.className = "del";
+                    del.textContent = "Delete";
+                    del.addEventListener("click", () => {
+                        notes.splice(i, 1);
+                        save();
+                        render();
+                    });
+
+                    li.appendChild(cb);
+                    li.appendChild(span);
+                    li.appendChild(del);
+                    listEl.appendChild(li);
+                });
+            }
+            countEl.textContent = notes.length + (notes.length === 1 ? " item" : " items");
+        }
+
+        function addNote() {
+            const text = inputEl.value.trim();
+            if (!text) return;
+            notes.unshift({ text, done: false });
+            inputEl.value = "";
+            save();
+            render();
+        }
+
+        document.getElementById("add").addEventListener("click", addNote);
+        inputEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") addNote();
+        });
+        document.getElementById("clear").addEventListener("click", () => {
+            if (notes.length && confirm("Delete all notes?")) {
+                notes = [];
+                save();
+                render();
+            }
+        });
+
+        render();
+    </script>
+</body>
+</html>

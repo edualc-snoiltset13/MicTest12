@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Compendium &middot; A Multi-Section Demo</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-2: #1e293b;
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --text: #1f2937;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-2: #ec4899;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--surface-alt);
+        }
+
+        /* Scroll progress */
+        #progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            z-index: 1000;
+        }
+
+        /* Header / Nav */
+        header.site {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.9rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        header.site .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        nav.primary { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+        nav.primary a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        nav.primary a:hover { color: var(--accent); }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+        .wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        section .eyebrow {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        section .lead {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);
+            color: #fff;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(99,102,241,0.3), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(236,72,153,0.3), transparent 40%);
+        }
+        .hero > * { position: relative; }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .hero .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn.primary {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: #fff;
+        }
+        .btn.ghost {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .stat {
+            background: var(--surface);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .stat .num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat .label { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem; }
+
+        /* Feature cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .feature {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+        .feature .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(99,102,241,0.1);
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        .feature h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .feature p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Article */
+        section.article { background: var(--surface); }
+        .article-body { max-width: 720px; margin: 0 auto; }
+        .article-body p { margin-bottom: 1.25rem; color: #334155; }
+        .article-body h3 { margin: 2rem 0 0.75rem; font-size: 1.4rem; }
+        .article-body blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: var(--surface-alt);
+            font-style: italic;
+            color: #475569;
+        }
+        .article-body code {
+            background: #f1f5f9;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        }
+        .article-body pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        .tl-item { position: relative; padding-bottom: 2rem; }
+        .tl-item::before {
+            content: "";
+            position: absolute;
+            left: -1.65rem;
+            top: 0.4rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(99,102,241,0.2);
+        }
+        .tl-item .when {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .tl-item h4 { margin-bottom: 0.35rem; }
+        .tl-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Table */
+        .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+        }
+        thead { background: var(--surface-alt); }
+        th, td {
+            padding: 0.85rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+        th { font-weight: 600; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        tbody tr:last-child td { border-bottom: none; }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge.ok { background: rgba(16,185,129,0.12); color: var(--success); }
+        .badge.warn { background: rgba(245,158,11,0.15); color: var(--warning); }
+        .badge.bad { background: rgba(239,68,68,0.12); color: var(--danger); }
+
+        /* FAQ */
+        details {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            padding: 0;
+            overflow: hidden;
+        }
+        details summary {
+            padding: 1.1rem 1.25rem;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        details summary::after {
+            content: "+";
+            font-size: 1.25rem;
+            color: var(--accent);
+        }
+        details[open] summary::after { content: "−"; }
+        details > p, details > div {
+            padding: 0 1.25rem 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Quotes */
+        .quotes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .quote {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+        }
+        .quote p { font-style: italic; color: #475569; margin-bottom: 1rem; }
+        .quote .who { display: flex; align-items: center; gap: 0.75rem; }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .quote .name { font-weight: 600; font-size: 0.9rem; }
+        .quote .role { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Pricing */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .price {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+        .price.featured {
+            border-color: var(--accent);
+            box-shadow: 0 12px 32px rgba(99,102,241,0.15);
+            position: relative;
+        }
+        .price.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -10px;
+            right: 1.5rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .price h3 { margin-bottom: 0.25rem; }
+        .price .amount { font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0; }
+        .price .amount span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+        .price ul { list-style: none; margin: 1.25rem 0; }
+        .price ul li {
+            padding: 0.4rem 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        .price ul li::before {
+            content: "✓ ";
+            color: var(--success);
+            font-weight: 700;
+            margin-right: 0.25rem;
+        }
+
+        /* Gallery (CSS art) */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        .tile {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .tile.t1 { background: linear-gradient(135deg, #6366f1, #ec4899); }
+        .tile.t2 { background: linear-gradient(135deg, #10b981, #3b82f6); }
+        .tile.t3 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+        .tile.t4 { background: linear-gradient(135deg, #8b5cf6, #06b6d4); }
+        .tile.t5 { background: linear-gradient(135deg, #14b8a6, #84cc16); }
+        .tile.t6 { background: linear-gradient(135deg, #f43f5e, #f97316); }
+        .tile::after {
+            content: "";
+            position: absolute;
+            inset: 20%;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Form */
+        form.contact {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            max-width: 600px;
+        }
+        .form-row { margin-bottom: 1rem; }
+        .form-row label {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .form-row input, .form-row textarea, .form-row select {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            background: var(--surface-alt);
+        }
+        .form-row input:focus, .form-row textarea:focus, .form-row select:focus {
+            border-color: var(--accent);
+            background: var(--surface);
+        }
+        .form-row textarea { min-height: 110px; resize: vertical; }
+
+        /* Footer */
+        footer.site {
+            background: var(--bg);
+            color: #cbd5e1;
+            padding: 3rem 2rem 2rem;
+        }
+        footer.site .cols {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #334155;
+        }
+        footer.site h5 { color: #fff; margin-bottom: 0.75rem; font-size: 0.95rem; }
+        footer.site ul { list-style: none; }
+        footer.site ul li { padding: 0.25rem 0; }
+        footer.site a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; }
+        footer.site a:hover { color: #fff; }
+        footer.site .bottom {
+            max-width: 1000px;
+            margin: 1.5rem auto 0;
+            font-size: 0.85rem;
+            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Back to top */
+        #top-btn {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--accent);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            box-shadow: 0 6px 16px rgba(99,102,241,0.4);
+            z-index: 99;
+        }
+        #top-btn.visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body>
+    <div id="progress"></div>
+
+    <header class="site">
+        <div class="logo">The Compendium</div>
+        <nav class="primary">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#article">Article</a>
+            <a href="#timeline">History</a>
+            <a href="#data">Data</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Everything in One Page</h1>
+        <p>A single self-contained HTML file demonstrating headers, articles, tables, timelines, FAQs, pricing, forms, galleries, and more — no dependencies required.</p>
+        <div class="cta-row">
+            <a href="#about" class="btn primary">Start Reading</a>
+            <a href="#contact" class="btn ghost">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- ABOUT / STATS -->
+    <section id="about">
+        <div class="wrap">
+            <span class="eyebrow">Introduction</span>
+            <h2>About This Document</h2>
+            <p class="lead">This page is a compendium — a deliberately oversized demonstration of common HTML patterns assembled into one file. Scroll through to see how each section composes with the next.</p>
+
+            <div class="stats">
+                <div class="stat"><div class="num">12+</div><div class="label">Distinct Sections</div></div>
+                <div class="stat"><div class="num">0</div><div class="label">External Dependencies</div></div>
+                <div class="stat"><div class="num">100%</div><div class="label">Self-Contained</div></div>
+                <div class="stat"><div class="num">1</div><div class="label">Single File</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" style="background: var(--surface);">
+        <div class="wrap">
+            <span class="eyebrow">Capabilities</span>
+            <h2>What's Inside</h2>
+            <p class="lead">A representative tour of the building blocks that make up most modern long-form web pages.</p>
+
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="icon">&#9776;</div>
+                    <h3>Sticky Navigation</h3>
+                    <p>Always-visible header with smooth-scrolling anchor links to every section.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">&#9650;</div>
+                    <h3>Progress Bar</h3>
+                    <p>A gradient strip at the top tracks how far you've read through the document.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">&#9678;</div>
+                    <h3>Card Layouts</h3>
+                    <p>Responsive CSS Grid that adapts from a single column up to four across.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">&#9632;</div>
+                    <h3>Data Tables</h3>
+                    <p>Styled rows with semantic badges for status indicators and easy scanning.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">&#9711;</div>
+                    <h3>Timeline View</h3>
+                    <p>Vertical event log with bullets and dates for chronological storytelling.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">&#9733;</div>
+                    <h3>FAQ Accordion</h3>
+                    <p>Native <code style="background:rgba(99,102,241,0.1);padding:1px 4px;border-radius:3px;">&lt;details&gt;</code> elements — no JS required for expansion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <section id="article" class="article">
+        <div class="wrap">
+            <span class="eyebrow">Long-form</span>
+            <h2>The Case for One-File Websites</h2>
+            <p class="lead">Sometimes the right amount of tooling is none at all.</p>
+
+            <div class="article-body">
+                <p>There is a quiet pleasure in opening a single <code>.html</code> file in a browser and seeing it work. No build step, no <code>node_modules</code>, no version mismatches between three frameworks. Just a document, styled and scripted in place, that any browser made in the last decade can render.</p>
+
+                <p>This page is an experiment in that idea — taking the patterns we normally split across components, partials, and modules, and collapsing them into a single artifact you can email to someone.</p>
+
+                <h3>The tradeoffs</h3>
+                <p>One-file pages have real limits. They don't scale to applications with many routes, they can't share components across pages cleanly, and they're awkward to maintain past a certain size.</p>
+
+                <blockquote>"Use the right tool for the job — but recognize that 'no tool' is sometimes the right tool."</blockquote>
+
+                <p>But for a portfolio, a landing page, a documentation index, or a quick prototype, the simplicity is genuine. The browser is doing the work you'd otherwise pay a framework to do.</p>
+
+                <h3>A small example</h3>
+                <pre>function progress() {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    document.getElementById("progress").style.width = pct + "%";
+}
+window.addEventListener("scroll", progress, { passive: true });</pre>
+
+                <p>That's the entire scroll-progress implementation at the top of this page. Eight lines. No library.</p>
+
+                <h3>When to reach for more</h3>
+                <p>The honest answer: as soon as you need persistent state across multiple URLs, server-side data, authentication, or a team workflow. Single-file pages are a starting point, not a destination — but they remain a useful one.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+        <div class="wrap">
+            <span class="eyebrow">History</span>
+            <h2>A Selective Timeline of the Web</h2>
+            <p class="lead">Milestones that shaped how single-page documents look and behave today.</p>
+
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="when">1991</div>
+                    <h4>The first website</h4>
+                    <p>Tim Berners-Lee publishes the first webpage at CERN — a plain HTML document describing the World Wide Web project.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="when">1996</div>
+                    <h4>CSS arrives</h4>
+                    <p>CSS Level 1 becomes a W3C recommendation, separating presentation from structure for the first time.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="when">2005</div>
+                    <h4>The Ajax era</h4>
+                    <p>XMLHttpRequest becomes mainstream after Gmail and Maps, kicking off the move toward dynamic single-page applications.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="when">2014</div>
+                    <h4>HTML5 finalized</h4>
+                    <p>Native semantic elements, video, audio, canvas, and the <code>&lt;details&gt;</code> element used by this page's FAQ section.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="when">2017</div>
+                    <h4>CSS Grid ships</h4>
+                    <p>Two-dimensional native layout becomes broadly available, replacing years of float-based hacks.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="when">2024</div>
+                    <h4>Modern primitives</h4>
+                    <p>Container queries, <code>:has()</code>, view transitions, and scroll-driven animations bring previously-JS features into pure CSS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATA TABLE -->
+    <section id="data" style="background: var(--surface);">
+        <div class="wrap">
+            <span class="eyebrow">Reference</span>
+            <h2>Browser Support Matrix</h2>
+            <p class="lead">Illustrative status table — colored badges indicate availability across major engines.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Chrome</th>
+                            <th>Firefox</th>
+                            <th>Safari</th>
+                            <th>Spec Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CSS Grid</td><td><span class="badge ok">Full</span></td><td><span class="badge ok">Full</span></td><td><span class="badge ok">Full</span></td><td>Recommendation</td></tr>
+                        <tr><td>Container Queries</td><td><span class="badge ok">Full</span></td><td><span class="badge ok">Full</span></td><td><span class="badge ok">Full</span></td><td>Recommendation</td></tr>
+                        <tr><td><code>:has()</code> selector</td><td><span class="badge ok">Full</span></td><td><span class="badge ok">Full</span></td><td><span class="badge ok">Full</span></td><td>Recommendation</td></tr>
+                        <tr><td>View Transitions</td><td><span class="badge ok">Full</span></td><td><span class="badge warn">Partial</span></td><td><span class="badge warn">Partial</span></td><td>Draft</td></tr>
+                        <tr><td>Scroll-driven Animations</td><td><span class="badge ok">Full</span></td><td><span class="badge warn">Partial</span></td><td><span class="badge bad">None</span></td><td>Draft</td></tr>
+                        <tr><td>Anchor Positioning</td><td><span class="badge ok">Full</span></td><td><span class="badge bad">None</span></td><td><span class="badge bad">None</span></td><td>Draft</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="wrap">
+            <span class="eyebrow">Visual</span>
+            <h2>Gradient Gallery</h2>
+            <p class="lead">Pure-CSS tiles, no images — useful as placeholders or decorative elements.</p>
+
+            <div class="gallery">
+                <div class="tile t1"></div>
+                <div class="tile t2"></div>
+                <div class="tile t3"></div>
+                <div class="tile t4"></div>
+                <div class="tile t5"></div>
+                <div class="tile t6"></div>
+                <div class="tile t1"></div>
+                <div class="tile t4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTES -->
+    <section id="quotes" style="background: var(--surface);">
+        <div class="wrap">
+            <span class="eyebrow">Voices</span>
+            <h2>What People Say</h2>
+            <p class="lead">Fictional testimonials illustrating a typical card-based feedback section.</p>
+
+            <div class="quotes">
+                <div class="quote">
+                    <p>"Refreshing to see something that just works when you double-click it. No install steps, no errors."</p>
+                    <div class="who"><div class="avatar">AM</div><div><div class="name">Alex Morgan</div><div class="role">Web Developer</div></div></div>
+                </div>
+                <div class="quote">
+                    <p>"I forgot the web could be this simple. One file, all the patterns I needed, ready to fork."</p>
+                    <div class="who"><div class="avatar">JL</div><div><div class="name">Jamie Lee</div><div class="role">Designer</div></div></div>
+                </div>
+                <div class="quote">
+                    <p>"It's not the right answer for everything, but it's the right answer more often than I assumed."</p>
+                    <div class="who"><div class="avatar">RP</div><div><div class="name">Riya Patel</div><div class="role">Engineering Lead</div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <div class="wrap">
+            <span class="eyebrow">Plans</span>
+            <h2>Pricing</h2>
+            <p class="lead">Three tiers, no asterisks. Choose what fits — change any time.</p>
+
+            <div class="pricing">
+                <div class="price">
+                    <h3>Starter</h3>
+                    <div class="amount">$0<span>/mo</span></div>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">For trying things out.</p>
+                    <ul>
+                        <li>1 project</li>
+                        <li>Community support</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <a class="btn primary" style="width:100%;text-align:center;" href="#contact">Get Started</a>
+                </div>
+                <div class="price featured">
+                    <h3>Pro</h3>
+                    <div class="amount">$19<span>/mo</span></div>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">For real projects.</p>
+                    <ul>
+                        <li>Unlimited projects</li>
+                        <li>Email support</li>
+                        <li>Advanced analytics</li>
+                        <li>Custom domains</li>
+                    </ul>
+                    <a class="btn primary" style="width:100%;text-align:center;" href="#contact">Choose Pro</a>
+                </div>
+                <div class="price">
+                    <h3>Team</h3>
+                    <div class="amount">$49<span>/mo</span></div>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">For collaboration.</p>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>Up to 10 seats</li>
+                        <li>Priority support</li>
+                        <li>SSO</li>
+                    </ul>
+                    <a class="btn primary" style="width:100%;text-align:center;" href="#contact">Choose Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background: var(--surface);">
+        <div class="wrap" style="max-width:720px;">
+            <span class="eyebrow">Questions</span>
+            <h2>Frequently Asked</h2>
+            <p class="lead">Native <code>&lt;details&gt;</code> elements — click any question to expand it.</p>
+
+            <details open>
+                <summary>What is this page exactly?</summary>
+                <p>A single HTML file that demonstrates a wide range of common web patterns — sticky navigation, articles, timelines, data tables, FAQs, and more — without using any external libraries or build tooling.</p>
+            </details>
+            <details>
+                <summary>Can I use this as a template?</summary>
+                <p>Yes. Copy the file, delete the sections you don't need, replace the content with your own, and adjust the CSS variables at the top to change the color scheme.</p>
+            </details>
+            <details>
+                <summary>Why no JavaScript framework?</summary>
+                <p>For static, single-page content the overhead of a framework outweighs the benefits. Browsers natively handle most of what's needed here — smooth scrolling, expandable details, responsive layout — without any libraries.</p>
+            </details>
+            <details>
+                <summary>Will this work offline?</summary>
+                <p>Yes. There are no external assets, fonts, or scripts. Open the file in any modern browser and everything renders locally.</p>
+            </details>
+            <details>
+                <summary>How do I add a new section?</summary>
+                <p>Copy any existing <code>&lt;section&gt;</code> block, give it a unique <code>id</code>, add a matching link to the <code>nav</code> at the top, and replace the content.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="wrap" style="max-width:720px;">
+            <span class="eyebrow">Get in touch</span>
+            <h2>Contact</h2>
+            <p class="lead">A working-looking form, for demonstration only — submission is intercepted by JavaScript and not sent anywhere.</p>
+
+            <form class="contact" onsubmit="event.preventDefault(); document.getElementById('result').textContent = 'Thanks ' + this.name.value + '! (demo only — not actually sent)'; this.reset();">
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" required placeholder="Your name">
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-row">
+                    <label for="topic">Topic</label>
+                    <select id="topic" name="topic">
+                        <option>General inquiry</option>
+                        <option>Bug report</option>
+                        <option>Feature request</option>
+                        <option>Partnership</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell us what's on your mind..."></textarea>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+                <p id="result" style="margin-top:1rem;color:var(--success);font-weight:500;"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site">
+        <div class="cols">
+            <div>
+                <h5>The Compendium</h5>
+                <p style="font-size:0.9rem;color:#94a3b8;">A single-file demonstration of web patterns and primitives.</p>
+            </div>
+            <div>
+                <h5>Sections</h5>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#article">Article</a></li>
+                    <li><a href="#timeline">History</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>More</h5>
+                <ul>
+                    <li><a href="#data">Data Table</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="#">MDN Web Docs</a></li>
+                    <li><a href="#">Can I Use</a></li>
+                    <li><a href="#">CSS Tricks</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            <span>&copy; 2026 The Compendium &middot; All rights reserved</span>
+            <span>Built as one HTML file</span>
+        </div>
+    </footer>
+
+    <button id="top-btn" aria-label="Back to top">&uarr;</button>
+
+    <script>
+        const progress = document.getElementById("progress");
+        const topBtn = document.getElementById("top-btn");
+
+        function onScroll() {
+            const h = document.documentElement;
+            const scrolled = h.scrollTop;
+            const max = h.scrollHeight - h.clientHeight;
+            const pct = max > 0 ? (scrolled / max) * 100 : 0;
+            progress.style.width = pct + "%";
+            topBtn.classList.toggle("visible", scrolled > 500);
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        onScroll();
+    </script>
+</body>
+</html>

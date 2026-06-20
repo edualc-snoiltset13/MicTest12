@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, Juliana</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #ede9fe 50%, #dbeafe 100%);
+            color: #1f2937;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        header p { color: #6b7280; font-size: 1.15rem; }
+
+        section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        section h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, #ec4899, #8b5cf6);
+            border-radius: 2px;
+        }
+        section p { color: #4b5563; margin-bottom: 0.75rem; }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .fact {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+        .fact .key {
+            font-size: 0.8rem;
+            color: #8b5cf6;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .fact .val { font-weight: 500; color: #1f2937; }
+
+        ul.list { list-style: none; }
+        ul.list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #374151;
+        }
+        ul.list li::before {
+            content: "✦";
+            color: #ec4899;
+            font-size: 1.1rem;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 0.7rem 1.25rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6);
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        button:hover { transform: translateY(-2px); }
+        button.alt {
+            background: #fff;
+            color: #8b5cf6;
+            border: 1px solid #ddd6fe;
+        }
+        #greeting {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: linear-gradient(90deg, #fdf2f8, #ede9fe);
+            border-radius: 8px;
+            color: #6d28d9;
+            font-weight: 500;
+            min-height: 1.5rem;
+            display: none;
+        }
+        #greeting.show { display: block; }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hello, Juliana</h1>
+            <p>A little HTML page made just for you</p>
+        </header>
+
+        <section>
+            <h2>About this page</h2>
+            <p>This is a single self-contained HTML file — open it in any browser to view. It has styling, interactivity, and a few sections to scroll through. No installation, no build step, no dependencies.</p>
+            <div class="facts">
+                <div class="fact"><div class="key">Made for</div><div class="val">Juliana</div></div>
+                <div class="fact"><div class="key">Type</div><div class="val">Single HTML file</div></div>
+                <div class="fact"><div class="key">Date</div><div class="val">May 30, 2026</div></div>
+                <div class="fact"><div class="key">Lines of code</div><div class="val">~180</div></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>What's inside</h2>
+            <ul class="list">
+                <li>A friendly header with a gradient title</li>
+                <li>Card-based sections that adapt to screen size</li>
+                <li>A "facts" grid showing structured info</li>
+                <li>A small interactive demo below</li>
+                <li>Smooth styling using only CSS — no images</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Try it</h2>
+            <p>Click a button to see something happen:</p>
+            <div class="button-row">
+                <button onclick="greet('hi')">Say hi</button>
+                <button class="alt" onclick="greet('quote')">Random quote</button>
+                <button class="alt" onclick="greet('time')">Show time</button>
+            </div>
+            <div id="greeting"></div>
+        </section>
+
+        <section>
+            <h2>A short note</h2>
+            <p>Juliana — you mentioned earlier that you'd love to understand Claude Code. The best way is to keep doing what you're doing: try things, ask questions, and watch how the agent responds. Every prompt is a chance to learn what it's good at and where you want more control.</p>
+            <p>If you want a guided tour next, just ask for a "demo" of any feature — plan mode, subagents, hooks — and we'll walk through it live.</p>
+        </section>
+
+        <footer>
+            Made with Claude Code &middot; Just one HTML file
+        </footer>
+    </div>
+
+    <script>
+        const quotes = [
+            "Start before you're ready.",
+            "Small steps, every day.",
+            "The best way to learn is to build.",
+            "Curiosity is a superpower.",
+            "Done is better than perfect."
+        ];
+
+        function greet(mode) {
+            const el = document.getElementById("greeting");
+            el.classList.add("show");
+            if (mode === "hi") {
+                el.textContent = "Hi Juliana! 👋 Hope you're having a great day.";
+            } else if (mode === "quote") {
+                el.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+            } else if (mode === "time") {
+                el.textContent = "It's currently " + new Date().toLocaleTimeString() + " on your machine.";
+            }
+        }
+    </script>
+</body>
+</html>
