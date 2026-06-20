@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verdant Energy — Clean Power for a Sustainable Future</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            forest:  '#1A4D2E',
+            'forest-mid': '#236138',
+            gold:    '#FFD700',
+            'gold-dim': '#F5C800',
+          },
+          keyframes: {
+            float: {
+              '0%,100%': { transform: 'translateY(0px)' },
+              '50%':     { transform: 'translateY(-16px)' },
+            },
+            'ray-pulse': {
+              '0%,100%': { opacity: '0.5' },
+              '50%':     { opacity: '0.8' },
+            },
+          },
+          animation: {
+            float:      'float 7s ease-in-out infinite',
+            'ray-pulse':'ray-pulse 4s ease-in-out infinite',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* Dot-grid background */
+    .dot-grid {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.065) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    /* Gradient text — not achievable with pure Tailwind utilities */
+    .text-grad-gold {
+      background: linear-gradient(120deg, #FFD700 15%, #FFA500 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Used for the secondary btn hover — Tailwind can't do /8 opacity on arbitrary bg */
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); }
+  </style>
+</head>
+
+<body class="font-sans antialiased bg-[#1A4D2E] text-white">
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     NAV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<nav class="fixed inset-x-0 top-0 z-50 bg-[#1A4D2E]/80 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2.5">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <circle cx="13" cy="13" r="12" stroke="#FFD700" stroke-width="1.4"/>
+        <path d="M13 3.5v4M13 18.5v4M3.5 13h4M18.5 13h4M6.5 6.5l2.8 2.8M16.7 16.7l2.8 2.8M19.5 6.5l-2.8 2.8M9.3 16.7l-2.8 2.8" stroke="#FFD700" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="13" cy="13" r="3.5" fill="#FFD700"/>
+      </svg>
+      <span class="font-black text-[17px] tracking-tight">
+        Verdant<span class="text-[#FFD700]">Energy</span>
+      </span>
+    </a>
+
+    <!-- Links -->
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#" class="text-white/65 hover:text-white transition-colors">Solutions</a>
+      <a href="#" class="text-white/65 hover:text-white transition-colors">Projects</a>
+      <a href="#" class="text-white/65 hover:text-white transition-colors">Impact</a>
+      <a href="#" class="text-white/65 hover:text-white transition-colors">About</a>
+    </div>
+
+    <!-- Right CTA -->
+    <div class="flex items-center gap-4">
+      <a href="#" class="hidden sm:block text-sm font-medium text-white/55 hover:text-white transition-colors">Log in</a>
+      <a href="#" class="bg-[#FFD700] text-[#1A4D2E] text-sm font-bold px-5 py-2 rounded-full hover:bg-[#F5C800] transition-colors">
+        Get a Quote
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     HERO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="relative min-h-screen flex flex-col overflow-hidden">
+
+  <!-- Dot grid -->
+  <div class="absolute inset-0 dot-grid pointer-events-none" aria-hidden="true"></div>
+
+  <!-- Radial ambient glows -->
+  <div class="absolute -top-48 -right-48 w-[700px] h-[700px] rounded-full pointer-events-none"
+       style="background: radial-gradient(circle, rgba(255,215,0,.09) 0%, transparent 65%);"
+       aria-hidden="true"></div>
+  <div class="absolute bottom-0 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+       style="background: radial-gradient(circle, rgba(52,183,136,.11) 0%, transparent 65%);"
+       aria-hidden="true"></div>
+
+  <!-- ── Main content ── -->
+  <div class="relative z-10 flex-1 flex items-center pt-16">
+    <div class="max-w-7xl mx-auto w-full px-6 lg:px-12 py-16 lg:py-24">
+
+      <!-- Asymmetric grid: left wider -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 xl:gap-20 items-center">
+
+        <!-- ───────────────────────────────
+             LEFT — Text content
+        ─────────────────────────────── -->
+        <div class="order-2 lg:order-1">
+
+          <!-- Eyebrow pill -->
+          <div class="inline-flex items-center gap-2.5
+                      bg-[#FFD700]/10 border border-[#FFD700]/25
+                      text-[#FFD700] text-[11px] font-semibold uppercase tracking-[.14em]
+                      px-4 py-2 rounded-full mb-8">
+            <!-- Mini sun icon -->
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+              <path d="M6.5 1v1.6M6.5 10.4V12M1 6.5h1.6M10.4 6.5H12M2.9 2.9l1.1 1.1M9 9l1.1 1.1M9 2.9 7.9 4M4 9 2.9 10.1" stroke="#FFD700" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="6.5" cy="6.5" r="2.3" fill="#FFD700"/>
+            </svg>
+            Clean Energy Solutions
+          </div>
+
+          <!-- H1 — black weight, tight tracking -->
+          <h1 class="text-[2.85rem] sm:text-[3.5rem] lg:text-[3.9rem] xl:text-[4.6rem]
+                     font-black text-white leading-[1.04] tracking-[-0.03em] mb-6">
+            Power the Future,<br/>
+            <span class="text-grad-gold">Preserve the&nbsp;Planet.</span>
+          </h1>
+
+          <!-- Subheading — light weight, muted -->
+          <p class="text-[1.05rem] lg:text-lg font-light text-white/58 leading-[1.82] max-w-[520px] mb-10">
+            We deliver <span class="font-medium text-white/90">scalable solar and wind</span>
+            energy solutions to homes, businesses, and communities — cutting carbon,
+            lowering bills, and building a
+            <span class="font-medium text-white/90">cleaner tomorrow</span>
+            for generations to come.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 mb-14">
+            <!-- Primary — gold -->
+            <a href="#"
+               class="group inline-flex items-center gap-2.5
+                      bg-[#FFD700] text-[#1A4D2E] font-bold text-[.93rem]
+                      px-7 py-[14px] rounded-full
+                      shadow-lg shadow-[#FFD700]/25
+                      hover:bg-[#F5C800] hover:shadow-xl hover:shadow-[#FFD700]/35 hover:-translate-y-0.5
+                      transition-all duration-200">
+              Start Your Journey
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                   class="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+
+            <!-- Secondary — ghost outline -->
+            <a href="#"
+               class="btn-ghost inline-flex items-center gap-2.5
+                      border border-white/22 text-white/82 font-medium text-[.93rem]
+                      px-7 py-[14px] rounded-full
+                      hover:border-white/35
+                      transition-all duration-200">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true">
+                <circle cx="8.5" cy="8.5" r="7.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M7 5.8L12 8.5 7 11.2z" fill="currentColor"/>
+              </svg>
+              See How It Works
+            </a>
+          </div>
+
+          <!-- Stats row -->
+          <div class="flex flex-wrap items-stretch divide-x divide-white/14 gap-y-6">
+            <div class="pr-8 lg:pr-10">
+              <div class="text-[2.1rem] lg:text-[2.4rem] font-black tracking-tight leading-none text-white mb-1.5">
+                2.4<span class="text-[1.35rem] font-bold text-[#FFD700] ml-1">GW</span>
+              </div>
+              <div class="text-[.72rem] font-semibold uppercase tracking-widest text-white/42">
+                Installed Capacity
+              </div>
+            </div>
+            <div class="px-8 lg:px-10">
+              <div class="text-[2.1rem] lg:text-[2.4rem] font-black tracking-tight leading-none text-white mb-1.5">
+                180<span class="text-[1.35rem] font-bold text-[#FFD700] ml-0.5">K+</span>
+              </div>
+              <div class="text-[.72rem] font-semibold uppercase tracking-widest text-white/42">
+                Homes Powered
+              </div>
+            </div>
+            <div class="pl-8 lg:pl-10">
+              <div class="text-[2.1rem] lg:text-[2.4rem] font-black tracking-tight leading-none text-white mb-1.5">
+                1.2<span class="text-[1.35rem] font-bold text-[#FFD700] ml-1">Mt</span>
+              </div>
+              <div class="text-[.72rem] font-semibold uppercase tracking-widest text-white/42">
+                CO₂ Offset / Year
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /LEFT -->
+
+
+        <!-- ───────────────────────────────
+             RIGHT — SVG illustration
+        ─────────────────────────────── -->
+        <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div class="animate-float w-full" style="max-width:440px;">
+
+            <!--
+              480 × 500 viewBox
+              Sun centre: (250, 190)
+              Rays: 8 ellipses rotated around (250,190), base at cy=82
+              Solar panels: g translate(105,372) rotate(-11)
+              Wind turbine: g translate(382,262)
+              Hills: back y≈428, front y≈460
+            -->
+            <svg viewBox="0 0 480 500" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 class="w-full h-auto" role="img" aria-label="Sustainable energy illustration">
+              <defs>
+                <!-- Sun gradient -->
+                <radialGradient id="rg-sun" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="#FFFDE7"/>
+                  <stop offset="38%"  stop-color="#FFD700"/>
+                  <stop offset="100%" stop-color="#F59E0B"/>
+                </radialGradient>
+                <!-- Big ambient glow behind sun -->
+                <radialGradient id="rg-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="#FFD700" stop-opacity=".22"/>
+                  <stop offset="55%"  stop-color="#FFD700" stop-opacity=".07"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </radialGradient>
+                <!-- Hill gradients -->
+                <linearGradient id="rg-hill-back" x1="0" y1="428" x2="0" y2="500" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#2D7052" stop-opacity=".6"/>
+                  <stop offset="100%" stop-color="#1A4D2E" stop-opacity=".1"/>
+                </linearGradient>
+                <linearGradient id="rg-hill-front" x1="0" y1="458" x2="0" y2="500" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#52B788" stop-opacity=".4"/>
+                  <stop offset="100%" stop-color="#1A4D2E" stop-opacity=".05"/>
+                </linearGradient>
+                <!-- Solar panel face -->
+                <linearGradient id="rg-panel" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"   stop-color="#1D4ED8"/>
+                  <stop offset="100%" stop-color="#1E3A8A"/>
+                </linearGradient>
+                <!-- Blur filters -->
+                <filter id="f-glow-xl" x="-45%" y="-45%" width="190%" height="190%">
+                  <feGaussianBlur stdDeviation="18"/>
+                </filter>
+                <filter id="f-glow-sm" x="-25%" y="-25%" width="150%" height="150%">
+                  <feGaussianBlur stdDeviation="6"/>
+                </filter>
+              </defs>
+
+
+              <!-- ╌╌╌ AMBIENT GLOW ╌╌╌ -->
+              <ellipse cx="250" cy="190" rx="215" ry="200"
+                       fill="url(#rg-glow)" filter="url(#f-glow-xl)"/>
+
+
+              <!-- ╌╌╌ ORBITAL RINGS ╌╌╌ -->
+              <circle cx="250" cy="190" r="150"
+                      stroke="#FFD700" stroke-width=".7" stroke-opacity=".18"
+                      stroke-dasharray="5 9" fill="none"/>
+              <circle cx="250" cy="190" r="194"
+                      stroke="#FFD700" stroke-width=".5" stroke-opacity=".10"
+                      stroke-dasharray="3 14" fill="none"/>
+
+
+              <!-- ╌╌╌ 8 RAYS ╌╌╌
+                   Base ellipse: cx=250 cy=82 (108px above sun centre at 190)
+                   Rotated around (250,190)
+              ╌╌╌ -->
+              <g class="animate-ray-pulse">
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".52"
+                         transform="rotate(  0 250 190)"/>
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".40"
+                         transform="rotate( 45 250 190)"/>
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".52"
+                         transform="rotate( 90 250 190)"/>
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".40"
+                         transform="rotate(135 250 190)"/>
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".52"
+                         transform="rotate(180 250 190)"/>
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".40"
+                         transform="rotate(225 250 190)"/>
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".52"
+                         transform="rotate(270 250 190)"/>
+                <ellipse cx="250" cy="82" rx="7" ry="30" fill="#FFD700" fill-opacity=".40"
+                         transform="rotate(315 250 190)"/>
+              </g>
+
+
+              <!-- ╌╌╌ SUN HALO RINGS ╌╌╌ -->
+              <circle cx="250" cy="190" r="106" fill="#FFD700" fill-opacity=".07"/>
+              <circle cx="250" cy="190" r=" 88" fill="#FFD700" fill-opacity=".09"/>
+
+
+              <!-- ╌╌╌ SUN CORE ╌╌╌ -->
+              <circle cx="250" cy="190" r="68" fill="url(#rg-sun)"/>
+              <!-- highlight lens flare -->
+              <ellipse cx="236" cy="174" rx="24" ry="19" fill="white" fill-opacity=".18"/>
+              <ellipse cx="230" cy="168" rx="10" ry=" 8" fill="white" fill-opacity=".28"/>
+
+
+              <!-- ╌╌╌ ENERGY FLOW LINES ╌╌╌ -->
+              <!-- toward solar panels -->
+              <path d="M225,252 Q190,315 165,372"
+                    stroke="#FFD700" stroke-width="1.4" stroke-opacity=".28"
+                    stroke-dasharray="7 6" fill="none"/>
+              <path d="M242,256 Q228,318 222,374"
+                    stroke="#FFD700" stroke-width=".9" stroke-opacity=".18"
+                    stroke-dasharray="5 7" fill="none"/>
+              <!-- toward wind turbine -->
+              <path d="M276,252 Q335,302 374,370"
+                    stroke="#FFD700" stroke-width="1.2" stroke-opacity=".22"
+                    stroke-dasharray="6 6" fill="none"/>
+
+
+              <!-- ╌╌╌ BACK HILL ╌╌╌ -->
+              <path d="M0,428 Q55,362 160,374 Q278,384 400,370 Q452,364 480,378 L480,500 L0,500Z"
+                    fill="url(#rg-hill-back)"/>
+
+
+              <!-- ╌╌╌ SOLAR PANEL ARRAY ╌╌╌ -->
+              <!--
+                Translate to (105, 372), then rotate -11° to face sun.
+                Two side-by-side panels, each 54×37, separated by 6px gap.
+                Grid: 3×2 cells. Mounting struts below.
+              -->
+              <g transform="translate(105,372) rotate(-11)">
+
+                <!-- Panel A -->
+                <rect width="54" height="37" rx="2.5" fill="url(#rg-panel)" opacity=".94"/>
+                <!-- H lines -->
+                <line x1="0"  y1="12.3" x2="54" y2="12.3" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <line x1="0"  y1="24.7" x2="54" y2="24.7" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <!-- V lines -->
+                <line x1="18" y1="0" x2="18" y2="37" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <line x1="36" y1="0" x2="36" y2="37" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <!-- Frame -->
+                <rect width="54" height="37" rx="2.5" fill="none" stroke="#60A5FA" stroke-width=".9" stroke-opacity=".55"/>
+                <!-- Glare -->
+                <path d="M4,3 L20,3 L14,10 L4,10Z" fill="white" fill-opacity=".13"/>
+
+                <!-- Panel B -->
+                <rect x="60" width="54" height="37" rx="2.5" fill="url(#rg-panel)" opacity=".94"/>
+                <line x1="60" y1="12.3" x2="114" y2="12.3" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <line x1="60" y1="24.7" x2="114" y2="24.7" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <line x1="78" y1="0" x2="78" y2="37" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <line x1="96" y1="0" x2="96" y2="37" stroke="#93C5FD" stroke-width=".55" stroke-opacity=".45"/>
+                <rect x="60" width="54" height="37" rx="2.5" fill="none" stroke="#60A5FA" stroke-width=".9" stroke-opacity=".55"/>
+                <path d="M64,3 L80,3 L74,10 L64,10Z" fill="white" fill-opacity=".13"/>
+
+                <!-- Mounting struts -->
+                <line x1="27"  y1="37" x2="30"  y2="56" stroke="#A7F3D0" stroke-width="1.8" stroke-opacity=".48"/>
+                <line x1="87"  y1="37" x2="90"  y2="56" stroke="#A7F3D0" stroke-width="1.8" stroke-opacity=".48"/>
+                <line x1="22"  y1="56" x2="95"  y2="56" stroke="#A7F3D0" stroke-width="1.2" stroke-opacity=".38"/>
+              </g>
+
+
+              <!-- ╌╌╌ WIND TURBINE ╌╌╌ -->
+              <!--
+                Hub at local (0,0) → screen (382, 262).
+                Tower: tapers from 8px to 12px wide, 145px tall.
+                Blades: 3 × ry=44 ellipse, rotated -30 / 90 / 210 around (0,0).
+                Max x extent: rotate(90) → tip at x=44 → screen x=426 ✓
+              -->
+              <g transform="translate(382,262)">
+                <!-- Tower -->
+                <polygon points="-4,0 4,0 6,145 -6,145"
+                         fill="white" fill-opacity=".52"/>
+                <!-- Nacelle housing -->
+                <rect x="-9" y="-6" width="18" height="12" rx="3"
+                      fill="white" fill-opacity=".75"/>
+                <!-- Blade 1 — upper-left -->
+                <ellipse cx="0" cy="-46" rx="5.5" ry="44"
+                         fill="white" fill-opacity=".72"
+                         transform="rotate(-30)"/>
+                <!-- Blade 2 — right -->
+                <ellipse cx="0" cy="-46" rx="5.5" ry="44"
+                         fill="white" fill-opacity=".62"
+                         transform="rotate(90)"/>
+                <!-- Blade 3 — lower-left -->
+                <ellipse cx="0" cy="-46" rx="5.5" ry="44"
+                         fill="white" fill-opacity=".62"
+                         transform="rotate(210)"/>
+                <!-- Hub cap -->
+                <circle r="5.5" fill="white" fill-opacity=".95"/>
+                <circle r="2.8" fill="#1A4D2E" fill-opacity=".45"/>
+              </g>
+
+
+              <!-- ╌╌╌ FRONT HILL ╌╌╌ -->
+              <path d="M0,462 Q65,440 148,450 Q228,460 308,446 Q376,434 438,452 Q462,460 480,456 L480,500 L0,500Z"
+                    fill="url(#rg-hill-front)"/>
+
+
+              <!-- ╌╌╌ LEAF ACCENTS ╌╌╌ -->
+              <!-- Left cluster -->
+              <path d="M44,462 C22,442 32,416 58,422 C74,426 62,450 44,462Z"
+                    fill="#52B788" fill-opacity=".52"/>
+              <line x1="44" y1="462" x2="57" y2="427"
+                    stroke="#52B788" stroke-width=".9" stroke-opacity=".48"/>
+
+              <path d="M70,470 C52,452 60,430 82,434 C97,438 88,464 70,470Z"
+                    fill="#74C69D" fill-opacity=".42"/>
+              <line x1="70" y1="470" x2="80" y2="438"
+                    stroke="#74C69D" stroke-width=".8" stroke-opacity=".38"/>
+
+              <!-- Right leaf -->
+              <path d="M442,466 C460,446 472,450 464,462 C458,470 447,470 442,466Z"
+                    fill="#52B788" fill-opacity=".36"/>
+
+
+              <!-- ╌╌╌ SPARKLE PARTICLES ╌╌╌ -->
+              <!-- 4-point star sparkles -->
+              <g transform="translate(152,130)" fill="none">
+                <path d="M0,-6.5 0,-2.5 M0,2.5 0,6.5 M-6.5,0 -2.5,0 M2.5,0 6.5,0"
+                      stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-opacity=".62"/>
+                <circle r="1.8" fill="white" fill-opacity=".65"/>
+              </g>
+              <g transform="translate(438,96)" fill="none">
+                <path d="M0,-7 0,-2.8 M0,2.8 0,7 M-7,0 -2.8,0 M2.8,0 7,0"
+                      stroke="#FFD700" stroke-width="1.4" stroke-linecap="round" stroke-opacity=".68"/>
+                <circle r="2" fill="#FFD700" fill-opacity=".72"/>
+              </g>
+              <g transform="translate(58,158)" fill="none">
+                <path d="M0,-5 0,-2 M0,2 0,5 M-5,0 -2,0 M2,0 5,0"
+                      stroke="#A7F3D0" stroke-width="1.2" stroke-linecap="round" stroke-opacity=".52"/>
+              </g>
+
+              <!-- Dot stars -->
+              <circle cx=" 88" cy="100" r="1.8" fill="white"   fill-opacity=".52"/>
+              <circle cx="186" cy=" 52" r="1.9" fill="white"   fill-opacity=".48"/>
+              <circle cx="378" cy=" 58" r="1.5" fill="white"   fill-opacity=".55"/>
+              <circle cx="458" cy="176" r="2.1" fill="#FFD700"  fill-opacity=".48"/>
+              <circle cx=" 32" cy="202" r="1.4" fill="white"   fill-opacity=".42"/>
+              <circle cx="326" cy=" 84" r="1.6" fill="#FFD700"  fill-opacity=".42"/>
+              <circle cx="468" cy="238" r="1.7" fill="white"   fill-opacity=".38"/>
+              <circle cx=" 48" cy="298" r="1.3" fill="white"   fill-opacity=".32"/>
+              <circle cx="418" cy="326" r="1.2" fill="#A7F3D0" fill-opacity=".48"/>
+              <circle cx="298" cy=" 48" r="1.5" fill="white"   fill-opacity=".44"/>
+
+            </svg>
+
+          </div>
+        </div><!-- /RIGHT -->
+
+      </div><!-- /grid -->
+    </div>
+  </div><!-- /main content -->
+
+
+  <!-- Scroll cue -->
+  <div class="relative z-10 flex flex-col items-center gap-2 pb-8 text-white/28">
+    <span class="text-[10px] font-semibold uppercase tracking-[.18em]">Scroll to Explore</span>
+    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" aria-hidden="true">
+      <path d="M7 2v14M2 11.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+</section>
+<!-- /HERO -->
+
+</body>
+</html>
