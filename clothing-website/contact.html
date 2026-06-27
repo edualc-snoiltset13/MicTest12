@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Théod</title>
+  <meta name="description" content="Get in touch with the Théod team. We're here to help with orders, sizing, and anything else.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="brand">Théod</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" aria-label="Search">Search</a>
+        <a href="#" aria-label="Cart">Cart (0)</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <h1>Get in touch</h1>
+    <p>Questions about an order, sizing, or anything else? We'd love to hear from you.</p>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <form class="form-grid" onsubmit="return false;">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option>Order question</option>
+              <option>Sizing &amp; fit</option>
+              <option>Returns &amp; exchanges</option>
+              <option>Wholesale enquiry</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="How can we help?" required></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn">Send message</button>
+          </div>
+        </form>
+
+        <div class="features" style="margin-top:4rem">
+          <div class="feature">
+            <div class="icon">&#9993;</div>
+            <h3>Email</h3>
+            <p>hello@theod.example</p>
+          </div>
+          <div class="feature">
+            <div class="icon">&#9742;</div>
+            <h3>Phone</h3>
+            <p>+1 (555) 014-2026</p>
+          </div>
+          <div class="feature">
+            <div class="icon">&#127970;</div>
+            <h3>Studio</h3>
+            <p>24 Maker's Lane, Portland, OR</p>
+          </div>
+          <div class="feature">
+            <div class="icon">&#128337;</div>
+            <h3>Hours</h3>
+            <p>Mon–Fri, 9am–6pm PST</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Théod</h4>
+          <p>Thoughtfully designed clothing for everyday life. Made to be worn, loved, and kept.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">Women</a></li>
+            <li><a href="shop.html">Men</a></li>
+            <li><a href="shop.html">Accessories</a></li>
+            <li><a href="shop.html">New arrivals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size guide</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Théod. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
