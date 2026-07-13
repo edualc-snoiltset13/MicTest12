@@ -1,0 +1,65 @@
+=====================================================================
+                    PORTFOLIO WEBSITE PROJECT
+                    Weekly Team Meeting Agenda
+=====================================================================
+
+Date:       Monday, July 20, 2026
+Time:       10:00 AM - 11:00 AM
+Location:   Conference Room B / Video call
+Attendees:  Jane Doe (lead), Alex Kim (design), Priya Patel (dev),
+            Sam Rivera (content)
+
+---------------------------------------------------------------------
+AGENDA
+---------------------------------------------------------------------
+
+1. Welcome and review of last week's action items       (5 min)
+
+2. Portfolio page status update                         (10 min)
+   - Draft page merged review: navigation, images, contact form
+   - Feedback collected from stakeholders
+
+3. Content review                                       (15 min)
+   - Replace placeholder "Jane Doe" bio with final copy
+   - Select real project screenshots to replace SVG placeholders
+
+4. Design polish                                        (15 min)
+   - Accent color and typography decisions
+   - Mobile layout walkthrough
+
+5. Contact form backend                                 (10 min)
+   - Options: hosted form service vs. simple mail handler
+   - Spam protection approach
+
+6. Open floor / questions                               (5 min)
+
+---------------------------------------------------------------------
+ACTION ITEMS AND DEADLINES
+---------------------------------------------------------------------
+
+[ ] Finalize bio and project descriptions
+    Owner:    Sam Rivera
+    Deadline: Wednesday, July 22, 2026
+
+[ ] Deliver three project screenshots (400x220, optimized)
+    Owner:    Alex Kim
+    Deadline: Friday, July 24, 2026
+
+[ ] Evaluate form backend options and recommend one
+    Owner:    Priya Patel
+    Deadline: Friday, July 24, 2026
+
+[ ] Complete mobile layout QA pass (phones and tablets)
+    Owner:    Priya Patel
+    Deadline: Monday, July 27, 2026
+
+[ ] Circulate final copy deck for sign-off
+    Owner:    Jane Doe
+    Deadline: Tuesday, July 28, 2026
+
+---------------------------------------------------------------------
+NEXT MEETING
+---------------------------------------------------------------------
+
+Monday, July 27, 2026, 10:00 AM - Conference Room B
+Please review the action items above before attending.
