@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Moon — Earth's Natural Satellite</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #e6e8ef;
+            background: radial-gradient(ellipse at top, #1b2240 0%, #0b0e1a 60%, #06070d 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2.5rem;
+        }
+        .moon-icon {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, #f5f3ea 0%, #cfcdc2 45%, #8f8d84 100%);
+            box-shadow: 0 0 40px rgba(240, 238, 225, 0.35), inset -12px -10px 30px rgba(0,0,0,0.35);
+            position: relative;
+        }
+        .moon-icon::before, .moon-icon::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.12);
+        }
+        .moon-icon::before { width: 24px; height: 24px; top: 28%; left: 22%; }
+        .moon-icon::after { width: 16px; height: 16px; top: 58%; left: 55%; }
+        h1 { margin: 0 0 0.5rem; font-size: 2.4rem; letter-spacing: 0.02em; }
+        .subtitle { color: #9aa3c0; font-size: 1.1rem; margin: 0; }
+        h2 {
+            margin-top: 2.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            font-size: 1.4rem;
+        }
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .fact {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        .fact .value { font-size: 1.3rem; font-weight: 600; color: #f5f3ea; }
+        .fact .label { font-size: 0.85rem; color: #9aa3c0; margin-top: 0.25rem; }
+        ul { padding-left: 1.25rem; }
+        li { margin-bottom: 0.4rem; }
+        .phases {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .phase { width: 90px; font-size: 0.8rem; color: #9aa3c0; }
+        .phase-disc {
+            width: 56px; height: 56px;
+            margin: 0 auto 0.4rem;
+            border-radius: 50%;
+            background: #2a2f45;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
+        }
+        .phase-disc span {
+            position: absolute; inset: 0;
+            border-radius: 50%;
+            background: #ece9dc;
+        }
+        .new span { display: none; }
+        .crescent span { clip-path: inset(0 0 0 65%); }
+        .quarter span { clip-path: inset(0 0 0 50%); }
+        .gibbous span { clip-path: inset(0 0 0 25%); }
+        .full span { clip-path: none; }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            color: #7c85a3;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        a { color: #8ab4ff; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="moon-icon" aria-hidden="true"></div>
+        <h1>The Moon</h1>
+        <p class="subtitle">Earth's only natural satellite and our closest celestial neighbor</p>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Overview</h2>
+            <p>
+                The Moon is Earth's only natural satellite, orbiting our planet at an average distance
+                of about 384,400 kilometers. It formed roughly 4.5 billion years ago, most likely from
+                the debris of a giant impact between the early Earth and a Mars-sized body named Theia.
+                The Moon is tidally locked to Earth, so the same hemisphere — the near side — always
+                faces us.
+            </p>
+        </section>
+
+        <section>
+            <h2>Quick Facts</h2>
+            <div class="facts">
+                <div class="fact"><div class="value">3,474 km</div><div class="label">Diameter (about 27% of Earth's)</div></div>
+                <div class="fact"><div class="value">384,400 km</div><div class="label">Average distance from Earth</div></div>
+                <div class="fact"><div class="value">27.3 days</div><div class="label">Orbital period (sidereal month)</div></div>
+                <div class="fact"><div class="value">1/6 g</div><div class="label">Surface gravity vs. Earth</div></div>
+                <div class="fact"><div class="value">−173 to 127 °C</div><div class="label">Surface temperature range</div></div>
+                <div class="fact"><div class="value">4.5 billion yrs</div><div class="label">Approximate age</div></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Phases of the Moon</h2>
+            <p>
+                As the Moon orbits Earth, the fraction of its sunlit half that we can see changes,
+                producing the familiar cycle of phases. A complete cycle from one new moon to the
+                next — a synodic month — takes about 29.5 days.
+            </p>
+            <div class="phases">
+                <div class="phase"><div class="phase-disc new"><span></span></div>New Moon</div>
+                <div class="phase"><div class="phase-disc crescent"><span></span></div>Crescent</div>
+                <div class="phase"><div class="phase-disc quarter"><span></span></div>First Quarter</div>
+                <div class="phase"><div class="phase-disc gibbous"><span></span></div>Gibbous</div>
+                <div class="phase"><div class="phase-disc full"><span></span></div>Full Moon</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Surface and Geology</h2>
+            <ul>
+                <li><strong>Maria:</strong> the dark plains visible from Earth are vast basalt flows from ancient volcanic eruptions.</li>
+                <li><strong>Highlands:</strong> the bright, heavily cratered regions are the Moon's oldest crust.</li>
+                <li><strong>Craters:</strong> with no atmosphere to burn up incoming rocks, impacts have scarred the surface for billions of years.</li>
+                <li><strong>Regolith:</strong> the surface is blanketed in a layer of fine, glassy dust ground up by micrometeorite impacts.</li>
+                <li><strong>Water ice:</strong> permanently shadowed craters near the poles hold deposits of frozen water.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Influence on Earth</h2>
+            <p>
+                The Moon's gravity raises Earth's ocean tides and helps stabilize the tilt of Earth's
+                axis, which keeps our climate relatively steady over long timescales. Tidal
+                interaction also slowly transfers energy from Earth to the Moon, so the Moon drifts
+                away from us by about 3.8 centimeters every year, and Earth's days gradually lengthen.
+            </p>
+        </section>
+
+        <section>
+            <h2>Human Exploration</h2>
+            <p>
+                The Moon is the only world beyond Earth that humans have set foot on. The Soviet
+                Luna 2 probe reached it in 1959, and NASA's Apollo 11 mission landed Neil Armstrong
+                and Buzz Aldrin on the Sea of Tranquility on July 20, 1969. Six Apollo missions
+                brought back 382 kilograms of lunar rock between 1969 and 1972. Today, robotic
+                missions from many nations continue to study the Moon, and NASA's Artemis program
+                aims to return astronauts to its surface.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        A simple informational page about the Moon.
+    </footer>
+</body>
+</html>
