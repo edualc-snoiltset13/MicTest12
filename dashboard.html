@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MicTest12 — Project Dashboard</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11, 11, 11, 0.10);
+    --s1: #2a78d6;          /* series: opened */
+    --s2: #008300;          /* series: merged */
+    --s-closed: #898781;    /* closed without merge — neutral, not a series hue */
+    --good: #0ca30c;
+    --good-text: #006300;
+    --warning: #fab219;
+    --critical: #d03b3b;
+    --shadow: 0 1px 2px rgba(11, 11, 11, 0.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --ink: #ffffff;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255, 255, 255, 0.10);
+      --s1: #3987e5;
+      --s2: #008300;
+      --good-text: #0ca30c;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --s1: #3987e5;
+    --s2: #008300;
+    --good-text: #0ca30c;
+    --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 56px; }
+
+  /* ---------- header ---------- */
+  header .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  header h1 {
+    margin: 4px 0 6px; font-size: 28px; font-weight: 700;
+    letter-spacing: -0.01em; text-wrap: balance;
+  }
+  header .meta { color: var(--ink-2); font-size: 13.5px; }
+  header .meta span + span::before { content: "·"; margin: 0 8px; color: var(--muted); }
+
+  /* ---------- layout ---------- */
+  main { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .cols { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; align-items: stretch; }
+  @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+  .rail { display: flex; flex-direction: column; gap: 16px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+  .card h2 {
+    margin: 0 0 2px; font-size: 14px; font-weight: 650; letter-spacing: 0.01em;
+  }
+  .card .sub { margin: 0 0 14px; font-size: 12.5px; color: var(--muted); }
+
+  /* ---------- KPI tiles ---------- */
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; box-shadow: var(--shadow); }
+  .tile .label { font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); }
+  .tile .value { font-size: 27px; font-weight: 700; line-height: 1.15; margin-top: 4px; letter-spacing: -0.01em; }
+  .tile .note { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+  .tile .note.good { color: var(--good-text); }
+  .tile .note.hot { color: var(--critical); font-weight: 550; }
+
+  /* ---------- chart chrome ---------- */
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin-top: 10px; }
+  .legend .key { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+
+  #flow-chart svg { display: block; width: 100%; height: auto; }
+  #flow-chart text { font: 11.5px system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+  .tooltip {
+    position: fixed; z-index: 10; pointer-events: none;
+    background: var(--surface); color: var(--ink);
+    border: 1px solid var(--border); border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    padding: 7px 10px; font-size: 12.5px; line-height: 1.45;
+    opacity: 0; transition: opacity 80ms linear;
+  }
+  @media (prefers-reduced-motion: reduce) { .tooltip { transition: none; } }
+  .tooltip strong { display: block; font-weight: 650; }
+  .tooltip .tt-muted { color: var(--muted); }
+
+  /* ---------- state strip ---------- */
+  .strip { display: flex; gap: 2px; height: 26px; border-radius: 5px; overflow: hidden; margin-top: 4px; }
+  .strip .seg { min-width: 4px; }
+  .state-rows { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; }
+  .state-rows .row { display: flex; align-items: center; gap: 8px; }
+  .state-rows .n { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 650; }
+  .state-rows .pct { color: var(--muted); font-variant-numeric: tabular-nums; width: 3.2em; text-align: right; }
+
+  /* ---------- module bars ---------- */
+  .modules { display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
+  .mod { display: grid; grid-template-columns: 172px 1fr 3.4em; align-items: center; gap: 10px; font-size: 12.5px; }
+  .mod .name { color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mod .track { height: 14px; position: relative; }
+  .mod .bar { position: absolute; inset: 0 auto 0 0; border-radius: 0 4px 4px 0; }
+  .mod .n { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+  @media (max-width: 480px) { .mod { grid-template-columns: 120px 1fr 3.4em; } }
+
+  /* ---------- CI strip ---------- */
+  .ci-cells { display: grid; grid-template-columns: repeat(15, 1fr); gap: 3px; margin-top: 4px; }
+  .ci-cells .cell { aspect-ratio: 1; border-radius: 3px; background: var(--good); min-width: 0; }
+  .ci-note { display: flex; align-items: center; gap: 7px; margin-top: 12px; font-size: 13px; color: var(--good-text); font-weight: 550; }
+  .ci-note svg { flex: none; }
+
+  /* ---------- issues ---------- */
+  .issue { display: flex; gap: 10px; padding: 9px 0; border-top: 1px solid var(--grid); font-size: 13.5px; }
+  .issue:first-of-type { border-top: 0; padding-top: 2px; }
+  .issue .num { color: var(--muted); font-variant-numeric: tabular-nums; flex: none; }
+  .issue .tag {
+    margin-left: auto; flex: none; align-self: flex-start;
+    font-size: 11px; font-weight: 600; color: var(--ink-2);
+    border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px;
+  }
+
+  /* ---------- table ---------- */
+  .tbl-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th {
+    text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+    padding: 6px 14px 6px 0; border-bottom: 1px solid var(--baseline);
+  }
+  td { padding: 8px 14px 8px 0; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 0; }
+  td.pr-num { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .age-hot { color: var(--critical); font-weight: 600; }
+
+  /* ---------- callout ---------- */
+  .callout {
+    border-left: 3px solid var(--s1);
+    background: var(--surface); border-radius: 0 8px 8px 0;
+    border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 14px 18px; font-size: 14px; color: var(--ink-2); max-width: 72ch;
+  }
+  .callout strong { color: var(--ink); }
+
+  details { margin-top: 12px; }
+  summary { cursor: pointer; font-size: 12.5px; color: var(--muted); }
+  summary:focus-visible, a:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; border-radius: 3px; }
+  details table { margin-top: 8px; max-width: 420px; }
+
+  footer { margin-top: 28px; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Project dashboard</div>
+    <h1>MicTest12</h1>
+    <div class="meta">
+      <span>edualc-snoiltset13/MicTest12</span><span>2 contributors</span><span>12 commits on default branch</span><span>Data as of Jul 18, 2026</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- KPI row -->
+    <section class="tiles" aria-label="Key metrics">
+      <div class="tile">
+        <div class="label">Open PRs</div>
+        <div class="value">45</div>
+        <div class="note hot">oldest is 160 days old</div>
+      </div>
+      <div class="tile">
+        <div class="label">Merge rate</div>
+        <div class="value">10%</div>
+        <div class="note">5 of 52 PRs merged</div>
+      </div>
+      <div class="tile">
+        <div class="label">CI status</div>
+        <div class="value">Passing</div>
+        <div class="note good">last 30 runs green</div>
+      </div>
+      <div class="tile">
+        <div class="label">Tests</div>
+        <div class="value">77</div>
+        <div class="note good">all passing</div>
+      </div>
+      <div class="tile">
+        <div class="label">Lines of code</div>
+        <div class="value">2,346</div>
+        <div class="note">1,342 source · 637 test</div>
+      </div>
+      <div class="tile">
+        <div class="label">Open issues</div>
+        <div class="value">2</div>
+        <div class="note">both since Feb 4</div>
+      </div>
+    </section>
+
+    <div class="cols">
+      <!-- PR flow -->
+      <section class="card">
+        <h2>Pull request flow</h2>
+        <p class="sub">Opened vs. merged per month, 2026</p>
+        <div id="flow-chart"></div>
+        <div class="legend">
+          <span class="key"><span class="swatch" style="background:var(--s1)"></span>Opened</span>
+          <span class="key"><span class="swatch" style="background:var(--s2)"></span>Merged</span>
+        </div>
+        <details>
+          <summary>View as table</summary>
+          <table>
+            <thead><tr><th>Month</th><th class="num">Opened</th><th class="num">Merged</th></tr></thead>
+            <tbody>
+              <tr><td>Feb</td><td class="num">1</td><td class="num">0</td></tr>
+              <tr><td>Mar</td><td class="num">1</td><td class="num">0</td></tr>
+              <tr><td>Apr</td><td class="num">9</td><td class="num">1</td></tr>
+              <tr><td>May</td><td class="num">11</td><td class="num">3</td></tr>
+              <tr><td>Jun</td><td class="num">23</td><td class="num">1</td></tr>
+              <tr><td>Jul</td><td class="num">7</td><td class="num">0</td></tr>
+            </tbody>
+          </table>
+        </details>
+      </section>
+
+      <!-- PR states -->
+      <section class="card">
+        <h2>Where the 52 PRs stand</h2>
+        <p class="sub">All pull requests since project start</p>
+        <div class="strip" role="img" aria-label="45 open, 5 merged, 2 closed without merge">
+          <span class="seg" style="flex:45; background:var(--s1)"></span>
+          <span class="seg" style="flex:5; background:var(--s2)"></span>
+          <span class="seg" style="flex:2; background:var(--s-closed)"></span>
+        </div>
+        <div class="state-rows">
+          <div class="row"><span class="swatch" style="background:var(--s1)"></span>Open, awaiting review <span class="n">45</span><span class="pct">87%</span></div>
+          <div class="row"><span class="swatch" style="background:var(--s2)"></span>Merged <span class="n">5</span><span class="pct">10%</span></div>
+          <div class="row"><span class="swatch" style="background:var(--s-closed)"></span>Closed without merge <span class="n">2</span><span class="pct">4%</span></div>
+        </div>
+        <p style="font-size:12.5px; color:var(--muted); margin:14px 0 0; max-width:38ch;">
+          Busiest day: Jun 13, when 16 PRs were opened — 15 are still waiting.
+        </p>
+      </section>
+    </div>
+
+    <div class="cols">
+      <!-- modules -->
+      <section class="card">
+        <h2>Codebase by module</h2>
+        <p class="sub">Lines per file — source and its test coverage side by side</p>
+        <div class="modules" id="modules"></div>
+        <div class="legend">
+          <span class="key"><span class="swatch" style="background:var(--s1)"></span>Source</span>
+          <span class="key"><span class="swatch" style="background:var(--s2)"></span>Tests</span>
+        </div>
+      </section>
+
+      <div class="rail">
+        <!-- CI -->
+        <section class="card">
+          <h2>CI health</h2>
+          <p class="sub">Last 30 workflow runs (of 199 total) · unittest suite</p>
+          <div class="ci-cells" id="ci-cells" role="img" aria-label="30 consecutive successful CI runs, June 13 to July 18"></div>
+          <div class="ci-note">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            30 of 30 successful since Jun 13
+          </div>
+        </section>
+
+        <!-- issues -->
+        <section class="card">
+          <h2>Open issues</h2>
+          <p class="sub">Both are the barber-booking feature spec</p>
+          <div class="issue"><span class="num">#1</span><span>Build agent for barber time-slot booking</span><span class="tag">enhancement</span></div>
+          <div class="issue"><span class="num">#2</span><span>Same feature, with starter code samples</span><span class="tag">enhancement</span></div>
+        </section>
+      </div>
+    </div>
+
+    <!-- attention table -->
+    <section class="card">
+      <h2>Oldest open pull requests</h2>
+      <p class="sub">The head of a 45-PR review queue</p>
+      <div class="tbl-scroll">
+        <table>
+          <thead>
+            <tr><th>PR</th><th>Title</th><th>Opened</th><th class="num">Age</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="pr-num">#3</td><td>Add token number feature for booking reference and lookup</td><td>Feb 8</td><td class="num age-hot">160 d</td></tr>
+            <tr><td class="pr-num">#4</td><td>Add test.py with Hello World function</td><td>Mar 28</td><td class="num age-hot">112 d</td></tr>
+            <tr><td class="pr-num">#5</td><td>Add shopping cart module with comprehensive Jest test suite</td><td>Apr 24</td><td class="num">85 d</td></tr>
+            <tr><td class="pr-num">#6</td><td>Add CSV cleaning and summary statistics script</td><td>Apr 24</td><td class="num">85 d</td></tr>
+            <tr><td class="pr-num">#10</td><td>Add Maven package configuration</td><td>Apr 24</td><td class="num">85 d</td></tr>
+            <tr><td class="pr-num">#14</td><td>Add calc.py one-shot CLI</td><td>May 9</td><td class="num">70 d</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="callout">
+      <strong>The backlog is the bottleneck, not the build.</strong>
+      CI is fully green and all 77 tests pass, but 45 of 52 pull requests remain open and
+      only 5 have ever merged. Inflow peaked in June (23 PRs opened, 1 merged). A review
+      pass over the queue — starting with the six above — would move this project more than
+      any new code.
+    </p>
+  </main>
+
+  <footer>
+    Sources: git history, GitHub pull requests &amp; issues, GitHub Actions runs, and a local
+    <code>unittest</code> run — collected Jul 18, 2026. Static snapshot; numbers do not auto-refresh.
+  </footer>
+</div>
+
+<div class="tooltip" id="tooltip" role="status" aria-hidden="true"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var tooltip = document.getElementById("tooltip");
+  function showTip(html, x, y) {
+    tooltip.innerHTML = html;
+    tooltip.style.opacity = "1";
+    var pad = 14;
+    var w = tooltip.offsetWidth, h = tooltip.offsetHeight;
+    var left = Math.min(x + pad, window.innerWidth - w - 8);
+    var top = y - h - 10;
+    if (top < 8) top = y + pad;
+    tooltip.style.left = left + "px";
+    tooltip.style.top = top + "px";
+  }
+  function hideTip() { tooltip.style.opacity = "0"; }
+
+  /* ----- grouped column chart: PR flow ----- */
+  var months = ["Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+  var opened = [1, 1, 9, 11, 23, 7];
+  var merged = [0, 0, 1, 3, 1, 0];
+
+  var W = 560, H = 240, padL = 26, padR = 8, padT = 14, padB = 26;
+  var plotW = W - padL - padR, plotH = H - padT - padB;
+  var yMax = 25, ticks = [0, 5, 10, 15, 20, 25];
+  var svgNS = "http://www.w3.org/2000/svg";
+  var svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", "Grouped column chart of pull requests opened and merged per month, February through July 2026. Opened peaks at 23 in June; merges never exceed 3 in a month.");
+
+  function el(name, attrs, parent) {
+    var n = document.createElementNS(svgNS, name);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    (parent || svg).appendChild(n);
+    return n;
+  }
+  function y(v) { return padT + plotH * (1 - v / yMax); }
+
+  ticks.forEach(function (t) {
+    if (t > 0) el("line", { x1: padL, x2: W - padR, y1: y(t), y2: y(t), stroke: "var(--grid)", "stroke-width": 1 });
+    var lbl = el("text", { x: padL - 7, y: y(t) + 3.5, "text-anchor": "end", fill: "var(--muted)" });
+    lbl.textContent = t;
+    lbl.style.fontVariantNumeric = "tabular-nums";
+  });
+  el("line", { x1: padL, x2: W - padR, y1: y(0), y2: y(0), stroke: "var(--baseline)", "stroke-width": 1 });
+
+  var groupW = plotW / months.length;
+  var barW = 22, gap = 2, r = 4;
+
+  function colPath(cx, v) {
+    var top = y(v), base = y(0), x0 = cx - barW / 2;
+    if (v === 0) return null;
+    var hgt = base - top;
+    var rr = Math.min(r, hgt);
+    return "M" + x0 + " " + base +
+      "V" + (top + rr) +
+      "Q" + x0 + " " + top + " " + (x0 + rr) + " " + top +
+      "H" + (x0 + barW - rr) +
+      "Q" + (x0 + barW) + " " + top + " " + (x0 + barW) + " " + (top + rr) +
+      "V" + base + "Z";
+  }
+
+  months.forEach(function (m, i) {
+    var center = padL + groupW * (i + 0.5);
+    var xOpen = center - (barW + gap) / 2 - 0;
+    var xMerge = center + (barW + gap) / 2;
+
+    [{ v: opened[i], cx: xOpen, color: "var(--s1)", label: "opened" },
+     { v: merged[i], cx: xMerge, color: "var(--s2)", label: "merged" }].forEach(function (s) {
+      var d = colPath(s.cx, s.v);
+      if (d) el("path", { d: d, fill: s.color });
+      // hit target wider than the mark
+      var hit = el("rect", {
+        x: s.cx - barW / 2 - 3, y: padT, width: barW + 6, height: plotH + padB,
+        fill: "transparent"
+      });
+      hit.style.cursor = "default";
+      hit.addEventListener("mousemove", function (e) {
+        showTip("<strong>" + m + " 2026</strong><span class='tt-muted'>" + s.label + ":</span> " + s.v + " PR" + (s.v === 1 ? "" : "s"), e.clientX, e.clientY);
+      });
+      hit.addEventListener("mouseleave", hideTip);
+    });
+
+    var lbl = el("text", { x: center, y: H - 8, "text-anchor": "middle", fill: "var(--ink-2)" });
+    lbl.textContent = m;
+  });
+
+  // direct label on the June peak only
+  var peak = el("text", {
+    x: padL + groupW * 4.5 - (barW + gap) / 2, y: y(23) - 6,
+    "text-anchor": "middle", fill: "var(--ink-2)", "font-weight": 650
+  });
+  peak.style.fontVariantNumeric = "tabular-nums";
+  peak.textContent = "23";
+
+  document.getElementById("flow-chart").appendChild(svg);
+
+  /* ----- module bars ----- */
+  var files = [
+    { name: "barber_booking_agent.py", lines: 528, kind: "src" },
+    { name: "tests/test_barber_booking_agent.py", lines: 342, kind: "test" },
+    { name: "web_scraper.py", lines: 285, kind: "src" },
+    { name: "calculator.py", lines: 196, kind: "src" },
+    { name: "email_template.py", lines: 167, kind: "src" },
+    { name: "test_compression.py", lines: 154, kind: "test" },
+    { name: "tests/test_analyze_image.py", lines: 104, kind: "test" },
+    { name: "simple_calculator.py", lines: 93, kind: "src" },
+    { name: "analyze_image.py", lines: 38, kind: "src" },
+    { name: "test_calculator.py", lines: 37, kind: "test" },
+    { name: "compression.py", lines: 35, kind: "src" }
+  ];
+  var maxLines = 528;
+  var wrapEl = document.getElementById("modules");
+  files.forEach(function (f) {
+    var row = document.createElement("div");
+    row.className = "mod";
+    var pct = (f.lines / maxLines * 100).toFixed(1);
+    var color = f.kind === "src" ? "var(--s1)" : "var(--s2)";
+    row.innerHTML =
+      '<span class="name" title="' + f.name + '">' + f.name + "</span>" +
+      '<span class="track"><span class="bar" style="width:' + pct + "%; background:" + color + '"></span></span>' +
+      '<span class="n">' + f.lines + "</span>";
+    row.addEventListener("mousemove", function (e) {
+      showTip("<strong>" + f.name + "</strong>" + f.lines + " lines · " + (f.kind === "src" ? "source" : "test suite"), e.clientX, e.clientY);
+    });
+    row.addEventListener("mouseleave", hideTip);
+    wrapEl.appendChild(row);
+  });
+
+  /* ----- CI cells ----- */
+  var ciWrap = document.getElementById("ci-cells");
+  for (var run = 170; run <= 199; run++) {
+    (function (n) {
+      var c = document.createElement("span");
+      c.className = "cell";
+      c.addEventListener("mousemove", function (e) {
+        showTip("<strong>Run #" + n + "</strong><span class='tt-muted'>conclusion:</span> success", e.clientX, e.clientY);
+      });
+      c.addEventListener("mouseleave", hideTip);
+      ciWrap.appendChild(c);
+    })(run);
+  }
+})();
+</script>
+</body>
+</html>
