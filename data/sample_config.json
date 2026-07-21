@@ -1,0 +1,9 @@
+{
+  "app_name": "MicTest12",
+  "version": "0.1.0",
+  "debug": false,
+  "features": {
+    "logging": true,
+    "metrics": false
+  }
+}
