@@ -8,17 +8,28 @@ Pure standard library.
 def sum_even_numbers(numbers):
     """Return the sum of the even numbers in the given list.
 
-    Only integers (including bools' parent type, and floats with an
-    integral value) can be even; non-integral floats are skipped.
-    Returns 0 for an empty list or a list with no even numbers.
+    Floats with an integral value (e.g. 4.0) count as even; non-integral
+    floats are skipped. Returns 0 for an empty list or a list with no
+    even numbers.
+
+    Raises TypeError if numbers is not a list, or if it contains a
+    non-numeric value (str, None, bool, ...).
     """
+    if not isinstance(numbers, list):
+        raise TypeError(
+            f"expected a list of numbers, got {type(numbers).__name__}"
+        )
     total = 0
-    for n in numbers:
+    for i, n in enumerate(numbers):
+        if isinstance(n, bool) or not isinstance(n, (int, float)):
+            raise TypeError(
+                f"element at index {i} is not a number: {n!r}"
+            )
         if isinstance(n, float):
             if not n.is_integer():
                 continue
             n = int(n)
-        if isinstance(n, int) and n % 2 == 0:
+        if n % 2 == 0:
             total += n
     return total
 

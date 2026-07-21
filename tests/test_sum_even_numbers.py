@@ -28,6 +28,26 @@ class TestSumEvenNumbers(unittest.TestCase):
     def test_non_integral_floats_skipped(self):
         self.assertEqual(sum_even_numbers([2.5, 4, 1.5]), 4)
 
+    def test_string_element_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([1, 2, "3"])
+
+    def test_none_element_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([2, None])
+
+    def test_bool_element_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([2, True])
+
+    def test_non_list_input_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers("123")
+
+    def test_error_message_names_offending_index(self):
+        with self.assertRaisesRegex(TypeError, "index 1.*'x'"):
+            sum_even_numbers([2, "x", 4])
+
 
 if __name__ == "__main__":
     unittest.main()
