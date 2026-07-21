@@ -32,6 +32,24 @@ class TestSumEvenNumbers(unittest.TestCase):
     def test_generator_input(self):
         self.assertEqual(sum_even_numbers(range(1, 11)), 30)
 
+    def test_string_raises_type_error(self):
+        with self.assertRaises(TypeError) as ctx:
+            sum_even_numbers([1, 2, "3", 4])
+        self.assertIn("index 2", str(ctx.exception))
+        self.assertIn("str", str(ctx.exception))
+
+    def test_none_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([None])
+
+    def test_bool_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([2, True])
+
+    def test_nested_list_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([[2, 4], 6])
+
 
 if __name__ == "__main__":
     unittest.main()
