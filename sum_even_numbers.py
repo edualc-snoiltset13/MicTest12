@@ -13,8 +13,27 @@ def sum_even_numbers(numbers):
 
     Returns:
         The sum of the even values; 0 if there are none.
+
+    Raises:
+        TypeError: If `numbers` is not iterable, or if any element is not
+            an integer (bool is rejected too, since True/False are not
+            meaningful here despite being int subclasses).
     """
-    return sum(n for n in numbers if n % 2 == 0)
+    if not hasattr(numbers, "__iter__"):
+        raise TypeError(
+            f"numbers must be an iterable of integers, got {type(numbers).__name__}"
+        )
+
+    total = 0
+    for index, n in enumerate(numbers):
+        if isinstance(n, bool) or not isinstance(n, int):
+            raise TypeError(
+                f"all elements must be integers, but element at index {index} "
+                f"is {type(n).__name__}: {n!r}"
+            )
+        if n % 2 == 0:
+            total += n
+    return total
 
 
 if __name__ == "__main__":

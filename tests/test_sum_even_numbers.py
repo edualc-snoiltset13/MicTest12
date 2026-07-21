@@ -26,6 +26,30 @@ class TestSumEvenNumbers(unittest.TestCase):
     def test_zero_is_even(self):
         self.assertEqual(sum_even_numbers([0, 1]), 0)
 
+    def test_float_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([2, 4.0, 6])
+
+    def test_string_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([1, "2", 3])
+
+    def test_none_element_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([2, None])
+
+    def test_bool_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers([True, 2])
+
+    def test_non_iterable_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            sum_even_numbers(42)
+
+    def test_error_message_includes_index_and_type(self):
+        with self.assertRaisesRegex(TypeError, "index 1.*str"):
+            sum_even_numbers([2, "x"])
+
 
 if __name__ == "__main__":
     unittest.main()
