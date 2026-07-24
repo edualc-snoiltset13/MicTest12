@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Científica</title>
+<style>
+  :root {
+    --bg: #1c1c22;
+    --panel: #26262e;
+    --display: #14141a;
+    --key: #34343e;
+    --key-hover: #40404c;
+    --key-fn: #2b2b36;
+    --key-op: #3d3040;
+    --accent: #e08a3c;
+    --accent-hover: #f09a4c;
+    --text: #f2f2f5;
+    --text-dim: #9a9aa8;
+    --danger: #b0413e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at top, #2a2a34, var(--bg));
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    padding: 16px;
+  }
+  .calc {
+    width: 100%;
+    max-width: 420px;
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .title { color: var(--text-dim); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+  .mode-toggle {
+    display: flex;
+    background: var(--display);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .mode-toggle button {
+    border: none;
+    background: transparent;
+    color: var(--text-dim);
+    padding: 4px 12px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .mode-toggle button.active { background: var(--accent); color: #fff; }
+  .display {
+    background: var(--display);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    text-align: right;
+    overflow: hidden;
+  }
+  .expr {
+    min-height: 22px;
+    color: var(--text-dim);
+    font-size: 16px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  .result {
+    min-height: 44px;
+    color: var(--text);
+    font-size: 36px;
+    font-weight: 500;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  .result.error { color: var(--danger); font-size: 22px; line-height: 44px; }
+  .keys {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  button.key {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 0;
+    font-size: 16px;
+    color: var(--text);
+    background: var(--key);
+    cursor: pointer;
+    transition: background .12s, transform .05s;
+    user-select: none;
+  }
+  button.key:hover { background: var(--key-hover); }
+  button.key:active { transform: scale(.96); }
+  button.key.fn { background: var(--key-fn); font-size: 14px; color: #cfcfda; }
+  button.key.op { background: var(--key-op); }
+  button.key.eq { background: var(--accent); font-weight: 600; }
+  button.key.eq:hover { background: var(--accent-hover); }
+  button.key.danger { color: #ff9b98; }
+  .hist {
+    margin-top: 14px;
+    max-height: 120px;
+    overflow-y: auto;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .hist-item {
+    padding: 4px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .hist-item:hover { background: var(--key-fn); color: var(--text); }
+  .hist-item .h-res { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="calc">
+  <div class="top-bar">
+    <span class="title">Calculadora Científica</span>
+    <div class="mode-toggle">
+      <button id="degBtn" class="active" onclick="setAngleMode('deg')">DEG</button>
+      <button id="radBtn" onclick="setAngleMode('rad')">RAD</button>
+    </div>
+  </div>
+
+  <div class="display">
+    <div class="expr" id="expr">&nbsp;</div>
+    <div class="result" id="result">0</div>
+  </div>
+
+  <div class="keys">
+    <button class="key fn" onclick="ins('sin(')">sin</button>
+    <button class="key fn" onclick="ins('cos(')">cos</button>
+    <button class="key fn" onclick="ins('tan(')">tan</button>
+    <button class="key fn" onclick="ins('log(')">log</button>
+    <button class="key fn" onclick="ins('ln(')">ln</button>
+
+    <button class="key fn" onclick="ins('asin(')">sin⁻¹</button>
+    <button class="key fn" onclick="ins('acos(')">cos⁻¹</button>
+    <button class="key fn" onclick="ins('atan(')">tan⁻¹</button>
+    <button class="key fn" onclick="ins('sqrt(')">√</button>
+    <button class="key fn" onclick="ins('^')">xʸ</button>
+
+    <button class="key fn" onclick="ins('pi')">π</button>
+    <button class="key fn" onclick="ins('e')">e</button>
+    <button class="key fn" onclick="ins('!')">n!</button>
+    <button class="key fn" onclick="ins('(')">(</button>
+    <button class="key fn" onclick="ins(')')">)</button>
+
+    <button class="key danger" onclick="clearAll()">C</button>
+    <button class="key danger" onclick="backspace()">⌫</button>
+    <button class="key op" onclick="ins('%')">%</button>
+    <button class="key op" onclick="ins('/')">÷</button>
+    <button class="key op" onclick="ins('*')">×</button>
+
+    <button class="key" onclick="ins('7')">7</button>
+    <button class="key" onclick="ins('8')">8</button>
+    <button class="key" onclick="ins('9')">9</button>
+    <button class="key op" onclick="ins('-')">−</button>
+    <button class="key op" onclick="ins('+')">+</button>
+
+    <button class="key" onclick="ins('4')">4</button>
+    <button class="key" onclick="ins('5')">5</button>
+    <button class="key" onclick="ins('6')">6</button>
+    <button class="key" onclick="ins('1')">1</button>
+    <button class="key" onclick="ins('2')">2</button>
+
+    <button class="key" onclick="ins('3')">3</button>
+    <button class="key" onclick="ins('0')">0</button>
+    <button class="key" onclick="ins('.')">,</button>
+    <button class="key fn" onclick="ins('ans')">Ans</button>
+    <button class="key eq" onclick="calculate()">=</button>
+  </div>
+
+  <div class="hist" id="hist"></div>
+</div>
+
+<script>
+"use strict";
+
+let expression = "";
+let angleMode = "deg";
+let lastAnswer = 0;
+const exprEl = document.getElementById("expr");
+const resultEl = document.getElementById("result");
+const histEl = document.getElementById("hist");
+
+/* ---------- Tokenizador ---------- */
+const FUNCTIONS = ["asin", "acos", "atan", "sin", "cos", "tan", "sqrt", "log", "ln"];
+const CONSTANTS = { pi: Math.PI, e: Math.E };
+
+function tokenize(src) {
+  const tokens = [];
+  let i = 0;
+  while (i < src.length) {
+    const c = src[i];
+    if (c === " ") { i++; continue; }
+    if (/[0-9.]/.test(c)) {
+      let num = "";
+      while (i < src.length && /[0-9.]/.test(src[i])) num += src[i++];
+      if ((num.match(/\./g) || []).length > 1) throw new Error("Número inválido");
+      tokens.push({ type: "num", value: parseFloat(num) });
+      continue;
+    }
+    if (/[a-z]/i.test(c)) {
+      let word = "";
+      while (i < src.length && /[a-z]/i.test(src[i])) word += src[i++];
+      word = word.toLowerCase();
+      if (FUNCTIONS.includes(word)) tokens.push({ type: "func", value: word });
+      else if (word in CONSTANTS) tokens.push({ type: "num", value: CONSTANTS[word] });
+      else if (word === "ans") tokens.push({ type: "num", value: lastAnswer });
+      else throw new Error("Símbolo desconhecido: " + word);
+      continue;
+    }
+    if ("+-*/^%!()".includes(c)) { tokens.push({ type: c, value: c }); i++; continue; }
+    throw new Error("Caractere inválido: " + c);
+  }
+  return tokens;
+}
+
+/* ---------- Parser descendente recursivo ----------
+   expr    := term (('+'|'-') term)*
+   term    := unary (('*'|'/'|'%') unary)*
+   unary   := '-' unary | power
+   power   := postfix ('^' unary)?          (associativo à direita)
+   postfix := primary '!'*
+   primary := num | func '(' expr ')' | '(' expr ')'
+*/
+function parse(tokens) {
+  let pos = 0;
+  const peek = () => tokens[pos];
+  const next = () => tokens[pos++];
+
+  function parseExpr() {
+    let left = parseTerm();
+    while (peek() && (peek().type === "+" || peek().type === "-")) {
+      const op = next().type;
+      const right = parseTerm();
+      left = op === "+" ? left + right : left - right;
+    }
+    return left;
+  }
+
+  function parseTerm() {
+    let left = parseUnary();
+    while (peek() && (peek().type === "*" || peek().type === "/" || peek().type === "%")) {
+      const op = next().type;
+      const right = parseUnary();
+      if (op === "*") left *= right;
+      else if (op === "/") {
+        if (right === 0) throw new Error("Divisão por zero");
+        left /= right;
+      } else {
+        if (right === 0) throw new Error("Módulo por zero");
+        left %= right;
+      }
+    }
+    return left;
+  }
+
+  function parseUnary() {
+    if (peek() && peek().type === "-") { next(); return -parseUnary(); }
+    if (peek() && peek().type === "+") { next(); return parseUnary(); }
+    return parsePower();
+  }
+
+  function parsePower() {
+    const base = parsePostfix();
+    if (peek() && peek().type === "^") {
+      next();
+      const exp = parseUnary();
+      return Math.pow(base, exp);
+    }
+    return base;
+  }
+
+  function parsePostfix() {
+    let value = parsePrimary();
+    while (peek() && peek().type === "!") {
+      next();
+      value = factorial(value);
+    }
+    return value;
+  }
+
+  function parsePrimary() {
+    const tok = next();
+    if (!tok) throw new Error("Expressão incompleta");
+    if (tok.type === "num") return tok.value;
+    if (tok.type === "func") {
+      if (!peek() || peek().type !== "(") throw new Error("Esperado '(' após " + tok.value);
+      next();
+      const arg = parseExpr();
+      if (!peek() || peek().type !== ")") throw new Error("Parêntese não fechado");
+      next();
+      return applyFunc(tok.value, arg);
+    }
+    if (tok.type === "(") {
+      const value = parseExpr();
+      if (!peek() || peek().type !== ")") throw new Error("Parêntese não fechado");
+      next();
+      return value;
+    }
+    throw new Error("Token inesperado: " + tok.value);
+  }
+
+  const result = parseExpr();
+  if (pos < tokens.length) throw new Error("Expressão inválida");
+  return result;
+}
+
+function factorial(n) {
+  if (n < 0 || !Number.isInteger(n)) throw new Error("Fatorial requer inteiro ≥ 0");
+  if (n > 170) throw new Error("Fatorial muito grande");
+  let r = 1;
+  for (let k = 2; k <= n; k++) r *= k;
+  return r;
+}
+
+function toRad(x) { return angleMode === "deg" ? x * Math.PI / 180 : x; }
+function fromRad(x) { return angleMode === "deg" ? x * 180 / Math.PI : x; }
+
+function applyFunc(name, x) {
+  switch (name) {
+    case "sin": return Math.sin(toRad(x));
+    case "cos": return Math.cos(toRad(x));
+    case "tan": return Math.tan(toRad(x));
+    case "asin":
+      if (x < -1 || x > 1) throw new Error("asin fora do domínio [-1, 1]");
+      return fromRad(Math.asin(x));
+    case "acos":
+      if (x < -1 || x > 1) throw new Error("acos fora do domínio [-1, 1]");
+      return fromRad(Math.acos(x));
+    case "atan": return fromRad(Math.atan(x));
+    case "sqrt":
+      if (x < 0) throw new Error("Raiz de número negativo");
+      return Math.sqrt(x);
+    case "log":
+      if (x <= 0) throw new Error("log requer valor > 0");
+      return Math.log10(x);
+    case "ln":
+      if (x <= 0) throw new Error("ln requer valor > 0");
+      return Math.log(x);
+  }
+  throw new Error("Função desconhecida: " + name);
+}
+
+/* ---------- Interface ---------- */
+function formatNumber(x) {
+  if (!isFinite(x)) throw new Error("Resultado indefinido");
+  // arredonda ruído de ponto flutuante (ex.: sin(180°) ≈ 1e-16)
+  const rounded = parseFloat(x.toPrecision(12));
+  const s = String(rounded);
+  return s.length > 18 ? rounded.toExponential(8) : s;
+}
+
+function render() {
+  exprEl.textContent = expression || " ";
+  if (!resultEl.classList.contains("error")) {
+    resultEl.textContent = expression === "" ? formatNumber(lastAnswer) : " ";
+  }
+}
+
+function ins(text) {
+  resultEl.classList.remove("error");
+  expression += text;
+  render();
+}
+
+function clearAll() {
+  expression = "";
+  resultEl.classList.remove("error");
+  render();
+  resultEl.textContent = "0";
+}
+
+function backspace() {
+  resultEl.classList.remove("error");
+  // apaga funções inteiras de uma vez (ex.: "sin(")
+  for (const f of FUNCTIONS) {
+    if (expression.endsWith(f + "(")) {
+      expression = expression.slice(0, -(f.length + 1));
+      render();
+      return;
+    }
+  }
+  if (expression.endsWith("ans")) expression = expression.slice(0, -3);
+  else if (expression.endsWith("pi")) expression = expression.slice(0, -2);
+  else expression = expression.slice(0, -1);
+  render();
+}
+
+function calculate() {
+  if (!expression) return;
+  try {
+    const value = parse(tokenize(expression));
+    const shown = formatNumber(value);
+    addHistory(expression, shown);
+    lastAnswer = value;
+    expression = "";
+    resultEl.classList.remove("error");
+    render();
+    resultEl.textContent = shown;
+  } catch (err) {
+    resultEl.classList.add("error");
+    resultEl.textContent = err.message;
+  }
+}
+
+function setAngleMode(mode) {
+  angleMode = mode;
+  document.getElementById("degBtn").classList.toggle("active", mode === "deg");
+  document.getElementById("radBtn").classList.toggle("active", mode === "rad");
+}
+
+function addHistory(expr, res) {
+  const item = document.createElement("div");
+  item.className = "hist-item";
+  item.innerHTML = "<span class='h-expr'></span><span class='h-res'></span>";
+  item.children[0].textContent = expr + " =";
+  item.children[1].textContent = res;
+  item.onclick = () => { expression += res; resultEl.classList.remove("error"); render(); };
+  histEl.prepend(item);
+  while (histEl.children.length > 20) histEl.removeChild(histEl.lastChild);
+}
+
+/* ---------- Teclado ---------- */
+document.addEventListener("keydown", (ev) => {
+  const k = ev.key;
+  if (/[0-9]/.test(k)) ins(k);
+  else if ("+-*/^%!().".includes(k)) ins(k);
+  else if (k === ",") ins(".");
+  else if (k === "Enter" || k === "=") { ev.preventDefault(); calculate(); }
+  else if (k === "Backspace") backspace();
+  else if (k === "Escape") clearAll();
+});
+
+render();
+</script>
+</body>
+</html>
