@@ -1,0 +1,209 @@
+<title>Two-File Generator</title>
+<style>
+  :root {
+    --bg: #f6f7f4;
+    --surface: #ffffff;
+    --ink: #1e2419;
+    --muted: #5c6551;
+    --line: #e2e5db;
+    --accent: #4b6b34;
+    --accent-soft: #eaf0e2;
+    --shadow: 0 1px 2px rgba(30, 36, 25, .06), 0 8px 24px rgba(30, 36, 25, .06);
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14170f;
+      --surface: #1d211a;
+      --ink: #e8ebe1;
+      --muted: #9aa48c;
+      --line: #2c3126;
+      --accent: #a7c47e;
+      --accent-soft: #26301c;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f7f4; --surface: #ffffff; --ink: #1e2419; --muted: #5c6551;
+    --line: #e2e5db; --accent: #4b6b34; --accent-soft: #eaf0e2;
+    --shadow: 0 1px 2px rgba(30, 36, 25, .06), 0 8px 24px rgba(30, 36, 25, .06);
+  }
+  :root[data-theme="dark"] {
+    --bg: #14170f; --surface: #1d211a; --ink: #e8ebe1; --muted: #9aa48c;
+    --line: #2c3126; --accent: #a7c47e; --accent-soft: #26301c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem 1.25rem;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+  }
+  .card {
+    width: 100%;
+    max-width: 30rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+  }
+  .eyebrow {
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 .5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0 0 .5rem;
+    text-wrap: balance;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+  }
+  p.lede { margin: 0 0 1.5rem; color: var(--muted); font-size: .95rem; }
+
+  button {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: .85rem 1.25rem;
+    font: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background: var(--accent);
+    cursor: pointer;
+    transition: transform .08s ease, filter .15s ease;
+  }
+  :root[data-theme="dark"] button { color: #14170f; }
+  @media (prefers-color-scheme: dark) { button { color: #14170f; } }
+  button:hover:not(:disabled) { filter: brightness(1.06); }
+  button:active:not(:disabled) { transform: translateY(1px); }
+  button:disabled { opacity: .6; cursor: progress; }
+  button:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+
+  .status {
+    margin-top: 1.25rem;
+    font-size: .85rem;
+    color: var(--muted);
+    min-height: 1.2rem;
+  }
+  .bar {
+    height: 6px;
+    border-radius: 999px;
+    background: var(--line);
+    overflow: hidden;
+    margin-top: .75rem;
+  }
+  .bar > span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+    transition: width .2s linear;
+  }
+  .files { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: .6rem; }
+  .files li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .7rem .9rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--accent-soft);
+    font-size: .88rem;
+  }
+  .files a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .files a:hover { text-decoration: underline; }
+  .files code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
+  .hidden { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    button, .bar > span { transition: none; }
+  }
+</style>
+
+<main class="card">
+  <p class="eyebrow">File Generator</p>
+  <h1>Generate two text files</h1>
+  <p class="lede">
+    Mirrors the Python script: it works for about ten seconds, then produces two
+    different text files ready to download.
+  </p>
+
+  <button id="run">Generate files</button>
+
+  <div class="status" id="status" aria-live="polite">Ready when you are.</div>
+  <div class="bar" aria-hidden="true"><span id="progress"></span></div>
+
+  <ul class="files hidden" id="files">
+    <li>
+      <span><code>file_one.txt</code> &mdash; a short greeting</span>
+      <a id="dl-one" download="file_one.txt">Download</a>
+    </li>
+    <li>
+      <span><code>file_two.txt</code> &mdash; a different message</span>
+      <a id="dl-two" download="file_two.txt">Download</a>
+    </li>
+  </ul>
+</main>
+
+<script>
+  const DURATION = 10000; // ~10 seconds, matching the script's sleep
+  const btn = document.getElementById("run");
+  const status = document.getElementById("status");
+  const progress = document.getElementById("progress");
+  const files = document.getElementById("files");
+
+  const fileOne = "This is the first file.\nIt contains a short greeting.\nHello from file one!\n";
+  const fileTwo = "This is the second file.\nIts content is different from the first.\nGoodbye from file two!\n";
+
+  function linkFor(id, text) {
+    const a = document.getElementById(id);
+    const blob = new Blob([text], { type: "text/plain" });
+    if (a.dataset.url) URL.revokeObjectURL(a.dataset.url);
+    const url = URL.createObjectURL(blob);
+    a.href = url;
+    a.dataset.url = url;
+  }
+
+  btn.addEventListener("click", () => {
+    btn.disabled = true;
+    files.classList.add("hidden");
+    btn.textContent = "Working…";
+    status.textContent = "Created file_one.txt · working…";
+
+    const start = performance.now();
+    const tick = setInterval(() => {
+      const pct = Math.min(100, ((performance.now() - start) / DURATION) * 100);
+      progress.style.width = pct + "%";
+    }, 100);
+
+    setTimeout(() => {
+      clearInterval(tick);
+      progress.style.width = "100%";
+      linkFor("dl-one", fileOne);
+      linkFor("dl-two", fileTwo);
+      files.classList.remove("hidden");
+      status.textContent = "Done — both files created (took ~10 seconds).";
+      btn.disabled = false;
+      btn.textContent = "Generate again";
+    }, DURATION);
+  });
+</script>
