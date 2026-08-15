@@ -1,0 +1,173 @@
+{
+  "_comment": [
+    "OBS scene collection for the MedSimQA display wall.",
+    "Import via: OBS > Scene Collection > Import.",
+    "",
+    "Three scenes, in the order a shift uses them:",
+    "  1. Dashboard      the case library, full screen",
+    "  2. Case Review    the dashboard with a presenter camera inset",
+    "  3. Standby        a static card, for when the wall should show nothing",
+    "",
+    "The capture source is deliberately a WINDOW capture rather than a display",
+    "capture: a display capture picks up notification toasts, the mouse cursor",
+    "and anything else that appears on that monitor, which on a ward display is",
+    "both distracting and a confidentiality risk.",
+    "",
+    "On Wayland, replace the xcomposite_input sources with pipewire captures -",
+    "xcomposite silently produces a black frame under Wayland."
+  ],
+  "name": "MedSimQA",
+  "current_scene": "Dashboard",
+  "current_program_scene": "Dashboard",
+  "scene_order": [
+    { "name": "Dashboard" },
+    { "name": "Case Review" },
+    { "name": "Standby" }
+  ],
+  "sources": [
+    {
+      "name": "MedSimQA Window",
+      "id": "xcomposite_input",
+      "versioned_id": "xcomposite_input",
+      "settings": {
+        "capture_window": "MedSimQA - Clinician Dashboard",
+        "show_cursor": false,
+        "cut_top": 0,
+        "cut_left": 0,
+        "cut_right": 0,
+        "cut_bot": 0,
+        "swap_redblue": false,
+        "lock_x": false,
+        "include_border": false,
+        "exclude_alpha": true
+      }
+    },
+    {
+      "name": "Presenter Camera",
+      "id": "v4l2_input",
+      "versioned_id": "v4l2_input",
+      "settings": {
+        "device_id": "/dev/video0",
+        "input": 0,
+        "pixelformat": 1448695129,
+        "resolution": 1280,
+        "framerate": 30,
+        "buffering": false
+      }
+    },
+    {
+      "name": "Presenter Microphone",
+      "id": "pulse_input_capture",
+      "versioned_id": "pulse_input_capture",
+      "settings": { "device_id": "default" },
+      "filters": [
+        {
+          "name": "Noise Suppression",
+          "id": "noise_suppress_filter_v2",
+          "settings": { "method": "rnnoise" }
+        },
+        {
+          "name": "Noise Gate",
+          "id": "noise_gate_filter",
+          "settings": { "open_threshold": -35.0, "close_threshold": -45.0, "hold_time": 200 }
+        },
+        {
+          "name": "Limiter",
+          "id": "limiter_filter",
+          "settings": { "threshold": -3.0, "release_time": 60 }
+        }
+      ]
+    },
+    {
+      "name": "Standby Card",
+      "id": "text_ft2_source_v2",
+      "versioned_id": "text_ft2_source_v2",
+      "settings": {
+        "text": "MedSimQA\nDisplay standing by",
+        "font": { "face": "Ubuntu", "size": 72, "flags": 0, "style": "Regular" },
+        "color1": 4294967295,
+        "color2": 4294967295,
+        "outline": false
+      }
+    },
+    {
+      "name": "Synthetic Data Watermark",
+      "id": "text_ft2_source_v2",
+      "versioned_id": "text_ft2_source_v2",
+      "_comment": "Burned into every scene on purpose. A screenshot of this wall must never be mistakable for real patient data once it leaves the room.",
+      "settings": {
+        "text": "SYNTHETIC TRAINING DATA - NOT A PATIENT RECORD",
+        "font": { "face": "Ubuntu", "size": 22, "flags": 1, "style": "Bold" },
+        "color1": 4293848814,
+        "color2": 4293848814,
+        "outline": true,
+        "outline_size": 2,
+        "outline_color": 4278190080
+      }
+    },
+    {
+      "name": "Dashboard",
+      "id": "scene",
+      "versioned_id": "scene",
+      "settings": {
+        "items": [
+          {
+            "name": "MedSimQA Window",
+            "visible": true,
+            "pos": { "x": 0.0, "y": 0.0 },
+            "bounds_type": 2,
+            "bounds": { "x": 1920.0, "y": 1080.0 }
+          },
+          {
+            "name": "Synthetic Data Watermark",
+            "visible": true,
+            "pos": { "x": 24.0, "y": 1032.0 },
+            "bounds_type": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Case Review",
+      "id": "scene",
+      "versioned_id": "scene",
+      "settings": {
+        "items": [
+          {
+            "name": "MedSimQA Window",
+            "visible": true,
+            "pos": { "x": 0.0, "y": 0.0 },
+            "bounds_type": 2,
+            "bounds": { "x": 1920.0, "y": 1080.0 }
+          },
+          {
+            "name": "Presenter Camera",
+            "visible": true,
+            "_comment": "Bottom-right inset, sized so it never covers the lab table or the trend charts.",
+            "pos": { "x": 1536.0, "y": 792.0 },
+            "bounds_type": 2,
+            "bounds": { "x": 360.0, "y": 264.0 }
+          },
+          {
+            "name": "Synthetic Data Watermark",
+            "visible": true,
+            "pos": { "x": 24.0, "y": 1032.0 },
+            "bounds_type": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Standby",
+      "id": "scene",
+      "versioned_id": "scene",
+      "settings": {
+        "items": [
+          { "name": "Standby Card", "visible": true, "pos": { "x": 660.0, "y": 480.0 }, "bounds_type": 0 }
+        ]
+      }
+    }
+  ],
+  "transitions": [{ "name": "Fade", "id": "fade_transition", "settings": {} }],
+  "transition_duration": 250
+}

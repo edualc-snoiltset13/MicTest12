@@ -1,0 +1,54 @@
+[Unit]
+Description=MedSimQA kiosk display (Chrome, fullscreen)
+Documentation=https://github.com/edualc-snoiltset13/mictest12
+# Waits for the API to be reachable, not merely started: a kiosk that opens
+# before the backend is up shows an error page and stays on it, because nobody
+# is present to press reload.
+After=graphical.target medsim-api.service
+Wants=medsim-api.service
+Requires=graphical.target
+
+[Service]
+Type=simple
+User=kiosk
+Group=kiosk
+
+# X11 rather than Wayland: --kiosk plus --window-position is materially more
+# reliable under X11 on the mixed hardware these display walls use.
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/kiosk/.Xauthority
+
+# Poll readiness rather than assuming it. `readyz` reports the database and
+# the seed state, so this waits for a genuinely serving application.
+ExecStartPre=/bin/bash -c 'for i in $(seq 1 60); do curl -sf http://127.0.0.1:8000/readyz >/dev/null && exit 0; sleep 2; done; exit 1'
+
+# Flags, and why each is present:
+#   --kiosk                      fullscreen, no chrome, no exit affordance
+#   --noerrdialogs               a modal dialog on a wall display is unclearable
+#   --disable-infobars           suppresses "Chrome is being controlled..."
+#   --disable-session-crashed-bubble  otherwise every power cut leaves a
+#                                banner covering the dashboard
+#   --disable-features=Translate…  a translation prompt over a clinical
+#                                dashboard is both wrong and unclearable
+#   --autoplay-policy            lets the OBS capture pick up any media
+#   --check-for-update-interval  a huge value; an update prompt is unclearable
+ExecStart=/usr/bin/google-chrome-stable \
+    --kiosk \
+    --noerrdialogs \
+    --disable-infobars \
+    --disable-session-crashed-bubble \
+    --disable-features=TranslateUI,Translate \
+    --disable-pinch \
+    --overscroll-history-navigation=0 \
+    --autoplay-policy=no-user-gesture-required \
+    --check-for-update-interval=31536000 \
+    --user-data-dir=/home/kiosk/.config/medsim-kiosk \
+    --window-position=0,0 \
+    --start-fullscreen \
+    "http://localhost/?lang=en"
+
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=graphical.target
