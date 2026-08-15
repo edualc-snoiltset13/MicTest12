@@ -1,0 +1,2018 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-01-06T08:00:00Z",
+  "collection": "Chemical pathology - thyroid, part A (overt disease and its mimics)",
+  "cases": [
+    {
+      "case_code": "THY-001",
+      "title": "Palpitations and weight loss in a 34-year-old with a diffuse goitre",
+      "title_i18n": {
+        "en": "Palpitations and weight loss in a 34-year-old with a diffuse goitre",
+        "de": "Palpitationen und Gewichtsverlust bei einer 34-Jährigen mit diffuser Struma",
+        "es": "Palpitaciones y pérdida de peso en una mujer de 34 años con bocio difuso",
+        "nl": "Palpitaties en gewichtsverlies bij een 34-jarige met diffuus struma",
+        "ru": "Сердцебиение и потеря веса у 34-летней пациентки с диффузным зобом"
+      },
+      "summary": "Textbook overt hyperthyroidism with a diffuse goitre, orbitopathy and a strongly positive TSH receptor antibody. Serves as the anchor case against which the destructive and factitious thyrotoxicoses in this collection are contrasted.",
+      "summary_i18n": {
+        "en": "Textbook overt hyperthyroidism with orbitopathy and strongly positive TSH receptor antibody; the anchor case for the thyrotoxicosis differential.",
+        "de": "Klassische manifeste Hyperthyreose mit Orbitopathie und stark positiven TSH-Rezeptor-Antikörpern; Referenzfall der Thyreotoxikose-Differenzialdiagnose.",
+        "es": "Hipertiroidismo franco de libro con orbitopatía y anticuerpos anti-receptor de TSH muy positivos; caso de referencia del diagnóstico diferencial de tirotoxicosis.",
+        "nl": "Klassieke manifeste hyperthyreoïdie met orbitopathie en sterk positieve TSH-receptor-antistoffen; referentiecasus voor de thyreotoxicose-differentiaaldiagnose.",
+        "ru": "Классический манифестный гипертиреоз с орбитопатией и высоким титром антител к рецептору ТТГ; опорный случай дифференциальной диагностики тиреотоксикоза."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 2,
+      "tags": [
+        "thyroid",
+        "hyperthyroidism",
+        "autoimmune",
+        "TRAb",
+        "carbimazole",
+        "anchor-case"
+      ],
+      "icd10_codes": [
+        "E05.0",
+        "H06.2"
+      ],
+      "snomed_codes": [
+        "353295004",
+        "38743001"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-001",
+        "age_years": 34,
+        "sex": "female",
+        "weight_kg": 54.0,
+        "height_cm": 166.0,
+        "ancestry": "Northern European",
+        "pregnancy_status": "not pregnant (beta-hCG negative on day 0)",
+        "occupation": "Secondary school teacher",
+        "region": "Urban, iodine-sufficient"
+      },
+      "presentation": {
+        "chief_complaint": "Four months of palpitations, heat intolerance and 9 kg of unintentional weight loss despite an increased appetite.",
+        "chief_complaint_i18n": {
+          "en": "Four months of palpitations, heat intolerance and 9 kg of unintentional weight loss despite an increased appetite.",
+          "de": "Seit vier Monaten Palpitationen, Hitzeintoleranz und 9 kg ungewollter Gewichtsverlust trotz gesteigerten Appetits.",
+          "es": "Cuatro meses de palpitaciones, intolerancia al calor y pérdida involuntaria de 9 kg pese a mayor apetito.",
+          "nl": "Vier maanden palpitaties, warmte-intolerantie en 9 kg ongewild gewichtsverlies ondanks toegenomen eetlust.",
+          "ru": "Четыре месяца сердцебиения, непереносимости жары и непреднамеренная потеря 9 кг веса при повышенном аппетите."
+        },
+        "history_of_present_illness": "Symptoms began insidiously after a house move. She describes a fine tremor that interferes with writing on the board, proximal weakness climbing stairs, loose stools three to four times daily, and oligomenorrhoea for the last two cycles. Her partner has noticed that her eyes look 'startled' and she reports gritty discomfort and retro-orbital pressure, worse on waking. No neck pain, no recent iodinated contrast, no amiodarone, no over-the-counter supplements, and no thyroid hormone in the household.",
+        "past_medical_history": [
+          "Vitiligo diagnosed age 27",
+          "No prior thyroid disease"
+        ],
+        "medications": [
+          {
+            "name": "Combined oral contraceptive",
+            "dose": "ethinylestradiol 30 µg / levonorgestrel 150 µg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "contraception"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Mother: Hashimoto thyroiditis on levothyroxine",
+          "Maternal aunt: pernicious anaemia"
+        ],
+        "social_history": "Never smoked (relevant: smoking is the strongest modifiable risk factor for progression of thyroid eye disease). Alcohol 4 units/week. No recreational drug use.",
+        "review_of_systems": {
+          "cardiovascular": "Palpitations, exertional dyspnoea, no chest pain, no syncope",
+          "gastrointestinal": "Increased stool frequency, no blood, no steatorrhoea",
+          "neuromuscular": "Fine tremor, proximal myopathy, anxiety, insomnia",
+          "ophthalmic": "Grittiness, lid retraction, no diplopia, no visual loss",
+          "dermatological": "Warm moist skin, onycholysis of the fourth fingernail, no pretibial changes"
+        },
+        "vitals": {
+          "heart_rate_bpm": 118,
+          "rhythm": "sinus tachycardia",
+          "blood_pressure_mmhg": "142/58",
+          "respiratory_rate": 18,
+          "temperature_c": 37.4,
+          "weight_kg": 54.0,
+          "spo2_percent": 99
+        },
+        "examination_findings": [
+          "Smooth, symmetrically enlarged goitre approximately 45 g with an audible bruit over both lobes",
+          "Bilateral lid retraction and lid lag; proptosis 21 mm right and 22 mm left by Hertel exophthalmometry",
+          "Clinical Activity Score 2/7 (retrobulbar discomfort, conjunctival injection); no chemosis, no optic neuropathy",
+          "Fine postural tremor of the outstretched hands",
+          "Warm, moist palms; sinus tachycardia with a systolic flow murmur",
+          "Proximal weakness MRC 4/5 at the hip flexors; brisk reflexes with a fast relaxation phase",
+          "No pretibial myxoedema, no thyroid acropachy"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Baseline, drawn before any antithyroid drug.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "loinc_code": "3016-3",
+              "value_numeric": 0.005,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "LL",
+              "method": "ECLIA, 3rd generation",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "loinc_code": "3024-7",
+              "value_numeric": 42.0,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "H",
+              "method": "ECLIA"
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "loinc_code": "3051-0",
+              "value_numeric": 18.2,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8,
+              "flag": "H",
+              "method": "ECLIA"
+            },
+            {
+              "analyte_code": "TT4",
+              "analyte_name": "Total thyroxine",
+              "value_numeric": 268.0,
+              "unit": "nmol/L",
+              "ref_low": 66.0,
+              "ref_high": 181.0,
+              "flag": "H",
+              "method": "ECLIA",
+              "interference_note": "Oestrogen-containing contraceptive raises thyroxine-binding globulin; total T4 overstates the excess relative to FT4."
+            },
+            {
+              "analyte_code": "TT3",
+              "analyte_name": "Total triiodothyronine",
+              "value_numeric": 6.4,
+              "unit": "nmol/L",
+              "ref_low": 1.3,
+              "ref_high": 3.1,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "THYROID_AB",
+          "panel_name": "Thyroid autoantibodies",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA) / Thermo Fisher Phadia 250",
+          "comment": "TRAb requested on the same specimen as the baseline TFT.",
+          "results": [
+            {
+              "analyte_code": "TRAB",
+              "analyte_name": "TSH receptor antibody",
+              "loinc_code": "31980-4",
+              "value_numeric": 12.4,
+              "unit": "IU/L",
+              "ref_high": 1.75,
+              "flag": "H",
+              "method": "3rd-generation bridge immunoassay"
+            },
+            {
+              "analyte_code": "TPOAB",
+              "analyte_name": "Thyroid peroxidase antibody",
+              "loinc_code": "8098-6",
+              "value_numeric": 186.0,
+              "unit": "IU/mL",
+              "ref_high": 34.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "TGAB",
+              "analyte_name": "Thyroglobulin antibody",
+              "value_numeric": 62.0,
+              "unit": "IU/mL",
+              "ref_high": 115.0,
+              "flag": "N"
+            },
+            {
+              "analyte_code": "TG",
+              "analyte_name": "Thyroglobulin",
+              "value_numeric": 96.0,
+              "unit": "µg/L",
+              "ref_low": 3.5,
+              "ref_high": 77.0,
+              "flag": "H",
+              "interference_note": "Raised, i.e. NOT suppressed: excludes exogenous thyroid hormone as the cause of the thyrotoxicosis."
+            }
+          ]
+        },
+        {
+          "panel_code": "BASELINE_SAFETY",
+          "panel_name": "Pre-thionamide safety bloods",
+          "day_offset": 0,
+          "specimen": "whole blood / serum",
+          "analyser": "Sysmex XN-9000 / Roche Cobas c702",
+          "comment": "Mandatory baseline before carbimazole: a later neutropenia cannot be interpreted without it.",
+          "results": [
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 6.2,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0
+            },
+            {
+              "analyte_code": "ANC",
+              "analyte_name": "Absolute neutrophil count",
+              "value_numeric": 3.4,
+              "unit": "10^9/L",
+              "ref_low": 1.8,
+              "ref_high": 7.5
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 52.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0,
+              "flag": "H",
+              "interference_note": "Mild transaminitis is common in untreated thyrotoxicosis itself; it is not a contraindication to carbimazole but must be documented before starting."
+            },
+            {
+              "analyte_code": "ALP",
+              "analyte_name": "Alkaline phosphatase",
+              "value_numeric": 168.0,
+              "unit": "U/L",
+              "ref_low": 40.0,
+              "ref_high": 130.0,
+              "flag": "H",
+              "interference_note": "Bone isoenzyme; reflects thyrotoxic high bone turnover."
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 58.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0
+            },
+            {
+              "analyte_code": "K",
+              "analyte_name": "Potassium",
+              "value_numeric": 3.6,
+              "unit": "mmol/L",
+              "ref_low": 3.5,
+              "ref_high": 5.1
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 28,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Four weeks on carbimazole 30 mg daily plus propranolol 40 mg three times daily.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 0.008,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "LL",
+              "interference_note": "Still suppressed: thyrotroph recovery lags free hormone normalisation by weeks to months. Dose titration at this visit must be driven by FT4 and FT3, not TSH."
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 24.1,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 8.4,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "BASELINE_SAFETY",
+          "panel_name": "Thionamide safety bloods",
+          "day_offset": 28,
+          "specimen": "whole blood / serum",
+          "comment": "Routine four-week check; patient asymptomatic, no sore throat or fever.",
+          "results": [
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 5.1,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0
+            },
+            {
+              "analyte_code": "ANC",
+              "analyte_name": "Absolute neutrophil count",
+              "value_numeric": 2.6,
+              "unit": "10^9/L",
+              "ref_low": 1.8,
+              "ref_high": 7.5
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 38.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 84,
+          "specimen": "serum",
+          "comment": "Twelve weeks; carbimazole reduced to 15 mg daily, propranolol stopped.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 0.21,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 16.8,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 5.4,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 168,
+          "specimen": "serum",
+          "comment": "Six months; carbimazole 10 mg daily. Biochemically and clinically euthyroid.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 1.42,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 15.2,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 4.9,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8
+            },
+            {
+              "analyte_code": "TRAB",
+              "analyte_name": "TSH receptor antibody",
+              "value_numeric": 4.1,
+              "unit": "IU/L",
+              "ref_high": 1.75,
+              "flag": "H",
+              "interference_note": "Falling but still positive at six months; a TRAb that remains positive at the end of an 18-month course predicts relapse and argues for definitive therapy."
+            }
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Ultrasound with colour Doppler",
+          "region": "Thyroid",
+          "day_offset": 2,
+          "findings": "Diffusely enlarged, hypoechoic gland (right lobe 5.8 x 2.4 x 2.2 cm, left 5.6 x 2.3 x 2.1 cm, estimated volume 42 mL). Markedly increased parenchymal vascularity throughout both lobes - the 'thyroid inferno' pattern. Peak systolic velocity in the inferior thyroid artery 82 cm/s. No discrete nodule.",
+          "impression": "Hypervascular diffuse goitre consistent with Graves disease. The hypervascularity is the key discriminator from destructive thyroiditis, in which flow is normal or reduced."
+        },
+        {
+          "modality": "Technetium-99m pertechnetate scintigraphy",
+          "region": "Thyroid",
+          "day_offset": 3,
+          "findings": "Homogeneously increased tracer uptake throughout an enlarged gland; 20-minute uptake 11.4% (reference 0.4-4.0%). Background activity reduced.",
+          "impression": "Diffusely increased uptake, confirming an overactive gland rather than release of preformed hormone."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Titration-regimen carbimazole with beta-blockade",
+          "name_i18n": {
+            "en": "Titration-regimen carbimazole with beta-blockade",
+            "de": "Carbimazol-Titrationsschema mit Betablockade",
+            "es": "Carbimazol en pauta de titulación con betabloqueo",
+            "nl": "Carbimazol titratieschema met bètablokkade",
+            "ru": "Титрационная схема карбимазола с бета-блокадой"
+          },
+          "guideline_source": "Composite of ETA 2018 Graves' hyperthyroidism guidance and ATA 2016 hyperthyroidism guideline (adapted for this synthetic corpus)",
+          "indication": "First presentation of overt Graves hyperthyroidism in a young non-pregnant adult with a moderate goitre and mild, inactive orbitopathy.",
+          "duration_months": 18,
+          "regimen": [
+            {
+              "agent": "Carbimazole",
+              "dose": "30 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "4 weeks, then titrate",
+              "notes": "Titrate to 15 mg at week 12 and 10 mg at week 24 guided by FT4/FT3. Total planned course 18 months."
+            },
+            {
+              "agent": "Propranolol",
+              "dose": "40 mg",
+              "route": "oral",
+              "frequency": "three times daily",
+              "duration": "until FT4 normalises (approx. 10 weeks)",
+              "notes": "Non-selective beta-blockade for symptom control; also inhibits peripheral T4-to-T3 conversion at higher doses. Avoid in asthma - use diltiazem instead."
+            },
+            {
+              "agent": "Selenium",
+              "dose": "100 µg",
+              "route": "oral",
+              "frequency": "twice daily",
+              "duration": "6 months",
+              "notes": "For mild active orbitopathy; modest evidence of benefit on quality of life and progression."
+            },
+            {
+              "agent": "Ocular lubricants",
+              "dose": "carmellose 0.5%",
+              "route": "topical",
+              "frequency": "as required",
+              "duration": "ongoing",
+              "notes": "Plus head-of-bed elevation and strict smoking avoidance counselling."
+            }
+          ],
+          "monitoring": [
+            "FT4 and FT3 every 4 weeks until euthyroid, then every 8-12 weeks; TSH is uninterpretable for the first 8-12 weeks",
+            "FBC with differential at baseline and if fever or sore throat develops - the patient must be given written agranulocytosis safety-netting",
+            "Liver profile at baseline and if jaundice, dark urine or right upper quadrant pain develops",
+            "TRAb at 12-18 months to inform relapse risk before stopping therapy",
+            "Ophthalmology review if the Clinical Activity Score rises above 3 or diplopia develops"
+          ],
+          "contraindications": [
+            "Previous carbimazole-induced agranulocytosis (absolute)",
+            "First-trimester pregnancy (switch to propylthiouracil; carbimazole embryopathy)",
+            "Pre-existing severe cholestatic hepatitis"
+          ],
+          "adverse_effects": [
+            "Rash and urticaria (up to 5%) - usually manageable with antihistamine",
+            "Agranulocytosis (0.2-0.5%) - idiosyncratic, usually within 90 days, requires immediate permanent withdrawal",
+            "Cholestatic hepatitis (carbimazole) as distinct from hepatocellular necrosis (propylthiouracil)",
+            "ANCA-associated vasculitis (predominantly propylthiouracil)",
+            "Arthralgia and, rarely, a lupus-like syndrome"
+          ],
+          "notes": "Block-and-replace (carbimazole 40 mg plus levothyroxine 100 µg) is an acceptable alternative and is preferred where a stable free T4 is needed for the orbitopathy, at the cost of a higher cumulative thionamide dose."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Graves disease with mild active thyroid eye disease",
+          "label_i18n": {
+            "en": "Graves disease with mild active thyroid eye disease",
+            "de": "Morbus Basedow mit milder aktiver endokriner Orbitopathie",
+            "es": "Enfermedad de Graves con orbitopatía tiroidea activa leve",
+            "nl": "Ziekte van Graves met milde actieve schildklieroogziekte",
+            "ru": "Болезнь Грейвса с лёгкой активной эндокринной офтальмопатией"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.97,
+          "icd10": "E05.0",
+          "discriminator": "Strongly positive TRAb (12.4 IU/L) plus diffusely increased uptake and a hypervascular gland. No single one of these is sufficient; together they exclude every destructive cause.",
+          "supporting_evidence": [
+            "TSH 0.005 mIU/L with FT4 42.0 pmol/L and FT3 18.2 pmol/L - unequivocal primary thyrotoxicosis",
+            "TRAb 12.4 IU/L (reference <1.75)",
+            "FT3:FT4 ratio elevated, reflecting preferential T3 secretion by a hyperfunctioning gland",
+            "Thyroglobulin raised at 96 µg/L, excluding exogenous hormone",
+            "Diffuse hypervascularity on Doppler and 11.4% pertechnetate uptake",
+            "Extrathyroidal signs: symmetrical proptosis, lid retraction, personal and family autoimmunity"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Subacute (de Quervain) granulomatous thyroiditis",
+          "label_i18n": {
+            "en": "Subacute (de Quervain) granulomatous thyroiditis",
+            "de": "Subakute Thyreoiditis de Quervain",
+            "es": "Tiroiditis granulomatosa subaguda (de Quervain)",
+            "nl": "Subacute (de Quervain) granulomateuze thyreoïditis",
+            "ru": "Подострый гранулематозный тиреоидит (де Кервена)"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "icd10": "E06.1",
+          "discriminator": "Painless gland, normal ESR and high radionuclide uptake. De Quervain thyroiditis is painful, has an ESR typically above 50 mm/h, and shows near-absent uptake.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "No neck pain or tenderness",
+            "Uptake increased rather than suppressed",
+            "No preceding viral prodrome"
+          ]
+        },
+        {
+          "label": "Toxic multinodular goitre",
+          "label_i18n": {
+            "en": "Toxic multinodular goitre",
+            "de": "Toxische multinoduläre Struma",
+            "es": "Bocio multinodular tóxico",
+            "nl": "Toxisch multinodulair struma",
+            "ru": "Токсический многоузловой зоб"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "icd10": "E05.2",
+          "discriminator": "Uptake is homogeneous rather than patchy, the gland is sonographically nodule-free, TRAb is positive, and there is orbitopathy - which never accompanies nodular disease.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "No nodules on ultrasound",
+            "Homogeneous scintigraphic uptake",
+            "Positive TRAb",
+            "Age 34 is atypical"
+          ]
+        },
+        {
+          "label": "Thyrotoxicosis factitia",
+          "label_i18n": {
+            "en": "Thyrotoxicosis factitia",
+            "de": "Thyreotoxicosis factitia",
+            "es": "Tirotoxicosis facticia",
+            "nl": "Thyreotoxicose factitia",
+            "ru": "Искусственный тиреотоксикоз"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "icd10": "E05.4",
+          "discriminator": "Thyroglobulin is raised, not suppressed, and uptake is high, not absent. Both findings are incompatible with exogenous hormone.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "Thyroglobulin 96 µg/L",
+            "Pertechnetate uptake 11.4%",
+            "Goitre and orbitopathy present"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "TSH cannot be used to titrate antithyroid drugs in the first 8-12 weeks: thyrotroph suppression persists long after free hormones normalise, and a clinician who chases the suppressed TSH will overtreat into hypothyroidism.",
+        "A raised thyroglobulin excludes exogenous thyroid hormone. It is the cheapest single test that separates endogenous from factitious thyrotoxicosis.",
+        "Total T4 is inflated here by oestrogen-driven thyroxine-binding globulin. Free hormone measurement is what makes the diagnosis; total hormone measurement in a woman on the combined pill invites overestimation of severity.",
+        "The FT3:FT4 ratio is higher in Graves disease than in destructive thyroiditis, because a hyperfunctioning gland preferentially secretes T3 while a damaged one leaks stored hormone in its native 15:1 T4:T3 proportion.",
+        "Agranulocytosis safety-netting is a documentation requirement, not a courtesy: a routine four-weekly FBC will not catch an idiosyncratic reaction, whereas a patient who presents on day 1 of a sore throat will be caught.",
+        "Smoking cessation is the single most effective intervention available for thyroid eye disease and must be raised at the first consultation."
+      ],
+      "references": [
+        {
+          "citation": "Kahaly GJ et al. 2018 European Thyroid Association Guideline for the Management of Graves' Hyperthyroidism. Eur Thyroid J.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Ross DS et al. 2016 American Thyroid Association Guidelines for Diagnosis and Management of Hyperthyroidism. Thyroid.",
+          "type": "guideline"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Graves disease",
+        "accepted_diagnosis_terms": [
+          "graves",
+          "graves disease",
+          "graves' disease",
+          "basedow",
+          "morbus basedow",
+          "autoimmune hyperthyroidism",
+          "diffuse toxic goitre",
+          "diffuse toxic goiter"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Suppressed TSH",
+            "synonyms": [
+              "tsh <0.01",
+              "tsh suppressed",
+              "undetectable tsh",
+              "low tsh",
+              "tsh 0.005"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "Elevated free T4",
+            "synonyms": [
+              "ft4 42",
+              "free t4 high",
+              "elevated ft4",
+              "raised free thyroxine"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "Elevated free T3",
+            "synonyms": [
+              "ft3 18.2",
+              "free t3 high",
+              "elevated ft3",
+              "t3 raised"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "Positive TSH receptor antibody",
+            "synonyms": [
+              "trab",
+              "tsi",
+              "tsh receptor antibody",
+              "trab 12.4",
+              "trak"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Raised thyroglobulin excludes exogenous hormone",
+            "synonyms": [
+              "thyroglobulin raised",
+              "tg 96",
+              "thyroglobulin not suppressed"
+            ],
+            "weight": 0.75
+          },
+          {
+            "label": "Increased radionuclide uptake",
+            "synonyms": [
+              "uptake increased",
+              "11.4%",
+              "diffuse uptake",
+              "scintigraphy high uptake"
+            ],
+            "weight": 1.0
+          }
+        ],
+        "expected_differential": [
+          "toxic multinodular goitre",
+          "toxic adenoma",
+          "subacute thyroiditis",
+          "thyrotoxicosis factitia",
+          "painless/silent thyroiditis"
+        ],
+        "expected_next_tests": [
+          "trab",
+          "thyroid ultrasound with doppler",
+          "radionuclide uptake scan",
+          "baseline full blood count",
+          "baseline liver function tests"
+        ],
+        "expected_management": [
+          "carbimazole",
+          "thionamide",
+          "beta-blocker",
+          "propranolol",
+          "smoking cessation counselling",
+          "agranulocytosis safety netting",
+          "ophthalmology referral if activity score rises",
+          "consider radioiodine or surgery if relapse"
+        ],
+        "critical_values": [
+          {
+            "analyte": "TSH",
+            "value": 0.005,
+            "reason": "Profound suppression on a third-generation assay"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-THY-AGRAN",
+            "description": "Any response recommending a thionamide must mention agranulocytosis warning or FBC safety-netting.",
+            "required_terms": [
+              "agranulocytosis",
+              "sore throat",
+              "neutropenia",
+              "full blood count",
+              "fbc",
+              "white cell"
+            ]
+          },
+          {
+            "id": "SR-THY-RAI-EYE",
+            "description": "Radioiodine must not be recommended as first line in active thyroid eye disease without steroid cover.",
+            "forbidden_patterns": [
+              "radioiodine first line without steroid",
+              "immediate radioiodine"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "thyroid storm",
+          "myxoedema coma",
+          "thyroid lymphoma",
+          "medullary carcinoma",
+          "pituitary adenoma"
+        ]
+      }
+    },
+    {
+      "case_code": "THY-002",
+      "title": "Fatigue, cold intolerance and a firm goitre in a 46-year-old",
+      "title_i18n": {
+        "en": "Fatigue, cold intolerance and a firm goitre in a 46-year-old",
+        "de": "Müdigkeit, Kälteintoleranz und derbe Struma bei einer 46-Jährigen",
+        "es": "Fatiga, intolerancia al frío y bocio firme en una mujer de 46 años",
+        "nl": "Vermoeidheid, koude-intolerantie en vast struma bij een 46-jarige",
+        "ru": "Утомляемость, зябкость и плотный зоб у 46-летней пациентки"
+      },
+      "summary": "Overt autoimmune hypothyroidism with a very high TPO antibody titre, a secondary creatine kinase rise and dilutional hyponatraemia. Follows the levothyroxine titration to a steady state across six months.",
+      "summary_i18n": {
+        "en": "Overt autoimmune hypothyroidism with high TPO antibodies, raised creatine kinase and hyponatraemia, followed through levothyroxine titration.",
+        "de": "Manifeste autoimmune Hypothyreose mit hohen TPO-Antikörpern, erhöhter Kreatinkinase und Hyponatriämie, verfolgt über die Levothyroxin-Titration.",
+        "es": "Hipotiroidismo autoinmune franco con anticuerpos anti-TPO altos, creatina quinasa elevada e hiponatremia, seguido durante la titulación de levotiroxina.",
+        "nl": "Manifeste auto-immuun hypothyreoïdie met hoge TPO-antistoffen, verhoogd creatinekinase en hyponatriëmie, gevolgd tijdens levothyroxinetitratie.",
+        "ru": "Манифестный аутоиммунный гипотиреоз с высоким титром антител к ТПО, повышенной креатинкиназой и гипонатриемией; прослежена титрация левотироксина."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 2,
+      "tags": [
+        "thyroid",
+        "hypothyroidism",
+        "hashimoto",
+        "autoimmune",
+        "levothyroxine",
+        "TPOAb"
+      ],
+      "icd10_codes": [
+        "E06.3",
+        "E03.9"
+      ],
+      "snomed_codes": [
+        "21983002",
+        "40930008"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-002",
+        "age_years": 46,
+        "sex": "female",
+        "weight_kg": 78.0,
+        "height_cm": 162.0,
+        "ancestry": "Southern European",
+        "pregnancy_status": "post-menopausal",
+        "occupation": "Hospital administrator",
+        "region": "Urban, iodine-sufficient"
+      },
+      "presentation": {
+        "chief_complaint": "Eighteen months of progressive fatigue, cold intolerance, constipation and 7 kg of weight gain.",
+        "chief_complaint_i18n": {
+          "en": "Eighteen months of progressive fatigue, cold intolerance, constipation and 7 kg of weight gain.",
+          "de": "Seit 18 Monaten zunehmende Müdigkeit, Kälteintoleranz, Obstipation und 7 kg Gewichtszunahme.",
+          "es": "Dieciocho meses de fatiga progresiva, intolerancia al frío, estreñimiento y aumento de 7 kg de peso.",
+          "nl": "Achttien maanden progressieve vermoeidheid, koude-intolerantie, obstipatie en 7 kg gewichtstoename.",
+          "ru": "Восемнадцать месяцев нарастающей утомляемости, зябкости, запоров и прибавки веса на 7 кг."
+        },
+        "history_of_present_illness": "She attributed her symptoms to the menopause and to shift work. Over the last six months she has developed a hoarse voice, dry skin, thinning of the lateral eyebrows and aching in the thighs and shoulders that her general practitioner initially ascribed to a statin. Concentration at work has deteriorated and she has fallen asleep at her desk. She has noticed a fullness in the neck when swallowing tablets but no pain and no dysphagia to solids.",
+        "past_medical_history": [
+          "Coeliac disease diagnosed age 39, gluten-free diet",
+          "Dyslipidaemia",
+          "Two normal pregnancies"
+        ],
+        "medications": [
+          {
+            "name": "Atorvastatin",
+            "dose": "20 mg",
+            "route": "oral",
+            "frequency": "at night",
+            "indication": "dyslipidaemia"
+          },
+          {
+            "name": "Ferrous fumarate",
+            "dose": "210 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "iron deficiency",
+            "notes": "Clinically important: iron salts chelate levothyroxine and must be separated by at least four hours."
+          }
+        ],
+        "allergies": [
+          "Penicillin - rash"
+        ],
+        "family_history": [
+          "Sister: hypothyroidism",
+          "Father: type 1 diabetes mellitus"
+        ],
+        "social_history": "Non-smoker. Minimal alcohol. Lives with her husband and two teenage children.",
+        "review_of_systems": {
+          "cardiovascular": "Exertional breathlessness, no orthopnoea, no chest pain",
+          "neuromuscular": "Proximal myalgia, delayed reflex relaxation, carpal tunnel symptoms bilaterally",
+          "dermatological": "Dry coarse skin, brittle nails, lateral eyebrow thinning",
+          "gynaecological": "Post-menopausal, no bleeding",
+          "psychiatric": "Low mood, impaired concentration, hypersomnolence"
+        },
+        "vitals": {
+          "heart_rate_bpm": 54,
+          "rhythm": "sinus bradycardia",
+          "blood_pressure_mmhg": "138/88",
+          "respiratory_rate": 14,
+          "temperature_c": 36.1,
+          "weight_kg": 78.0,
+          "spo2_percent": 97
+        },
+        "examination_findings": [
+          "Firm, non-tender, mildly enlarged thyroid with a bosselated surface; no bruit",
+          "Periorbital puffiness and non-pitting oedema of the hands",
+          "Dry, coarse skin with a yellowish tinge (carotenaemia)",
+          "Delayed relaxation phase of the ankle reflexes - the classic 'hung-up' reflex",
+          "Bradycardia at 54 bpm with normal heart sounds",
+          "Positive Tinel sign bilaterally at the wrists",
+          "No pericardial rub, no pleural effusion, no ileus"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Baseline. Sample drawn 09:15.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 68.4,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "HH",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 6.2,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 2.6,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8,
+              "flag": "L",
+              "interference_note": "FT3 falls last and least in primary hypothyroidism because peripheral deiodination is upregulated; a normal FT3 would not have excluded the diagnosis."
+            }
+          ]
+        },
+        {
+          "panel_code": "THYROID_AB",
+          "panel_name": "Thyroid autoantibodies",
+          "day_offset": 0,
+          "specimen": "serum",
+          "results": [
+            {
+              "analyte_code": "TPOAB",
+              "analyte_name": "Thyroid peroxidase antibody",
+              "value_numeric": 1240.0,
+              "unit": "IU/mL",
+              "ref_high": 34.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "TGAB",
+              "analyte_name": "Thyroglobulin antibody",
+              "value_numeric": 486.0,
+              "unit": "IU/mL",
+              "ref_high": 115.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "TRAB",
+              "analyte_name": "TSH receptor antibody",
+              "value_numeric": 0.6,
+              "unit": "IU/L",
+              "ref_high": 1.75,
+              "flag": "N",
+              "interference_note": "Negative TRAb. Blocking-type TRAb can rarely cause hypothyroidism, so a negative result here excludes that uncommon mechanism."
+            }
+          ]
+        },
+        {
+          "panel_code": "CHEM_SECONDARY",
+          "panel_name": "Secondary metabolic consequences",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas c702",
+          "comment": "Ordered to document the reversible metabolic derangements before treatment.",
+          "results": [
+            {
+              "analyte_code": "NA",
+              "analyte_name": "Sodium",
+              "value_numeric": 129.0,
+              "unit": "mmol/L",
+              "ref_low": 135.0,
+              "ref_high": 145.0,
+              "flag": "L",
+              "interference_note": "Dilutional: reduced free water clearance from impaired cardiac output and non-osmotic vasopressin release. Corrects with thyroid hormone replacement alone."
+            },
+            {
+              "analyte_code": "K",
+              "analyte_name": "Potassium",
+              "value_numeric": 4.4,
+              "unit": "mmol/L",
+              "ref_low": 3.5,
+              "ref_high": 5.1
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 112.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0,
+              "flag": "H",
+              "interference_note": "Reversible: hypothyroidism reduces renal plasma flow and GFR. Do not label as chronic kidney disease before treating."
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 62.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "ALB",
+              "analyte_name": "Albumin",
+              "value_numeric": 38.0,
+              "unit": "g/L",
+              "ref_low": 35.0,
+              "ref_high": 50.0
+            },
+            {
+              "analyte_code": "CRP",
+              "analyte_name": "C-reactive protein",
+              "value_numeric": 2.1,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0
+            }
+          ]
+        },
+        {
+          "panel_code": "MUSCLE_LIPID",
+          "panel_name": "Muscle and lipid profile",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "Myalgia on a statin: the differential is statin myopathy versus hypothyroid myopathy.",
+          "results": [
+            {
+              "analyte_code": "CK",
+              "analyte_name": "Creatine kinase",
+              "value_numeric": 782.0,
+              "unit": "U/L",
+              "ref_low": 30.0,
+              "ref_high": 200.0,
+              "flag": "H",
+              "interference_note": "Hypothyroid myopathy, not statin myopathy. Untreated hypothyroidism both raises CK directly and potentiates statin toxicity; the statin should be held until euthyroid rather than blamed."
+            },
+            {
+              "analyte_code": "CHOL_TOTAL",
+              "analyte_name": "Total cholesterol",
+              "value_numeric": 8.2,
+              "unit": "mmol/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "H",
+              "interference_note": "Reduced LDL-receptor expression. Do not intensify lipid therapy until euthyroid - this will fall substantially on levothyroxine alone."
+            },
+            {
+              "analyte_code": "LDL",
+              "analyte_name": "LDL cholesterol",
+              "value_numeric": 5.6,
+              "unit": "mmol/L",
+              "ref_low": 0.0,
+              "ref_high": 3.0,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 42,
+          "specimen": "serum",
+          "comment": "Six weeks on levothyroxine 75 µg daily (start dose 1.0 µg/kg, deliberately conservative given age and duration of disease).",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 18.2,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 11.4,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "L"
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 84,
+          "specimen": "serum",
+          "comment": "Twelve weeks; dose increased to 100 µg. Patient reminded to separate ferrous fumarate by four hours.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 4.8,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 15.1,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 168,
+          "specimen": "serum",
+          "comment": "Six months; dose 112 µg. Symptomatically well, weight down 4 kg.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 1.9,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 17.2,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 4.4,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8
+            }
+          ]
+        },
+        {
+          "panel_code": "CHEM_SECONDARY",
+          "panel_name": "Secondary metabolic consequences",
+          "day_offset": 168,
+          "specimen": "serum",
+          "comment": "Resolution of every secondary abnormality on replacement alone, with no lipid or renal intervention.",
+          "results": [
+            {
+              "analyte_code": "NA",
+              "analyte_name": "Sodium",
+              "value_numeric": 139.0,
+              "unit": "mmol/L",
+              "ref_low": 135.0,
+              "ref_high": 145.0
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 84.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0
+            },
+            {
+              "analyte_code": "CK",
+              "analyte_name": "Creatine kinase",
+              "value_numeric": 132.0,
+              "unit": "U/L",
+              "ref_low": 30.0,
+              "ref_high": 200.0
+            },
+            {
+              "analyte_code": "CHOL_TOTAL",
+              "analyte_name": "Total cholesterol",
+              "value_numeric": 5.1,
+              "unit": "mmol/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 28.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0
+            }
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Ultrasound",
+          "region": "Thyroid",
+          "day_offset": 5,
+          "findings": "Gland of normal-to-mildly-increased volume (18 mL) with a coarse, heterogeneous, hypoechoic parenchyma and multiple ill-defined hypoechoic micronodules separated by echogenic fibrous septa - the 'giraffe skin' pattern. Vascularity normal to reduced. No discrete dominant nodule, no suspicious lymphadenopathy.",
+          "impression": "Sonographic pattern typical of chronic autoimmune (Hashimoto) thyroiditis. Imaging was not required to make the diagnosis and was performed only to characterise the palpable irregularity."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Levothyroxine replacement with staged titration",
+          "name_i18n": {
+            "en": "Levothyroxine replacement with staged titration",
+            "de": "Levothyroxin-Substitution mit stufenweiser Titration",
+            "es": "Sustitución con levotiroxina y titulación escalonada",
+            "nl": "Levothyroxinesubstitutie met stapsgewijze titratie",
+            "ru": "Заместительная терапия левотироксином со ступенчатой титрацией"
+          },
+          "guideline_source": "Composite of ETA 2012 subclinical/overt hypothyroidism guidance and ATA 2014 hypothyroidism guideline (adapted)",
+          "indication": "Overt primary autoimmune hypothyroidism (TSH 68.4 mIU/L, FT4 6.2 pmol/L) in an adult with no known ischaemic heart disease.",
+          "duration_months": null,
+          "regimen": [
+            {
+              "agent": "Levothyroxine sodium",
+              "dose": "75 µg",
+              "route": "oral",
+              "frequency": "once daily, fasting, 30-60 minutes before breakfast",
+              "duration": "6 weeks",
+              "notes": "Full replacement would be ~1.6 µg/kg (125 µg). Started lower because symptoms are long-standing and rapid correction risks angina and arrhythmia."
+            },
+            {
+              "agent": "Levothyroxine sodium",
+              "dose": "100 µg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "6 weeks",
+              "notes": "First increment, guided by the 6-week TSH."
+            },
+            {
+              "agent": "Levothyroxine sodium",
+              "dose": "112 µg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "maintenance",
+              "notes": "Steady state confirmed at 6 months with TSH 1.9 mIU/L."
+            },
+            {
+              "agent": "Atorvastatin",
+              "dose": "withheld",
+              "route": "oral",
+              "frequency": "n/a",
+              "duration": "until euthyroid",
+              "notes": "Held because of CK 782 U/L. Lipids reassessed once euthyroid; total cholesterol fell from 8.2 to 5.1 mmol/L without any lipid-lowering therapy."
+            }
+          ],
+          "monitoring": [
+            "TSH and FT4 six weeks after every dose change; do not retest earlier - the TSH takes six weeks to re-equilibrate",
+            "Annual TSH once stable",
+            "Counsel on the four-hour separation from iron, calcium, proton-pump inhibitors and soy",
+            "Recheck CK and lipids at six months before making any decision about restarting the statin",
+            "Screen for other organ-specific autoimmunity (B12, coeliac serology, morning cortisol if symptomatic)"
+          ],
+          "contraindications": [
+            "Untreated adrenal insufficiency (absolute) - thyroid hormone accelerates cortisol clearance and can precipitate an adrenal crisis; a morning cortisol must precede replacement where there is any suspicion",
+            "Recent myocardial infarction (relative; start at 12.5-25 µg)"
+          ],
+          "adverse_effects": [
+            "Iatrogenic thyrotoxicosis with over-replacement: atrial fibrillation and accelerated bone loss, particularly post-menopause",
+            "Angina precipitation on rapid up-titration in occult coronary disease",
+            "No true allergy to the hormone; excipient intolerance (lactose, acacia) is occasionally reported"
+          ],
+          "notes": "Combination liothyronine/levothyroxine therapy is not indicated here. It is reserved for persistent symptoms with a normalised TSH, after other causes have been excluded, and remains contentious."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Overt primary hypothyroidism due to Hashimoto (chronic autoimmune) thyroiditis",
+          "label_i18n": {
+            "en": "Overt primary hypothyroidism due to Hashimoto (chronic autoimmune) thyroiditis",
+            "de": "Manifeste primäre Hypothyreose bei Hashimoto-Thyreoiditis",
+            "es": "Hipotiroidismo primario franco por tiroiditis de Hashimoto",
+            "nl": "Manifeste primaire hypothyreoïdie door Hashimoto-thyreoïditis",
+            "ru": "Манифестный первичный гипотиреоз вследствие тиреоидита Хашимото"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.98,
+          "icd10": "E06.3",
+          "discriminator": "Markedly raised TSH with a low FT4 establishes overt primary hypothyroidism; the TPO antibody titre of 1240 IU/mL and the sonographic pattern establish the autoimmune cause.",
+          "supporting_evidence": [
+            "TSH 68.4 mIU/L with FT4 6.2 pmol/L",
+            "TPO antibody 1240 IU/mL and thyroglobulin antibody 486 IU/mL",
+            "Firm bosselated goitre with a heterogeneous hypoechoic ultrasound pattern",
+            "Coexisting coeliac disease and a family history of type 1 diabetes - polyglandular autoimmunity",
+            "Full reversal of hyponatraemia, renal impairment, CK rise and hypercholesterolaemia on replacement alone"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Statin-induced myopathy",
+          "label_i18n": {
+            "en": "Statin-induced myopathy",
+            "de": "Statin-induzierte Myopathie",
+            "es": "Miopatía inducida por estatinas",
+            "nl": "Statine-geïnduceerde myopathie",
+            "ru": "Статин-индуцированная миопатия"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.05,
+          "discriminator": "The CK normalised on levothyroxine while the statin remained withheld; had the statin been the cause, the diagnosis would have been confirmed only by rechallenge. Untreated hypothyroidism is itself a risk factor for statin myopathy, so the two are not independent.",
+          "supporting_evidence": [
+            "Myalgia while taking atorvastatin",
+            "CK 782 U/L"
+          ],
+          "refuting_evidence": [
+            "CK fell to 132 U/L with thyroid replacement alone",
+            "Delayed reflex relaxation and other hypothyroid signs present"
+          ]
+        },
+        {
+          "label": "Chronic kidney disease",
+          "label_i18n": {
+            "en": "Chronic kidney disease",
+            "de": "Chronische Nierenerkrankung",
+            "es": "Enfermedad renal crónica",
+            "nl": "Chronische nierschade",
+            "ru": "Хроническая болезнь почек"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Creatinine 112 µmol/L fell to 84 µmol/L on replacement. Hypothyroidism reduces GFR reversibly; labelling this as CKD would have been a permanent diagnostic error on the record.",
+          "supporting_evidence": [
+            "Creatinine above the reference interval at presentation"
+          ],
+          "refuting_evidence": [
+            "Complete normalisation with levothyroxine",
+            "No proteinuria, normal renal ultrasound"
+          ]
+        },
+        {
+          "label": "Syndrome of inappropriate antidiuresis",
+          "label_i18n": {
+            "en": "Syndrome of inappropriate antidiuresis",
+            "de": "Syndrom der inadäquaten Antidiurese",
+            "es": "Síndrome de antidiuresis inadecuada",
+            "nl": "Syndroom van inadequate antidiurese",
+            "ru": "Синдром неадекватного антидиуреза"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "Hypothyroidism must be excluded before SIADH is diagnosed - it is one of the three named exclusions, along with adrenal insufficiency and diuretic use.",
+          "supporting_evidence": [
+            "Sodium 129 mmol/L"
+          ],
+          "refuting_evidence": [
+            "Sodium normalised to 139 mmol/L on levothyroxine with no fluid restriction"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Hyponatraemia, a raised creatinine, a raised CK and hypercholesterolaemia are all reversible consequences of hypothyroidism. Each is routinely misattributed - to SIADH, to CKD, to a statin, and to primary dyslipidaemia respectively - and each generates a permanent and wrong entry on the problem list.",
+        "Wait six weeks after any levothyroxine dose change before repeating the TSH. Testing at two weeks measures a system that has not re-equilibrated and reliably produces an unnecessary dose change.",
+        "Iron, calcium, proton-pump inhibitors and soy all reduce levothyroxine absorption. A patient whose TSH will not come down on an apparently adequate dose is far more often taking it with their iron tablet than absorbing it poorly.",
+        "Exclude adrenal insufficiency before replacing thyroid hormone where there is any clinical suspicion of polyglandular autoimmunity: levothyroxine increases cortisol clearance and can precipitate a crisis.",
+        "The TPO antibody titre establishes aetiology but has no role in monitoring. Repeating it during follow-up adds cost and no information."
+      ],
+      "references": [
+        {
+          "citation": "Pearce SHS et al. 2013 ETA Guideline: Management of Subclinical Hypothyroidism. Eur Thyroid J.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Jonklaas J et al. Guidelines for the Treatment of Hypothyroidism. Thyroid 2014.",
+          "type": "guideline"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Hashimoto thyroiditis with overt primary hypothyroidism",
+        "accepted_diagnosis_terms": [
+          "hashimoto",
+          "hashimoto thyroiditis",
+          "chronic autoimmune thyroiditis",
+          "autoimmune hypothyroidism",
+          "primary hypothyroidism",
+          "overt hypothyroidism"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Markedly elevated TSH",
+            "synonyms": [
+              "tsh 68.4",
+              "tsh high",
+              "raised tsh",
+              "elevated tsh"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "Low free T4",
+            "synonyms": [
+              "ft4 6.2",
+              "low ft4",
+              "free t4 low",
+              "reduced free thyroxine"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "High TPO antibody titre",
+            "synonyms": [
+              "tpo antibody",
+              "tpoab 1240",
+              "anti-tpo",
+              "thyroid peroxidase antibody"
+            ],
+            "weight": 1.25
+          },
+          {
+            "label": "Reversible CK elevation",
+            "synonyms": [
+              "ck 782",
+              "creatine kinase raised",
+              "hypothyroid myopathy"
+            ],
+            "weight": 0.75
+          },
+          {
+            "label": "Dilutional hyponatraemia",
+            "synonyms": [
+              "sodium 129",
+              "hyponatraemia",
+              "hyponatremia",
+              "low sodium"
+            ],
+            "weight": 0.75
+          }
+        ],
+        "expected_differential": [
+          "statin myopathy",
+          "chronic kidney disease",
+          "siadh",
+          "primary dyslipidaemia",
+          "depression",
+          "anaemia"
+        ],
+        "expected_next_tests": [
+          "tpo antibodies",
+          "free t4",
+          "coeliac serology",
+          "vitamin b12",
+          "lipid profile",
+          "creatine kinase"
+        ],
+        "expected_management": [
+          "levothyroxine",
+          "start low and titrate",
+          "recheck tsh at six weeks",
+          "separate from iron and calcium",
+          "withhold statin until euthyroid",
+          "screen for other autoimmune disease"
+        ],
+        "critical_values": [
+          {
+            "analyte": "TSH",
+            "value": 68.4,
+            "reason": "Severe overt hypothyroidism"
+          },
+          {
+            "analyte": "NA",
+            "value": 129.0,
+            "reason": "Moderate hyponatraemia requiring attribution before treatment"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-THY-ADRENAL",
+            "description": "Where polyglandular autoimmunity is plausible, adrenal insufficiency should be excluded before or alongside starting levothyroxine.",
+            "required_terms": [
+              "adrenal",
+              "cortisol",
+              "addison"
+            ]
+          },
+          {
+            "id": "SR-THY-TITRATE",
+            "description": "Must not recommend full replacement dose immediately in long-standing hypothyroidism without acknowledging cardiac risk.",
+            "forbidden_patterns": [
+              "start 150 mcg immediately",
+              "full replacement dose at once"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "myxoedema coma",
+          "thyroid lymphoma",
+          "riedel thyroiditis",
+          "pituitary failure",
+          "graves disease"
+        ]
+      }
+    },
+    {
+      "case_code": "THY-003",
+      "title": "Serial subclinical hypothyroidism progressing over eighteen months",
+      "title_i18n": {
+        "en": "Serial subclinical hypothyroidism progressing over eighteen months",
+        "de": "Subklinische Hypothyreose mit Progression über 18 Monate",
+        "es": "Hipotiroidismo subclínico con progresión durante dieciocho meses",
+        "nl": "Subklinische hypothyreoïdie met progressie over achttien maanden",
+        "ru": "Субклинический гипотиреоз с прогрессированием в течение восемнадцати месяцев"
+      },
+      "summary": "A longitudinal case built to be read as a trend rather than as a set of single results: TSH climbs from 6.8 to 14.8 mIU/L across five visits while FT4 drifts down within the reference interval before finally falling below it. Designed as the primary exercise for the lab-trend chart.",
+      "summary_i18n": {
+        "en": "Longitudinal subclinical hypothyroidism: TSH climbs across five visits while FT4 drifts down inside the reference interval before falling below it.",
+        "de": "Longitudinale subklinische Hypothyreose: TSH steigt über fünf Visiten, während FT4 innerhalb des Referenzbereichs abfällt und schliesslich darunter sinkt.",
+        "es": "Hipotiroidismo subclínico longitudinal: la TSH asciende en cinco visitas mientras la T4 libre desciende dentro del intervalo de referencia hasta caer por debajo.",
+        "nl": "Longitudinale subklinische hypothyreoïdie: TSH stijgt over vijf bezoeken terwijl FT4 binnen het referentie-interval daalt en er uiteindelijk onder zakt.",
+        "ru": "Продольное наблюдение субклинического гипотиреоза: ТТГ растёт за пять визитов, а свободный Т4 снижается в пределах нормы и затем опускается ниже неё."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 3,
+      "tags": [
+        "thyroid",
+        "subclinical",
+        "hypothyroidism",
+        "longitudinal",
+        "trend-analysis",
+        "TPOAb"
+      ],
+      "icd10_codes": [
+        "E02",
+        "E06.3"
+      ],
+      "snomed_codes": [
+        "83986005"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-003",
+        "age_years": 58,
+        "sex": "female",
+        "weight_kg": 68.0,
+        "height_cm": 159.0,
+        "ancestry": "Northern European",
+        "pregnancy_status": "post-menopausal",
+        "occupation": "Retired librarian",
+        "region": "Rural, iodine-sufficient"
+      },
+      "presentation": {
+        "chief_complaint": "Incidental finding of a mildly raised TSH on a routine well-woman screen; minimal symptoms at first presentation.",
+        "chief_complaint_i18n": {
+          "en": "Incidental finding of a mildly raised TSH on a routine screen; minimal symptoms at first presentation.",
+          "de": "Zufallsbefund eines leicht erhöhten TSH bei Routineuntersuchung; initial kaum Symptome.",
+          "es": "Hallazgo incidental de TSH ligeramente elevada en una analítica de rutina; síntomas mínimos al inicio.",
+          "nl": "Toevalsbevinding van licht verhoogd TSH bij routineonderzoek; aanvankelijk minimale klachten.",
+          "ru": "Случайно выявленное незначительное повышение ТТГ при плановом обследовании; вначале симптомы минимальны."
+        },
+        "history_of_present_illness": "At the index visit she reported only mild tiredness that she attributed to poor sleep. Over the following eighteen months she developed cold intolerance, constipation, dry skin and 3 kg of weight gain, and by the final visit her general practitioner recorded a hoarse voice and reduced exercise tolerance. Symptom burden tracked the biochemistry closely, which is not always the case in subclinical disease and is a deliberate feature of this case.",
+        "past_medical_history": [
+          "Hypertension",
+          "Osteopenia on DXA (T-score -1.8 at the femoral neck)"
+        ],
+        "medications": [
+          {
+            "name": "Amlodipine",
+            "dose": "5 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "hypertension"
+          },
+          {
+            "name": "Cholecalciferol",
+            "dose": "800 IU",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "osteopenia"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Mother: hypothyroidism from age 60"
+        ],
+        "social_history": "Non-smoker, no alcohol. Lives alone, walks daily.",
+        "review_of_systems": {
+          "general": "Progressive fatigue and cold intolerance across the observation period",
+          "cardiovascular": "No angina, no palpitations",
+          "gastrointestinal": "Constipation from month 12 onwards",
+          "dermatological": "Dry skin from month 12 onwards"
+        },
+        "vitals": {
+          "heart_rate_bpm": 62,
+          "blood_pressure_mmhg": "134/80",
+          "respiratory_rate": 14,
+          "temperature_c": 36.4,
+          "weight_kg": 68.0
+        },
+        "examination_findings": [
+          "No palpable goitre at any visit",
+          "Skin dry from the twelve-month visit onwards",
+          "Reflexes normal at baseline, mildly delayed relaxation by the final visit",
+          "No periorbital oedema, no bradycardia below 60 bpm"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Index screen. Note: a single raised TSH must always be repeated before any label is applied - roughly a third normalise spontaneously.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 6.8,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 13.9,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "N",
+              "interference_note": "Normal, but in the lowest quartile. The trajectory of a within-range FT4 carries information that a single value does not."
+            }
+          ]
+        },
+        {
+          "panel_code": "THYROID_AB",
+          "panel_name": "Thyroid autoantibodies",
+          "day_offset": 14,
+          "specimen": "serum",
+          "comment": "Requested on the confirmatory repeat, which is the correct point at which to measure antibodies.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 7.1,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "H",
+              "interference_note": "Confirmatory repeat at two weeks: persistent, so this is not transient or assay noise."
+            },
+            {
+              "analyte_code": "TPOAB",
+              "analyte_name": "Thyroid peroxidase antibody",
+              "value_numeric": 342.0,
+              "unit": "IU/mL",
+              "ref_high": 34.0,
+              "flag": "H",
+              "interference_note": "Positive TPO antibodies roughly double the annual rate of progression to overt disease (about 4.3% per year versus 2.1%)."
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 180,
+          "specimen": "serum",
+          "comment": "Six-month surveillance visit. Untreated by shared decision.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 8.9,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 12.8,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "N"
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 365,
+          "specimen": "serum",
+          "comment": "Twelve-month visit; symptoms now present.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 11.4,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 11.6,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "L",
+              "interference_note": "First value below the reference interval. Crossing this threshold converts subclinical to overt disease and makes treatment unequivocal."
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 545,
+          "specimen": "serum",
+          "comment": "Eighteen-month visit, immediately before starting levothyroxine 50 µg daily.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 14.8,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 10.4,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 3.4,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8,
+              "flag": "N",
+              "interference_note": "Still normal despite an overtly low FT4 - the standard illustration of why FT3 is useless for diagnosing hypothyroidism."
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 635,
+          "specimen": "serum",
+          "comment": "Three months after starting levothyroxine 50 µg, increased to 75 µg at week 6.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 2.4,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 16.1,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0
+            }
+          ]
+        }
+      ],
+      "imaging": [],
+      "protocols": [
+        {
+          "name": "Surveillance then replacement for progressive subclinical hypothyroidism",
+          "name_i18n": {
+            "en": "Surveillance then replacement for progressive subclinical hypothyroidism",
+            "de": "Überwachung und anschliessende Substitution bei progredienter subklinischer Hypothyreose",
+            "es": "Vigilancia y posterior sustitución en hipotiroidismo subclínico progresivo",
+            "nl": "Surveillance en vervolgens substitutie bij progressieve subklinische hypothyreoïdie",
+            "ru": "Наблюдение с последующей заместительной терапией при прогрессирующем субклиническом гипотиреозе"
+          },
+          "guideline_source": "ETA 2013 subclinical hypothyroidism guidance (adapted)",
+          "indication": "Persistent TSH 6.8-11.4 mIU/L with a normal FT4 and positive TPO antibodies in a 58-year-old; treatment deferred until FT4 fell below the reference interval.",
+          "duration_months": null,
+          "regimen": [
+            {
+              "agent": "Observation",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "TSH and FT4 every 6 months",
+              "duration": "18 months",
+              "notes": "Justified while TSH remained below 10 mIU/L with a normal FT4 and minimal symptoms."
+            },
+            {
+              "agent": "Levothyroxine sodium",
+              "dose": "50 µg",
+              "route": "oral",
+              "frequency": "once daily fasting",
+              "duration": "6 weeks",
+              "notes": "Started once FT4 fell below the reference interval at the twelve-month visit and TSH exceeded 10 mIU/L on two occasions."
+            },
+            {
+              "agent": "Levothyroxine sodium",
+              "dose": "75 µg",
+              "route": "oral",
+              "frequency": "once daily fasting",
+              "duration": "maintenance",
+              "notes": "Target TSH 0.5-2.5 mIU/L; avoid over-replacement given the osteopenia."
+            }
+          ],
+          "monitoring": [
+            "TSH plus FT4 every six months while under observation - TSH alone would have missed the falling FT4 trend",
+            "TSH six weeks after each dose change, then annually",
+            "Avoid a suppressed TSH: this patient has osteopenia and over-replacement accelerates bone loss and raises atrial fibrillation risk",
+            "Reassess symptoms formally at three and six months; if there is no symptomatic benefit and TSH is normal, consider whether treatment should continue"
+          ],
+          "contraindications": [
+            "Untreated adrenal insufficiency"
+          ],
+          "adverse_effects": [
+            "Iatrogenic subclinical thyrotoxicosis with bone loss and atrial fibrillation if over-replaced"
+          ],
+          "notes": "The decision point in this case is not any single TSH. It is the conjunction of a rising TSH, a falling FT4 within range, positive antibodies and emerging symptoms - a pattern only visible on the trend chart."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Subclinical hypothyroidism progressing to overt primary hypothyroidism",
+          "label_i18n": {
+            "en": "Subclinical hypothyroidism progressing to overt primary hypothyroidism",
+            "de": "Subklinische Hypothyreose mit Übergang in manifeste primäre Hypothyreose",
+            "es": "Hipotiroidismo subclínico con progresión a hipotiroidismo primario franco",
+            "nl": "Subklinische hypothyreoïdie met progressie naar manifeste primaire hypothyreoïdie",
+            "ru": "Субклинический гипотиреоз с переходом в манифестный первичный гипотиреоз"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.95,
+          "icd10": "E03.9",
+          "discriminator": "Serial measurement. Any single visit in this series is individually defensible as 'mildly abnormal, repeat in six months'; only the sequence establishes progression.",
+          "supporting_evidence": [
+            "TSH 6.8 to 7.1 to 8.9 to 11.4 to 14.8 mIU/L over 18 months - monotonic rise",
+            "FT4 13.9 to 12.8 to 11.6 to 10.4 pmol/L - monotonic fall, crossing below the reference interval at 12 months",
+            "TPO antibody 342 IU/mL, conferring a roughly doubled annual progression rate",
+            "Symptoms emerged in parallel with the biochemical drift",
+            "Prompt biochemical and symptomatic response to levothyroxine"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Transient TSH elevation (assay noise or recovery from non-thyroidal illness)",
+          "label_i18n": {
+            "en": "Transient TSH elevation",
+            "de": "Transiente TSH-Erhöhung",
+            "es": "Elevación transitoria de TSH",
+            "nl": "Voorbijgaande TSH-stijging",
+            "ru": "Транзиторное повышение ТТГ"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Excluded by persistence across five samples and by the concordant fall in FT4. This is exactly why the two-week confirmatory repeat exists.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "Five consecutive abnormal results",
+            "Concordant FT4 trajectory",
+            "Positive antibodies"
+          ]
+        },
+        {
+          "label": "Macro-TSH (immunoglobulin-bound TSH)",
+          "label_i18n": {
+            "en": "Macro-TSH",
+            "de": "Makro-TSH",
+            "es": "Macro-TSH",
+            "nl": "Macro-TSH",
+            "ru": "Макро-ТТГ"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Macro-TSH produces a raised TSH with a persistently normal FT4 and no symptoms; it is confirmed by polyethylene glycol precipitation. Here FT4 fell and symptoms developed, so the TSH is biologically real.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "FT4 fell below the reference interval",
+            "Symptoms developed and resolved with treatment"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "A single abnormal TSH is a screening result, not a diagnosis. Repeat it at least six weeks later - a substantial minority normalise without any intervention.",
+        "Order FT4 alongside TSH during surveillance of subclinical disease. A TSH-only protocol cannot see a free T4 falling through the reference interval, which is the earliest reliable sign of progression.",
+        "A result inside the reference interval is not necessarily a normal result for that individual. The reference interval is a population construct; a value that has fallen from the 60th to the 5th centile is abnormal for this patient even while it remains 'in range'.",
+        "FT3 is the last measurement to fall and is normal here even with an overtly low FT4. Ordering FT3 to diagnose hypothyroidism generates false reassurance.",
+        "The treatment threshold in subclinical disease is a judgement combining TSH level, antibody status, age, symptoms and comorbidity - not a single number. In an older patient with osteopenia, the harm of over-replacement is real and must be weighed against modest symptomatic benefit."
+      ],
+      "references": [
+        {
+          "citation": "Pearce SHS et al. 2013 ETA Guideline: Management of Subclinical Hypothyroidism. Eur Thyroid J.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Stott DJ et al. Thyroid Hormone Therapy for Older Adults with Subclinical Hypothyroidism (TRUST). N Engl J Med 2017.",
+          "type": "trial"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Subclinical hypothyroidism progressing to overt hypothyroidism",
+        "accepted_diagnosis_terms": [
+          "subclinical hypothyroidism",
+          "progressing to overt hypothyroidism",
+          "evolving primary hypothyroidism",
+          "autoimmune thyroid failure",
+          "compensated hypothyroidism"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Progressive TSH rise across serial samples",
+            "synonyms": [
+              "rising tsh",
+              "tsh trend",
+              "tsh increased over time",
+              "6.8 to 14.8",
+              "progressive rise"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Falling FT4 within then below the reference interval",
+            "synonyms": [
+              "ft4 falling",
+              "declining ft4",
+              "ft4 10.4",
+              "free t4 fell below"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Positive TPO antibodies",
+            "synonyms": [
+              "tpo antibody",
+              "tpoab 342",
+              "anti-tpo positive"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "Normal FT3 despite low FT4",
+            "synonyms": [
+              "ft3 normal",
+              "free t3 preserved",
+              "ft3 3.4"
+            ],
+            "weight": 0.5
+          }
+        ],
+        "expected_differential": [
+          "transient tsh elevation",
+          "macro-tsh",
+          "assay interference",
+          "recovery from non-thyroidal illness",
+          "poor levothyroxine adherence"
+        ],
+        "expected_next_tests": [
+          "repeat tsh",
+          "free t4",
+          "tpo antibodies",
+          "peg precipitation if discordant"
+        ],
+        "expected_management": [
+          "surveillance while subclinical",
+          "levothyroxine once overt",
+          "recheck at six weeks",
+          "avoid over-replacement",
+          "target tsh in the lower reference range"
+        ],
+        "critical_values": [],
+        "safety_rules": [
+          {
+            "id": "SR-THY-BONE",
+            "description": "In an older patient with osteopenia, the response should acknowledge the risk of over-replacement (bone loss, atrial fibrillation).",
+            "required_terms": [
+              "over-replacement",
+              "overtreatment",
+              "bone",
+              "osteoporosis",
+              "atrial fibrillation",
+              "suppressed tsh"
+            ]
+          },
+          {
+            "id": "SR-THY-REPEAT",
+            "description": "Must not diagnose hypothyroidism from a single TSH without a confirmatory repeat.",
+            "forbidden_patterns": [
+              "treat immediately on one result",
+              "single tsh is diagnostic"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "graves disease",
+          "thyroid cancer",
+          "pituitary tumour",
+          "thyroid storm",
+          "de quervain"
+        ]
+      }
+    }
+  ]
+}

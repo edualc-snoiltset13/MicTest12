@@ -1,0 +1,602 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-07-06T08:00:00Z",
+  "collection": "Microbiology and pharmacology - antimicrobial chemotherapy of multidrug-resistant leprosy",
+  "cases": [
+    {
+      "case_code": "LEP-001",
+      "title": "Rising bacterial index on supervised multidrug therapy: rifampicin-resistant relapse",
+      "title_i18n": {
+        "en": "Rising bacterial index on supervised multidrug therapy: rifampicin-resistant relapse",
+        "de": "Steigender bakterieller Index unter überwachter Mehrfachtherapie: Rifampicin-resistentes Rezidiv",
+        "es": "Índice bacteriano en ascenso con poliquimioterapia supervisada: recaída resistente a rifampicina",
+        "nl": "Stijgende bacteriële index onder gesuperviseerde multidrugtherapie: rifampicine-resistent recidief",
+        "ru": "Рост бактериального индекса на фоне контролируемой комбинированной терапии: рецидив с устойчивостью к рифампицину"
+      },
+      "summary": "Confirmed rpoB-mediated rifampicin resistance in multibacillary leprosy. The anchor MDR case: it establishes how relapse is distinguished from a type 2 reaction, and how a WHO second-line regimen is constructed when the sterilising drug is lost.",
+      "summary_i18n": {
+        "en": "rpoB-mediated rifampicin-resistant multibacillary leprosy - distinguishing true relapse from reaction, and rebuilding a regimen without the sterilising drug.",
+        "de": "rpoB-vermittelte rifampicinresistente multibazilläre Lepra - Abgrenzung des echten Rezidivs von einer Reaktion und Neuaufbau des Regimes ohne das sterilisierende Medikament.",
+        "es": "Lepra multibacilar resistente a rifampicina por rpoB: diferenciar la recaída verdadera de una reacción y reconstruir el régimen sin el fármaco esterilizante.",
+        "nl": "rpoB-gemedieerde rifampicine-resistente multibacillaire lepra - echt recidief onderscheiden van reactie en het regime herbouwen zonder het steriliserende middel.",
+        "ru": "Мультибациллярная лепра с устойчивостью к рифампицину (мутация rpoB): отличие истинного рецидива от реакции и построение схемы без стерилизующего препарата."
+      },
+      "discipline": "microbiology",
+      "subspecialty": "mycobacteriology",
+      "difficulty": 5,
+      "tags": ["leprosy", "MDR", "rifampicin-resistance", "rpoB", "relapse", "WHO-MDT", "second-line", "anchor-case"],
+      "icd10_codes": ["A30.5", "U84.7"],
+      "snomed_codes": ["81004002"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Mycobacteriology Review Panel",
+      "patient": {
+        "pseudonym": "Patient LEP-001",
+        "age_years": 42,
+        "sex": "male",
+        "weight_kg": 58.0,
+        "height_cm": 168.0,
+        "ancestry": "South Asian",
+        "occupation": "Brick kiln labourer",
+        "region": "High-burden district, leprosy-endemic"
+      },
+      "presentation": {
+        "chief_complaint": "New and enlarging skin lesions with worsening hand numbness, having completed 12 months of multibacillary multidrug therapy 14 months ago.",
+        "chief_complaint_i18n": {
+          "en": "New and enlarging skin lesions with worsening hand numbness, 14 months after completing MDT.",
+          "de": "Neue und grösser werdende Hautläsionen mit zunehmender Handtaubheit, 14 Monate nach Abschluss der MDT.",
+          "es": "Lesiones cutáneas nuevas y crecientes con adormecimiento progresivo de las manos, 14 meses tras completar la PQT.",
+          "nl": "Nieuwe en groter wordende huidlaesies met toenemende gevoelloosheid van de handen, 14 maanden na voltooiing van MDT.",
+          "ru": "Новые и увеличивающиеся кожные высыпания с нарастающим онемением кистей через 14 месяцев после завершения комбинированной терапии."
+        },
+        "history_of_present_illness": "He completed a full 12-month WHO multibacillary regimen with documented directly observed monthly doses; the treatment card is available and shows 12 of 12 supervised doses taken. At completion his bacterial index had fallen from 4.8 to 3.2. Over the last five months new infiltrated plaques have appeared on the trunk and both forearms, existing lesions have enlarged, and he has lost sensation over the ulnar distribution of both hands. There is no tenderness of the lesions, no fever, no new nerve pain, and no crops of tender nodules - the absence of these features is what makes reaction unlikely and relapse likely.",
+        "past_medical_history": ["Borderline lepromatous (BL) leprosy diagnosed 27 months ago", "Completed 12-month MB-MDT 14 months ago", "No diabetes, no HIV"],
+        "medications": [],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["Brother treated for leprosy 8 years ago - a household contact and a plausible source of a resistant strain"],
+        "social_history": "Lives in a crowded compound with 9 household members. No alcohol. Non-smoker.",
+        "review_of_systems": {
+          "dermatological": "New infiltrated plaques, no tenderness, no ulceration, no erythema nodosum",
+          "neurological": "Progressive glove distribution sensory loss, bilateral ulnar claw hand developing, no acute nerve pain",
+          "general": "No fever, no weight loss, no malaise"
+        },
+        "vitals": {
+          "heart_rate_bpm": 78,
+          "blood_pressure_mmhg": "118/74",
+          "respiratory_rate": 16,
+          "temperature_c": 36.8,
+          "weight_kg": 58.0
+        },
+        "examination_findings": [
+          "Twenty-three infiltrated, non-tender, hypopigmented and erythematous plaques over the trunk, forearms and thighs - more lesions than at original diagnosis",
+          "Diffuse infiltration of both ear lobes with early madarosis",
+          "Bilateral ulnar nerve thickening, non-tender, with grade 2 sensory impairment on monofilament testing and MRC 3/5 abduction of the little finger",
+          "Bilateral common peroneal nerve thickening without foot drop",
+          "No lesion tenderness and no nerve tenderness - the key negative distinguishing this from a type 1 reaction",
+          "No erythema nodosum leprosum nodules",
+          "Anaesthetic ulcer over the right fifth metacarpal head"
+        ]
+      },
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear",
+          "site": "Both ear lobes, right forearm plaque, left thigh plaque, left eyebrow (5 sites)",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Modified Ziehl-Neelsen (Fite-Faraco) stain: abundant acid-fast bacilli, many in globi, with a high proportion of solidly staining forms.",
+          "bacterial_index": 4.6,
+          "morphological_index": 18.0,
+          "molecular_findings": [
+            {"target": "rpoB", "method": "Sanger sequencing of the rifampicin resistance-determining region", "result": "Missense mutation c.1367C>T p.(Ser456Leu) (M. leprae numbering; equivalent to the M. tuberculosis Ser450Leu hotspot)", "interpretation": "High-level rifampicin resistance. This is the single commonest resistance mutation in M. leprae worldwide."},
+            {"target": "folP1", "method": "Sanger sequencing", "result": "Wild type", "interpretation": "Dapsone-susceptible."},
+            {"target": "gyrA", "method": "Sanger sequencing", "result": "Wild type", "interpretation": "Fluoroquinolone-susceptible - which is what makes a viable second-line regimen possible."},
+            {"target": "M. leprae specific repetitive element (RLEP)", "method": "Real-time PCR", "result": "Detected, Ct 18.2 (high bacillary load)", "interpretation": "Confirms species identity and a high organism burden."},
+            {"target": "VNTR strain typing", "method": "Multi-locus VNTR", "result": "Profile identical to the strain isolated at original diagnosis 27 months ago", "interpretation": "RELAPSE with the original strain that has acquired resistance, not reinfection with a new strain. This distinction determines whether the failure is pharmacological or epidemiological."}
+          ],
+          "susceptibility": [
+            {"agent": "Rifampicin", "method": "Molecular (rpoB)", "result": "Resistant", "mic": null, "note": "Loss of the only bactericidal and sterilising agent in the standard regimen. This is the pivotal finding."},
+            {"agent": "Dapsone", "method": "Molecular (folP1)", "result": "Susceptible", "mic": null},
+            {"agent": "Ofloxacin", "method": "Molecular (gyrA)", "result": "Susceptible", "mic": null},
+            {"agent": "Clarithromycin", "method": "Molecular (23S rRNA)", "result": "Susceptible", "mic": null},
+            {"agent": "Minocycline", "method": "Not routinely testable", "result": "Presumed susceptible", "mic": null, "note": "No validated molecular marker; susceptibility is assumed in the absence of prior exposure."},
+            {"agent": "Clofazimine", "method": "Not routinely testable", "result": "Presumed susceptible", "mic": null, "note": "Resistance is rare and there is no established molecular marker."}
+          ],
+          "interpretation": "Multibacillary leprosy relapse with acquired high-level rifampicin resistance due to an rpoB Ser456Leu mutation, in a strain confirmed by VNTR typing to be the same as at original diagnosis. Dapsone, fluoroquinolone and macrolide targets remain wild type, permitting construction of a second-line regimen."
+        },
+        {
+          "day_offset": 180,
+          "specimen_type": "Slit-skin smear",
+          "site": "Same five sites",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Acid-fast bacilli still present but fewer; the great majority are now fragmented or granular rather than solid.",
+          "bacterial_index": 3.8,
+          "morphological_index": 0.0,
+          "molecular_findings": [],
+          "susceptibility": [],
+          "interpretation": "Morphological index has fallen to zero at six months, indicating that no viable bacilli remain - the earliest reliable evidence that the second-line regimen is working. The bacterial index falls far more slowly (roughly 1 log per year) because dead bacilli are cleared slowly, and its persistence must not be misread as treatment failure."
+        },
+        {
+          "day_offset": 540,
+          "specimen_type": "Slit-skin smear",
+          "site": "Same five sites",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Scanty fragmented acid-fast bacilli only.",
+          "bacterial_index": 1.4,
+          "morphological_index": 0.0,
+          "molecular_findings": [],
+          "susceptibility": [],
+          "interpretation": "Sustained fall in bacterial index with a persistently zero morphological index at 18 months. Consistent with successful treatment of a rifampicin-resistant relapse."
+        }
+      ],
+      "lab_panels": [
+        {
+          "panel_code": "BASELINE_SAFETY",
+          "panel_name": "Baseline safety bloods before second-line therapy",
+          "day_offset": 0,
+          "specimen": "whole blood / serum",
+          "comment": "Mandatory before a 24-month regimen containing clofazimine, ofloxacin and clarithromycin.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 118.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0, "flag": "L"},
+            {"analyte_code": "WBC", "analyte_name": "White cell count", "value_numeric": 7.8, "unit": "10^9/L", "ref_low": 4.0, "ref_high": 11.0},
+            {"analyte_code": "ANC", "analyte_name": "Absolute neutrophil count", "value_numeric": 4.6, "unit": "10^9/L", "ref_low": 1.8, "ref_high": 7.5},
+            {"analyte_code": "G6PD", "analyte_name": "G6PD activity", "value_numeric": 12.4, "unit": "U/g Hb", "ref_low": 6.4, "ref_high": 18.7, "flag": "N", "interference_note": "Checked BEFORE dapsone, which is the lesson of case HEM-003. Normal here, so dapsone can be retained safely."},
+            {"analyte_code": "ALT", "analyte_name": "Alanine aminotransferase", "value_numeric": 32.0, "unit": "U/L", "ref_low": 10.0, "ref_high": 45.0},
+            {"analyte_code": "CREAT", "analyte_name": "Creatinine", "value_numeric": 78.0, "unit": "µmol/L", "ref_low": 55.0, "ref_high": 105.0},
+            {"analyte_code": "HIV_SEROLOGY", "analyte_name": "HIV serology", "value_text": "Negative", "unit": null, "flag": "N"},
+            {"analyte_code": "GLUCOSE", "analyte_name": "Fasting glucose", "value_numeric": 5.2, "unit": "mmol/L", "ref_low": 3.9, "ref_high": 5.5}
+          ]
+        },
+        {
+          "panel_code": "ECG_QT",
+          "panel_name": "Cardiac conduction assessment",
+          "day_offset": 0,
+          "specimen": "n/a",
+          "comment": "Both clofazimine and the fluoroquinolone prolong the QT interval; combining them makes a baseline ECG non-optional.",
+          "results": [
+            {"analyte_code": "QTC", "analyte_name": "QTc interval (Fridericia)", "value_numeric": 412.0, "unit": "ms", "ref_low": 350.0, "ref_high": 450.0, "flag": "N"},
+            {"analyte_code": "K", "analyte_name": "Potassium", "value_numeric": 4.2, "unit": "mmol/L", "ref_low": 3.5, "ref_high": 5.1},
+            {"analyte_code": "MG", "analyte_name": "Magnesium", "value_numeric": 0.86, "unit": "mmol/L", "ref_low": 0.7, "ref_high": 1.0, "interference_note": "Electrolyte optimisation is part of QT risk management, not an afterthought."}
+          ]
+        },
+        {
+          "panel_code": "MONITORING",
+          "panel_name": "Six-month monitoring",
+          "day_offset": 180,
+          "specimen": "whole blood / serum",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 108.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0, "flag": "L", "interference_note": "Mild fall on dapsone: a degree of haemolysis occurs even with normal G6PD activity and is expected rather than alarming."},
+            {"analyte_code": "METHB", "analyte_name": "Methaemoglobin fraction", "value_numeric": 2.8, "unit": "%", "ref_low": 0.0, "ref_high": 1.5, "flag": "H", "interference_note": "Dose-dependent dapsone effect in a G6PD-normal patient. Tolerable at this level; would require action above about 15-20%."},
+            {"analyte_code": "QTC", "analyte_name": "QTc interval", "value_numeric": 438.0, "unit": "ms", "ref_low": 350.0, "ref_high": 450.0, "flag": "N", "interference_note": "Prolonged from baseline by the clofazimine-ofloxacin combination but still within limits. An increase of more than 60 ms from baseline, or an absolute value above 500 ms, would require the regimen to be changed."},
+            {"analyte_code": "ALT", "analyte_name": "Alanine aminotransferase", "value_numeric": 58.0, "unit": "U/L", "ref_low": 10.0, "ref_high": 45.0, "flag": "H"}
+          ]
+        }
+      ],
+      "smears": [],
+      "imaging": [
+        {
+          "modality": "High-resolution nerve ultrasound",
+          "region": "Bilateral ulnar and common peroneal nerves",
+          "day_offset": 3,
+          "findings": "Fusiform thickening of both ulnar nerves at the cubital tunnel, cross-sectional area 22 mm2 on the right and 19 mm2 on the left (reference under 10 mm2), with loss of the normal fascicular pattern and no increased intraneural vascularity on power Doppler.",
+          "impression": "Chronic nerve enlargement WITHOUT hypervascularity. Absence of intraneural Doppler signal argues against acute neuritis and therefore against a type 1 reaction, supporting bacillary relapse as the cause of the deficit."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "WHO second-line regimen for rifampicin-resistant leprosy",
+          "name_i18n": {
+            "en": "WHO second-line regimen for rifampicin-resistant leprosy",
+            "de": "WHO-Zweitlinienregime bei rifampicinresistenter Lepra",
+            "es": "Régimen de segunda línea de la OMS para lepra resistente a rifampicina",
+            "nl": "WHO tweedelijnsregime voor rifampicine-resistente lepra",
+            "ru": "Схема второго ряда ВОЗ при рифампицин-устойчивой лепре"
+          },
+          "guideline_source": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy (2018), second-line regimens for rifampicin resistance",
+          "indication": "Multibacillary relapse with molecularly confirmed rifampicin resistance and wild-type gyrA and folP1.",
+          "duration_months": 24,
+          "regimen": [
+            {"agent": "Clarithromycin", "dose": "500 mg", "route": "oral", "frequency": "once daily", "duration": "6 months (intensive phase)", "notes": "Macrolide with established anti-M. leprae activity. Gastrointestinal intolerance is the commonest reason for interruption."},
+            {"agent": "Minocycline", "dose": "100 mg", "route": "oral", "frequency": "once daily", "duration": "6 months (intensive phase)", "notes": "Tetracycline with good intracellular and nerve penetration. Causes reversible blue-grey pigmentation and vestibular upset; avoid in children under 12 because of dental staining."},
+            {"agent": "Ofloxacin", "dose": "400 mg", "route": "oral", "frequency": "once daily", "duration": "6 months intensive, then 18 months continuation", "notes": "Fluoroquinolone; the closest available substitute for the lost bactericidal activity of rifampicin. Only usable because gyrA is wild type."},
+            {"agent": "Clofazimine", "dose": "50 mg", "route": "oral", "frequency": "once daily", "duration": "24 months (both phases)", "notes": "Retained throughout. Also suppresses type 2 reactions, which is a useful secondary benefit in high-bacillary-load disease."},
+            {"agent": "Clarithromycin OR minocycline (continuation)", "dose": "500 mg or 100 mg respectively", "route": "oral", "frequency": "once daily", "duration": "months 7-24 (continuation phase)", "notes": "One of the two is continued alongside ofloxacin and clofazimine. Minocycline was selected here for better long-term gastrointestinal tolerance."},
+            {"agent": "Dapsone", "dose": "100 mg", "route": "oral", "frequency": "once daily", "duration": "24 months", "notes": "Retained because folP1 is wild type and G6PD activity is normal. Would be omitted entirely on either count."}
+          ],
+          "monitoring": [
+            "Slit-skin smears at 6, 12, 18 and 24 months for bacterial index and morphological index from the same five sites",
+            "The MORPHOLOGICAL index is the early efficacy readout and should reach zero within months; the BACTERIAL index falls slowly at roughly 1 log per year and its persistence is not failure",
+            "ECG at baseline, 1 month and 6 months: clofazimine and ofloxacin both prolong the QT interval",
+            "Full blood count and methaemoglobin at 1, 3 and 6 months while on dapsone",
+            "Liver function every 3 months",
+            "Monthly nerve function assessment with monofilament and voluntary muscle testing - new deficit is the strongest indication for corticosteroid",
+            "Household contact screening and single-dose rifampicin post-exposure prophylaxis, noting that its value is uncertain where the index strain is rifampicin-resistant"
+          ],
+          "contraindications": [
+            "Ofloxacin where gyrA is mutated (would leave a functionally monotherapy regimen)",
+            "Dapsone in G6PD deficiency",
+            "Minocycline in children under 12 and in pregnancy",
+            "Combining clofazimine and a fluoroquinolone in a patient with a baseline QTc above 500 ms without cardiology input"
+          ],
+          "adverse_effects": [
+            "Clofazimine: red-brown to blue-black skin discolouration (a major driver of non-adherence and stigma), ichthyosis, enteropathy, QT prolongation",
+            "Ofloxacin: tendinopathy and tendon rupture, QT prolongation, peripheral neuropathy - which is difficult to distinguish from leprosy neuropathy and must be documented at baseline",
+            "Clarithromycin: gastrointestinal upset, taste disturbance, QT prolongation, and many CYP3A4 interactions",
+            "Minocycline: vestibular symptoms, pigmentation, drug-induced lupus, benign intracranial hypertension",
+            "Dapsone: haemolysis, methaemoglobinaemia, agranulocytosis, dapsone hypersensitivity syndrome"
+          ],
+          "notes": "Three QT-prolonging drugs are used simultaneously. Electrolyte optimisation and serial ECG are mandatory, and this is the aspect of second-line leprosy therapy that is most often overlooked."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Multibacillary leprosy relapse with acquired rifampicin resistance (rpoB Ser456Leu)",
+          "label_i18n": {
+            "en": "Multibacillary leprosy relapse with acquired rifampicin resistance",
+            "de": "Rezidiv einer multibazillären Lepra mit erworbener Rifampicinresistenz",
+            "es": "Recaída de lepra multibacilar con resistencia adquirida a rifampicina",
+            "nl": "Recidief van multibacillaire lepra met verworven rifampicineresistentie",
+            "ru": "Рецидив мультибациллярной лепры с приобретённой устойчивостью к рифампицину"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.96,
+          "icd10": "A30.5",
+          "discriminator": "A rising bacterial index with a high morphological index after completed therapy, an rpoB mutation, and a VNTR profile identical to the original strain.",
+          "supporting_evidence": [
+            "Bacterial index risen from 3.2 at treatment completion to 4.6",
+            "Morphological index 18% - viable, solidly-staining bacilli are present",
+            "rpoB p.(Ser456Leu) mutation conferring high-level rifampicin resistance",
+            "VNTR profile identical to the original isolate, establishing relapse rather than reinfection",
+            "New and enlarging lesions with an insidious five-month course",
+            "No lesion or nerve tenderness, no systemic features, no nodules",
+            "No intraneural hypervascularity on ultrasound"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Type 1 (reversal) reaction",
+          "label_i18n": {
+            "en": "Type 1 (reversal) reaction",
+            "de": "Typ-1-Reaktion (Reversal-Reaktion)",
+            "es": "Reacción de tipo 1 (reversa)",
+            "nl": "Type 1 (reversal) reactie",
+            "ru": "Реакция 1-го типа (реверсивная)"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.06,
+          "discriminator": "The single most important alternative, because it is treated with corticosteroids rather than antibiotics and can occur years after cure. Excluded by the absence of lesion and nerve tenderness, the insidious rather than acute onset, the absence of intraneural hypervascularity, and above all by the rising bacterial and morphological indices.",
+          "supporting_evidence": ["Existing lesions have changed and there is new nerve deficit"],
+          "refuting_evidence": ["No tenderness of lesions or nerves", "Five-month insidious course rather than acute inflammation", "Bacterial index RISING - a reaction is immunological, not bacillary", "Morphological index 18% indicating viable organisms", "No intraneural Doppler signal"]
+        },
+        {
+          "label": "Reinfection with a new strain",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Excluded by VNTR typing, which shows the same strain. The distinction matters: reinfection implies ongoing transmission requiring a contact-tracing response, whereas relapse with acquired resistance implies a pharmacological failure requiring a regimen response.",
+          "supporting_evidence": ["Household contact with treated leprosy", "Crowded living conditions"],
+          "refuting_evidence": ["VNTR profile identical to the original isolate"]
+        },
+        {
+          "label": "Poor adherence to the original regimen",
+          "is_primary": false,
+          "certainty": "possible",
+          "likelihood": 0.2,
+          "discriminator": "The usual explanation for treatment failure, and it cannot be fully excluded despite documented supervised monthly doses - the daily self-administered components were unsupervised. Acquired resistance arises from effective monotherapy, which intermittent adherence produces.",
+          "supporting_evidence": ["Daily dapsone and clofazimine were self-administered and unverified"],
+          "refuting_evidence": ["12 of 12 supervised monthly rifampicin doses documented on the treatment card"]
+        }
+      ],
+      "teaching_points": [
+        "Relapse and reaction are the two things that happen after leprosy treatment, and they are treated in opposite ways: relapse needs antibiotics, reaction needs corticosteroids. Tenderness, acuity and the bacterial index are what separate them.",
+        "The morphological index is the early efficacy readout and should reach zero within months of effective therapy. The bacterial index falls only about 1 log per year because dead bacilli are cleared slowly - a persistently positive BI is not treatment failure.",
+        "A RISING bacterial index with a high morphological index means viable, multiplying organisms. That is relapse or resistance, never a reaction.",
+        "VNTR strain typing separates relapse from reinfection. The answer changes what you do: a pharmacological failure needs a new regimen, while ongoing transmission needs a contact-tracing and prophylaxis response.",
+        "Losing rifampicin removes the only bactericidal and sterilising drug in the standard regimen, which is why the replacement requires three or four drugs and 24 rather than 12 months.",
+        "Ofloxacin can only be used because gyrA is wild type. Adding a fluoroquinolone to a gyrA-mutant strain converts the regimen to functional monotherapy and generates further resistance.",
+        "Clofazimine, ofloxacin and clarithromycin all prolong the QT interval. Baseline and serial ECG with electrolyte optimisation are mandatory, and this is the most frequently neglected part of second-line therapy.",
+        "Check G6PD before dapsone. It is inexpensive, and the alternative is the presentation in case HEM-003.",
+        "Peripheral neuropathy is an adverse effect of fluoroquinolones and is very difficult to distinguish from progressive leprosy neuropathy. Document nerve function meticulously at baseline or the attribution becomes impossible later."
+      ],
+      "references": [
+        {"citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. Geneva: World Health Organization, 2018.", "type": "guideline"},
+        {"citation": "Cambau E et al. Antimicrobial resistance in leprosy: results of the WHO sentinel surveillance network. Clin Microbiol Infect 2018.", "type": "surveillance"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Rifampicin-resistant multibacillary leprosy relapse",
+        "accepted_diagnosis_terms": ["rifampicin-resistant leprosy", "rifampin resistant leprosy", "mdr leprosy", "multidrug-resistant leprosy", "leprosy relapse", "rpob mutation"],
+        "must_include_findings": [
+          {"label": "Rising bacterial index after completed therapy", "synonyms": ["bi 4.6", "rising bacterial index", "bi increased", "bacterial index rose"], "weight": 2.0},
+          {"label": "High morphological index indicating viable bacilli", "synonyms": ["morphological index 18", "mi high", "solidly staining bacilli", "viable organisms"], "weight": 2.0},
+          {"label": "rpoB mutation conferring rifampicin resistance", "synonyms": ["rpob", "ser456leu", "rifampicin resistance", "molecular resistance testing"], "weight": 2.5},
+          {"label": "VNTR typing shows relapse not reinfection", "synonyms": ["vntr", "strain typing", "same strain", "relapse not reinfection", "molecular typing"], "weight": 1.5},
+          {"label": "Absence of features of a type 1 reaction", "synonyms": ["no tenderness", "not a reaction", "no nerve tenderness", "insidious onset"], "weight": 1.75},
+          {"label": "gyrA wild type permitting fluoroquinolone use", "synonyms": ["gyra wild type", "ofloxacin susceptible", "quinolone susceptible"], "weight": 1.25}
+        ],
+        "expected_differential": ["type 1 reversal reaction", "type 2 reaction erythema nodosum leprosum", "reinfection", "non-adherence", "drug malabsorption"],
+        "expected_next_tests": ["slit-skin smear with bacterial and morphological index", "molecular resistance testing of rpob folp1 gyra", "vntr strain typing", "nerve ultrasound", "g6pd", "baseline ecg", "hiv test"],
+        "expected_management": ["who second-line regimen", "clarithromycin", "minocycline", "ofloxacin", "clofazimine", "24 months of treatment", "serial ecg for qt", "nerve function monitoring", "contact screening"],
+        "critical_values": [],
+        "safety_rules": [
+          {"id": "SR-LEP-MDR-NOMONO", "description": "Must not recommend adding a single drug to a failing regimen.", "forbidden_patterns": ["add ofloxacin alone", "single additional drug", "monotherapy", "just add one agent"]},
+          {"id": "SR-LEP-MDR-QT", "description": "Must address QT prolongation when combining clofazimine with a fluoroquinolone and a macrolide.", "required_terms": ["qt", "ecg", "qtc", "electrocardiogram"]},
+          {"id": "SR-LEP-MDR-G6PD", "description": "Should check G6PD before retaining or starting dapsone.", "required_terms": ["g6pd", "glucose-6-phosphate"]},
+          {"id": "SR-LEP-MDR-DST", "description": "Must recommend molecular drug susceptibility testing before rebuilding the regimen.", "required_terms": ["resistance testing", "molecular", "rpob", "susceptibility"]}
+        ],
+        "distractor_terms": ["tuberculosis", "cutaneous leishmaniasis", "sarcoidosis", "mycosis fungoides", "type 2 reaction"]
+      }
+    },
+    {
+      "case_code": "LEP-002",
+      "title": "Triple-resistant leprosy: dapsone, rifampicin and fluoroquinolone all lost",
+      "title_i18n": {
+        "en": "Triple-resistant leprosy: dapsone, rifampicin and fluoroquinolone all lost",
+        "de": "Dreifach resistente Lepra: Dapson, Rifampicin und Fluorchinolon ausgefallen",
+        "es": "Lepra con triple resistencia: dapsona, rifampicina y fluoroquinolona perdidas",
+        "nl": "Drievoudig resistente lepra: dapson, rifampicine en fluorochinolon alle verloren",
+        "ru": "Лепра с тройной устойчивостью: утрачены дапсон, рифампицин и фторхинолон"
+      },
+      "summary": "Sequential acquisition of folP1, rpoB and gyrA mutations across three treatment episodes, produced by successive functional monotherapy. Demonstrates how a regimen is rebuilt from macrolide, tetracycline and clofazimine when the three principal drug classes are unavailable.",
+      "summary_i18n": {
+        "en": "Sequential folP1, rpoB and gyrA resistance from successive functional monotherapy; rebuilding a regimen from macrolide, tetracycline and clofazimine.",
+        "de": "Sequenzielle folP1-, rpoB- und gyrA-Resistenz durch aufeinanderfolgende funktionelle Monotherapie; Neuaufbau des Regimes aus Makrolid, Tetrazyklin und Clofazimin.",
+        "es": "Resistencia secuencial folP1, rpoB y gyrA por monoterapia funcional sucesiva; reconstrucción del régimen con macrólido, tetraciclina y clofazimina.",
+        "nl": "Sequentiële folP1-, rpoB- en gyrA-resistentie door opeenvolgende functionele monotherapie; regime herbouwd met macrolide, tetracycline en clofazimine.",
+        "ru": "Последовательное появление мутаций folP1, rpoB и gyrA вследствие функциональной монотерапии; схема перестраивается на макролид, тетрациклин и клофазимин."
+      },
+      "discipline": "pharmacology",
+      "subspecialty": "antimicrobial_chemotherapy",
+      "difficulty": 5,
+      "tags": ["leprosy", "MDR", "XDR", "folP1", "rpoB", "gyrA", "monotherapy", "stewardship", "pharmacology"],
+      "icd10_codes": ["A30.5", "U84.7"],
+      "snomed_codes": ["81004002"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Antimicrobial Stewardship Review Panel",
+      "patient": {
+        "pseudonym": "Patient LEP-002",
+        "age_years": 51,
+        "sex": "female",
+        "weight_kg": 47.0,
+        "height_cm": 154.0,
+        "ancestry": "South-East Asian",
+        "occupation": "Market trader",
+        "region": "Endemic region with intermittent drug supply"
+      },
+      "presentation": {
+        "chief_complaint": "Third relapse of multibacillary leprosy, this time after 14 months of an ofloxacin-containing second-line regimen.",
+        "chief_complaint_i18n": {
+          "en": "Third relapse of multibacillary leprosy, after 14 months of an ofloxacin-containing regimen.",
+          "de": "Dritter Rückfall einer multibazillären Lepra nach 14 Monaten eines ofloxacinhaltigen Regimes.",
+          "es": "Tercera recaída de lepra multibacilar tras 14 meses de un régimen con ofloxacino.",
+          "nl": "Derde recidief van multibacillaire lepra na 14 maanden van een ofloxacine-bevattend regime.",
+          "ru": "Третий рецидив мультибациллярной лепры после 14 месяцев схемы с офлоксацином."
+        },
+        "history_of_present_illness": "Her treatment history is the diagnosis. She was first treated 19 years ago with dapsone monotherapy, which was standard practice at that time and locally continued after multidrug therapy was introduced. She relapsed 11 years ago and received a full course of MB-MDT, during which drug supply was interrupted twice for periods of three and five months - so rifampicin and clofazimine were unavailable while dapsone continued, producing effective monotherapy for a second time. She relapsed again four years ago and was treated with ofloxacin added to the existing failing regimen rather than as part of a rebuilt one, which was a third episode of functional monotherapy. She now presents with widespread new nodular lesions and a bacterial index higher than at any previous point.",
+        "past_medical_history": [
+          "Lepromatous leprosy first diagnosed 19 years ago, treated with dapsone monotherapy",
+          "First relapse 11 years ago, MB-MDT with two supply interruptions",
+          "Second relapse 4 years ago, ofloxacin added to a failing regimen",
+          "Bilateral lagophthalmos and claw hands from established nerve damage"
+        ],
+        "medications": [
+          {"name": "Ofloxacin", "dose": "400 mg", "route": "oral", "frequency": "once daily", "indication": "leprosy", "notes": "To be stopped: gyrA is now mutated and continuing it maintains selective pressure with no benefit."},
+          {"name": "Clofazimine", "dose": "50 mg", "route": "oral", "frequency": "once daily", "indication": "leprosy"}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["No known leprosy in the household"],
+        "social_history": "Widowed, lives alone. Trades in an open market. Significant social stigma related to visible clofazimine pigmentation and deformity.",
+        "review_of_systems": {
+          "dermatological": "Widespread nodules and diffuse infiltration; marked clofazimine pigmentation",
+          "neurological": "Established bilateral claw hands, bilateral lagophthalmos, plantar anaesthesia with a chronic ulcer",
+          "ophthalmic": "Lagophthalmos with exposure keratopathy",
+          "general": "Weight loss of 5 kg over a year"
+        },
+        "vitals": {
+          "heart_rate_bpm": 84,
+          "blood_pressure_mmhg": "108/66",
+          "respiratory_rate": 16,
+          "temperature_c": 37.0,
+          "weight_kg": 47.0
+        },
+        "examination_findings": [
+          "Diffuse infiltration of the face with leonine facies, complete madarosis, nasal collapse",
+          "Innumerable non-tender nodules over the trunk and limbs",
+          "Deep blue-black clofazimine pigmentation over all lesional skin",
+          "Bilateral claw hands with fixed contractures; bilateral lagophthalmos of 4 mm",
+          "Grade 2 plantar ulcer on the left forefoot",
+          "Body mass index 19.8 kg/m2"
+        ]
+      },
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear and skin biopsy",
+          "site": "Six sites plus a punch biopsy of a nodule",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Innumerable acid-fast bacilli in dense globi throughout the dermis on Fite staining; foamy (Virchow) macrophages laden with bacilli. No granuloma formation.",
+          "bacterial_index": 5.8,
+          "morphological_index": 26.0,
+          "molecular_findings": [
+            {"target": "folP1", "method": "Sanger sequencing", "result": "Missense mutation p.(Pro55Leu)", "interpretation": "Dapsone resistance, acquired during the historical dapsone monotherapy era."},
+            {"target": "rpoB", "method": "Sanger sequencing", "result": "Missense mutation p.(His451Asp)", "interpretation": "Rifampicin resistance, acquired during the supply-interrupted MDT course."},
+            {"target": "gyrA", "method": "Sanger sequencing", "result": "Missense mutation p.(Ala91Val)", "interpretation": "Fluoroquinolone resistance, acquired when ofloxacin was added to an already failing regimen. This is the classic sequence: each addition of a single drug to a failing regimen buys a temporary response and a permanent loss."},
+            {"target": "23S rRNA (2058/2059 region)", "method": "Sanger sequencing", "result": "Wild type", "interpretation": "Macrolide-susceptible. This is the finding on which the entire new regimen depends."},
+            {"target": "VNTR strain typing", "method": "Multi-locus VNTR", "result": "Same strain lineage throughout all three episodes", "interpretation": "A single strain acquiring resistance stepwise over 19 years - a within-host evolutionary record."}
+          ],
+          "susceptibility": [
+            {"agent": "Dapsone", "method": "Molecular (folP1)", "result": "Resistant", "mic": null},
+            {"agent": "Rifampicin", "method": "Molecular (rpoB)", "result": "Resistant", "mic": null},
+            {"agent": "Ofloxacin", "method": "Molecular (gyrA)", "result": "Resistant", "mic": null},
+            {"agent": "Moxifloxacin", "method": "Molecular (gyrA)", "result": "Resistant (class effect)", "mic": null, "note": "gyrA Ala91Val confers cross-resistance across the fluoroquinolone class. Substituting moxifloxacin for ofloxacin is a common and futile error."},
+            {"agent": "Clarithromycin", "method": "Molecular (23S rRNA)", "result": "Susceptible", "mic": null},
+            {"agent": "Minocycline", "method": "No validated marker", "result": "Presumed susceptible", "mic": null, "note": "No prior exposure, so susceptibility is a reasonable assumption - but it is an assumption."},
+            {"agent": "Clofazimine", "method": "No validated marker", "result": "Presumed susceptible", "mic": null, "note": "Despite long exposure. Clofazimine resistance is rarely reported, but this patient's history makes reduced susceptibility a genuine concern that cannot currently be tested for."}
+          ],
+          "interpretation": "Extensively drug-resistant M. leprae carrying simultaneous folP1, rpoB and gyrA mutations acquired stepwise across three treatment episodes, each involving functional monotherapy. Macrolide target remains wild type. The remaining regimen options are narrow and there is no margin for a further acquisition event."
+        },
+        {
+          "day_offset": 365,
+          "specimen_type": "Slit-skin smear",
+          "site": "Six sites",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Numerous acid-fast bacilli, almost all fragmented or granular.",
+          "bacterial_index": 4.9,
+          "morphological_index": 0.0,
+          "molecular_findings": [],
+          "susceptibility": [],
+          "interpretation": "Morphological index zero at twelve months on the clarithromycin-minocycline-clofazimine regimen. Bacterial index falling slowly from a very high starting point, as expected. Treatment is working."
+        }
+      ],
+      "lab_panels": [
+        {
+          "panel_code": "BASELINE_SAFETY",
+          "panel_name": "Baseline safety bloods",
+          "day_offset": 0,
+          "specimen": "whole blood / serum",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 96.0, "unit": "g/L", "ref_low": 120.0, "ref_high": 155.0, "flag": "L", "interference_note": "Anaemia of chronic infection compounded by years of dapsone exposure and undernutrition."},
+            {"analyte_code": "ALB", "analyte_name": "Albumin", "value_numeric": 28.0, "unit": "g/L", "ref_low": 35.0, "ref_high": 50.0, "flag": "L"},
+            {"analyte_code": "CRP", "analyte_name": "C-reactive protein", "value_numeric": 48.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 5.0, "flag": "H"},
+            {"analyte_code": "ALT", "analyte_name": "Alanine aminotransferase", "value_numeric": 41.0, "unit": "U/L", "ref_low": 10.0, "ref_high": 45.0},
+            {"analyte_code": "CREAT", "analyte_name": "Creatinine", "value_numeric": 62.0, "unit": "µmol/L", "ref_low": 55.0, "ref_high": 105.0},
+            {"analyte_code": "QTC", "analyte_name": "QTc interval", "value_numeric": 448.0, "unit": "ms", "ref_low": 350.0, "ref_high": 450.0, "flag": "N", "interference_note": "Already at the upper limit after years of clofazimine. Adding clarithromycin requires close ECG surveillance and correction of the low potassium first."},
+            {"analyte_code": "K", "analyte_name": "Potassium", "value_numeric": 3.3, "unit": "mmol/L", "ref_low": 3.5, "ref_high": 5.1, "flag": "L", "interference_note": "Must be corrected before adding a second QT-prolonging agent."}
+          ]
+        },
+        {
+          "panel_code": "MONITORING",
+          "panel_name": "Twelve-month monitoring",
+          "day_offset": 365,
+          "specimen": "whole blood / serum",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 116.0, "unit": "g/L", "ref_low": 120.0, "ref_high": 155.0, "flag": "L", "interference_note": "Improved after dapsone was withdrawn (it was useless against a folP1-mutant strain and was contributing to the anaemia)."},
+            {"analyte_code": "CRP", "analyte_name": "C-reactive protein", "value_numeric": 8.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 5.0, "flag": "H"},
+            {"analyte_code": "QTC", "analyte_name": "QTc interval", "value_numeric": 462.0, "unit": "ms", "ref_low": 350.0, "ref_high": 450.0, "flag": "H", "interference_note": "Prolonged. Under 500 ms and under a 60 ms increase from baseline, so treatment continues with monthly ECG and strict avoidance of other QT-prolonging drugs."},
+            {"analyte_code": "ALB", "analyte_name": "Albumin", "value_numeric": 34.0, "unit": "g/L", "ref_low": 35.0, "ref_high": 50.0, "flag": "L"}
+          ]
+        }
+      ],
+      "smears": [],
+      "imaging": [],
+      "protocols": [
+        {
+          "name": "Salvage regimen for leprosy resistant to dapsone, rifampicin and fluoroquinolones",
+          "guideline_source": "WHO 2018 leprosy guidelines, second-line options, with expert-committee individualisation",
+          "indication": "Triple-resistant multibacillary leprosy (folP1, rpoB and gyrA mutations) with a wild-type macrolide target.",
+          "duration_months": 24,
+          "regimen": [
+            {"agent": "Clarithromycin", "dose": "500 mg", "route": "oral", "frequency": "twice daily", "duration": "24 months", "notes": "Now a backbone agent rather than an adjunct. Twice-daily dosing is used because it is doing work that rifampicin would otherwise do. QT prolongation and CYP3A4 interactions require attention."},
+            {"agent": "Minocycline", "dose": "100 mg", "route": "oral", "frequency": "once daily", "duration": "24 months", "notes": "Second backbone agent. Good tissue and nerve penetration."},
+            {"agent": "Clofazimine", "dose": "100 mg", "route": "oral", "frequency": "once daily", "duration": "24 months", "notes": "Dose increased from 50 mg. Retained despite long prior exposure because there is no alternative and no test for resistance - a decision made explicitly under uncertainty."},
+            {"agent": "STOP ofloxacin", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "Continuing a drug against a gyrA-mutant strain provides no benefit, maintains selective pressure and adds QT and tendon toxicity."},
+            {"agent": "STOP dapsone", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "Useless against a folP1-mutant strain and contributing to her anaemia."},
+            {"agent": "Nutritional support", "dose": "high-protein supplementation", "route": "oral", "frequency": "daily", "duration": "ongoing", "notes": "Albumin 28 g/L. Undernutrition affects drug distribution and wound healing, and is a legitimate part of an antimicrobial plan."},
+            {"agent": "Lagophthalmos and ulcer care", "dose": "lubricants, taping, protective footwear, ulcer offloading", "route": "topical/physical", "frequency": "daily", "duration": "lifelong", "notes": "Established nerve damage will not reverse with any antimicrobial. Disability prevention is a separate and equally important treatment stream."}
+          ],
+          "monitoring": [
+            "Slit-skin smears every 6 months; the morphological index is the efficacy readout",
+            "MONTHLY ECG - she started with a QTc of 448 ms and is on two QT-prolonging drugs",
+            "Correct and maintain potassium and magnesium; avoid all other QT-prolonging drugs including ondansetron, macrolide substitutes and many antifungals",
+            "Full blood count and liver function every 3 months",
+            "Monthly nerve function and ulcer assessment",
+            "Directly observed therapy for the entire 24 months - the whole history of this case is a history of unsupervised functional monotherapy"
+          ],
+          "contraindications": [
+            "Any fluoroquinolone (gyrA mutation confers class cross-resistance)",
+            "Dapsone (folP1 mutation)",
+            "Rifampicin, rifapentine and rifabutin (rpoB mutation confers class cross-resistance)",
+            "Concomitant QT-prolonging drugs without specialist review"
+          ],
+          "adverse_effects": [
+            "Clarithromycin: QT prolongation, gastrointestinal upset, hepatotoxicity, extensive CYP3A4 interactions",
+            "Minocycline: vestibular disturbance, pigmentation, drug-induced lupus",
+            "Clofazimine at 100 mg: more severe pigmentation, ichthyosis, and dose-dependent crystal enteropathy which can cause severe abdominal pain and requires dose reduction"
+          ],
+          "notes": "There is no margin left. A fourth acquisition event would leave no reliable regimen, which makes directly observed therapy and uninterrupted drug supply the two highest-priority interventions - higher than any individual drug choice."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Extensively drug-resistant multibacillary leprosy (folP1, rpoB and gyrA mutations)",
+          "label_i18n": {
+            "en": "Extensively drug-resistant multibacillary leprosy",
+            "de": "Extensiv arzneimittelresistente multibazilläre Lepra",
+            "es": "Lepra multibacilar extensamente resistente a fármacos",
+            "nl": "Extensief resistente multibacillaire lepra",
+            "ru": "Мультибациллярная лепра с широкой лекарственной устойчивостью"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.98,
+          "icd10": "A30.5",
+          "discriminator": "Three simultaneous resistance mutations in a single VNTR-identical strain lineage, each traceable to a documented episode of functional monotherapy.",
+          "supporting_evidence": [
+            "folP1 p.(Pro55Leu), rpoB p.(His451Asp) and gyrA p.(Ala91Val) all detected",
+            "Bacterial index 5.8 with morphological index 26% - the highest of her illness",
+            "VNTR shows a single strain lineage across 19 years",
+            "Treatment history documents three sequential episodes of effective monotherapy",
+            "23S rRNA wild type, permitting a macrolide-based salvage regimen",
+            "Morphological index fell to zero at 12 months on the new regimen"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Type 2 reaction (erythema nodosum leprosum)",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.05,
+          "discriminator": "High bacillary load makes ENL likely at some point, and the nodules superficially resemble it. Excluded here because the nodules are non-tender, there is no fever, CRP is only modestly raised, and the morphological index is high - ENL is immunological and does not raise the proportion of viable bacilli.",
+          "supporting_evidence": ["Nodular lesions in high-bacillary-load disease"],
+          "refuting_evidence": ["Nodules non-tender", "No fever", "Morphological index 26%", "Bacterial index at its highest ever"]
+        },
+        {
+          "label": "Clofazimine resistance",
+          "is_primary": false,
+          "certainty": "possible",
+          "likelihood": 0.2,
+          "discriminator": "Genuinely uncertain and currently untestable: there is no validated molecular marker. Given years of exposure, reduced susceptibility is plausible, and the response to the new regimen will be the only available evidence.",
+          "supporting_evidence": ["Prolonged continuous clofazimine exposure through multiple failing regimens"],
+          "refuting_evidence": ["Documented clofazimine resistance is rare", "Morphological index fell to zero on the new regimen"]
+        }
+      ],
+      "teaching_points": [
+        "Every resistance mutation in this case was manufactured by treatment. Dapsone monotherapy, then MDT with supply interruptions, then adding a single drug to a failing regimen - three episodes of functional monotherapy, three mutations.",
+        "Never add a single drug to a failing regimen. It is the fastest way to lose that drug, and this case is a nineteen-year demonstration of the principle.",
+        "gyrA mutations confer cross-resistance across the whole fluoroquinolone class. Switching ofloxacin to moxifloxacin is a common and futile response.",
+        "rpoB mutations confer cross-resistance to all rifamycins, so rifabutin and rifapentine are equally unusable.",
+        "Stop drugs that cannot work. Continuing ofloxacin and dapsone against mutant targets provides no benefit while adding toxicity and selective pressure - and withdrawing dapsone here improved her anaemia.",
+        "There is no validated test for clofazimine resistance. Continuing it is a decision made under acknowledged uncertainty, which should be documented rather than glossed over.",
+        "Drug supply continuity is an antimicrobial resistance intervention. Two supply interruptions in this patient's second course directly produced her rifampicin resistance.",
+        "Established nerve damage does not reverse with antimicrobials. Disability prevention - eye care, protective footwear, ulcer offloading - runs in parallel and matters as much to the patient as the regimen.",
+        "Baseline QT was already 448 ms after years of clofazimine. Correct the potassium before adding clarithromycin, not after."
+      ],
+      "references": [
+        {"citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. 2018.", "type": "guideline"},
+        {"citation": "Cambau E et al. Antimicrobial resistance in leprosy: WHO sentinel surveillance 2009-2015. Clin Microbiol Infect 2018.", "type": "surveillance"},
+        {"citation": "Matsuoka M. Drug resistance in leprosy. Jpn J Infect Dis.", "type": "review"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Extensively drug-resistant leprosy with folP1, rpoB and gyrA mutations",
+        "accepted_diagnosis_terms": ["extensively drug-resistant leprosy", "xdr leprosy", "multidrug-resistant leprosy", "triple resistant leprosy", "mdr leprosy"],
+        "must_include_findings": [
+          {"label": "Simultaneous folP1, rpoB and gyrA mutations", "synonyms": ["folp1", "rpob", "gyra", "three mutations", "triple resistance"], "weight": 2.5},
+          {"label": "Sequential functional monotherapy in the treatment history", "synonyms": ["monotherapy", "added a single drug", "supply interruption", "dapsone monotherapy", "functional monotherapy"], "weight": 2.0},
+          {"label": "Fluoroquinolone class cross-resistance", "synonyms": ["moxifloxacin also resistant", "class cross-resistance", "all fluoroquinolones", "gyra class effect"], "weight": 1.75},
+          {"label": "Macrolide target wild type", "synonyms": ["23s rrna wild type", "clarithromycin susceptible", "macrolide susceptible"], "weight": 1.75},
+          {"label": "Very high bacterial and morphological index", "synonyms": ["bi 5.8", "mi 26", "high bacillary load"], "weight": 1.25}
+        ],
+        "expected_differential": ["type 2 reaction", "clofazimine resistance", "non-adherence", "malabsorption", "reinfection"],
+        "expected_next_tests": ["molecular resistance testing", "23s rrna sequencing", "vntr typing", "baseline ecg", "electrolytes", "full blood count", "albumin"],
+        "expected_management": ["stop ofloxacin", "stop dapsone", "clarithromycin", "minocycline", "increased clofazimine", "24 months", "directly observed therapy", "monthly ecg", "correct potassium", "disability prevention"],
+        "critical_values": [],
+        "safety_rules": [
+          {"id": "SR-LEP-XDR-NOFQ", "description": "Must not substitute another fluoroquinolone for ofloxacin.", "forbidden_patterns": ["switch to moxifloxacin", "use levofloxacin instead", "try a different quinolone", "moxifloxacin should replace"]},
+          {"id": "SR-LEP-XDR-NORIF", "description": "Must not substitute another rifamycin.", "forbidden_patterns": ["rifabutin", "rifapentine", "higher dose rifampicin"]},
+          {"id": "SR-LEP-XDR-DOT", "description": "Should recommend directly observed therapy and continuous drug supply.", "required_terms": ["directly observed", "dot", "supervised", "supply", "adherence"]},
+          {"id": "SR-LEP-XDR-QT", "description": "Must address QT risk given a baseline QTc of 448 ms and hypokalaemia.", "required_terms": ["qt", "potassium", "ecg", "electrolyte"]}
+        ],
+        "distractor_terms": ["tuberculosis", "add rifampicin at higher dose", "bedaquiline", "type 1 reaction", "sarcoidosis"]
+      }
+    }
+  ]
+}

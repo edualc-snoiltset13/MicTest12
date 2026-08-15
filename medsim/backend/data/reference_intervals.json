@@ -1,0 +1,829 @@
+{
+  "schema_version": "1.0",
+  "source": "Composite adult intervals typical of a European tertiary laboratory (Roche Cobas e801 / Sysmex XN-9000). Synthetic corpus only - not for clinical use.",
+  "intervals": [
+    {
+      "analyte_code": "TSH",
+      "analyte_name": "Thyroid-stimulating hormone",
+      "analyte_name_i18n": {
+        "en": "Thyroid-stimulating hormone",
+        "de": "Thyreoidea-stimulierendes Hormon",
+        "es": "Hormona estimulante del tiroides",
+        "nl": "Thyreoïdstimulerend hormoon",
+        "ru": "Тиреотропный гормон"
+      },
+      "loinc_code": "3016-3",
+      "unit": "mIU/L",
+      "si_unit": "mIU/L",
+      "si_conversion_factor": 1.0,
+      "population": "adult",
+      "ref_low": 0.4,
+      "ref_high": 4.0,
+      "critical_low": 0.01,
+      "critical_high": 100.0,
+      "decimals": 2,
+      "category": "thyroid",
+      "notes": "Log-linear inverse relationship with FT4. Third-generation assay, functional sensitivity 0.01 mIU/L. Trimester-specific intervals apply in pregnancy."
+    },
+    {
+      "analyte_code": "TSH",
+      "analyte_name": "Thyroid-stimulating hormone (1st trimester)",
+      "analyte_name_i18n": {
+        "en": "TSH (1st trimester)",
+        "de": "TSH (1. Trimenon)",
+        "es": "TSH (1.er trimestre)",
+        "nl": "TSH (1e trimester)",
+        "ru": "ТТГ (1-й триместр)"
+      },
+      "loinc_code": "3016-3",
+      "unit": "mIU/L",
+      "si_unit": "mIU/L",
+      "si_conversion_factor": 1.0,
+      "population": "pregnancy_t1",
+      "ref_low": 0.1,
+      "ref_high": 2.5,
+      "critical_low": 0.01,
+      "critical_high": 20.0,
+      "decimals": 2,
+      "category": "thyroid",
+      "notes": "hCG cross-stimulates the TSH receptor; the lower limit falls in the first trimester and a suppressed TSH at 9-12 weeks is often physiological."
+    },
+    {
+      "analyte_code": "FT4",
+      "analyte_name": "Free thyroxine",
+      "analyte_name_i18n": {
+        "en": "Free thyroxine",
+        "de": "Freies Thyroxin",
+        "es": "Tiroxina libre",
+        "nl": "Vrij thyroxine",
+        "ru": "Свободный тироксин"
+      },
+      "loinc_code": "3024-7",
+      "unit": "pmol/L",
+      "si_unit": "pmol/L",
+      "si_conversion_factor": 1.0,
+      "population": "adult",
+      "ref_low": 12.0,
+      "ref_high": 22.0,
+      "critical_low": 3.0,
+      "critical_high": 60.0,
+      "decimals": 1,
+      "category": "thyroid",
+      "notes": "Analogue immunoassay. Falsely low in severe hypoalbuminaemia and with heparin; falsely high with familial dysalbuminaemic hyperthyroxinaemia."
+    },
+    {
+      "analyte_code": "FT3",
+      "analyte_name": "Free triiodothyronine",
+      "analyte_name_i18n": {
+        "en": "Free triiodothyronine",
+        "de": "Freies Triiodthyronin",
+        "es": "Triyodotironina libre",
+        "nl": "Vrij trijoodthyronine",
+        "ru": "Свободный трийодтиронин"
+      },
+      "loinc_code": "3051-0",
+      "unit": "pmol/L",
+      "si_unit": "pmol/L",
+      "si_conversion_factor": 1.0,
+      "population": "adult",
+      "ref_low": 3.1,
+      "ref_high": 6.8,
+      "critical_low": 1.0,
+      "critical_high": 30.0,
+      "decimals": 1,
+      "category": "thyroid",
+      "notes": "First analyte to fall in non-thyroidal illness. Elevated in isolation in T3-toxicosis."
+    },
+    {
+      "analyte_code": "TT4",
+      "analyte_name": "Total thyroxine",
+      "analyte_name_i18n": {
+        "en": "Total thyroxine",
+        "de": "Gesamt-Thyroxin",
+        "es": "Tiroxina total",
+        "nl": "Totaal thyroxine",
+        "ru": "Общий тироксин"
+      },
+      "loinc_code": "3026-2",
+      "unit": "nmol/L",
+      "si_unit": "nmol/L",
+      "si_conversion_factor": 12.87,
+      "population": "adult",
+      "ref_low": 66.0,
+      "ref_high": 181.0,
+      "critical_low": 20.0,
+      "critical_high": 350.0,
+      "decimals": 0,
+      "category": "thyroid",
+      "notes": "Binding-protein dependent. Rises with oestrogen (pregnancy, HRT) and falls in nephrotic syndrome without any change in thyroid status."
+    },
+    {
+      "analyte_code": "TT3",
+      "analyte_name": "Total triiodothyronine",
+      "analyte_name_i18n": {
+        "en": "Total triiodothyronine",
+        "de": "Gesamt-Triiodthyronin",
+        "es": "Triyodotironina total",
+        "nl": "Totaal trijoodthyronine",
+        "ru": "Общий трийодтиронин"
+      },
+      "loinc_code": "3053-6",
+      "unit": "nmol/L",
+      "si_unit": "nmol/L",
+      "si_conversion_factor": 1.536,
+      "population": "adult",
+      "ref_low": 1.3,
+      "ref_high": 3.1,
+      "critical_low": 0.4,
+      "critical_high": 8.0,
+      "decimals": 2,
+      "category": "thyroid"
+    },
+    {
+      "analyte_code": "RT3",
+      "analyte_name": "Reverse triiodothyronine",
+      "analyte_name_i18n": {
+        "en": "Reverse T3",
+        "de": "Reverses T3",
+        "es": "T3 reversa",
+        "nl": "Reverse T3",
+        "ru": "Реверсивный Т3"
+      },
+      "unit": "nmol/L",
+      "si_unit": "nmol/L",
+      "si_conversion_factor": 1.0,
+      "population": "adult",
+      "ref_low": 0.14,
+      "ref_high": 0.54,
+      "decimals": 2,
+      "category": "thyroid",
+      "notes": "Raised in non-thyroidal illness syndrome as type 3 deiodinase activity increases; the single most useful discriminator from central hypothyroidism."
+    },
+    {
+      "analyte_code": "TPOAB",
+      "analyte_name": "Thyroid peroxidase antibody",
+      "analyte_name_i18n": {
+        "en": "Thyroid peroxidase antibody",
+        "de": "Thyreoperoxidase-Antikörper",
+        "es": "Anticuerpos antiperoxidasa tiroidea",
+        "nl": "Thyreoperoxidase-antistoffen",
+        "ru": "Антитела к тиреопероксидазе"
+      },
+      "loinc_code": "8098-6",
+      "unit": "IU/mL",
+      "population": "adult",
+      "ref_low": null,
+      "ref_high": 34.0,
+      "decimals": 0,
+      "category": "thyroid",
+      "notes": "Present in ~95% of Hashimoto thyroiditis and ~75% of Graves disease; titre does not track disease activity."
+    },
+    {
+      "analyte_code": "TGAB",
+      "analyte_name": "Thyroglobulin antibody",
+      "analyte_name_i18n": {
+        "en": "Thyroglobulin antibody",
+        "de": "Thyreoglobulin-Antikörper",
+        "es": "Anticuerpos antitiroglobulina",
+        "nl": "Thyreoglobuline-antistoffen",
+        "ru": "Антитела к тиреоглобулину"
+      },
+      "loinc_code": "8097-8",
+      "unit": "IU/mL",
+      "ref_high": 115.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "thyroid",
+      "notes": "Chief importance is as an interference marker: a positive TgAb invalidates thyroglobulin measurement in thyroid cancer follow-up."
+    },
+    {
+      "analyte_code": "TRAB",
+      "analyte_name": "TSH receptor antibody",
+      "analyte_name_i18n": {
+        "en": "TSH receptor antibody",
+        "de": "TSH-Rezeptor-Antikörper",
+        "es": "Anticuerpos anti-receptor de TSH",
+        "nl": "TSH-receptor-antistoffen",
+        "ru": "Антитела к рецептору ТТГ"
+      },
+      "loinc_code": "31980-4",
+      "unit": "IU/L",
+      "ref_high": 1.75,
+      "population": "adult",
+      "decimals": 2,
+      "category": "thyroid",
+      "notes": "Third-generation bridge assay. Distinguishes Graves disease from destructive thyroiditis; >5 IU/L in late pregnancy predicts neonatal thyrotoxicosis."
+    },
+    {
+      "analyte_code": "TG",
+      "analyte_name": "Thyroglobulin",
+      "analyte_name_i18n": {
+        "en": "Thyroglobulin",
+        "de": "Thyreoglobulin",
+        "es": "Tiroglobulina",
+        "nl": "Thyreoglobuline",
+        "ru": "Тиреоглобулин"
+      },
+      "unit": "µg/L",
+      "ref_low": 3.5,
+      "ref_high": 77.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "thyroid",
+      "notes": "Suppressed in thyrotoxicosis factitia, raised in destructive thyroiditis - the discriminator between exogenous and endogenous hormone excess."
+    },
+    {
+      "analyte_code": "HB",
+      "analyte_name": "Haemoglobin",
+      "analyte_name_i18n": {
+        "en": "Haemoglobin",
+        "de": "Hämoglobin",
+        "es": "Hemoglobina",
+        "nl": "Hemoglobine",
+        "ru": "Гемоглобин"
+      },
+      "loinc_code": "718-7",
+      "unit": "g/L",
+      "population": "adult_female",
+      "ref_low": 120.0,
+      "ref_high": 155.0,
+      "critical_low": 70.0,
+      "critical_high": 200.0,
+      "decimals": 0,
+      "category": "haematology"
+    },
+    {
+      "analyte_code": "HB",
+      "analyte_name": "Haemoglobin",
+      "analyte_name_i18n": {
+        "en": "Haemoglobin",
+        "de": "Hämoglobin",
+        "es": "Hemoglobina",
+        "nl": "Hemoglobine",
+        "ru": "Гемоглобин"
+      },
+      "loinc_code": "718-7",
+      "unit": "g/L",
+      "population": "adult_male",
+      "ref_low": 135.0,
+      "ref_high": 175.0,
+      "critical_low": 70.0,
+      "critical_high": 200.0,
+      "decimals": 0,
+      "category": "haematology"
+    },
+    {
+      "analyte_code": "HB",
+      "analyte_name": "Haemoglobin",
+      "analyte_name_i18n": {
+        "en": "Haemoglobin",
+        "de": "Hämoglobin",
+        "es": "Hemoglobina",
+        "nl": "Hemoglobine",
+        "ru": "Гемоглобин"
+      },
+      "loinc_code": "718-7",
+      "unit": "g/L",
+      "population": "adult",
+      "ref_low": 120.0,
+      "ref_high": 175.0,
+      "critical_low": 70.0,
+      "critical_high": 200.0,
+      "decimals": 0,
+      "category": "haematology",
+      "notes": "Sex-specific intervals apply; the pooled interval is used only where sex is unspecified."
+    },
+    {
+      "analyte_code": "MCV",
+      "analyte_name": "Mean cell volume",
+      "analyte_name_i18n": {
+        "en": "Mean cell volume",
+        "de": "Mittleres Erythrozytenvolumen",
+        "es": "Volumen corpuscular medio",
+        "nl": "Gemiddeld erytrocytenvolume",
+        "ru": "Средний объём эритроцита"
+      },
+      "loinc_code": "787-2",
+      "unit": "fL",
+      "ref_low": 80.0,
+      "ref_high": 100.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "haematology",
+      "notes": "Spuriously raised by cold agglutinins (red cell doublets counted as one cell) - recheck at 37 °C."
+    },
+    {
+      "analyte_code": "MCHC",
+      "analyte_name": "Mean cell haemoglobin concentration",
+      "analyte_name_i18n": {
+        "en": "Mean cell haemoglobin concentration",
+        "de": "Mittlere korpuskuläre Hämoglobinkonzentration",
+        "es": "Concentración de hemoglobina corpuscular media",
+        "nl": "Gemiddelde celhemoglobineconcentratie",
+        "ru": "Средняя концентрация гемоглобина в эритроците"
+      },
+      "loinc_code": "786-4",
+      "unit": "g/L",
+      "ref_low": 320.0,
+      "ref_high": 360.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "haematology",
+      "notes": "MCHC >360 g/L has a short differential: hereditary spherocytosis, cold agglutinins, lipaemia, and severe burns."
+    },
+    {
+      "analyte_code": "RDW",
+      "analyte_name": "Red cell distribution width",
+      "analyte_name_i18n": {
+        "en": "Red cell distribution width",
+        "de": "Erythrozytenverteilungsbreite",
+        "es": "Amplitud de distribución eritrocitaria",
+        "nl": "Rodecelverdelingsbreedte",
+        "ru": "Ширина распределения эритроцитов"
+      },
+      "unit": "%",
+      "ref_low": 11.5,
+      "ref_high": 14.5,
+      "population": "adult",
+      "decimals": 1,
+      "category": "haematology"
+    },
+    {
+      "analyte_code": "RETIC_PCT",
+      "analyte_name": "Reticulocyte percentage",
+      "analyte_name_i18n": {
+        "en": "Reticulocytes",
+        "de": "Retikulozyten",
+        "es": "Reticulocitos",
+        "nl": "Reticulocyten",
+        "ru": "Ретикулоциты"
+      },
+      "unit": "%",
+      "ref_low": 0.5,
+      "ref_high": 2.5,
+      "population": "adult",
+      "decimals": 1,
+      "category": "haematology"
+    },
+    {
+      "analyte_code": "RETIC_ABS",
+      "analyte_name": "Absolute reticulocyte count",
+      "analyte_name_i18n": {
+        "en": "Absolute reticulocyte count",
+        "de": "Absolute Retikulozytenzahl",
+        "es": "Recuento absoluto de reticulocitos",
+        "nl": "Absoluut reticulocytenaantal",
+        "ru": "Абсолютное число ретикулоцитов"
+      },
+      "unit": "10^9/L",
+      "ref_low": 25.0,
+      "ref_high": 100.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "haematology",
+      "notes": "The absolute count, not the percentage, defines a regenerative response. >100 x10^9/L with anaemia implies haemolysis or bleeding."
+    },
+    {
+      "analyte_code": "PLT",
+      "analyte_name": "Platelet count",
+      "analyte_name_i18n": {
+        "en": "Platelets",
+        "de": "Thrombozyten",
+        "es": "Plaquetas",
+        "nl": "Trombocyten",
+        "ru": "Тромбоциты"
+      },
+      "loinc_code": "777-3",
+      "unit": "10^9/L",
+      "ref_low": 150.0,
+      "ref_high": 400.0,
+      "critical_low": 20.0,
+      "critical_high": 1000.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "haematology"
+    },
+    {
+      "analyte_code": "WBC",
+      "analyte_name": "White cell count",
+      "analyte_name_i18n": {
+        "en": "White cells",
+        "de": "Leukozyten",
+        "es": "Leucocitos",
+        "nl": "Leukocyten",
+        "ru": "Лейкоциты"
+      },
+      "loinc_code": "6690-2",
+      "unit": "10^9/L",
+      "ref_low": 4.0,
+      "ref_high": 11.0,
+      "critical_low": 1.0,
+      "critical_high": 50.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "haematology"
+    },
+    {
+      "analyte_code": "ANC",
+      "analyte_name": "Absolute neutrophil count",
+      "analyte_name_i18n": {
+        "en": "Absolute neutrophils",
+        "de": "Absolute Neutrophilenzahl",
+        "es": "Neutrófilos absolutos",
+        "nl": "Absolute neutrofielen",
+        "ru": "Абсолютное число нейтрофилов"
+      },
+      "unit": "10^9/L",
+      "ref_low": 1.8,
+      "ref_high": 7.5,
+      "critical_low": 0.5,
+      "population": "adult",
+      "decimals": 2,
+      "category": "haematology",
+      "notes": "ANC <0.5 x10^9/L defines severe neutropenia and, on dapsone or an antithyroid drug, mandates immediate withdrawal."
+    },
+    {
+      "analyte_code": "LDH",
+      "analyte_name": "Lactate dehydrogenase",
+      "analyte_name_i18n": {
+        "en": "Lactate dehydrogenase",
+        "de": "Laktatdehydrogenase",
+        "es": "Lactato deshidrogenasa",
+        "nl": "Lactaatdehydrogenase",
+        "ru": "Лактатдегидрогеназа"
+      },
+      "loinc_code": "2532-0",
+      "unit": "U/L",
+      "ref_low": 135.0,
+      "ref_high": 250.0,
+      "critical_high": 2000.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "haematology",
+      "notes": "Marker of intravascular haemolysis; disproportionately high relative to bilirubin in intravascular versus extravascular destruction."
+    },
+    {
+      "analyte_code": "HAPTO",
+      "analyte_name": "Haptoglobin",
+      "analyte_name_i18n": {
+        "en": "Haptoglobin",
+        "de": "Haptoglobin",
+        "es": "Haptoglobina",
+        "nl": "Haptoglobine",
+        "ru": "Гаптоглобин"
+      },
+      "loinc_code": "4542-7",
+      "unit": "g/L",
+      "ref_low": 0.3,
+      "ref_high": 2.0,
+      "population": "adult",
+      "decimals": 2,
+      "category": "haematology",
+      "notes": "An acute-phase protein: a 'normal' haptoglobin during inflammation does not exclude haemolysis."
+    },
+    {
+      "analyte_code": "BILI_TOTAL",
+      "analyte_name": "Total bilirubin",
+      "analyte_name_i18n": {
+        "en": "Total bilirubin",
+        "de": "Gesamtbilirubin",
+        "es": "Bilirrubina total",
+        "nl": "Totaal bilirubine",
+        "ru": "Общий билирубин"
+      },
+      "loinc_code": "1975-2",
+      "unit": "µmol/L",
+      "ref_low": 3.0,
+      "ref_high": 21.0,
+      "critical_high": 300.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "BILI_INDIRECT",
+      "analyte_name": "Unconjugated bilirubin",
+      "analyte_name_i18n": {
+        "en": "Unconjugated bilirubin",
+        "de": "Indirektes Bilirubin",
+        "es": "Bilirrubina indirecta",
+        "nl": "Ongeconjugeerd bilirubine",
+        "ru": "Непрямой билирубин"
+      },
+      "unit": "µmol/L",
+      "ref_low": 2.0,
+      "ref_high": 17.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "PLASMA_FREE_HB",
+      "analyte_name": "Plasma free haemoglobin",
+      "analyte_name_i18n": {
+        "en": "Plasma free haemoglobin",
+        "de": "Freies Plasmahämoglobin",
+        "es": "Hemoglobina libre en plasma",
+        "nl": "Vrij plasmahemoglobine",
+        "ru": "Свободный гемоглобин плазмы"
+      },
+      "unit": "mg/L",
+      "ref_low": 0.0,
+      "ref_high": 50.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "haematology",
+      "notes": "Specific for intravascular haemolysis. Requires atraumatic venepuncture; a difficult draw invalidates the result."
+    },
+    {
+      "analyte_code": "FERRITIN",
+      "analyte_name": "Ferritin",
+      "analyte_name_i18n": {
+        "en": "Ferritin",
+        "de": "Ferritin",
+        "es": "Ferritina",
+        "nl": "Ferritine",
+        "ru": "Ферритин"
+      },
+      "loinc_code": "2276-4",
+      "unit": "µg/L",
+      "ref_low": 30.0,
+      "ref_high": 300.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "G6PD",
+      "analyte_name": "Glucose-6-phosphate dehydrogenase activity",
+      "analyte_name_i18n": {
+        "en": "G6PD activity",
+        "de": "G6PD-Aktivität",
+        "es": "Actividad de G6PD",
+        "nl": "G6PD-activiteit",
+        "ru": "Активность Г6ФД"
+      },
+      "unit": "U/g Hb",
+      "ref_low": 6.4,
+      "ref_high": 18.7,
+      "population": "adult",
+      "decimals": 1,
+      "category": "haematology",
+      "notes": "Measured during an acute haemolytic episode the result is falsely normal, because the deficient cells have already been destroyed and the surviving reticulocytes are enzyme-rich. Repeat at 3 months."
+    },
+    {
+      "analyte_code": "PK_ACTIVITY",
+      "analyte_name": "Pyruvate kinase activity",
+      "analyte_name_i18n": {
+        "en": "Pyruvate kinase activity",
+        "de": "Pyruvatkinase-Aktivität",
+        "es": "Actividad de piruvato quinasa",
+        "nl": "Pyruvaatkinase-activiteit",
+        "ru": "Активность пируваткиназы"
+      },
+      "unit": "U/g Hb",
+      "ref_low": 9.0,
+      "ref_high": 22.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "haematology"
+    },
+    {
+      "analyte_code": "EMA_BINDING",
+      "analyte_name": "Eosin-5-maleimide binding (mean fluorescence)",
+      "analyte_name_i18n": {
+        "en": "EMA binding test",
+        "de": "EMA-Bindungstest",
+        "es": "Prueba de unión de EMA",
+        "nl": "EMA-bindingstest",
+        "ru": "Тест связывания EMA"
+      },
+      "unit": "% of control",
+      "ref_low": 84.0,
+      "ref_high": 116.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "haematology",
+      "notes": "Flow-cytometric screen for hereditary spherocytosis; reduced binding reflects band 3 deficiency."
+    },
+    {
+      "analyte_code": "ADAMTS13",
+      "analyte_name": "ADAMTS13 activity",
+      "analyte_name_i18n": {
+        "en": "ADAMTS13 activity",
+        "de": "ADAMTS13-Aktivität",
+        "es": "Actividad de ADAMTS13",
+        "nl": "ADAMTS13-activiteit",
+        "ru": "Активность ADAMTS13"
+      },
+      "unit": "%",
+      "ref_low": 50.0,
+      "ref_high": 150.0,
+      "critical_low": 10.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "haematology",
+      "notes": "Activity <10% is diagnostic of thrombotic thrombocytopenic purpura. Treatment must not wait for the result."
+    },
+    {
+      "analyte_code": "CREAT",
+      "analyte_name": "Creatinine",
+      "analyte_name_i18n": {
+        "en": "Creatinine",
+        "de": "Kreatinin",
+        "es": "Creatinina",
+        "nl": "Creatinine",
+        "ru": "Креатинин"
+      },
+      "loinc_code": "2160-0",
+      "unit": "µmol/L",
+      "ref_low": 55.0,
+      "ref_high": 105.0,
+      "critical_high": 500.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "ALT",
+      "analyte_name": "Alanine aminotransferase",
+      "analyte_name_i18n": {
+        "en": "Alanine aminotransferase",
+        "de": "Alanin-Aminotransferase",
+        "es": "Alanina aminotransferasa",
+        "nl": "Alanine-aminotransferase",
+        "ru": "Аланинаминотрансфераза"
+      },
+      "loinc_code": "1742-6",
+      "unit": "U/L",
+      "ref_low": 10.0,
+      "ref_high": 45.0,
+      "critical_high": 1000.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "ALP",
+      "analyte_name": "Alkaline phosphatase",
+      "analyte_name_i18n": {
+        "en": "Alkaline phosphatase",
+        "de": "Alkalische Phosphatase",
+        "es": "Fosfatasa alcalina",
+        "nl": "Alkalische fosfatase",
+        "ru": "Щелочная фосфатаза"
+      },
+      "unit": "U/L",
+      "ref_low": 40.0,
+      "ref_high": 130.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "CRP",
+      "analyte_name": "C-reactive protein",
+      "analyte_name_i18n": {
+        "en": "C-reactive protein",
+        "de": "C-reaktives Protein",
+        "es": "Proteína C reactiva",
+        "nl": "C-reactief proteïne",
+        "ru": "С-реактивный белок"
+      },
+      "loinc_code": "1988-5",
+      "unit": "mg/L",
+      "ref_low": 0.0,
+      "ref_high": 5.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "ALB",
+      "analyte_name": "Albumin",
+      "analyte_name_i18n": {
+        "en": "Albumin",
+        "de": "Albumin",
+        "es": "Albúmina",
+        "nl": "Albumine",
+        "ru": "Альбумин"
+      },
+      "unit": "g/L",
+      "ref_low": 35.0,
+      "ref_high": 50.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "NA",
+      "analyte_name": "Sodium",
+      "analyte_name_i18n": {
+        "en": "Sodium",
+        "de": "Natrium",
+        "es": "Sodio",
+        "nl": "Natrium",
+        "ru": "Натрий"
+      },
+      "unit": "mmol/L",
+      "ref_low": 135.0,
+      "ref_high": 145.0,
+      "critical_low": 120.0,
+      "critical_high": 158.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "K",
+      "analyte_name": "Potassium",
+      "analyte_name_i18n": {
+        "en": "Potassium",
+        "de": "Kalium",
+        "es": "Potasio",
+        "nl": "Kalium",
+        "ru": "Калий"
+      },
+      "unit": "mmol/L",
+      "ref_low": 3.5,
+      "ref_high": 5.1,
+      "critical_low": 2.5,
+      "critical_high": 6.5,
+      "population": "adult",
+      "decimals": 1,
+      "category": "chemistry"
+    },
+    {
+      "analyte_code": "METHB",
+      "analyte_name": "Methaemoglobin fraction",
+      "analyte_name_i18n": {
+        "en": "Methaemoglobin",
+        "de": "Methämoglobin",
+        "es": "Metahemoglobina",
+        "nl": "Methemoglobine",
+        "ru": "Метгемоглобин"
+      },
+      "unit": "%",
+      "ref_low": 0.0,
+      "ref_high": 1.5,
+      "critical_high": 30.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "chemistry",
+      "notes": "Dose-dependent effect of dapsone. Cyanosis unresponsive to oxygen with a normal PaO2 is the clinical signature."
+    },
+    {
+      "analyte_code": "BI",
+      "analyte_name": "Bacterial index (Ridley logarithmic scale)",
+      "analyte_name_i18n": {
+        "en": "Bacterial index",
+        "de": "Bakterieller Index",
+        "es": "Índice bacteriano",
+        "nl": "Bacteriële index",
+        "ru": "Бактериальный индекс"
+      },
+      "unit": "log scale 0-6+",
+      "ref_low": 0.0,
+      "ref_high": 0.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "microbiology",
+      "notes": "Mean of slit-skin smear scores across sites. Falls by roughly 1 log per year on effective multidrug therapy; a plateau or rise signals relapse or resistance."
+    },
+    {
+      "analyte_code": "MI",
+      "analyte_name": "Morphological index",
+      "analyte_name_i18n": {
+        "en": "Morphological index",
+        "de": "Morphologischer Index",
+        "es": "Índice morfológico",
+        "nl": "Morfologische index",
+        "ru": "Морфологический индекс"
+      },
+      "unit": "%",
+      "ref_low": 0.0,
+      "ref_high": 0.0,
+      "population": "adult",
+      "decimals": 1,
+      "category": "microbiology",
+      "notes": "Percentage of solidly-staining (viable) bacilli. Should reach zero within weeks of effective therapy; persistent solid staining implies drug resistance or non-adherence."
+    },
+    {
+      "analyte_code": "ESR",
+      "analyte_name": "Erythrocyte sedimentation rate",
+      "analyte_name_i18n": {
+        "en": "ESR",
+        "de": "Blutsenkungsgeschwindigkeit",
+        "es": "Velocidad de sedimentación globular",
+        "nl": "Bezinkingssnelheid",
+        "ru": "СОЭ"
+      },
+      "unit": "mm/h",
+      "ref_low": 0.0,
+      "ref_high": 20.0,
+      "population": "adult",
+      "decimals": 0,
+      "category": "haematology"
+    }
+  ]
+}

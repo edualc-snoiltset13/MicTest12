@@ -1,0 +1,1331 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-06-01T08:00:00Z",
+  "collection": "Haematology - microangiopathy, alloimmunity, mechanical and clonal haemolysis",
+  "cases": [
+    {
+      "case_code": "HEM-005",
+      "title": "Confusion, thrombocytopenia and schistocytes in a previously well 41-year-old",
+      "title_i18n": {
+        "en": "Confusion, thrombocytopenia and schistocytes in a previously well 41-year-old",
+        "de": "Verwirrtheit, Thrombozytopenie und Schistozyten bei einer zuvor gesunden 41-Jährigen",
+        "es": "Confusión, trombocitopenia y esquistocitos en una mujer de 41 años previamente sana",
+        "nl": "Verwardheid, trombocytopenie en schistocyten bij een voorheen gezonde 41-jarige",
+        "ru": "Спутанность сознания, тромбоцитопения и шистоциты у ранее здоровой 41-летней женщины"
+      },
+      "summary": "Immune-mediated thrombotic thrombocytopenic purpura. A time-critical case: the correct answer is to start plasma exchange on the film and the platelet count, before the ADAMTS13 result exists.",
+      "summary_i18n": {
+        "en": "Immune TTP - a time-critical case where treatment must start on the film and platelet count, before ADAMTS13 returns.",
+        "de": "Immun-TTP - ein zeitkritischer Fall, bei dem die Therapie anhand von Blutbild und Thrombozytenzahl beginnen muss, bevor ADAMTS13 vorliegt.",
+        "es": "PTT inmune: caso urgente en el que el tratamiento debe iniciarse con el frotis y las plaquetas, antes del resultado de ADAMTS13.",
+        "nl": "Immuun-TTP - een tijdkritische casus waarbij behandeling moet starten op basis van uitstrijkje en trombocyten, vóór de ADAMTS13-uitslag.",
+        "ru": "Иммунная ТТП — неотложный случай: лечение начинают по мазку и числу тромбоцитов, не дожидаясь результата ADAMTS13."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 4,
+      "tags": [
+        "haemolysis",
+        "non-immune",
+        "microangiopathy",
+        "TTP",
+        "schistocytes",
+        "ADAMTS13",
+        "emergency"
+      ],
+      "icd10_codes": [
+        "M31.1"
+      ],
+      "snomed_codes": [
+        "78129009"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-005",
+        "age_years": 41,
+        "sex": "female",
+        "weight_kg": 70.0,
+        "height_cm": 167.0,
+        "ancestry": "African",
+        "pregnancy_status": "not pregnant",
+        "occupation": "Bus driver",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Brought in confused after a week of bruising, fatigue and intermittent word-finding difficulty.",
+        "chief_complaint_i18n": {
+          "en": "Brought in confused after a week of bruising, fatigue and word-finding difficulty.",
+          "de": "Verwirrt eingeliefert nach einer Woche mit Hämatomen, Müdigkeit und Wortfindungsstörungen.",
+          "es": "Traída por confusión tras una semana de hematomas, fatiga y dificultad para encontrar palabras.",
+          "nl": "Verward binnengebracht na een week met blauwe plekken, vermoeidheid en woordvindstoornissen.",
+          "ru": "Доставлена в спутанном сознании после недели синяков, утомляемости и трудностей с подбором слов."
+        },
+        "history_of_present_illness": "One week of easy bruising and petechiae over the shins, with profound fatigue. Her husband reports two episodes of transient inability to find words, each lasting minutes, and increasing confusion over the past day. No diarrhoea, no recent illness, no new drugs, no quinine-containing tonic water. She is not pregnant.",
+        "past_medical_history": [
+          "No significant medical history"
+        ],
+        "medications": [],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "No thrombotic or haemolytic disease"
+        ],
+        "social_history": "Non-smoker. Occasional alcohol. No recreational drugs.",
+        "review_of_systems": {
+          "neurological": "Fluctuating confusion, two transient dysphasic episodes, no focal weakness, no seizure",
+          "haematological": "Petechiae, easy bruising, no frank bleeding",
+          "gastrointestinal": "No diarrhoea - relevant to excluding Shiga toxin HUS",
+          "genitourinary": "Reduced urine output, dark urine"
+        },
+        "vitals": {
+          "heart_rate_bpm": 104,
+          "blood_pressure_mmhg": "146/88",
+          "respiratory_rate": 20,
+          "temperature_c": 37.8,
+          "spo2_percent": 98,
+          "gcs": 14
+        },
+        "examination_findings": [
+          "Pallor with mild jaundice",
+          "Petechiae over both shins and the buccal mucosa; scattered ecchymoses",
+          "Glasgow Coma Scale 14/15; disorientated in time; no focal neurological deficit",
+          "No splenomegaly - important, since a microangiopathy is not an extravascular process",
+          "No lymphadenopathy",
+          "No rash suggestive of meningococcaemia, no purpura fulminans"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and film",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "analyser": "Sysmex XN-9000",
+          "comment": "Presentation. These two numbers plus the film are enough to start treatment.",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 72.0,
+              "unit": "g/L",
+              "ref_low": 120.0,
+              "ref_high": 155.0,
+              "flag": "LL",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "PLT",
+              "analyte_name": "Platelet count",
+              "value_numeric": 12.0,
+              "unit": "10^9/L",
+              "ref_low": 150.0,
+              "ref_high": 400.0,
+              "flag": "LL",
+              "is_critical": true,
+              "interference_note": "Severe thrombocytopenia from platelet consumption in microthrombi. Confirmed on the film - no clumping."
+            },
+            {
+              "analyte_code": "RETIC_ABS",
+              "analyte_name": "Absolute reticulocyte count",
+              "value_numeric": 224.0,
+              "unit": "10^9/L",
+              "ref_low": 25.0,
+              "ref_high": 100.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 9.8,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0
+            }
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis and coagulation screen",
+          "day_offset": 0,
+          "specimen": "serum / citrate plasma",
+          "comment": "The normal coagulation screen is what separates TTP from disseminated intravascular coagulation.",
+          "results": [
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 1840.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "HH",
+              "is_critical": true,
+              "interference_note": "Reflects both haemolysis and tissue ischaemia from microthrombi, which is why it is disproportionately high in TTP."
+            },
+            {
+              "analyte_code": "HAPTO",
+              "analyte_name": "Haptoglobin",
+              "value_numeric": 0.02,
+              "unit": "g/L",
+              "ref_low": 0.3,
+              "ref_high": 2.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "BILI_TOTAL",
+              "analyte_name": "Total bilirubin",
+              "value_numeric": 46.0,
+              "unit": "µmol/L",
+              "ref_low": 3.0,
+              "ref_high": 21.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "DAT_POLY",
+              "analyte_name": "Direct antiglobulin test",
+              "value_text": "Negative",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "Negative by definition in a microangiopathy: destruction is mechanical, not antibody-mediated."
+            },
+            {
+              "analyte_code": "INR",
+              "analyte_name": "International normalised ratio",
+              "value_numeric": 1.1,
+              "unit": "ratio",
+              "ref_low": 0.8,
+              "ref_high": 1.2,
+              "flag": "N",
+              "interference_note": "NORMAL clotting is the key negative. In DIC the INR and APTT are prolonged and fibrinogen falls."
+            },
+            {
+              "analyte_code": "FIBRINOGEN",
+              "analyte_name": "Fibrinogen",
+              "value_numeric": 3.4,
+              "unit": "g/L",
+              "ref_low": 2.0,
+              "ref_high": 4.0,
+              "flag": "N"
+            },
+            {
+              "analyte_code": "DDIMER",
+              "analyte_name": "D-dimer",
+              "value_numeric": 1.2,
+              "unit": "mg/L FEU",
+              "ref_low": 0.0,
+              "ref_high": 0.5,
+              "flag": "H",
+              "interference_note": "Mildly raised, as it is in almost any acute illness. It does not make this DIC."
+            },
+            {
+              "analyte_code": "TROPONIN",
+              "analyte_name": "High-sensitivity troponin T",
+              "value_numeric": 184.0,
+              "unit": "ng/L",
+              "ref_high": 14.0,
+              "flag": "H",
+              "interference_note": "Cardiac microthrombi. Troponin elevation at presentation is an independent predictor of mortality in TTP and should be measured routinely."
+            }
+          ]
+        },
+        {
+          "panel_code": "TTP_SPECIFIC",
+          "panel_name": "ADAMTS13 and organ markers",
+          "day_offset": 0,
+          "specimen": "citrate plasma (drawn BEFORE plasma exchange)",
+          "comment": "Sample must be drawn before exchange or the result is uninterpretable. The result took 36 hours; treatment did not wait.",
+          "results": [
+            {
+              "analyte_code": "ADAMTS13",
+              "analyte_name": "ADAMTS13 activity",
+              "value_numeric": 3.0,
+              "unit": "%",
+              "ref_low": 50.0,
+              "ref_high": 150.0,
+              "flag": "LL",
+              "is_critical": true,
+              "interference_note": "Activity below 10% is diagnostic of TTP. Reported at 36 hours - long after plasma exchange had to begin."
+            },
+            {
+              "analyte_code": "ADAMTS13_INHIBITOR",
+              "analyte_name": "ADAMTS13 inhibitor (Bethesda)",
+              "value_numeric": 1.8,
+              "unit": "BU/mL",
+              "ref_high": 0.4,
+              "flag": "H",
+              "interference_note": "Confirms an ACQUIRED, immune-mediated TTP rather than congenital (Upshaw-Schulman) disease - which changes management from immunosuppression to plasma replacement alone."
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 138.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0,
+              "flag": "H",
+              "interference_note": "Only modestly raised. Severe renal failure would point towards haemolytic uraemic syndrome instead."
+            },
+            {
+              "analyte_code": "PLASMIC_SCORE",
+              "analyte_name": "PLASMIC score",
+              "value_numeric": 6.0,
+              "unit": "points",
+              "ref_text": "0-4 low, 5 intermediate, 6-7 high risk of severe ADAMTS13 deficiency",
+              "flag": "A",
+              "interference_note": "A validated clinical score that supports immediate treatment while awaiting ADAMTS13."
+            }
+          ]
+        },
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count - response to plasma exchange",
+          "day_offset": 5,
+          "specimen": "EDTA whole blood",
+          "comment": "Daily plasma exchange from day 0, plus steroid, rituximab and caplacizumab.",
+          "results": [
+            {
+              "analyte_code": "PLT",
+              "analyte_name": "Platelet count",
+              "value_numeric": 168.0,
+              "unit": "10^9/L",
+              "ref_low": 150.0,
+              "ref_high": 400.0,
+              "interference_note": "Platelet normalisation is THE response marker in TTP and defines when exchange can be tapered."
+            },
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 96.0,
+              "unit": "g/L",
+              "ref_low": 120.0,
+              "ref_high": 155.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 312.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "TTP_SPECIFIC",
+          "panel_name": "ADAMTS13 - follow-up",
+          "day_offset": 90,
+          "specimen": "citrate plasma",
+          "comment": "Three months. Relapse surveillance.",
+          "results": [
+            {
+              "analyte_code": "ADAMTS13",
+              "analyte_name": "ADAMTS13 activity",
+              "value_numeric": 68.0,
+              "unit": "%",
+              "ref_low": 50.0,
+              "ref_high": 150.0,
+              "interference_note": "Recovered. A falling ADAMTS13 during remission predicts relapse and justifies pre-emptive rituximab before clinical relapse occurs."
+            },
+            {
+              "analyte_code": "PLT",
+              "analyte_name": "Platelet count",
+              "value_numeric": 284.0,
+              "unit": "10^9/L",
+              "ref_low": 150.0,
+              "ref_high": 400.0
+            }
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist - urgent review within 30 minutes of request",
+          "red_cell_morphology": [
+            "Numerous schistocytes, approximately 4.8% of red cells: helmet cells, triangular forms, keratocytes and irregular fragments with sharp angular edges",
+            "The ICSH threshold for a significant microangiopathy is more than 1% schistocytes in an adult; this is nearly five times that",
+            "Marked polychromasia and occasional nucleated red cells",
+            "Occasional microspherocytes formed as a secondary consequence of fragmentation - NOT the true spherocytes of immune haemolysis",
+            "No agglutination, no bite cells, no Heinz bodies",
+            "No rouleaux, no malarial parasites"
+          ],
+          "white_cell_morphology": [
+            "Normal number, mild left shift",
+            "No blasts, no dysplasia"
+          ],
+          "platelet_morphology": [
+            "Markedly reduced on the film, corroborating the analyser count",
+            "No platelet clumps and no giant platelets - pseudothrombocytopenia excluded",
+            "Occasional large platelets consistent with rapid turnover"
+          ],
+          "schistocyte_percent": 4.8,
+          "narrative": "The film shows florid red cell fragmentation with schistocytes at approximately 4.8%, far above the 1% threshold that defines a significant microangiopathy, together with marked thrombocytopenia confirmed morphologically. Polychromasia is marked and nucleated red cells are present, indicating a vigorous marrow response to mechanical destruction. There is no agglutination, no oxidative change and no true spherocytosis; the direct antiglobulin test is negative, as it must be in a mechanical process. In a patient with confusion, a platelet count of 12 x10^9/L, an LDH of 1840 U/L and a NORMAL coagulation screen, this film is sufficient to commit to a diagnosis of thrombotic microangiopathy and to start plasma exchange immediately. Waiting 36 hours for ADAMTS13 would be indefensible: untreated TTP carries a mortality above 90%, and treated below 20%.",
+          "narrative_i18n": {
+            "en": "Florid fragmentation with 4.8% schistocytes plus marked thrombocytopenia, normal coagulation and a negative DAT. Sufficient to start plasma exchange immediately - waiting for ADAMTS13 is not an option.",
+            "de": "Ausgeprägte Fragmentierung mit 4,8% Schistozyten, deutliche Thrombozytopenie, normale Gerinnung und negativer DAT. Ausreichend für den sofortigen Beginn der Plasmaseparation - das Warten auf ADAMTS13 ist keine Option.",
+            "es": "Fragmentación florida con 4,8% de esquistocitos, trombocitopenia marcada, coagulación normal y PAD negativa. Suficiente para iniciar recambio plasmático de inmediato: esperar la ADAMTS13 no es una opción.",
+            "nl": "Uitgesproken fragmentatie met 4,8% schistocyten, forse trombocytopenie, normale stolling en negatieve DAT. Voldoende om direct plasmaferese te starten - wachten op ADAMTS13 is geen optie.",
+            "ru": "Выраженная фрагментация: 4,8% шистоцитов, значительная тромбоцитопения, нормальная коагулограмма, отрицательная проба Кумбса. Достаточно для немедленного начала плазмообмена — ждать ADAMTS13 недопустимо."
+          }
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "CT head without contrast",
+          "region": "Head",
+          "day_offset": 0,
+          "findings": "No haemorrhage, no established infarct, no mass lesion.",
+          "impression": "Normal. Performed to exclude intracranial haemorrhage given the platelet count of 12 x10^9/L before the neurological features were attributed to microvascular ischaemia."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Emergency management of immune thrombotic thrombocytopenic purpura",
+          "guideline_source": "BSH guideline on the diagnosis and management of thrombotic thrombocytopenic purpura (2023) and ISTH guidance, adapted",
+          "indication": "Suspected TTP with a PLASMIC score of 6, confirmed by ADAMTS13 activity of 3% with an inhibitor.",
+          "duration_months": 12,
+          "regimen": [
+            {
+              "agent": "Therapeutic plasma exchange",
+              "dose": "1.5 plasma volumes with octaplas/solvent-detergent plasma",
+              "route": "extracorporeal",
+              "frequency": "daily",
+              "duration": "until platelets >150 x10^9/L for 2 consecutive days, then taper",
+              "notes": "Must start within 4-8 hours of suspicion. If exchange is not immediately available, give plasma infusion as a bridge - it is inferior but far better than nothing."
+            },
+            {
+              "agent": "Methylprednisolone",
+              "dose": "1 g",
+              "route": "IV",
+              "frequency": "once daily",
+              "duration": "3 days, then oral prednisolone 1 mg/kg",
+              "notes": "Suppresses the anti-ADAMTS13 autoantibody."
+            },
+            {
+              "agent": "Caplacizumab",
+              "dose": "10 mg",
+              "route": "IV then subcutaneous",
+              "frequency": "once daily",
+              "duration": "30 days after stopping exchange",
+              "notes": "Anti-von Willebrand factor nanobody. Blocks platelet-VWF interaction, producing rapid platelet recovery and reducing refractoriness and exacerbation. It does not treat the underlying autoimmunity, so it must be paired with immunosuppression."
+            },
+            {
+              "agent": "Rituximab",
+              "dose": "375 mg/m2",
+              "route": "IV",
+              "frequency": "weekly",
+              "duration": "4 doses",
+              "notes": "Eradicates the autoantibody-producing clone and reduces relapse. Give after the day's exchange, or it will be removed."
+            },
+            {
+              "agent": "Folic acid",
+              "dose": "5 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "while haemolysing",
+              "notes": ""
+            },
+            {
+              "agent": "Platelet transfusion - AVOID",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "Platelet transfusion is relatively contraindicated: it fuels ongoing microthrombosis and has been associated with arterial thrombosis and death. Reserve strictly for life-threatening haemorrhage or an essential invasive procedure."
+            }
+          ],
+          "monitoring": [
+            "Daily platelet count and LDH - platelet recovery is the response marker",
+            "Daily neurological observations",
+            "Troponin at presentation and if chest symptoms develop",
+            "ADAMTS13 during remission at 3, 6 and 12 months: a falling activity predicts relapse and justifies pre-emptive rituximab",
+            "Fibrinogen during caplacizumab - bleeding is the main adverse effect"
+          ],
+          "contraindications": [
+            "Platelet transfusion in the absence of life-threatening bleeding"
+          ],
+          "adverse_effects": [
+            "Plasma exchange: line sepsis, citrate-induced hypocalcaemia, allergic reactions, pneumothorax on line insertion",
+            "Caplacizumab: mucocutaneous bleeding",
+            "Rituximab: infusion reactions, hepatitis B reactivation"
+          ],
+          "notes": "Time is the whole intervention. Untreated TTP mortality exceeds 90%; with prompt plasma exchange it falls below 20%. The ADAMTS13 sample must be drawn before the first exchange, but the result must never gate the first exchange."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Immune-mediated thrombotic thrombocytopenic purpura",
+          "label_i18n": {
+            "en": "Immune-mediated thrombotic thrombocytopenic purpura",
+            "de": "Immunvermittelte thrombotisch-thrombozytopenische Purpura",
+            "es": "Púrpura trombótica trombocitopénica inmunomediada",
+            "nl": "Immuungemedieerde trombotische trombocytopenische purpura",
+            "ru": "Иммуноопосредованная тромботическая тромбоцитопеническая пурпура"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.96,
+          "icd10": "M31.1",
+          "discriminator": "ADAMTS13 activity of 3% with a demonstrable inhibitor, in the context of microangiopathic haemolysis, severe thrombocytopenia, a normal coagulation screen and only modest renal impairment.",
+          "supporting_evidence": [
+            "Schistocytes 4.8% with a negative DAT",
+            "Platelets 12 x10^9/L with normal INR, APTT and fibrinogen",
+            "LDH 1840 U/L, haptoglobin undetectable",
+            "Fluctuating neurological features",
+            "Creatinine only 138 µmol/L",
+            "PLASMIC score 6",
+            "ADAMTS13 3% with an inhibitor of 1.8 BU/mL",
+            "Rapid platelet recovery on plasma exchange"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Disseminated intravascular coagulation",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "The single most important alternative because the treatment is entirely different. Excluded by a normal INR, APTT and fibrinogen - DIC consumes clotting factors, TTP does not.",
+          "supporting_evidence": [
+            "Thrombocytopenia with fragmentation and a raised D-dimer"
+          ],
+          "refuting_evidence": [
+            "INR 1.1",
+            "Fibrinogen 3.4 g/L",
+            "No precipitating cause for DIC"
+          ]
+        },
+        {
+          "label": "Haemolytic uraemic syndrome",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "HUS is dominated by acute kidney injury with less prominent neurological involvement; TTP is the reverse. Creatinine here is only 138 µmol/L with prominent neurology, and there is no diarrhoeal prodrome.",
+          "supporting_evidence": [
+            "Microangiopathic haemolysis with thrombocytopenia"
+          ],
+          "refuting_evidence": [
+            "Creatinine only mildly raised",
+            "No diarrhoea",
+            "ADAMTS13 3% with an inhibitor",
+            "Prominent neurological features"
+          ]
+        },
+        {
+          "label": "Evans syndrome",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Would have a POSITIVE DAT and spherocytes rather than schistocytes.",
+          "supporting_evidence": [
+            "Anaemia with thrombocytopenia"
+          ],
+          "refuting_evidence": [
+            "DAT negative",
+            "Schistocytes, not spherocytes"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Do not wait for ADAMTS13. A platelet count, an LDH, a coagulation screen and a blood film are enough to commit to plasma exchange, and the mortality difference between treating now and treating in 36 hours is enormous.",
+        "Draw the ADAMTS13 sample BEFORE the first exchange. Afterwards the result is uninterpretable, and a congenital case will be indistinguishable from an immune one.",
+        "A NORMAL coagulation screen is what separates TTP from DIC. Both fragment red cells and consume platelets; only DIC consumes clotting factors.",
+        "Platelet transfusion is relatively contraindicated in TTP. It feeds ongoing microthrombosis and has been linked to arterial thrombosis and death. Reserve it for life-threatening bleeding.",
+        "The ICSH threshold for a significant microangiopathy is more than 1% schistocytes in an adult. Reporting 'occasional fragments' without quantification is not a usable result.",
+        "Measure troponin at presentation: cardiac involvement is common, frequently silent, and independently predicts mortality.",
+        "A falling ADAMTS13 during remission predicts relapse. Surveillance allows pre-emptive rituximab before the patient becomes unwell again."
+      ],
+      "references": [
+        {
+          "citation": "Scully M et al. A British Society for Haematology Guideline: Diagnosis and management of thrombotic thrombocytopenic purpura. Br J Haematol 2023.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Bendapudi PK et al. Derivation and external validation of the PLASMIC score. Lancet Haematol 2017.",
+          "type": "primary"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Immune thrombotic thrombocytopenic purpura",
+        "accepted_diagnosis_terms": [
+          "thrombotic thrombocytopenic purpura",
+          "ttp",
+          "immune ttp",
+          "ittp",
+          "acquired ttp",
+          "thrombotic microangiopathy"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Schistocytes above the 1% threshold",
+            "synonyms": [
+              "schistocytes",
+              "4.8%",
+              "fragments",
+              "helmet cells",
+              "red cell fragmentation"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Severe thrombocytopenia",
+            "synonyms": [
+              "platelets 12",
+              "thrombocytopenia",
+              "low platelets"
+            ],
+            "weight": 1.75
+          },
+          {
+            "label": "Normal coagulation screen excluding DIC",
+            "synonyms": [
+              "normal inr",
+              "normal fibrinogen",
+              "coagulation normal",
+              "not dic"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "ADAMTS13 activity below 10%",
+            "synonyms": [
+              "adamts13 3%",
+              "adamts13 deficiency",
+              "severe adamts13 deficiency"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Negative direct antiglobulin test",
+            "synonyms": [
+              "dat negative",
+              "coombs negative"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "Neurological involvement",
+            "synonyms": [
+              "confusion",
+              "dysphasia",
+              "neurological",
+              "gcs 14"
+            ],
+            "weight": 1.0
+          }
+        ],
+        "expected_differential": [
+          "disseminated intravascular coagulation",
+          "haemolytic uraemic syndrome",
+          "malignant hypertension",
+          "evans syndrome",
+          "catastrophic antiphospholipid syndrome",
+          "drug-induced microangiopathy"
+        ],
+        "expected_next_tests": [
+          "blood film with schistocyte quantification",
+          "coagulation screen",
+          "adamts13 activity and inhibitor before exchange",
+          "ldh",
+          "troponin",
+          "direct antiglobulin test",
+          "plasmic score",
+          "ct head"
+        ],
+        "expected_management": [
+          "urgent plasma exchange",
+          "methylprednisolone",
+          "caplacizumab",
+          "rituximab",
+          "avoid platelet transfusion",
+          "folic acid",
+          "adamts13 surveillance in remission"
+        ],
+        "critical_values": [
+          {
+            "analyte": "PLT",
+            "value": 12.0,
+            "reason": "Severe thrombocytopenia with neurological involvement"
+          },
+          {
+            "analyte": "ADAMTS13",
+            "value": 3.0,
+            "reason": "Diagnostic of TTP"
+          },
+          {
+            "analyte": "LDH",
+            "value": 1840.0,
+            "reason": "Massive haemolysis with tissue ischaemia"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-HEM-TTP-URGENT",
+            "description": "Must recommend starting plasma exchange without waiting for ADAMTS13.",
+            "required_terms": [
+              "urgent",
+              "immediately",
+              "do not wait",
+              "before adamts13",
+              "within hours",
+              "emergency"
+            ]
+          },
+          {
+            "id": "SR-HEM-TTP-NOPLT",
+            "description": "Must not recommend routine platelet transfusion.",
+            "forbidden_patterns": [
+              "transfuse platelets",
+              "platelet transfusion to correct",
+              "give platelets for the low count"
+            ]
+          },
+          {
+            "id": "SR-HEM-TTP-SAMPLE",
+            "description": "Should state the ADAMTS13 sample must precede exchange.",
+            "required_terms": [
+              "before plasma exchange",
+              "prior to exchange",
+              "pre-exchange sample"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "itp",
+          "aplastic anaemia",
+          "leukaemia",
+          "meningococcal sepsis",
+          "warm aiha"
+        ]
+      }
+    },
+    {
+      "case_code": "HEM-006",
+      "title": "Falling haemoglobin and jaundice eight days after an uneventful transfusion",
+      "title_i18n": {
+        "en": "Falling haemoglobin and jaundice eight days after an uneventful transfusion",
+        "de": "Abfallendes Hämoglobin und Ikterus acht Tage nach komplikationsloser Transfusion",
+        "es": "Descenso de hemoglobina e ictericia ocho días tras una transfusión sin incidencias",
+        "nl": "Dalend hemoglobine en geelzucht acht dagen na een ongecompliceerde transfusie",
+        "ru": "Снижение гемоглобина и желтуха через восемь дней после неосложнённой трансфузии"
+      },
+      "summary": "Delayed haemolytic transfusion reaction from an anamnestic anti-Jk(a) response. The alloantibody was undetectable at crossmatch, which is the defining problem with Kidd antibodies and the reason the pre-transfusion screen cannot be treated as a guarantee.",
+      "summary_i18n": {
+        "en": "Delayed haemolytic transfusion reaction from anamnestic anti-Jk(a) - undetectable at crossmatch, the classic Kidd antibody trap.",
+        "de": "Verzögerte hämolytische Transfusionsreaktion durch anamnestisches Anti-Jk(a) - beim Crossmatch nicht nachweisbar, die klassische Kidd-Falle.",
+        "es": "Reacción hemolítica transfusional tardía por anti-Jk(a) anamnésico, indetectable en las pruebas cruzadas: la trampa clásica de los anticuerpos Kidd.",
+        "nl": "Vertraagde hemolytische transfusiereactie door anamnestisch anti-Jk(a) - niet aantoonbaar bij kruisproef, de klassieke Kidd-valkuil.",
+        "ru": "Отсроченная гемолитическая трансфузионная реакция из-за анамнестического анти-Jk(a) — не выявлялся при пробе на совместимость, классическая ловушка антител системы Kidd."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 4,
+      "tags": [
+        "haemolysis",
+        "immune",
+        "alloantibody",
+        "transfusion",
+        "Kidd",
+        "DHTR",
+        "transfusion-medicine"
+      ],
+      "icd10_codes": [
+        "T80.3",
+        "D59.1"
+      ],
+      "snomed_codes": [
+        "82545002"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Transfusion Medicine Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-006",
+        "age_years": 56,
+        "sex": "female",
+        "weight_kg": 64.0,
+        "height_cm": 160.0,
+        "ancestry": "Northern European",
+        "pregnancy_status": "post-menopausal, para 3",
+        "occupation": "Retail supervisor",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Jaundice and a haemoglobin that has fallen back to pre-transfusion levels, eight days after two units were given for post-operative anaemia.",
+        "chief_complaint_i18n": {
+          "en": "Jaundice and a haemoglobin back to pre-transfusion levels, eight days after two units.",
+          "de": "Ikterus und Hämoglobin zurück auf Prä-Transfusionswerte, acht Tage nach zwei Erythrozytenkonzentraten.",
+          "es": "Ictericia y hemoglobina de nuevo en valores pretransfusionales, ocho días tras dos concentrados.",
+          "nl": "Geelzucht en hemoglobine terug op pre-transfusieniveau, acht dagen na twee eenheden.",
+          "ru": "Желтуха и снижение гемоглобина до дотрансфузионного уровня через восемь дней после двух доз эритроцитов."
+        },
+        "history_of_present_illness": "She underwent an elective total hip replacement. Post-operative haemoglobin was 71 g/L and two units of red cells were transfused on day 2, raising it to 96 g/L with no acute reaction. She was discharged on day 4. On day 10 she returned with jaundice, dark urine, low-grade fever and increasing fatigue. She has had three previous pregnancies and one transfusion during a postpartum haemorrhage 22 years ago - both are sensitising events.",
+        "past_medical_history": [
+          "Osteoarthritis",
+          "Postpartum haemorrhage 22 years ago requiring transfusion",
+          "Three previous pregnancies"
+        ],
+        "medications": [
+          {
+            "name": "Rivaroxaban",
+            "dose": "10 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "post-operative thromboprophylaxis"
+          },
+          {
+            "name": "Paracetamol",
+            "dose": "1 g",
+            "route": "oral",
+            "frequency": "four times daily",
+            "indication": "analgesia"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Non-contributory"
+        ],
+        "social_history": "Non-smoker, minimal alcohol.",
+        "review_of_systems": {
+          "general": "Fatigue, low-grade fever 37.9 °C",
+          "genitourinary": "Dark urine",
+          "musculoskeletal": "Hip wound healing well, no infection",
+          "gastrointestinal": "No abdominal pain, no melaena"
+        },
+        "vitals": {
+          "heart_rate_bpm": 96,
+          "blood_pressure_mmhg": "124/74",
+          "respiratory_rate": 18,
+          "temperature_c": 37.9,
+          "spo2_percent": 98
+        },
+        "examination_findings": [
+          "Jaundice with pallor",
+          "Hip wound clean and dry, no erythema, no discharge - surgical site infection excluded as a cause of the fever",
+          "No hepatosplenomegaly",
+          "No bleeding, no haematoma",
+          "No rash, no urticaria"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count - serial",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "comment": "Day 8 post-transfusion (day 10 post-operative).",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 68.0,
+              "unit": "g/L",
+              "ref_low": 120.0,
+              "ref_high": 155.0,
+              "flag": "LL",
+              "is_critical": true,
+              "interference_note": "Below the pre-transfusion value of 71 g/L. Two units should have produced a sustained rise of about 20 g/L; the transfused cells have been destroyed."
+            },
+            {
+              "analyte_code": "RETIC_ABS",
+              "analyte_name": "Absolute reticulocyte count",
+              "value_numeric": 186.0,
+              "unit": "10^9/L",
+              "ref_low": 25.0,
+              "ref_high": 100.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "PLT",
+              "analyte_name": "Platelet count",
+              "value_numeric": 386.0,
+              "unit": "10^9/L",
+              "ref_low": 150.0,
+              "ref_high": 400.0
+            },
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 11.6,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 0,
+          "specimen": "serum / urine",
+          "results": [
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 782.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "HAPTO",
+              "analyte_name": "Haptoglobin",
+              "value_numeric": 0.06,
+              "unit": "g/L",
+              "ref_low": 0.3,
+              "ref_high": 2.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "BILI_TOTAL",
+              "analyte_name": "Total bilirubin",
+              "value_numeric": 74.0,
+              "unit": "µmol/L",
+              "ref_low": 3.0,
+              "ref_high": 21.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "BILI_INDIRECT",
+              "analyte_name": "Unconjugated bilirubin",
+              "value_numeric": 62.0,
+              "unit": "µmol/L",
+              "ref_low": 2.0,
+              "ref_high": 17.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "URINE_HAEMOSIDERIN",
+              "analyte_name": "Urinary haemosiderin",
+              "value_text": "Positive",
+              "unit": null,
+              "flag": "A"
+            }
+          ]
+        },
+        {
+          "panel_code": "IMMUNOHAEM",
+          "panel_name": "Transfusion reaction investigation",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood / serum",
+          "comment": "Compare directly with the pre-transfusion sample, which the laboratory retains for exactly this purpose.",
+          "results": [
+            {
+              "analyte_code": "DAT_POLY",
+              "analyte_name": "Direct antiglobulin test (polyspecific)",
+              "value_text": "Positive 2+, MIXED FIELD",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "A MIXED FIELD reaction - some cells coated, others not - is essentially diagnostic of a delayed haemolytic transfusion reaction: the antibody is coating donor cells while the patient's own cells remain uncoated."
+            },
+            {
+              "analyte_code": "DAT_IGG",
+              "analyte_name": "Direct antiglobulin test - anti-IgG",
+              "value_text": "Positive 2+ mixed field",
+              "unit": null,
+              "flag": "A"
+            },
+            {
+              "analyte_code": "DAT_C3D",
+              "analyte_name": "Direct antiglobulin test - anti-C3d",
+              "value_text": "Weakly positive",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Kidd antibodies bind complement efficiently, which is why they can cause a partly intravascular reaction unlike most IgG alloantibodies."
+            },
+            {
+              "analyte_code": "ANTIBODY_SCREEN_POST",
+              "analyte_name": "Antibody screen - current sample",
+              "value_text": "Positive; anti-Jk(a) identified",
+              "unit": null,
+              "flag": "A"
+            },
+            {
+              "analyte_code": "ANTIBODY_SCREEN_PRE",
+              "analyte_name": "Antibody screen - retained pre-transfusion sample",
+              "value_text": "NEGATIVE",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "The heart of the case. Kidd antibodies notoriously fall below the detection threshold between exposures, then rise rapidly on re-exposure. A negative pre-transfusion screen does NOT exclude prior sensitisation."
+            },
+            {
+              "analyte_code": "ELUATE",
+              "analyte_name": "Red cell eluate",
+              "value_text": "Anti-Jk(a)",
+              "unit": null,
+              "flag": "A"
+            },
+            {
+              "analyte_code": "PATIENT_PHENOTYPE",
+              "analyte_name": "Patient Kidd phenotype",
+              "value_text": "Jk(a-b+)",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "The patient lacks Jk(a), so Jk(a+) donor cells are foreign to her. Future units must be Jk(a) negative."
+            },
+            {
+              "analyte_code": "DONOR_PHENOTYPE",
+              "analyte_name": "Donor unit phenotypes",
+              "value_text": "Both units Jk(a+)",
+              "unit": null,
+              "flag": "A"
+            }
+          ]
+        },
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count after Jk(a)-negative transfusion",
+          "day_offset": 14,
+          "specimen": "EDTA whole blood",
+          "comment": "Two Jk(a)-negative units given on day 1 with a normal sustained increment.",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 104.0,
+              "unit": "g/L",
+              "ref_low": 120.0,
+              "ref_high": 155.0,
+              "flag": "L",
+              "interference_note": "A sustained increment this time, confirming that the antibody, not blood loss or marrow failure, was the problem."
+            },
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 268.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "BILI_TOTAL",
+              "analyte_name": "Total bilirubin",
+              "value_numeric": 26.0,
+              "unit": "µmol/L",
+              "ref_low": 3.0,
+              "ref_high": 21.0,
+              "flag": "H"
+            }
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Spherocytes present at approximately 8% - fewer than in warm autoimmune haemolysis because only the transfused donor population is being destroyed",
+            "A dimorphic red cell population is discernible: the patient's own normocytic cells alongside a diminishing donor population",
+            "Moderate polychromasia",
+            "No schistocytes, no agglutination, no bite cells, no Heinz bodies"
+          ],
+          "white_cell_morphology": [
+            "Mild neutrophilia with reactive change, no left shift beyond band forms"
+          ],
+          "platelet_morphology": [
+            "Increased number, reactive post-operative thrombocytosis, normal morphology"
+          ],
+          "schistocyte_percent": 0.2,
+          "narrative": "The film shows a modest spherocytosis with a discernible dimorphic red cell population, the morphological counterpart of the mixed-field direct antiglobulin test: an alloantibody is destroying a transfused population while the patient's own cells are untouched. This is the crucial difference from autoimmune haemolysis, in which every cell is a target and spherocytosis is correspondingly heavier. There is no fragmentation and no oxidative change. Taken with a mixed-field DAT, an eluate containing anti-Jk(a), a negative retained pre-transfusion screen and two Jk(a)-positive donor units, the picture is a delayed haemolytic transfusion reaction from an anamnestic Kidd antibody.",
+          "narrative_i18n": {
+            "en": "Modest spherocytosis with a dimorphic red cell population - the morphological counterpart of a mixed-field DAT. An alloantibody destroying only the transfused population, unlike autoimmune haemolysis where every cell is a target.",
+            "de": "Mässige Sphärozytose mit dimorpher Erythrozytenpopulation - das morphologische Korrelat eines Mischfeld-DAT. Ein Alloantikörper zerstört nur die transfundierte Population, anders als bei Autoimmunhämolyse.",
+            "es": "Esferocitosis moderada con población eritrocitaria dimórfica: el correlato morfológico de una PAD de campo mixto. Un aloanticuerpo destruye solo la población transfundida, a diferencia de la hemólisis autoinmune.",
+            "nl": "Matige sferocytose met een dimorfe erytrocytenpopulatie - het morfologische equivalent van een mixed-field DAT. Een alloantistof vernietigt alleen de getransfundeerde populatie, anders dan bij auto-immuunhemolyse.",
+            "ru": "Умеренный сфероцитоз с диморфной популяцией эритроцитов — морфологический эквивалент смешанной пробы Кумбса. Аллоантитело разрушает только перелитую популяцию, в отличие от аутоиммунного гемолиза."
+          }
+        }
+      ],
+      "imaging": [],
+      "protocols": [
+        {
+          "name": "Management and prevention of delayed haemolytic transfusion reaction",
+          "guideline_source": "BSH guidelines on the investigation and management of acute and delayed transfusion reactions, adapted",
+          "indication": "Delayed haemolytic transfusion reaction due to anamnestic anti-Jk(a).",
+          "duration_months": null,
+          "regimen": [
+            {
+              "agent": "Supportive care and hydration",
+              "dose": "crystalloid to maintain urine output",
+              "route": "IV",
+              "frequency": "continuous",
+              "duration": "until haemolysis settles",
+              "notes": "Most delayed reactions are self-limiting; renal protection is the main active measure."
+            },
+            {
+              "agent": "Jk(a)-negative, crossmatch-compatible red cells",
+              "dose": "as clinically required",
+              "route": "IV",
+              "frequency": "as required",
+              "duration": "lifelong requirement",
+              "notes": "All future transfusions must be Jk(a) negative and should be phenotype-matched for Rh and Kell as well."
+            },
+            {
+              "agent": "Antibody card and national registry notification",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "once",
+              "duration": "lifelong",
+              "notes": "The single most important intervention for preventing recurrence. The patient must carry the card, and it must be entered in the transfusion laboratory record and the national antibody registry, because the antibody will become undetectable again."
+            },
+            {
+              "agent": "Report to the national haemovigilance scheme",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "once",
+              "duration": "n/a",
+              "notes": "A mandatory reportable event."
+            }
+          ],
+          "monitoring": [
+            "Daily FBC, bilirubin and LDH until stable",
+            "Renal function - delayed reactions occasionally cause acute kidney injury",
+            "Repeat antibody screen at 3 and 6 months to document evolution, while recognising it may become negative again",
+            "Ensure the antibody is recorded in every clinical system the patient may present to, not only the local one"
+          ],
+          "contraindications": [
+            "Further Jk(a)-positive red cells (absolute, lifelong)"
+          ],
+          "adverse_effects": [
+            "Acute kidney injury, hyperkalaemia, and rarely a hyperhaemolytic syndrome in which the patient's own cells are also destroyed"
+          ],
+          "notes": "Kidd antibodies cause a disproportionate share of delayed haemolytic reactions precisely because they evanesce. The pre-transfusion screen was negative and correctly performed; the failure mode is inherent to the antibody, not to the laboratory."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Delayed haemolytic transfusion reaction due to anti-Jk(a)",
+          "label_i18n": {
+            "en": "Delayed haemolytic transfusion reaction due to anti-Jk(a)",
+            "de": "Verzögerte hämolytische Transfusionsreaktion durch Anti-Jk(a)",
+            "es": "Reacción hemolítica transfusional tardía por anti-Jk(a)",
+            "nl": "Vertraagde hemolytische transfusiereactie door anti-Jk(a)",
+            "ru": "Отсроченная гемолитическая трансфузионная реакция, обусловленная анти-Jk(a)"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.97,
+          "icd10": "T80.3",
+          "discriminator": "Mixed-field DAT with anti-Jk(a) in the eluate, a negative retained pre-transfusion screen, a Jk(a-b+) patient phenotype and Jk(a+) donor units.",
+          "supporting_evidence": [
+            "Haemoglobin fell below the pre-transfusion value 8 days after transfusion",
+            "Mixed-field DAT positive for IgG and weakly for C3d",
+            "Anti-Jk(a) in both the eluate and the current serum screen",
+            "Retained pre-transfusion antibody screen negative",
+            "Patient Jk(a-b+); both donor units Jk(a+)",
+            "Dimorphic red cell population on the film",
+            "Normal sustained increment after Jk(a)-negative units"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Post-operative bleeding",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "The default assumption in a post-operative patient with a falling haemoglobin, and wrong here. Bleeding does not cause jaundice, a raised LDH, an undetectable haptoglobin or a positive DAT.",
+          "supporting_evidence": [
+            "Recent surgery, on rivaroxaban"
+          ],
+          "refuting_evidence": [
+            "Jaundice with unconjugated hyperbilirubinaemia",
+            "Undetectable haptoglobin",
+            "Positive mixed-field DAT",
+            "Clean wound, no haematoma"
+          ]
+        },
+        {
+          "label": "Warm autoimmune haemolytic anaemia",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "The DAT is mixed field rather than uniformly positive, the eluate contains a single specificity rather than a panagglutinin, and the pre-transfusion screen was negative.",
+          "supporting_evidence": [
+            "Positive DAT with spherocytes"
+          ],
+          "refuting_evidence": [
+            "Mixed-field reaction",
+            "Single antibody specificity in the eluate",
+            "Clear temporal relationship to transfusion",
+            "Resolution with antigen-negative units"
+          ]
+        },
+        {
+          "label": "Surgical site infection with anaemia of inflammation",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Fever prompted this consideration, but the wound is clean and the anaemia is haemolytic rather than hypoproliferative.",
+          "supporting_evidence": [
+            "Low-grade fever, neutrophilia"
+          ],
+          "refuting_evidence": [
+            "Clean wound",
+            "Reticulocytosis with haemolysis markers",
+            "Positive DAT"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "A mixed-field DAT is close to diagnostic of a delayed haemolytic transfusion reaction: the alloantibody coats only the transfused population while the patient's own cells remain uncoated.",
+        "Kidd (Jk) antibodies evanesce below the detection threshold between exposures and rise rapidly on re-exposure. A negative pre-transfusion antibody screen therefore does not exclude prior sensitisation, and this is not a laboratory error.",
+        "Always compare against the retained pre-transfusion sample. Transfusion laboratories keep it precisely so that a new antibody can be distinguished from a missed one.",
+        "A post-operative haemoglobin that falls back below the pre-transfusion value is a failed increment, and needs a haemolysis screen rather than a reflex assumption of bleeding.",
+        "The lasting intervention is documentation. The antibody card, the laboratory record and the national registry entry are what protect the patient at the next hospital, because the antibody will disappear from her serum again.",
+        "Kidd antibodies fix complement more efficiently than most IgG alloantibodies, which is why the reaction can be partly intravascular and can occasionally cause acute kidney injury.",
+        "Pregnancy is a sensitising event. Three pregnancies and a transfusion 22 years earlier are a full sensitisation history and should raise the index of suspicion before elective surgery."
+      ],
+      "references": [
+        {
+          "citation": "Tinegate H et al. Guideline on the investigation and management of acute transfusion reactions. Br J Haematol 2012.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Milkins C et al. Guidelines for pre-transfusion compatibility procedures in blood transfusion laboratories. Transfus Med 2013.",
+          "type": "guideline"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Delayed haemolytic transfusion reaction due to anti-Jk(a)",
+        "accepted_diagnosis_terms": [
+          "delayed haemolytic transfusion reaction",
+          "dhtr",
+          "delayed hemolytic transfusion reaction",
+          "alloimmune haemolysis",
+          "anti-jka",
+          "kidd antibody"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Mixed-field direct antiglobulin test",
+            "synonyms": [
+              "mixed field",
+              "mixed-field dat",
+              "dual population dat"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Anti-Jk(a) alloantibody identified",
+            "synonyms": [
+              "anti-jka",
+              "kidd antibody",
+              "jk(a)",
+              "anti jk-a"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Negative pre-transfusion antibody screen",
+            "synonyms": [
+              "pre-transfusion screen negative",
+              "evanescent antibody",
+              "undetectable at crossmatch",
+              "anamnestic"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Failed transfusion increment",
+            "synonyms": [
+              "haemoglobin fell",
+              "no increment",
+              "below pre-transfusion",
+              "68 g/l"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Timing 5-14 days post transfusion",
+            "synonyms": [
+              "eight days",
+              "delayed",
+              "day 8",
+              "one week after"
+            ],
+            "weight": 1.25
+          }
+        ],
+        "expected_differential": [
+          "post-operative bleeding",
+          "warm autoimmune haemolytic anaemia",
+          "surgical site infection",
+          "hyperhaemolysis syndrome",
+          "drug-induced immune haemolysis"
+        ],
+        "expected_next_tests": [
+          "direct antiglobulin test",
+          "red cell eluate",
+          "antibody screen and identification",
+          "compare with retained pre-transfusion sample",
+          "patient and donor phenotyping",
+          "haemolysis screen"
+        ],
+        "expected_management": [
+          "supportive care and hydration",
+          "jk(a)-negative units for all future transfusion",
+          "antibody card",
+          "national registry notification",
+          "haemovigilance report",
+          "monitor renal function"
+        ],
+        "critical_values": [
+          {
+            "analyte": "HB",
+            "value": 68.0,
+            "reason": "Severe anaemia below the pre-transfusion baseline"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-HEM-DHTR-DOC",
+            "description": "Must recommend permanent documentation of the antibody.",
+            "required_terms": [
+              "antibody card",
+              "document",
+              "registry",
+              "record",
+              "notify"
+            ]
+          },
+          {
+            "id": "SR-HEM-DHTR-ANTIGEN",
+            "description": "Must specify antigen-negative units for future transfusion.",
+            "required_terms": [
+              "jk(a) negative",
+              "jka negative",
+              "antigen-negative",
+              "kidd negative"
+            ]
+          },
+          {
+            "id": "SR-HEM-DHTR-NOBLAME",
+            "description": "Should recognise that a negative pre-transfusion screen does not indicate laboratory error.",
+            "required_terms": [
+              "evanescent",
+              "below detection",
+              "not an error",
+              "falls below threshold",
+              "anamnestic"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "ttp",
+          "dic",
+          "sepsis",
+          "g6pd deficiency",
+          "hereditary spherocytosis"
+        ]
+      }
+    }
+  ]
+}

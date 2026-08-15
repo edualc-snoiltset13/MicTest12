@@ -1,0 +1,1541 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-05-18T08:00:00Z",
+  "collection": "Haematology - non-immune haemolysis: enzymopathy, membranopathy, microangiopathy",
+  "cases": [
+    {
+      "case_code": "HEM-003",
+      "title": "Acute haemolysis and methaemoglobinaemia on day 12 of dapsone for leprosy",
+      "title_i18n": {
+        "en": "Acute haemolysis and methaemoglobinaemia on day 12 of dapsone for leprosy",
+        "de": "Akute Hämolyse und Methämoglobinämie an Tag 12 einer Dapson-Therapie bei Lepra",
+        "es": "Hemólisis aguda y metahemoglobinemia el día 12 de dapsona para lepra",
+        "nl": "Acute hemolyse en methemoglobinemie op dag 12 van dapson bij lepra",
+        "ru": "Острый гемолиз и метгемоглобинемия на 12-й день приёма дапсона при лепре"
+      },
+      "summary": "G6PD deficiency unmasked by dapsone. The case is deliberately cross-linked to the leprosy collection: it is the pharmacogenomic failure mode of multidrug therapy, and it also demonstrates why a G6PD assay taken during the crisis is falsely reassuring.",
+      "summary_i18n": {
+        "en": "Dapsone-triggered oxidative haemolysis in G6PD deficiency, with bite cells, Heinz bodies and a falsely normal acute G6PD assay.",
+        "de": "Dapson-getriggerte oxidative Hämolyse bei G6PD-Mangel mit Bissformen, Heinz-Innenkörpern und falsch normalem akutem G6PD-Assay.",
+        "es": "Hemólisis oxidativa desencadenada por dapsona en déficit de G6PD, con células mordidas, cuerpos de Heinz y G6PD falsamente normal en fase aguda.",
+        "nl": "Dapson-geïnduceerde oxidatieve hemolyse bij G6PD-deficiëntie met bite cells, Heinz-lichaampjes en een vals-normale acute G6PD-bepaling.",
+        "ru": "Окислительный гемолиз, спровоцированный дапсоном при дефиците Г6ФД: «надкусанные» клетки, тельца Гейнца и ложнонормальный анализ Г6ФД в остром периоде."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 4,
+      "tags": [
+        "haemolysis",
+        "non-immune",
+        "G6PD",
+        "oxidative",
+        "dapsone",
+        "pharmacogenomics",
+        "leprosy-linked",
+        "methaemoglobin"
+      ],
+      "icd10_codes": [
+        "D55.0",
+        "T37.0"
+      ],
+      "snomed_codes": [
+        "124134001"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-003",
+        "age_years": 29,
+        "sex": "male",
+        "weight_kg": 62.0,
+        "height_cm": 171.0,
+        "ancestry": "South Asian",
+        "occupation": "Agricultural worker",
+        "region": "Leprosy-endemic district; recently migrated"
+      },
+      "presentation": {
+        "chief_complaint": "Dark brown urine, jaundice and collapse on day 12 of WHO multidrug therapy for multibacillary leprosy.",
+        "chief_complaint_i18n": {
+          "en": "Dark brown urine, jaundice and collapse on day 12 of multidrug therapy for leprosy.",
+          "de": "Dunkelbrauner Urin, Ikterus und Kollaps an Tag 12 der Lepra-Mehrfachtherapie.",
+          "es": "Orina marrón oscura, ictericia y colapso el día 12 de la poliquimioterapia para lepra.",
+          "nl": "Donkerbruine urine, geelzucht en collaps op dag 12 van multidrugtherapie voor lepra.",
+          "ru": "Тёмно-бурая моча, желтуха и коллапс на 12-й день комбинированной терапии лепры."
+        },
+        "history_of_present_illness": "He started WHO multibacillary multidrug therapy (rifampicin 600 mg monthly, clofazimine 300 mg monthly with 50 mg daily, dapsone 100 mg daily) twelve days ago. G6PD status was not checked before starting - the local protocol does not mandate it. Over 48 hours he has become profoundly weak, deeply jaundiced, and has passed urine described as 'like cola'. He also reports blue lips noticed by his wife, and breathlessness that does not improve with the oxygen given by the referring clinic.",
+        "past_medical_history": [
+          "Multibacillary leprosy, BL on the Ridley-Jopling scale, diagnosed 3 weeks ago",
+          "An episode of jaundice in childhood after eating fava beans, never investigated"
+        ],
+        "medications": [
+          {
+            "name": "Dapsone",
+            "dose": "100 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "multibacillary leprosy",
+            "notes": "The trigger. A potent oxidant that also causes dose-dependent methaemoglobinaemia in everyone, and catastrophic haemolysis in G6PD deficiency."
+          },
+          {
+            "name": "Rifampicin",
+            "dose": "600 mg",
+            "route": "oral",
+            "frequency": "monthly supervised",
+            "indication": "multibacillary leprosy"
+          },
+          {
+            "name": "Clofazimine",
+            "dose": "50 mg daily plus 300 mg monthly",
+            "route": "oral",
+            "frequency": "as stated",
+            "indication": "multibacillary leprosy"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Maternal uncle: jaundice after an antimalarial - consistent with X-linked inheritance"
+        ],
+        "social_history": "Non-smoker. No alcohol. Works with livestock.",
+        "review_of_systems": {
+          "general": "Profound weakness, fever 38.1 °C, back and abdominal pain",
+          "genitourinary": "Dark brown/black urine, reduced urine output",
+          "respiratory": "Breathlessness unresponsive to oxygen, cyanosis"
+        },
+        "vitals": {
+          "heart_rate_bpm": 128,
+          "blood_pressure_mmhg": "96/54",
+          "respiratory_rate": 28,
+          "temperature_c": 38.1,
+          "spo2_percent": 85,
+          "weight_kg": 62.0,
+          "urine_output_ml_h": 18
+        },
+        "examination_findings": [
+          "Deep jaundice with marked pallor",
+          "Central cyanosis with an SpO2 of 85% that does NOT improve on 15 L/min oxygen, while the arterial PaO2 is normal - the saturation gap of methaemoglobinaemia",
+          "Arterial blood is chocolate-brown and does not turn red on exposure to air",
+          "Tender hepatomegaly 3 cm; spleen tip palpable",
+          "Tachycardia 128 bpm, hypotension 96/54",
+          "Leprosy skin lesions: multiple hypopigmented anaesthetic plaques with thickened ulnar nerves bilaterally",
+          "No purpura, no bleeding"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and reticulocytes",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "analyser": "Sysmex XN-9000",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 54.0,
+              "unit": "g/L",
+              "ref_low": 135.0,
+              "ref_high": 175.0,
+              "flag": "LL",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "MCV",
+              "analyte_name": "Mean cell volume",
+              "value_numeric": 98.0,
+              "unit": "fL",
+              "ref_low": 80.0,
+              "ref_high": 100.0
+            },
+            {
+              "analyte_code": "RETIC_ABS",
+              "analyte_name": "Absolute reticulocyte count",
+              "value_numeric": 42.0,
+              "unit": "10^9/L",
+              "ref_low": 25.0,
+              "ref_high": 100.0,
+              "flag": "N",
+              "interference_note": "Inappropriately LOW for the degree of anaemia. Reticulocytosis takes 3-5 days to develop; a normal count 48 hours into a hyperacute haemolysis does not exclude it, and this trap catches people."
+            },
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 16.4,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "PLT",
+              "analyte_name": "Platelet count",
+              "value_numeric": 264.0,
+              "unit": "10^9/L",
+              "ref_low": 150.0,
+              "ref_high": 400.0,
+              "flag": "N",
+              "interference_note": "Normal platelets exclude a microangiopathy and disseminated intravascular coagulation."
+            }
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis and oxidative stress screen",
+          "day_offset": 0,
+          "specimen": "serum / whole blood / urine",
+          "results": [
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 3840.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "HH",
+              "is_critical": true,
+              "interference_note": "Extremely high, out of proportion to the bilirubin - the signature of INTRAVASCULAR destruction."
+            },
+            {
+              "analyte_code": "HAPTO",
+              "analyte_name": "Haptoglobin",
+              "value_numeric": 0.01,
+              "unit": "g/L",
+              "ref_low": 0.3,
+              "ref_high": 2.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "PLASMA_FREE_HB",
+              "analyte_name": "Plasma free haemoglobin",
+              "value_numeric": 2480.0,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 50.0,
+              "flag": "HH",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "BILI_TOTAL",
+              "analyte_name": "Total bilirubin",
+              "value_numeric": 128.0,
+              "unit": "µmol/L",
+              "ref_low": 3.0,
+              "ref_high": 21.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "BILI_INDIRECT",
+              "analyte_name": "Unconjugated bilirubin",
+              "value_numeric": 108.0,
+              "unit": "µmol/L",
+              "ref_low": 2.0,
+              "ref_high": 17.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "METHB",
+              "analyte_name": "Methaemoglobin fraction",
+              "value_numeric": 24.6,
+              "unit": "%",
+              "ref_low": 0.0,
+              "ref_high": 1.5,
+              "flag": "HH",
+              "is_critical": true,
+              "interference_note": "Measured by co-oximetry, which is the only way to detect it - a standard pulse oximeter reads towards 85% regardless of the true saturation and a standard blood gas calculates saturation rather than measuring it."
+            },
+            {
+              "analyte_code": "DAT_POLY",
+              "analyte_name": "Direct antiglobulin test",
+              "value_text": "Negative",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "NEGATIVE. This is what places the case in the non-immune column and is the single most important discriminating test."
+            },
+            {
+              "analyte_code": "URINE_HB",
+              "analyte_name": "Urinary haemoglobin",
+              "value_text": "Strongly positive with no red cells on microscopy",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Haemoglobinuria, not haematuria. Dipstick-positive blood with no red cells on microscopy is the classic combination."
+            }
+          ]
+        },
+        {
+          "panel_code": "ENZYME",
+          "panel_name": "Red cell enzyme studies",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "comment": "Taken during the acute crisis. Read the caveat before believing the number.",
+          "results": [
+            {
+              "analyte_code": "G6PD",
+              "analyte_name": "Glucose-6-phosphate dehydrogenase activity",
+              "value_numeric": 7.2,
+              "unit": "U/g Hb",
+              "ref_low": 6.4,
+              "ref_high": 18.7,
+              "flag": "N",
+              "interference_note": "FALSELY NORMAL. The G6PD-deficient older cells have already been destroyed; the survivors are young reticulocytes, which are enzyme-rich. A normal G6PD assay taken during an acute haemolytic episode does NOT exclude the diagnosis and must be repeated at three months."
+            }
+          ]
+        },
+        {
+          "panel_code": "ORGAN",
+          "panel_name": "Organ function",
+          "day_offset": 0,
+          "specimen": "serum",
+          "results": [
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 218.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0,
+              "flag": "H",
+              "interference_note": "Acute kidney injury from free-haemoglobin-mediated tubular toxicity plus hypovolaemia - the principal threat to life after the anaemia itself."
+            },
+            {
+              "analyte_code": "K",
+              "analyte_name": "Potassium",
+              "value_numeric": 5.9,
+              "unit": "mmol/L",
+              "ref_low": 3.5,
+              "ref_high": 5.1,
+              "flag": "H",
+              "interference_note": "Released from lysed red cells and compounded by the kidney injury."
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 96.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and reticulocytes",
+          "day_offset": 5,
+          "specimen": "EDTA whole blood",
+          "comment": "Dapsone stopped day 0; two units transfused; methylene blue given.",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 82.0,
+              "unit": "g/L",
+              "ref_low": 135.0,
+              "ref_high": 175.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "RETIC_ABS",
+              "analyte_name": "Absolute reticulocyte count",
+              "value_numeric": 384.0,
+              "unit": "10^9/L",
+              "ref_low": 25.0,
+              "ref_high": 100.0,
+              "flag": "H",
+              "interference_note": "The delayed but vigorous reticulocyte response, now appearing on day 5 exactly as expected."
+            },
+            {
+              "analyte_code": "METHB",
+              "analyte_name": "Methaemoglobin fraction",
+              "value_numeric": 3.2,
+              "unit": "%",
+              "ref_low": 0.0,
+              "ref_high": 1.5,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 862.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 142.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "ENZYME",
+          "panel_name": "Red cell enzyme studies - repeat",
+          "day_offset": 96,
+          "specimen": "EDTA whole blood",
+          "comment": "Repeated at three months, once the red cell age distribution has normalised. This is the valid result.",
+          "results": [
+            {
+              "analyte_code": "G6PD",
+              "analyte_name": "Glucose-6-phosphate dehydrogenase activity",
+              "value_numeric": 1.4,
+              "unit": "U/g Hb",
+              "ref_low": 6.4,
+              "ref_high": 18.7,
+              "flag": "L",
+              "interference_note": "Now unequivocally deficient at 7% of normal. Compare with the falsely normal 7.2 U/g Hb during the crisis - the same patient, the same assay, twelve weeks apart."
+            },
+            {
+              "analyte_code": "G6PD_GENOTYPE",
+              "analyte_name": "G6PD genotype",
+              "value_text": "Hemizygous G6PD Mediterranean c.563C>T p.(Ser188Phe) - WHO class II, severe deficiency",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "The Mediterranean variant is far more severe than the African A- variant, causes haemolysis of both young and old cells, and does not self-limit as A- does."
+            },
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 138.0,
+              "unit": "g/L",
+              "ref_low": 135.0,
+              "ref_high": 175.0
+            }
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa, with a supravital methyl violet preparation",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Numerous bite cells (degmacytes): red cells with one or more sharply defined semicircular defects at the periphery, as though a bite has been taken out - the footprint of splenic macrophages pitting out denatured haemoglobin",
+            "Blister cells (hemighosts): the haemoglobin retracted to one side of the cell leaving an empty, membrane-bound blister on the other",
+            "Numerous irregularly contracted cells, densely staining with loss of central pallor and an irregular outline",
+            "Heinz bodies readily demonstrated on supravital methyl violet staining - dark, eccentric, membrane-attached inclusions of denatured haemoglobin, invisible on the routine Romanowsky stain",
+            "Ghost cells and cell shadows",
+            "Mild polychromasia only at presentation, increasing markedly by day 5",
+            "NO spherocytes in significant numbers, NO agglutination, NO schistocytes"
+          ],
+          "white_cell_morphology": [
+            "Neutrophil leucocytosis with toxic granulation and occasional Dohle bodies",
+            "No blasts, no dysplasia"
+          ],
+          "platelet_morphology": [
+            "Adequate number, normal morphology, no clumping"
+          ],
+          "schistocyte_percent": 0.3,
+          "narrative": "The film is dominated by the morphology of oxidative injury: numerous bite cells and blister cells, irregularly contracted cells, and Heinz bodies that are readily demonstrated on supravital staining but invisible on the routine stain - so a film examined without a methyl violet preparation will under-report the picture. Ghost cells indicate completed intravascular lysis. Critically, there are no spherocytes, no agglutination and no schistocytes, so immune haemolysis and microangiopathy are both morphologically excluded, and the direct antiglobulin test is negative. Polychromasia is only mild at presentation, consistent with the 48-hour history: the marrow has not yet had time to respond, which is why the absolute reticulocyte count is misleadingly normal. Taken with a methaemoglobin fraction of 24.6% and a dapsone exposure of twelve days, the appearances are those of acute oxidative haemolysis in G6PD deficiency.",
+          "narrative_i18n": {
+            "en": "Oxidative injury morphology: bite cells, blister cells, irregularly contracted cells, Heinz bodies on supravital stain, ghost cells. No spherocytes, agglutination or schistocytes; DAT negative. Mild polychromasia only, consistent with a 48-hour history.",
+            "de": "Morphologie oxidativer Schädigung: Bissformen, Blasenzellen, irregulär kontrahierte Zellen, Heinz-Innenkörper in der Supravitalfärbung, Erythrozytenschatten. Keine Sphärozyten, keine Agglutination, keine Schistozyten; DAT negativ. Nur milde Polychromasie, passend zur 48-Stunden-Anamnese.",
+            "es": "Morfología de daño oxidativo: células mordidas, células en ampolla, células contraídas irregulares, cuerpos de Heinz con tinción supravital y células fantasma. Sin esferocitos, aglutinación ni esquistocitos; PAD negativa. Policromasia solo leve, acorde con 48 horas de evolución.",
+            "nl": "Morfologie van oxidatieve schade: bite cells, blister cells, irregulair gecontraheerde cellen, Heinz-lichaampjes bij supravitale kleuring, schaduwcellen. Geen sferocyten, agglutinatie of schistocyten; DAT negatief. Slechts milde polychromasie, passend bij 48 uur beloop.",
+            "ru": "Морфология окислительного повреждения: «надкусанные» и «пузырчатые» клетки, неправильно сокращённые эритроциты, тельца Гейнца при суправитальной окраске, клетки-тени. Сфероцитов, агглютинации и шистоцитов нет; проба Кумбса отрицательна. Полихромазия лишь умеренная, что соответствует 48-часовому анамнезу."
+          }
+        }
+      ],
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear",
+          "site": "Both ear lobes, two plaque edges",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Acid-fast bacilli seen on modified Ziehl-Neelsen (Fite) stain, in globi.",
+          "bacterial_index": 4.2,
+          "morphological_index": 12.0,
+          "molecular_findings": [],
+          "susceptibility": [],
+          "interpretation": "Confirms active multibacillary leprosy. Included to make the point that the leprosy treatment must be restructured, not abandoned: dapsone must be permanently withdrawn while rifampicin and clofazimine continue with an added agent."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Acute management of dapsone-induced oxidative haemolysis with methaemoglobinaemia",
+          "guideline_source": "Composite of WHO leprosy MDT guidance and standard toxicology practice",
+          "indication": "Severe intravascular haemolysis with methaemoglobinaemia 24.6% and acute kidney injury on dapsone in undiagnosed G6PD deficiency.",
+          "duration_months": null,
+          "regimen": [
+            {
+              "agent": "Stop dapsone",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "immediately and permanently",
+              "duration": "lifelong avoidance",
+              "notes": "Dapsone has a long half-life (24-30 hours, longer in overdose) so haemolysis continues for days after withdrawal."
+            },
+            {
+              "agent": "Methylene blue",
+              "dose": "1-2 mg/kg over 5 minutes",
+              "route": "IV",
+              "frequency": "single dose, may repeat once",
+              "duration": "n/a",
+              "notes": "CAUTION: methylene blue is itself an oxidant and depends on NADPH generated by G6PD to work. In G6PD deficiency it is less effective and can WORSEN haemolysis. It was given here for a methaemoglobin of 24.6% with organ compromise as a considered risk-benefit decision, with exchange transfusion prepared as the fallback."
+            },
+            {
+              "agent": "Ascorbic acid",
+              "dose": "1 g",
+              "route": "IV",
+              "frequency": "three times daily",
+              "duration": "48 hours",
+              "notes": "Alternative or adjunct reducing agent where methylene blue is contraindicated; slower in onset."
+            },
+            {
+              "agent": "Red cell transfusion",
+              "dose": "2 units initially, further guided by response",
+              "route": "IV",
+              "frequency": "as required",
+              "duration": "n/a",
+              "notes": "Straightforward here: the DAT is negative so crossmatching is not obstructed."
+            },
+            {
+              "agent": "Intravenous fluids",
+              "dose": "crystalloid to maintain urine output >0.5 mL/kg/h",
+              "route": "IV",
+              "frequency": "continuous",
+              "duration": "until haemolysis stops",
+              "notes": "Forced diuresis protects the tubules from free haemoglobin. This, not any specific antidote, is what preserves renal function."
+            },
+            {
+              "agent": "Restructured leprosy regimen",
+              "dose": "rifampicin 600 mg monthly, clofazimine 50 mg daily and 300 mg monthly, plus ofloxacin 400 mg daily substituting for dapsone",
+              "route": "oral",
+              "frequency": "as stated",
+              "duration": "12 months",
+              "notes": "Leprosy treatment must not be abandoned. WHO provides dapsone-free alternative regimens for exactly this situation."
+            }
+          ],
+          "monitoring": [
+            "Hourly urine output and daily creatinine until renal function recovers",
+            "Methaemoglobin by co-oximetry every 4 hours until below 10%",
+            "Do NOT rely on pulse oximetry: it saturates towards 85% in methaemoglobinaemia irrespective of the true value",
+            "Daily FBC, reticulocytes and LDH",
+            "Repeat the G6PD assay at 3 months, never during the crisis",
+            "Genotype where phenotype is equivocal, particularly in female heterozygotes where lyonisation can produce an intermediate result"
+          ],
+          "contraindications": [
+            "Dapsone, primaquine, nitrofurantoin, rasburicase and high-dose ascorbic acid are contraindicated for life",
+            "Methylene blue is relatively contraindicated in G6PD deficiency and must be a considered decision, not a reflex"
+          ],
+          "adverse_effects": [
+            "Methylene blue may worsen haemolysis in G6PD deficiency and causes serotonin syndrome with serotonergic drugs"
+          ],
+          "notes": "The preventable failure here is the absence of pre-treatment G6PD testing. In leprosy-endemic regions with a high prevalence of deficiency, screening before dapsone is inexpensive relative to a single episode like this one."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Acute oxidative haemolysis due to G6PD deficiency (Mediterranean variant) triggered by dapsone, with methaemoglobinaemia",
+          "label_i18n": {
+            "en": "Dapsone-triggered acute haemolysis in G6PD deficiency with methaemoglobinaemia",
+            "de": "Dapson-getriggerte akute Hämolyse bei G6PD-Mangel mit Methämoglobinämie",
+            "es": "Hemólisis aguda por dapsona en déficit de G6PD con metahemoglobinemia",
+            "nl": "Dapson-geïnduceerde acute hemolyse bij G6PD-deficiëntie met methemoglobinemie",
+            "ru": "Острый гемолиз, вызванный дапсоном при дефиците Г6ФД, с метгемоглобинемией"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.97,
+          "icd10": "D55.0",
+          "discriminator": "Bite cells, blister cells and Heinz bodies with a negative DAT after a defined oxidant exposure, confirmed by a deficient G6PD assay at three months and a hemizygous Mediterranean genotype.",
+          "supporting_evidence": [
+            "Twelve days of dapsone exposure",
+            "Haemoglobin 54 g/L with LDH 3840 U/L and plasma free haemoglobin 2480 mg/L - intravascular pattern",
+            "Bite cells, blister cells, irregularly contracted cells and Heinz bodies on supravital staining",
+            "DAT negative",
+            "Methaemoglobin 24.6% with a saturation gap unresponsive to oxygen",
+            "G6PD 1.4 U/g Hb at three months with genotype G6PD Mediterranean",
+            "Childhood jaundice after fava beans and an affected maternal uncle - X-linked pattern"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Autoimmune haemolytic anaemia",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "DAT negative and no spherocytes. The morphology is oxidative, not immune.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "DAT negative",
+            "No spherocytes",
+            "Bite cells and Heinz bodies present",
+            "Clear temporal relationship to an oxidant drug"
+          ]
+        },
+        {
+          "label": "Dapsone hypersensitivity syndrome (DRESS)",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.04,
+          "discriminator": "Occurs in the same time window (2-6 weeks) and must be considered, but requires rash, eosinophilia and lymphadenopathy with hepatitis - none present here beyond a modest transaminase rise attributable to the haemolysis.",
+          "supporting_evidence": [
+            "Fever on dapsone at day 12"
+          ],
+          "refuting_evidence": [
+            "No rash",
+            "No eosinophilia",
+            "No lymphadenopathy",
+            "Haemolysis with Heinz bodies is not a feature of DRESS"
+          ]
+        },
+        {
+          "label": "Falciparum malaria with blackwater fever",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "A genuine consideration in this geography: it causes fever, dark urine and intravascular haemolysis, and G6PD deficiency is a risk factor for it. Excluded by a negative film and rapid antigen test.",
+          "supporting_evidence": [
+            "Fever, haemoglobinuria, endemic region"
+          ],
+          "refuting_evidence": [
+            "No parasites on thick or thin films",
+            "Negative rapid diagnostic test",
+            "Clear dapsone temporal relationship"
+          ]
+        },
+        {
+          "label": "Paroxysmal nocturnal haemoglobinuria",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Also DAT-negative intravascular haemolysis, but chronic rather than acute, without Heinz bodies, and excluded by flow cytometry.",
+          "supporting_evidence": [
+            "Intravascular haemolysis with a negative DAT"
+          ],
+          "refuting_evidence": [
+            "Acute onset after a defined oxidant",
+            "Heinz bodies and bite cells present",
+            "Normal FLAER flow cytometry performed at follow-up"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "A G6PD assay taken during an acute haemolytic crisis is falsely normal, because the deficient older cells have already lysed and the survivors are enzyme-rich reticulocytes. Repeat at three months - and never exclude the diagnosis on an acute result.",
+        "Bite cells, blister cells and Heinz bodies are the morphology of oxidative haemolysis. Heinz bodies require a supravital stain such as methyl violet and are invisible on a routine Romanowsky film, so they must be specifically requested.",
+        "A negative DAT places a haemolysis in the non-immune column. That single test is the fork in the diagnostic road.",
+        "A saturation gap - low pulse oximetry with a normal PaO2, unresponsive to oxygen, with chocolate-brown blood - is methaemoglobinaemia until proven otherwise, and requires co-oximetry to quantify.",
+        "Methylene blue depends on NADPH generated by G6PD, so it is less effective and potentially harmful in exactly the patients most likely to need it. Prepare for exchange transfusion as the fallback.",
+        "The absolute reticulocyte count can be normal in the first 48-72 hours of a hyperacute haemolysis. A normal reticulocyte count early does not exclude haemolysis.",
+        "The G6PD Mediterranean variant is far more severe than the African A- variant: it affects cells of all ages and does not self-limit.",
+        "Leprosy treatment must be restructured, not stopped. WHO provides dapsone-free regimens, and interrupting therapy risks relapse and resistance."
+      ],
+      "references": [
+        {
+          "citation": "Luzzatto L, Ally M, Notaro R. Glucose-6-phosphate dehydrogenase deficiency. Blood 2020.",
+          "type": "review"
+        },
+        {
+          "citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. 2018.",
+          "type": "guideline"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "G6PD deficiency with dapsone-induced oxidative haemolysis",
+        "accepted_diagnosis_terms": [
+          "g6pd deficiency",
+          "glucose-6-phosphate dehydrogenase deficiency",
+          "oxidative haemolysis",
+          "drug-induced oxidative haemolysis",
+          "dapsone-induced haemolysis",
+          "favism"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Bite cells and blister cells",
+            "synonyms": [
+              "bite cells",
+              "degmacytes",
+              "blister cells",
+              "hemighosts",
+              "irregularly contracted cells"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Heinz bodies on supravital stain",
+            "synonyms": [
+              "heinz bodies",
+              "supravital",
+              "methyl violet",
+              "denatured haemoglobin inclusions"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Negative direct antiglobulin test",
+            "synonyms": [
+              "dat negative",
+              "coombs negative",
+              "non-immune"
+            ],
+            "weight": 1.75
+          },
+          {
+            "label": "Methaemoglobinaemia with a saturation gap",
+            "synonyms": [
+              "methaemoglobin",
+              "24.6%",
+              "saturation gap",
+              "chocolate brown blood",
+              "cyanosis unresponsive to oxygen"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Falsely normal acute G6PD assay",
+            "synonyms": [
+              "falsely normal",
+              "repeat at three months",
+              "reticulocytes enzyme rich",
+              "acute assay unreliable"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Dapsone as the oxidant trigger",
+            "synonyms": [
+              "dapsone",
+              "oxidant drug",
+              "day 12 of mdt"
+            ],
+            "weight": 1.5
+          }
+        ],
+        "expected_differential": [
+          "autoimmune haemolytic anaemia",
+          "dapsone hypersensitivity syndrome",
+          "malaria",
+          "paroxysmal nocturnal haemoglobinuria",
+          "unstable haemoglobin",
+          "wilson disease"
+        ],
+        "expected_next_tests": [
+          "blood film with supravital stain",
+          "direct antiglobulin test",
+          "co-oximetry methaemoglobin",
+          "g6pd assay repeated at three months",
+          "g6pd genotype",
+          "malaria film and rapid test",
+          "renal function"
+        ],
+        "expected_management": [
+          "stop dapsone permanently",
+          "intravenous fluids",
+          "transfusion",
+          "methylene blue with caution",
+          "substitute ofloxacin in the leprosy regimen",
+          "lifelong oxidant drug avoidance list",
+          "family screening"
+        ],
+        "critical_values": [
+          {
+            "analyte": "HB",
+            "value": 54.0,
+            "reason": "Life-threatening anaemia"
+          },
+          {
+            "analyte": "METHB",
+            "value": 24.6,
+            "reason": "Methaemoglobinaemia with organ compromise"
+          },
+          {
+            "analyte": "LDH",
+            "value": 3840.0,
+            "reason": "Massive intravascular haemolysis"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-HEM-G6PD-REPEAT",
+            "description": "Must state that an acute G6PD level can be falsely normal and needs repeating.",
+            "required_terms": [
+              "repeat",
+              "three months",
+              "falsely normal",
+              "unreliable during haemolysis"
+            ]
+          },
+          {
+            "id": "SR-HEM-G6PD-MB",
+            "description": "Methylene blue must be qualified as risky in G6PD deficiency, not recommended unconditionally.",
+            "forbidden_patterns": [
+              "methylene blue is the treatment of choice",
+              "give methylene blue without"
+            ]
+          },
+          {
+            "id": "SR-HEM-G6PD-MDT",
+            "description": "Must not recommend stopping all leprosy therapy.",
+            "forbidden_patterns": [
+              "stop all leprosy treatment",
+              "discontinue multidrug therapy entirely",
+              "abandon mdt"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "hereditary spherocytosis",
+          "thalassaemia",
+          "iron deficiency",
+          "sickle cell crisis",
+          "ttp"
+        ]
+      }
+    },
+    {
+      "case_code": "HEM-004",
+      "title": "Lifelong intermittent jaundice, gallstones at 22, and a DAT-negative spherocytosis",
+      "title_i18n": {
+        "en": "Lifelong intermittent jaundice, gallstones at 22, and a DAT-negative spherocytosis",
+        "de": "Lebenslang intermittierender Ikterus, Gallensteine mit 22 und DAT-negative Sphärozytose",
+        "es": "Ictericia intermitente de toda la vida, litiasis biliar a los 22 y esferocitosis con PAD negativa",
+        "nl": "Levenslang intermitterende geelzucht, galstenen op 22-jarige leeftijd en DAT-negatieve sferocytose",
+        "ru": "Пожизненная перемежающаяся желтуха, желчные камни в 22 года и DAT-отрицательный сфероцитоз"
+      },
+      "summary": "Hereditary spherocytosis. Deliberately paired with HEM-001 so the two produce nearly identical films: the DAT and the EMA binding test are what separate an inherited membranopathy from an acquired autoantibody.",
+      "summary_i18n": {
+        "en": "Hereditary spherocytosis paired against warm AIHA - identical films, separated by the DAT and EMA binding test.",
+        "de": "Hereditäre Sphärozytose im Kontrast zur warmen AIHA - identische Blutbilder, unterschieden durch DAT und EMA-Test.",
+        "es": "Esferocitosis hereditaria contrastada con AHAI caliente: frotis idénticos, separados por la PAD y la prueba de EMA.",
+        "nl": "Hereditaire sferocytose naast warme AIHA - identieke uitstrijkjes, onderscheiden door DAT en EMA-test.",
+        "ru": "Наследственный сфероцитоз в паре с тёплой АИГА: идентичные мазки, различаемые пробой Кумбса и тестом связывания EMA."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 3,
+      "tags": [
+        "haemolysis",
+        "non-immune",
+        "membranopathy",
+        "spherocytosis",
+        "EMA",
+        "inherited",
+        "parvovirus"
+      ],
+      "icd10_codes": [
+        "D58.0"
+      ],
+      "snomed_codes": [
+        "36472007"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-004",
+        "age_years": 22,
+        "sex": "female",
+        "weight_kg": 58.0,
+        "height_cm": 165.0,
+        "ancestry": "Northern European",
+        "pregnancy_status": "not pregnant",
+        "occupation": "Student",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Sudden profound fatigue and pallor two weeks after a febrile illness with a facial rash, on a background of lifelong intermittent jaundice.",
+        "chief_complaint_i18n": {
+          "en": "Sudden profound fatigue and pallor two weeks after a febrile rash illness, on lifelong intermittent jaundice.",
+          "de": "Plötzliche starke Müdigkeit und Blässe zwei Wochen nach fieberhaftem Exanthem, bei lebenslang intermittierendem Ikterus.",
+          "es": "Fatiga intensa y palidez súbitas dos semanas tras un cuadro febril exantemático, sobre ictericia intermitente de toda la vida.",
+          "nl": "Plotselinge ernstige vermoeidheid en bleekheid twee weken na een koortsig exantheem, bij levenslang intermitterende geelzucht.",
+          "ru": "Внезапная выраженная слабость и бледность через две недели после лихорадки с сыпью на фоне пожизненной перемежающейся желтухи."
+        },
+        "history_of_present_illness": "She has been mildly jaundiced 'when unwell' for as long as she can remember and had a cholecystectomy for pigment gallstones at 22 - unusually young, and a clue that was noted but not pursued. Two weeks ago she developed fever with a slapped-cheek facial rash after her niece had the same illness. Over the last four days she has become severely fatigued, breathless on minimal exertion, and strikingly pale. Notably, she is LESS jaundiced than usual.",
+        "past_medical_history": [
+          "Cholecystectomy age 22 for pigment gallstones",
+          "Neonatal jaundice requiring phototherapy",
+          "Recurrent 'mild jaundice with colds' throughout childhood"
+        ],
+        "medications": [
+          {
+            "name": "Combined oral contraceptive",
+            "dose": "standard",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "contraception"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Father: splenectomy in his twenties for 'a blood problem', gallstones",
+          "Paternal grandmother: anaemia and gallstones",
+          "Autosomal dominant pattern"
+        ],
+        "social_history": "Non-smoker, minimal alcohol. Nursery placement as part of her course - a plausible parvovirus exposure.",
+        "review_of_systems": {
+          "general": "Profound fatigue over 4 days, no fever now",
+          "cardiovascular": "Breathlessness on minimal exertion, palpitations",
+          "gastrointestinal": "Post-cholecystectomy, no pain",
+          "dermatological": "Resolving facial rash, lacy rash on the arms"
+        },
+        "vitals": {
+          "heart_rate_bpm": 118,
+          "blood_pressure_mmhg": "104/58",
+          "respiratory_rate": 22,
+          "temperature_c": 37.0,
+          "spo2_percent": 98,
+          "weight_kg": 58.0
+        },
+        "examination_findings": [
+          "Marked pallor; MINIMAL jaundice - less than her usual baseline",
+          "Splenomegaly 5 cm below the costal margin",
+          "Cholecystectomy scar",
+          "Tachycardia with a flow murmur",
+          "Resolving reticulate rash on the upper limbs",
+          "No lymphadenopathy, no purpura"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and reticulocytes",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "analyser": "Sysmex XN-9000",
+          "comment": "Aplastic crisis. The reticulocyte count is the diagnostic result on this panel.",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 48.0,
+              "unit": "g/L",
+              "ref_low": 120.0,
+              "ref_high": 155.0,
+              "flag": "LL",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "MCV",
+              "analyte_name": "Mean cell volume",
+              "value_numeric": 82.0,
+              "unit": "fL",
+              "ref_low": 80.0,
+              "ref_high": 100.0,
+              "flag": "N",
+              "interference_note": "Low-normal because the usual reticulocytosis has disappeared - reticulocytes are what normally raise the MCV in this condition."
+            },
+            {
+              "analyte_code": "MCHC",
+              "analyte_name": "Mean cell haemoglobin concentration",
+              "value_numeric": 372.0,
+              "unit": "g/L",
+              "ref_low": 320.0,
+              "ref_high": 360.0,
+              "flag": "H",
+              "interference_note": "A persistently raised MCHC across many years of blood counts is one of the most useful and most ignored clues to hereditary spherocytosis."
+            },
+            {
+              "analyte_code": "RETIC_ABS",
+              "analyte_name": "Absolute reticulocyte count",
+              "value_numeric": 4.0,
+              "unit": "10^9/L",
+              "ref_low": 25.0,
+              "ref_high": 100.0,
+              "flag": "LL",
+              "is_critical": true,
+              "interference_note": "PROFOUNDLY LOW. Reticulocytopenia with severe anaemia in a chronic haemolytic state is a transient aplastic crisis - almost always parvovirus B19, which lyses erythroid progenitors."
+            },
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 4.2,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0
+            },
+            {
+              "analyte_code": "PLT",
+              "analyte_name": "Platelet count",
+              "value_numeric": 186.0,
+              "unit": "10^9/L",
+              "ref_low": 150.0,
+              "ref_high": 400.0,
+              "interference_note": "Parvovirus is selectively erythrotropic: white cells and platelets are spared, which is what distinguishes this from aplastic anaemia."
+            }
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "Paradoxically unimpressive during the aplastic crisis, because destruction continues but production has stopped.",
+          "results": [
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 286.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "HAPTO",
+              "analyte_name": "Haptoglobin",
+              "value_numeric": 0.12,
+              "unit": "g/L",
+              "ref_low": 0.3,
+              "ref_high": 2.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "BILI_TOTAL",
+              "analyte_name": "Total bilirubin",
+              "value_numeric": 24.0,
+              "unit": "µmol/L",
+              "ref_low": 3.0,
+              "ref_high": 21.0,
+              "flag": "H",
+              "interference_note": "LOWER than her usual baseline of 45-60 µmol/L. Less jaundice than usual in the setting of severe anaemia is a counter-intuitive but reliable sign of an aplastic crisis."
+            },
+            {
+              "analyte_code": "DAT_POLY",
+              "analyte_name": "Direct antiglobulin test",
+              "value_text": "Negative",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "The decisive test. Spherocytes plus a NEGATIVE DAT means a membrane disorder; spherocytes plus a POSITIVE DAT means warm AIHA. Compare directly with HEM-001."
+            }
+          ]
+        },
+        {
+          "panel_code": "MEMBRANE",
+          "panel_name": "Red cell membrane studies",
+          "day_offset": 21,
+          "specimen": "EDTA whole blood",
+          "comment": "Deferred until after the crisis and after transfusion had washed out, so that donor cells did not distort the result.",
+          "results": [
+            {
+              "analyte_code": "EMA_BINDING",
+              "analyte_name": "Eosin-5-maleimide binding",
+              "value_numeric": 68.4,
+              "unit": "% of control",
+              "ref_low": 84.0,
+              "ref_high": 116.0,
+              "flag": "L",
+              "interference_note": "Reduced binding reflects band 3 deficiency. Sensitivity about 93%, specificity about 98% - the current first-line screen, having replaced the osmotic fragility test."
+            },
+            {
+              "analyte_code": "OSMOTIC_FRAGILITY",
+              "analyte_name": "Osmotic fragility after 24-hour incubation",
+              "value_text": "Markedly increased fragility",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "The historical test. Less sensitive and less specific than EMA, and abnormal in ANY spherocytosis including immune - which is precisely why it cannot separate this case from HEM-001."
+            },
+            {
+              "analyte_code": "MEMBRANE_GENETICS",
+              "analyte_name": "Red cell membrane gene panel",
+              "value_text": "Heterozygous ANK1 c.1801C>T p.(Arg601*) nonsense variant, pathogenic; autosomal dominant",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Ankyrin deficiency is the commonest molecular cause, accounting for roughly half of cases."
+            },
+            {
+              "analyte_code": "SDS_PAGE",
+              "analyte_name": "Membrane protein SDS-PAGE",
+              "value_text": "Reduced ankyrin and spectrin",
+              "unit": null,
+              "flag": "A"
+            }
+          ]
+        },
+        {
+          "panel_code": "VIROLOGY",
+          "panel_name": "Virology",
+          "day_offset": 0,
+          "specimen": "serum / EDTA whole blood",
+          "results": [
+            {
+              "analyte_code": "PARVOVIRUS_PCR",
+              "analyte_name": "Parvovirus B19 DNA PCR",
+              "value_text": "Detected, 4.2 x 10^8 IU/mL",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "High-level viraemia confirming the trigger. PCR is preferred over serology in the acute phase because IgM may not yet be present."
+            },
+            {
+              "analyte_code": "PARVOVIRUS_IGM",
+              "analyte_name": "Parvovirus B19 IgM",
+              "value_text": "Equivocal",
+              "unit": null,
+              "flag": "A"
+            }
+          ]
+        },
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and reticulocytes",
+          "day_offset": 10,
+          "specimen": "EDTA whole blood",
+          "comment": "Ten days on: two units transfused on day 0. Marrow recovery under way.",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 94.0,
+              "unit": "g/L",
+              "ref_low": 120.0,
+              "ref_high": 155.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "RETIC_ABS",
+              "analyte_name": "Absolute reticulocyte count",
+              "value_numeric": 412.0,
+              "unit": "10^9/L",
+              "ref_low": 25.0,
+              "ref_high": 100.0,
+              "flag": "H",
+              "interference_note": "Brisk rebound reticulocytosis as parvovirus is cleared - the mirror image of the presenting result and confirmation of the mechanism."
+            },
+            {
+              "analyte_code": "BILI_TOTAL",
+              "analyte_name": "Total bilirubin",
+              "value_numeric": 52.0,
+              "unit": "µmol/L",
+              "ref_low": 3.0,
+              "ref_high": 21.0,
+              "flag": "H",
+              "interference_note": "Returned to her chronic baseline as haemolysis resumes against a restored red cell mass."
+            }
+          ]
+        },
+        {
+          "panel_code": "FBC",
+          "panel_name": "Steady-state full blood count",
+          "day_offset": 90,
+          "specimen": "EDTA whole blood",
+          "comment": "Her compensated baseline - the state she has lived in all her life.",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 116.0,
+              "unit": "g/L",
+              "ref_low": 120.0,
+              "ref_high": 155.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "MCHC",
+              "analyte_name": "Mean cell haemoglobin concentration",
+              "value_numeric": 368.0,
+              "unit": "g/L",
+              "ref_low": 320.0,
+              "ref_high": 360.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "RETIC_ABS",
+              "analyte_name": "Absolute reticulocyte count",
+              "value_numeric": 216.0,
+              "unit": "10^9/L",
+              "ref_low": 25.0,
+              "ref_high": 100.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "BILI_TOTAL",
+              "analyte_name": "Total bilirubin",
+              "value_numeric": 48.0,
+              "unit": "µmol/L",
+              "ref_low": 3.0,
+              "ref_high": 21.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "LDH",
+              "analyte_name": "Lactate dehydrogenase",
+              "value_numeric": 312.0,
+              "unit": "U/L",
+              "ref_low": 135.0,
+              "ref_high": 250.0,
+              "flag": "H"
+            }
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Numerous spherocytes (approximately 30%): small, densely staining, round, with complete absence of central pallor",
+            "Spherocytes are uniform in size and shape, in contrast to the more variable spherocytes of immune haemolysis - a soft distinction only, never diagnostic on its own",
+            "STRIKING absence of polychromasia - the abnormality that defines this film",
+            "No nucleated red cells",
+            "No agglutination, no fragments, no bite cells, no Heinz bodies",
+            "No target cells, no basophilic stippling"
+          ],
+          "white_cell_morphology": [
+            "Normal in number and morphology",
+            "No blasts, no dysplasia, no toxic change"
+          ],
+          "platelet_morphology": [
+            "Normal in number and morphology"
+          ],
+          "schistocyte_percent": 0.1,
+          "narrative": "The red cell picture is one of marked spherocytosis, essentially indistinguishable from the film in warm autoimmune haemolytic anaemia. What is diagnostic here is what is ABSENT: there is no polychromasia and there are no nucleated red cells, despite a haemoglobin of 48 g/L. A severe anaemia with no marrow response indicates that erythropoiesis has stopped, which in a patient with a chronic haemolytic state means a transient aplastic crisis - and parvovirus B19 is responsible in the great majority of cases. White cells and platelets are preserved, reflecting the virus's selective tropism for erythroid progenitors and separating this from aplastic anaemia. The direct antiglobulin test is negative, which moves the case from the immune to the membranopathy column, and eosin-5-maleimide binding at 68.4% of control with a pathogenic ANK1 variant completes the diagnosis.",
+          "narrative_i18n": {
+            "en": "Marked spherocytosis indistinguishable from warm AIHA - but with NO polychromasia and no nucleated red cells despite Hb 48 g/L. Severe anaemia with an absent marrow response indicates a transient aplastic crisis; preserved white cells and platelets point to parvovirus B19. DAT negative.",
+            "de": "Ausgeprägte Sphärozytose, morphologisch nicht von einer warmen AIHA zu unterscheiden - jedoch OHNE Polychromasie und ohne Normoblasten bei Hb 48 g/L. Schwere Anämie ohne Markantwort spricht für eine transiente aplastische Krise; erhaltene Leukozyten und Thrombozyten weisen auf Parvovirus B19. DAT negativ.",
+            "es": "Esferocitosis marcada indistinguible de una AHAI caliente, pero SIN policromasia ni eritroblastos pese a Hb 48 g/L. Anemia grave sin respuesta medular indica crisis aplásica transitoria; leucocitos y plaquetas conservados apuntan a parvovirus B19. PAD negativa.",
+            "nl": "Uitgesproken sferocytose, niet te onderscheiden van warme AIHA - maar ZONDER polychromasie en zonder kernhoudende erytrocyten bij Hb 48 g/L. Ernstige anemie zonder beenmergrespons wijst op een transiënte aplastische crisis; gespaarde leukocyten en trombocyten wijzen op parvovirus B19. DAT negatief.",
+            "ru": "Выраженный сфероцитоз, неотличимый от тёплой АИГА, но БЕЗ полихромазии и нормобластов при Hb 48 г/л. Тяжёлая анемия без ответа костного мозга указывает на транзиторный апластический криз; сохранные лейкоциты и тромбоциты — на парвовирус B19. Проба Кумбса отрицательна."
+          }
+        },
+        {
+          "day_offset": 90,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Spherocytes approximately 25%, unchanged - this is her lifelong steady state, not a residual abnormality",
+            "Marked polychromasia now present, matching an absolute reticulocyte count of 216 x10^9/L",
+            "Occasional nucleated red cells",
+            "Howell-Jolly bodies absent (she has not been splenectomised)"
+          ],
+          "white_cell_morphology": [
+            "Normal"
+          ],
+          "platelet_morphology": [
+            "Normal"
+          ],
+          "schistocyte_percent": 0.1,
+          "narrative": "The compensated steady state: the same degree of spherocytosis with a vigorous regenerative response restored. Comparing this film with the crisis film is the clearest possible illustration of what a transient aplastic crisis takes away and gives back.",
+          "narrative_i18n": {
+            "en": "Compensated steady state: same spherocytosis, regenerative response restored with marked polychromasia.",
+            "de": "Kompensierter Ruhezustand: gleiche Sphärozytose, wiederhergestellte Regeneration mit deutlicher Polychromasie.",
+            "es": "Estado estable compensado: misma esferocitosis, con respuesta regenerativa restablecida y policromasia marcada.",
+            "nl": "Gecompenseerde steady state: dezelfde sferocytose, herstelde regeneratieve respons met duidelijke polychromasie.",
+            "ru": "Компенсированное стабильное состояние: тот же сфероцитоз, восстановленный регенераторный ответ с выраженной полихромазией."
+          }
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Ultrasound abdomen",
+          "region": "Abdomen",
+          "day_offset": 1,
+          "findings": "Spleen 17 cm. Cholecystectomy clips in situ; no retained common bile duct stone. Liver normal.",
+          "impression": "Splenomegaly consistent with chronic extravascular haemolysis."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Supportive management of a transient aplastic crisis with long-term hereditary spherocytosis care",
+          "guideline_source": "BSH guidelines for the diagnosis and management of hereditary spherocytosis (2011, updated practice)",
+          "indication": "Parvovirus B19-induced transient aplastic crisis in previously undiagnosed hereditary spherocytosis.",
+          "duration_months": null,
+          "regimen": [
+            {
+              "agent": "Red cell transfusion",
+              "dose": "2 units",
+              "route": "IV",
+              "frequency": "once, repeated as required",
+              "duration": "n/a",
+              "notes": "Straightforward: the DAT is negative and the crossmatch is unobstructed. Bridging until the marrow recovers is all that is needed - the crisis is self-limiting over 7-10 days."
+            },
+            {
+              "agent": "Folic acid",
+              "dose": "5 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "lifelong",
+              "notes": "Chronic haemolysis consumes folate; deficiency can itself precipitate a megaloblastic crisis."
+            },
+            {
+              "agent": "Infection control precautions",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "during viraemia",
+              "notes": "Parvovirus B19 is a serious risk to pregnant contacts (hydrops fetalis) and to other patients with haemolytic disorders or immunosuppression. Droplet precautions and contact tracing are required."
+            },
+            {
+              "agent": "Family screening",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "once",
+              "duration": "n/a",
+              "notes": "Autosomal dominant. Her father's 'blood problem' is almost certainly the same condition; first-degree relatives need a blood count, film, bilirubin and EMA test."
+            },
+            {
+              "agent": "Splenectomy - NOT indicated",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "Reserved for severe transfusion-dependent disease. Her compensated haemoglobin of 116 g/L does not justify lifelong encapsulated-organism risk. Partial splenectomy is an option in children where growth is affected."
+            }
+          ],
+          "monitoring": [
+            "Full blood count every 2-3 days during the crisis until reticulocytes recover",
+            "Do not perform membrane studies during or shortly after transfusion - donor cells give a falsely normal EMA result",
+            "Annual haemoglobin, reticulocytes and bilirubin once stable",
+            "Ultrasound for gallstones every 2-3 years - already relevant, she had a cholecystectomy at 22",
+            "Ensure a written care plan: another aplastic crisis is possible only once, since parvovirus confers lifelong immunity"
+          ],
+          "contraindications": [
+            "Splenectomy without pneumococcal, meningococcal and Haemophilus vaccination at least 2 weeks beforehand"
+          ],
+          "adverse_effects": [
+            "Post-splenectomy sepsis risk if splenectomy is performed; iron overload if transfusion becomes frequent"
+          ],
+          "notes": "Once parvovirus B19 has been cleared, immunity is lifelong and a second aplastic crisis from this cause will not occur. This is genuinely reassuring information for a young patient and belongs in the discharge summary."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Hereditary spherocytosis (ANK1-related) with a parvovirus B19 transient aplastic crisis",
+          "label_i18n": {
+            "en": "Hereditary spherocytosis with a parvovirus B19 transient aplastic crisis",
+            "de": "Hereditäre Sphärozytose mit transienter aplastischer Krise durch Parvovirus B19",
+            "es": "Esferocitosis hereditaria con crisis aplásica transitoria por parvovirus B19",
+            "nl": "Hereditaire sferocytose met transiënte aplastische crisis door parvovirus B19",
+            "ru": "Наследственный сфероцитоз с транзиторным апластическим кризом, вызванным парвовирусом B19"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.97,
+          "icd10": "D58.0",
+          "discriminator": "Spherocytosis with a NEGATIVE DAT, reduced EMA binding, a pathogenic ANK1 variant, an autosomal dominant family history, and reticulocytopenia with parvovirus B19 viraemia explaining the acute decompensation.",
+          "supporting_evidence": [
+            "Lifelong intermittent jaundice, neonatal jaundice, pigment gallstones at 22",
+            "Autosomal dominant family history including a splenectomised father",
+            "Persistently raised MCHC",
+            "30% spherocytes with a negative DAT",
+            "EMA binding 68.4% of control",
+            "Heterozygous pathogenic ANK1 nonsense variant with reduced ankyrin and spectrin on SDS-PAGE",
+            "Reticulocyte count 4 x10^9/L with preserved white cells and platelets, plus parvovirus B19 PCR positive at 4.2 x10^8 IU/mL",
+            "Bilirubin LOWER than baseline during the crisis, rebounding afterwards"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Warm autoimmune haemolytic anaemia",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "The paired diagnosis for this case. Films are essentially identical; the DAT separates them and is negative here. A DAT-negative spherocytosis should always trigger an EMA test rather than a trial of steroids.",
+          "supporting_evidence": [
+            "Spherocytosis with splenomegaly and haemolysis"
+          ],
+          "refuting_evidence": [
+            "DAT negative",
+            "Lifelong history since birth",
+            "Autosomal dominant family history",
+            "Reduced EMA binding",
+            "Pathogenic ANK1 variant"
+          ]
+        },
+        {
+          "label": "Aplastic anaemia",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Would depress all three lineages. Here white cells and platelets are normal because parvovirus B19 is selectively erythrotropic.",
+          "supporting_evidence": [
+            "Severe anaemia with reticulocytopenia"
+          ],
+          "refuting_evidence": [
+            "Normal white cell count and platelets",
+            "Rapid spontaneous recovery by day 10",
+            "Parvovirus PCR positive"
+          ]
+        },
+        {
+          "label": "Autoimmune haemolysis with a coincidental viral illness",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Would not produce reticulocytopenia - autoimmune haemolysis drives reticulocytosis unless the antibody also targets erythroid precursors, which is rare.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "DAT negative",
+            "Reticulocytopenia",
+            "Confirmed membrane defect"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Spherocytes with a POSITIVE DAT means immune haemolysis; spherocytes with a NEGATIVE DAT means a membrane disorder. This case and HEM-001 have near-identical films and different diagnoses; the DAT is the whole difference.",
+        "Eosin-5-maleimide binding has replaced osmotic fragility as the first-line screen. Osmotic fragility is abnormal in ANY spherocytosis, immune included, so it cannot make this distinction.",
+        "Do not perform membrane studies during or soon after transfusion. Donor red cells are normal and will dilute the abnormality into a falsely reassuring result.",
+        "Reticulocytopenia in a patient with chronic haemolysis is a transient aplastic crisis until proven otherwise, and parvovirus B19 is the cause in most cases. Sparing of white cells and platelets distinguishes it from aplastic anaemia.",
+        "Being LESS jaundiced than usual during a severe anaemia is a counter-intuitive but reliable sign that production, not destruction, is the problem.",
+        "A persistently raised MCHC across historical blood counts is a free, retrospective clue to hereditary spherocytosis that is routinely overlooked.",
+        "Parvovirus B19 confers lifelong immunity, so a second aplastic crisis from this cause cannot occur - but the patient is infectious now, and pregnant contacts and other haemolytic patients are at real risk.",
+        "Splenectomy is not a default in hereditary spherocytosis. A compensated haemoglobin does not justify lifelong encapsulated-organism risk."
+      ],
+      "references": [
+        {
+          "citation": "Bolton-Maggs PHB et al. Guidelines for the diagnosis and management of hereditary spherocytosis. Br J Haematol 2011.",
+          "type": "guideline"
+        },
+        {
+          "citation": "King MJ et al. ICSH guidelines for the laboratory diagnosis of nonimmune hereditary red cell membrane disorders. Int J Lab Hematol 2015.",
+          "type": "guideline"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Hereditary spherocytosis with parvovirus B19 aplastic crisis",
+        "accepted_diagnosis_terms": [
+          "hereditary spherocytosis",
+          "spherocytosis",
+          "membranopathy",
+          "ankyrin deficiency",
+          "aplastic crisis",
+          "transient aplastic crisis"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Negative direct antiglobulin test with spherocytes",
+            "synonyms": [
+              "dat negative",
+              "coombs negative",
+              "negative dat with spherocytes"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Reticulocytopenia",
+            "synonyms": [
+              "reticulocytes 4",
+              "low reticulocytes",
+              "no polychromasia",
+              "absent marrow response"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Parvovirus B19",
+            "synonyms": [
+              "parvovirus",
+              "b19",
+              "slapped cheek",
+              "erythema infectiosum",
+              "fifth disease"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Reduced EMA binding",
+            "synonyms": [
+              "ema binding",
+              "eosin-5-maleimide",
+              "68.4%",
+              "ema test"
+            ],
+            "weight": 1.75
+          },
+          {
+            "label": "Autosomal dominant family history",
+            "synonyms": [
+              "father splenectomy",
+              "family history",
+              "autosomal dominant",
+              "inherited"
+            ],
+            "weight": 1.25
+          },
+          {
+            "label": "Raised MCHC",
+            "synonyms": [
+              "mchc 372",
+              "high mchc",
+              "raised mchc"
+            ],
+            "weight": 1.0
+          }
+        ],
+        "expected_differential": [
+          "warm autoimmune haemolytic anaemia",
+          "aplastic anaemia",
+          "hereditary elliptocytosis",
+          "pure red cell aplasia",
+          "g6pd deficiency"
+        ],
+        "expected_next_tests": [
+          "direct antiglobulin test",
+          "ema binding test",
+          "parvovirus b19 pcr",
+          "membrane gene panel",
+          "family screening",
+          "abdominal ultrasound"
+        ],
+        "expected_management": [
+          "transfusion support",
+          "folic acid",
+          "droplet precautions",
+          "family screening",
+          "avoid splenectomy in compensated disease",
+          "defer membrane studies until after transfusion washout"
+        ],
+        "critical_values": [
+          {
+            "analyte": "HB",
+            "value": 48.0,
+            "reason": "Severe symptomatic anaemia"
+          },
+          {
+            "analyte": "RETIC_ABS",
+            "value": 4.0,
+            "reason": "Profound reticulocytopenia indicating marrow failure"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-HEM-HS-EMA-TIMING",
+            "description": "Should note that membrane studies must not be done during or shortly after transfusion.",
+            "required_terms": [
+              "after transfusion",
+              "donor cells",
+              "defer",
+              "washout",
+              "delay testing"
+            ]
+          },
+          {
+            "id": "SR-HEM-HS-PARVO-IC",
+            "description": "Should note the infection-control implications of parvovirus B19.",
+            "required_terms": [
+              "pregnant",
+              "infection control",
+              "isolation",
+              "droplet",
+              "contacts"
+            ]
+          },
+          {
+            "id": "SR-HEM-HS-NOSTEROID",
+            "description": "Must not recommend corticosteroids for this DAT-negative haemolysis.",
+            "forbidden_patterns": [
+              "start prednisolone",
+              "corticosteroids are indicated",
+              "trial of steroids"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "warm aiha",
+          "myelodysplasia",
+          "leukaemia",
+          "iron deficiency",
+          "thalassaemia"
+        ]
+      }
+    }
+  ]
+}

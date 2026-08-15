@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-04-06T08:00:00Z",
+  "collection": "Chemical pathology - thyroid, part D (biphasic and discordant patterns)",
+  "cases": [
+    {
+      "case_code": "THY-008",
+      "title": "Triphasic thyroid dysfunction ten weeks after delivery",
+      "title_i18n": {
+        "en": "Triphasic thyroid dysfunction ten weeks after delivery",
+        "de": "Triphasische Schilddrüsenfunktionsstörung zehn Wochen nach Entbindung",
+        "es": "Disfunción tiroidea trifásica diez semanas tras el parto",
+        "nl": "Trifasische schildklierfunctiestoornis tien weken na de bevalling",
+        "ru": "Трёхфазное нарушение функции щитовидной железы через десять недель после родов"
+      },
+      "summary": "Postpartum thyroiditis followed across its thyrotoxic, hypothyroid and recovery phases. The case is built so that a clinician who sees only the first phase will reach for a thionamide, and one who sees only the second will start lifelong levothyroxine - both wrong.",
+      "summary_i18n": {
+        "en": "Postpartum thyroiditis across thyrotoxic, hypothyroid and recovery phases; each phase in isolation invites the wrong treatment.",
+        "de": "Postpartum-Thyreoiditis über thyreotoxische, hypothyreote und Erholungsphase; jede Phase für sich verleitet zur falschen Therapie.",
+        "es": "Tiroiditis posparto a lo largo de sus fases tirotóxica, hipotiroidea y de recuperación; cada fase aislada induce al tratamiento equivocado.",
+        "nl": "Postpartum thyreoïditis door thyreotoxische, hypothyreote en herstelfase; elke fase apart lokt de verkeerde behandeling uit.",
+        "ru": "Послеродовой тиреоидит в тиреотоксической, гипотиреоидной и восстановительной фазах; каждая фаза по отдельности провоцирует неверное лечение."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 3,
+      "tags": ["thyroid", "postpartum", "thyroiditis", "biphasic", "TPOAb", "longitudinal"],
+      "icd10_codes": ["O90.5", "E06.3"],
+      "snomed_codes": ["31036007"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-008",
+        "age_years": 32,
+        "sex": "female",
+        "weight_kg": 66.0,
+        "height_cm": 164.0,
+        "ancestry": "Northern European",
+        "pregnancy_status": "10 weeks postpartum, breastfeeding",
+        "occupation": "Software engineer, on parental leave",
+        "region": "Urban, iodine-sufficient"
+      },
+      "presentation": {
+        "chief_complaint": "Palpitations, irritability and difficulty sleeping ten weeks after an uncomplicated vaginal delivery.",
+        "chief_complaint_i18n": {
+          "en": "Palpitations, irritability and insomnia ten weeks after an uncomplicated delivery.",
+          "de": "Palpitationen, Reizbarkeit und Schlaflosigkeit zehn Wochen nach unkomplizierter Entbindung.",
+          "es": "Palpitaciones, irritabilidad e insomnio diez semanas después de un parto sin complicaciones.",
+          "nl": "Palpitaties, prikkelbaarheid en slapeloosheid tien weken na een ongecompliceerde bevalling.",
+          "ru": "Сердцебиение, раздражительность и бессонница через десять недель после неосложнённых родов."
+        },
+        "history_of_present_illness": "Her first pregnancy was uncomplicated and she is breastfeeding. Symptoms began at about eight weeks postpartum and were initially attributed by her health visitor to sleep deprivation and possible postnatal depression. She has lost 3 kg beyond the expected postpartum loss, feels persistently hot, and describes a tremor when holding the baby. There is no neck pain and no eye symptom. She was screened at booking because of a family history of thyroid disease and was TPO antibody positive at 210 IU/mL with normal thyroid function - a detail that makes this presentation predictable rather than surprising.",
+        "past_medical_history": ["TPO antibody positive at antenatal booking with normal thyroid function", "No other medical history"],
+        "medications": [
+          {"name": "Ferrous sulfate", "dose": "200 mg", "route": "oral", "frequency": "once daily", "indication": "postpartum iron deficiency"},
+          {"name": "Cholecalciferol", "dose": "400 IU", "route": "oral", "frequency": "once daily", "indication": "breastfeeding supplementation"}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["Mother: Hashimoto thyroiditis", "Sister: postpartum thyroiditis after both pregnancies"],
+        "social_history": "Non-smoker, no alcohol while breastfeeding. Supportive partner at home.",
+        "review_of_systems": {
+          "general": "Heat intolerance, 3 kg weight loss, fatigue disproportionate to the newborn",
+          "cardiovascular": "Palpitations, no chest pain",
+          "psychiatric": "Irritability and anxiety; Edinburgh Postnatal Depression Scale 9 - borderline, and confounded by the thyrotoxicosis",
+          "ophthalmic": "No eye symptoms",
+          "musculoskeletal": "No neck pain"
+        },
+        "vitals": {
+          "heart_rate_bpm": 102,
+          "blood_pressure_mmhg": "118/64",
+          "respiratory_rate": 16,
+          "temperature_c": 36.9,
+          "weight_kg": 66.0
+        },
+        "examination_findings": [
+          "Small, firm, non-tender diffuse goitre (approximately 20 g)",
+          "No bruit over the gland",
+          "No orbitopathy - no lid retraction, no proptosis, no chemosis",
+          "Fine tremor of the outstretched hands",
+          "Sinus tachycardia at 102 bpm",
+          "No pretibial myxoedema"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests - thyrotoxic phase",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Week 10 postpartum. Thyrotoxic phase.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 0.02, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "LL"},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 28.4, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0, "flag": "H"},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 7.6, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8, "flag": "H", "interference_note": "Note the modest FT3 rise relative to FT4. Destructive release leaks stored hormone in the gland's native T4-rich proportion, unlike Graves disease which preferentially secretes T3."},
+            {"analyte_code": "TG", "analyte_name": "Thyroglobulin", "value_numeric": 142.0, "unit": "µg/L", "ref_low": 3.5, "ref_high": 77.0, "flag": "H", "interference_note": "Raised from follicular destruction - excludes exogenous hormone and supports a destructive process."}
+          ]
+        },
+        {
+          "panel_code": "THYROID_AB",
+          "panel_name": "Thyroid autoantibodies",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "TRAb is the decisive request in a postpartum woman with thyrotoxicosis.",
+          "results": [
+            {"analyte_code": "TPOAB", "analyte_name": "Thyroid peroxidase antibody", "value_numeric": 486.0, "unit": "IU/mL", "ref_high": 34.0, "flag": "H", "interference_note": "Risen from the booking titre of 210 IU/mL - the postpartum rebound of immune tolerance that drives this condition."},
+            {"analyte_code": "TRAB", "analyte_name": "TSH receptor antibody", "value_numeric": 0.7, "unit": "IU/L", "ref_high": 1.75, "flag": "N", "interference_note": "Negative. This is what separates postpartum thyroiditis from postpartum Graves disease, which also peaks at 3-6 months and requires the opposite treatment."},
+            {"analyte_code": "ESR", "analyte_name": "Erythrocyte sedimentation rate", "value_numeric": 14.0, "unit": "mm/h", "ref_low": 0.0, "ref_high": 20.0, "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests - transition",
+          "day_offset": 56,
+          "specimen": "serum",
+          "comment": "Week 18 postpartum. Symptoms resolving; no antithyroid drug was ever given.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 1.24, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 14.8, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 4.2, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests - hypothyroid phase",
+          "day_offset": 112,
+          "specimen": "serum",
+          "comment": "Week 26 postpartum. Now symptomatically hypothyroid: cold, constipated, profoundly fatigued.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 24.6, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "H"},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 8.9, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0, "flag": "L"},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 3.2, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8, "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests - on replacement",
+          "day_offset": 196,
+          "specimen": "serum",
+          "comment": "Week 38 postpartum, on levothyroxine 50 µg daily started at week 26 for symptomatic hypothyroidism.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 1.86, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 16.2, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests - after withdrawal trial",
+          "day_offset": 420,
+          "specimen": "serum",
+          "comment": "Twelve months postpartum, six weeks after levothyroxine was withdrawn as a planned trial.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 3.42, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "N", "interference_note": "In the upper half of the reference interval off treatment: euthyroid, but with a diminished reserve that carries a substantial lifetime risk of permanent hypothyroidism."},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 13.4, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0},
+            {"analyte_code": "TPOAB", "analyte_name": "Thyroid peroxidase antibody", "value_numeric": 298.0, "unit": "IU/mL", "ref_high": 34.0, "flag": "H"}
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Ultrasound with colour Doppler",
+          "region": "Thyroid",
+          "day_offset": 3,
+          "findings": "Mildly enlarged gland (19 mL), diffusely hypoechoic and heterogeneous with normal-to-reduced vascularity. No nodule.",
+          "impression": "Destructive pattern. Reduced vascularity distinguishes this from Graves disease. Radionuclide scanning was deliberately avoided because she is breastfeeding; the ultrasound plus a negative TRAb answered the question without interrupting feeding."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Phase-specific management of postpartum thyroiditis",
+          "name_i18n": {
+            "en": "Phase-specific management of postpartum thyroiditis",
+            "de": "Phasenadaptierte Behandlung der Postpartum-Thyreoiditis",
+            "es": "Manejo por fases de la tiroiditis posparto",
+            "nl": "Fasegerichte behandeling van postpartum thyreoïditis",
+            "ru": "Фазозависимое ведение послеродового тиреоидита"
+          },
+          "guideline_source": "ATA 2017 guidelines for thyroid disease in pregnancy and the postpartum (adapted)",
+          "indication": "Biphasic destructive thyroiditis in a TPO antibody positive woman at 10 weeks postpartum.",
+          "duration_months": 14,
+          "regimen": [
+            {"agent": "Propranolol", "dose": "20 mg", "route": "oral", "frequency": "twice daily as required", "duration": "6 weeks (thyrotoxic phase)", "notes": "Symptom control only. Compatible with breastfeeding at this dose; propranolol has low milk transfer."},
+            {"agent": "No thionamide", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "The gland is leaking stored hormone, not synthesising it. Carbimazole would deepen and prolong the hypothyroid phase and add an agranulocytosis risk in a new mother."},
+            {"agent": "Levothyroxine", "dose": "50 µg", "route": "oral", "frequency": "once daily fasting", "duration": "6 months from week 26", "notes": "Started for symptomatic hypothyroidism. Fully compatible with breastfeeding."},
+            {"agent": "Planned withdrawal trial", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "at 12 months postpartum", "notes": "Because most cases recover, replacement must be presented as a trial from the outset and formally reviewed - not defaulted into lifelong treatment."}
+          ],
+          "monitoring": [
+            "TSH and FT4 every 4-8 weeks through the biphasic course",
+            "Recheck 6 weeks after any levothyroxine withdrawal trial",
+            "Annual TSH for life: roughly 20-30% develop permanent hypothyroidism",
+            "Counsel on a 70% recurrence risk in future pregnancies and check TSH at 6-12 weeks postpartum next time",
+            "Do not perform radionuclide uptake scanning while breastfeeding unless feeding is interrupted; ultrasound and TRAb usually suffice"
+          ],
+          "contraindications": ["Thionamides are not indicated in the thyrotoxic phase of a destructive thyroiditis"],
+          "adverse_effects": ["Iatrogenic hypothyroidism if a thionamide is given during the thyrotoxic phase", "Unnecessary lifelong levothyroxine if the hypothyroid phase is treated without a withdrawal trial"],
+          "notes": "Postnatal depression and the hypothyroid phase overlap symptomatically and can coexist. Thyroid function should be checked before attributing postpartum mood change to depression alone - and a normal TSH does not exclude depression either."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Postpartum thyroiditis, classic triphasic course",
+          "label_i18n": {
+            "en": "Postpartum thyroiditis, classic triphasic course",
+            "de": "Postpartum-Thyreoiditis mit klassischem triphasischem Verlauf",
+            "es": "Tiroiditis posparto de curso trifásico clásico",
+            "nl": "Postpartum thyreoïditis met klassiek trifasisch beloop",
+            "ru": "Послеродовой тиреоидит с классическим трёхфазным течением"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.95,
+          "icd10": "O90.5",
+          "discriminator": "A negative TRAb with a raised thyroglobulin, reduced vascularity and spontaneous transition into a hypothyroid phase without any antithyroid treatment.",
+          "supporting_evidence": [
+            "Onset at 10 weeks postpartum in a TPO antibody positive woman",
+            "TPO antibody rise from 210 to 486 IU/mL",
+            "TRAb negative at 0.7 IU/L",
+            "Thyroglobulin 142 µg/L - destructive release",
+            "Reduced vascularity on Doppler",
+            "Spontaneous resolution of thyrotoxicosis by week 18 with no thionamide",
+            "Hypothyroid phase at week 26 and euthyroidism off treatment at 12 months"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Postpartum onset Graves disease",
+          "label_i18n": {
+            "en": "Postpartum onset Graves disease",
+            "de": "Postpartal aufgetretener Morbus Basedow",
+            "es": "Enfermedad de Graves de inicio posparto",
+            "nl": "Postpartum ontstane ziekte van Graves",
+            "ru": "Болезнь Грейвса с послеродовым дебютом"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.04,
+          "icd10": "E05.0",
+          "discriminator": "The single most important alternative, since it peaks in the same postpartum window and requires a thionamide rather than watchful waiting. Excluded by a negative TRAb, reduced vascularity, absent orbitopathy and spontaneous resolution.",
+          "supporting_evidence": ["Thyrotoxicosis in the postpartum window", "Diffuse goitre"],
+          "refuting_evidence": ["TRAb 0.7 IU/L", "Reduced rather than increased vascularity", "No orbitopathy", "Spontaneous resolution without treatment", "Subsequent hypothyroid phase"]
+        },
+        {
+          "label": "Postnatal depression",
+          "label_i18n": {
+            "en": "Postnatal depression",
+            "de": "Postpartale Depression",
+            "es": "Depresión posparto",
+            "nl": "Postnatale depressie",
+            "ru": "Послеродовая депрессия"
+          },
+          "is_primary": false,
+          "certainty": "possible",
+          "likelihood": 0.2,
+          "discriminator": "Not mutually exclusive. The EPDS of 9 is borderline and confounded by thyrotoxicosis; it must be reassessed once euthyroid rather than dismissed or acted on now.",
+          "supporting_evidence": ["Irritability, insomnia, fatigue, EPDS 9"],
+          "refuting_evidence": ["Symptoms tracked the biochemistry through both phases", "Objective signs of thyrotoxicosis: tachycardia, tremor, goitre"]
+        }
+      ],
+      "teaching_points": [
+        "Postpartum thyroiditis is biphasic. Treating the thyrotoxic phase with a thionamide is not merely useless - it deepens and prolongs the hypothyroid phase that follows.",
+        "TRAb is the decisive test in postpartum thyrotoxicosis. Postpartum Graves disease presents in the same window and requires the opposite management.",
+        "Levothyroxine started for the hypothyroid phase must be framed as a trial with a planned withdrawal at around 12 months, or the patient is silently converted to a lifelong prescription she does not need.",
+        "TPO antibody status at booking is genuinely predictive: roughly 30-50% of antibody-positive women develop postpartum thyroiditis, and a documented booking titre transforms the interpretation of a postpartum presentation.",
+        "Radionuclide scanning is avoidable here. Ultrasound with Doppler plus TRAb answers the question without interrupting breastfeeding.",
+        "About 20-30% of women develop permanent hypothyroidism, and recurrence in a subsequent pregnancy approaches 70%. Both figures belong in the discharge letter."
+      ],
+      "references": [
+        {"citation": "Alexander EK et al. 2017 ATA Guidelines for the Diagnosis and Management of Thyroid Disease During Pregnancy and the Postpartum. Thyroid.", "type": "guideline"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Postpartum thyroiditis",
+        "accepted_diagnosis_terms": ["postpartum thyroiditis", "post-partum thyroiditis", "postnatal thyroiditis", "silent thyroiditis postpartum", "destructive thyroiditis postpartum"],
+        "must_include_findings": [
+          {"label": "Negative TRAb", "synonyms": ["trab negative", "trab 0.7", "no tsh receptor antibody"], "weight": 2.0},
+          {"label": "Positive TPO antibodies", "synonyms": ["tpo antibody", "tpoab 486", "anti-tpo positive"], "weight": 1.0},
+          {"label": "Reduced or normal vascularity", "synonyms": ["reduced vascularity", "low doppler flow", "not hypervascular"], "weight": 1.25},
+          {"label": "Spontaneous transition to a hypothyroid phase", "synonyms": ["biphasic", "triphasic", "hypothyroid phase", "tsh 24.6", "spontaneous resolution"], "weight": 1.75},
+          {"label": "Raised thyroglobulin", "synonyms": ["thyroglobulin 142", "tg raised"], "weight": 0.5}
+        ],
+        "expected_differential": ["postpartum graves disease", "postnatal depression", "silent thyroiditis", "subacute thyroiditis", "sheehan syndrome"],
+        "expected_next_tests": ["trab", "tpo antibodies", "thyroid ultrasound with doppler", "serial thyroid function", "epds reassessment once euthyroid"],
+        "expected_management": ["beta-blocker for symptoms", "no thionamide", "levothyroxine only if symptomatic hypothyroidism", "withdrawal trial at 12 months", "annual tsh", "counsel on recurrence in future pregnancy"],
+        "critical_values": [],
+        "safety_rules": [
+          {"id": "SR-THY-PPT-NOTHIONAMIDE", "description": "Must not recommend carbimazole or propylthiouracil for the thyrotoxic phase.", "forbidden_patterns": ["start carbimazole", "commence methimazole", "propylthiouracil", "antithyroid drug"]},
+          {"id": "SR-THY-PPT-WITHDRAWAL", "description": "Levothyroxine, if started, should be accompanied by a planned withdrawal trial.", "required_terms": ["withdrawal trial", "trial of withdrawal", "reassess at 12 months", "may be transient", "stop and recheck"]},
+          {"id": "SR-THY-PPT-BREASTFEED", "description": "Should account for breastfeeding when proposing radionuclide imaging.", "required_terms": ["breastfeeding", "lactation", "avoid radioiodine", "interrupt feeding"]}
+        ],
+        "distractor_terms": ["thyroid storm", "sheehan syndrome", "toxic adenoma", "thyroid cancer", "hyperemesis"]
+      }
+    },
+    {
+      "case_code": "THY-009",
+      "title": "Raised free T4 and free T3 with a non-suppressed TSH",
+      "title_i18n": {
+        "en": "Raised free T4 and free T3 with a non-suppressed TSH",
+        "de": "Erhöhtes freies T4 und T3 bei nicht supprimiertem TSH",
+        "es": "T4 y T3 libres elevadas con TSH no suprimida",
+        "nl": "Verhoogd vrij T4 en T3 met niet-onderdrukt TSH",
+        "ru": "Повышенные свободные Т4 и Т3 при неподавленном ТТГ"
+      },
+      "summary": "The discordant pattern with a genuinely short differential: assay interference, resistance to thyroid hormone, or a TSH-secreting adenoma. This case works through all three and lands on resistance, confirmed by THRB sequencing and by an affected father.",
+      "summary_i18n": {
+        "en": "Discordant TFTs worked through interference, resistance to thyroid hormone and TSH-secreting adenoma; THRB sequencing settles it.",
+        "de": "Diskordante Schilddrüsenwerte: Abklärung von Interferenz, Schilddrüsenhormonresistenz und TSH-produzierendem Adenom; THRB-Sequenzierung entscheidet.",
+        "es": "Pruebas tiroideas discordantes evaluadas para interferencia, resistencia a hormonas tiroideas y adenoma secretor de TSH; la secuenciación de THRB lo resuelve.",
+        "nl": "Discordante schildklierwaarden: interferentie, schildklierhormoonresistentie en TSH-producerend adenoom afgewogen; THRB-sequencing geeft de doorslag.",
+        "ru": "Дискордантные тиреоидные показатели: рассмотрены интерференция, резистентность к тиреоидным гормонам и ТТГ-секретирующая аденома; вопрос решает секвенирование THRB."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 5,
+      "tags": ["thyroid", "resistance", "THRB", "TSHoma", "discordant", "genetics", "interpretive-trap"],
+      "icd10_codes": ["E07.8"],
+      "snomed_codes": ["43809006"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-009",
+        "age_years": 24,
+        "sex": "male",
+        "weight_kg": 71.0,
+        "height_cm": 179.0,
+        "ancestry": "Mixed",
+        "occupation": "Postgraduate student",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Referred after an incidental abnormal thyroid profile found during investigation of a resting tachycardia; a previous clinician had started carbimazole, which made him hypothyroid without normalising the TSH.",
+        "chief_complaint_i18n": {
+          "en": "Incidental abnormal thyroid profile; carbimazole started previously made him hypothyroid without normalising TSH.",
+          "de": "Zufällig auffälliges Schilddrüsenprofil; zuvor begonnenes Carbimazol führte zur Hypothyreose ohne TSH-Normalisierung.",
+          "es": "Perfil tiroideo anómalo incidental; el carbimazol iniciado previamente le provocó hipotiroidismo sin normalizar la TSH.",
+          "nl": "Toevallig afwijkend schildklierprofiel; eerder gestart carbimazol maakte hem hypothyreoot zonder TSH-normalisatie.",
+          "ru": "Случайно выявленный патологический тиреоидный профиль; ранее назначенный карбимазол вызвал гипотиреоз, но ТТГ не нормализовался."
+        },
+        "history_of_present_illness": "He has always had a resting heart rate around 95-100 bpm and a mild tremor, which he regards as normal for him. He is not heat intolerant, his weight is stable, and he performs well academically. A previous clinician interpreted the raised free T4 as thyrotoxicosis, started carbimazole 20 mg, and stopped it after eight weeks when the patient became fatigued and constipated while the TSH ROSE rather than fell. His father has 'unusual thyroid tests' that have been investigated three times at different hospitals without a diagnosis, and a paternal aunt was treated for hyperthyroidism with radioiodine and is now on levothyroxine.",
+        "past_medical_history": ["Attention deficit hyperactivity disorder diagnosed in childhood", "Recurrent otitis media as a child with mild high-frequency hearing loss", "Delayed bone age noted at age 12"],
+        "medications": [
+          {"name": "Carbimazole", "dose": "20 mg (stopped 4 weeks ago)", "route": "oral", "frequency": "n/a", "indication": "presumed hyperthyroidism", "notes": "Caused symptomatic hypothyroidism with a rising TSH - a pharmacological experiment that, read correctly, already pointed to the diagnosis."}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["Father: long-standing unexplained abnormal thyroid function tests, never diagnosed", "Paternal aunt: treated with radioiodine for 'hyperthyroidism', now hypothyroid", "Pattern consistent with autosomal dominant inheritance"],
+        "social_history": "Non-smoker, occasional alcohol, no supplements and specifically no biotin.",
+        "review_of_systems": {
+          "cardiovascular": "Long-standing resting tachycardia, palpitations on exertion only",
+          "general": "Stable weight, no heat intolerance, no night sweats",
+          "neurological": "Mild tremor since adolescence, childhood ADHD",
+          "ent": "Mild high-frequency sensorineural hearing loss",
+          "ophthalmic": "No eye symptoms"
+        },
+        "vitals": {
+          "heart_rate_bpm": 96,
+          "blood_pressure_mmhg": "126/70",
+          "respiratory_rate": 14,
+          "temperature_c": 36.7,
+          "weight_kg": 71.0
+        },
+        "examination_findings": [
+          "Small diffuse goitre (approximately 25 g), soft and non-tender",
+          "No orbitopathy",
+          "Mild fine tremor",
+          "Resting heart rate 96 bpm, regular",
+          "Normal reflexes and relaxation phase",
+          "Visual fields full to confrontation - relevant to excluding a pituitary macroadenoma",
+          "No features of McCune-Albright syndrome, normal secondary sexual characteristics"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Four weeks after stopping carbimazole. The defining discordant pattern.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 3.8, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "N", "interference_note": "A NORMAL TSH is the abnormality. With an FT4 of 32.4 pmol/L, a normally functioning pituitary would have suppressed TSH to below 0.05. An 'inappropriately normal' TSH is a positive finding, not a reassuring one."},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 32.4, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0, "flag": "H"},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 9.4, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8, "flag": "H"},
+            {"analyte_code": "TT4", "analyte_name": "Total thyroxine", "value_numeric": 208.0, "unit": "nmol/L", "ref_low": 66.0, "ref_high": 181.0, "flag": "H", "interference_note": "Total and free hormone move together, arguing against a binding-protein abnormality such as familial dysalbuminaemic hyperthyroxinaemia."}
+          ]
+        },
+        {
+          "panel_code": "DISCORDANT_WORKUP",
+          "panel_name": "Discordant TFT workup",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "The three questions in order: is it real, is it a tumour, is it resistance?",
+          "results": [
+            {"analyte_code": "TFT_ALT_PLATFORM", "analyte_name": "TSH/FT4 on a non-biotin platform", "value_text": "TSH 3.6 mIU/L, FT4 31.8 pmol/L - concordant with the primary platform", "unit": null, "flag": "A", "interference_note": "Interference excluded first, because it is the commonest cause of a discordant pattern and the cheapest to rule out."},
+            {"analyte_code": "SERUM_BIOTIN", "analyte_name": "Serum biotin", "value_numeric": 1.8, "unit": "nmol/L", "ref_low": 0.5, "ref_high": 3.0, "flag": "N"},
+            {"analyte_code": "ALPHA_SUBUNIT", "analyte_name": "Glycoprotein hormone alpha-subunit", "value_numeric": 0.6, "unit": "IU/L", "ref_low": 0.0, "ref_high": 1.2, "flag": "N"},
+            {"analyte_code": "ALPHA_TSH_RATIO", "analyte_name": "Alpha-subunit to TSH molar ratio", "value_numeric": 0.4, "unit": "ratio", "ref_low": 0.0, "ref_high": 1.0, "flag": "N", "interference_note": "A ratio above 1.0 suggests a TSH-secreting adenoma. At 0.4 this argues strongly against a TSHoma."},
+            {"analyte_code": "SHBG", "analyte_name": "Sex hormone binding globulin", "value_numeric": 34.0, "unit": "nmol/L", "ref_low": 18.0, "ref_high": 54.0, "flag": "N", "interference_note": "Decisive. SHBG is a hepatic marker of thyroid hormone ACTION. In a TSH-secreting adenoma the liver is genuinely thyrotoxic and SHBG is high; in resistance the mutant receptor blunts hepatic response and SHBG stays normal. A normal SHBG with an FT4 of 32.4 means the tissues are not thyrotoxic."},
+            {"analyte_code": "TRAB", "analyte_name": "TSH receptor antibody", "value_numeric": 0.3, "unit": "IU/L", "ref_high": 1.75, "flag": "N"},
+            {"analyte_code": "TPOAB", "analyte_name": "Thyroid peroxidase antibody", "value_numeric": 16.0, "unit": "IU/mL", "ref_high": 34.0, "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "DYNAMIC",
+          "panel_name": "TRH stimulation and T3 suppression testing",
+          "day_offset": 14,
+          "specimen": "serum",
+          "comment": "Dynamic testing to separate resistance from a TSH-secreting adenoma.",
+          "results": [
+            {"analyte_code": "TRH_TSH_PEAK", "analyte_name": "Peak TSH after TRH 200 µg IV", "value_numeric": 18.4, "unit": "mIU/L", "ref_low": 8.0, "ref_high": 30.0, "flag": "N", "interference_note": "A preserved, brisk TSH response to TRH. Autonomous adenomas classically show a blunted or absent response, so this argues for resistance."},
+            {"analyte_code": "T3_SUPPRESSION", "analyte_name": "TSH after 8 days of liothyronine 100 µg/day", "value_numeric": 0.9, "unit": "mIU/L", "ref_text": "Partial suppression expected in resistance; none in TSHoma", "flag": "A", "interference_note": "Partial suppression from 3.8 to 0.9 mIU/L. The axis is regulatable but at a reset, higher set-point - the physiological signature of resistance. A TSHoma would have suppressed minimally or not at all."}
+          ]
+        },
+        {
+          "panel_code": "GENETICS",
+          "panel_name": "Molecular genetics",
+          "day_offset": 45,
+          "specimen": "EDTA whole blood",
+          "analyser": "Accredited molecular genetics laboratory",
+          "comment": "THRB sequencing on the proband and his father.",
+          "results": [
+            {"analyte_code": "THRB", "analyte_name": "THRB gene sequencing", "value_text": "Heterozygous missense variant NM_000461.5:c.1012C>T p.(Arg338Trp), classified pathogenic (ACMG class 5)", "unit": null, "flag": "A", "interference_note": "Located in the T3-binding domain hotspot. Acts by dominant negative inhibition: the mutant receptor still binds DNA and RXR but cannot bind T3, and it blocks the wild-type allele."},
+            {"analyte_code": "THRB_FAMILY", "analyte_name": "THRB sequencing - father", "value_text": "Same heterozygous variant p.(Arg338Trp) detected; father's FT4 29.8 pmol/L with TSH 4.2 mIU/L", "unit": null, "flag": "A", "interference_note": "Family segregation confirms pathogenicity and, incidentally, explains three previous inconclusive workups in the father."}
+          ]
+        },
+        {
+          "panel_code": "TISSUE_ACTION",
+          "panel_name": "Peripheral markers of thyroid hormone action",
+          "day_offset": 14,
+          "specimen": "serum",
+          "comment": "Additional evidence that the tissues are not thyrotoxic despite the high free hormones.",
+          "results": [
+            {"analyte_code": "CHOL_TOTAL", "analyte_name": "Total cholesterol", "value_numeric": 4.6, "unit": "mmol/L", "ref_low": 0.0, "ref_high": 5.0, "flag": "N", "interference_note": "True thyrotoxicosis lowers cholesterol; a mid-range value here indicates a normal hepatic thyroid state."},
+            {"analyte_code": "FERRITIN", "analyte_name": "Ferritin", "value_numeric": 118.0, "unit": "µg/L", "ref_low": 30.0, "ref_high": 300.0, "flag": "N"},
+            {"analyte_code": "ALP", "analyte_name": "Alkaline phosphatase", "value_numeric": 86.0, "unit": "U/L", "ref_low": 40.0, "ref_high": 130.0, "flag": "N", "interference_note": "No high bone turnover - again unlike true thyrotoxicosis."}
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "MRI pituitary with gadolinium",
+          "region": "Sella",
+          "day_offset": 21,
+          "findings": "Normal pituitary gland, 5 mm in height, homogeneous enhancement. No microadenoma or macroadenoma. Stalk midline, chiasm normal.",
+          "impression": "Normal. Together with an alpha-subunit:TSH ratio of 0.4 and a preserved TRH response, this effectively excludes a TSH-secreting adenoma."
+        },
+        {
+          "modality": "Echocardiogram",
+          "region": "Heart",
+          "day_offset": 21,
+          "findings": "Normal chamber dimensions, LVEF 62%, no left ventricular hypertrophy, normal diastolic function.",
+          "impression": "No structural consequence of the resting tachycardia. Supports a cardiac phenotype driven by relatively unopposed TR-alpha signalling rather than by systemic thyrotoxicosis."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Observation with selective beta-blockade for resistance to thyroid hormone beta",
+          "name_i18n": {
+            "en": "Observation with selective beta-blockade for resistance to thyroid hormone beta",
+            "de": "Beobachtung mit selektiver Betablockade bei Schilddrüsenhormonresistenz (RTH-beta)",
+            "es": "Observación con betabloqueo selectivo en la resistencia a hormonas tiroideas beta",
+            "nl": "Observatie met selectieve bètablokkade bij schildklierhormoonresistentie bèta",
+            "ru": "Наблюдение с селективной бета-блокадой при резистентности к тиреоидным гормонам бета"
+          },
+          "guideline_source": "Composite of published RTH-beta cohort management practice",
+          "indication": "Genetically confirmed dominant negative THRB variant with compensated peripheral euthyroidism and an isolated cardiac phenotype.",
+          "duration_months": null,
+          "regimen": [
+            {"agent": "No antithyroid drug", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "The raised free hormones are compensatory and necessary to achieve normal signalling through the mutant receptor. Lowering them produces tissue hypothyroidism, exactly as happened on carbimazole."},
+            {"agent": "Atenolol", "dose": "25 mg", "route": "oral", "frequency": "once daily", "duration": "as required", "notes": "Beta-1 selective. The cardiac phenotype is mediated largely through TR-alpha, which is not mutated, so the heart genuinely does see excess hormone even while the liver and pituitary do not."},
+            {"agent": "Family cascade testing", "dose": "n/a", "route": "n/a", "frequency": "once", "duration": "n/a", "notes": "First-degree relatives should be offered THRB testing. It prevents exactly the inappropriate ablation that occurred in the paternal aunt."},
+            {"agent": "Medical alert documentation", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "lifelong", "notes": "A prominent record entry stating that the abnormal thyroid results are expected and must not be treated. Without it, the next clinician repeats the carbimazole error."}
+          ],
+          "monitoring": [
+            "Annual review of heart rate, weight, growth in affected children, and symptoms",
+            "Do NOT titrate free T4 towards the reference interval - it is the wrong target in this condition",
+            "Pre-conception counselling: a euthyroid fetus carrying the wild-type allele is exposed to the mother's high free T4 and is at risk of miscarriage and low birth weight, so an affected mother may need dose-adjusted management in pregnancy",
+            "Audiology and developmental follow-up in affected children, given the association with hearing loss and ADHD"
+          ],
+          "contraindications": ["Thionamides, radioiodine and thyroidectomy are all contraindicated and are the principal iatrogenic hazard of this condition"],
+          "adverse_effects": ["Iatrogenic hypothyroidism from any attempt to normalise the free T4"],
+          "notes": "The paternal aunt in this family was treated with radioiodine for presumed hyperthyroidism and now requires levothyroxine at supraphysiological doses - the natural history of a missed diagnosis, and the reason cascade testing matters."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Resistance to thyroid hormone beta (THRB p.Arg338Trp)",
+          "label_i18n": {
+            "en": "Resistance to thyroid hormone beta (THRB p.Arg338Trp)",
+            "de": "Schilddrüsenhormonresistenz beta (THRB p.Arg338Trp)",
+            "es": "Resistencia a hormonas tiroideas beta (THRB p.Arg338Trp)",
+            "nl": "Schildklierhormoonresistentie bèta (THRB p.Arg338Trp)",
+            "ru": "Резистентность к тиреоидным гормонам бета (THRB p.Arg338Trp)"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.96,
+          "icd10": "E07.8",
+          "discriminator": "Pathogenic THRB variant segregating with the phenotype in an affected father, plus a normal SHBG, a normal alpha-subunit:TSH ratio, a preserved TRH response, partial T3 suppressibility and a normal pituitary MRI.",
+          "supporting_evidence": [
+            "FT4 32.4 and FT3 9.4 pmol/L with a non-suppressed TSH of 3.8 mIU/L",
+            "Concordant results on a second, non-biotin platform - interference excluded",
+            "SHBG 34 nmol/L (normal) despite high free hormones - tissues are not thyrotoxic",
+            "Alpha-subunit:TSH molar ratio 0.4",
+            "Preserved TSH response to TRH and partial suppression on liothyronine",
+            "Normal pituitary MRI",
+            "Heterozygous pathogenic THRB p.(Arg338Trp) in proband and affected father",
+            "Iatrogenic hypothyroidism on carbimazole with a paradoxically rising TSH"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "TSH-secreting pituitary adenoma (TSHoma)",
+          "label_i18n": {
+            "en": "TSH-secreting pituitary adenoma (TSHoma)",
+            "de": "TSH-produzierendes Hypophysenadenom (TSHom)",
+            "es": "Adenoma hipofisario secretor de TSH (TSHoma)",
+            "nl": "TSH-producerend hypofyseadenoom (TSHoom)",
+            "ru": "ТТГ-секретирующая аденома гипофиза (тиреотропинома)"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "The critical alternative, because it is a treatable tumour. Excluded by a normal alpha-subunit:TSH ratio, a normal SHBG, a preserved TRH response, partial T3 suppressibility, a normal MRI, and a positive family history with a segregating variant.",
+          "supporting_evidence": ["Non-suppressed TSH with raised free hormones is common to both"],
+          "refuting_evidence": ["Alpha-subunit:TSH ratio 0.4", "SHBG normal - in a TSHoma the liver is thyrotoxic and SHBG is raised", "Brisk TRH response", "Partial T3 suppression", "Normal pituitary MRI", "Autosomal dominant family history with a confirmed THRB variant"]
+        },
+        {
+          "label": "Assay interference (biotin, heterophile antibody, anti-T4 antibody)",
+          "label_i18n": {
+            "en": "Assay interference",
+            "de": "Assay-Interferenz",
+            "es": "Interferencia analítica",
+            "nl": "Assay-interferentie",
+            "ru": "Интерференция анализа"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Always the first thing to exclude in a discordant pattern, because it is the commonest cause and the cheapest to rule out. Here, results were concordant across two platforms and serum biotin was normal.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["Concordant results on a non-biotin platform", "Serum biotin 1.8 nmol/L", "Total and free hormones move together"]
+        },
+        {
+          "label": "Familial dysalbuminaemic hyperthyroxinaemia",
+          "label_i18n": {
+            "en": "Familial dysalbuminaemic hyperthyroxinaemia",
+            "de": "Familiäre dysalbuminämische Hyperthyroxinämie",
+            "es": "Hipertiroxinemia disalbuminémica familiar",
+            "nl": "Familiaire dysalbuminemische hyperthyroxinemie",
+            "ru": "Семейная дисальбуминемическая гипертироксинемия"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Also autosomal dominant with a raised T4 and normal TSH, but free T3 is normal and the abnormality is assay-dependent, disappearing on equilibrium dialysis. Here FT3 is genuinely raised.",
+          "supporting_evidence": ["Autosomal dominant family history", "Raised total and free T4"],
+          "refuting_evidence": ["FT3 clearly raised at 9.4 pmol/L", "THRB variant identified", "Goitre present"]
+        }
+      ],
+      "teaching_points": [
+        "An 'inappropriately normal' TSH alongside raised free hormones is a positive finding. The differential is short: assay interference, resistance to thyroid hormone, or a TSH-secreting adenoma.",
+        "Exclude interference first. It is the commonest explanation and needs only a second platform and a serum biotin.",
+        "SHBG is the most informative single discriminator between resistance and a TSHoma. It reports hepatic thyroid hormone ACTION: normal in resistance, raised in a TSHoma, where the liver really is thyrotoxic.",
+        "An alpha-subunit:TSH molar ratio above 1.0 points to a TSHoma; a preserved TRH response and partial T3 suppressibility point to resistance.",
+        "The tissue-specific phenotype follows receptor distribution. TR-beta predominates in the pituitary and liver and is mutated, so those tissues are resistant; TR-alpha predominates in the heart and is normal, so tachycardia coexists with a normal SHBG and normal cholesterol.",
+        "A trial of carbimazole in this condition causes iatrogenic hypothyroidism with a paradoxically rising TSH. Read correctly, that failed trial is itself diagnostic information.",
+        "Cascade testing prevents real harm. The paternal aunt in this family was ablated with radioiodine for a disease she never had.",
+        "Never titrate the free T4 into the reference interval in resistance to thyroid hormone. The elevated free hormone is the compensation, not the disease."
+      ],
+      "references": [
+        {"citation": "Refetoff S, Dumitrescu AM. Syndromes of reduced sensitivity to thyroid hormone. Best Pract Res Clin Endocrinol Metab 2007.", "type": "review"},
+        {"citation": "Beck-Peccoz P et al. 2013 ETA Guidelines: The Diagnosis and Management of Central Hypothyroidism and TSH-secreting adenomas. Eur Thyroid J.", "type": "guideline"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Resistance to thyroid hormone beta",
+        "accepted_diagnosis_terms": ["resistance to thyroid hormone", "thyroid hormone resistance", "rth", "rth-beta", "refetoff syndrome", "thrb mutation", "reduced sensitivity to thyroid hormone"],
+        "must_include_findings": [
+          {"label": "Non-suppressed TSH with raised free hormones", "synonyms": ["inappropriately normal tsh", "tsh 3.8", "unsuppressed tsh", "discordant", "non-suppressed tsh"], "weight": 2.0},
+          {"label": "Normal SHBG indicating absent peripheral thyrotoxicosis", "synonyms": ["shbg normal", "shbg 34", "sex hormone binding globulin normal"], "weight": 2.0},
+          {"label": "Normal alpha-subunit to TSH ratio", "synonyms": ["alpha subunit ratio", "0.4", "alpha-subunit normal"], "weight": 1.25},
+          {"label": "Pathogenic THRB variant", "synonyms": ["thrb", "p.arg338trp", "r338w", "thyroid hormone receptor beta mutation", "genetic testing"], "weight": 2.0},
+          {"label": "Autosomal dominant family history", "synonyms": ["father affected", "family history", "segregation", "paternal aunt"], "weight": 1.0},
+          {"label": "Normal pituitary MRI", "synonyms": ["mri normal", "no adenoma", "normal pituitary"], "weight": 1.0}
+        ],
+        "expected_differential": ["tsh-secreting pituitary adenoma", "assay interference", "biotin interference", "familial dysalbuminaemic hyperthyroxinaemia", "heterophile antibody", "non-compliance with levothyroxine"],
+        "expected_next_tests": ["repeat on alternative platform", "serum biotin", "alpha-subunit", "shbg", "trh stimulation test", "t3 suppression test", "pituitary mri", "thrb sequencing", "family testing"],
+        "expected_management": ["no antithyroid drug", "beta-blocker if symptomatic", "cascade genetic testing", "document to prevent future inappropriate treatment", "do not normalise free t4"],
+        "critical_values": [],
+        "safety_rules": [
+          {"id": "SR-THY-RTH-NOTREAT", "description": "Must not recommend antithyroid drugs, radioiodine or thyroidectomy.", "forbidden_patterns": ["carbimazole", "methimazole", "propylthiouracil", "radioiodine", "thyroidectomy", "normalise the free t4"]},
+          {"id": "SR-THY-RTH-TSHOMA", "description": "Must explicitly consider and exclude a TSH-secreting adenoma before settling on resistance.", "required_terms": ["tshoma", "tsh-secreting adenoma", "pituitary adenoma", "thyrotropinoma"]},
+          {"id": "SR-THY-RTH-CASCADE", "description": "Should recommend family/cascade testing.", "required_terms": ["family testing", "cascade", "first-degree relatives", "genetic testing of relatives"]}
+        ],
+        "distractor_terms": ["graves disease", "thyroid storm", "toxic adenoma", "hashimoto", "amiodarone"]
+      }
+    }
+  ]
+}
