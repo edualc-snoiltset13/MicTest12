@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-05-04T08:00:00Z",
+  "collection": "Haematology - immune haemolytic anaemia",
+  "cases": [
+    {
+      "case_code": "HEM-001",
+      "title": "Rapidly falling haemoglobin with spherocytes and a positive direct antiglobulin test",
+      "title_i18n": {
+        "en": "Rapidly falling haemoglobin with spherocytes and a positive direct antiglobulin test",
+        "de": "Rasch fallendes Hämoglobin mit Sphärozyten und positivem direktem Coombs-Test",
+        "es": "Descenso rápido de hemoglobina con esferocitos y prueba de antiglobulina directa positiva",
+        "nl": "Snel dalend hemoglobine met sferocyten en positieve directe antiglobulinetest",
+        "ru": "Быстрое падение гемоглобина со сфероцитами и положительной прямой пробой Кумбса"
+      },
+      "summary": "Warm autoimmune haemolytic anaemia secondary to chronic lymphocytic leukaemia. The anchor immune case: DAT positive for IgG and C3d, spherocytes on the film, and an extravascular biochemical signature.",
+      "summary_i18n": {
+        "en": "Warm autoimmune haemolytic anaemia secondary to CLL, with an IgG+C3d DAT and spherocytosis - the anchor immune case.",
+        "de": "Warme autoimmunhämolytische Anämie bei CLL mit IgG+C3d-positivem DAT und Sphärozytose - der immunologische Referenzfall.",
+        "es": "Anemia hemolítica autoinmune por anticuerpos calientes secundaria a LLC, con PAD IgG+C3d y esferocitosis; caso inmune de referencia.",
+        "nl": "Warme auto-immuun hemolytische anemie bij CLL met IgG+C3d-positieve DAT en sferocytose - de immuun-referentiecasus.",
+        "ru": "Тёплая аутоиммунная гемолитическая анемия на фоне ХЛЛ с положительной пробой Кумбса (IgG+C3d) и сфероцитозом — опорный иммунный случай."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 3,
+      "tags": ["haemolysis", "immune", "warm-aiha", "DAT", "spherocytes", "CLL", "anchor-case"],
+      "icd10_codes": ["D59.1", "C91.1"],
+      "snomed_codes": ["31387002"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-001",
+        "age_years": 68,
+        "sex": "male",
+        "weight_kg": 74.0,
+        "height_cm": 175.0,
+        "ancestry": "Northern European",
+        "occupation": "Retired postal worker",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Three weeks of increasing breathlessness and dark urine, with jaundice noticed by his daughter two days ago.",
+        "chief_complaint_i18n": {
+          "en": "Three weeks of breathlessness and dark urine, with jaundice noticed two days ago.",
+          "de": "Seit drei Wochen Atemnot und dunkler Urin, seit zwei Tagen Gelbsucht bemerkt.",
+          "es": "Tres semanas de disnea y orina oscura, con ictericia advertida hace dos días.",
+          "nl": "Drie weken kortademigheid en donkere urine, sinds twee dagen geelzucht opgemerkt.",
+          "ru": "Три недели одышки и тёмной мочи, желтуха замечена два дня назад."
+        },
+        "history_of_present_illness": "Breathlessness on climbing one flight of stairs, progressing to breathlessness at rest over 72 hours. Urine has been the colour of strong tea, worst in the mornings. He has felt cold-intolerant and profoundly fatigued. No melaena, no haematuria, no recent travel, no new drugs, no fava beans. He was diagnosed with Rai stage 0 chronic lymphocytic leukaemia three years ago and has been on watchful waiting with a stable lymphocyte count of 22-28 x10^9/L.",
+        "past_medical_history": ["Chronic lymphocytic leukaemia, Rai stage 0, on watch and wait", "Hypertension", "Cholecystectomy age 55"],
+        "medications": [
+          {"name": "Amlodipine", "dose": "10 mg", "route": "oral", "frequency": "once daily", "indication": "hypertension"}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["No haemolytic or haematological disease"],
+        "social_history": "Ex-smoker, 20 pack-years, stopped 15 years ago. No alcohol. Lives alone.",
+        "review_of_systems": {
+          "general": "Profound fatigue, night sweats for two weeks, no weight loss",
+          "cardiovascular": "Exertional then rest dyspnoea, palpitations, no chest pain",
+          "gastrointestinal": "No melaena, no abdominal pain",
+          "genitourinary": "Dark urine, no dysuria, no frank haematuria"
+        },
+        "vitals": {
+          "heart_rate_bpm": 112,
+          "blood_pressure_mmhg": "108/62",
+          "respiratory_rate": 24,
+          "temperature_c": 37.6,
+          "spo2_percent": 96,
+          "weight_kg": 74.0
+        },
+        "examination_findings": [
+          "Marked pallor with scleral icterus",
+          "Splenomegaly 4 cm below the left costal margin",
+          "Bilateral cervical and axillary lymphadenopathy, largest node 2 cm, rubbery and non-tender",
+          "Tachycardia 112 bpm with a soft ejection systolic flow murmur",
+          "No hepatomegaly, no ascites",
+          "No purpura, no petechiae, no bruising",
+          "No leg ulcers, no acrocyanosis, no livedo"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and reticulocytes",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "analyser": "Sysmex XN-9000",
+          "comment": "Presentation.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 62.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0, "flag": "LL", "is_critical": true},
+            {"analyte_code": "MCV", "analyte_name": "Mean cell volume", "value_numeric": 104.0, "unit": "fL", "ref_low": 80.0, "ref_high": 100.0, "flag": "H", "interference_note": "Raised by the reticulocytosis, not by B12 or folate deficiency - reticulocytes are roughly 20% larger than mature red cells."},
+            {"analyte_code": "MCHC", "analyte_name": "Mean cell haemoglobin concentration", "value_numeric": 366.0, "unit": "g/L", "ref_low": 320.0, "ref_high": 360.0, "flag": "H", "interference_note": "Raised by spherocytosis: a sphere has less surface area per unit volume, so the cell is denser. MCHC >360 g/L has a short differential."},
+            {"analyte_code": "RDW", "analyte_name": "Red cell distribution width", "value_numeric": 22.4, "unit": "%", "ref_low": 11.5, "ref_high": 14.5, "flag": "H"},
+            {"analyte_code": "RETIC_PCT", "analyte_name": "Reticulocyte percentage", "value_numeric": 14.2, "unit": "%", "ref_low": 0.5, "ref_high": 2.5, "flag": "H"},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 286.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "H", "interference_note": "The absolute count is what matters. 286 x10^9/L is a vigorous regenerative response and effectively excludes a pure production failure."},
+            {"analyte_code": "WBC", "analyte_name": "White cell count", "value_numeric": 28.4, "unit": "10^9/L", "ref_low": 4.0, "ref_high": 11.0, "flag": "H"},
+            {"analyte_code": "LYMPH_ABS", "analyte_name": "Absolute lymphocyte count", "value_numeric": 24.2, "unit": "10^9/L", "ref_low": 1.0, "ref_high": 3.5, "flag": "H", "interference_note": "Stable relative to his known CLL; this has not transformed."},
+            {"analyte_code": "PLT", "analyte_name": "Platelet count", "value_numeric": 218.0, "unit": "10^9/L", "ref_low": 150.0, "ref_high": 400.0, "flag": "N", "interference_note": "Normal platelets argue against Evans syndrome and against a microangiopathy, in which the count would be low."}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 0,
+          "specimen": "serum / urine",
+          "comment": "The four-test screen: LDH, haptoglobin, unconjugated bilirubin, reticulocytes.",
+          "results": [
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 684.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0, "flag": "H"},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.02, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0, "flag": "L", "interference_note": "Undetectable. Note that haptoglobin is an acute-phase protein, so a normal value during inflammation would NOT have excluded haemolysis."},
+            {"analyte_code": "BILI_TOTAL", "analyte_name": "Total bilirubin", "value_numeric": 68.0, "unit": "µmol/L", "ref_low": 3.0, "ref_high": 21.0, "flag": "H"},
+            {"analyte_code": "BILI_INDIRECT", "analyte_name": "Unconjugated bilirubin", "value_numeric": 58.0, "unit": "µmol/L", "ref_low": 2.0, "ref_high": 17.0, "flag": "H", "interference_note": "Predominantly unconjugated, as expected when the bilirubin load exceeds hepatic conjugating capacity."},
+            {"analyte_code": "PLASMA_FREE_HB", "analyte_name": "Plasma free haemoglobin", "value_numeric": 62.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 50.0, "flag": "H", "interference_note": "Only mildly raised. The pattern here is predominantly EXTRAVASCULAR (splenic macrophage clearance of IgG-coated cells); a large free haemoglobin rise would have suggested intravascular destruction instead."},
+            {"analyte_code": "URINE_HAEMOSIDERIN", "analyte_name": "Urinary haemosiderin", "value_text": "Negative", "unit": null, "flag": "N", "interference_note": "Negative, consistent with extravascular haemolysis. It takes about a week of intravascular haemolysis to become positive, so a negative result early does not exclude it."},
+            {"analyte_code": "URINE_UROBILINOGEN", "analyte_name": "Urinary urobilinogen", "value_text": "Strongly positive", "unit": null, "flag": "A", "interference_note": "This, not haemoglobinuria, is what makes the urine dark in extravascular haemolysis - a distinction worth making explicitly to the patient."}
+          ]
+        },
+        {
+          "panel_code": "IMMUNOHAEM",
+          "panel_name": "Immunohaematology",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "analyser": "Transfusion laboratory - column agglutination",
+          "comment": "The tests that establish the immune mechanism.",
+          "results": [
+            {"analyte_code": "DAT_POLY", "analyte_name": "Direct antiglobulin test (polyspecific)", "value_text": "Positive 4+", "unit": null, "flag": "A"},
+            {"analyte_code": "DAT_IGG", "analyte_name": "Direct antiglobulin test - anti-IgG", "value_text": "Positive 4+", "unit": null, "flag": "A", "interference_note": "Strong IgG coating. IgG-coated cells are cleared by splenic macrophages, which partially remove membrane and generate spherocytes."},
+            {"analyte_code": "DAT_C3D", "analyte_name": "Direct antiglobulin test - anti-C3d", "value_text": "Positive 2+", "unit": null, "flag": "A", "interference_note": "IgG plus C3d is the classic warm AIHA pattern. C3d alone would point to cold agglutinin disease instead."},
+            {"analyte_code": "ELUATE", "analyte_name": "Red cell eluate", "value_text": "Panagglutinin reactive with all panel cells; no underlying alloantibody demonstrable", "unit": null, "flag": "A", "interference_note": "A panreactive eluate is characteristic of a warm autoantibody and is what makes crossmatching difficult."},
+            {"analyte_code": "THERMAL_AMPLITUDE", "analyte_name": "Autoantibody thermal amplitude", "value_text": "Reactive at 37 °C; not reactive at 4 °C", "unit": null, "flag": "A", "interference_note": "Defines this as a WARM autoantibody. This single test separates warm AIHA from cold agglutinin disease."},
+            {"analyte_code": "COLD_AGGLUTININ_TITRE", "analyte_name": "Cold agglutinin titre at 4 °C", "value_numeric": 16.0, "unit": "titre", "ref_high": 64.0, "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "SECONDARY_CAUSE",
+          "panel_name": "Search for a secondary cause",
+          "day_offset": 1,
+          "specimen": "serum / EDTA whole blood",
+          "comment": "Roughly half of warm AIHA is secondary. Not looking is the commonest error in this diagnosis.",
+          "results": [
+            {"analyte_code": "FLOW_CYTOMETRY", "analyte_name": "Peripheral blood flow cytometry", "value_text": "CD5+ CD19+ CD23+ kappa-restricted B-cell population, 22 x10^9/L; Matutes score 5/5", "unit": null, "flag": "A", "interference_note": "Confirms the known CLL as the underlying driver, which changes treatment: rituximab-containing therapy addresses both."},
+            {"analyte_code": "ANA", "analyte_name": "Antinuclear antibody", "value_text": "Negative", "unit": null, "flag": "N"},
+            {"analyte_code": "IMMUNOGLOBULINS", "analyte_name": "Serum immunoglobulins", "value_text": "IgG 5.2 g/L (low), IgA 0.6 g/L (low), IgM 0.3 g/L (low)", "unit": null, "flag": "A", "interference_note": "Hypogammaglobulinaemia from the CLL. Relevant to infection risk before starting immunosuppression."},
+            {"analyte_code": "PARVOVIRUS_PCR", "analyte_name": "Parvovirus B19 PCR", "value_text": "Not detected", "unit": null, "flag": "N"},
+            {"analyte_code": "MYCOPLASMA_SEROLOGY", "analyte_name": "Mycoplasma pneumoniae serology", "value_text": "Negative", "unit": null, "flag": "N"},
+            {"analyte_code": "EBV_SEROLOGY", "analyte_name": "EBV serology", "value_text": "Past infection pattern", "unit": null, "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and reticulocytes",
+          "day_offset": 7,
+          "specimen": "EDTA whole blood",
+          "comment": "One week on prednisolone 1 mg/kg.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 78.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0, "flag": "L"},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 210.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "H"},
+            {"analyte_code": "PLT", "analyte_name": "Platelet count", "value_numeric": 246.0, "unit": "10^9/L", "ref_low": 150.0, "ref_high": 400.0}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 28,
+          "specimen": "serum",
+          "comment": "Four weeks on prednisolone plus rituximab; steroid taper commencing.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 112.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0, "flag": "L"},
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 268.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0, "flag": "H"},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.24, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0, "flag": "L", "interference_note": "Recovering. Haptoglobin is the last haemolysis marker to normalise and is the most sensitive marker of ongoing low-grade destruction."},
+            {"analyte_code": "BILI_TOTAL", "analyte_name": "Total bilirubin", "value_numeric": 22.0, "unit": "µmol/L", "ref_low": 3.0, "ref_high": 21.0, "flag": "H"},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 118.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "H"}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 90,
+          "specimen": "serum",
+          "comment": "Three months; prednisolone 10 mg daily and tapering.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 134.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0, "flag": "L"},
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 198.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.68, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 82.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0},
+            {"analyte_code": "BILI_TOTAL", "analyte_name": "Total bilirubin", "value_numeric": 14.0, "unit": "µmol/L", "ref_low": 3.0, "ref_high": 21.0}
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Numerous spherocytes (approximately 25-30% of red cells): densely staining, smaller than normal, with complete loss of central pallor",
+            "Marked polychromasia corresponding to the reticulocytosis",
+            "Occasional nucleated red cells (3 per 100 white cells)",
+            "Anisopoikilocytosis with occasional red cell fragments (<1%, well below the microangiopathy threshold)",
+            "Erythrophagocytosis by occasional monocytes - uncommon but, when present, strongly supports immune destruction",
+            "No agglutination at room temperature",
+            "No bite cells, no blister cells, no Heinz bodies on supravital staining",
+            "No sickle forms, no target cells, no basophilic stippling"
+          ],
+          "white_cell_morphology": [
+            "Absolute lymphocytosis of small mature lymphocytes with condensed 'soccer-ball' chromatin and scanty cytoplasm",
+            "Numerous smear (smudge) cells, characteristic of CLL",
+            "Neutrophils morphologically normal, no hypersegmentation, no toxic granulation",
+            "No blasts, no prolymphocytes above 5%"
+          ],
+          "platelet_morphology": [
+            "Adequate in number and normal in morphology",
+            "No platelet clumping, no giant platelets"
+          ],
+          "schistocyte_percent": 0.6,
+          "narrative": "The film shows a florid regenerative anaemia. The dominant abnormality is spherocytosis with marked polychromasia and nucleated red cells, the morphological footprint of antibody-coated cells having membrane stripped by splenic macrophages. Occasional erythrophagocytosis is seen. Red cell fragments are present at well under 1%, far below the threshold that would raise microangiopathy. The white cells show the mature lymphocytosis and smear cells of the patient's known CLL. Taken with a DAT positive for IgG and C3d, the appearances are those of warm autoimmune haemolytic anaemia secondary to a lymphoproliferative disorder. Note that spherocytes are NOT specific for immune haemolysis - hereditary spherocytosis produces an identical red cell picture, and the DAT is what separates them.",
+          "narrative_i18n": {
+            "en": "Florid regenerative anaemia with 25-30% spherocytes, marked polychromasia, nucleated red cells and occasional erythrophagocytosis; fragments <1%. CLL lymphocytosis with smear cells. With an IgG+C3d DAT the picture is warm AIHA secondary to a lymphoproliferative disorder.",
+            "de": "Ausgeprägte regenerative Anämie mit 25-30% Sphärozyten, deutlicher Polychromasie, kernhaltigen Erythrozyten und vereinzelter Erythrophagozytose; Fragmente <1%. CLL-Lymphozytose mit Gumprecht-Kernschatten. Mit IgG+C3d-positivem DAT entspricht das Bild einer warmen AIHA bei lymphoproliferativer Erkrankung.",
+            "es": "Anemia regenerativa florida con 25-30% de esferocitos, policromasia marcada, eritroblastos y eritrofagocitosis ocasional; fragmentos <1%. Linfocitosis de LLC con sombras de Gumprecht. Con PAD IgG+C3d el cuadro corresponde a AHAI caliente secundaria a síndrome linfoproliferativo.",
+            "nl": "Uitgesproken regeneratieve anemie met 25-30% sferocyten, duidelijke polychromasie, kernhoudende erytrocyten en incidentele erytrofagocytose; fragmenten <1%. CLL-lymfocytose met smudge cells. Met IgG+C3d-positieve DAT past dit bij warme AIHA bij een lymfoproliferatieve aandoening.",
+            "ru": "Выраженная регенераторная анемия: 25-30% сфероцитов, значительная полихромазия, нормобласты, единичный эритрофагоцитоз; фрагменты <1%. Лимфоцитоз при ХЛЛ с тенями Гумпрехта. При положительной пробе Кумбса (IgG+C3d) картина соответствует тёплой АИГА на фоне лимфопролиферативного заболевания."
+          }
+        },
+        {
+          "day_offset": 90,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Occasional spherocytes only (<5%)",
+            "Mild polychromasia",
+            "No nucleated red cells",
+            "No erythrophagocytosis",
+            "No fragments"
+          ],
+          "white_cell_morphology": [
+            "Persistent mature lymphocytosis with smear cells, unchanged from baseline",
+            "Neutrophils normal"
+          ],
+          "platelet_morphology": ["Normal number and morphology"],
+          "schistocyte_percent": 0.1,
+          "narrative": "Substantial morphological resolution at three months. Spherocytes are now occasional and polychromasia mild, matching the biochemical recovery. The CLL lymphocytosis is unchanged, as expected: the haemolysis has been treated, the underlying clone has not been eradicated.",
+          "narrative_i18n": {
+            "en": "Substantial resolution: occasional spherocytes and mild polychromasia only. CLL lymphocytosis unchanged.",
+            "de": "Weitgehende Rückbildung: nur noch vereinzelte Sphärozyten und milde Polychromasie. CLL-Lymphozytose unverändert.",
+            "es": "Resolución sustancial: solo esferocitos ocasionales y policromasia leve. Linfocitosis de LLC sin cambios.",
+            "nl": "Grotendeels hersteld: slechts incidentele sferocyten en milde polychromasie. CLL-lymfocytose ongewijzigd.",
+            "ru": "Существенное разрешение: лишь единичные сфероциты и лёгкая полихромазия. Лимфоцитоз при ХЛЛ без изменений."
+          }
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "CT thorax, abdomen and pelvis with contrast",
+          "region": "Chest/abdomen/pelvis",
+          "day_offset": 2,
+          "findings": "Splenomegaly 17 cm. Widespread lymphadenopathy: largest para-aortic node 2.4 cm. No mass lesion, no organ infiltration, no evidence of Richter transformation.",
+          "impression": "Stable CLL with splenomegaly. No transformation. The spleen is the site of red cell destruction and its size explains the extravascular pattern."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Corticosteroid with rituximab for warm AIHA secondary to CLL",
+          "name_i18n": {
+            "en": "Corticosteroid with rituximab for warm AIHA secondary to CLL",
+            "de": "Kortikosteroid plus Rituximab bei warmer AIHA bei CLL",
+            "es": "Corticoide con rituximab para AHAI caliente secundaria a LLC",
+            "nl": "Corticosteroïd met rituximab bij warme AIHA bij CLL",
+            "ru": "Кортикостероид с ритуксимабом при тёплой АИГА на фоне ХЛЛ"
+          },
+          "guideline_source": "Composite of BSH 2017 warm AIHA guidance and the First International Consensus on AIHA (2020), adapted",
+          "indication": "Symptomatic warm autoimmune haemolytic anaemia with haemoglobin 62 g/L secondary to chronic lymphocytic leukaemia.",
+          "duration_months": 6,
+          "regimen": [
+            {"agent": "Prednisolone", "dose": "1 mg/kg (75 mg)", "route": "oral", "frequency": "once daily", "duration": "3 weeks then taper", "notes": "Expect a haemoglobin response within 1-3 weeks. Taper slowly over 3-6 months; abrupt withdrawal is the commonest cause of relapse."},
+            {"agent": "Rituximab", "dose": "375 mg/m2", "route": "IV", "frequency": "weekly", "duration": "4 doses", "notes": "Added early because the AIHA is CLL-associated. Early rituximab improves durable response and lets the steroid be tapered faster."},
+            {"agent": "Folic acid", "dose": "5 mg", "route": "oral", "frequency": "once daily", "duration": "while haemolysing", "notes": "Sustained erythropoiesis consumes folate; deficiency will blunt the reticulocyte response."},
+            {"agent": "Thromboprophylaxis", "dose": "enoxaparin 40 mg", "route": "subcutaneous", "frequency": "once daily", "duration": "while inpatient and haemolysing", "notes": "Active AIHA carries a materially raised venous thromboembolism risk that is routinely overlooked."},
+            {"agent": "Bone and gastric protection", "dose": "calcium/vitamin D plus a proton pump inhibitor", "route": "oral", "frequency": "once daily", "duration": "duration of steroid", "notes": "Plus co-trimoxazole prophylaxis given hypogammaglobulinaemia and planned prolonged steroid."},
+            {"agent": "Red cell transfusion", "dose": "1 unit at a time, ABO/RhD and phenotype matched as far as possible", "route": "IV", "frequency": "as clinically required", "duration": "n/a", "notes": "Do NOT withhold transfusion from a symptomatic patient because the crossmatch is incompatible. Discuss with the transfusion laboratory, use the least incompatible unit, transfuse slowly with observation, and document the decision."}
+          ],
+          "monitoring": [
+            "Daily FBC and reticulocytes until the haemoglobin is rising, then weekly",
+            "Haptoglobin and LDH weekly - haptoglobin is the last to normalise and the most sensitive marker of ongoing haemolysis",
+            "Capillary glucose while on high-dose steroid",
+            "Hepatitis B core antibody and surface antigen BEFORE rituximab: reactivation is a fatal complication and screening is mandatory",
+            "Repeat DAT is NOT needed for monitoring - it can remain positive long after the haemolysis stops"
+          ],
+          "contraindications": [
+            "Rituximab without hepatitis B screening (absolute)",
+            "Live vaccines during and for 6 months after rituximab"
+          ],
+          "adverse_effects": [
+            "Steroid: hyperglycaemia, osteoporosis, gastric ulceration, mood disturbance, infection",
+            "Rituximab: infusion reactions, hypogammaglobulinaemia, hepatitis B reactivation, rare PML",
+            "Splenectomy (if needed later): lifelong encapsulated organism risk, requires vaccination and prophylaxis"
+          ],
+          "notes": "Transfusion in warm AIHA is frequently and wrongly delayed. The autoantibody is panreactive, so no unit will be fully compatible; the risk of transfusing the least incompatible unit is far smaller than the risk of leaving a patient with a haemoglobin of 62 g/L and rest dyspnoea untransfused."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Warm autoimmune haemolytic anaemia secondary to chronic lymphocytic leukaemia",
+          "label_i18n": {
+            "en": "Warm autoimmune haemolytic anaemia secondary to chronic lymphocytic leukaemia",
+            "de": "Warme autoimmunhämolytische Anämie bei chronischer lymphatischer Leukämie",
+            "es": "Anemia hemolítica autoinmune caliente secundaria a leucemia linfocítica crónica",
+            "nl": "Warme auto-immuun hemolytische anemie bij chronische lymfatische leukemie",
+            "ru": "Тёплая аутоиммунная гемолитическая анемия на фоне хронического лимфолейкоза"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.97,
+          "icd10": "D59.1",
+          "discriminator": "DAT positive for IgG and C3d with a panreactive eluate and a thermal amplitude reactive at 37 °C, spherocytes on the film, and an identified lymphoproliferative driver.",
+          "supporting_evidence": [
+            "Haemoglobin 62 g/L with an absolute reticulocyte count of 286 x10^9/L",
+            "LDH 684 U/L, haptoglobin undetectable, unconjugated bilirubin 58 µmol/L",
+            "DAT IgG 4+ and C3d 2+ with a panreactive eluate",
+            "Autoantibody reactive at 37 °C, not at 4 °C",
+            "25-30% spherocytes with erythrophagocytosis on the film",
+            "CD5+CD19+CD23+ clone on flow cytometry (Matutes 5/5)",
+            "Response to prednisolone and rituximab"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Cold agglutinin disease",
+          "label_i18n": {
+            "en": "Cold agglutinin disease",
+            "de": "Kälteagglutininkrankheit",
+            "es": "Enfermedad por crioaglutininas",
+            "nl": "Koude-agglutinineziekte",
+            "ru": "Болезнь холодовых агглютининов"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "The DAT is positive for IgG as well as C3d, the thermal amplitude is at 37 °C, the cold agglutinin titre is only 16, and there is no agglutination on the film or acrocyanosis.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["DAT IgG positive", "Thermal amplitude 37 °C", "Cold agglutinin titre 16", "No red cell agglutination on the film", "No acrocyanosis or cold-induced symptoms"]
+        },
+        {
+          "label": "Hereditary spherocytosis",
+          "label_i18n": {
+            "en": "Hereditary spherocytosis",
+            "de": "Hereditäre Sphärozytose",
+            "es": "Esferocitosis hereditaria",
+            "nl": "Hereditaire sferocytose",
+            "ru": "Наследственный сфероцитоз"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Produces an identical red cell film. The DAT is what separates them, and it is negative in hereditary spherocytosis. Age 68 at first presentation and the absence of family history also argue against it.",
+          "supporting_evidence": ["Spherocytes with a raised MCHC"],
+          "refuting_evidence": ["DAT strongly positive", "No family history", "First presentation at 68", "No prior history of gallstones in youth or childhood jaundice"]
+        },
+        {
+          "label": "Evans syndrome",
+          "label_i18n": {
+            "en": "Evans syndrome",
+            "de": "Evans-Syndrom",
+            "es": "Síndrome de Evans",
+            "nl": "Syndroom van Evans",
+            "ru": "Синдром Эванса"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Requires concurrent immune thrombocytopenia. The platelet count is 218 x10^9/L.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["Normal platelet count throughout"]
+        },
+        {
+          "label": "Microangiopathic haemolytic anaemia",
+          "label_i18n": {
+            "en": "Microangiopathic haemolytic anaemia",
+            "de": "Mikroangiopathische hämolytische Anämie",
+            "es": "Anemia hemolítica microangiopática",
+            "nl": "Microangiopathische hemolytische anemie",
+            "ru": "Микроангиопатическая гемолитическая анемия"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Fragments are 0.6%, below any diagnostic threshold, platelets are normal, and the DAT is positive - a microangiopathy is DAT-negative by definition.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["Schistocytes 0.6%", "Platelets normal", "DAT positive"]
+        }
+      ],
+      "teaching_points": [
+        "The DAT is the single test that separates immune from non-immune haemolysis, and its pattern subclassifies the immune causes: IgG with or without C3d indicates warm AIHA; C3d alone indicates cold agglutinin disease or paroxysmal cold haemoglobinuria.",
+        "Spherocytes are not specific for immune haemolysis. Hereditary spherocytosis produces an identical film, and the DAT is what distinguishes them - a negative DAT with spherocytes should prompt an EMA binding test, not reassurance.",
+        "The absolute reticulocyte count, not the percentage, defines a regenerative response. A percentage looks impressive against a low red cell mass while the absolute count may be inadequate.",
+        "Roughly half of warm AIHA is secondary - to lymphoproliferative disease, connective tissue disease, drugs, or infection. Failing to look for a cause is the commonest management error, and in this case finding the CLL changed the treatment.",
+        "Never withhold transfusion from a symptomatic patient because the crossmatch is incompatible. The autoantibody is panreactive, so no unit will be compatible; use the least incompatible unit, transfuse slowly, and document the reasoning.",
+        "Screen for hepatitis B before rituximab. Reactivation is a preventable cause of death.",
+        "Haptoglobin is an acute-phase protein. A normal haptoglobin during inflammation does not exclude haemolysis, and haptoglobin is the last marker to recover during treatment.",
+        "Active AIHA carries a substantially increased venous thromboembolism risk. Thromboprophylaxis belongs in the admission bundle."
+      ],
+      "references": [
+        {"citation": "Hill QA et al. Guidelines on the management of drug-induced immune and secondary autoimmune haemolytic anaemia. Br J Haematol 2017.", "type": "guideline"},
+        {"citation": "Jager U et al. Diagnosis and treatment of autoimmune haemolytic anaemia in adults: recommendations from the First International Consensus Meeting. Blood Rev 2020.", "type": "consensus"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Warm autoimmune haemolytic anaemia secondary to CLL",
+        "accepted_diagnosis_terms": ["warm autoimmune haemolytic anaemia", "warm aiha", "warm antibody haemolytic anemia", "autoimmune hemolytic anemia", "waiha", "secondary aiha"],
+        "must_include_findings": [
+          {"label": "Positive direct antiglobulin test with IgG and C3d", "synonyms": ["dat positive", "coombs positive", "igg and c3d", "direct antiglobulin"], "weight": 2.5},
+          {"label": "Spherocytes on the blood film", "synonyms": ["spherocytes", "spherocytosis", "microspherocytes"], "weight": 1.5},
+          {"label": "Reticulocytosis", "synonyms": ["reticulocytes 286", "raised reticulocytes", "polychromasia", "regenerative"], "weight": 1.0},
+          {"label": "Raised LDH with undetectable haptoglobin", "synonyms": ["ldh 684", "haptoglobin undetectable", "low haptoglobin", "haemolysis screen"], "weight": 1.25},
+          {"label": "Underlying CLL as a secondary cause", "synonyms": ["cll", "chronic lymphocytic leukaemia", "lymphoproliferative", "cd5 cd19 cd23"], "weight": 1.5},
+          {"label": "Warm thermal amplitude", "synonyms": ["reactive at 37", "warm antibody", "thermal amplitude"], "weight": 1.0}
+        ],
+        "expected_differential": ["cold agglutinin disease", "hereditary spherocytosis", "evans syndrome", "microangiopathic haemolytic anaemia", "drug-induced immune haemolysis", "delayed haemolytic transfusion reaction"],
+        "expected_next_tests": ["direct antiglobulin test", "blood film", "reticulocyte count", "ldh", "haptoglobin", "bilirubin", "flow cytometry", "thermal amplitude", "cold agglutinin titre", "hepatitis b screening"],
+        "expected_management": ["prednisolone", "corticosteroid", "rituximab", "folic acid", "thromboprophylaxis", "transfuse if symptomatic", "hepatitis b screening before rituximab", "treat the underlying cll"],
+        "critical_values": [
+          {"analyte": "HB", "value": 62.0, "reason": "Severe symptomatic anaemia with rest dyspnoea"}
+        ],
+        "safety_rules": [
+          {"id": "SR-HEM-TRANSFUSE", "description": "Must not advise withholding transfusion from a symptomatic patient purely because of an incompatible crossmatch.", "forbidden_patterns": ["do not transfuse", "withhold transfusion", "transfusion is contraindicated", "cannot transfuse"]},
+          {"id": "SR-HEM-HBV", "description": "Rituximab recommendations must mention hepatitis B screening.", "required_terms": ["hepatitis b", "hbv", "hbsag", "core antibody"]},
+          {"id": "SR-HEM-SECONDARY", "description": "Should search for a secondary cause.", "required_terms": ["secondary cause", "underlying", "lymphoproliferative", "cll", "autoimmune screen"]}
+        ],
+        "distractor_terms": ["thrombotic thrombocytopenic purpura", "aplastic anaemia", "myelodysplasia", "iron deficiency", "b12 deficiency", "sickle cell"]
+      }
+    },
+    {
+      "case_code": "HEM-002",
+      "title": "Winter-worsening anaemia with an impossible red cell count and acrocyanosis",
+      "title_i18n": {
+        "en": "Winter-worsening anaemia with an impossible red cell count and acrocyanosis",
+        "de": "Im Winter zunehmende Anämie mit unplausibler Erythrozytenzahl und Akrozyanose",
+        "es": "Anemia que empeora en invierno con recuento eritrocitario imposible y acrocianosis",
+        "nl": "In de winter verergerende anemie met een onmogelijk erytrocytenaantal en acrocyanose",
+        "ru": "Усиливающаяся зимой анемия с невозможным числом эритроцитов и акроцианозом"
+      },
+      "summary": "Cold agglutinin disease. The case is built around a pre-analytical artefact - a spuriously high MCV and low red cell count that corrects when the sample is warmed to 37 °C - and a DAT positive for C3d alone.",
+      "summary_i18n": {
+        "en": "Cold agglutinin disease presenting with a warming-correctable analyser artefact and a C3d-only DAT.",
+        "de": "Kälteagglutininkrankheit mit durch Erwärmen korrigierbarem Analyser-Artefakt und ausschliesslich C3d-positivem DAT.",
+        "es": "Enfermedad por crioaglutininas con artefacto del analizador corregible al calentar y PAD positiva solo para C3d.",
+        "nl": "Koude-agglutinineziekte met een door opwarmen corrigeerbaar analyserartefact en een uitsluitend C3d-positieve DAT.",
+        "ru": "Болезнь холодовых агглютининов с артефактом анализатора, устраняемым подогревом, и пробой Кумбса, положительной только по C3d."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 4,
+      "tags": ["haemolysis", "immune", "cold-agglutinin", "C3d", "pre-analytical", "complement", "agglutination"],
+      "icd10_codes": ["D59.1"],
+      "snomed_codes": ["78129009"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-002",
+        "age_years": 74,
+        "sex": "female",
+        "weight_kg": 61.0,
+        "height_cm": 158.0,
+        "ancestry": "Northern European",
+        "occupation": "Retired teacher",
+        "region": "Northern latitude, cold winters"
+      },
+      "presentation": {
+        "chief_complaint": "Two winters of worsening fatigue with painful blue discolouration of the fingers, nose and ears on going outdoors.",
+        "chief_complaint_i18n": {
+          "en": "Two winters of worsening fatigue with painful blue discolouration of the fingers, nose and ears outdoors.",
+          "de": "Zwei Winter mit zunehmender Müdigkeit und schmerzhafter Blauverfärbung von Fingern, Nase und Ohren im Freien.",
+          "es": "Dos inviernos de fatiga creciente con coloración azulada dolorosa de dedos, nariz y orejas al salir al exterior.",
+          "nl": "Twee winters met toenemende vermoeidheid en pijnlijke blauwverkleuring van vingers, neus en oren buitenshuis.",
+          "ru": "Две зимы нарастающей утомляемости с болезненным посинением пальцев, носа и ушей на улице."
+        },
+        "history_of_present_illness": "Symptoms are strikingly seasonal: she is nearly well in summer and severely fatigued from November to March. Fingers and the tip of the nose turn dusky blue within minutes outdoors and ache on rewarming, without the classic triphasic white-blue-red change of Raynaud phenomenon. Her urine turns dark after being out in the cold. She has been told twice that her blood sample was 'clotted' and needed repeating - a clue that was not followed up. Two previous full blood counts were reported with an impossibly low red cell count alongside a near-normal haemoglobin.",
+        "past_medical_history": ["Osteoarthritis", "No known lymphoproliferative disorder at referral"],
+        "medications": [
+          {"name": "Paracetamol", "dose": "1 g", "route": "oral", "frequency": "as required", "indication": "osteoarthritis"}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["No haemolytic disease"],
+        "social_history": "Non-smoker. Lives in an old, poorly heated house. No recent travel.",
+        "review_of_systems": {
+          "general": "Marked seasonal fatigue",
+          "vascular": "Acrocyanosis of fingers, nose, ears on cold exposure; no digital ulceration, no triphasic colour change",
+          "genitourinary": "Dark urine after cold exposure",
+          "respiratory": "No recent respiratory infection"
+        },
+        "vitals": {
+          "heart_rate_bpm": 88,
+          "blood_pressure_mmhg": "142/78",
+          "respiratory_rate": 16,
+          "temperature_c": 36.3,
+          "spo2_percent": 97,
+          "weight_kg": 61.0
+        },
+        "examination_findings": [
+          "Pallor with mild scleral icterus",
+          "Acrocyanosis of the fingertips, nose and ear lobes in the cold clinic room, resolving on warming",
+          "No digital ulceration or gangrene",
+          "Spleen tip just palpable",
+          "No lymphadenopathy",
+          "No livedo reticularis, no vasculitic rash"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count - sample at room temperature",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood, transported at ambient temperature",
+          "analyser": "Sysmex XN-9000",
+          "comment": "The artefactual result. These numbers are internally impossible and should stop the reporting process.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 88.0, "unit": "g/L", "ref_low": 120.0, "ref_high": 155.0, "flag": "L", "interference_note": "Haemoglobin is measured after cell lysis and is therefore the ONE reliable parameter on this sample."},
+            {"analyte_code": "RBC", "analyte_name": "Red cell count", "value_numeric": 1.42, "unit": "10^12/L", "ref_low": 3.8, "ref_high": 4.8, "flag": "LL", "interference_note": "SPURIOUSLY LOW. Agglutinated clumps of red cells pass the aperture as single events, so the counter under-reports cell number."},
+            {"analyte_code": "MCV", "analyte_name": "Mean cell volume", "value_numeric": 158.0, "unit": "fL", "ref_low": 80.0, "ref_high": 100.0, "flag": "H", "interference_note": "SPURIOUSLY HIGH for the same reason: a doublet or triplet is sized as one very large cell."},
+            {"analyte_code": "MCHC", "analyte_name": "Mean cell haemoglobin concentration", "value_numeric": 442.0, "unit": "g/L", "ref_low": 320.0, "ref_high": 360.0, "flag": "H", "interference_note": "A biologically IMPOSSIBLE value. MCHC cannot exceed about 370 g/L in vivo. An MCHC above 400 g/L means an artefact - cold agglutinins, lipaemia, or a haemolysed sample - and must never be reported without investigation."},
+            {"analyte_code": "PLT", "analyte_name": "Platelet count", "value_numeric": 212.0, "unit": "10^9/L", "ref_low": 150.0, "ref_high": 400.0}
+          ]
+        },
+        {
+          "panel_code": "FBC_WARMED",
+          "panel_name": "Full blood count - sample pre-warmed to 37 °C",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood, pre-warmed 30 minutes at 37 °C",
+          "analyser": "Sysmex XN-9000 with warmed sample handling",
+          "comment": "The same sample, warmed. This single manoeuvre both corrects the result and makes the diagnosis.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 86.0, "unit": "g/L", "ref_low": 120.0, "ref_high": 155.0, "flag": "L", "interference_note": "Unchanged, as expected - it was never affected."},
+            {"analyte_code": "RBC", "analyte_name": "Red cell count", "value_numeric": 2.68, "unit": "10^12/L", "ref_low": 3.8, "ref_high": 4.8, "flag": "L", "interference_note": "Nearly doubled on warming. The disaggregation of red cell clumps is the whole explanation."},
+            {"analyte_code": "MCV", "analyte_name": "Mean cell volume", "value_numeric": 96.0, "unit": "fL", "ref_low": 80.0, "ref_high": 100.0, "flag": "N", "interference_note": "Corrected into the reference interval."},
+            {"analyte_code": "MCHC", "analyte_name": "Mean cell haemoglobin concentration", "value_numeric": 334.0, "unit": "g/L", "ref_low": 320.0, "ref_high": 360.0, "flag": "N", "interference_note": "Now physiologically plausible. The difference between the two panels is diagnostic in itself."},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 168.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "H"}
+          ]
+        },
+        {
+          "panel_code": "IMMUNOHAEM",
+          "panel_name": "Immunohaematology",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood / serum, collected and transported at 37 °C",
+          "comment": "Pre-warmed collection is essential: a cold-transported sample will have the antibody stripped onto the cells in vitro and give misleading results.",
+          "results": [
+            {"analyte_code": "DAT_POLY", "analyte_name": "Direct antiglobulin test (polyspecific)", "value_text": "Positive 3+", "unit": null, "flag": "A"},
+            {"analyte_code": "DAT_IGG", "analyte_name": "Direct antiglobulin test - anti-IgG", "value_text": "Negative", "unit": null, "flag": "N", "interference_note": "IgG NEGATIVE. The IgM cold agglutinin dissociates from the cell at 37 °C, leaving only its complement footprint behind."},
+            {"analyte_code": "DAT_C3D", "analyte_name": "Direct antiglobulin test - anti-C3d", "value_text": "Positive 3+", "unit": null, "flag": "A", "interference_note": "C3d ALONE is the diagnostic DAT pattern of cold agglutinin disease. This is the key discriminator from warm AIHA."},
+            {"analyte_code": "COLD_AGGLUTININ_TITRE", "analyte_name": "Cold agglutinin titre at 4 °C", "value_numeric": 4096.0, "unit": "titre", "ref_high": 64.0, "flag": "H", "interference_note": "A titre of 1:64 or above with compatible clinical features is diagnostic; 1:4096 is unambiguous."},
+            {"analyte_code": "THERMAL_AMPLITUDE", "analyte_name": "Thermal amplitude", "value_text": "Reactive up to 32 °C", "unit": null, "flag": "A", "interference_note": "Thermal amplitude, not titre, determines clinical severity. Reactivity up to 32 °C means the antibody is active at the temperature of acral skin in winter - which is precisely the patient's symptom pattern."},
+            {"analyte_code": "COLD_AGGLUTININ_SPECIFICITY", "analyte_name": "Cold agglutinin specificity", "value_text": "Anti-I", "unit": null, "flag": "A", "interference_note": "Anti-I is typical of primary cold agglutinin disease and of Mycoplasma-associated disease; anti-i points towards infectious mononucleosis."}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 0,
+          "specimen": "serum / urine",
+          "results": [
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 512.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0, "flag": "H"},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.04, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0, "flag": "L"},
+            {"analyte_code": "BILI_TOTAL", "analyte_name": "Total bilirubin", "value_numeric": 44.0, "unit": "µmol/L", "ref_low": 3.0, "ref_high": 21.0, "flag": "H"},
+            {"analyte_code": "PLASMA_FREE_HB", "analyte_name": "Plasma free haemoglobin", "value_numeric": 186.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 50.0, "flag": "H", "interference_note": "Substantially raised, reflecting a significant INTRAVASCULAR component - complement-mediated lysis, unlike the predominantly extravascular pattern of warm AIHA."},
+            {"analyte_code": "URINE_HAEMOSIDERIN", "analyte_name": "Urinary haemosiderin", "value_text": "Positive", "unit": null, "flag": "A", "interference_note": "Positive haemosiderinuria confirms chronic intravascular haemolysis of at least a week's duration."},
+            {"analyte_code": "C3", "analyte_name": "Complement C3", "value_numeric": 0.62, "unit": "g/L", "ref_low": 0.9, "ref_high": 1.8, "flag": "L", "interference_note": "Consumed complement, consistent with ongoing complement activation on the red cell surface."},
+            {"analyte_code": "C4", "analyte_name": "Complement C4", "value_numeric": 0.08, "unit": "g/L", "ref_low": 0.15, "ref_high": 0.45, "flag": "L"}
+          ]
+        },
+        {
+          "panel_code": "SECONDARY_CAUSE",
+          "panel_name": "Search for an underlying clone or infection",
+          "day_offset": 3,
+          "specimen": "serum / EDTA whole blood",
+          "comment": "Primary cold agglutinin disease is now recognised as a clonal lymphoproliferative disorder in most cases.",
+          "results": [
+            {"analyte_code": "PARAPROTEIN", "analyte_name": "Serum protein electrophoresis and immunofixation", "value_text": "IgM kappa paraprotein, 4.2 g/L", "unit": null, "flag": "A", "interference_note": "A clonal IgM kappa is found in most cases of 'primary' cold agglutinin disease; the condition is best understood as a low-grade clonal marrow disorder rather than as idiopathic autoimmunity."},
+            {"analyte_code": "MYD88", "analyte_name": "MYD88 L265P mutation analysis", "value_text": "Not detected", "unit": null, "flag": "N", "interference_note": "Its absence helps distinguish cold agglutinin disease from Waldenstrom macroglobulinaemia, in which it is present in over 90%."},
+            {"analyte_code": "MYCOPLASMA_SEROLOGY", "analyte_name": "Mycoplasma pneumoniae serology", "value_text": "Negative", "unit": null, "flag": "N"},
+            {"analyte_code": "EBV_SEROLOGY", "analyte_name": "EBV serology", "value_text": "Past infection", "unit": null, "flag": "N"},
+            {"analyte_code": "CT_STAGING", "analyte_name": "CT staging", "value_text": "No lymphadenopathy; spleen 13.5 cm", "unit": null, "flag": "A"}
+          ]
+        },
+        {
+          "panel_code": "FBC_WARMED",
+          "panel_name": "Full blood count - warmed sample",
+          "day_offset": 120,
+          "specimen": "EDTA whole blood, pre-warmed",
+          "comment": "Four months after rituximab-bendamustine and with strict cold avoidance through the winter.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 118.0, "unit": "g/L", "ref_low": 120.0, "ref_high": 155.0, "flag": "L"},
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 246.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.42, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0},
+            {"analyte_code": "COLD_AGGLUTININ_TITRE", "analyte_name": "Cold agglutinin titre at 4 °C", "value_numeric": 256.0, "unit": "titre", "ref_high": 64.0, "flag": "H", "interference_note": "Fallen but still positive. The titre lags the clinical response and should not be used alone to judge treatment success."}
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Striking red cell agglutination in large irregular clumps, present from the feathered edge to the body of the film",
+            "Clumps are irregular and three-dimensional, NOT the linear stacked-coin arrangement of rouleaux - this distinction is the whole point of looking",
+            "Agglutination disperses completely when the film is prepared from a sample pre-warmed to 37 °C",
+            "Moderate polychromasia",
+            "Occasional spherocytes (<5%), far fewer than in warm AIHA",
+            "No fragments, no bite cells, no Heinz bodies",
+            "Occasional erythrophagocytosis by monocytes"
+          ],
+          "white_cell_morphology": [
+            "Normal in number and morphology",
+            "No lymphocytosis, no smear cells, no blasts",
+            "Occasional monocytes containing ingested red cells"
+          ],
+          "platelet_morphology": ["Normal in number and morphology"],
+          "schistocyte_percent": 0.2,
+          "narrative": "The dominant and immediately visible abnormality is gross red cell agglutination in irregular clumps, which disperses entirely on a warmed preparation. This is agglutination, not rouleaux: rouleaux form linear stacks and are associated with a raised plasma protein concentration, whereas these clumps are three-dimensional and temperature-dependent. Spherocytes are present but sparse, and polychromasia is moderate. There are no fragments and no oxidative changes. The agglutination is also the direct explanation for the impossible analyser indices on the unwarmed sample - a spuriously low red cell count, a spuriously high MCV and an MCHC of 442 g/L. Together with a DAT positive for C3d alone and a cold agglutinin titre of 1:4096, the appearances are diagnostic of cold agglutinin disease.",
+          "narrative_i18n": {
+            "en": "Gross irregular red cell agglutination dispersing on a warmed preparation - agglutination, not rouleaux. Sparse spherocytes, moderate polychromasia, no fragments. Explains the impossible analyser indices. With a C3d-only DAT and a 1:4096 titre this is cold agglutinin disease.",
+            "de": "Ausgeprägte unregelmässige Erythrozytenagglutination, die sich im erwärmten Präparat auflöst - Agglutination, keine Geldrollenbildung. Wenige Sphärozyten, mässige Polychromasie, keine Fragmente. Erklärt die unplausiblen Analyser-Indizes. Mit ausschliesslich C3d-positivem DAT und Titer 1:4096 diagnostisch für eine Kälteagglutininkrankheit.",
+            "es": "Aglutinación eritrocitaria irregular masiva que se dispersa en la preparación calentada: aglutinación, no formación de pilas de monedas. Esferocitos escasos, policromasia moderada, sin fragmentos. Explica los índices imposibles del analizador. Con PAD solo C3d y título 1:4096, es enfermedad por crioaglutininas.",
+            "nl": "Grove onregelmatige erytrocytenagglutinatie die verdwijnt in een opgewarmd preparaat - agglutinatie, geen geldrolvorming. Weinig sferocyten, matige polychromasie, geen fragmenten. Verklaart de onmogelijke analyserindices. Met een uitsluitend C3d-positieve DAT en titer 1:4096 is dit koude-agglutinineziekte.",
+            "ru": "Выраженная неправильная агглютинация эритроцитов, исчезающая в подогретом препарате, — именно агглютинация, а не монетные столбики. Единичные сфероциты, умеренная полихромазия, фрагментов нет. Объясняет невозможные индексы анализатора. При пробе Кумбса, положительной только по C3d, и титре 1:4096 — болезнь холодовых агглютининов."
+          }
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "CT thorax, abdomen and pelvis",
+          "region": "Chest/abdomen/pelvis",
+          "day_offset": 5,
+          "findings": "Spleen 13.5 cm. No lymphadenopathy, no mass lesion.",
+          "impression": "Mild splenomegaly without nodal disease. Excludes an overt lymphoma driving the IgM paraprotein."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Cold avoidance with rituximab-bendamustine for cold agglutinin disease",
+          "name_i18n": {
+            "en": "Cold avoidance with rituximab-bendamustine for cold agglutinin disease",
+            "de": "Kältevermeidung plus Rituximab-Bendamustin bei Kälteagglutininkrankheit",
+            "es": "Evitación del frío con rituximab-bendamustina para la enfermedad por crioaglutininas",
+            "nl": "Koudevermijding met rituximab-bendamustine bij koude-agglutinineziekte",
+            "ru": "Избегание холода с ритуксимабом и бендамустином при болезни холодовых агглютининов"
+          },
+          "guideline_source": "Composite of international consensus on cold agglutinin disease (2020) and BSH guidance, adapted",
+          "indication": "Symptomatic cold agglutinin disease with transfusion-independent but disabling seasonal anaemia and an IgM kappa clone.",
+          "duration_months": 6,
+          "regimen": [
+            {"agent": "Cold avoidance", "dose": "n/a", "route": "n/a", "frequency": "continuous", "duration": "lifelong", "notes": "Not a soft recommendation: it is the single most effective intervention. Heated home, gloves, hat, scarf, warmed intravenous fluids, warmed blood products, and a warmed operating theatre if surgery is ever needed."},
+            {"agent": "Rituximab", "dose": "375 mg/m2", "route": "IV", "frequency": "day 1 of each 28-day cycle", "duration": "4 cycles", "notes": "Targets the underlying clone. Response rates are around 50% as monotherapy and around 70-80% combined with bendamustine."},
+            {"agent": "Bendamustine", "dose": "90 mg/m2", "route": "IV", "frequency": "days 1 and 2 of each 28-day cycle", "duration": "4 cycles", "notes": "Added for a deeper and more durable response than rituximab alone."},
+            {"agent": "Folic acid", "dose": "5 mg", "route": "oral", "frequency": "once daily", "duration": "ongoing", "notes": "Chronic haemolysis consumes folate."},
+            {"agent": "No corticosteroid", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "Corticosteroids and splenectomy are largely INEFFECTIVE in cold agglutinin disease. Destruction is complement-mediated and occurs in the liver, not the spleen. This is the sharpest management difference from warm AIHA."}
+          ],
+          "monitoring": [
+            "Always request a pre-warmed sample for the full blood count; label the request 'cold agglutinins - warm at 37 °C' so the laboratory does not report an artefact",
+            "Haemoglobin, LDH and haptoglobin monthly during treatment",
+            "Cold agglutinin titre is a poor monitoring tool - it lags the clinical response",
+            "Hepatitis B screening before rituximab",
+            "All blood products must be administered through a blood warmer",
+            "Warn the surgical and anaesthetic teams before any procedure involving hypothermia, particularly cardiac surgery with cardiopulmonary bypass"
+          ],
+          "contraindications": [
+            "Unwarmed transfusion (will provoke acute haemolysis)",
+            "Elective hypothermic cardiopulmonary bypass without haematology planning"
+          ],
+          "adverse_effects": [
+            "Bendamustine: myelosuppression, prolonged lymphopenia, infection risk",
+            "Rituximab: infusion reactions, hepatitis B reactivation, hypogammaglobulinaemia"
+          ],
+          "notes": "Complement inhibitors (for example sutimlimab, targeting C1s) are an option where available and are mechanistically elegant here, because they block the classical pathway that drives the destruction while leaving the antibody in place."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Primary cold agglutinin disease with an IgM kappa clone",
+          "label_i18n": {
+            "en": "Primary cold agglutinin disease with an IgM kappa clone",
+            "de": "Primäre Kälteagglutininkrankheit mit IgM-kappa-Klon",
+            "es": "Enfermedad por crioaglutininas primaria con clon IgM kappa",
+            "nl": "Primaire koude-agglutinineziekte met IgM-kappa-kloon",
+            "ru": "Первичная болезнь холодовых агглютининов с IgM-каппа-клоном"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.96,
+          "icd10": "D59.1",
+          "discriminator": "DAT positive for C3d alone with a negative IgG, a cold agglutinin titre of 1:4096 with anti-I specificity, a thermal amplitude to 32 °C, and analyser indices that correct completely on warming.",
+          "supporting_evidence": [
+            "Seasonal anaemia with acrocyanosis and cold-induced haemoglobinuria",
+            "MCHC 442 g/L - biologically impossible - correcting to 334 g/L on warming",
+            "Red cell count 1.42 correcting to 2.68 x10^12/L on warming",
+            "Gross agglutination on the film dispersing on a warmed preparation",
+            "DAT C3d 3+ with IgG negative",
+            "Cold agglutinin titre 1:4096, anti-I specificity, thermal amplitude 32 °C",
+            "Consumed C3 and C4 with raised plasma free haemoglobin and positive haemosiderinuria",
+            "IgM kappa paraprotein at 4.2 g/L"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Warm autoimmune haemolytic anaemia",
+          "label_i18n": {
+            "en": "Warm autoimmune haemolytic anaemia",
+            "de": "Warme autoimmunhämolytische Anämie",
+            "es": "Anemia hemolítica autoinmune caliente",
+            "nl": "Warme auto-immuun hemolytische anemie",
+            "ru": "Тёплая аутоиммунная гемолитическая анемия"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "DAT is IgG-negative and C3d-positive, the antibody is reactive in the cold rather than at 37 °C, spherocytes are sparse, and the destruction is substantially intravascular. Critically, the treatments differ: steroids work in warm AIHA and largely do not here.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["DAT IgG negative", "Cold thermal amplitude", "Agglutination on the film", "Marked seasonality"]
+        },
+        {
+          "label": "Paroxysmal cold haemoglobinuria",
+          "label_i18n": {
+            "en": "Paroxysmal cold haemoglobinuria",
+            "de": "Paroxysmale Kältehämoglobinurie",
+            "es": "Hemoglobinuria paroxística por frío",
+            "nl": "Paroxismale koudehemoglobinurie",
+            "ru": "Пароксизмальная холодовая гемоглобинурия"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Also produces a C3d-only DAT and cold-induced haemolysis, but is caused by a biphasic IgG (Donath-Landsteiner) antibody, does not agglutinate red cells, and is typically an acute post-viral illness in children rather than a chronic seasonal disease in an older adult.",
+          "supporting_evidence": ["C3d-only DAT", "Cold-induced haemoglobinuria"],
+          "refuting_evidence": ["Gross agglutination present (absent in PCH)", "Very high cold agglutinin titre", "Chronic seasonal course in an elderly patient", "IgM kappa clone identified"]
+        },
+        {
+          "label": "Mycoplasma-associated cold agglutinin syndrome",
+          "label_i18n": {
+            "en": "Mycoplasma-associated cold agglutinin syndrome",
+            "de": "Mykoplasmen-assoziiertes Kälteagglutinin-Syndrom",
+            "es": "Síndrome de crioaglutininas asociado a Mycoplasma",
+            "nl": "Mycoplasma-geassocieerd koude-agglutininesyndroom",
+            "ru": "Синдром холодовых агглютининов, ассоциированный с микоплазмой"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Also anti-I, but acute, post-infectious and self-limiting over weeks. Serology is negative here and the course is chronic over two winters.",
+          "supporting_evidence": ["Anti-I specificity"],
+          "refuting_evidence": ["Negative Mycoplasma serology", "Chronic two-year course", "IgM kappa paraprotein present"]
+        },
+        {
+          "label": "Rouleaux from a raised plasma protein",
+          "label_i18n": {
+            "en": "Rouleaux from a raised plasma protein",
+            "de": "Geldrollenbildung bei erhöhtem Plasmaprotein",
+            "es": "Formación de pilas de monedas por proteínas plasmáticas elevadas",
+            "nl": "Geldrolvorming door verhoogd plasma-eiwit",
+            "ru": "Монетные столбики при повышенном белке плазмы"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Rouleaux are linear stacks that do NOT disperse on warming and do not distort analyser indices in this way. The distinction is made by looking at the film, not by any additional test.",
+          "supporting_evidence": ["An IgM paraprotein is present"],
+          "refuting_evidence": ["Clumps are irregular and three-dimensional", "Complete dispersal on warming", "Paraprotein only 4.2 g/L - far too low to cause rouleaux of this degree"]
+        }
+      ],
+      "teaching_points": [
+        "An MCHC above about 370 g/L is biologically impossible and always indicates an artefact: cold agglutinins, lipaemia, in vitro haemolysis, or a spherocytosis so severe it should be obvious on the film. Reporting it without investigation is a laboratory failure, not a patient result.",
+        "Warming the sample to 37 °C both corrects the count and makes the diagnosis. It costs thirty minutes and no reagent.",
+        "The DAT pattern subclassifies immune haemolysis: IgG with or without C3d means warm AIHA; C3d alone means cold agglutinin disease or paroxysmal cold haemoglobinuria. The IgM cold agglutinin elutes at 37 °C and leaves only complement behind.",
+        "Thermal amplitude, not titre, determines clinical severity. An antibody reactive up to 32 °C is active in acral skin on a cold day; one reactive only at 4 °C is a laboratory curiosity.",
+        "Steroids and splenectomy do not work in cold agglutinin disease. Destruction is complement-mediated and hepatic, not splenic - the single most important management difference from warm AIHA.",
+        "Agglutination is not rouleaux. Agglutination forms irregular three-dimensional clumps that disperse on warming; rouleaux form linear stacks and reflect raised plasma proteins.",
+        "Every blood product must be given through a warmer, and the anaesthetic team must be warned before any procedure involving hypothermia. Cardiopulmonary bypass in unrecognised cold agglutinin disease can cause catastrophic intravascular haemolysis."
+      ],
+      "references": [
+        {"citation": "Berentsen S et al. Cold agglutinin disease revisited: a multinational, observational study. Blood 2020.", "type": "cohort"},
+        {"citation": "Jager U et al. Diagnosis and treatment of autoimmune haemolytic anaemia in adults. Blood Rev 2020.", "type": "consensus"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Cold agglutinin disease",
+        "accepted_diagnosis_terms": ["cold agglutinin disease", "cold haemagglutinin disease", "cad", "cold antibody haemolytic anaemia", "cold agglutinin syndrome"],
+        "must_include_findings": [
+          {"label": "DAT positive for C3d only", "synonyms": ["c3d only", "dat c3d positive igg negative", "complement only dat"], "weight": 2.5},
+          {"label": "Impossible MCHC correcting on warming", "synonyms": ["mchc 442", "spurious mchc", "corrects on warming", "warmed sample", "37 degrees"], "weight": 2.0},
+          {"label": "Red cell agglutination on the film", "synonyms": ["agglutination", "red cell clumps", "clumping", "not rouleaux"], "weight": 1.75},
+          {"label": "High cold agglutinin titre", "synonyms": ["titre 4096", "cold agglutinin titre", "anti-i"], "weight": 1.5},
+          {"label": "Thermal amplitude determines severity", "synonyms": ["thermal amplitude", "32 degrees", "reactive up to 32"], "weight": 1.25},
+          {"label": "IgM kappa clone", "synonyms": ["igm kappa", "paraprotein", "monoclonal igm", "clonal"], "weight": 1.0}
+        ],
+        "expected_differential": ["warm autoimmune haemolytic anaemia", "paroxysmal cold haemoglobinuria", "mycoplasma-associated cold agglutinin syndrome", "rouleaux", "waldenstrom macroglobulinaemia"],
+        "expected_next_tests": ["pre-warmed full blood count", "direct antiglobulin test with monospecific reagents", "cold agglutinin titre", "thermal amplitude", "blood film", "serum protein electrophoresis", "ct staging"],
+        "expected_management": ["cold avoidance", "rituximab", "bendamustine", "blood warmer for transfusion", "folic acid", "avoid steroids and splenectomy", "complement inhibitor if available"],
+        "critical_values": [
+          {"analyte": "MCHC", "value": 442.0, "reason": "Biologically impossible - mandatory artefact investigation"}
+        ],
+        "safety_rules": [
+          {"id": "SR-HEM-CAD-WARM", "description": "Must recommend warming the sample and warming any transfused product.", "required_terms": ["warm", "37", "blood warmer", "pre-warmed"]},
+          {"id": "SR-HEM-CAD-NOSTEROID", "description": "Must not present corticosteroids or splenectomy as effective first-line therapy.", "forbidden_patterns": ["prednisolone is first line", "start high dose steroids", "splenectomy is indicated", "steroids will control"]}
+        ],
+        "distractor_terms": ["iron deficiency", "b12 deficiency", "myelodysplasia", "raynaud phenomenon", "cryoglobulinaemia", "vasculitis"]
+      }
+    }
+  ]
+}

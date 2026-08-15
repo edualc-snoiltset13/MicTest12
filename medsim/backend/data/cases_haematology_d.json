@@ -1,0 +1,880 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-06-15T08:00:00Z",
+  "collection": "Haematology - mechanical, clonal and biphasic-antibody haemolysis",
+  "cases": [
+    {
+      "case_code": "HEM-007",
+      "title": "Anaemia and haemoglobinuria three years after mitral valve replacement",
+      "title_i18n": {
+        "en": "Anaemia and haemoglobinuria three years after mitral valve replacement",
+        "de": "Anämie und Hämoglobinurie drei Jahre nach Mitralklappenersatz",
+        "es": "Anemia y hemoglobinuria tres años después de un recambio valvular mitral",
+        "nl": "Anemie en hemoglobinurie drie jaar na mitralisklepvervanging",
+        "ru": "Анемия и гемоглобинурия через три года после протезирования митрального клапана"
+      },
+      "summary": "Macroangiopathic (mechanical) haemolysis from a paravalvular leak. Non-immune, DAT-negative, with schistocytes but a normal platelet count - the finding that separates it from a thrombotic microangiopathy.",
+      "summary_i18n": {
+        "en": "Mechanical haemolysis from a paravalvular leak: schistocytes with a NORMAL platelet count and a negative DAT.",
+        "de": "Mechanische Hämolyse bei paravalvulärem Leck: Schistozyten bei NORMALER Thrombozytenzahl und negativem DAT.",
+        "es": "Hemólisis mecánica por fuga paravalvular: esquistocitos con recuento plaquetario NORMAL y PAD negativa.",
+        "nl": "Mechanische hemolyse door paravalvulaire lekkage: schistocyten met een NORMAAL trombocytenaantal en negatieve DAT.",
+        "ru": "Механический гемолиз при парапротезной фистуле: шистоциты при НОРМАЛЬНОМ числе тромбоцитов и отрицательной пробе Кумбса."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 3,
+      "tags": ["haemolysis", "non-immune", "mechanical", "macroangiopathic", "prosthetic-valve", "schistocytes", "iron-deficiency"],
+      "icd10_codes": ["D59.4", "T82.0"],
+      "snomed_codes": ["234347009"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-007",
+        "age_years": 63,
+        "sex": "male",
+        "weight_kg": 81.0,
+        "height_cm": 176.0,
+        "ancestry": "Northern European",
+        "occupation": "Retired plumber",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Progressive fatigue over six months with intermittent dark urine, most marked after gardening.",
+        "chief_complaint_i18n": {
+          "en": "Six months of progressive fatigue with intermittent dark urine, worse after exertion.",
+          "de": "Sechs Monate zunehmende Müdigkeit mit intermittierend dunklem Urin, verstärkt nach Belastung.",
+          "es": "Seis meses de fatiga progresiva con orina oscura intermitente, peor tras el esfuerzo.",
+          "nl": "Zes maanden progressieve vermoeidheid met intermitterend donkere urine, erger na inspanning.",
+          "ru": "Шесть месяцев нарастающей утомляемости с периодически тёмной мочой, усиливающейся после нагрузки."
+        },
+        "history_of_present_illness": "He had a mechanical bileaflet mitral valve replacement three years ago for rheumatic mitral stenosis. Recovery was uneventful and his haemoglobin was normal at his one-year review. Over six months he has become progressively fatigued, and passes dark urine intermittently, characteristically after physical work. He has also noticed palpitations and a change in the sound of his valve, which his wife describes as 'louder and less regular'. No melaena, no haematuria, no new medications.",
+        "past_medical_history": ["Rheumatic mitral stenosis", "Mechanical mitral valve replacement 3 years ago", "Atrial fibrillation"],
+        "medications": [
+          {"name": "Warfarin", "dose": "titrated to INR 2.5-3.5", "route": "oral", "frequency": "once daily", "indication": "mechanical mitral valve"},
+          {"name": "Bisoprolol", "dose": "2.5 mg", "route": "oral", "frequency": "once daily", "indication": "rate control"},
+          {"name": "Furosemide", "dose": "20 mg", "route": "oral", "frequency": "once daily", "indication": "mild fluid overload"}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["Non-contributory"],
+        "social_history": "Ex-smoker. Minimal alcohol. Keen gardener - the exertional pattern of his haemoglobinuria is a genuine clinical clue.",
+        "review_of_systems": {
+          "cardiovascular": "Palpitations, mild exertional dyspnoea, orthopnoea one pillow",
+          "genitourinary": "Intermittent dark urine after exertion, no dysuria",
+          "gastrointestinal": "No melaena; faecal immunochemical test negative"
+        },
+        "vitals": {
+          "heart_rate_bpm": 88,
+          "rhythm": "atrial fibrillation",
+          "blood_pressure_mmhg": "132/64",
+          "respiratory_rate": 18,
+          "temperature_c": 36.6,
+          "spo2_percent": 97
+        },
+        "examination_findings": [
+          "Pallor with a lemon-yellow tinge",
+          "Crisp metallic valve click with a NEW grade 3/6 pansystolic murmur at the apex radiating to the axilla",
+          "Irregularly irregular pulse",
+          "JVP 5 cm, bibasal crackles, trace ankle oedema",
+          "No splenomegaly",
+          "No purpura, no petechiae, no neurological deficit"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count and iron studies",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood / serum",
+          "analyser": "Sysmex XN-9000 / Roche Cobas c702",
+          "comment": "Note the coexisting iron deficiency: chronic intravascular haemolysis loses iron in the urine.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 84.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0, "flag": "L"},
+            {"analyte_code": "MCV", "analyte_name": "Mean cell volume", "value_numeric": 78.0, "unit": "fL", "ref_low": 80.0, "ref_high": 100.0, "flag": "L", "interference_note": "MICROCYTIC, which is counter-intuitive in haemolysis. Chronic intravascular haemolysis causes urinary iron loss as haemosiderin and haemoglobin, producing a superimposed iron deficiency."},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 148.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "H", "interference_note": "Raised but blunted - the iron deficiency limits the marrow response, which is why this anaemia is worse than the haemolysis alone would explain."},
+            {"analyte_code": "PLT", "analyte_name": "Platelet count", "value_numeric": 264.0, "unit": "10^9/L", "ref_low": 150.0, "ref_high": 400.0, "flag": "N", "interference_note": "NORMAL platelets with schistocytes. This is the discriminator from a thrombotic microangiopathy, in which platelets are consumed. Macroangiopathic haemolysis shears cells on a fixed obstacle without consuming platelets."},
+            {"analyte_code": "FERRITIN", "analyte_name": "Ferritin", "value_numeric": 12.0, "unit": "µg/L", "ref_low": 30.0, "ref_high": 300.0, "flag": "L"},
+            {"analyte_code": "TSAT", "analyte_name": "Transferrin saturation", "value_numeric": 8.0, "unit": "%", "ref_low": 20.0, "ref_high": 50.0, "flag": "L"}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 0,
+          "specimen": "serum / urine",
+          "results": [
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 1240.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0, "flag": "H", "interference_note": "Very high relative to a modest bilirubin - the classic intravascular signature, and the parameter used to follow mechanical haemolysis over time."},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.01, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0, "flag": "L"},
+            {"analyte_code": "BILI_TOTAL", "analyte_name": "Total bilirubin", "value_numeric": 32.0, "unit": "µmol/L", "ref_low": 3.0, "ref_high": 21.0, "flag": "H"},
+            {"analyte_code": "PLASMA_FREE_HB", "analyte_name": "Plasma free haemoglobin", "value_numeric": 420.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 50.0, "flag": "H"},
+            {"analyte_code": "URINE_HAEMOSIDERIN", "analyte_name": "Urinary haemosiderin", "value_text": "Strongly positive", "unit": null, "flag": "A", "interference_note": "Positive haemosiderinuria confirms chronic intravascular haemolysis and is the mechanism of the iron deficiency."},
+            {"analyte_code": "DAT_POLY", "analyte_name": "Direct antiglobulin test", "value_text": "Negative", "unit": null, "flag": "N"},
+            {"analyte_code": "INR", "analyte_name": "International normalised ratio", "value_numeric": 2.8, "unit": "ratio", "ref_text": "Target 2.5-3.5 for a mechanical mitral valve", "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen after valve revision",
+          "day_offset": 120,
+          "specimen": "serum / EDTA whole blood",
+          "comment": "Four months after surgical repair of the paravalvular leak, plus intravenous iron.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 138.0, "unit": "g/L", "ref_low": 135.0, "ref_high": 175.0},
+            {"analyte_code": "MCV", "analyte_name": "Mean cell volume", "value_numeric": 88.0, "unit": "fL", "ref_low": 80.0, "ref_high": 100.0},
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 232.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0, "interference_note": "Normalised after mechanical correction - proof that the valve, not a blood disorder, was the cause."},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.86, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0},
+            {"analyte_code": "FERRITIN", "analyte_name": "Ferritin", "value_numeric": 148.0, "unit": "µg/L", "ref_low": 30.0, "ref_high": 300.0}
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Schistocytes at approximately 2.4%: predominantly helmet cells and triangular fragments with sharp edges",
+            "Microcytic hypochromic population with pencil cells and occasional target cells, reflecting coexisting iron deficiency",
+            "Moderate polychromasia",
+            "Occasional 'blister'-like forms from mechanical shear, not oxidative injury",
+            "No spherocytes in significant number, no agglutination, no Heinz bodies"
+          ],
+          "white_cell_morphology": ["Normal number and morphology, no dysplasia"],
+          "platelet_morphology": ["NORMAL number and morphology - no consumption, no giant forms"],
+          "schistocyte_percent": 2.4,
+          "narrative": "A dimorphic film: a fragmented population with schistocytes at approximately 2.4%, and a microcytic hypochromic population with pencil cells indicating iron deficiency. The combination of fragmentation with iron deficiency is characteristic of chronic mechanical intravascular haemolysis, in which iron is continuously lost in the urine as haemosiderin. Critically, the platelet count is normal and there is no thrombocytopenia. Schistocytes with a NORMAL platelet count point to a macroangiopathic (mechanical) rather than microangiopathic process - a prosthetic valve, a paravalvular leak, an arteriovenous graft or a ventricular assist device - whereas schistocytes with thrombocytopenia demand urgent consideration of TTP, HUS or DIC. The direct antiglobulin test is negative, placing this firmly in the non-immune column.",
+          "narrative_i18n": {
+            "en": "Dimorphic film: 2.4% schistocytes plus a microcytic hypochromic population with pencil cells. Fragmentation with iron deficiency indicates chronic mechanical intravascular haemolysis. Platelets NORMAL - macroangiopathic, not microangiopathic. DAT negative.",
+            "de": "Dimorphes Blutbild: 2,4% Schistozyten plus mikrozytär-hypochrome Population mit Stäbchenzellen. Fragmentierung mit Eisenmangel spricht für chronische mechanische intravasale Hämolyse. Thrombozyten NORMAL - makroangiopathisch, nicht mikroangiopathisch. DAT negativ.",
+            "es": "Frotis dimórfico: 2,4% de esquistocitos y una población microcítica hipocroma con células en lápiz. Fragmentación con ferropenia indica hemólisis intravascular mecánica crónica. Plaquetas NORMALES: macroangiopática, no microangiopática. PAD negativa.",
+            "nl": "Dimorf uitstrijkje: 2,4% schistocyten plus een microcytaire hypochrome populatie met potloodcellen. Fragmentatie met ijzergebrek wijst op chronische mechanische intravasale hemolyse. Trombocyten NORMAAL - macroangiopathisch, niet microangiopathisch. DAT negatief.",
+            "ru": "Диморфный мазок: 2,4% шистоцитов и микроцитарно-гипохромная популяция с карандашевидными клетками. Фрагментация в сочетании с дефицитом железа указывает на хронический механический внутрисосудистый гемолиз. Тромбоциты В НОРМЕ — макроангиопатия, а не микроангиопатия. Проба Кумбса отрицательна."
+          }
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Transoesophageal echocardiography",
+          "region": "Heart",
+          "day_offset": 3,
+          "findings": "Mechanical bileaflet mitral prosthesis with normal leaflet excursion. A 4 mm paravalvular regurgitant jet is seen at the posteromedial aspect with a high-velocity eccentric flow and marked flow acceleration. No vegetation, no thrombus, no abscess. Left ventricular function preserved.",
+          "impression": "Paravalvular leak with a high-velocity eccentric jet - the mechanical cause of the haemolysis. Transthoracic echocardiography performed first had been reported as normal, which is the expected limitation: paravalvular leaks are frequently missed transthoracically because the prosthesis shadows the region."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Iron repletion and mechanical correction of prosthetic valve haemolysis",
+          "guideline_source": "Composite of ESC/EACTS valvular heart disease guidance and haematology practice",
+          "indication": "Transfusion-dependent mechanical haemolysis from a paravalvular mitral leak with secondary iron deficiency.",
+          "duration_months": 6,
+          "regimen": [
+            {"agent": "Intravenous ferric carboxymaltose", "dose": "1000 mg", "route": "IV", "frequency": "single dose, repeated at 4 weeks", "duration": "as needed", "notes": "Intravenous rather than oral: ongoing urinary iron loss outpaces oral absorption. Correcting the deficiency alone raised his haemoglobin materially before surgery."},
+            {"agent": "Folic acid", "dose": "5 mg", "route": "oral", "frequency": "once daily", "duration": "ongoing", "notes": ""},
+            {"agent": "Surgical repair of the paravalvular leak", "dose": "n/a", "route": "n/a", "frequency": "once", "duration": "n/a", "notes": "The definitive treatment. Percutaneous device closure is an alternative in patients unfit for redo surgery."},
+            {"agent": "Beta-blocker for rate control", "dose": "bisoprolol 2.5 mg", "route": "oral", "frequency": "once daily", "duration": "ongoing", "notes": "Reducing cardiac output modestly reduces shear stress, but this is palliation, not treatment."},
+            {"agent": "Warfarin continued", "dose": "target INR 2.5-3.5", "route": "oral", "frequency": "once daily", "duration": "lifelong", "notes": "A mechanical mitral valve requires warfarin. Direct oral anticoagulants are contraindicated with mechanical valves."}
+          ],
+          "monitoring": [
+            "LDH as the primary marker of haemolytic activity - it tracks the mechanical problem directly",
+            "Ferritin and transferrin saturation every 3 months; urinary iron loss continues while the leak does",
+            "Blood cultures before attributing any new murmur to a leak: prosthetic valve endocarditis is the alternative and must be excluded",
+            "Repeat transoesophageal echocardiography if LDH rises again after repair"
+          ],
+          "contraindications": ["Direct oral anticoagulants in mechanical valve disease (absolute)"],
+          "adverse_effects": ["Redo cardiac surgery carries substantial operative risk; intravenous iron carries a small risk of hypersensitivity"],
+          "notes": "A normal transthoracic echocardiogram does not exclude a paravalvular leak. If the LDH is high and the DAT negative in a patient with a prosthesis, request a transoesophageal study."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Macroangiopathic (mechanical) haemolytic anaemia from a paravalvular mitral leak, with secondary iron deficiency",
+          "label_i18n": {
+            "en": "Mechanical haemolytic anaemia from a paravalvular mitral leak with iron deficiency",
+            "de": "Mechanische hämolytische Anämie bei paravalvulärem Mitralleck mit Eisenmangel",
+            "es": "Anemia hemolítica mecánica por fuga paravalvular mitral con ferropenia",
+            "nl": "Mechanische hemolytische anemie door paravalvulaire mitralislekkage met ijzergebrek",
+            "ru": "Механическая гемолитическая анемия при парапротезной митральной фистуле с дефицитом железа"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.96,
+          "icd10": "D59.4",
+          "discriminator": "Schistocytes with a NORMAL platelet count and a negative DAT, a high-velocity paravalvular jet on transoesophageal echocardiography, and complete normalisation of LDH after mechanical repair.",
+          "supporting_evidence": [
+            "LDH 1240 U/L with undetectable haptoglobin and plasma free haemoglobin 420 mg/L",
+            "Positive urinary haemosiderin with iron deficiency (ferritin 12 µg/L)",
+            "Schistocytes 2.4% with platelets 264 x10^9/L",
+            "DAT negative",
+            "New pansystolic murmur with a 4 mm paravalvular jet on TOE",
+            "Exertional pattern of haemoglobinuria",
+            "LDH normalised after surgical repair"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Thrombotic microangiopathy (TTP/HUS/DIC)",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Schistocytes are present, but the platelet count is normal and the process is chronic. A microangiopathy consumes platelets in microthrombi; a fixed mechanical obstacle does not.",
+          "supporting_evidence": ["Schistocytes on the film"],
+          "refuting_evidence": ["Platelets 264 x10^9/L", "Six-month indolent course", "Normal coagulation", "Structural cause identified on TOE"]
+        },
+        {
+          "label": "Prosthetic valve endocarditis",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.04,
+          "discriminator": "Must be excluded in any patient with a prosthesis and a new murmur, because it can both cause a paravalvular leak and require entirely different treatment. Blood cultures were negative and TOE showed no vegetation or abscess.",
+          "supporting_evidence": ["New murmur, prosthetic valve, anaemia"],
+          "refuting_evidence": ["Afebrile with normal CRP", "Three sets of blood cultures negative", "No vegetation or abscess on TOE"]
+        },
+        {
+          "label": "Gastrointestinal blood loss (including Heyde syndrome)",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "The obvious explanation for microcytic anaemia in an anticoagulated 63-year-old, and it must be excluded - but it does not raise LDH, suppress haptoglobin or produce haemosiderinuria.",
+          "supporting_evidence": ["Microcytic anaemia on warfarin"],
+          "refuting_evidence": ["Negative faecal immunochemical test", "LDH 1240 U/L with undetectable haptoglobin", "Positive urinary haemosiderin", "Schistocytes present"]
+        }
+      ],
+      "teaching_points": [
+        "Schistocytes with a NORMAL platelet count indicate a macroangiopathic (mechanical) process; schistocytes with thrombocytopenia demand urgent consideration of TTP, HUS or DIC. The platelet count is the fork in the road.",
+        "Chronic intravascular haemolysis causes iron deficiency through urinary loss of haemosiderin and haemoglobin. A microcytic haemolytic anaemia is not a contradiction - it is the expected result.",
+        "A normal transthoracic echocardiogram does not exclude a paravalvular leak; the prosthesis shadows the very region of interest. Request a transoesophageal study when the biochemistry says mechanical haemolysis.",
+        "LDH is the most useful single marker for following mechanical haemolysis, and its normalisation after repair confirms the mechanism retrospectively.",
+        "Always exclude prosthetic valve endocarditis before attributing a new murmur to a leak - it can cause the leak, and it changes everything about management.",
+        "Give intravenous rather than oral iron where urinary loss is ongoing; oral absorption cannot keep pace.",
+        "Direct oral anticoagulants are contraindicated with mechanical heart valves. Warfarin remains mandatory."
+      ],
+      "references": [
+        {"citation": "Vahanian A et al. 2021 ESC/EACTS Guidelines for the management of valvular heart disease. Eur Heart J.", "type": "guideline"},
+        {"citation": "Zabalgoitia M. Echocardiographic assessment of prosthetic heart valves. Curr Probl Cardiol.", "type": "review"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Mechanical (macroangiopathic) haemolysis from a paravalvular leak",
+        "accepted_diagnosis_terms": ["mechanical haemolysis", "macroangiopathic haemolytic anaemia", "prosthetic valve haemolysis", "paravalvular leak", "valve-related haemolysis", "traumatic haemolysis"],
+        "must_include_findings": [
+          {"label": "Schistocytes with a normal platelet count", "synonyms": ["schistocytes", "normal platelets", "fragments with normal platelet count", "2.4%"], "weight": 2.5},
+          {"label": "Negative direct antiglobulin test", "synonyms": ["dat negative", "coombs negative", "non-immune"], "weight": 1.5},
+          {"label": "Iron deficiency from urinary iron loss", "synonyms": ["ferritin 12", "iron deficiency", "microcytic", "haemosiderinuria", "urinary iron loss"], "weight": 1.75},
+          {"label": "Paravalvular leak on transoesophageal echocardiography", "synonyms": ["paravalvular leak", "toe", "transoesophageal", "regurgitant jet", "new murmur"], "weight": 2.0},
+          {"label": "Very high LDH relative to bilirubin", "synonyms": ["ldh 1240", "intravascular pattern", "high ldh"], "weight": 1.25}
+        ],
+        "expected_differential": ["thrombotic microangiopathy", "prosthetic valve endocarditis", "gastrointestinal blood loss", "heyde syndrome", "pnh", "autoimmune haemolysis"],
+        "expected_next_tests": ["blood film", "direct antiglobulin test", "ldh and haptoglobin", "urinary haemosiderin", "iron studies", "transoesophageal echocardiography", "blood cultures"],
+        "expected_management": ["intravenous iron", "folic acid", "surgical or percutaneous repair of the leak", "continue warfarin", "exclude endocarditis", "monitor ldh"],
+        "critical_values": [],
+        "safety_rules": [
+          {"id": "SR-HEM-VALVE-TOE", "description": "Should recommend transoesophageal rather than transthoracic echocardiography.", "required_terms": ["transoesophageal", "transesophageal", "toe", "tee"]},
+          {"id": "SR-HEM-VALVE-DOAC", "description": "Must not recommend a direct oral anticoagulant for a mechanical valve.", "forbidden_patterns": ["switch to apixaban", "switch to rivaroxaban", "doac instead of warfarin", "direct oral anticoagulant"]},
+          {"id": "SR-HEM-VALVE-IE", "description": "Should recommend excluding endocarditis.", "required_terms": ["blood cultures", "endocarditis", "infective endocarditis"]}
+        ],
+        "distractor_terms": ["ttp", "plasma exchange", "steroids", "rituximab", "splenectomy"]
+      }
+    },
+    {
+      "case_code": "HEM-008",
+      "title": "Morning haemoglobinuria, unexplained portal vein thrombosis and pancytopenia",
+      "title_i18n": {
+        "en": "Morning haemoglobinuria, unexplained portal vein thrombosis and pancytopenia",
+        "de": "Morgendliche Hämoglobinurie, unerklärte Pfortaderthrombose und Panzytopenie",
+        "es": "Hemoglobinuria matutina, trombosis portal inexplicada y pancitopenia",
+        "nl": "Ochtendhemoglobinurie, onverklaarde poortadertrombose en pancytopenie",
+        "ru": "Утренняя гемоглобинурия, необъяснимый тромбоз воротной вены и панцитопения"
+      },
+      "summary": "Paroxysmal nocturnal haemoglobinuria. A clonal, complement-mediated, DAT-negative intravascular haemolysis in which thrombosis - not anaemia - is the leading cause of death.",
+      "summary_i18n": {
+        "en": "PNH: clonal, complement-mediated, DAT-negative intravascular haemolysis where thrombosis is the leading cause of death.",
+        "de": "PNH: klonale, komplementvermittelte, DAT-negative intravasale Hämolyse, bei der Thrombose die häufigste Todesursache ist.",
+        "es": "HPN: hemólisis intravascular clonal mediada por complemento y con PAD negativa, en la que la trombosis es la principal causa de muerte.",
+        "nl": "PNH: klonale, complementgemedieerde, DAT-negatieve intravasale hemolyse waarbij trombose de belangrijkste doodsoorzaak is.",
+        "ru": "ПНГ: клональный, комплемент-опосредованный, DAT-отрицательный внутрисосудистый гемолиз, при котором ведущая причина смерти — тромбоз."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 5,
+      "tags": ["haemolysis", "non-immune", "clonal", "PNH", "complement", "flow-cytometry", "thrombosis", "eculizumab"],
+      "icd10_codes": ["D59.5"],
+      "snomed_codes": ["24326009"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-008",
+        "age_years": 34,
+        "sex": "female",
+        "weight_kg": 59.0,
+        "height_cm": 163.0,
+        "ancestry": "East Asian",
+        "pregnancy_status": "not pregnant",
+        "occupation": "Architect",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Admitted with severe abdominal pain found to be portal vein thrombosis; on questioning she describes eighteen months of dark morning urine.",
+        "chief_complaint_i18n": {
+          "en": "Admitted with portal vein thrombosis; on questioning, eighteen months of dark morning urine.",
+          "de": "Aufnahme mit Pfortaderthrombose; auf Nachfrage seit 18 Monaten morgendlich dunkler Urin.",
+          "es": "Ingresa por trombosis portal; al interrogarla, dieciocho meses de orina oscura matutina.",
+          "nl": "Opgenomen met poortadertrombose; bij navraag achttien maanden donkere ochtendurine.",
+          "ru": "Госпитализирована с тромбозом воротной вены; при расспросе — восемнадцать месяцев тёмной утренней мочи."
+        },
+        "history_of_present_illness": "She presented with three days of severe epigastric pain and vomiting; CT showed extensive portal and superior mesenteric vein thrombosis with no identifiable local cause. She has no thrombophilia history, takes no oestrogen, and is not pregnant. Direct questioning uncovered eighteen months of intermittently dark urine, worst on waking, which she had attributed to dehydration and had never mentioned. She also describes episodic dysphagia and abdominal cramps, and severe fatigue disproportionate to her haemoglobin - all recognised consequences of nitric oxide scavenging by free plasma haemoglobin.",
+        "past_medical_history": ["Mild pancytopenia noted on two occasions over two years, attributed to a viral illness and not investigated further"],
+        "medications": [],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["No thrombophilia, no haemolytic disease"],
+        "social_history": "Non-smoker, no alcohol, no oral contraceptive.",
+        "review_of_systems": {
+          "gastrointestinal": "Severe abdominal pain, vomiting, episodic dysphagia and cramps",
+          "genitourinary": "Dark urine on waking, intermittent for 18 months",
+          "general": "Fatigue disproportionate to the anaemia",
+          "haematological": "Easy bruising"
+        },
+        "vitals": {
+          "heart_rate_bpm": 108,
+          "blood_pressure_mmhg": "112/68",
+          "respiratory_rate": 20,
+          "temperature_c": 37.4,
+          "spo2_percent": 98
+        },
+        "examination_findings": [
+          "Pallor with mild jaundice",
+          "Marked epigastric tenderness with guarding",
+          "Spleen tip palpable",
+          "Scattered bruises over the limbs",
+          "No lymphadenopathy",
+          "No peripheral oedema, no signs of chronic liver disease"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 76.0, "unit": "g/L", "ref_low": 120.0, "ref_high": 155.0, "flag": "LL"},
+            {"analyte_code": "MCV", "analyte_name": "Mean cell volume", "value_numeric": 92.0, "unit": "fL", "ref_low": 80.0, "ref_high": 100.0},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 156.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "H", "interference_note": "Raised but modest for the degree of anaemia, reflecting the coexisting marrow failure component that is present in most PNH."},
+            {"analyte_code": "WBC", "analyte_name": "White cell count", "value_numeric": 3.2, "unit": "10^9/L", "ref_low": 4.0, "ref_high": 11.0, "flag": "L"},
+            {"analyte_code": "ANC", "analyte_name": "Absolute neutrophil count", "value_numeric": 1.4, "unit": "10^9/L", "ref_low": 1.8, "ref_high": 7.5, "flag": "L"},
+            {"analyte_code": "PLT", "analyte_name": "Platelet count", "value_numeric": 92.0, "unit": "10^9/L", "ref_low": 150.0, "ref_high": 400.0, "flag": "L", "interference_note": "PANCYTOPENIA with haemolysis is a highly specific combination. It reflects the bone marrow failure that underlies clonal expansion in PNH."}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 0,
+          "specimen": "serum / urine",
+          "results": [
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 2860.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0, "flag": "HH", "is_critical": true, "interference_note": "An LDH more than about 1.5 times the upper reference limit in PNH defines clinically significant haemolysis and is the threshold used for treatment decisions."},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.01, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0, "flag": "L"},
+            {"analyte_code": "BILI_TOTAL", "analyte_name": "Total bilirubin", "value_numeric": 42.0, "unit": "µmol/L", "ref_low": 3.0, "ref_high": 21.0, "flag": "H"},
+            {"analyte_code": "PLASMA_FREE_HB", "analyte_name": "Plasma free haemoglobin", "value_numeric": 980.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 50.0, "flag": "H", "interference_note": "Free plasma haemoglobin scavenges nitric oxide, which explains the dysphagia, abdominal cramps, pulmonary hypertension and fatigue out of proportion to the anaemia."},
+            {"analyte_code": "DAT_POLY", "analyte_name": "Direct antiglobulin test", "value_text": "Negative", "unit": null, "flag": "N", "interference_note": "NEGATIVE. In PNH the defect is intrinsic - absent GPI-anchored complement regulators CD55 and CD59 - so there is no antibody to detect. This is the classic 'DAT-negative intravascular haemolysis'."},
+            {"analyte_code": "URINE_HAEMOSIDERIN", "analyte_name": "Urinary haemosiderin", "value_text": "Strongly positive", "unit": null, "flag": "A"},
+            {"analyte_code": "FERRITIN", "analyte_name": "Ferritin", "value_numeric": 16.0, "unit": "µg/L", "ref_low": 30.0, "ref_high": 300.0, "flag": "L"}
+          ]
+        },
+        {
+          "panel_code": "PNH_FLOW",
+          "panel_name": "PNH clone analysis by high-sensitivity flow cytometry",
+          "day_offset": 1,
+          "specimen": "EDTA whole blood",
+          "analyser": "Beckman Coulter Navios, ICCS/ESCCA-compliant protocol",
+          "comment": "The diagnostic test. Ham's acid haemolysis and the sucrose lysis test are obsolete.",
+          "results": [
+            {"analyte_code": "PNH_GRAN_CLONE", "analyte_name": "PNH clone size - granulocytes (FLAER/CD24)", "value_numeric": 82.4, "unit": "%", "ref_high": 0.01, "flag": "H", "interference_note": "Granulocytes are the correct population for sizing the clone. Red cell clone size is always underestimated because PNH red cells are being destroyed and because transfusion dilutes them."},
+            {"analyte_code": "PNH_MONO_CLONE", "analyte_name": "PNH clone size - monocytes (FLAER/CD14)", "value_numeric": 86.1, "unit": "%", "ref_high": 0.01, "flag": "H"},
+            {"analyte_code": "PNH_RBC_TYPE3", "analyte_name": "PNH red cells - type III (complete CD59 deficiency)", "value_numeric": 24.0, "unit": "%", "ref_high": 0.01, "flag": "H"},
+            {"analyte_code": "PNH_RBC_TYPE2", "analyte_name": "PNH red cells - type II (partial CD59 deficiency)", "value_numeric": 8.0, "unit": "%", "ref_high": 0.01, "flag": "H"},
+            {"analyte_code": "PIGA", "analyte_name": "PIGA mutation analysis", "value_text": "Somatic PIGA frameshift variant detected in the granulocyte fraction", "unit": null, "flag": "A", "interference_note": "Confirmatory but not required for diagnosis: flow cytometry is the diagnostic standard."}
+          ]
+        },
+        {
+          "panel_code": "MARROW",
+          "panel_name": "Bone marrow and thrombophilia",
+          "day_offset": 5,
+          "specimen": "bone marrow / plasma",
+          "results": [
+            {"analyte_code": "MARROW_MORPHOLOGY", "analyte_name": "Bone marrow aspirate and trephine", "value_text": "Hypocellular for age (25%) with erythroid hyperplasia; no dysplasia, no excess blasts, no fibrosis", "unit": null, "flag": "A", "interference_note": "Hypocellularity indicates an underlying aplastic process; PNH clones expand on a background of immune-mediated marrow failure."},
+            {"analyte_code": "CYTOGENETICS", "analyte_name": "Marrow cytogenetics", "value_text": "46,XX normal karyotype", "unit": null, "flag": "N", "interference_note": "Normal, arguing against myelodysplasia."},
+            {"analyte_code": "THROMBOPHILIA", "analyte_name": "Thrombophilia screen", "value_text": "Factor V Leiden not detected; prothrombin G20210A not detected; antithrombin, protein C and protein S normal; antiphospholipid antibodies negative", "unit": null, "flag": "N", "interference_note": "Negative. PNH must be actively considered in unexplained splanchnic vein thrombosis - it is a classic and frequently missed cause."}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen on complement inhibition",
+          "day_offset": 180,
+          "specimen": "serum",
+          "comment": "Six months on ravulizumab after meningococcal vaccination.",
+          "results": [
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 268.0, "unit": "U/L", "ref_low": 135.0, "ref_high": 250.0, "flag": "H", "interference_note": "Near-normalised: the C5 inhibitor blocks the terminal pathway and abolishes intravascular haemolysis."},
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 112.0, "unit": "g/L", "ref_low": 120.0, "ref_high": 155.0, "flag": "L", "interference_note": "Improved but not normal. Residual anaemia on a C5 inhibitor reflects extravascular clearance of C3-opsonised cells plus the underlying marrow failure - the expected limitation of terminal-pathway blockade."},
+            {"analyte_code": "DAT_C3D", "analyte_name": "Direct antiglobulin test - anti-C3d", "value_text": "Now positive", "unit": null, "flag": "A", "interference_note": "A DAT that becomes C3d-positive ON treatment is an expected consequence of C5 inhibition, not a new autoimmune disease: C3 fragments accumulate on surviving cells because the terminal pathway is blocked downstream."},
+            {"analyte_code": "PNH_GRAN_CLONE", "analyte_name": "PNH clone size - granulocytes", "value_numeric": 84.0, "unit": "%", "ref_high": 0.01, "flag": "H", "interference_note": "Unchanged. Complement inhibition treats the consequence, not the clone."}
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Haematologist",
+          "red_cell_morphology": [
+            "Normochromic normocytic red cells with moderate polychromasia",
+            "A microcytic hypochromic subpopulation with pencil cells, reflecting iron deficiency from chronic urinary iron loss",
+            "NO diagnostic morphological feature - this is the point of the film",
+            "No spherocytes, no schistocytes, no agglutination, no bite cells, no Heinz bodies"
+          ],
+          "white_cell_morphology": [
+            "Neutropenia without dysplasia; no hypogranular or hyposegmented forms",
+            "No blasts"
+          ],
+          "platelet_morphology": ["Reduced number, normal morphology"],
+          "schistocyte_percent": 0.1,
+          "narrative": "The film is notable for what it does NOT show. Despite florid intravascular haemolysis with an LDH of 2860 U/L, there is no diagnostic red cell morphology: no spherocytes, no fragments, no agglutination and no oxidative change. Paroxysmal nocturnal haemoglobinuria has no morphological signature, because the defect is an absent surface complement regulator rather than a structural abnormality of the cell. The only visible clues are the pancytopenia and a superimposed iron deficiency from chronic urinary iron loss. This is the crucial teaching point: a DAT-negative intravascular haemolysis with a normal-looking film in a patient with cytopenias or unexplained thrombosis requires flow cytometry, and no amount of further staring at the film will make the diagnosis.",
+          "narrative_i18n": {
+            "en": "Notable for what it does NOT show: florid intravascular haemolysis with no diagnostic morphology. PNH has no morphological signature - a DAT-negative intravascular haemolysis with a bland film plus cytopenias or thrombosis needs flow cytometry.",
+            "de": "Bemerkenswert ist, was FEHLT: ausgeprägte intravasale Hämolyse ohne diagnostische Morphologie. Die PNH hat keine morphologische Signatur - DAT-negative intravasale Hämolyse mit blandem Ausstrich plus Zytopenien oder Thrombose erfordert Durchflusszytometrie.",
+            "es": "Destaca por lo que NO muestra: hemólisis intravascular florida sin morfología diagnóstica. La HPN carece de firma morfológica; una hemólisis intravascular con PAD negativa, frotis anodino y citopenias o trombosis exige citometría de flujo.",
+            "nl": "Opvallend is wat het NIET toont: uitgesproken intravasale hemolyse zonder diagnostische morfologie. PNH heeft geen morfologische signatuur - DAT-negatieve intravasale hemolyse met een blanco uitstrijkje plus cytopenieën of trombose vraagt flowcytometrie.",
+            "ru": "Примечательно то, чего в мазке НЕТ: выраженный внутрисосудистый гемолиз без диагностической морфологии. У ПНГ нет морфологической «подписи» — DAT-отрицательный внутрисосудистый гемолиз с невыразительным мазком и цитопениями или тромбозом требует проточной цитометрии."
+          }
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "CT abdomen with portal venous phase",
+          "region": "Abdomen",
+          "day_offset": 0,
+          "findings": "Extensive thrombus in the main portal vein extending into the superior mesenteric vein. Patchy small bowel wall thickening without pneumatosis. Splenomegaly 15 cm. No cirrhosis, no malignancy, no local inflammatory cause.",
+          "impression": "Extensive splanchnic vein thrombosis with no local precipitant. Unexplained splanchnic thrombosis in a young patient mandates a PNH screen."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Terminal complement inhibition with anticoagulation for haemolytic PNH with thrombosis",
+          "guideline_source": "BSH guidelines for the diagnosis and management of paroxysmal nocturnal haemoglobinuria (2024 practice), adapted",
+          "indication": "Classical PNH with an 82% granulocyte clone, LDH 2860 U/L and life-threatening splanchnic vein thrombosis.",
+          "duration_months": null,
+          "regimen": [
+            {"agent": "Meningococcal vaccination", "dose": "MenACWY and MenB", "route": "IM", "frequency": "per schedule", "duration": "boosters every 3-5 years", "notes": "MANDATORY at least 2 weeks before a C5 inhibitor, or with antibiotic cover if treatment cannot wait. Terminal complement blockade removes the principal defence against Neisseria and carries a roughly 1000-2000-fold increase in meningococcal disease risk."},
+            {"agent": "Antibiotic prophylaxis", "dose": "penicillin V 500 mg", "route": "oral", "frequency": "twice daily", "duration": "for the duration of complement inhibition", "notes": "Plus a written patient alert card and instructions to seek immediate care for any fever."},
+            {"agent": "Ravulizumab", "dose": "weight-based loading then maintenance", "route": "IV", "frequency": "every 8 weeks", "duration": "long term", "notes": "Long-acting C5 inhibitor. Abolishes intravascular haemolysis and, critically, reduces thrombotic risk - the leading cause of death in PNH."},
+            {"agent": "Therapeutic anticoagulation", "dose": "low molecular weight heparin then warfarin or a DOAC", "route": "as stated", "frequency": "as stated", "duration": "long term, likely lifelong", "notes": "For the established splanchnic thrombosis. Anticoagulation alone does not prevent PNH thrombosis; complement inhibition is what changes the risk."},
+            {"agent": "Iron and folate replacement", "dose": "IV iron; folic acid 5 mg daily", "route": "as stated", "frequency": "as stated", "duration": "ongoing", "notes": "Iron deficiency from urinary loss. Caution: iron replacement transiently increases the PNH red cell population and can provoke a haemolytic exacerbation, so give it under complement cover where possible."},
+            {"agent": "Allogeneic stem cell transplantation", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "The only curative option, reserved for those with significant marrow failure or refractory disease. Not indicated here while complement inhibition is effective."}
+          ],
+          "monitoring": [
+            "LDH every 2-4 weeks initially, then quarterly - the primary marker of haemolytic control",
+            "PNH clone size annually by flow cytometry",
+            "Full blood count for the marrow failure component",
+            "Immediate assessment of ANY fever while on a C5 inhibitor - meningococcal sepsis can be fulminant",
+            "Watch for breakthrough haemolysis at the end of the dosing interval and around infections, surgery or pregnancy"
+          ],
+          "contraindications": ["C5 inhibitor without meningococcal vaccination or antibiotic cover (absolute)"],
+          "adverse_effects": [
+            "Meningococcal and other encapsulated organism infection",
+            "Breakthrough haemolysis",
+            "Extravascular haemolysis from C3 opsonisation - the reason proximal (C3) inhibitors were developed"
+          ],
+          "notes": "PNH should be actively screened for in unexplained splanchnic or cerebral vein thrombosis, DAT-negative intravascular haemolysis, and aplastic anaemia or hypoplastic myelodysplasia. This patient had two abnormal blood counts over two years before the diagnosis was made."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Classical paroxysmal nocturnal haemoglobinuria with splanchnic vein thrombosis",
+          "label_i18n": {
+            "en": "Classical paroxysmal nocturnal haemoglobinuria with splanchnic vein thrombosis",
+            "de": "Klassische paroxysmale nächtliche Hämoglobinurie mit splanchnischer Venenthrombose",
+            "es": "Hemoglobinuria paroxística nocturna clásica con trombosis venosa esplácnica",
+            "nl": "Klassieke paroxismale nachtelijke hemoglobinurie met splanchnische veneuze trombose",
+            "ru": "Классическая пароксизмальная ночная гемоглобинурия с тромбозом висцеральных вен"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.98,
+          "icd10": "D59.5",
+          "discriminator": "An 82.4% GPI-deficient granulocyte clone on high-sensitivity flow cytometry, with DAT-negative intravascular haemolysis, pancytopenia and unexplained splanchnic thrombosis.",
+          "supporting_evidence": [
+            "LDH 2860 U/L with undetectable haptoglobin and plasma free haemoglobin 980 mg/L",
+            "DAT negative with no diagnostic morphology on the film",
+            "PNH granulocyte clone 82.4% by FLAER-based flow cytometry",
+            "Somatic PIGA variant detected",
+            "Pancytopenia with a hypocellular marrow",
+            "Unexplained portal and superior mesenteric vein thrombosis with a negative thrombophilia screen",
+            "Nitric-oxide-depletion symptoms: dysphagia, abdominal cramps, disproportionate fatigue",
+            "LDH normalised on a C5 inhibitor"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Autoimmune haemolytic anaemia",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "DAT negative at presentation. Note the trap: the DAT becomes C3d-positive ON C5 inhibitor treatment, which must not be misread as new autoimmune disease.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["DAT negative at diagnosis", "No spherocytes", "PNH clone demonstrated"]
+        },
+        {
+          "label": "Aplastic anaemia",
+          "is_primary": false,
+          "certainty": "possible",
+          "likelihood": 0.25,
+          "discriminator": "Not a competing diagnosis so much as the substrate: PNH clones expand on a background of immune-mediated marrow failure, and the hypocellular marrow here reflects that overlap. Roughly half of aplastic anaemia patients carry a detectable PNH clone.",
+          "supporting_evidence": ["Pancytopenia with a hypocellular marrow"],
+          "refuting_evidence": ["Florid haemolysis with a large clone dominates the clinical picture"]
+        },
+        {
+          "label": "Inherited thrombophilia",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "The reflex investigation for unexplained splanchnic thrombosis, and negative here. PNH is the diagnosis routinely missed at this step.",
+          "supporting_evidence": ["Unprovoked splanchnic thrombosis in a young woman"],
+          "refuting_evidence": ["Complete thrombophilia screen negative", "PNH clone identified", "Concurrent haemolysis"]
+        }
+      ],
+      "teaching_points": [
+        "PNH has NO diagnostic blood film morphology. A DAT-negative intravascular haemolysis with a bland film, especially with cytopenias or unexplained thrombosis, requires high-sensitivity flow cytometry.",
+        "Size the clone on granulocytes, not red cells. PNH red cells are continuously destroyed and are diluted by transfusion, so the red cell clone always understates the true burden.",
+        "Screen for PNH in any unexplained splanchnic or cerebral vein thrombosis. Thrombosis, not anaemia, is the leading cause of death in PNH, and it is the presentation most often missed.",
+        "Meningococcal vaccination before a C5 inhibitor is mandatory, with antibiotic prophylaxis and a patient alert card. Terminal complement blockade raises meningococcal risk by orders of magnitude.",
+        "A DAT that becomes C3d-positive after starting a C5 inhibitor is an expected consequence of upstream C3 opsonisation, not new autoimmune haemolysis. Misreading it leads to unnecessary immunosuppression.",
+        "Free plasma haemoglobin scavenges nitric oxide. That single mechanism explains the dysphagia, abdominal cramps, erectile dysfunction, pulmonary hypertension and the fatigue out of proportion to the haemoglobin.",
+        "Ham's acid haemolysis test and the sucrose lysis test are obsolete and must not be requested.",
+        "Iron replacement can transiently worsen haemolysis by expanding the PNH red cell population; give it under complement cover where possible."
+      ],
+      "references": [
+        {"citation": "Killick SB et al. Guidelines for the diagnosis and management of adult aplastic anaemia and PNH. Br J Haematol.", "type": "guideline"},
+        {"citation": "Borowitz MJ et al. Guidelines for the diagnosis and monitoring of PNH by flow cytometry. Cytometry B Clin Cytom 2010.", "type": "guideline"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Paroxysmal nocturnal haemoglobinuria",
+        "accepted_diagnosis_terms": ["paroxysmal nocturnal haemoglobinuria", "paroxysmal nocturnal hemoglobinuria", "pnh", "piga clonal disorder", "complement-mediated haemolysis"],
+        "must_include_findings": [
+          {"label": "DAT-negative intravascular haemolysis", "synonyms": ["dat negative", "coombs negative", "intravascular", "haemosiderinuria"], "weight": 2.0},
+          {"label": "PNH clone on flow cytometry", "synonyms": ["flow cytometry", "flaer", "cd55", "cd59", "gpi-deficient", "clone 82"], "weight": 2.5},
+          {"label": "Unexplained splanchnic thrombosis", "synonyms": ["portal vein thrombosis", "splanchnic", "budd-chiari", "unusual site thrombosis"], "weight": 2.0},
+          {"label": "Pancytopenia with marrow failure", "synonyms": ["pancytopenia", "hypocellular marrow", "aplastic", "cytopenias"], "weight": 1.5},
+          {"label": "Very high LDH", "synonyms": ["ldh 2860", "markedly raised ldh"], "weight": 1.25},
+          {"label": "Nitric oxide depletion symptoms", "synonyms": ["dysphagia", "abdominal cramps", "nitric oxide", "fatigue out of proportion"], "weight": 1.0}
+        ],
+        "expected_differential": ["autoimmune haemolytic anaemia", "aplastic anaemia", "inherited thrombophilia", "myelodysplastic syndrome", "antiphospholipid syndrome", "mechanical haemolysis"],
+        "expected_next_tests": ["high-sensitivity flow cytometry for gpi-deficient cells", "ldh", "direct antiglobulin test", "bone marrow aspirate and trephine", "thrombophilia screen", "iron studies"],
+        "expected_management": ["meningococcal vaccination before complement inhibitor", "antibiotic prophylaxis", "c5 inhibitor such as eculizumab or ravulizumab", "therapeutic anticoagulation", "iron and folate replacement", "consider transplant for marrow failure"],
+        "critical_values": [
+          {"analyte": "LDH", "value": 2860.0, "reason": "Massive intravascular haemolysis"},
+          {"analyte": "HB", "value": 76.0, "reason": "Severe anaemia with concurrent thrombosis"}
+        ],
+        "safety_rules": [
+          {"id": "SR-HEM-PNH-VACC", "description": "Any complement inhibitor recommendation must include meningococcal vaccination or prophylaxis.", "required_terms": ["meningococcal", "vaccination", "neisseria", "prophylaxis", "alert card"]},
+          {"id": "SR-HEM-PNH-FLOW", "description": "Must recommend flow cytometry rather than obsolete tests.", "required_terms": ["flow cytometry", "flaer", "cd59", "cd55"]},
+          {"id": "SR-HEM-PNH-NOHAM", "description": "Must not recommend Ham's test or sucrose lysis.", "forbidden_patterns": ["ham's test", "ham test", "sucrose lysis", "acid haemolysis test"]}
+        ],
+        "distractor_terms": ["ttp", "hereditary spherocytosis", "g6pd", "cold agglutinin disease", "iron deficiency alone"]
+      }
+    },
+    {
+      "case_code": "HEM-009",
+      "title": "Sudden haemoglobinuria in a 5-year-old after a cold winter walk",
+      "title_i18n": {
+        "en": "Sudden haemoglobinuria in a 5-year-old after a cold winter walk",
+        "de": "Plötzliche Hämoglobinurie bei einem 5-Jährigen nach einem kalten Winterspaziergang",
+        "es": "Hemoglobinuria súbita en un niño de 5 años tras un paseo invernal",
+        "nl": "Plotselinge hemoglobinurie bij een 5-jarige na een koude winterwandeling",
+        "ru": "Внезапная гемоглобинурия у 5-летнего ребёнка после прогулки на морозе"
+      },
+      "summary": "Paroxysmal cold haemoglobinuria. Shares the C3d-only DAT of cold agglutinin disease but is caused by a biphasic IgG antibody, does not agglutinate red cells, and is diagnosed by the Donath-Landsteiner test - which fails if the sample is allowed to cool.",
+      "summary_i18n": {
+        "en": "Paroxysmal cold haemoglobinuria: a C3d-only DAT like CAD, but a biphasic IgG antibody and a Donath-Landsteiner test that fails if the sample cools.",
+        "de": "Paroxysmale Kältehämoglobinurie: C3d-only-DAT wie bei der Kälteagglutininkrankheit, aber biphasischer IgG-Antikörper und ein Donath-Landsteiner-Test, der bei Abkühlung des Materials versagt.",
+        "es": "Hemoglobinuria paroxística por frío: PAD solo C3d como en la EAF, pero anticuerpo IgG bifásico y prueba de Donath-Landsteiner que falla si la muestra se enfría.",
+        "nl": "Paroxismale koudehemoglobinurie: een uitsluitend C3d-positieve DAT zoals bij CAD, maar een bifasisch IgG-antistof en een Donath-Landsteiner-test die faalt als het monster afkoelt.",
+        "ru": "Пароксизмальная холодовая гемоглобинурия: проба Кумбса положительна только по C3d, как при болезни холодовых агглютининов, но антитело — двухфазное IgG, а тест Доната-Ландштейнера не работает, если проба остыла."
+      },
+      "discipline": "hematology",
+      "subspecialty": "haemolytic_anaemia",
+      "difficulty": 5,
+      "tags": ["haemolysis", "immune", "paediatric", "Donath-Landsteiner", "biphasic", "C3d", "pre-analytical", "cold"],
+      "icd10_codes": ["D59.6"],
+      "snomed_codes": ["21308008"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Paediatric Haematology Review Panel",
+      "patient": {
+        "pseudonym": "Patient HEM-009",
+        "age_years": 5,
+        "sex": "male",
+        "weight_kg": 19.0,
+        "height_cm": 110.0,
+        "ancestry": "Northern European",
+        "occupation": "Preschool",
+        "region": "Northern latitude, mid-winter"
+      },
+      "presentation": {
+        "chief_complaint": "Passed black-red urine and became pale and floppy within an hour of coming home from a walk in freezing weather.",
+        "chief_complaint_i18n": {
+          "en": "Black-red urine and sudden pallor within an hour of a walk in freezing weather.",
+          "de": "Schwarzroter Urin und plötzliche Blässe innerhalb einer Stunde nach einem Spaziergang bei Frost.",
+          "es": "Orina rojo-negruzca y palidez súbita en una hora tras un paseo con temperaturas bajo cero.",
+          "nl": "Zwartrode urine en plotselinge bleekheid binnen een uur na een wandeling in vriesweer.",
+          "ru": "Чёрно-красная моча и внезапная бледность в течение часа после прогулки в мороз."
+        },
+        "history_of_present_illness": "Two weeks ago he had a coryzal illness with fever, now resolved. Today he walked to the park with his father at minus 4 °C. Within an hour of returning he complained of back and leg pain, vomited once, and passed dark urine described as 'like cola with black bits'. His parents noticed he had become pale and unusually sleepy. He has had no previous episodes.",
+        "past_medical_history": ["Recent upper respiratory tract infection two weeks ago", "Otherwise well, fully immunised"],
+        "medications": [],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["No haemolytic disease; no consanguinity"],
+        "social_history": "Lives with both parents and a sibling. Attends preschool.",
+        "review_of_systems": {
+          "general": "Lethargy, pallor, one episode of vomiting",
+          "musculoskeletal": "Back and leg pain during the episode - a characteristic feature",
+          "genitourinary": "Dark red-black urine, reduced volume"
+        },
+        "vitals": {
+          "heart_rate_bpm": 148,
+          "blood_pressure_mmhg": "92/54",
+          "respiratory_rate": 32,
+          "temperature_c": 37.8,
+          "spo2_percent": 98,
+          "weight_kg": 19.0
+        },
+        "examination_findings": [
+          "Marked pallor with jaundice appearing over several hours",
+          "Lethargic but rousable, well perfused centrally with cool peripheries",
+          "Tachycardia 148 bpm with a flow murmur",
+          "Liver 2 cm, spleen tip palpable",
+          "NO acrocyanosis and no cold-induced colour change - which is a genuine discriminator from cold agglutinin disease",
+          "No rash, no purpura, no lymphadenopathy"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood, transported at 37 °C",
+          "comment": "Paediatric reference intervals apply.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 51.0, "unit": "g/L", "ref_low": 115.0, "ref_high": 145.0, "flag": "LL", "is_critical": true, "interference_note": "A fall of this magnitude within hours. Paroxysmal cold haemoglobinuria characteristically causes a brisk, severe, but self-limiting haemolysis."},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 38.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "N", "interference_note": "Not yet raised - the episode is only hours old. Reticulocytopenia early in PCH is well described and reflects both the speed of onset and complement-mediated destruction of erythroid precursors."},
+            {"analyte_code": "WBC", "analyte_name": "White cell count", "value_numeric": 18.2, "unit": "10^9/L", "ref_low": 5.0, "ref_high": 15.0, "flag": "H"},
+            {"analyte_code": "PLT", "analyte_name": "Platelet count", "value_numeric": 312.0, "unit": "10^9/L", "ref_low": 150.0, "ref_high": 450.0}
+          ]
+        },
+        {
+          "panel_code": "HAEMOLYSIS",
+          "panel_name": "Haemolysis screen",
+          "day_offset": 0,
+          "specimen": "serum / urine, collected and transported at 37 °C",
+          "results": [
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 4260.0, "unit": "U/L", "ref_low": 170.0, "ref_high": 450.0, "flag": "HH", "is_critical": true},
+            {"analyte_code": "HAPTO", "analyte_name": "Haptoglobin", "value_numeric": 0.01, "unit": "g/L", "ref_low": 0.3, "ref_high": 2.0, "flag": "L"},
+            {"analyte_code": "PLASMA_FREE_HB", "analyte_name": "Plasma free haemoglobin", "value_numeric": 3200.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 50.0, "flag": "HH", "is_critical": true, "interference_note": "Massive intravascular lysis. The plasma was visibly pink, which is itself a reportable observation."},
+            {"analyte_code": "BILI_TOTAL", "analyte_name": "Total bilirubin", "value_numeric": 86.0, "unit": "µmol/L", "ref_low": 3.0, "ref_high": 21.0, "flag": "H"},
+            {"analyte_code": "URINE_HB", "analyte_name": "Urinary haemoglobin", "value_text": "Strongly positive; no red cells on microscopy", "unit": null, "flag": "A"},
+            {"analyte_code": "CREAT", "analyte_name": "Creatinine", "value_numeric": 68.0, "unit": "µmol/L", "ref_low": 20.0, "ref_high": 45.0, "flag": "H", "interference_note": "Acute kidney injury from free haemoglobin. Aggressive hydration is the priority intervention."}
+          ]
+        },
+        {
+          "panel_code": "IMMUNOHAEM",
+          "panel_name": "Immunohaematology including the Donath-Landsteiner test",
+          "day_offset": 0,
+          "specimen": "clotted blood collected into a PRE-WARMED tube and kept at 37 °C until the serum is separated",
+          "comment": "The pre-analytical handling is the difference between a diagnosis and a false negative.",
+          "results": [
+            {"analyte_code": "DAT_POLY", "analyte_name": "Direct antiglobulin test (polyspecific)", "value_text": "Positive 3+", "unit": null, "flag": "A"},
+            {"analyte_code": "DAT_IGG", "analyte_name": "Direct antiglobulin test - anti-IgG", "value_text": "Negative", "unit": null, "flag": "N", "interference_note": "IgG negative even though the causative antibody IS IgG. The biphasic Donath-Landsteiner antibody binds in the cold and ELUTES at 37 °C, leaving only complement bound - so the standard DAT sees C3d alone."},
+            {"analyte_code": "DAT_C3D", "analyte_name": "Direct antiglobulin test - anti-C3d", "value_text": "Positive 3+", "unit": null, "flag": "A", "interference_note": "C3d-only, exactly as in cold agglutinin disease. The two conditions are separated by the Donath-Landsteiner test and by the presence or absence of agglutination, not by the DAT."},
+            {"analyte_code": "DONATH_LANDSTEINER", "analyte_name": "Donath-Landsteiner biphasic haemolysin test", "value_text": "POSITIVE - haemolysis in the tube incubated at 4 °C then warmed to 37 °C; no haemolysis in the tubes held at 4 °C alone or 37 °C alone", "unit": null, "flag": "A", "interference_note": "Diagnostic. The antibody binds red cells and fixes early complement in the cold periphery, then completes lysis when the cell returns to the warm core. This two-stage requirement IS the disease."},
+            {"analyte_code": "DL_SPECIFICITY", "analyte_name": "Donath-Landsteiner antibody specificity", "value_text": "Anti-P", "unit": null, "flag": "A", "interference_note": "Classically anti-P. Relevant to transfusion: P-negative units are theoretically ideal but are vanishingly rare, and transfusion must not be delayed to obtain them."},
+            {"analyte_code": "COLD_AGGLUTININ_TITRE", "analyte_name": "Cold agglutinin titre at 4 °C", "value_numeric": 8.0, "unit": "titre", "ref_high": 64.0, "flag": "N", "interference_note": "LOW. The Donath-Landsteiner antibody is a haemolysin, not an agglutinin - a key point that also explains the absent agglutination on the film."}
+          ]
+        },
+        {
+          "panel_code": "FBC",
+          "panel_name": "Full blood count - recovery",
+          "day_offset": 10,
+          "specimen": "EDTA whole blood",
+          "comment": "Strict warmth and two transfusions; no immunosuppression given.",
+          "results": [
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 104.0, "unit": "g/L", "ref_low": 115.0, "ref_high": 145.0, "flag": "L"},
+            {"analyte_code": "RETIC_ABS", "analyte_name": "Absolute reticulocyte count", "value_numeric": 288.0, "unit": "10^9/L", "ref_low": 25.0, "ref_high": 100.0, "flag": "H", "interference_note": "The delayed reticulocyte response, now vigorous - the mirror image of the presenting result."},
+            {"analyte_code": "LDH", "analyte_name": "Lactate dehydrogenase", "value_numeric": 620.0, "unit": "U/L", "ref_low": 170.0, "ref_high": 450.0, "flag": "H"}
+          ]
+        },
+        {
+          "panel_code": "IMMUNOHAEM",
+          "panel_name": "Follow-up immunohaematology",
+          "day_offset": 90,
+          "specimen": "clotted blood at 37 °C",
+          "comment": "Three months. Complete resolution.",
+          "results": [
+            {"analyte_code": "DONATH_LANDSTEINER", "analyte_name": "Donath-Landsteiner test", "value_text": "Negative", "unit": null, "flag": "N", "interference_note": "Post-infectious paediatric PCH is a single-episode, self-limiting disease. The antibody disappears over weeks to months and recurrence is rare - genuinely reassuring for the family."},
+            {"analyte_code": "DAT_POLY", "analyte_name": "Direct antiglobulin test", "value_text": "Negative", "unit": null, "flag": "N"},
+            {"analyte_code": "HB", "analyte_name": "Haemoglobin", "value_numeric": 128.0, "unit": "g/L", "ref_low": 115.0, "ref_high": 145.0}
+          ]
+        }
+      ],
+      "smears": [
+        {
+          "day_offset": 0,
+          "stain": "May-Grunwald-Giemsa",
+          "reported_by": "Consultant Paediatric Haematologist",
+          "red_cell_morphology": [
+            "Marked anisopoikilocytosis with numerous ghost cells and red cell shadows - the residue of completed intravascular lysis",
+            "Occasional spherocytes",
+            "NO agglutination at any temperature - a critical negative that separates this from cold agglutinin disease",
+            "Polychromasia minimal at presentation, marked by day 5",
+            "No schistocytes, no bite cells, no Heinz bodies"
+          ],
+          "white_cell_morphology": [
+            "Neutrophilia with reactive change",
+            "ERYTHROPHAGOCYTOSIS BY NEUTROPHILS - an unusual and highly characteristic finding in paroxysmal cold haemoglobinuria; in most other immune haemolyses phagocytosis is performed by monocytes"
+          ],
+          "platelet_morphology": ["Normal number and morphology"],
+          "schistocyte_percent": 0.2,
+          "narrative": "The film shows the aftermath of massive intravascular lysis: numerous ghost cells and red cell shadows, marked anisopoikilocytosis and only occasional spherocytes. Two findings are particularly informative. First, there is NO agglutination at any temperature - the Donath-Landsteiner antibody is a haemolysin rather than an agglutinin, which is what distinguishes this film from cold agglutinin disease despite the identical C3d-only DAT. Second, erythrophagocytosis by NEUTROPHILS is seen, an unusual finding that is strongly associated with paroxysmal cold haemoglobinuria. Polychromasia is minimal at presentation because the episode is only hours old. In a child with a recent viral illness, cold-triggered haemoglobinuria, a C3d-only DAT and this film, the Donath-Landsteiner test is the confirmatory investigation - and it must be performed on a sample kept at 37 °C throughout.",
+          "narrative_i18n": {
+            "en": "Aftermath of massive intravascular lysis: ghost cells and shadows, occasional spherocytes, NO agglutination at any temperature, and erythrophagocytosis by NEUTROPHILS - highly characteristic of PCH.",
+            "de": "Bild nach massiver intravasaler Lyse: Erythrozytenschatten, vereinzelte Sphärozyten, KEINE Agglutination bei irgendeiner Temperatur und Erythrophagozytose durch NEUTROPHILE - hochcharakteristisch für die PKH.",
+            "es": "Secuelas de lisis intravascular masiva: células fantasma y sombras, esferocitos ocasionales, SIN aglutinación a ninguna temperatura y eritrofagocitosis por NEUTRÓFILOS, muy característica de la HPF.",
+            "nl": "Nasleep van massale intravasale lyse: schaduwcellen, incidentele sferocyten, GEEN agglutinatie bij welke temperatuur dan ook, en erytrofagocytose door NEUTROFIELEN - zeer kenmerkend voor PKH.",
+            "ru": "Картина после массивного внутрисосудистого лизиса: клетки-тени, единичные сфероциты, агглютинации НЕТ ни при какой температуре, эритрофагоцитоз НЕЙТРОФИЛАМИ — весьма характерно для ПХГ."
+          }
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Renal ultrasound",
+          "region": "Abdomen",
+          "day_offset": 1,
+          "findings": "Normal-sized kidneys with mildly increased cortical echogenicity. No obstruction. Spleen 9 cm, mildly enlarged for age.",
+          "impression": "Changes consistent with haemoglobin-induced tubular injury. No obstruction requiring intervention."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Supportive management of paediatric post-infectious paroxysmal cold haemoglobinuria",
+          "guideline_source": "Composite paediatric haematology and transfusion practice",
+          "indication": "Acute severe post-viral PCH with haemoglobin 51 g/L and haemoglobin-induced acute kidney injury.",
+          "duration_months": 3,
+          "regimen": [
+            {"agent": "Strict warming", "dose": "n/a", "route": "n/a", "frequency": "continuous", "duration": "until resolved", "notes": "Warmed room, warmed fluids, warmed blood products, no cold exposure of any kind. This is the primary therapeutic intervention and it is entirely non-pharmacological."},
+            {"agent": "Red cell transfusion through a blood warmer", "dose": "10 mL/kg", "route": "IV", "frequency": "as required", "duration": "n/a", "notes": "P-negative units are theoretically ideal but are exceptionally rare. Do NOT delay a life-saving transfusion to search for them - standard crossmatch-compatible units given through a warmer are the correct practical choice."},
+            {"agent": "Intravenous hydration", "dose": "1.5 x maintenance crystalloid", "route": "IV", "frequency": "continuous", "duration": "until haemoglobinuria clears", "notes": "Protects the tubules from free haemoglobin. The most important measure for renal outcome."},
+            {"agent": "Folic acid", "dose": "2.5 mg", "route": "oral", "frequency": "once daily", "duration": "3 months", "notes": ""},
+            {"agent": "Corticosteroids - of doubtful value", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "Often given but poorly evidenced in post-infectious paediatric PCH, which is self-limiting over days to weeks. They were not used here and the child recovered fully."}
+          ],
+          "monitoring": [
+            "Hourly urine output and daily creatinine until haemoglobinuria clears",
+            "Full blood count every 12 hours during the acute phase",
+            "Repeat the Donath-Landsteiner test at 3 months to document resolution",
+            "Advise cold avoidance for 3 months, then relax - this is a single-episode illness in most children"
+          ],
+          "contraindications": ["Unwarmed transfusion or unwarmed intravenous fluids"],
+          "adverse_effects": ["Risks are those of transfusion and of the acute kidney injury; the condition itself is self-limiting"],
+          "notes": "Historically PCH was associated with congenital and tertiary syphilis. In modern paediatric practice it is overwhelmingly post-viral, and syphilis serology is worth sending only where the history warrants it."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Post-infectious paroxysmal cold haemoglobinuria with anti-P Donath-Landsteiner antibody",
+          "label_i18n": {
+            "en": "Post-infectious paroxysmal cold haemoglobinuria (anti-P Donath-Landsteiner antibody)",
+            "de": "Postinfektiöse paroxysmale Kältehämoglobinurie (Anti-P-Donath-Landsteiner-Antikörper)",
+            "es": "Hemoglobinuria paroxística por frío posinfecciosa (anticuerpo de Donath-Landsteiner anti-P)",
+            "nl": "Postinfectieuze paroxismale koudehemoglobinurie (anti-P Donath-Landsteiner-antistof)",
+            "ru": "Постинфекционная пароксизмальная холодовая гемоглобинурия (антитело Доната-Ландштейнера анти-P)"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.97,
+          "icd10": "D59.6",
+          "discriminator": "A positive Donath-Landsteiner biphasic haemolysin test with a C3d-only DAT, absent agglutination, a low cold agglutinin titre and neutrophil erythrophagocytosis, two weeks after a viral illness.",
+          "supporting_evidence": [
+            "Cold-triggered massive intravascular haemolysis with haemoglobin 51 g/L and plasma free haemoglobin 3200 mg/L",
+            "DAT positive for C3d with IgG negative",
+            "Donath-Landsteiner test positive with anti-P specificity",
+            "Cold agglutinin titre only 8 and no agglutination on the film",
+            "Erythrophagocytosis by neutrophils",
+            "Antecedent viral illness two weeks earlier",
+            "Complete self-limited resolution with a negative Donath-Landsteiner test at three months"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Cold agglutinin disease",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Shares the C3d-only DAT, which is why the two are so often confused. Separated by the Donath-Landsteiner test, by a low cold agglutinin titre, by absent agglutination on the film, and by the age and acuity of the presentation.",
+          "supporting_evidence": ["C3d-only DAT with cold-triggered haemolysis"],
+          "refuting_evidence": ["Cold agglutinin titre 8", "No agglutination on the film or in the analyser indices", "Donath-Landsteiner positive", "Acute single episode in a 5-year-old"]
+        },
+        {
+          "label": "G6PD deficiency with an acute haemolytic crisis",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Another cause of sudden haemoglobinuria in a child, but the DAT would be negative and the film would show bite cells and Heinz bodies.",
+          "supporting_evidence": ["Sudden intravascular haemolysis in a child"],
+          "refuting_evidence": ["DAT positive for C3d", "No bite cells or Heinz bodies", "Clear cold trigger", "Normal G6PD assay at follow-up"]
+        },
+        {
+          "label": "Haemolytic uraemic syndrome",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "The reflex consideration for a child with haemolysis and renal impairment, but requires thrombocytopenia and schistocytes, and both are absent.",
+          "supporting_evidence": ["Anaemia with acute kidney injury in a child"],
+          "refuting_evidence": ["Platelets 312 x10^9/L", "No schistocytes", "Positive DAT", "No diarrhoeal prodrome"]
+        }
+      ],
+      "teaching_points": [
+        "The Donath-Landsteiner test requires the sample to be collected into a pre-warmed tube and kept at 37 °C until the serum is separated. If the sample cools in transit the antibody binds to the patient's own cells in vitro and the test returns a false negative - the commonest reason this diagnosis is missed.",
+        "Paroxysmal cold haemoglobinuria and cold agglutinin disease share a C3d-only DAT but are different diseases: PCH is caused by a biphasic IgG haemolysin, does not agglutinate red cells, and has a LOW cold agglutinin titre.",
+        "The antibody is IgG, yet the DAT is IgG-negative, because the biphasic antibody elutes at 37 °C and leaves only complement behind. This apparent contradiction is the mechanism, not an error.",
+        "Erythrophagocytosis by NEUTROPHILS is unusual and strongly associated with PCH; in most other immune haemolyses, monocytes do the phagocytosis.",
+        "Post-infectious paediatric PCH is self-limiting and rarely recurs. The Donath-Landsteiner antibody disappears over weeks to months, and this is genuinely reassuring information for a family.",
+        "Do not delay a life-saving transfusion to obtain P-negative units. They are exceptionally rare; standard crossmatch-compatible blood given through a warmer is the correct practical choice.",
+        "A normal reticulocyte count early in a hyperacute haemolysis does not exclude it. In PCH there is an additional mechanism, since complement-mediated destruction can also affect erythroid precursors.",
+        "Steroids are frequently given and poorly evidenced in this self-limiting condition. Warmth, hydration and transfusion are what change the outcome."
+      ],
+      "references": [
+        {"citation": "Jager U et al. Diagnosis and treatment of autoimmune haemolytic anaemia in adults. Blood Rev 2020.", "type": "consensus"},
+        {"citation": "Sokol RJ, Hewitt S, Stamps BK. Autoimmune haemolysis: paroxysmal cold haemoglobinuria. Br Med J.", "type": "primary"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Paroxysmal cold haemoglobinuria",
+        "accepted_diagnosis_terms": ["paroxysmal cold haemoglobinuria", "paroxysmal cold hemoglobinuria", "pch", "donath-landsteiner haemolytic anaemia", "biphasic haemolysin"],
+        "must_include_findings": [
+          {"label": "Positive Donath-Landsteiner biphasic haemolysin test", "synonyms": ["donath-landsteiner", "biphasic haemolysin", "dl test", "biphasic antibody"], "weight": 2.5},
+          {"label": "DAT positive for C3d with IgG negative", "synonyms": ["c3d only", "complement only dat", "igg negative dat"], "weight": 2.0},
+          {"label": "Absence of agglutination with a low cold agglutinin titre", "synonyms": ["no agglutination", "low cold agglutinin titre", "haemolysin not agglutinin", "titre 8"], "weight": 1.75},
+          {"label": "Cold exposure trigger after a viral illness", "synonyms": ["cold exposure", "post-viral", "after a cold walk", "recent infection"], "weight": 1.5},
+          {"label": "Massive intravascular haemolysis with haemoglobinuria", "synonyms": ["haemoglobinuria", "plasma free haemoglobin", "ldh 4260", "intravascular"], "weight": 1.25},
+          {"label": "Erythrophagocytosis by neutrophils", "synonyms": ["neutrophil erythrophagocytosis", "phagocytosis by neutrophils"], "weight": 1.0}
+        ],
+        "expected_differential": ["cold agglutinin disease", "g6pd deficiency", "haemolytic uraemic syndrome", "warm autoimmune haemolytic anaemia", "march haemoglobinuria"],
+        "expected_next_tests": ["donath-landsteiner test on a warmed sample", "direct antiglobulin test with monospecific reagents", "cold agglutinin titre", "blood film", "g6pd assay", "renal function"],
+        "expected_management": ["strict warming", "warmed transfusion", "intravenous hydration", "folic acid", "avoid delaying transfusion for p-negative units", "repeat dl test at three months"],
+        "critical_values": [
+          {"analyte": "HB", "value": 51.0, "reason": "Life-threatening paediatric anaemia"},
+          {"analyte": "LDH", "value": 4260.0, "reason": "Massive intravascular haemolysis"},
+          {"analyte": "PLASMA_FREE_HB", "value": 3200.0, "reason": "Risk of haemoglobin-induced acute kidney injury"}
+        ],
+        "safety_rules": [
+          {"id": "SR-HEM-PCH-SAMPLE", "description": "Must state the Donath-Landsteiner sample requires warm collection and transport.", "required_terms": ["37", "warm", "pre-warmed", "keep warm"]},
+          {"id": "SR-HEM-PCH-TRANSFUSE", "description": "Must not advise delaying transfusion to obtain P-negative units.", "forbidden_patterns": ["must obtain p-negative", "delay transfusion until p-negative", "only p-negative blood"]},
+          {"id": "SR-HEM-PCH-WARM", "description": "Should recommend warming measures including a blood warmer.", "required_terms": ["blood warmer", "warmed fluids", "keep the patient warm", "warming"]}
+        ],
+        "distractor_terms": ["hus", "ttp", "sickle cell", "malaria", "nephritis", "rhabdomyolysis"]
+      }
+    }
+  ]
+}

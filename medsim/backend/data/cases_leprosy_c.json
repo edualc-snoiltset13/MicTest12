@@ -1,0 +1,1691 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-08-03T08:00:00Z",
+  "collection": "Microbiology and pharmacology - special populations, drug interactions and transmission control",
+  "cases": [
+    {
+      "case_code": "LEP-005",
+      "title": "A single anaesthetic patch on the cheek of an 8-year-old",
+      "title_i18n": {
+        "en": "A single anaesthetic patch on the cheek of an 8-year-old",
+        "de": "Einzelner anästhetischer Herd an der Wange eines 8-Jährigen",
+        "es": "Una única placa anestésica en la mejilla de un niño de 8 años",
+        "nl": "Eén anesthetische plek op de wang van een 8-jarige",
+        "ru": "Одиночное анестетичное пятно на щеке у 8-летнего ребёнка"
+      },
+      "summary": "Single-lesion paucibacillary leprosy in a child. The case is about proportionality: correct classification prevents both overtreatment with a 12-month multibacillary regimen and undertreatment that risks relapse, and it addresses paediatric dosing and minocycline avoidance.",
+      "summary_i18n": {
+        "en": "Single-lesion paucibacillary leprosy in a child - correct classification, paediatric dosing, and avoiding both over- and undertreatment.",
+        "de": "Paucibazilläre Einzelläsion bei einem Kind - korrekte Klassifikation, pädiatrische Dosierung und Vermeidung von Über- wie Untertherapie.",
+        "es": "Lepra paucibacilar de lesión única en un niño: clasificación correcta, dosificación pediátrica y evitar tanto el sobretratamiento como el infratratamiento.",
+        "nl": "Paucibacillaire lepra met één laesie bij een kind - juiste classificatie, pediatrische dosering en zowel over- als onderbehandeling vermijden.",
+        "ru": "Паучибациллярная лепра с одиночным очагом у ребёнка: правильная классификация, педиатрические дозы, недопущение избыточного и недостаточного лечения."
+      },
+      "discipline": "microbiology",
+      "subspecialty": "mycobacteriology",
+      "difficulty": 3,
+      "tags": [
+        "leprosy",
+        "paediatric",
+        "paucibacillary",
+        "single-lesion",
+        "ROM",
+        "classification",
+        "transmission"
+      ],
+      "icd10_codes": [
+        "A30.1"
+      ],
+      "snomed_codes": [
+        "81004002"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Mycobacteriology Review Panel",
+      "patient": {
+        "pseudonym": "Patient LEP-005",
+        "age_years": 8,
+        "sex": "male",
+        "weight_kg": 24.0,
+        "height_cm": 128.0,
+        "ancestry": "South Asian",
+        "occupation": "Primary school pupil",
+        "region": "Endemic district; father treated for multibacillary leprosy two years ago"
+      },
+      "presentation": {
+        "chief_complaint": "A pale patch on the left cheek noticed by a teacher during a school screening programme; the child had not noticed it.",
+        "chief_complaint_i18n": {
+          "en": "A pale patch on the left cheek found at school screening; the child had not noticed it.",
+          "de": "Blasser Herd an der linken Wange bei einer Schulreihenuntersuchung entdeckt; dem Kind nicht aufgefallen.",
+          "es": "Mancha pálida en la mejilla izquierda detectada en un cribado escolar; el niño no la había notado.",
+          "nl": "Bleke plek op de linkerwang gevonden bij schoolscreening; het kind had het niet opgemerkt.",
+          "ru": "Бледное пятно на левой щеке выявлено при школьном скрининге; ребёнок его не замечал."
+        },
+        "history_of_present_illness": "The patch has been present for at least eight months according to his mother. It does not itch, does not scale and has not changed in size. He is systemically well, growing normally and performing well at school. His father completed multibacillary MDT two years ago, making this child a household contact - the reason the school programme flagged him for examination.",
+        "past_medical_history": [
+          "Fully immunised including BCG at birth (BCG scar present)",
+          "No chronic illness"
+        ],
+        "medications": [],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Father: multibacillary leprosy, completed MDT 2 years ago"
+        ],
+        "social_history": "Lives with both parents and three siblings in a two-room dwelling. Attends primary school.",
+        "review_of_systems": {
+          "dermatological": "One hypopigmented patch; no other lesions on full-body examination in good light",
+          "neurological": "No weakness, no other sensory loss; no complaints",
+          "general": "Well, thriving, normal growth centiles"
+        },
+        "vitals": {
+          "heart_rate_bpm": 88,
+          "blood_pressure_mmhg": "100/62",
+          "respiratory_rate": 20,
+          "temperature_c": 36.6,
+          "weight_kg": 24.0
+        },
+        "examination_findings": [
+          "ONE well-defined hypopigmented macule, 4 cm diameter, on the left cheek, with a dry non-sweating surface and a slightly raised margin",
+          "Complete loss of light touch and pinprick sensation within the patch, with normal sensation immediately outside it",
+          "Full-body examination in good natural light found no other lesions - essential, since classification depends on lesion count",
+          "All peripheral nerves palpated: NO thickening and NO tenderness of ulnar, median, radial cutaneous, common peroneal, posterior tibial or great auricular nerves",
+          "Voluntary muscle testing normal in all groups; monofilament testing normal on hands and feet",
+          "BCG scar present",
+          "No eye involvement"
+        ]
+      },
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear and skin biopsy",
+          "site": "Lesion edge, both ear lobes",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Slit-skin smears NEGATIVE for acid-fast bacilli at all sites. Biopsy of the lesion edge shows well-formed epithelioid granulomas with Langhans giant cells tracking along dermal nerves, dense peripheral lymphocytic cuffing, and destruction of a dermal nerve twig. No bacilli seen on Fite staining.",
+          "bacterial_index": 0.0,
+          "morphological_index": 0.0,
+          "molecular_findings": [
+            {
+              "target": "RLEP PCR",
+              "method": "Real-time PCR on biopsy tissue",
+              "result": "Detected, Ct 34.8",
+              "interpretation": "Confirms M. leprae despite negative microscopy. Granulomas tracking along dermal nerves with nerve destruction is essentially pathognomonic of leprosy and would suffice for diagnosis even without PCR."
+            }
+          ],
+          "susceptibility": [],
+          "interpretation": "Smear-negative paucibacillary leprosy, tuberculoid pole, in a child. Single lesion, no nerve involvement, negative smears: this classifies as single-lesion paucibacillary disease. Correct classification is the whole clinical decision here, because it determines whether the child receives 6 or 12 months of therapy."
+        },
+        {
+          "day_offset": 180,
+          "specimen_type": "Clinical assessment",
+          "site": "Lesion and full nerve examination",
+          "organism": null,
+          "microscopy": "Not repeated - smears were negative and are not indicated for monitoring paucibacillary disease.",
+          "bacterial_index": null,
+          "morphological_index": null,
+          "molecular_findings": [],
+          "susceptibility": [],
+          "interpretation": "Lesion flattened and repigmenting; sensation partially recovered within the patch. No new lesions, no nerve involvement. Treatment complete and successful. Note that sensory recovery in a small patch is common in children and is not expected in adults with established nerve damage."
+        }
+      ],
+      "lab_panels": [
+        {
+          "panel_code": "BASELINE_SAFETY",
+          "panel_name": "Paediatric baseline safety bloods",
+          "day_offset": 0,
+          "specimen": "whole blood / serum",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 124.0,
+              "unit": "g/L",
+              "ref_low": 115.0,
+              "ref_high": 145.0
+            },
+            {
+              "analyte_code": "G6PD",
+              "analyte_name": "G6PD activity",
+              "value_numeric": 11.8,
+              "unit": "U/g Hb",
+              "ref_low": 6.4,
+              "ref_high": 18.7,
+              "interference_note": "Checked before dapsone. Particularly important in a child, in whom haemolysis is less well tolerated and less likely to be reported."
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 24.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 38.0,
+              "unit": "µmol/L",
+              "ref_low": 20.0,
+              "ref_high": 55.0
+            }
+          ]
+        },
+        {
+          "panel_code": "MONITORING",
+          "panel_name": "Monitoring at completion",
+          "day_offset": 180,
+          "specimen": "whole blood",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 119.0,
+              "unit": "g/L",
+              "ref_low": 115.0,
+              "ref_high": 145.0,
+              "interference_note": "Minimal fall on dapsone in a G6PD-normal child, as expected."
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 28.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0
+            }
+          ]
+        }
+      ],
+      "smears": [],
+      "imaging": [],
+      "protocols": [
+        {
+          "name": "Paediatric paucibacillary multidrug therapy with contact management",
+          "guideline_source": "WHO 2018 leprosy guidelines - paediatric dosing and post-exposure prophylaxis",
+          "indication": "Single-lesion paucibacillary leprosy in a child of 24 kg with no nerve involvement.",
+          "duration_months": 6,
+          "regimen": [
+            {
+              "agent": "Rifampicin",
+              "dose": "450 mg (10-20 mg/kg, child 10-14 years dosing band adjusted for weight)",
+              "route": "oral",
+              "frequency": "once monthly, supervised",
+              "duration": "6 months",
+              "notes": "WHO now recommends the standard three-drug regimen for paucibacillary disease as well, harmonising PB and MB treatment. Paediatric blister packs exist for the 10-14 year band; below that, dose by weight."
+            },
+            {
+              "agent": "Clofazimine",
+              "dose": "150 mg monthly and 50 mg on alternate days",
+              "route": "oral",
+              "frequency": "as stated",
+              "duration": "6 months",
+              "notes": "Now included in paucibacillary regimens under the 2018 guidelines. Discuss pigmentation with the family before starting - in a school-age child this is a genuine and predictable cause of stigma and non-adherence."
+            },
+            {
+              "agent": "Dapsone",
+              "dose": "50 mg (2 mg/kg)",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "6 months",
+              "notes": "G6PD checked and normal."
+            },
+            {
+              "agent": "Minocycline - AVOID",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "Contraindicated under 12 years because of permanent dental staining and effects on developing bone. This forecloses the usual ROM (rifampicin-ofloxacin-minocycline) alternative in young children."
+            },
+            {
+              "agent": "Single-dose rifampicin post-exposure prophylaxis for contacts",
+              "dose": "10-20 mg/kg by age band, single dose",
+              "route": "oral",
+              "frequency": "once",
+              "duration": "n/a",
+              "notes": "Offered to household and neighbourhood contacts aged 2 years and over after leprosy has been excluded in each. Reduces contact incidence by roughly 50-60% over two years. The index case himself is a contact of his father, which is how he was found."
+            }
+          ],
+          "monitoring": [
+            "Monthly clinical review with full skin and nerve examination - nerve function is the outcome that matters",
+            "Slit-skin smears are NOT needed for monitoring paucibacillary disease",
+            "Growth and school attendance: treatment must not become a reason for exclusion or stigma",
+            "Counsel the family that a patch may take months to repigment and that this is not treatment failure",
+            "Annual review for 2 years after completion to detect late reaction or relapse"
+          ],
+          "contraindications": [
+            "Minocycline and other tetracyclines under 12 years",
+            "Dapsone in G6PD deficiency"
+          ],
+          "adverse_effects": [
+            "Clofazimine pigmentation - the dominant adherence issue in children",
+            "Dapsone haemolysis",
+            "Rifampicin orange discolouration of urine and tears, which must be explained in advance to avoid alarm"
+          ],
+          "notes": "Paediatric leprosy is a sentinel indicator of ongoing community transmission. A child with leprosy means recent transmission, and the public health response - contact tracing and prophylaxis - matters as much as this child's own treatment."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Single-lesion paucibacillary (tuberculoid) leprosy in a child",
+          "label_i18n": {
+            "en": "Single-lesion paucibacillary leprosy in a child",
+            "de": "Paucibazilläre Lepra mit Einzelläsion bei einem Kind",
+            "es": "Lepra paucibacilar de lesión única en un niño",
+            "nl": "Paucibacillaire lepra met één laesie bij een kind",
+            "ru": "Паучибациллярная лепра с одиночным очагом у ребёнка"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.95,
+          "icd10": "A30.1",
+          "discriminator": "A single anaesthetic hypopigmented patch with negative smears, no nerve thickening, and a biopsy showing granulomas tracking along dermal nerves with nerve destruction.",
+          "supporting_evidence": [
+            "One well-defined hypopigmented macule with complete sensory loss and absent sweating",
+            "Slit-skin smears negative at all sites, bacterial index 0",
+            "No nerve thickening or tenderness anywhere",
+            "Epithelioid granulomas along dermal nerves with nerve destruction on biopsy",
+            "RLEP PCR positive",
+            "Household contact of a treated multibacillary case",
+            "Complete response to 6 months of paucibacillary MDT"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Pityriasis alba",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "The commonest mimic in children and the reason many cases are missed. Pityriasis alba is scaly, has indistinct margins, and crucially has NORMAL sensation and sweating.",
+          "supporting_evidence": [
+            "Hypopigmented facial patch in a child"
+          ],
+          "refuting_evidence": [
+            "Complete sensory loss within the patch",
+            "Absent sweating",
+            "Well-defined margin, non-scaly",
+            "Granulomas along nerves on biopsy"
+          ]
+        },
+        {
+          "label": "Vitiligo",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Vitiligo is completely depigmented (chalk-white) rather than hypopigmented, and sensation is entirely normal.",
+          "supporting_evidence": [
+            "Pale facial patch"
+          ],
+          "refuting_evidence": [
+            "Hypopigmented rather than depigmented",
+            "Anaesthetic",
+            "Granulomatous inflammation on biopsy"
+          ]
+        },
+        {
+          "label": "Multibacillary leprosy requiring 12 months of therapy",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.04,
+          "discriminator": "The overtreatment error. Classification rests on lesion count, nerve involvement and smear status - one lesion, no nerve involvement and negative smears is paucibacillary. Treating this child for 12 months would double clofazimine exposure and pigmentation for no benefit.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "Single lesion",
+            "Smear negative",
+            "No nerve involvement"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Sensory testing of the lesion is the diagnostic manoeuvre. An anaesthetic hypopigmented patch is leprosy until proven otherwise, and a patch with normal sensation almost never is.",
+        "Examine the whole body in good light and palpate every accessible peripheral nerve. Classification depends on lesion count and nerve involvement, and classification determines treatment duration.",
+        "Leprosy in a child is a sentinel event indicating recent community transmission. The public health response matters as much as the individual treatment.",
+        "Minocycline and other tetracyclines are contraindicated under 12 years, which removes the usual ROM alternative regimen from the paediatric toolkit.",
+        "Check G6PD before dapsone, particularly in a child who may not report symptoms of haemolysis reliably.",
+        "Warn the family in advance about clofazimine pigmentation and rifampicin-orange urine and tears. Unexplained, both cause alarm and non-adherence; explained, neither does.",
+        "Single-dose rifampicin post-exposure prophylaxis for contacts aged 2 and over reduces incidence by roughly half over two years, and leprosy must be excluded in each contact before it is given.",
+        "Repigmentation takes months after cure. Warn the family, or a resolving patch will be read as treatment failure."
+      ],
+      "references": [
+        {
+          "citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. 2018.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Moet FJ et al. Effectiveness of single dose rifampicin in preventing leprosy in close contacts (COLEP). BMJ 2008.",
+          "type": "trial"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Single-lesion paucibacillary leprosy",
+        "accepted_diagnosis_terms": [
+          "paucibacillary leprosy",
+          "tuberculoid leprosy",
+          "single lesion leprosy",
+          "pb leprosy",
+          "single-lesion paucibacillary"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Anaesthetic hypopigmented patch",
+            "synonyms": [
+              "sensory loss",
+              "anaesthetic patch",
+              "loss of sensation",
+              "hypopigmented macule"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Negative slit-skin smears",
+            "synonyms": [
+              "smear negative",
+              "bi 0",
+              "no acid-fast bacilli"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "No nerve thickening or tenderness",
+            "synonyms": [
+              "nerves normal",
+              "no nerve involvement",
+              "no thickened nerves"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Granulomas tracking along dermal nerves",
+            "synonyms": [
+              "granuloma",
+              "nerve destruction",
+              "epithelioid",
+              "biopsy"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Household contact of a treated case",
+            "synonyms": [
+              "father had leprosy",
+              "contact",
+              "household contact",
+              "transmission"
+            ],
+            "weight": 1.25
+          }
+        ],
+        "expected_differential": [
+          "pityriasis alba",
+          "vitiligo",
+          "tinea versicolor",
+          "post-inflammatory hypopigmentation",
+          "multibacillary leprosy",
+          "nevus depigmentosus"
+        ],
+        "expected_next_tests": [
+          "sensory testing of the lesion",
+          "full body examination",
+          "peripheral nerve palpation",
+          "slit-skin smear",
+          "skin biopsy",
+          "rlep pcr",
+          "g6pd"
+        ],
+        "expected_management": [
+          "6-month paucibacillary mdt",
+          "weight-based paediatric dosing",
+          "avoid minocycline under 12",
+          "contact tracing",
+          "single-dose rifampicin prophylaxis",
+          "counsel on pigmentation",
+          "monthly nerve assessment"
+        ],
+        "critical_values": [],
+        "safety_rules": [
+          {
+            "id": "SR-LEP-PB-TETRA",
+            "description": "Must not recommend minocycline or another tetracycline in a child under 12.",
+            "forbidden_patterns": [
+              "minocycline",
+              "doxycycline",
+              "rom regimen",
+              "tetracycline"
+            ]
+          },
+          {
+            "id": "SR-LEP-PB-CONTACT",
+            "description": "Should recommend contact tracing and post-exposure prophylaxis.",
+            "required_terms": [
+              "contact tracing",
+              "prophylaxis",
+              "single dose rifampicin",
+              "household contacts",
+              "screen contacts"
+            ]
+          },
+          {
+            "id": "SR-LEP-PB-DURATION",
+            "description": "Must not recommend a 12-month multibacillary course for single-lesion paucibacillary disease.",
+            "forbidden_patterns": [
+              "12 months of mdt",
+              "multibacillary regimen",
+              "12-month course"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "multibacillary",
+          "thalidomide",
+          "second-line regimen",
+          "vitiligo",
+          "fungal infection"
+        ]
+      }
+    },
+    {
+      "case_code": "LEP-006",
+      "title": "Leprosy, HIV and pregnancy: three regimens colliding",
+      "title_i18n": {
+        "en": "Leprosy, HIV and pregnancy: three regimens colliding",
+        "de": "Lepra, HIV und Schwangerschaft: drei kollidierende Therapieschemata",
+        "es": "Lepra, VIH y embarazo: tres regímenes en conflicto",
+        "nl": "Lepra, hiv en zwangerschap: drie botsende behandelregimes",
+        "ru": "Лепра, ВИЧ и беременность: столкновение трёх схем лечения"
+      },
+      "summary": "Multibacillary leprosy in a pregnant woman starting antiretroviral therapy. The case is built around the rifampicin-antiretroviral interaction, teratogenicity constraints, and immune reconstitution precipitating a type 1 reaction.",
+      "summary_i18n": {
+        "en": "Multibacillary leprosy in pregnancy with new HIV diagnosis - rifampicin-ART interaction, teratogenicity limits and immune reconstitution reaction.",
+        "de": "Multibazilläre Lepra in der Schwangerschaft bei Erstdiagnose HIV - Rifampicin-ART-Interaktion, Teratogenitätsgrenzen und Immunrekonstitutionsreaktion.",
+        "es": "Lepra multibacilar en el embarazo con VIH de nuevo diagnóstico: interacción rifampicina-TAR, límites por teratogenicidad y reacción por reconstitución inmune.",
+        "nl": "Multibacillaire lepra in de zwangerschap bij nieuwe hiv-diagnose - rifampicine-ART-interactie, teratogeniteitsgrenzen en immuunreconstitutiereactie.",
+        "ru": "Мультибациллярная лепра при беременности и впервые выявленной ВИЧ-инфекции: взаимодействие рифампицина с АРТ, ограничения по тератогенности и реакция иммунного восстановления."
+      },
+      "discipline": "pharmacology",
+      "subspecialty": "antimicrobial_chemotherapy",
+      "difficulty": 5,
+      "tags": [
+        "leprosy",
+        "HIV",
+        "pregnancy",
+        "drug-interaction",
+        "rifampicin",
+        "CYP3A4",
+        "IRIS",
+        "pharmacology"
+      ],
+      "icd10_codes": [
+        "A30.5",
+        "B20",
+        "O98.8"
+      ],
+      "snomed_codes": [
+        "81004002"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Antimicrobial Stewardship Review Panel",
+      "patient": {
+        "pseudonym": "Patient LEP-006",
+        "age_years": 26,
+        "sex": "female",
+        "weight_kg": 56.0,
+        "height_cm": 161.0,
+        "ancestry": "African",
+        "pregnancy_status": "18 weeks pregnant, first pregnancy",
+        "occupation": "Farm worker",
+        "region": "Endemic region with high HIV prevalence"
+      },
+      "presentation": {
+        "chief_complaint": "Newly diagnosed multibacillary leprosy at 18 weeks of pregnancy, with HIV diagnosed on the same day at antenatal booking.",
+        "chief_complaint_i18n": {
+          "en": "Newly diagnosed multibacillary leprosy at 18 weeks pregnant, with HIV diagnosed the same day.",
+          "de": "Neu diagnostizierte multibazilläre Lepra in der 18. Schwangerschaftswoche, HIV am selben Tag festgestellt.",
+          "es": "Lepra multibacilar de nuevo diagnóstico a las 18 semanas de embarazo, con VIH diagnosticado el mismo día.",
+          "nl": "Nieuw gediagnosticeerde multibacillaire lepra bij 18 weken zwangerschap, met dezelfde dag een hiv-diagnose.",
+          "ru": "Впервые выявленная мультибациллярная лепра на 18-й неделе беременности; в тот же день диагностирована ВИЧ-инфекция."
+        },
+        "history_of_present_illness": "She presented to antenatal booking with a two-year history of enlarging skin patches, now numerous and infiltrated, with numbness of both feet. Routine antenatal HIV testing was positive, with a CD4 count of 180 cells/µL and a viral load of 340,000 copies/mL. She therefore requires antiretroviral therapy, multibacillary leprosy treatment and safe obstetric care simultaneously, and each constrains the others.",
+        "past_medical_history": [
+          "Newly diagnosed HIV, antiretroviral-naive",
+          "No previous pregnancy",
+          "No tuberculosis"
+        ],
+        "medications": [
+          {
+            "name": "Ferrous sulfate and folic acid",
+            "dose": "standard antenatal",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "pregnancy"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "No known leprosy"
+        ],
+        "social_history": "Farm worker. Partner's HIV status unknown; partner notification and testing arranged.",
+        "review_of_systems": {
+          "dermatological": "Numerous infiltrated hypopigmented and erythematous plaques on trunk and limbs",
+          "neurological": "Bilateral glove-and-stocking sensory loss; no motor deficit at presentation",
+          "obstetric": "Fetal movements felt; no bleeding, no contractions",
+          "general": "Weight appropriate for gestation; no fever, no night sweats, no cough"
+        },
+        "vitals": {
+          "heart_rate_bpm": 92,
+          "blood_pressure_mmhg": "110/68",
+          "respiratory_rate": 18,
+          "temperature_c": 36.9,
+          "weight_kg": 56.0
+        },
+        "examination_findings": [
+          "Multiple (more than 20) infiltrated, hypopigmented and erythematous plaques on trunk and limbs",
+          "Bilateral ulnar and posterior tibial nerve thickening, non-tender at presentation",
+          "Glove-and-stocking sensory loss with intact motor function (MRC 5/5 throughout)",
+          "Uterus consistent with 18 weeks; fetal heart rate 148 bpm",
+          "No oral candidiasis, no lymphadenopathy, no hepatosplenomegaly",
+          "No features of active tuberculosis"
+        ]
+      },
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear",
+          "site": "Six sites",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Abundant acid-fast bacilli including globi.",
+          "bacterial_index": 4.8,
+          "morphological_index": 22.0,
+          "molecular_findings": [
+            {
+              "target": "rpoB / folP1 / gyrA",
+              "method": "Sanger sequencing",
+              "result": "All wild type",
+              "interpretation": "Fully susceptible. Standard MB-MDT is appropriate, which simplifies one of the three competing problems."
+            }
+          ],
+          "susceptibility": [
+            {
+              "agent": "Rifampicin",
+              "method": "Molecular (rpoB)",
+              "result": "Susceptible",
+              "mic": null
+            },
+            {
+              "agent": "Dapsone",
+              "method": "Molecular (folP1)",
+              "result": "Susceptible",
+              "mic": null
+            },
+            {
+              "agent": "Ofloxacin",
+              "method": "Molecular (gyrA)",
+              "result": "Susceptible",
+              "mic": null
+            }
+          ],
+          "interpretation": "Fully susceptible multibacillary leprosy with a high bacillary load. Standard MB-MDT is indicated; the complexity lies entirely in the interactions and the pregnancy, not in the organism."
+        },
+        {
+          "day_offset": 90,
+          "specimen_type": "Slit-skin smear",
+          "site": "Six sites",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Acid-fast bacilli present, predominantly fragmented.",
+          "bacterial_index": 4.4,
+          "morphological_index": 2.0,
+          "molecular_findings": [],
+          "susceptibility": [],
+          "interpretation": "Morphological index falling rapidly. Bacillary killing is proceeding normally despite HIV co-infection, which is the expected pattern - HIV does not impair the response of leprosy to MDT."
+        }
+      ],
+      "lab_panels": [
+        {
+          "panel_code": "HIV_BASELINE",
+          "panel_name": "HIV baseline assessment",
+          "day_offset": 0,
+          "specimen": "EDTA whole blood / plasma",
+          "results": [
+            {
+              "analyte_code": "CD4",
+              "analyte_name": "CD4 lymphocyte count",
+              "value_numeric": 180.0,
+              "unit": "cells/µL",
+              "ref_low": 500.0,
+              "ref_high": 1500.0,
+              "flag": "LL",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "HIV_VL",
+              "analyte_name": "HIV-1 viral load",
+              "value_numeric": 340000.0,
+              "unit": "copies/mL",
+              "ref_high": 50.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 98.0,
+              "unit": "g/L",
+              "ref_low": 110.0,
+              "ref_high": 145.0,
+              "flag": "L",
+              "interference_note": "Anaemia of pregnancy plus chronic infection. Relevant because dapsone will add a haemolytic burden."
+            },
+            {
+              "analyte_code": "G6PD",
+              "analyte_name": "G6PD activity",
+              "value_numeric": 9.8,
+              "unit": "U/g Hb",
+              "ref_low": 6.4,
+              "ref_high": 18.7,
+              "interference_note": "Normal, so dapsone can be used. Note that female heterozygotes can give intermediate results because of lyonisation, so a borderline value would need genotyping."
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 28.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 52.0,
+              "unit": "µmol/L",
+              "ref_low": 45.0,
+              "ref_high": 90.0
+            },
+            {
+              "analyte_code": "CRAG",
+              "analyte_name": "Serum cryptococcal antigen",
+              "value_text": "Negative",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "Routine at a CD4 below 200 before starting antiretroviral therapy."
+            },
+            {
+              "analyte_code": "TB_LAM",
+              "analyte_name": "Urine TB-LAM and sputum Xpert",
+              "value_text": "Negative",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "Tuberculosis must be excluded before starting rifampicin-containing therapy in an HIV-positive patient - undiagnosed TB treated with monthly rifampicin alone would generate rifampicin-resistant TB."
+            }
+          ]
+        },
+        {
+          "panel_code": "HIV_MONITORING",
+          "panel_name": "HIV response on treatment",
+          "day_offset": 90,
+          "specimen": "plasma / EDTA whole blood",
+          "comment": "Three months on dolutegravir-based ART with a doubled dolutegravir dose because of rifampicin.",
+          "results": [
+            {
+              "analyte_code": "HIV_VL",
+              "analyte_name": "HIV-1 viral load",
+              "value_numeric": 120.0,
+              "unit": "copies/mL",
+              "ref_high": 50.0,
+              "flag": "H",
+              "interference_note": "Falling appropriately. The dose adjustment is working; without it, rifampicin induction of UGT1A1 and CYP3A4 would have roughly halved dolutegravir exposure and risked virological failure with integrase resistance."
+            },
+            {
+              "analyte_code": "CD4",
+              "analyte_name": "CD4 lymphocyte count",
+              "value_numeric": 310.0,
+              "unit": "cells/µL",
+              "ref_low": 500.0,
+              "ref_high": 1500.0,
+              "flag": "L",
+              "interference_note": "Rising CD4 count - which is also what precipitates the immune reconstitution reaction seen at week 8."
+            },
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 92.0,
+              "unit": "g/L",
+              "ref_low": 110.0,
+              "ref_high": 145.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "METHB",
+              "analyte_name": "Methaemoglobin fraction",
+              "value_numeric": 3.4,
+              "unit": "%",
+              "ref_low": 0.0,
+              "ref_high": 1.5,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "REACTION",
+          "panel_name": "Assessment of week-8 reaction",
+          "day_offset": 56,
+          "specimen": "serum / clinical",
+          "comment": "Eight weeks after starting ART: existing plaques became inflamed and both ulnar nerves became tender.",
+          "results": [
+            {
+              "analyte_code": "CRP",
+              "analyte_name": "C-reactive protein",
+              "value_numeric": 22.0,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "VMT_ADM_R",
+              "analyte_name": "Voluntary muscle test - right little finger abduction",
+              "value_numeric": 4.0,
+              "unit": "MRC grade",
+              "ref_low": 5.0,
+              "ref_high": 5.0,
+              "flag": "LL",
+              "is_critical": true,
+              "interference_note": "New motor deficit - the threshold for corticosteroid regardless of pregnancy."
+            },
+            {
+              "analyte_code": "NERVE_TENDERNESS",
+              "analyte_name": "Nerve palpation",
+              "value_text": "Both ulnar nerves newly tender",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Immune reconstitution inflammatory syndrome presenting as a type 1 leprosy reaction - a recognised consequence of the rising CD4 count."
+            }
+          ]
+        }
+      ],
+      "smears": [],
+      "imaging": [
+        {
+          "modality": "Obstetric ultrasound",
+          "region": "Fetus",
+          "day_offset": 1,
+          "findings": "Single viable intrauterine pregnancy at 18+2 weeks. Growth on the 45th centile. Normal anatomy survey. Normal liquor volume and umbilical artery Doppler.",
+          "impression": "Normal fetus. Serial growth scans arranged, since corticosteroid, chronic infection and HIV all carry fetal growth implications."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Concurrent MB-MDT, antiretroviral therapy and reaction management in pregnancy",
+          "guideline_source": "Composite of WHO 2018 leprosy guidelines, WHO HIV treatment guidelines and obstetric practice",
+          "indication": "Multibacillary leprosy with newly diagnosed HIV (CD4 180) at 18 weeks of pregnancy, complicated by an immune reconstitution type 1 reaction at week 8.",
+          "duration_months": 12,
+          "regimen": [
+            {
+              "agent": "Rifampicin",
+              "dose": "600 mg",
+              "route": "oral",
+              "frequency": "once monthly, supervised",
+              "duration": "12 months",
+              "notes": "SAFE in pregnancy. Give vitamin K to the mother in the last weeks and to the neonate at birth, since rifampicin can cause neonatal haemorrhagic disease."
+            },
+            {
+              "agent": "Clofazimine",
+              "dose": "50 mg daily and 300 mg monthly",
+              "route": "oral",
+              "frequency": "as stated",
+              "duration": "12 months",
+              "notes": "Considered safe in pregnancy. Crosses the placenta and causes reversible neonatal skin pigmentation - the parents must be told in advance or it causes real distress at delivery."
+            },
+            {
+              "agent": "Dapsone",
+              "dose": "100 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "12 months",
+              "notes": "Safe in pregnancy. Adds to the anaemia; folate supplementation is continued. G6PD is normal. Neonatal haemolysis and kernicterus are a theoretical risk if given close to delivery in a G6PD-deficient infant."
+            },
+            {
+              "agent": "Dolutegravir",
+              "dose": "50 mg TWICE daily (doubled)",
+              "route": "oral",
+              "frequency": "twice daily while on rifampicin",
+              "duration": "revert to once daily 2 weeks after rifampicin stops",
+              "notes": "THE central interaction. Rifampicin induces UGT1A1 and CYP3A4 and roughly halves dolutegravir exposure; the dose must be doubled or virological failure and integrase resistance follow."
+            },
+            {
+              "agent": "Tenofovir disoproxil with lamivudine",
+              "dose": "300 mg / 300 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "long term",
+              "notes": "No clinically significant interaction with rifampicin."
+            },
+            {
+              "agent": "AVOID protease inhibitors with rifampicin",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "Rifampicin reduces boosted protease inhibitor concentrations by up to 80%. If a protease inhibitor is unavoidable, rifabutin substitutes for rifampicin - but only if the strain is rifamycin-susceptible."
+            },
+            {
+              "agent": "Prednisolone for the type 1 reaction",
+              "dose": "40 mg reducing over 20 weeks",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "20 weeks from week 8",
+              "notes": "Started for the new motor deficit. Prednisolone is largely inactivated by placental 11-beta-hydroxysteroid dehydrogenase, so fetal exposure is limited and it is the corticosteroid of choice in pregnancy. Nerve preservation outweighs the fetal growth risk here."
+            },
+            {
+              "agent": "THALIDOMIDE ABSOLUTELY CONTRAINDICATED",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "Even if a type 2 reaction were to develop. In pregnancy the alternatives are corticosteroid, high-dose clofazimine and, if needed, pentoxifylline."
+            },
+            {
+              "agent": "Co-trimoxazole prophylaxis",
+              "dose": "960 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "until CD4 above 200 sustained",
+              "notes": "CD4 180. Note that co-trimoxazole plus dapsone compounds the haemolysis and methaemoglobinaemia risk, and the haemoglobin must be watched."
+            }
+          ],
+          "monitoring": [
+            "HIV viral load at 3 and 6 months - the readout on whether the dolutegravir dose adjustment is adequate",
+            "Full blood count monthly: pregnancy, HIV, dapsone and co-trimoxazole all contribute to anaemia",
+            "Methaemoglobin if cyanosis or unexplained breathlessness develops",
+            "Nerve function assessment at every visit - the reaction is the main threat to long-term function",
+            "Serial fetal growth scans, given corticosteroid exposure and chronic infection",
+            "Vitamin K to the mother in late pregnancy and to the neonate at birth",
+            "Revert dolutegravir to once daily 2 weeks after rifampicin is stopped - a step that is very easy to forget",
+            "Infant follow-up: HIV PCR per protocol, and reassurance about reversible clofazimine pigmentation"
+          ],
+          "contraindications": [
+            "Thalidomide (absolute in pregnancy)",
+            "Minocycline and other tetracyclines in pregnancy",
+            "Boosted protease inhibitors with rifampicin",
+            "Standard once-daily dolutegravir alongside rifampicin"
+          ],
+          "adverse_effects": [
+            "Anaemia from combined dapsone, co-trimoxazole and pregnancy; neonatal pigmentation from clofazimine; neonatal haemorrhagic disease from rifampicin; corticosteroid effects on fetal growth and maternal glucose"
+          ],
+          "notes": "HIV co-infection does not alter the leprosy regimen or its duration, and leprosy is not an AIDS-defining illness. What HIV changes is the interaction landscape and the likelihood of an immune reconstitution reaction, which occurred here at week 8."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Multibacillary leprosy with HIV co-infection in pregnancy, complicated by an immune reconstitution type 1 reaction",
+          "label_i18n": {
+            "en": "Multibacillary leprosy with HIV co-infection in pregnancy and immune reconstitution type 1 reaction",
+            "de": "Multibazilläre Lepra mit HIV-Koinfektion in der Schwangerschaft und Typ-1-Immunrekonstitutionsreaktion",
+            "es": "Lepra multibacilar con coinfección por VIH en el embarazo y reacción de tipo 1 por reconstitución inmune",
+            "nl": "Multibacillaire lepra met hiv-co-infectie in de zwangerschap en type 1 immuunreconstitutiereactie",
+            "ru": "Мультибациллярная лепра с ВИЧ-коинфекцией при беременности, осложнённая реакцией 1-го типа на фоне иммунного восстановления"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.95,
+          "icd10": "A30.5",
+          "discriminator": "Smear-positive multibacillary disease with a bacterial index of 4.8, concurrent untreated HIV with a CD4 of 180, and a type 1 reaction emerging eight weeks after antiretroviral therapy as the CD4 count rose.",
+          "supporting_evidence": [
+            "More than 20 lesions with bacterial index 4.8 and morphological index 22%",
+            "CD4 180 cells/µL with viral load 340,000 copies/mL",
+            "Type 1 reaction at week 8 of ART with a rising CD4 count",
+            "Existing lesions inflamed with new nerve tenderness and motor deficit",
+            "Wild-type resistance targets throughout",
+            "Appropriate virological and bacteriological response on adjusted therapy"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Tuberculosis co-infection",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.05,
+          "discriminator": "Must be actively excluded before any rifampicin-containing regimen in an HIV-positive patient. Undiagnosed tuberculosis exposed to monthly rifampicin alone would generate rifampicin-resistant TB.",
+          "supporting_evidence": [
+            "HIV with CD4 180 in a high-burden setting"
+          ],
+          "refuting_evidence": [
+            "Urine TB-LAM negative",
+            "Sputum Xpert negative",
+            "No cough, fever or night sweats"
+          ]
+        },
+        {
+          "label": "Type 2 reaction (erythema nodosum leprosum)",
+          "is_primary": false,
+          "certainty": "possible",
+          "likelihood": 0.15,
+          "discriminator": "Her bacillary load puts her at real risk of ENL later in treatment. It would matter enormously, because thalidomide - the most effective treatment - is absolutely contraindicated in pregnancy and the alternatives are weaker.",
+          "supporting_evidence": [
+            "High bacterial index is the main risk factor for ENL"
+          ],
+          "refuting_evidence": [
+            "Current reaction involves existing lesions without fever, nodules or systemic features"
+          ]
+        },
+        {
+          "label": "Antiretroviral drug failure from non-adherence",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "The default explanation for a slow viral load decline, and wrong here. The relevant question was whether the dolutegravir dose had been adjusted for rifampicin - a pharmacological problem, not a behavioural one.",
+          "supporting_evidence": [
+            "Viral load not fully suppressed at 3 months"
+          ],
+          "refuting_evidence": [
+            "Viral load fell from 340,000 to 120 copies/mL",
+            "Dose correctly doubled",
+            "Good documented adherence"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Rifampicin is a potent inducer of CYP3A4 and UGT1A1. Dolutegravir must be doubled to twice-daily dosing while rifampicin is given, and reverted two weeks after it stops - a step that is very easy to forget and that causes unnecessary toxicity if missed.",
+        "Boosted protease inhibitors cannot be combined with rifampicin; concentrations fall by up to 80%. Rifabutin is the substitute, but only where the strain is rifamycin-susceptible.",
+        "Exclude tuberculosis before starting a rifampicin-containing regimen in any HIV-positive patient. Monthly rifampicin against undiagnosed TB is effectively intermittent monotherapy and generates rifampicin-resistant tuberculosis.",
+        "MB-MDT is safe in pregnancy: rifampicin, clofazimine and dapsone are all used. Thalidomide and the tetracyclines are not.",
+        "Immune reconstitution after starting antiretroviral therapy commonly presents as a type 1 leprosy reaction, typically within the first three months as the CD4 count rises. It is treated as any type 1 reaction, with corticosteroid, and antiretroviral therapy is continued.",
+        "Prednisolone is the corticosteroid of choice in pregnancy because placental 11-beta-hydroxysteroid dehydrogenase largely inactivates it, limiting fetal exposure. Preserving nerve function outweighs the growth risk when there is a new motor deficit.",
+        "Warn the parents in advance that clofazimine crosses the placenta and causes reversible neonatal skin pigmentation, and give vitamin K to mother and neonate because of rifampicin.",
+        "HIV does not change the leprosy regimen or its duration, and it does not impair the bacteriological response. What it changes is the interaction landscape and the risk of reactions."
+      ],
+      "references": [
+        {
+          "citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. 2018.",
+          "type": "guideline"
+        },
+        {
+          "citation": "WHO Consolidated Guidelines on HIV Prevention, Testing, Treatment, Service Delivery and Monitoring. 2021.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Deps P, Lockwood DNJ. Leprosy occurring as immune reconstitution syndrome. Trans R Soc Trop Med Hyg.",
+          "type": "review"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Multibacillary leprosy with HIV co-infection in pregnancy and immune reconstitution type 1 reaction",
+        "accepted_diagnosis_terms": [
+          "multibacillary leprosy",
+          "leprosy with hiv",
+          "hiv co-infection",
+          "immune reconstitution",
+          "iris",
+          "type 1 reaction"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Rifampicin-dolutegravir interaction requiring dose doubling",
+            "synonyms": [
+              "dolutegravir twice daily",
+              "double the dose",
+              "cyp3a4 induction",
+              "ugt1a1",
+              "enzyme induction"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Exclude tuberculosis before rifampicin",
+            "synonyms": [
+              "exclude tb",
+              "tb-lam",
+              "xpert",
+              "rule out tuberculosis"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Thalidomide contraindicated in pregnancy",
+            "synonyms": [
+              "thalidomide contraindicated",
+              "teratogenic",
+              "avoid thalidomide",
+              "phocomelia"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "MDT is safe in pregnancy",
+            "synonyms": [
+              "mdt safe in pregnancy",
+              "continue mdt",
+              "rifampicin clofazimine dapsone safe"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Immune reconstitution presenting as a type 1 reaction",
+            "synonyms": [
+              "iris",
+              "immune reconstitution",
+              "reaction after art",
+              "rising cd4"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Corticosteroid for the new motor deficit",
+            "synonyms": [
+              "prednisolone",
+              "steroid",
+              "nerve function",
+              "motor deficit"
+            ],
+            "weight": 1.75
+          }
+        ],
+        "expected_differential": [
+          "tuberculosis co-infection",
+          "type 2 reaction",
+          "antiretroviral failure from non-adherence",
+          "drug rash",
+          "pregnancy-related dermatosis"
+        ],
+        "expected_next_tests": [
+          "cd4 and viral load",
+          "tb screening",
+          "g6pd",
+          "full blood count",
+          "resistance testing",
+          "obstetric ultrasound",
+          "cryptococcal antigen"
+        ],
+        "expected_management": [
+          "standard mb-mdt",
+          "dolutegravir doubled with rifampicin",
+          "avoid protease inhibitors",
+          "prednisolone for the reaction",
+          "avoid thalidomide",
+          "co-trimoxazole prophylaxis",
+          "vitamin k for mother and neonate",
+          "revert dolutegravir dose after rifampicin stops"
+        ],
+        "critical_values": [
+          {
+            "analyte": "CD4",
+            "value": 180.0,
+            "reason": "Advanced HIV requiring opportunistic infection prophylaxis"
+          },
+          {
+            "analyte": "VMT_ADM_R",
+            "value": 4.0,
+            "reason": "New motor deficit requiring urgent corticosteroid"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-LEP-HIV-DTG",
+            "description": "Must address the rifampicin-dolutegravir interaction.",
+            "required_terms": [
+              "dolutegravir",
+              "twice daily",
+              "double",
+              "interaction",
+              "induction"
+            ]
+          },
+          {
+            "id": "SR-LEP-HIV-TB",
+            "description": "Must recommend excluding tuberculosis before rifampicin.",
+            "required_terms": [
+              "tuberculosis",
+              "tb",
+              "exclude",
+              "screen"
+            ]
+          },
+          {
+            "id": "SR-LEP-HIV-THAL",
+            "description": "Must not recommend thalidomide.",
+            "forbidden_patterns": [
+              "thalidomide",
+              "start thalidomide",
+              "thalidomide is indicated"
+            ]
+          },
+          {
+            "id": "SR-LEP-HIV-PI",
+            "description": "Must not recommend a boosted protease inhibitor alongside rifampicin.",
+            "forbidden_patterns": [
+              "lopinavir with rifampicin",
+              "boosted protease inhibitor with rifampicin",
+              "ritonavir-boosted with rifampicin"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "stop mdt",
+          "delay art",
+          "efavirenz is contraindicated in pregnancy",
+          "terminate the pregnancy",
+          "second-line leprosy regimen"
+        ]
+      }
+    },
+    {
+      "case_code": "LEP-007",
+      "title": "New disease seven years after cure: relapse, reinfection or late reaction?",
+      "title_i18n": {
+        "en": "New disease seven years after cure: relapse, reinfection or late reaction?",
+        "de": "Neue Erkrankung sieben Jahre nach Heilung: Rezidiv, Reinfektion oder späte Reaktion?",
+        "es": "Enfermedad nueva siete años tras la curación: ¿recaída, reinfección o reacción tardía?",
+        "nl": "Nieuwe ziekte zeven jaar na genezing: recidief, herinfectie of late reactie?",
+        "ru": "Новое заболевание через семь лет после излечения: рецидив, реинфекция или поздняя реакция?"
+      },
+      "summary": "Molecular epidemiology as a clinical tool. VNTR typing shows a DIFFERENT strain from the original episode, establishing reinfection - which reframes the problem from a treatment failure into an ongoing transmission failure and changes the public health response.",
+      "summary_i18n": {
+        "en": "VNTR typing shows a different strain, establishing reinfection rather than relapse - reframing a treatment failure as a transmission failure.",
+        "de": "VNTR-Typisierung zeigt einen anderen Stamm und belegt eine Reinfektion statt eines Rezidivs - aus einem Therapieversagen wird ein Übertragungsproblem.",
+        "es": "La tipificación VNTR muestra una cepa distinta y establece reinfección en lugar de recaída, reencuadrando un fallo terapéutico como un fallo de transmisión.",
+        "nl": "VNTR-typering toont een andere stam en bewijst herinfectie in plaats van recidief - een behandelfalen wordt zo een transmissieprobleem.",
+        "ru": "VNTR-типирование выявляет другой штамм, подтверждая реинфекцию, а не рецидив: неудача лечения оказывается неудачей контроля передачи."
+      },
+      "discipline": "microbiology",
+      "subspecialty": "mycobacteriology",
+      "difficulty": 4,
+      "tags": [
+        "leprosy",
+        "reinfection",
+        "relapse",
+        "VNTR",
+        "molecular-epidemiology",
+        "transmission",
+        "public-health",
+        "prophylaxis"
+      ],
+      "icd10_codes": [
+        "A30.5"
+      ],
+      "snomed_codes": [
+        "81004002"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Mycobacteriology Review Panel",
+      "patient": {
+        "pseudonym": "Patient LEP-007",
+        "age_years": 48,
+        "sex": "male",
+        "weight_kg": 63.0,
+        "height_cm": 170.0,
+        "ancestry": "West African",
+        "occupation": "Fisherman",
+        "region": "Endemic coastal community with incomplete contact tracing"
+      },
+      "presentation": {
+        "chief_complaint": "New skin lesions and numb fingers seven years after being declared cured of multibacillary leprosy.",
+        "chief_complaint_i18n": {
+          "en": "New skin lesions and numb fingers seven years after being declared cured.",
+          "de": "Neue Hautläsionen und taube Finger sieben Jahre nach Heilungserklärung.",
+          "es": "Lesiones cutáneas nuevas y dedos adormecidos siete años después de ser declarado curado.",
+          "nl": "Nieuwe huidlaesies en gevoelloze vingers zeven jaar na genezenverklaring.",
+          "ru": "Новые кожные высыпания и онемение пальцев через семь лет после объявления об излечении."
+        },
+        "history_of_present_illness": "He completed 12 months of MB-MDT eight years ago with a documented fall in bacterial index from 3.6 to 1.2 and was declared cured. He remained well for seven years with annual reviews showing no new lesions. Over the last six months new hypopigmented and infiltrated lesions have appeared in previously unaffected sites, with progressive numbness of both hands. He has no fever, no tender nodules and no lesion tenderness. Two of his neighbours - not household members, and never traced or examined - were diagnosed with leprosy in the intervening years.",
+        "past_medical_history": [
+          "Borderline lepromatous leprosy treated 8 years ago, BI 3.6 at diagnosis, declared cured after 12 months of MB-MDT"
+        ],
+        "medications": [],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "No household leprosy"
+        ],
+        "social_history": "Fisherman working in close quarters on small boats. Lives in a dense coastal settlement where two neighbours were diagnosed with leprosy in the last seven years and were never formally traced as contacts of anyone.",
+        "review_of_systems": {
+          "dermatological": "New lesions in previously uninvolved sites; no tenderness",
+          "neurological": "Progressive numbness of both hands over 6 months; no acute pain, no motor loss yet",
+          "general": "Well, no fever, no weight loss"
+        },
+        "vitals": {
+          "heart_rate_bpm": 74,
+          "blood_pressure_mmhg": "128/80",
+          "respiratory_rate": 16,
+          "temperature_c": 36.7,
+          "weight_kg": 63.0
+        },
+        "examination_findings": [
+          "Eleven new hypopigmented and infiltrated plaques on the back, shoulders and thighs - anatomical sites uninvolved during the original episode, as documented in the archived body chart",
+          "Original lesion sites remain flat, repigmented and inactive",
+          "Bilateral ulnar nerve thickening, NON-tender, with grade 1 sensory impairment",
+          "No motor deficit (MRC 5/5 throughout)",
+          "No tender nodules, no fever, no uveitis",
+          "No plantar ulceration"
+        ]
+      },
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear and biopsy",
+          "site": "Six sites including new lesions",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Acid-fast bacilli present in moderate numbers with a substantial proportion of solidly staining forms.",
+          "bacterial_index": 3.4,
+          "morphological_index": 16.0,
+          "molecular_findings": [
+            {
+              "target": "rpoB / folP1 / gyrA",
+              "method": "Sanger sequencing",
+              "result": "All wild type",
+              "interpretation": "FULLY SUSCEPTIBLE. This is an important negative: a relapse after adequate treatment would more often carry a resistance mutation, and full susceptibility here points towards a newly acquired strain."
+            },
+            {
+              "target": "VNTR strain typing",
+              "method": "Multi-locus VNTR across 16 loci",
+              "result": "Profile differs from the archived original isolate at 6 of 16 loci",
+              "interpretation": "A DIFFERENT STRAIN. This is reinfection, not relapse. The distinction is not academic: relapse implicates the treatment, whereas reinfection implicates ongoing community transmission and an incomplete contact-tracing programme."
+            },
+            {
+              "target": "SNP typing",
+              "method": "M. leprae SNP subtype analysis",
+              "result": "SNP subtype 4N; the original isolate was subtype 4P",
+              "interpretation": "Different subtype, independently confirming a distinct infecting strain."
+            }
+          ],
+          "susceptibility": [
+            {
+              "agent": "Rifampicin",
+              "method": "Molecular (rpoB)",
+              "result": "Susceptible",
+              "mic": null
+            },
+            {
+              "agent": "Dapsone",
+              "method": "Molecular (folP1)",
+              "result": "Susceptible",
+              "mic": null
+            },
+            {
+              "agent": "Ofloxacin",
+              "method": "Molecular (gyrA)",
+              "result": "Susceptible",
+              "mic": null
+            }
+          ],
+          "interpretation": "Multibacillary leprosy caused by a strain genotypically distinct from the original infecting organism at 6 of 16 VNTR loci and of a different SNP subtype. This is REINFECTION with a fully susceptible strain. Standard MB-MDT is indicated, and the significant finding for the health system is that transmission is continuing in this community."
+        }
+      ],
+      "lab_panels": [
+        {
+          "panel_code": "BASELINE_SAFETY",
+          "panel_name": "Baseline safety bloods",
+          "day_offset": 0,
+          "specimen": "whole blood / serum",
+          "results": [
+            {
+              "analyte_code": "HB",
+              "analyte_name": "Haemoglobin",
+              "value_numeric": 136.0,
+              "unit": "g/L",
+              "ref_low": 135.0,
+              "ref_high": 175.0
+            },
+            {
+              "analyte_code": "G6PD",
+              "analyte_name": "G6PD activity",
+              "value_numeric": 3.2,
+              "unit": "U/g Hb",
+              "ref_low": 6.4,
+              "ref_high": 18.7,
+              "flag": "LL",
+              "is_critical": true,
+              "interference_note": "G6PD DEFICIENT - and he received dapsone for 12 months during his original treatment without ever being tested. He tolerated it, which happens with the milder African A- variant, but it must not be repeated now that it is known."
+            },
+            {
+              "analyte_code": "G6PD_GENOTYPE",
+              "analyte_name": "G6PD genotype",
+              "value_text": "Hemizygous G6PD A- (V68M/N126D), WHO class III",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "The African A- variant causes self-limiting haemolysis of older cells only, unlike the Mediterranean variant in HEM-003. It is still a contraindication to a 12-month dapsone course."
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 34.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0
+            },
+            {
+              "analyte_code": "HIV_SEROLOGY",
+              "analyte_name": "HIV serology",
+              "value_text": "Negative",
+              "unit": null,
+              "flag": "N"
+            },
+            {
+              "analyte_code": "QTC",
+              "analyte_name": "QTc interval",
+              "value_numeric": 402.0,
+              "unit": "ms",
+              "ref_low": 350.0,
+              "ref_high": 450.0
+            }
+          ]
+        }
+      ],
+      "smears": [],
+      "imaging": [
+        {
+          "modality": "High-resolution nerve ultrasound",
+          "region": "Bilateral ulnar nerves",
+          "day_offset": 2,
+          "findings": "Bilateral ulnar nerve enlargement (16 mm2 right, 15 mm2 left) with no intraneural hypervascularity on power Doppler.",
+          "impression": "Chronic thickening without acute neuritis - consistent with bacillary infiltration rather than a reaction, and therefore not an indication for corticosteroid."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Standard MB-MDT for reinfection, with a dapsone-free substitution and a community transmission response",
+          "guideline_source": "WHO 2018 leprosy guidelines including alternative regimens and post-exposure prophylaxis",
+          "indication": "Reinfection with fully susceptible M. leprae in a G6PD-deficient patient, with evidence of ongoing community transmission.",
+          "duration_months": 12,
+          "regimen": [
+            {
+              "agent": "Rifampicin",
+              "dose": "600 mg",
+              "route": "oral",
+              "frequency": "once monthly, supervised",
+              "duration": "12 months",
+              "notes": "Fully susceptible strain, so first-line therapy is appropriate. Reinfection is NOT a reason to reach for a second-line regimen."
+            },
+            {
+              "agent": "Clofazimine",
+              "dose": "50 mg daily and 300 mg monthly",
+              "route": "oral",
+              "frequency": "as stated",
+              "duration": "12 months",
+              "notes": ""
+            },
+            {
+              "agent": "Ofloxacin",
+              "dose": "400 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "12 months",
+              "notes": "SUBSTITUTED FOR DAPSONE because of G6PD deficiency. gyrA is wild type so the substitution is sound. Baseline ECG performed given the clofazimine-ofloxacin QT combination."
+            },
+            {
+              "agent": "DAPSONE OMITTED",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "G6PD deficient. He tolerated dapsone eight years ago with the milder A- variant, but a 12-month re-exposure with the deficiency now documented would be indefensible."
+            },
+            {
+              "agent": "Community contact tracing programme",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "12 months",
+              "notes": "Extended beyond the household to neighbours and boat crew. Two previously untraced neighbourhood cases are the likely source and mark a programme failure."
+            },
+            {
+              "agent": "Single-dose rifampicin post-exposure prophylaxis",
+              "dose": "600 mg adults, weight-banded in children aged 2 and over",
+              "route": "oral",
+              "frequency": "once",
+              "duration": "n/a",
+              "notes": "Offered to traced contacts after leprosy has been excluded in each. Reduces incidence by roughly 50-60% over two years."
+            }
+          ],
+          "monitoring": [
+            "Slit-skin smears at 6 and 12 months for bacterial and morphological index",
+            "ECG at baseline and 1 month for the clofazimine-ofloxacin QT combination",
+            "Monthly nerve function assessment",
+            "Document G6PD deficiency prominently and permanently in the record - it was missed once already",
+            "Programme-level review: two untraced neighbourhood cases represent a systems failure, not a patient failure"
+          ],
+          "contraindications": [
+            "Dapsone (G6PD deficiency)"
+          ],
+          "adverse_effects": [
+            "Clofazimine pigmentation; ofloxacin tendinopathy, QT prolongation and peripheral neuropathy which is hard to distinguish from leprosy neuropathy"
+          ],
+          "notes": "The molecular typing changed the response at every level. Relapse would have prompted a review of his original treatment and resistance testing as the priority; reinfection prompts a community transmission investigation and a prophylaxis campaign."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Reinfection with a genotypically distinct, fully susceptible M. leprae strain",
+          "label_i18n": {
+            "en": "Reinfection with a genotypically distinct M. leprae strain",
+            "de": "Reinfektion mit einem genotypisch verschiedenen M.-leprae-Stamm",
+            "es": "Reinfección por una cepa de M. leprae genotípicamente distinta",
+            "nl": "Herinfectie met een genotypisch andere M. leprae-stam",
+            "ru": "Реинфекция генотипически иным штаммом M. leprae"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.92,
+          "icd10": "A30.5",
+          "discriminator": "VNTR profile differing at 6 of 16 loci and a different SNP subtype from the archived original isolate, with a fully susceptible strain, new lesions at previously uninvolved sites, and a seven-year disease-free interval.",
+          "supporting_evidence": [
+            "VNTR differs at 6 of 16 loci from the archived original isolate",
+            "SNP subtype 4N versus the original 4P",
+            "All resistance targets wild type - unusual for a true relapse after adequate treatment",
+            "Seven-year disease-free interval with documented annual reviews",
+            "New lesions at anatomical sites uninvolved originally, with the original sites inactive",
+            "Two untraced neighbourhood cases providing a plausible transmission source"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Relapse of the original infection",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.05,
+          "discriminator": "Clinically indistinguishable at the bedside, which is exactly why molecular typing is needed. Excluded by the different VNTR profile and SNP subtype. The distinction determines whether the health system reviews its treatment or its transmission control.",
+          "supporting_evidence": [
+            "Previously treated patient with new active disease and a positive smear"
+          ],
+          "refuting_evidence": [
+            "Different VNTR profile",
+            "Different SNP subtype",
+            "No resistance mutations",
+            "Long disease-free interval",
+            "New anatomical distribution"
+          ]
+        },
+        {
+          "label": "Late type 1 reaction",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "Type 1 reactions can occur years after cure and are the standard alternative to relapse. Excluded here by NEW lesions rather than inflammation of old ones, the absence of tenderness, the absence of intraneural hypervascularity, and above all by a bacterial index of 3.4 with a morphological index of 16%.",
+          "supporting_evidence": [
+            "Reactions can occur years after treatment completion"
+          ],
+          "refuting_evidence": [
+            "New lesions in new sites rather than inflamed old lesions",
+            "No tenderness of lesions or nerves",
+            "No intraneural Doppler signal",
+            "Morphological index 16% indicating viable multiplying bacilli"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Relapse and reinfection are clinically indistinguishable. Only molecular strain typing separates them, and the answer changes what the health system does: relapse implicates treatment, reinfection implicates transmission control.",
+        "A fully susceptible strain in a previously treated patient argues for reinfection. True relapse after adequate therapy more often carries a resistance mutation.",
+        "Archive the original isolate or its molecular profile. Without the stored baseline, no comparison is possible and this question becomes unanswerable years later.",
+        "New lesions at previously uninvolved sites, with the original sites inactive, favour reinfection. An archived body chart from the first episode is what makes that observation possible.",
+        "Reinfection with a susceptible strain is treated with standard first-line MDT. It is not a reason to escalate to a second-line regimen.",
+        "Check G6PD before dapsone, every time. This patient received a full 12-month course without testing and got away with it because he carries the milder A- variant.",
+        "Contact tracing must extend beyond the household in dense communities. Two untraced neighbourhood cases here were a programme failure that produced a second episode of disease in an already-treated patient.",
+        "Single-dose rifampicin post-exposure prophylaxis reduces contact incidence by roughly 50-60% over two years, and leprosy must be excluded in each contact before it is given."
+      ],
+      "references": [
+        {
+          "citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. 2018.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Weng X et al. Molecular typing of Mycobacterium leprae to distinguish relapse from reinfection. J Clin Microbiol.",
+          "type": "primary"
+        },
+        {
+          "citation": "Moet FJ et al. COLEP: single dose rifampicin for contacts. BMJ 2008.",
+          "type": "trial"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Reinfection with a different M. leprae strain",
+        "accepted_diagnosis_terms": [
+          "reinfection",
+          "re-infection",
+          "new infection",
+          "different strain",
+          "exogenous reinfection"
+        ],
+        "must_include_findings": [
+          {
+            "label": "VNTR profile differs from the original isolate",
+            "synonyms": [
+              "vntr",
+              "different strain",
+              "strain typing",
+              "6 of 16 loci",
+              "molecular typing"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Different SNP subtype",
+            "synonyms": [
+              "snp subtype",
+              "4n",
+              "4p",
+              "subtype differs"
+            ],
+            "weight": 1.75
+          },
+          {
+            "label": "Fully susceptible strain",
+            "synonyms": [
+              "no resistance mutations",
+              "wild type",
+              "fully susceptible"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "New lesions at previously uninvolved sites",
+            "synonyms": [
+              "new anatomical sites",
+              "new distribution",
+              "original sites inactive"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Ongoing community transmission",
+            "synonyms": [
+              "untraced neighbours",
+              "transmission",
+              "contact tracing failure",
+              "community spread"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "G6PD deficiency contraindicating dapsone",
+            "synonyms": [
+              "g6pd deficient",
+              "omit dapsone",
+              "substitute ofloxacin"
+            ],
+            "weight": 1.75
+          }
+        ],
+        "expected_differential": [
+          "relapse",
+          "late type 1 reaction",
+          "drug resistance",
+          "type 2 reaction",
+          "another granulomatous dermatosis"
+        ],
+        "expected_next_tests": [
+          "vntr strain typing against the archived isolate",
+          "snp subtyping",
+          "resistance testing",
+          "slit-skin smear with mi",
+          "g6pd",
+          "nerve ultrasound",
+          "contact screening"
+        ],
+        "expected_management": [
+          "standard mb-mdt",
+          "substitute ofloxacin for dapsone",
+          "12 months",
+          "extended contact tracing",
+          "single-dose rifampicin prophylaxis",
+          "baseline ecg",
+          "document g6pd deficiency",
+          "programme-level transmission review"
+        ],
+        "critical_values": [
+          {
+            "analyte": "G6PD",
+            "value": 3.2,
+            "reason": "Deficiency contraindicating a 12-month dapsone course"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-LEP-REINF-TYPING",
+            "description": "Must recommend molecular strain typing to separate relapse from reinfection.",
+            "required_terms": [
+              "vntr",
+              "strain typing",
+              "molecular typing",
+              "genotyping"
+            ]
+          },
+          {
+            "id": "SR-LEP-REINF-DAPSONE",
+            "description": "Must not recommend dapsone in this G6PD-deficient patient.",
+            "forbidden_patterns": [
+              "continue dapsone",
+              "standard mdt with dapsone",
+              "dapsone 100 mg"
+            ]
+          },
+          {
+            "id": "SR-LEP-REINF-PUBLIC",
+            "description": "Should recommend a community-level transmission response.",
+            "required_terms": [
+              "contact tracing",
+              "prophylaxis",
+              "public health",
+              "transmission",
+              "community"
+            ]
+          },
+          {
+            "id": "SR-LEP-REINF-NOSECOND",
+            "description": "Must not recommend a second-line regimen for a fully susceptible strain.",
+            "forbidden_patterns": [
+              "second-line regimen",
+              "clarithromycin and minocycline",
+              "24 months"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "drug resistance",
+          "treatment failure",
+          "type 2 reaction",
+          "thalidomide",
+          "tuberculosis"
+        ]
+      }
+    }
+  ]
+}

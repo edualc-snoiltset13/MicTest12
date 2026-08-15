@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Charles Proxy rewrite rules for the MedSimQA dashboard.
+
+  Import via: Tools > Rewrite > Import...
+
+  Each rule below is DISABLED by default (enabled="false"). Enable exactly one
+  at a time - enabling several produces a response corrupted in several ways at
+  once, and the resulting bug report cannot be attributed to any single fault.
+
+  These rules complement the in-browser Cypress interceptions rather than
+  duplicating them: Charles operates on the wire, so it also exercises TLS
+  interception and the behaviour of a physical device whose trust store may or
+  may not contain the Charles CA.
+
+  SSL setup (required for any of these to fire against HTTPS):
+    1. Proxy > SSL Proxying Settings > Enable SSL Proxying
+    2. Add location: host "*" port 443, and host "*" port 8000 for local dev
+    3. Help > SSL Proxying > Install Charles Root Certificate on Mobile Device
+    4. On Android 7+, an app only trusts user CAs if its network security
+       config opts in. The debug build of the mobile wrapper does; the release
+       build deliberately does NOT, which is what makes the "SSL decryption
+       error" test meaningful - see ../adb/setup-proxy.sh.
+-->
+<rewrite-set>
+  <name>MedSimQA fault injection</name>
+  <locations>
+    <locationPatterns>
+      <locationMatch>
+        <location>
+          <host>*</host>
+          <port>0</port>
+          <path>/api/v1/*</path>
+          <query></query>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+    </locationPatterns>
+  </locations>
+
+  <rules>
+    <!-- 1. Malformed JSON. Corrupts the body so JSON.parse fails at a
+            plausible offset rather than on the first byte. -->
+    <rewrite-rule>
+      <active>false</active>
+      <ruleType>body</ruleType>
+      <matchHeader></matchHeader>
+      <matchValue>"items":\[</matchValue>
+      <matchHeaderRegex>false</matchHeaderRegex>
+      <matchValueRegex>true</matchValueRegex>
+      <matchRequest>false</matchRequest>
+      <matchResponse>true</matchResponse>
+      <newValue>"items":[,,{"corrupted_by":"charles"</newValue>
+      <name>Malformed JSON body</name>
+    </rewrite-rule>
+
+    <!-- 2. Content-Type lie. Body is JSON; header says HTML. Exercises the
+            branch where a client trusts the header over the payload. -->
+    <rewrite-rule>
+      <active>false</active>
+      <ruleType>header</ruleType>
+      <matchHeader>Content-Type</matchHeader>
+      <matchValue>application/json</matchValue>
+      <matchHeaderRegex>false</matchHeaderRegex>
+      <matchValueRegex>false</matchValueRegex>
+      <matchRequest>false</matchRequest>
+      <matchResponse>true</matchResponse>
+      <newHeader>Content-Type</newHeader>
+      <newValue>text/html; charset=utf-8</newValue>
+      <name>Content-Type mismatch</name>
+    </rewrite-rule>
+
+    <!-- 3. Strip the request id. Verifies the client falls back to the
+            RFC-7807 body's request_id, so a tester is never left without an
+            identifier to quote. -->
+    <rewrite-rule>
+      <active>false</active>
+      <ruleType>remove_header</ruleType>
+      <matchHeader>X-Request-ID</matchHeader>
+      <matchHeaderRegex>false</matchHeaderRegex>
+      <matchRequest>false</matchRequest>
+      <matchResponse>true</matchResponse>
+      <name>Strip X-Request-ID</name>
+    </rewrite-rule>
+
+    <!-- 4. Strip CORS headers. Reproduces an appliance that removes them,
+            which the browser reports as an opaque network failure. -->
+    <rewrite-rule>
+      <active>false</active>
+      <ruleType>remove_header</ruleType>
+      <matchHeader>Access-Control-Allow-Origin</matchHeader>
+      <matchHeaderRegex>false</matchHeaderRegex>
+      <matchRequest>false</matchRequest>
+      <matchResponse>true</matchResponse>
+      <name>Strip CORS headers</name>
+    </rewrite-rule>
+
+    <!-- 5. Rewrite a numeric lab value. Confirms the dashboard renders what
+            the API sent rather than a cached or hardcoded value - a real risk
+            in an app that also ships fixture data. -->
+    <rewrite-rule>
+      <active>false</active>
+      <ruleType>body</ruleType>
+      <matchValue>"value_numeric":0.005</matchValue>
+      <matchValueRegex>false</matchValueRegex>
+      <matchRequest>false</matchRequest>
+      <matchResponse>true</matchResponse>
+      <newValue>"value_numeric":999.999</newValue>
+      <name>Rewrite a TSH value</name>
+    </rewrite-rule>
+
+    <!-- 6. Inject the backend's own chaos header on the way out, so the
+            server produces the fault rather than the proxy. Useful for
+            confirming the two paths agree. -->
+    <rewrite-rule>
+      <active>false</active>
+      <ruleType>add_header</ruleType>
+      <matchRequest>true</matchRequest>
+      <matchResponse>false</matchResponse>
+      <newHeader>X-Chaos-Malformed</newHeader>
+      <newValue>1</newValue>
+      <name>Ask the server for a malformed body</name>
+    </rewrite-rule>
+  </rules>
+</rewrite-set>

@@ -1,0 +1,90 @@
+[Unit]
+Description=MedSimQA API (FastAPI/uvicorn)
+Documentation=https://github.com/edualc-snoiltset13/mictest12
+# network-online, not just network: uvicorn binding before the loopback
+# interface is fully configured produces an intermittent startup failure that
+# looks like a code bug.
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=exec
+User=medsim
+Group=medsim
+WorkingDirectory=/opt/medsim/backend
+
+EnvironmentFile=/opt/medsim/backend/.env
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+
+# Bound to loopback deliberately. Public access is through nginx, which adds
+# the security headers, the request id and TLS. Binding 0.0.0.0 here would let
+# a client bypass all three.
+ExecStart=/opt/medsim/venv/bin/uvicorn app.main:app \
+    --host 127.0.0.1 \
+    --port 8000 \
+    --workers 2 \
+    --proxy-headers \
+    --forwarded-allow-ips=127.0.0.1 \
+    --timeout-keep-alive 30 \
+    --access-log
+
+ExecReload=/bin/kill -HUP $MAINPID
+
+# SIGINT rather than SIGTERM: uvicorn treats SIGINT as a graceful shutdown and
+# drains in-flight requests, where SIGTERM is more abrupt.
+KillSignal=SIGINT
+TimeoutStopSec=30
+KillMode=mixed
+
+Restart=on-failure
+RestartSec=5s
+
+# --- hardening -------------------------------------------------------------
+# Each of these has been checked against what the service actually does; a
+# blanket copy-paste of systemd hardening tends to break the app silently.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LockPersonality=true
+MemoryDenyWriteExecute=false
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+# ProtectSystem=strict makes everything read-only, so the two paths the service
+# genuinely writes to must be named explicitly. The SQLite database lives in the
+# first; WAL and shm files are created alongside it.
+ReadWritePaths=/var/lib/medsim /var/log/medsim
+
+# --- resource limits -------------------------------------------------------
+# A runaway evaluation batch should be killed rather than taking the host with
+# it. 1G is comfortable for two workers holding the corpus in memory.
+MemoryMax=1G
+MemoryHigh=768M
+TasksMax=256
+LimitNOFILE=8192
+
+# --- logging ---------------------------------------------------------------
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=medsim-api
+
+[Install]
+WantedBy=multi-user.target

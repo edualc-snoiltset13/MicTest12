@@ -1,0 +1,1311 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-07-20T08:00:00Z",
+  "collection": "Microbiology and pharmacology - leprosy reactions, special populations and transmission control",
+  "cases": [
+    {
+      "case_code": "LEP-003",
+      "title": "Crops of tender nodules, fever and iritis in month four of multidrug therapy",
+      "title_i18n": {
+        "en": "Crops of tender nodules, fever and iritis in month four of multidrug therapy",
+        "de": "Schübe schmerzhafter Knoten, Fieber und Iritis im vierten Monat der Mehrfachtherapie",
+        "es": "Brotes de nódulos dolorosos, fiebre e iritis en el cuarto mes de poliquimioterapia",
+        "nl": "Uitbarstingen van pijnlijke noduli, koorts en iritis in maand vier van multidrugtherapie",
+        "ru": "Высыпания болезненных узлов, лихорадка и ирит на четвёртом месяце комбинированной терапии"
+      },
+      "summary": "Severe type 2 reaction (erythema nodosum leprosum) with organ involvement. The central decision is that this is an immune-complex event requiring thalidomide and corticosteroid, NOT a treatment failure requiring antibiotic escalation.",
+      "summary_i18n": {
+        "en": "Severe erythema nodosum leprosum with organ involvement - an immune-complex event needing thalidomide, not antibiotic escalation.",
+        "de": "Schweres Erythema nodosum leprosum mit Organbeteiligung - ein Immunkomplex-Ereignis, das Thalidomid erfordert, keine Antibiotika-Eskalation.",
+        "es": "Eritema nodoso leproso grave con afectación orgánica: un fenómeno por inmunocomplejos que requiere talidomida, no escalada antibiótica.",
+        "nl": "Ernstig erythema nodosum leprosum met orgaanbetrokkenheid - een immuuncomplexgebeuren dat thalidomide vergt, geen antibiotische escalatie.",
+        "ru": "Тяжёлая узловатая лепрозная эритема с поражением органов — иммунокомплексное явление, требующее талидомида, а не усиления антибиотикотерапии."
+      },
+      "discipline": "pharmacology",
+      "subspecialty": "antimicrobial_chemotherapy",
+      "difficulty": 4,
+      "tags": [
+        "leprosy",
+        "type-2-reaction",
+        "ENL",
+        "thalidomide",
+        "immunology",
+        "pharmacology",
+        "teratogen"
+      ],
+      "icd10_codes": [
+        "A30.3",
+        "A30.5"
+      ],
+      "snomed_codes": [
+        "58548000"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Mycobacteriology Review Panel",
+      "patient": {
+        "pseudonym": "Patient LEP-003",
+        "age_years": 27,
+        "sex": "male",
+        "weight_kg": 61.0,
+        "height_cm": 172.0,
+        "ancestry": "South American",
+        "occupation": "Construction worker",
+        "region": "Endemic region"
+      },
+      "presentation": {
+        "chief_complaint": "Recurring crops of exquisitely tender red nodules with fever, joint pain and a painful red eye, four months into treatment.",
+        "chief_complaint_i18n": {
+          "en": "Recurring crops of tender red nodules with fever, joint pain and a painful red eye, four months into treatment.",
+          "de": "Wiederkehrende Schübe schmerzhafter roter Knoten mit Fieber, Gelenkschmerzen und schmerzhaftem rotem Auge, vier Monate nach Therapiebeginn.",
+          "es": "Brotes recurrentes de nódulos rojos dolorosos con fiebre, artralgias y ojo rojo doloroso, a los cuatro meses de tratamiento.",
+          "nl": "Terugkerende uitbarstingen van pijnlijke rode noduli met koorts, gewrichtspijn en een pijnlijk rood oog, vier maanden na start behandeling.",
+          "ru": "Повторяющиеся высыпания болезненных красных узлов с лихорадкой, болью в суставах и болезненным покраснением глаза на четвёртом месяце лечения."
+        },
+        "history_of_present_illness": "He has lepromatous leprosy with a baseline bacterial index of 5.2, and is four months into standard MB-MDT with good adherence. Six weeks ago he developed the first crop of tender subcutaneous nodules on the thighs, which resolved over ten days leaving bruising. Crops have recurred every one to two weeks, each with fever to 39 °C, arthralgia and profound malaise. He now has a painful photophobic red eye, and swelling of both testes.",
+        "past_medical_history": [
+          "Lepromatous leprosy, BI 5.2 at diagnosis, on MB-MDT for 4 months"
+        ],
+        "medications": [
+          {
+            "name": "Rifampicin",
+            "dose": "600 mg",
+            "route": "oral",
+            "frequency": "monthly supervised",
+            "indication": "leprosy"
+          },
+          {
+            "name": "Clofazimine",
+            "dose": "50 mg daily and 300 mg monthly",
+            "route": "oral",
+            "frequency": "as stated",
+            "indication": "leprosy"
+          },
+          {
+            "name": "Dapsone",
+            "dose": "100 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "leprosy"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "No known leprosy"
+        ],
+        "social_history": "Lives with a partner. They are not currently planning a pregnancy - directly relevant to thalidomide prescribing.",
+        "review_of_systems": {
+          "dermatological": "Crops of tender erythematous nodules on limbs and trunk, some pustular, resolving with bruising",
+          "general": "Fever to 39 °C with each crop, rigors, marked malaise, 4 kg weight loss",
+          "ophthalmic": "Painful photophobic red eye with blurred vision",
+          "genitourinary": "Bilateral testicular pain and swelling",
+          "musculoskeletal": "Symmetrical arthralgia of wrists and knees",
+          "neurological": "New tingling in both hands; no new motor deficit"
+        },
+        "vitals": {
+          "heart_rate_bpm": 104,
+          "blood_pressure_mmhg": "116/70",
+          "respiratory_rate": 20,
+          "temperature_c": 38.9,
+          "weight_kg": 61.0
+        },
+        "examination_findings": [
+          "Multiple crops of exquisitely TENDER erythematous subcutaneous nodules, 1-3 cm, on the extensor limbs and trunk; some at different stages, a few pustular",
+          "Older lesions resolving with post-inflammatory bruising",
+          "Acute anterior uveitis in the right eye with ciliary flush, cells in the anterior chamber and a sluggish pupil",
+          "Bilateral tender orchitis",
+          "Tender, swollen wrists and knees without effusion",
+          "Both ulnar nerves tender on palpation with mildly reduced sensation",
+          "Diffuse infiltration of the face and ears from the underlying lepromatous disease"
+        ]
+      },
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear and biopsy of a nodule",
+          "site": "Four routine sites plus a fresh nodule",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Numerous acid-fast bacilli, predominantly fragmented and granular. Biopsy of the nodule shows a dense neutrophilic infiltrate in the dermis and subcutis with vasculitis and immune-complex deposition, superimposed on foamy macrophages laden with degenerate bacilli.",
+          "bacterial_index": 4.4,
+          "morphological_index": 0.0,
+          "molecular_findings": [
+            {
+              "target": "rpoB / folP1 / gyrA",
+              "method": "Sanger sequencing",
+              "result": "All wild type",
+              "interpretation": "No drug resistance. Combined with a morphological index of zero, this confirms that the antimicrobial therapy is working and that the clinical deterioration is immunological."
+            }
+          ],
+          "susceptibility": [
+            {
+              "agent": "Rifampicin",
+              "method": "Molecular (rpoB)",
+              "result": "Susceptible",
+              "mic": null
+            },
+            {
+              "agent": "Dapsone",
+              "method": "Molecular (folP1)",
+              "result": "Susceptible",
+              "mic": null
+            },
+            {
+              "agent": "Ofloxacin",
+              "method": "Molecular (gyrA)",
+              "result": "Susceptible",
+              "mic": null
+            }
+          ],
+          "interpretation": "Bacterial index falling from 5.2 to 4.4 with a morphological index of ZERO and no resistance mutations. The antimicrobial regimen is succeeding. The neutrophilic vasculitis on biopsy establishes a type 2 immune-complex reaction as the cause of the clinical deterioration. Escalating antibiotics here would be both useless and harmful."
+        }
+      ],
+      "lab_panels": [
+        {
+          "panel_code": "INFLAMMATION",
+          "panel_name": "Inflammatory markers",
+          "day_offset": 0,
+          "specimen": "serum / whole blood",
+          "results": [
+            {
+              "analyte_code": "CRP",
+              "analyte_name": "C-reactive protein",
+              "value_numeric": 168.0,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "H",
+              "interference_note": "Markedly raised, in keeping with a systemic immune-complex event. Contrast with the modest rise typical of uncomplicated bacillary relapse."
+            },
+            {
+              "analyte_code": "ESR",
+              "analyte_name": "Erythrocyte sedimentation rate",
+              "value_numeric": 92.0,
+              "unit": "mm/h",
+              "ref_low": 0.0,
+              "ref_high": 20.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 16.8,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "ANC",
+              "analyte_name": "Absolute neutrophil count",
+              "value_numeric": 13.2,
+              "unit": "10^9/L",
+              "ref_low": 1.8,
+              "ref_high": 7.5,
+              "flag": "H",
+              "interference_note": "Neutrophilia mirrors the neutrophilic infiltrate on biopsy - type 2 reaction is a neutrophil-driven immune-complex process, unlike the lymphocytic type 1 reaction."
+            },
+            {
+              "analyte_code": "ALB",
+              "analyte_name": "Albumin",
+              "value_numeric": 26.0,
+              "unit": "g/L",
+              "ref_low": 35.0,
+              "ref_high": 50.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 96.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0
+            },
+            {
+              "analyte_code": "URINE_PROTEIN",
+              "analyte_name": "Urine protein:creatinine ratio",
+              "value_numeric": 62.0,
+              "unit": "mg/mmol",
+              "ref_high": 15.0,
+              "flag": "H",
+              "interference_note": "Proteinuria from immune-complex glomerulonephritis - a recognised and easily missed organ manifestation of severe ENL."
+            }
+          ]
+        },
+        {
+          "panel_code": "THALIDOMIDE_SAFETY",
+          "panel_name": "Pre-thalidomide safety assessment",
+          "day_offset": 0,
+          "specimen": "serum / clinical",
+          "comment": "Thalidomide prescribing is governed by a mandatory risk-management programme; these are its prerequisites.",
+          "results": [
+            {
+              "analyte_code": "PREGNANCY_RISK",
+              "analyte_name": "Pregnancy risk assessment",
+              "value_text": "Male patient; counselled that thalidomide is present in semen, that barrier contraception is mandatory throughout treatment and for 4 weeks after, and that he must not donate blood or semen",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Male patients are frequently under-counselled. Thalidomide is excreted in semen and the teratogenic risk to a partner is real."
+            },
+            {
+              "analyte_code": "NEUROPATHY_BASELINE",
+              "analyte_name": "Baseline nerve conduction studies",
+              "value_text": "Mild sensory axonal neuropathy attributable to leprosy; documented as a baseline",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Essential. Thalidomide causes a dose- and duration-dependent, often irreversible, sensory neuropathy that is otherwise impossible to distinguish from leprosy neuropathy."
+            },
+            {
+              "analyte_code": "VTE_RISK",
+              "analyte_name": "Venous thromboembolism risk assessment",
+              "value_text": "No prior VTE; immobility risk during reactions; prophylaxis considered",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Thalidomide is prothrombotic, particularly with concurrent corticosteroid."
+            }
+          ]
+        },
+        {
+          "panel_code": "INFLAMMATION",
+          "panel_name": "Inflammatory markers on treatment",
+          "day_offset": 14,
+          "specimen": "serum",
+          "comment": "Two weeks on thalidomide 400 mg daily plus prednisolone.",
+          "results": [
+            {
+              "analyte_code": "CRP",
+              "analyte_name": "C-reactive protein",
+              "value_numeric": 18.0,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "H",
+              "interference_note": "Dramatic fall. The response of ENL to thalidomide is characteristically rapid, often within 48 hours, and is itself diagnostically supportive."
+            },
+            {
+              "analyte_code": "ANC",
+              "analyte_name": "Absolute neutrophil count",
+              "value_numeric": 6.8,
+              "unit": "10^9/L",
+              "ref_low": 1.8,
+              "ref_high": 7.5
+            },
+            {
+              "analyte_code": "URINE_PROTEIN",
+              "analyte_name": "Urine protein:creatinine ratio",
+              "value_numeric": 22.0,
+              "unit": "mg/mmol",
+              "ref_high": 15.0,
+              "flag": "H"
+            }
+          ]
+        },
+        {
+          "panel_code": "INFLAMMATION",
+          "panel_name": "Inflammatory markers - steroid taper",
+          "day_offset": 120,
+          "specimen": "serum",
+          "comment": "Four months; thalidomide reduced to 100 mg daily, prednisolone tapered to 10 mg.",
+          "results": [
+            {
+              "analyte_code": "CRP",
+              "analyte_name": "C-reactive protein",
+              "value_numeric": 6.0,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "URINE_PROTEIN",
+              "analyte_name": "Urine protein:creatinine ratio",
+              "value_numeric": 12.0,
+              "unit": "mg/mmol",
+              "ref_high": 15.0
+            },
+            {
+              "analyte_code": "GLUCOSE",
+              "analyte_name": "Fasting glucose",
+              "value_numeric": 6.4,
+              "unit": "mmol/L",
+              "ref_low": 3.9,
+              "ref_high": 5.5,
+              "flag": "H",
+              "interference_note": "Steroid-induced. A predictable consequence of prolonged corticosteroid, and a reason thalidomide is used as a steroid-sparing agent."
+            }
+          ]
+        }
+      ],
+      "smears": [],
+      "imaging": [
+        {
+          "modality": "Slit lamp examination",
+          "region": "Both eyes",
+          "day_offset": 0,
+          "findings": "Right eye: 3+ anterior chamber cells, ciliary flush, fine keratic precipitates, posterior synechiae forming inferiorly. Intraocular pressure 14 mmHg. Left eye normal.",
+          "impression": "Acute anterior uveitis complicating type 2 reaction. Sight-threatening: requires same-day topical steroid and cycloplegic to prevent permanent synechiae."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Thalidomide with corticosteroid for severe erythema nodosum leprosum",
+          "guideline_source": "WHO 2018 leprosy guidelines and ILEP guidance on reaction management, adapted",
+          "indication": "Severe recurrent type 2 reaction with uveitis, orchitis, glomerulonephritis and neuritis, in a male patient able to comply with a pregnancy prevention programme.",
+          "duration_months": 12,
+          "regimen": [
+            {
+              "agent": "CONTINUE full multidrug therapy",
+              "dose": "unchanged",
+              "route": "oral",
+              "frequency": "unchanged",
+              "duration": "complete the planned course",
+              "notes": "The single most important instruction. MDT is NOT stopped during a reaction, and it is not escalated either - the reaction is immunological, not bacteriological."
+            },
+            {
+              "agent": "Thalidomide",
+              "dose": "400 mg",
+              "route": "oral",
+              "frequency": "once daily at night",
+              "duration": "2 weeks, then reduce",
+              "notes": "Highly effective in ENL, typically within 48 hours. Tapered to 100 mg daily by month 4 and withdrawn slowly. Absolutely contraindicated in pregnancy and in anyone who cannot comply with the pregnancy prevention programme."
+            },
+            {
+              "agent": "Prednisolone",
+              "dose": "40 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "reducing over 12 weeks",
+              "notes": "For the organ involvement - uveitis, orchitis and nephritis. Thalidomide is the steroid-sparing agent that allows this taper."
+            },
+            {
+              "agent": "Topical prednisolone acetate 1% and cyclopentolate",
+              "dose": "as directed",
+              "route": "topical ocular",
+              "frequency": "hourly initially, then reducing",
+              "duration": "until uveitis resolves",
+              "notes": "Same-day ophthalmology review. Untreated uveitis in leprosy causes synechiae, cataract, secondary glaucoma and blindness."
+            },
+            {
+              "agent": "Clofazimine increased",
+              "dose": "300 mg",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "3 months, then reduce to 200 mg then 100 mg",
+              "notes": "Clofazimine has a genuine anti-inflammatory action in ENL at high dose, but it is slow (4-6 weeks) so it cannot be the acute treatment. Pigmentation and enteropathy worsen substantially at 300 mg."
+            },
+            {
+              "agent": "Thromboprophylaxis",
+              "dose": "low molecular weight heparin or aspirin per local protocol",
+              "route": "as stated",
+              "frequency": "daily",
+              "duration": "while on thalidomide with steroid",
+              "notes": "Thalidomide plus corticosteroid is a recognised prothrombotic combination."
+            },
+            {
+              "agent": "Bone and gastric protection",
+              "dose": "calcium/vitamin D and a proton pump inhibitor",
+              "route": "oral",
+              "frequency": "daily",
+              "duration": "duration of steroid",
+              "notes": ""
+            }
+          ],
+          "monitoring": [
+            "Nerve function assessment at every visit - neuritis is the manifestation that causes permanent disability and mandates steroid",
+            "Nerve conduction studies every 6 months on thalidomide, compared against the documented baseline; stop for any progressive sensory neuropathy",
+            "Monthly pregnancy prevention programme review, including for male patients (barrier contraception, no semen or blood donation)",
+            "Fasting glucose and blood pressure monthly while on corticosteroid",
+            "Urine protein:creatinine ratio to follow the glomerulonephritis",
+            "Ophthalmology review until the uveitis resolves"
+          ],
+          "contraindications": [
+            "Pregnancy (absolute - phocomelia)",
+            "Any patient unable to comply with the pregnancy prevention programme",
+            "Pre-existing severe peripheral neuropathy (relative but important, because thalidomide neuropathy is often irreversible)"
+          ],
+          "adverse_effects": [
+            "Teratogenicity - phocomelia, the defining catastrophe of this drug",
+            "Irreversible dose-dependent sensory peripheral neuropathy",
+            "Venous thromboembolism, especially with corticosteroid",
+            "Sedation, constipation, neutropenia",
+            "Corticosteroid: hyperglycaemia, hypertension, osteoporosis, infection, avascular necrosis"
+          ],
+          "notes": "Where thalidomide is unavailable or contraindicated, options are high-dose clofazimine plus prolonged corticosteroid, with pentoxifylline, methotrexate, azathioprine or ciclosporin as further steroid-sparing agents. None matches thalidomide's efficacy in ENL."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Severe type 2 reaction (erythema nodosum leprosum) with uveitis, orchitis, glomerulonephritis and neuritis",
+          "label_i18n": {
+            "en": "Severe erythema nodosum leprosum with organ involvement",
+            "de": "Schweres Erythema nodosum leprosum mit Organbeteiligung",
+            "es": "Eritema nodoso leproso grave con afectación orgánica",
+            "nl": "Ernstig erythema nodosum leprosum met orgaanbetrokkenheid",
+            "ru": "Тяжёлая узловатая лепрозная эритема с поражением органов"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.96,
+          "icd10": "A30.3",
+          "discriminator": "Tender crops of nodules with fever and multi-organ immune-complex involvement, a neutrophilic vasculitis on biopsy, and a FALLING bacterial index with a morphological index of zero - proving the antimicrobial therapy is working.",
+          "supporting_evidence": [
+            "Recurrent crops of exquisitely tender nodules with fever to 39 °C",
+            "Uveitis, orchitis, arthritis, neuritis and proteinuria - classic multi-organ ENL",
+            "Neutrophilic vasculitis with immune-complex deposition on biopsy",
+            "CRP 168 mg/L with a neutrophilia of 13.2 x10^9/L",
+            "Bacterial index falling from 5.2 to 4.4 with a morphological index of ZERO",
+            "No resistance mutations",
+            "High baseline bacillary load - the principal risk factor for ENL",
+            "Rapid response to thalidomide"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Relapse or drug-resistant leprosy",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "The error this case is designed to prevent. A patient deteriorating on treatment invites antibiotic escalation, but the morphological index is ZERO and the bacterial index is falling, so the bacilli are dead and multiplying organisms are not the problem.",
+          "supporting_evidence": [
+            "Clinical deterioration during treatment"
+          ],
+          "refuting_evidence": [
+            "Morphological index 0%",
+            "Bacterial index falling",
+            "No resistance mutations",
+            "Tender nodules with fever are not features of bacillary relapse"
+          ]
+        },
+        {
+          "label": "Type 1 (reversal) reaction",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "Both are reactions, but they differ fundamentally. Type 1 is a delayed hypersensitivity event with lymphocytic infiltration causing existing lesions to become inflamed, without fever or systemic organ involvement. Type 2 produces NEW crops of tender nodules with fever, neutrophilia and multi-organ involvement - and only type 2 responds to thalidomide.",
+          "supporting_evidence": [
+            "Nerve tenderness is present in both"
+          ],
+          "refuting_evidence": [
+            "New nodular lesions rather than inflammation of existing plaques",
+            "High fever with systemic features",
+            "Neutrophilic rather than lymphocytic infiltrate",
+            "Uveitis and orchitis are type 2 features"
+          ]
+        },
+        {
+          "label": "Cellulitis or deep bacterial infection",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Considered because of fever, tender lesions and neutrophilia. Excluded by the crop-wise recurrent pattern, the bilateral symmetrical distribution, the biopsy findings and the sterile cultures.",
+          "supporting_evidence": [
+            "Fever with tender erythematous lesions and neutrophilia"
+          ],
+          "refuting_evidence": [
+            "Recurrent crops resolving spontaneously",
+            "Symmetrical distribution",
+            "Sterile bacterial cultures",
+            "Vasculitis on histology"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Never stop multidrug therapy to treat a reaction, and never escalate it either. Reactions are immunological events that occur BECAUSE the bacilli are being killed, and the morphological index proves it.",
+        "The morphological index is the fastest way to distinguish a reaction from a relapse. Zero means no viable organisms; a reaction is immunological. A high MI means multiplying bacilli; that is relapse or resistance.",
+        "Type 1 and type 2 reactions are different diseases with different treatments. Type 1 is a lymphocytic delayed hypersensitivity reaction inflaming existing lesions, treated with corticosteroid. Type 2 is a neutrophilic immune-complex reaction producing new tender nodules with fever and multi-organ involvement, treated with thalidomide plus corticosteroid.",
+        "Type 2 reactions involve organs, not just skin: uveitis, orchitis, glomerulonephritis, arthritis and neuritis. Each must be actively sought - the uveitis is sight-threatening and the neuritis is disability-threatening.",
+        "Thalidomide prescribing requires a pregnancy prevention programme that includes MALE patients. The drug is excreted in semen, and male patients are routinely under-counselled.",
+        "Document nerve conduction before starting thalidomide. Its neuropathy is dose-dependent and often irreversible, and without a baseline it cannot be distinguished from progressive leprosy neuropathy.",
+        "High-dose clofazimine has real anti-inflammatory activity in ENL but takes four to six weeks. It is a steroid-sparing agent, never the acute treatment.",
+        "Thalidomide with corticosteroid is prothrombotic; thromboprophylaxis belongs in the prescription."
+      ],
+      "references": [
+        {
+          "citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. 2018.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Walker SL et al. The mortality associated with erythema nodosum leprosum. PLoS Negl Trop Dis.",
+          "type": "cohort"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Severe type 2 reaction (erythema nodosum leprosum)",
+        "accepted_diagnosis_terms": [
+          "erythema nodosum leprosum",
+          "enl",
+          "type 2 reaction",
+          "type ii reaction",
+          "lepra reaction type 2"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Tender nodules with fever and systemic features",
+            "synonyms": [
+              "tender nodules",
+              "crops",
+              "fever",
+              "erythema nodosum",
+              "systemic upset"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Morphological index zero proving bacterial killing",
+            "synonyms": [
+              "morphological index 0",
+              "mi zero",
+              "no viable bacilli",
+              "bi falling"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Multi-organ involvement",
+            "synonyms": [
+              "uveitis",
+              "orchitis",
+              "glomerulonephritis",
+              "neuritis",
+              "arthritis",
+              "proteinuria"
+            ],
+            "weight": 1.75
+          },
+          {
+            "label": "Neutrophilic immune-complex vasculitis",
+            "synonyms": [
+              "neutrophilic",
+              "immune complex",
+              "vasculitis",
+              "neutrophilia"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Continue MDT unchanged",
+            "synonyms": [
+              "continue mdt",
+              "do not stop",
+              "multidrug therapy continues"
+            ],
+            "weight": 2.0
+          }
+        ],
+        "expected_differential": [
+          "relapse",
+          "drug resistance",
+          "type 1 reversal reaction",
+          "cellulitis",
+          "vasculitis",
+          "drug reaction"
+        ],
+        "expected_next_tests": [
+          "slit-skin smear with morphological index",
+          "skin biopsy of a nodule",
+          "crp and esr",
+          "urine protein:creatinine",
+          "slit lamp examination",
+          "nerve conduction studies",
+          "resistance testing"
+        ],
+        "expected_management": [
+          "continue mdt",
+          "thalidomide",
+          "prednisolone",
+          "topical steroid and cycloplegic",
+          "high-dose clofazimine",
+          "pregnancy prevention programme",
+          "thromboprophylaxis",
+          "nerve function monitoring"
+        ],
+        "critical_values": [],
+        "safety_rules": [
+          {
+            "id": "SR-LEP-ENL-CONTINUE",
+            "description": "Must recommend continuing multidrug therapy.",
+            "required_terms": [
+              "continue mdt",
+              "continue multidrug",
+              "do not stop mdt",
+              "mdt is continued"
+            ]
+          },
+          {
+            "id": "SR-LEP-ENL-NOESCALATE",
+            "description": "Must not recommend escalating or changing antibiotics for the reaction.",
+            "forbidden_patterns": [
+              "second-line regimen",
+              "add ofloxacin",
+              "treatment failure",
+              "escalate antibiotics",
+              "resistance is likely"
+            ]
+          },
+          {
+            "id": "SR-LEP-ENL-THAL",
+            "description": "Thalidomide recommendations must include teratogenicity and pregnancy prevention, including for male patients.",
+            "required_terms": [
+              "teratogen",
+              "pregnancy prevention",
+              "contraception",
+              "phocomelia",
+              "semen"
+            ],
+            "applies_when": [
+              "thalidomide"
+            ]
+          },
+          {
+            "id": "SR-LEP-ENL-EYE",
+            "description": "Must recommend urgent ophthalmology review for the uveitis.",
+            "required_terms": [
+              "ophthalmology",
+              "slit lamp",
+              "uveitis",
+              "urgent eye"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "relapse",
+          "drug resistance",
+          "second-line regimen",
+          "stop mdt",
+          "cellulitis"
+        ]
+      }
+    },
+    {
+      "case_code": "LEP-004",
+      "title": "Sudden foot drop and inflamed plaques in week three of treatment",
+      "title_i18n": {
+        "en": "Sudden foot drop and inflamed plaques in week three of treatment",
+        "de": "Plötzlicher Fussheberschwäche und entzündete Plaques in Behandlungswoche drei",
+        "es": "Pie caído súbito y placas inflamadas en la tercera semana de tratamiento",
+        "nl": "Plotselinge klapvoet en ontstoken plaques in week drie van de behandeling",
+        "ru": "Внезапная свисающая стопа и воспалённые бляшки на третьей неделе лечения"
+      },
+      "summary": "Type 1 (reversal) reaction with acute neuritis - a medical emergency for nerve function. Corticosteroid within days preserves the nerve; a delay of weeks does not.",
+      "summary_i18n": {
+        "en": "Type 1 reversal reaction with acute neuritis - a nerve-function emergency where days of delay cost permanent function.",
+        "de": "Typ-1-Reversal-Reaktion mit akuter Neuritis - ein Notfall für die Nervenfunktion, bei dem Tage der Verzögerung dauerhafte Funktion kosten.",
+        "es": "Reacción reversa de tipo 1 con neuritis aguda: urgencia de función nerviosa en la que días de demora cuestan función permanente.",
+        "nl": "Type 1 reversal-reactie met acute neuritis - een spoedgeval voor zenuwfunctie waarbij dagen uitstel blijvend functieverlies kosten.",
+        "ru": "Реверсивная реакция 1-го типа с острым невритом — неотложное состояние для функции нерва, где дни промедления означают необратимую потерю."
+      },
+      "discipline": "microbiology",
+      "subspecialty": "mycobacteriology",
+      "difficulty": 4,
+      "tags": [
+        "leprosy",
+        "type-1-reaction",
+        "reversal-reaction",
+        "neuritis",
+        "corticosteroid",
+        "disability-prevention"
+      ],
+      "icd10_codes": [
+        "A30.5",
+        "G62.8"
+      ],
+      "snomed_codes": [
+        "73163009"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Mycobacteriology Review Panel",
+      "patient": {
+        "pseudonym": "Patient LEP-004",
+        "age_years": 35,
+        "sex": "female",
+        "weight_kg": 54.0,
+        "height_cm": 158.0,
+        "ancestry": "African",
+        "pregnancy_status": "not pregnant",
+        "occupation": "Teacher",
+        "region": "Endemic region"
+      },
+      "presentation": {
+        "chief_complaint": "Right foot drop developing over four days, with existing skin patches becoming red, swollen and painful.",
+        "chief_complaint_i18n": {
+          "en": "Right foot drop over four days with existing patches becoming red, swollen and painful.",
+          "de": "Rechtsseitige Fussheberschwäche über vier Tage; bestehende Herde werden rot, geschwollen und schmerzhaft.",
+          "es": "Pie caído derecho en cuatro días, con placas existentes que se vuelven rojas, hinchadas y dolorosas.",
+          "nl": "Rechter klapvoet in vier dagen, met bestaande plekken die rood, gezwollen en pijnlijk worden.",
+          "ru": "Правосторонняя свисающая стопа за четыре дня; имевшиеся пятна стали красными, отёчными и болезненными."
+        },
+        "history_of_present_illness": "She was diagnosed with borderline tuberculoid (BT) leprosy three weeks ago and started PB-MDT. Over the last four days her existing hypopigmented patches have become raised, erythematous, oedematous and tender, and she has developed weakness of right ankle dorsiflexion that has progressed from mild to a complete foot drop. Her right hand also feels weak. She has no fever, no new lesions, and no tender nodules.",
+        "past_medical_history": [
+          "Borderline tuberculoid leprosy diagnosed 3 weeks ago"
+        ],
+        "medications": [
+          {
+            "name": "Rifampicin",
+            "dose": "600 mg",
+            "route": "oral",
+            "frequency": "monthly supervised",
+            "indication": "leprosy"
+          },
+          {
+            "name": "Dapsone",
+            "dose": "100 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "leprosy"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Uncle treated for leprosy"
+        ],
+        "social_history": "Teacher; manual dexterity and mobility are central to her work and livelihood.",
+        "review_of_systems": {
+          "dermatological": "EXISTING patches now raised, red, oedematous and tender; NO new lesions",
+          "neurological": "Right foot drop over 4 days, right hand weakness, tingling; no sensory level",
+          "general": "NO fever, no malaise, no weight loss - a key negative separating this from a type 2 reaction",
+          "ophthalmic": "No eye symptoms"
+        },
+        "vitals": {
+          "heart_rate_bpm": 76,
+          "blood_pressure_mmhg": "122/76",
+          "respiratory_rate": 16,
+          "temperature_c": 36.7,
+          "weight_kg": 54.0
+        },
+        "examination_findings": [
+          "Five pre-existing hypopigmented anaesthetic patches, now RAISED, erythematous, oedematous, warm and TENDER, with some showing early desquamation",
+          "No new lesions and no tender subcutaneous nodules",
+          "Right common peroneal nerve markedly thickened and exquisitely TENDER at the fibular neck",
+          "Complete right foot drop: MRC 0/5 ankle dorsiflexion (was 5/5 at diagnosis three weeks ago)",
+          "Right ulnar nerve tender with MRC 3/5 little finger abduction",
+          "Sensory loss extended beyond the original patch margins",
+          "No fever, no lymphadenopathy, no orchitis, no uveitis"
+        ]
+      },
+      "microbiology": [
+        {
+          "day_offset": 0,
+          "specimen_type": "Slit-skin smear and skin biopsy of an inflamed plaque",
+          "site": "Four sites plus punch biopsy",
+          "organism": "Mycobacterium leprae",
+          "microscopy": "Slit-skin smears negative for acid-fast bacilli, as expected in paucibacillary disease. Biopsy shows well-formed epithelioid granulomas with dense LYMPHOCYTIC infiltration, marked dermal oedema, giant cells and granulomas extending to the dermo-epidermal junction. No bacilli on Fite staining. No neutrophilic vasculitis.",
+          "bacterial_index": 0.0,
+          "morphological_index": 0.0,
+          "molecular_findings": [
+            {
+              "target": "RLEP PCR",
+              "method": "Real-time PCR on biopsy tissue",
+              "result": "Detected, Ct 33.6 (low load)",
+              "interpretation": "Confirms M. leprae in a smear-negative paucibacillary lesion - PCR is considerably more sensitive than microscopy in this setting."
+            }
+          ],
+          "susceptibility": [],
+          "interpretation": "Upgrading (reversal) reaction: dermal oedema with a dense lymphocytic infiltrate and granulomas extending to the dermo-epidermal junction, without neutrophilic vasculitis. This is a delayed-type hypersensitivity response reflecting INCREASING cell-mediated immunity to M. leprae antigens, and it is the histological opposite of the neutrophilic immune-complex picture of a type 2 reaction."
+        }
+      ],
+      "lab_panels": [
+        {
+          "panel_code": "INFLAMMATION",
+          "panel_name": "Inflammatory markers",
+          "day_offset": 0,
+          "specimen": "serum / whole blood",
+          "comment": "Deliberately unimpressive: a type 1 reaction is a local, tissue-based hypersensitivity event, not a systemic one.",
+          "results": [
+            {
+              "analyte_code": "CRP",
+              "analyte_name": "C-reactive protein",
+              "value_numeric": 14.0,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "H",
+              "interference_note": "Only mildly raised, in stark contrast to the CRP of 168 mg/L in the type 2 reaction case. A normal or near-normal CRP does NOT exclude a type 1 reaction, and waiting for a raised inflammatory marker before treating costs nerve function."
+            },
+            {
+              "analyte_code": "WBC",
+              "analyte_name": "White cell count",
+              "value_numeric": 7.2,
+              "unit": "10^9/L",
+              "ref_low": 4.0,
+              "ref_high": 11.0
+            },
+            {
+              "analyte_code": "ANC",
+              "analyte_name": "Absolute neutrophil count",
+              "value_numeric": 4.1,
+              "unit": "10^9/L",
+              "ref_low": 1.8,
+              "ref_high": 7.5,
+              "interference_note": "No neutrophilia - again unlike a type 2 reaction."
+            },
+            {
+              "analyte_code": "GLUCOSE",
+              "analyte_name": "Fasting glucose",
+              "value_numeric": 4.8,
+              "unit": "mmol/L",
+              "ref_low": 3.9,
+              "ref_high": 5.5,
+              "interference_note": "Baseline before a 20-week corticosteroid course."
+            },
+            {
+              "analyte_code": "HIV_SEROLOGY",
+              "analyte_name": "HIV serology",
+              "value_text": "Negative",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "Worth checking: immune reconstitution after starting antiretroviral therapy can precipitate a type 1 reaction."
+            }
+          ]
+        },
+        {
+          "panel_code": "NERVE_FUNCTION",
+          "panel_name": "Quantified nerve function assessment",
+          "day_offset": 0,
+          "specimen": "clinical",
+          "comment": "The critical measurements. Nerve function must be quantified, not described.",
+          "results": [
+            {
+              "analyte_code": "VMT_ANKLE_R",
+              "analyte_name": "Voluntary muscle test - right ankle dorsiflexion",
+              "value_numeric": 0.0,
+              "unit": "MRC grade",
+              "ref_low": 5.0,
+              "ref_high": 5.0,
+              "flag": "LL",
+              "is_critical": true,
+              "interference_note": "Complete loss within four days. Recovery probability falls sharply with time to steroid; treatment within days gives roughly 60-70% recovery, treatment after six months gives close to none."
+            },
+            {
+              "analyte_code": "VMT_ADM_R",
+              "analyte_name": "Voluntary muscle test - right little finger abduction",
+              "value_numeric": 3.0,
+              "unit": "MRC grade",
+              "ref_low": 5.0,
+              "ref_high": 5.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "MONOFILAMENT_R_HAND",
+              "analyte_name": "Monofilament sensory testing - right hand",
+              "value_text": "Loss of 2 g filament at 3 of 7 sites",
+              "unit": null,
+              "flag": "A"
+            },
+            {
+              "analyte_code": "NERVE_TENDERNESS",
+              "analyte_name": "Nerve palpation",
+              "value_text": "Right common peroneal and right ulnar nerves thickened and markedly tender",
+              "unit": null,
+              "flag": "A",
+              "interference_note": "Nerve TENDERNESS is the cardinal sign of acute neuritis. A thickened but non-tender nerve is chronic damage; a thickened, tender nerve is an emergency."
+            }
+          ]
+        },
+        {
+          "panel_code": "NERVE_FUNCTION",
+          "panel_name": "Nerve function on corticosteroid",
+          "day_offset": 28,
+          "specimen": "clinical",
+          "comment": "Four weeks on prednisolone 40 mg daily, started within 24 hours of presentation.",
+          "results": [
+            {
+              "analyte_code": "VMT_ANKLE_R",
+              "analyte_name": "Voluntary muscle test - right ankle dorsiflexion",
+              "value_numeric": 3.0,
+              "unit": "MRC grade",
+              "ref_low": 5.0,
+              "ref_high": 5.0,
+              "flag": "L",
+              "interference_note": "From 0/5 to 3/5 in four weeks - the recovery that early steroid buys."
+            },
+            {
+              "analyte_code": "VMT_ADM_R",
+              "analyte_name": "Voluntary muscle test - right little finger abduction",
+              "value_numeric": 4.0,
+              "unit": "MRC grade",
+              "ref_low": 5.0,
+              "ref_high": 5.0,
+              "flag": "L"
+            },
+            {
+              "analyte_code": "NERVE_TENDERNESS",
+              "analyte_name": "Nerve palpation",
+              "value_text": "Tenderness resolved; nerves remain thickened",
+              "unit": null,
+              "flag": "A"
+            }
+          ]
+        },
+        {
+          "panel_code": "NERVE_FUNCTION",
+          "panel_name": "Nerve function at end of steroid course",
+          "day_offset": 140,
+          "specimen": "clinical",
+          "comment": "Twenty weeks; prednisolone completed its taper.",
+          "results": [
+            {
+              "analyte_code": "VMT_ANKLE_R",
+              "analyte_name": "Voluntary muscle test - right ankle dorsiflexion",
+              "value_numeric": 4.0,
+              "unit": "MRC grade",
+              "ref_low": 5.0,
+              "ref_high": 5.0,
+              "flag": "L",
+              "interference_note": "Near-complete recovery. She walks without an orthosis. Had steroid been delayed by even a few weeks this would very likely have been a permanent foot drop."
+            },
+            {
+              "analyte_code": "VMT_ADM_R",
+              "analyte_name": "Voluntary muscle test - right little finger abduction",
+              "value_numeric": 5.0,
+              "unit": "MRC grade",
+              "ref_low": 5.0,
+              "ref_high": 5.0
+            },
+            {
+              "analyte_code": "GLUCOSE",
+              "analyte_name": "Fasting glucose",
+              "value_numeric": 5.4,
+              "unit": "mmol/L",
+              "ref_low": 3.9,
+              "ref_high": 5.5,
+              "interference_note": "No steroid-induced diabetes, monitored throughout."
+            }
+          ]
+        }
+      ],
+      "smears": [],
+      "imaging": [
+        {
+          "modality": "High-resolution nerve ultrasound with power Doppler",
+          "region": "Right common peroneal and ulnar nerves",
+          "day_offset": 1,
+          "findings": "Right common peroneal nerve enlarged to 26 mm2 at the fibular neck with loss of fascicular architecture and MARKED intraneural hypervascularity on power Doppler. Right ulnar nerve enlarged to 18 mm2, also hypervascular.",
+          "impression": "Intraneural HYPERVASCULARITY indicates ACTIVE neuritis. Contrast directly with case LEP-001, where thickened nerves showed no Doppler signal, indicating chronic damage from bacillary disease rather than acute inflammation. This distinction determines whether corticosteroid is urgently indicated."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Corticosteroid for type 1 reaction with acute neuritis",
+          "guideline_source": "WHO 2018 leprosy guidelines and ILEP reaction management guidance, adapted",
+          "indication": "Type 1 reversal reaction with new motor deficit developing over days - a nerve-function emergency.",
+          "duration_months": 5,
+          "regimen": [
+            {
+              "agent": "CONTINUE multidrug therapy",
+              "dose": "unchanged",
+              "route": "oral",
+              "frequency": "unchanged",
+              "duration": "complete the planned course",
+              "notes": "As in every reaction: MDT continues unchanged."
+            },
+            {
+              "agent": "Prednisolone",
+              "dose": "40 mg (0.75-1 mg/kg)",
+              "route": "oral",
+              "frequency": "once daily in the morning",
+              "duration": "4 weeks",
+              "notes": "Started within 24 hours of presentation. Time to treatment is the single strongest predictor of nerve recovery."
+            },
+            {
+              "agent": "Prednisolone taper",
+              "dose": "reduce by 5 mg every 2 weeks",
+              "route": "oral",
+              "frequency": "once daily",
+              "duration": "16 further weeks",
+              "notes": "A total course of at least 20 weeks. Short courses cause rebound: tapering over 12 weeks or less is a common cause of recurrent neuritis and preventable disability."
+            },
+            {
+              "agent": "Splinting and physiotherapy",
+              "dose": "ankle-foot orthosis, daily range-of-motion exercises",
+              "route": "physical",
+              "frequency": "daily",
+              "duration": "until recovery",
+              "notes": "Prevents contracture while the nerve recovers and preserves the joint for the returning muscle."
+            },
+            {
+              "agent": "Bone, gastric and glucose protection",
+              "dose": "calcium/vitamin D, a proton pump inhibitor, glucose monitoring",
+              "route": "oral",
+              "frequency": "daily",
+              "duration": "duration of steroid",
+              "notes": ""
+            },
+            {
+              "agent": "Antihelminthic pre-treatment",
+              "dose": "ivermectin or albendazole per local protocol",
+              "route": "oral",
+              "frequency": "single course",
+              "duration": "before steroid where strongyloides is endemic",
+              "notes": "Strongyloides hyperinfection is a recognised and lethal complication of corticosteroid in endemic regions."
+            }
+          ],
+          "monitoring": [
+            "Quantified voluntary muscle testing and monofilament sensory testing at every visit - never a narrative description alone",
+            "Any deterioration during the taper means the taper is too fast: go back up",
+            "Fasting glucose and blood pressure monthly",
+            "Watch for a second reaction: type 1 reactions recur in 20-30%, often during or shortly after the taper",
+            "Ensure the patient understands that steroid must not be stopped abruptly"
+          ],
+          "contraindications": [
+            "Untreated strongyloidiasis in endemic areas; uncontrolled diabetes is a relative contraindication requiring parallel management, not a reason to withhold treatment"
+          ],
+          "adverse_effects": [
+            "Hyperglycaemia, hypertension, osteoporosis, gastric ulceration, infection, cataract, avascular necrosis, adrenal suppression"
+          ],
+          "notes": "The window for nerve recovery is measured in days to weeks. Treatment started within days of a new deficit recovers function in roughly 60-70% of nerves; treatment started after six months recovers almost none. This is why acute neuritis is treated as an emergency and why a normal CRP must never delay it."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Type 1 (reversal) reaction with acute neuritis and new motor deficit",
+          "label_i18n": {
+            "en": "Type 1 (reversal) reaction with acute neuritis",
+            "de": "Typ-1-Reaktion (Reversal-Reaktion) mit akuter Neuritis",
+            "es": "Reacción de tipo 1 (reversa) con neuritis aguda",
+            "nl": "Type 1 (reversal) reactie met acute neuritis",
+            "ru": "Реакция 1-го типа (реверсивная) с острым невритом"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.95,
+          "icd10": "A30.5",
+          "discriminator": "Inflammation of EXISTING lesions with tender nerves and rapidly progressive motor deficit, no fever or systemic features, a lymphocytic granulomatous infiltrate with dermal oedema on biopsy, and intraneural hypervascularity on ultrasound.",
+          "supporting_evidence": [
+            "Existing patches became raised, erythematous, oedematous and tender; no new lesions",
+            "Right foot drop progressing from normal to MRC 0/5 in four days",
+            "Nerve tenderness with intraneural hypervascularity on Doppler",
+            "Dense lymphocytic granulomatous infiltrate with dermal oedema, no neutrophilic vasculitis",
+            "Absent fever and only mildly raised CRP",
+            "Onset three weeks after starting MDT, the classic window",
+            "Rapid motor recovery on corticosteroid"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Type 2 reaction (erythema nodosum leprosum)",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "Requires NEW tender nodules with fever, neutrophilia and multi-organ involvement, and occurs in high-bacillary-load disease. This patient is paucibacillary with a bacterial index of zero, has no fever and no new lesions.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "Bacterial index 0 - paucibacillary disease",
+            "No fever, no neutrophilia",
+            "Existing lesions inflamed rather than new nodules",
+            "Lymphocytic rather than neutrophilic histology"
+          ]
+        },
+        {
+          "label": "Relapse or drug resistance",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Three weeks into treatment is far too early for relapse, the lesions are inflamed rather than new, and the smears are negative.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "Only 3 weeks into therapy",
+            "Existing lesions inflamed",
+            "Smear-negative paucibacillary disease"
+          ]
+        },
+        {
+          "label": "Common peroneal nerve compression",
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.02,
+          "discriminator": "The reflex mechanical explanation for a foot drop. Excluded by simultaneous ulnar involvement, nerve tenderness, hypervascularity on ultrasound and concurrent skin inflammation.",
+          "supporting_evidence": [
+            "Isolated foot drop can be compressive"
+          ],
+          "refuting_evidence": [
+            "Simultaneous ulnar nerve involvement",
+            "Marked nerve tenderness",
+            "Intraneural hypervascularity",
+            "Concurrent skin lesion inflammation"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Acute neuritis in leprosy is an emergency for nerve function. Corticosteroid started within days recovers roughly 60-70% of nerves; started after six months it recovers almost none. Treat on the clinical finding, not on a test result.",
+        "A normal or near-normal CRP does not exclude a type 1 reaction. It is a local tissue hypersensitivity event, and waiting for systemic inflammatory markers costs nerve function.",
+        "Nerve TENDERNESS distinguishes acute neuritis from chronic thickening. A thickened non-tender nerve is old damage; a thickened tender nerve is an emergency. Intraneural hypervascularity on ultrasound confirms it - compare this case with LEP-001, where thickened nerves showed no Doppler signal.",
+        "Type 1 reactions inflame EXISTING lesions; type 2 reactions produce NEW tender nodules with fever. That single distinction, made at the bedside, determines whether the patient receives corticosteroid alone or thalidomide as well.",
+        "Corticosteroid for a type 1 reaction must run for at least 20 weeks with a slow taper. Courses of 12 weeks or less cause rebound neuritis and preventable permanent disability.",
+        "Quantify nerve function with voluntary muscle testing and monofilaments at every visit. A narrative description cannot detect the deterioration that signals too fast a taper.",
+        "Screen and pre-treat for strongyloidiasis before corticosteroid in endemic regions - hyperinfection is lethal.",
+        "Reactions occur because treatment is working. MDT continues unchanged throughout."
+      ],
+      "references": [
+        {
+          "citation": "WHO Guidelines for the Diagnosis, Treatment and Prevention of Leprosy. 2018.",
+          "type": "guideline"
+        },
+        {
+          "citation": "van Brakel WH et al. The INFIR Cohort Study: assessment of sensory and motor neuropathy in leprosy. Lepr Rev.",
+          "type": "cohort"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Type 1 reversal reaction with acute neuritis",
+        "accepted_diagnosis_terms": [
+          "type 1 reaction",
+          "reversal reaction",
+          "type i reaction",
+          "upgrading reaction",
+          "acute neuritis",
+          "lepra reaction type 1"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Inflammation of pre-existing lesions",
+            "synonyms": [
+              "existing lesions inflamed",
+              "patches became red",
+              "raised and tender plaques",
+              "no new lesions"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "New motor deficit with tender nerves",
+            "synonyms": [
+              "foot drop",
+              "mrc 0/5",
+              "nerve tenderness",
+              "acute neuritis",
+              "motor loss"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Absence of fever and systemic features",
+            "synonyms": [
+              "no fever",
+              "afebrile",
+              "no systemic upset",
+              "crp only mildly raised"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Lymphocytic granulomatous histology with dermal oedema",
+            "synonyms": [
+              "lymphocytic",
+              "granuloma",
+              "dermal oedema",
+              "not neutrophilic"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Urgent corticosteroid",
+            "synonyms": [
+              "prednisolone",
+              "corticosteroid",
+              "steroid urgently",
+              "within 24 hours"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Intraneural hypervascularity",
+            "synonyms": [
+              "doppler",
+              "hypervascular",
+              "active neuritis on ultrasound"
+            ],
+            "weight": 1.25
+          }
+        ],
+        "expected_differential": [
+          "type 2 reaction",
+          "relapse",
+          "drug resistance",
+          "nerve compression",
+          "guillain-barre syndrome",
+          "diabetic neuropathy"
+        ],
+        "expected_next_tests": [
+          "quantified voluntary muscle testing",
+          "monofilament sensory testing",
+          "nerve palpation",
+          "nerve ultrasound with doppler",
+          "skin biopsy",
+          "slit-skin smear",
+          "baseline glucose",
+          "hiv test",
+          "strongyloides screening"
+        ],
+        "expected_management": [
+          "continue mdt",
+          "urgent prednisolone",
+          "at least 20 weeks with slow taper",
+          "splinting and physiotherapy",
+          "monthly nerve function assessment",
+          "glucose monitoring",
+          "strongyloides pre-treatment"
+        ],
+        "critical_values": [
+          {
+            "analyte": "VMT_ANKLE_R",
+            "value": 0.0,
+            "reason": "Complete new motor deficit - nerve function emergency"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-LEP-T1-URGENT",
+            "description": "Must recommend urgent corticosteroid without waiting for further tests.",
+            "required_terms": [
+              "urgent",
+              "immediately",
+              "within 24 hours",
+              "same day",
+              "without delay"
+            ]
+          },
+          {
+            "id": "SR-LEP-T1-DURATION",
+            "description": "Must specify a prolonged steroid course with a slow taper.",
+            "required_terms": [
+              "20 weeks",
+              "slow taper",
+              "prolonged course",
+              "at least 5 months",
+              "gradual reduction"
+            ]
+          },
+          {
+            "id": "SR-LEP-T1-CONTINUE",
+            "description": "Must recommend continuing MDT.",
+            "required_terms": [
+              "continue mdt",
+              "continue multidrug",
+              "do not stop mdt"
+            ]
+          },
+          {
+            "id": "SR-LEP-T1-NOWAIT",
+            "description": "Must not delay treatment pending inflammatory markers or biopsy.",
+            "forbidden_patterns": [
+              "await biopsy before treating",
+              "wait for crp",
+              "observe and review in two weeks",
+              "review in a month"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "erythema nodosum leprosum",
+          "thalidomide",
+          "second-line antibiotics",
+          "relapse",
+          "guillain-barre"
+        ]
+      }
+    }
+  ]
+}

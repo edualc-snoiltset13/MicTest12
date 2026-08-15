@@ -1,0 +1,192 @@
+name: medsim
+
+# Scoped to the medsim/ subtree so it does not duplicate or interfere with the
+# repository's existing `tests` workflow, which discovers only the root tests/
+# directory. Without this, the 120 tests under medsim/ would never gate a merge.
+on:
+  push:
+    paths:
+      - 'medsim/**'
+      - '.github/workflows/medsim.yml'
+  pull_request:
+    paths:
+      - 'medsim/**'
+      - '.github/workflows/medsim.yml'
+
+# A new push supersedes an in-flight run for the same ref.
+concurrency:
+  group: medsim-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.11 is the floor: the code uses datetime.UTC and PEP 604 unions
+        # throughout. The root workflow's 3.9/3.10 legs do not exercise this
+        # subtree, which is why they pass.
+        python-version: ['3.11', '3.12']
+    defaults:
+      run:
+        working-directory: medsim/backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: medsim/backend/requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # psycopg needs libpq headers that are not present on the runner, and
+          # SQLite is the default for tests, so it is excluded here rather than
+          # installing postgres just to import a driver nothing uses.
+          grep -v '^psycopg' requirements.txt > /tmp/requirements-ci.txt
+          pip install -r /tmp/requirements-ci.txt
+          pip install pytest pytest-cov jsonschema
+
+      - name: Validate the corpus without writing anything
+        run: python -m app.seed --validate
+
+      - name: Run the test suite
+        run: python -m pytest tests/ -q --tb=short
+
+  evaluator:
+    name: Evaluator and annotation schema
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pytest jsonschema
+
+      - name: Run the evaluator tests
+        working-directory: medsim/ml
+        run: python -m pytest tests/ -q --tb=short
+
+      - name: Score the sample responses end to end
+        working-directory: medsim/ml
+        # A smoke test of the CLI itself: the tests exercise score_response
+        # directly, and this catches a broken argument parser or loader that
+        # unit tests would not.
+        run: python evaluate_llm.py --responses tests/sample_responses.jsonl --data-dir ../backend/data
+
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: medsim/frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: medsim/frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Typecheck
+        # This is what enforces locale key parity: a key missing from any of the
+        # five catalogues is a compile error, not a runtime fallback.
+        run: npx tsc --noEmit
+
+      - name: Locale parity, plural categories and interpolation drift
+        run: node scripts/check-locales.mjs
+
+      - name: Build
+        run: npm run build
+
+  shell:
+    name: Shell scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck
+
+      - name: Parse check
+        run: |
+          set -e
+          for script in medsim/qa/adb/*.sh medsim/deploy/deploy-ubuntu.sh medsim/deploy/obs/*.sh; do
+            bash -n "$script"
+            echo "parsed: $script"
+          done
+
+      - name: Lint
+        # Warnings, not style notes. These scripts run as root on a deployment
+        # target, so a genuine quoting bug matters and a nitpick does not.
+        run: shellcheck -S warning medsim/qa/adb/*.sh medsim/deploy/deploy-ubuntu.sh medsim/deploy/obs/*.sh
+
+  data:
+    name: Data files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate every JSON artefact
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+
+          failures = []
+          roots = [
+              'medsim/backend/data',
+              'medsim/ml/schemas',
+              'medsim/qa/proxy',
+              'medsim/qa/cypress/fixtures',
+              'medsim/deploy/obs',
+          ]
+          for root in roots:
+              for path in pathlib.Path(root).rglob('*.json'):
+                  # This fixture is deliberately malformed - it exists to be
+                  # served to the dashboard as a corrupted response body.
+                  if 'malformed' in path.name:
+                      continue
+                  try:
+                      json.loads(path.read_text(encoding='utf-8'))
+                  except json.JSONDecodeError as exc:
+                      failures.append(f'{path}: line {exc.lineno}: {exc.msg}')
+
+          for failure in failures:
+              print(f'INVALID {failure}', file=sys.stderr)
+          sys.exit(1 if failures else 0)
+          PY
+
+      - name: Check the corpus size and uniqueness
+        run: |
+          python - <<'PY'
+          import collections, glob, json, sys
+
+          codes = []
+          for path in glob.glob('medsim/backend/data/cases_*.json'):
+              codes += [c['case_code'] for c in json.load(open(path, encoding='utf-8'))['cases']]
+
+          duplicates = [c for c, n in collections.Counter(codes).items() if n > 1]
+          print(f'{len(codes)} cases: {sorted(codes)}')
+
+          if duplicates:
+              print(f'duplicate case codes: {duplicates}', file=sys.stderr)
+              sys.exit(1)
+          if len(codes) < 25:
+              print(f'expected at least 25 cases, found {len(codes)}', file=sys.stderr)
+              sys.exit(1)
+          PY

@@ -1,0 +1,648 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-02-02T08:00:00Z",
+  "collection": "Chemical pathology - thyroid, part B (the interpretive traps)",
+  "cases": [
+    {
+      "case_code": "THY-004",
+      "title": "Low free T3 and a borderline TSH in a ventilated patient with septic shock",
+      "title_i18n": {
+        "en": "Low free T3 and a borderline TSH in a ventilated patient with septic shock",
+        "de": "Niedriges freies T3 und grenzwertiges TSH bei beatmetem Patienten im septischen Schock",
+        "es": "T3 libre baja y TSH limítrofe en un paciente ventilado con shock séptico",
+        "nl": "Laag vrij T3 en grenswaardig TSH bij een beademde patiënt met septische shock",
+        "ru": "Низкий свободный Т3 и погранично низкий ТТГ у пациента на ИВЛ с септическим шоком"
+      },
+      "summary": "Non-thyroidal illness syndrome mimicking central hypothyroidism, resolved by reverse T3 and by the TSH rebound during recovery. The case exists to punish reflexive levothyroxine prescribing in intensive care.",
+      "summary_i18n": {
+        "en": "Non-thyroidal illness syndrome mimicking central hypothyroidism; resolved by reverse T3 and the recovery-phase TSH rebound.",
+        "de": "Non-Thyroidal-Illness-Syndrom als Imitat einer zentralen Hypothyreose; geklärt durch reverses T3 und den TSH-Rebound in der Erholungsphase.",
+        "es": "Síndrome del enfermo eutiroideo que simula hipotiroidismo central; se resuelve con la T3 reversa y el rebote de TSH en la recuperación.",
+        "nl": "Non-thyroidal illness syndroom dat centrale hypothyreoïdie nabootst; opgelost door reverse T3 en de TSH-rebound in de herstelfase.",
+        "ru": "Синдром нетиреоидных заболеваний, имитирующий центральный гипотиреоз; разрешён по реверсивному Т3 и «рикошету» ТТГ в фазе восстановления."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 4,
+      "tags": ["thyroid", "non-thyroidal-illness", "critical-care", "reverse-T3", "central-hypothyroidism", "interpretive-trap"],
+      "icd10_codes": ["E07.8", "A41.9"],
+      "snomed_codes": ["190315004"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-004",
+        "age_years": 67,
+        "sex": "male",
+        "weight_kg": 84.0,
+        "height_cm": 178.0,
+        "ancestry": "Northern European",
+        "occupation": "Retired lorry driver",
+        "region": "Tertiary intensive care unit"
+      },
+      "presentation": {
+        "chief_complaint": "Day 4 of mechanical ventilation for faecal peritonitis and septic shock; thyroid function tests ordered by the night team after a nurse queried the patient's low temperature.",
+        "chief_complaint_i18n": {
+          "en": "Day 4 of ventilation for faecal peritonitis and septic shock; thyroid function tests ordered overnight.",
+          "de": "Tag 4 der Beatmung bei kotiger Peritonitis und septischem Schock; Schilddrüsenwerte nachts angefordert.",
+          "es": "Cuarto día de ventilación por peritonitis fecaloidea y shock séptico; función tiroidea solicitada de madrugada.",
+          "nl": "Dag 4 van beademing wegens faecale peritonitis en septische shock; schildklierfunctie 's nachts aangevraagd.",
+          "ru": "4-е сутки ИВЛ по поводу калового перитонита и септического шока; функция щитовидной железы назначена ночной сменой."
+        },
+        "history_of_present_illness": "Emergency Hartmann procedure for a perforated sigmoid diverticulum. Postoperatively he required noradrenaline at 0.28 µg/kg/min, continuous veno-venous haemofiltration for anuric acute kidney injury, and lung-protective ventilation for a moderate ARDS. He received a single 200 mg dose of intravenous hydrocortisone at induction and a 5-day course of dopamine at a renal dose on another unit before transfer. He is sedated with propofol and fentanyl. No known thyroid disease, no thyroid medication, and no cranial trauma or pituitary history.",
+        "past_medical_history": ["Type 2 diabetes mellitus", "Diverticular disease", "Ex-smoker, 30 pack-years"],
+        "medications": [
+          {"name": "Noradrenaline", "dose": "0.28 µg/kg/min", "route": "IV infusion", "frequency": "continuous", "indication": "septic shock"},
+          {"name": "Piperacillin-tazobactam", "dose": "4.5 g", "route": "IV", "frequency": "every 8 hours", "indication": "faecal peritonitis"},
+          {"name": "Propofol", "dose": "150 mg/h", "route": "IV infusion", "frequency": "continuous", "indication": "sedation"},
+          {"name": "Dopamine", "dose": "3 µg/kg/min (stopped day 2)", "route": "IV infusion", "frequency": "n/a", "indication": "historical renal-dose infusion", "notes": "Directly suppresses TSH secretion; a documented confounder for this exact test."},
+          {"name": "Hydrocortisone", "dose": "200 mg single dose", "route": "IV", "frequency": "once", "indication": "induction", "notes": "Glucocorticoids suppress TSH and inhibit T4-to-T3 conversion."}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["Non-contributory"],
+        "social_history": "Ex-smoker. Lives with wife.",
+        "review_of_systems": {
+          "note": "Sedated and ventilated; systems review not obtainable"
+        },
+        "vitals": {
+          "heart_rate_bpm": 104,
+          "blood_pressure_mmhg": "92/48 on noradrenaline",
+          "respiratory_rate": 22,
+          "temperature_c": 35.4,
+          "spo2_percent": 94,
+          "map_mmhg": 63,
+          "urine_output_ml_h": 8
+        },
+        "examination_findings": [
+          "Sedated, RASS -4, ventilated on FiO2 0.55, PEEP 12",
+          "Cool peripheries, capillary refill 4 seconds",
+          "Laparostomy dressing clean, no discharge",
+          "No goitre, no lid lag, no proptosis",
+          "Reflexes unassessable under sedation",
+          "No stigmata of pituitary disease: no visual field defect assessable, no gynaecomastia, no loss of body hair"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Day 4 of critical illness. This is the pattern that generates inappropriate levothyroxine prescriptions.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 0.28, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "L", "interference_note": "Low but not suppressed. Dopamine and glucocorticoid both suppress TSH directly; neither implies pituitary disease."},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 10.8, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0, "flag": "L"},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 1.9, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8, "flag": "L", "interference_note": "The dominant abnormality. Low T3 is the earliest and most consistent feature of non-thyroidal illness syndrome, driven by reduced type 1 deiodinase and increased type 3 deiodinase activity."},
+            {"analyte_code": "RT3", "analyte_name": "Reverse triiodothyronine", "value_numeric": 0.92, "unit": "nmol/L", "ref_low": 0.14, "ref_high": 0.54, "flag": "H", "method": "LC-MS/MS, send-away", "interference_note": "THE discriminator. Reverse T3 is HIGH in non-thyroidal illness (T4 is shunted down the inactivating pathway) and LOW or normal in true central hypothyroidism, where there is simply less T4 to metabolise."}
+          ]
+        },
+        {
+          "panel_code": "PITUITARY",
+          "panel_name": "Anterior pituitary screen",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "Ordered because the TFT pattern superficially resembles central hypothyroidism.",
+          "results": [
+            {"analyte_code": "CORTISOL_RANDOM", "analyte_name": "Random cortisol", "value_numeric": 782.0, "unit": "nmol/L", "ref_low": 140.0, "ref_high": 690.0, "flag": "H", "interference_note": "An appropriately high stress cortisol effectively excludes global anterior pituitary failure. A cortisol of 782 nmol/L in shock is a working corticotroph axis."},
+            {"analyte_code": "PROLACTIN", "analyte_name": "Prolactin", "value_numeric": 480.0, "unit": "mIU/L", "ref_low": 86.0, "ref_high": 324.0, "flag": "H", "interference_note": "Mildly raised - stress and dopamine antagonism, not a prolactinoma."},
+            {"analyte_code": "LH", "analyte_name": "Luteinising hormone", "value_numeric": 1.2, "unit": "IU/L", "ref_low": 1.7, "ref_high": 8.6, "flag": "L", "interference_note": "Suppressed gonadotrophins are near-universal in critical illness and must not be read as hypopituitarism."},
+            {"analyte_code": "TESTOSTERONE", "analyte_name": "Total testosterone", "value_numeric": 1.8, "unit": "nmol/L", "ref_low": 8.6, "ref_high": 29.0, "flag": "L"}
+          ]
+        },
+        {
+          "panel_code": "INFLAMMATION",
+          "panel_name": "Inflammatory and organ markers",
+          "day_offset": 0,
+          "specimen": "serum",
+          "results": [
+            {"analyte_code": "CRP", "analyte_name": "C-reactive protein", "value_numeric": 284.0, "unit": "mg/L", "ref_low": 0.0, "ref_high": 5.0, "flag": "H"},
+            {"analyte_code": "ALB", "analyte_name": "Albumin", "value_numeric": 18.0, "unit": "g/L", "ref_low": 35.0, "ref_high": 50.0, "flag": "L", "interference_note": "Severe hypoalbuminaemia depresses measured free T4 on analogue immunoassays; some of the low FT4 here is analytical rather than physiological."},
+            {"analyte_code": "CREAT", "analyte_name": "Creatinine", "value_numeric": 318.0, "unit": "µmol/L", "ref_low": 55.0, "ref_high": 105.0, "flag": "H"},
+            {"analyte_code": "NA", "analyte_name": "Sodium", "value_numeric": 148.0, "unit": "mmol/L", "ref_low": 135.0, "ref_high": 145.0, "flag": "H"},
+            {"analyte_code": "LACTATE", "analyte_name": "Arterial lactate", "value_numeric": 4.2, "unit": "mmol/L", "ref_low": 0.5, "ref_high": 2.0, "flag": "H"}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 21,
+          "specimen": "serum",
+          "comment": "Recovery phase: extubated day 16, vasopressors stopped day 12, off filtration. No thyroid hormone was ever given.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 8.4, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "H", "interference_note": "The recovery-phase TSH rebound. This transient overshoot is diagnostic of resolving non-thyroidal illness and is routinely misread as newly diagnosed hypothyroidism, leading to lifelong and unnecessary levothyroxine."},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 13.2, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 3.4, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8},
+            {"analyte_code": "RT3", "analyte_name": "Reverse triiodothyronine", "value_numeric": 0.48, "unit": "nmol/L", "ref_low": 0.14, "ref_high": 0.54, "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 90,
+          "specimen": "serum",
+          "comment": "Outpatient follow-up six weeks after discharge. Never treated.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 2.1, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 16.4, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 4.8, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8},
+            {"analyte_code": "TPOAB", "analyte_name": "Thyroid peroxidase antibody", "value_numeric": 12.0, "unit": "IU/mL", "ref_high": 34.0, "flag": "N"}
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "MRI pituitary with gadolinium",
+          "region": "Sella and parasellar region",
+          "day_offset": 24,
+          "findings": "Normal pituitary height (6 mm) and homogeneous enhancement. No adenoma, no haemorrhage, no empty sella, no stalk thickening. Optic chiasm normal.",
+          "impression": "Normal pituitary. Performed only because the day-4 pattern raised the question of central hypothyroidism; in retrospect the reverse T3 had already answered it and this scan added cost without information."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Supportive management of non-thyroidal illness syndrome (no thyroid hormone)",
+          "name_i18n": {
+            "en": "Supportive management of non-thyroidal illness syndrome (no thyroid hormone)",
+            "de": "Supportive Behandlung des Non-Thyroidal-Illness-Syndroms (keine Schilddrüsenhormone)",
+            "es": "Manejo de soporte del síndrome del enfermo eutiroideo (sin hormona tiroidea)",
+            "nl": "Ondersteunende behandeling van non-thyroidal illness syndroom (geen schildklierhormoon)",
+            "ru": "Поддерживающая тактика при синдроме нетиреоидных заболеваний (без гормонов щитовидной железы)"
+          },
+          "guideline_source": "Composite critical-care endocrinology practice; no guideline supports routine thyroid hormone in NTIS",
+          "indication": "Low T3 pattern in critical illness with a raised reverse T3 and no antecedent thyroid disease.",
+          "duration_months": null,
+          "regimen": [
+            {"agent": "No thyroid hormone", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "Randomised trials of T3 or T4 replacement in NTIS have not shown mortality benefit and T4 supplementation may worsen outcome by suppressing the adaptive response."},
+            {"agent": "Treat the underlying illness", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "until resolved", "notes": "Source control, appropriate antimicrobials, organ support."},
+            {"agent": "Withdraw confounding drugs where possible", "dose": "n/a", "route": "n/a", "frequency": "n/a", "duration": "n/a", "notes": "Dopamine and high-dose glucocorticoid both suppress TSH; both had been given here."}
+          ],
+          "monitoring": [
+            "Do not repeat thyroid function tests during the acute phase - they will remain abnormal and generate pressure to treat",
+            "Repeat TSH and FT4 at least 6 weeks after clinical recovery, as an outpatient",
+            "If the recovery TSH exceeds 20 mIU/L or FT4 remains low at 6 weeks, then reassess for genuine thyroid disease",
+            "Measure reverse T3 only where central hypothyroidism is a genuine consideration; it is a send-away assay and rarely changes management otherwise"
+          ],
+          "contraindications": ["Thyroid hormone replacement is contraindicated in the absence of evidence of true hypothyroidism"],
+          "adverse_effects": ["Iatrogenic thyrotoxicosis, arrhythmia and increased myocardial oxygen demand if levothyroxine is given inappropriately"],
+          "notes": "The single most important intervention in this case was not ordering the test on day 4. Thyroid function testing in the acute phase of critical illness has a very low pre-test probability of changing management and a high probability of causing harm through misinterpretation."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Non-thyroidal illness syndrome (euthyroid sick syndrome)",
+          "label_i18n": {
+            "en": "Non-thyroidal illness syndrome (euthyroid sick syndrome)",
+            "de": "Non-Thyroidal-Illness-Syndrom (Euthyroid-Sick-Syndrom)",
+            "es": "Síndrome del enfermo eutiroideo",
+            "nl": "Non-thyroidal illness syndroom (euthyroid sick syndrome)",
+            "ru": "Синдром нетиреоидных заболеваний (синдром эутиреоидной патологии)"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.96,
+          "icd10": "E07.8",
+          "discriminator": "Raised reverse T3 with a low FT3, an intact cortisol response, and complete spontaneous normalisation through a transient TSH rebound - none of which occurs in central hypothyroidism.",
+          "supporting_evidence": [
+            "FT3 1.9 pmol/L as the dominant abnormality with a proportionally smaller FT4 fall",
+            "Reverse T3 0.92 nmol/L (raised)",
+            "Random cortisol 782 nmol/L - corticotroph axis intact",
+            "CRP 284 mg/L and albumin 18 g/L - severe systemic inflammation",
+            "Documented dopamine and glucocorticoid exposure, both TSH-suppressing",
+            "Recovery-phase TSH rebound to 8.4 mIU/L followed by full normalisation at 90 days without treatment"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Central (secondary) hypothyroidism",
+          "label_i18n": {
+            "en": "Central (secondary) hypothyroidism",
+            "de": "Zentrale (sekundäre) Hypothyreose",
+            "es": "Hipotiroidismo central (secundario)",
+            "nl": "Centrale (secundaire) hypothyreoïdie",
+            "ru": "Центральный (вторичный) гипотиреоз"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "icd10": "E03.9",
+          "discriminator": "Reverse T3 is raised, not low; cortisol is appropriately high; the pituitary MRI is normal; and the axis normalised spontaneously. Any one of these argues against central hypothyroidism, and together they exclude it.",
+          "supporting_evidence": ["Low FT4 with a non-elevated TSH is the textbook pattern of central hypothyroidism"],
+          "refuting_evidence": ["Reverse T3 raised at 0.92 nmol/L", "Cortisol 782 nmol/L", "Normal pituitary MRI", "Spontaneous normalisation with TSH rebound"]
+        },
+        {
+          "label": "Drug-induced TSH suppression (dopamine, glucocorticoid)",
+          "label_i18n": {
+            "en": "Drug-induced TSH suppression",
+            "de": "Medikamentös bedingte TSH-Suppression",
+            "es": "Supresión de TSH inducida por fármacos",
+            "nl": "Geneesmiddelgeïnduceerde TSH-suppressie",
+            "ru": "Медикаментозная супрессия ТТГ"
+          },
+          "is_primary": false,
+          "certainty": "probable",
+          "likelihood": 0.6,
+          "discriminator": "A genuine contributing mechanism rather than a competing diagnosis; it explains why the TSH was 0.28 rather than the mildly raised value that would otherwise be expected.",
+          "supporting_evidence": ["Dopamine infusion until day 2", "200 mg hydrocortisone at induction"],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Primary hypothyroidism",
+          "label_i18n": {
+            "en": "Primary hypothyroidism",
+            "de": "Primäre Hypothyreose",
+            "es": "Hipotiroidismo primario",
+            "nl": "Primaire hypothyreoïdie",
+            "ru": "Первичный гипотиреоз"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "TSH was low, not high, at presentation. The day-21 TSH of 8.4 mIU/L is the classic point at which this wrong diagnosis gets made.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["TSH 0.28 mIU/L at presentation", "Negative TPO antibodies", "Full normalisation at 90 days untreated"]
+        }
+      ],
+      "teaching_points": [
+        "Reverse T3 is the discriminator between non-thyroidal illness syndrome and central hypothyroidism: it is HIGH in the former and LOW-to-normal in the latter. Nothing else in the routine panel separates them reliably.",
+        "The recovery-phase TSH rebound is a normal part of resolving critical illness. A TSH of 5-20 mIU/L in the week after extubation is expected, and treating it commits the patient to lifelong replacement for a condition they never had.",
+        "Do not order thyroid function tests in the acute phase of critical illness unless thyroid disease is genuinely suspected as a contributor. The test will be abnormal, and the abnormality will be misleading.",
+        "Severe hypoalbuminaemia depresses free T4 on analogue immunoassays. Part of the low FT4 here is analytical artefact from an albumin of 18 g/L, not reduced hormone availability.",
+        "Suppressed gonadotrophins, a mildly raised prolactin and a low testosterone are near-universal in critical illness. Reading them as hypopituitarism produces a cascade of unnecessary imaging - as the normal MRI in this case demonstrates.",
+        "An appropriately high random cortisol during shock is strong evidence against global anterior pituitary failure and is the cheapest test that reframes this whole panel."
+      ],
+      "references": [
+        {"citation": "Fliers E, Boelen A. An update on non-thyroidal illness syndrome. J Endocrinol Invest 2021.", "type": "review"},
+        {"citation": "Van den Berghe G. Non-thyroidal illness in the ICU: a syndrome with different faces. Thyroid 2014.", "type": "review"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Non-thyroidal illness syndrome",
+        "accepted_diagnosis_terms": ["non-thyroidal illness", "nonthyroidal illness", "euthyroid sick", "sick euthyroid", "low t3 syndrome", "ntis"],
+        "must_include_findings": [
+          {"label": "Low free T3 as the dominant abnormality", "synonyms": ["ft3 1.9", "low t3", "free t3 low", "t3 reduced"], "weight": 1.25},
+          {"label": "Raised reverse T3", "synonyms": ["reverse t3", "rt3 0.92", "rt3 high", "elevated reverse t3"], "weight": 2.0},
+          {"label": "Non-suppressed cortisol response", "synonyms": ["cortisol 782", "cortisol high", "intact cortisol", "stress cortisol"], "weight": 1.0},
+          {"label": "Recovery-phase TSH rebound", "synonyms": ["tsh rebound", "tsh 8.4", "transient tsh rise", "recovery phase"], "weight": 1.25},
+          {"label": "Confounding drugs suppress TSH", "synonyms": ["dopamine", "glucocorticoid", "hydrocortisone", "steroid suppresses tsh"], "weight": 0.75}
+        ],
+        "expected_differential": ["central hypothyroidism", "hypopituitarism", "primary hypothyroidism", "drug-induced tsh suppression", "subclinical hyperthyroidism"],
+        "expected_next_tests": ["reverse t3", "random cortisol", "prolactin", "repeat thyroid function after recovery", "pituitary mri only if the axis fails to normalise"],
+        "expected_management": ["no thyroid hormone", "treat the underlying sepsis", "repeat testing after recovery", "avoid levothyroxine", "withdraw dopamine where possible"],
+        "critical_values": [
+          {"analyte": "LACTATE", "value": 4.2, "reason": "Shock with tissue hypoperfusion"},
+          {"analyte": "CREAT", "value": 318.0, "reason": "Severe acute kidney injury"}
+        ],
+        "safety_rules": [
+          {"id": "SR-THY-NTIS-NOTREAT", "description": "Must not recommend levothyroxine or liothyronine for this pattern.", "forbidden_patterns": ["start levothyroxine", "commence levothyroxine", "give liothyronine", "thyroid hormone replacement is indicated", "treat with t3"]},
+          {"id": "SR-THY-NTIS-RETEST", "description": "Should recommend deferring reassessment until after clinical recovery.", "required_terms": ["repeat after recovery", "recheck", "six weeks", "outpatient", "defer"]}
+        ],
+        "distractor_terms": ["myxoedema coma", "thyroid storm", "sheehan syndrome", "pituitary apoplexy", "graves disease"]
+      }
+    },
+    {
+      "case_code": "THY-005",
+      "title": "Thyrotoxicosis five months after starting amiodarone: type 1 or type 2?",
+      "title_i18n": {
+        "en": "Thyrotoxicosis five months after starting amiodarone: type 1 or type 2?",
+        "de": "Thyreotoxikose fünf Monate nach Amiodaron-Beginn: Typ 1 oder Typ 2?",
+        "es": "Tirotoxicosis cinco meses tras iniciar amiodarona: ¿tipo 1 o tipo 2?",
+        "nl": "Thyreotoxicose vijf maanden na start amiodaron: type 1 of type 2?",
+        "ru": "Тиреотоксикоз через пять месяцев после начала приёма амиодарона: тип 1 или тип 2?"
+      },
+      "summary": "Amiodarone-induced thyrotoxicosis in a patient who cannot safely stop the drug. The case turns on separating iodine-induced hyperfunction (type 1) from destructive thyroiditis (type 2), because the treatments are opposite and the wrong one wastes months.",
+      "summary_i18n": {
+        "en": "Amiodarone-induced thyrotoxicosis where type 1 and type 2 demand opposite treatments; Doppler and the steroid response settle it.",
+        "de": "Amiodaron-induzierte Thyreotoxikose, bei der Typ 1 und Typ 2 gegensätzliche Therapien erfordern; Doppler und Steroidansprechen entscheiden.",
+        "es": "Tirotoxicosis por amiodarona en la que el tipo 1 y el tipo 2 exigen tratamientos opuestos; el Doppler y la respuesta a corticoides lo resuelven.",
+        "nl": "Amiodaron-geïnduceerde thyreotoxicose waarbij type 1 en type 2 tegengestelde behandelingen vergen; doppler en steroïdrespons geven uitsluitsel.",
+        "ru": "Амиодарон-индуцированный тиреотоксикоз, при котором тип 1 и тип 2 требуют противоположного лечения; вопрос решают допплер и ответ на стероиды."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 5,
+      "tags": ["thyroid", "amiodarone", "thyrotoxicosis", "drug-induced", "pharmacology", "iodine"],
+      "icd10_codes": ["E05.8", "T46.2"],
+      "snomed_codes": ["237500001"],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-005",
+        "age_years": 71,
+        "sex": "male",
+        "weight_kg": 79.0,
+        "height_cm": 174.0,
+        "ancestry": "Southern European",
+        "occupation": "Retired engineer",
+        "region": "Coastal, historically iodine-replete"
+      },
+      "presentation": {
+        "chief_complaint": "Recurrence of palpitations and 6 kg weight loss five months after amiodarone was started for recurrent ventricular tachycardia.",
+        "chief_complaint_i18n": {
+          "en": "Recurrent palpitations and 6 kg weight loss five months after starting amiodarone.",
+          "de": "Erneute Palpitationen und 6 kg Gewichtsverlust fünf Monate nach Amiodaron-Beginn.",
+          "es": "Palpitaciones recurrentes y pérdida de 6 kg cinco meses después de iniciar amiodarona.",
+          "nl": "Terugkerende palpitaties en 6 kg gewichtsverlies vijf maanden na start van amiodaron.",
+          "ru": "Возобновление сердцебиения и потеря 6 кг веса через пять месяцев после начала приёма амиодарона."
+        },
+        "history_of_present_illness": "Amiodarone was started after an episode of sustained monomorphic ventricular tachycardia in the context of ischaemic cardiomyopathy with an ejection fraction of 28%. He has an implantable cardioverter-defibrillator. Baseline thyroid function before amiodarone was normal (TSH 1.8 mIU/L, FT4 15.1 pmol/L) and is documented in the record - a detail without which this case would be far harder. Over the last six weeks he has lost weight, become tremulous and heat-intolerant, and his device has recorded three episodes of non-sustained ventricular tachycardia after four quiet months. The cardiology team's position is that stopping amiodarone risks a life-threatening arrhythmia.",
+        "past_medical_history": ["Ischaemic cardiomyopathy, LVEF 28%", "Sustained monomorphic VT with ICD in situ", "Previous anterior myocardial infarction", "Chronic kidney disease stage 3a"],
+        "medications": [
+          {"name": "Amiodarone", "dose": "200 mg", "route": "oral", "frequency": "once daily", "indication": "ventricular tachycardia", "notes": "Each 200 mg tablet contains about 75 mg of iodine, of which 6-9 mg is released daily - roughly 40 times the recommended daily intake. Half-life is 50-100 days, so the iodine load persists for months after stopping."},
+          {"name": "Bisoprolol", "dose": "5 mg", "route": "oral", "frequency": "once daily", "indication": "heart failure"},
+          {"name": "Ramipril", "dose": "5 mg", "route": "oral", "frequency": "once daily", "indication": "heart failure"},
+          {"name": "Furosemide", "dose": "40 mg", "route": "oral", "frequency": "once daily", "indication": "heart failure"},
+          {"name": "Apixaban", "dose": "5 mg", "route": "oral", "frequency": "twice daily", "indication": "atrial fibrillation"}
+        ],
+        "allergies": ["No known drug allergies"],
+        "family_history": ["No thyroid disease"],
+        "social_history": "Ex-smoker. No alcohol. Lives with his daughter.",
+        "review_of_systems": {
+          "cardiovascular": "Palpitations, three ICD-recorded NSVT episodes, worsening exertional dyspnoea",
+          "general": "6 kg weight loss, heat intolerance, tremor",
+          "neurological": "Fine tremor; no proximal weakness",
+          "ophthalmic": "No grittiness, no diplopia, no proptosis"
+        },
+        "vitals": {
+          "heart_rate_bpm": 96,
+          "rhythm": "atrial fibrillation",
+          "blood_pressure_mmhg": "108/64",
+          "respiratory_rate": 18,
+          "temperature_c": 36.9,
+          "weight_kg": 79.0,
+          "spo2_percent": 95
+        },
+        "examination_findings": [
+          "No palpable goitre; thyroid impalpable",
+          "No orbitopathy, no lid retraction, no proptosis",
+          "Fine tremor of the outstretched hands",
+          "Irregularly irregular pulse at 96 bpm",
+          "Bibasal crackles, JVP 4 cm, mild ankle oedema",
+          "Corneal microdeposits on slit lamp (an expected amiodarone finding, not thyroid-related)",
+          "Slate-grey skin discolouration over the malar area"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "Presentation. Compare with the documented pre-amiodarone baseline TSH 1.8, FT4 15.1.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 0.008, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "LL", "is_critical": true},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 48.2, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0, "flag": "H", "interference_note": "Note the very high FT4 with a comparatively modest FT3 rise: amiodarone blocks type 1 deiodinase, so T4-to-T3 conversion is impaired even during thyrotoxicosis."},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 9.8, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8, "flag": "H"},
+            {"analyte_code": "RT3", "analyte_name": "Reverse triiodothyronine", "value_numeric": 1.14, "unit": "nmol/L", "ref_low": 0.14, "ref_high": 0.54, "flag": "H", "interference_note": "Raised by deiodinase blockade, not by illness. Reverse T3 cannot be used to argue for non-thyroidal illness in a patient on amiodarone."}
+          ]
+        },
+        {
+          "panel_code": "THYROID_AB",
+          "panel_name": "Thyroid autoantibodies and thyroglobulin",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "Ordered specifically to exclude coincidental Graves disease, which amiodarone can unmask.",
+          "results": [
+            {"analyte_code": "TRAB", "analyte_name": "TSH receptor antibody", "value_numeric": 0.4, "unit": "IU/L", "ref_high": 1.75, "flag": "N", "interference_note": "Negative. Rules out Graves disease as the mechanism, which would otherwise have been a treatable third possibility."},
+            {"analyte_code": "TPOAB", "analyte_name": "Thyroid peroxidase antibody", "value_numeric": 18.0, "unit": "IU/mL", "ref_high": 34.0, "flag": "N"},
+            {"analyte_code": "TG", "analyte_name": "Thyroglobulin", "value_numeric": 218.0, "unit": "µg/L", "ref_low": 3.5, "ref_high": 77.0, "flag": "H", "interference_note": "Markedly raised, consistent with follicular destruction and release of stored colloid - supports type 2."},
+            {"analyte_code": "IL6", "analyte_name": "Interleukin-6", "value_numeric": 42.0, "unit": "pg/mL", "ref_low": 0.0, "ref_high": 7.0, "flag": "H", "interference_note": "Raised in destructive (type 2) disease. The literature on IL-6 as a discriminator is inconsistent and it should support, never drive, the decision."}
+          ]
+        },
+        {
+          "panel_code": "IODINE",
+          "panel_name": "Iodine status",
+          "day_offset": 0,
+          "specimen": "urine",
+          "comment": "24-hour collection.",
+          "results": [
+            {"analyte_code": "URINE_IODINE", "analyte_name": "Urinary iodine excretion", "value_numeric": 8400.0, "unit": "µg/24h", "ref_low": 100.0, "ref_high": 300.0, "flag": "H", "interference_note": "Massive iodine load confirming amiodarone exposure. This also explains why radioiodine is not an option: the gland will not take up tracer against this iodine background."}
+          ]
+        },
+        {
+          "panel_code": "BASELINE_SAFETY",
+          "panel_name": "Organ safety profile",
+          "day_offset": 0,
+          "specimen": "serum",
+          "results": [
+            {"analyte_code": "ALT", "analyte_name": "Alanine aminotransferase", "value_numeric": 78.0, "unit": "U/L", "ref_low": 10.0, "ref_high": 45.0, "flag": "H"},
+            {"analyte_code": "CREAT", "analyte_name": "Creatinine", "value_numeric": 132.0, "unit": "µmol/L", "ref_low": 55.0, "ref_high": 105.0, "flag": "H"},
+            {"analyte_code": "K", "analyte_name": "Potassium", "value_numeric": 4.1, "unit": "mmol/L", "ref_low": 3.5, "ref_high": 5.1},
+            {"analyte_code": "WBC", "analyte_name": "White cell count", "value_numeric": 7.4, "unit": "10^9/L", "ref_low": 4.0, "ref_high": 11.0},
+            {"analyte_code": "ANC", "analyte_name": "Absolute neutrophil count", "value_numeric": 4.2, "unit": "10^9/L", "ref_low": 1.8, "ref_high": 7.5}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 14,
+          "specimen": "serum",
+          "comment": "Two weeks on prednisolone 40 mg daily. Carbimazole 40 mg was given concurrently for the first 10 days while the type was uncertain, then withdrawn.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 0.01, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "LL"},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 28.4, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0, "flag": "H", "interference_note": "A fall of 20 pmol/L in 14 days. This magnitude and speed of response to glucocorticoid alone is itself diagnostic of type 2; type 1 does not behave this way."},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 6.2, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8, "flag": "N"}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 42,
+          "specimen": "serum",
+          "comment": "Six weeks; prednisolone tapering by 10 mg every two weeks. Amiodarone continued throughout on cardiology advice.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 0.18, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "L"},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 19.6, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 4.4, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8}
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 120,
+          "specimen": "serum",
+          "comment": "Four months; prednisolone stopped at week 12. Amiodarone continued.",
+          "results": [
+            {"analyte_code": "TSH", "analyte_name": "Thyroid-stimulating hormone", "value_numeric": 6.8, "unit": "mIU/L", "ref_low": 0.4, "ref_high": 4.0, "flag": "H", "interference_note": "The hypothyroid tail of destructive thyroiditis. Type 2 amiodarone-induced thyrotoxicosis not uncommonly ends in permanent hypothyroidism; this needs monitoring, not alarm."},
+            {"analyte_code": "FT4", "analyte_name": "Free thyroxine", "value_numeric": 11.8, "unit": "pmol/L", "ref_low": 12.0, "ref_high": 22.0, "flag": "L"},
+            {"analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "value_numeric": 3.2, "unit": "pmol/L", "ref_low": 3.1, "ref_high": 6.8}
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Ultrasound with colour flow Doppler",
+          "region": "Thyroid",
+          "day_offset": 1,
+          "findings": "Normal-sized gland (14 mL), mildly heterogeneous echotexture, no nodules. Colour flow pattern 0 (Bogazzi classification): absent intraparenchymal vascularity. Inferior thyroid artery peak systolic velocity 14 cm/s (reduced).",
+          "impression": "Absent vascularity in a non-goitrous gland. Combined with a raised thyroglobulin and negative TRAb, this indicates destructive (type 2) amiodarone-induced thyrotoxicosis rather than iodine-induced hyperfunction (type 1), in which vascularity is normal or increased and nodules are usually present."
+        },
+        {
+          "modality": "Technetium-99m sestamibi scintigraphy",
+          "region": "Thyroid",
+          "day_offset": 4,
+          "findings": "Absent thyroidal sestamibi retention on delayed images.",
+          "impression": "Absent retention supports type 2 (destroyed, metabolically inactive follicles). Sestamibi is used because conventional pertechnetate or radioiodine uptake is uninterpretable against an iodine load of this magnitude."
+        },
+        {
+          "modality": "Transthoracic echocardiogram",
+          "region": "Heart",
+          "day_offset": 1,
+          "findings": "LVEF 24% (down from 28%), moderate functional mitral regurgitation, no thrombus.",
+          "impression": "Thyrotoxicosis-related deterioration in an already severely impaired ventricle. Establishes the urgency of biochemical control."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "High-dose glucocorticoid for type 2 amiodarone-induced thyrotoxicosis with amiodarone continuation",
+          "name_i18n": {
+            "en": "High-dose glucocorticoid for type 2 amiodarone-induced thyrotoxicosis",
+            "de": "Hochdosierte Glukokortikoide bei Amiodaron-induzierter Thyreotoxikose Typ 2",
+            "es": "Glucocorticoides a dosis altas para tirotoxicosis por amiodarona tipo 2",
+            "nl": "Hooggedoseerde glucocorticoïden bij amiodaron-geïnduceerde thyreotoxicose type 2",
+            "ru": "Высокодозная глюкокортикоидная терапия при амиодарон-индуцированном тиреотоксикозе 2-го типа"
+          },
+          "guideline_source": "ETA 2018 guideline on amiodarone-induced thyroid dysfunction (adapted)",
+          "indication": "Type 2 amiodarone-induced thyrotoxicosis in a patient with severe left ventricular impairment in whom amiodarone withdrawal carries an unacceptable arrhythmic risk.",
+          "duration_months": 3,
+          "regimen": [
+            {"agent": "Prednisolone", "dose": "40 mg (0.5 mg/kg)", "route": "oral", "frequency": "once daily", "duration": "4 weeks", "notes": "Anti-inflammatory action on the destructive thyroiditis. A clear FT4 fall within 2-4 weeks both treats and confirms type 2."},
+            {"agent": "Prednisolone taper", "dose": "reduce by 10 mg every 2 weeks", "route": "oral", "frequency": "once daily", "duration": "8 weeks", "notes": "Total course 12 weeks. Too rapid a taper causes rebound thyrotoxicosis."},
+            {"agent": "Carbimazole", "dose": "40 mg", "route": "oral", "frequency": "once daily", "duration": "10 days only", "notes": "Given empirically while the type was uncertain (a legitimate 'treat both' strategy in an unstable patient), then withdrawn once the Doppler and steroid response established type 2."},
+            {"agent": "Amiodarone", "dose": "200 mg", "route": "oral", "frequency": "once daily", "duration": "continued", "notes": "Continued after multidisciplinary discussion. Stopping it would not have helped acutely - the 50-100 day half-life means the iodine load persists for months - and the arrhythmic risk was judged higher than the thyroid risk."},
+            {"agent": "Bisoprolol", "dose": "5 mg increased to 7.5 mg", "route": "oral", "frequency": "once daily", "duration": "ongoing", "notes": "Rate control and symptom relief; dose limited by the low blood pressure and poor ventricular function."}
+          ],
+          "monitoring": [
+            "FT4 and FT3 every 2 weeks during the acute phase - the rate of FT4 fall is the diagnostic readout, not just a progress marker",
+            "Capillary glucose while on prednisolone: he is at high risk of steroid-induced hyperglycaemia",
+            "Repeat echocardiography once euthyroid to reassess ejection fraction",
+            "TSH and FT4 every 3 months indefinitely while amiodarone continues, and after stopping it for at least 12 months",
+            "Watch specifically for the hypothyroid tail, which appeared here at four months"
+          ],
+          "contraindications": [
+            "Radioiodine is not usable: the iodine load abolishes tracer uptake",
+            "Thionamides alone are ineffective in pure type 2 - the gland is not synthesising hormone, it is leaking it"
+          ],
+          "adverse_effects": [
+            "Steroid-induced hyperglycaemia, fluid retention (a real problem with LVEF 24%), gastric ulceration, mood disturbance, and opportunistic infection",
+            "Rebound thyrotoxicosis if the taper is too fast",
+            "Permanent hypothyroidism as a sequel of the destructive process"
+          ],
+          "notes": "Mixed or indeterminate forms are common and it is legitimate to treat both mechanisms at once in an unstable patient, then withdraw the arm that is not working. Total thyroidectomy under local or regional anaesthesia remains the definitive option for refractory disease with cardiac decompensation, and should be considered early rather than as a last resort in a failing ventricle."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Type 2 amiodarone-induced thyrotoxicosis (destructive thyroiditis)",
+          "label_i18n": {
+            "en": "Type 2 amiodarone-induced thyrotoxicosis (destructive thyroiditis)",
+            "de": "Amiodaron-induzierte Thyreotoxikose Typ 2 (destruktive Thyreoiditis)",
+            "es": "Tirotoxicosis por amiodarona tipo 2 (tiroiditis destructiva)",
+            "nl": "Amiodaron-geïnduceerde thyreotoxicose type 2 (destructieve thyreoïditis)",
+            "ru": "Амиодарон-индуцированный тиреотоксикоз 2-го типа (деструктивный тиреоидит)"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.92,
+          "icd10": "E05.8",
+          "discriminator": "Absent Doppler vascularity in a non-nodular gland, raised thyroglobulin, negative TRAb, absent sestamibi retention, and a 20 pmol/L fall in FT4 within two weeks of glucocorticoid alone.",
+          "supporting_evidence": [
+            "Colour flow pattern 0 with reduced peak systolic velocity",
+            "Normal-sized gland with no nodules",
+            "Thyroglobulin 218 µg/L (destruction releases stored colloid)",
+            "TRAb negative at 0.4 IU/L",
+            "Absent sestamibi retention",
+            "Rapid response to prednisolone with FT4 48.2 to 28.4 pmol/L in 14 days",
+            "Subsequent hypothyroid phase at four months, characteristic of a destructive process"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Type 1 amiodarone-induced thyrotoxicosis (iodine-induced hyperfunction)",
+          "label_i18n": {
+            "en": "Type 1 amiodarone-induced thyrotoxicosis",
+            "de": "Amiodaron-induzierte Thyreotoxikose Typ 1",
+            "es": "Tirotoxicosis por amiodarona tipo 1",
+            "nl": "Amiodaron-geïnduceerde thyreotoxicose type 1",
+            "ru": "Амиодарон-индуцированный тиреотоксикоз 1-го типа"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.06,
+          "discriminator": "Type 1 arises on a pre-existing abnormal gland (nodular goitre or latent Graves), shows normal or increased vascularity, and responds to thionamides plus potassium perchlorate rather than to steroids.",
+          "supporting_evidence": ["Massive iodine load is present in both types"],
+          "refuting_evidence": ["No nodules, normal gland volume", "Absent vascularity on Doppler", "Negative TRAb", "Steroid-responsive within 14 days", "Carbimazole withdrawal made no difference to the trajectory"]
+        },
+        {
+          "label": "Coincidental Graves disease unmasked by iodine (Jod-Basedow)",
+          "label_i18n": {
+            "en": "Coincidental Graves disease unmasked by iodine",
+            "de": "Durch Jod demaskierter Morbus Basedow (Jod-Basedow)",
+            "es": "Enfermedad de Graves coincidente desenmascarada por yodo",
+            "nl": "Toevallige ziekte van Graves ontmaskerd door jodium",
+            "ru": "Сопутствующая болезнь Грейвса, спровоцированная йодом (йод-Базедов)"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Negative TRAb with absent vascularity and no goitre or orbitopathy.",
+          "supporting_evidence": [],
+          "refuting_evidence": ["TRAb 0.4 IU/L", "No goitre", "No orbitopathy", "Absent vascularity"]
+        },
+        {
+          "label": "Mixed/indeterminate amiodarone-induced thyrotoxicosis",
+          "label_i18n": {
+            "en": "Mixed/indeterminate amiodarone-induced thyrotoxicosis",
+            "de": "Gemischte/unklare Amiodaron-induzierte Thyreotoxikose",
+            "es": "Tirotoxicosis por amiodarona mixta o indeterminada",
+            "nl": "Gemengde/onbepaalde amiodaron-geïnduceerde thyreotoxicose",
+            "ru": "Смешанный/неопределённый амиодарон-индуцированный тиреотоксикоз"
+          },
+          "is_primary": false,
+          "certainty": "possible",
+          "likelihood": 0.15,
+          "discriminator": "Cannot be formally excluded at presentation, which is precisely why dual therapy for the first ten days was reasonable. The steroid-alone response after carbimazole withdrawal argues against a significant type 1 component.",
+          "supporting_evidence": ["Both mechanisms can coexist and the discriminators are imperfect"],
+          "refuting_evidence": ["Continued improvement after carbimazole was stopped"]
+        }
+      ],
+      "teaching_points": [
+        "The two types of amiodarone-induced thyrotoxicosis require opposite treatments: thionamides (with or without potassium perchlorate) for type 1, glucocorticoids for type 2. Guessing wrongly costs weeks in a patient whose heart cannot afford them.",
+        "Absent colour Doppler vascularity is the most useful single bedside discriminator. A hypervascular gland is type 1; an avascular one is type 2.",
+        "Stopping amiodarone does not produce a rapid improvement. Its half-life is 50-100 days and the iodine load persists for months, so withdrawal is a decision about future arrhythmia risk, not about acute thyroid control.",
+        "Radioiodine is unusable in this setting: the iodine load competes out the tracer. Sestamibi scintigraphy is the workable nuclear alternative.",
+        "Amiodarone blocks type 1 deiodinase, so free T4 and reverse T3 rise disproportionately to free T3. Reverse T3 therefore cannot be used to argue for non-thyroidal illness in a patient taking amiodarone.",
+        "A documented pre-treatment thyroid function test transforms the interpretability of this presentation. Baseline TSH and FT4 before starting amiodarone should be treated as mandatory.",
+        "Type 2 disease frequently ends in hypothyroidism. Surveillance must continue after the thyrotoxicosis resolves - this patient needed levothyroxine four months later."
+      ],
+      "references": [
+        {"citation": "Bartalena L et al. 2018 ETA Guidelines for the Management of Amiodarone-Associated Thyroid Dysfunction. Eur Thyroid J.", "type": "guideline"},
+        {"citation": "Bogazzi F et al. Approach to the patient with amiodarone-induced thyrotoxicosis. J Clin Endocrinol Metab 2010.", "type": "review"}
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Type 2 amiodarone-induced thyrotoxicosis",
+        "accepted_diagnosis_terms": ["type 2 amiodarone-induced thyrotoxicosis", "type ii ait", "amiodarone induced destructive thyroiditis", "ait type 2", "amiodarone thyrotoxicosis type 2"],
+        "must_include_findings": [
+          {"label": "Suppressed TSH with markedly raised FT4", "synonyms": ["tsh 0.008", "ft4 48.2", "suppressed tsh", "high free t4"], "weight": 1.0},
+          {"label": "Absent Doppler vascularity", "synonyms": ["no vascularity", "colour flow pattern 0", "avascular", "reduced vascularity", "doppler absent"], "weight": 2.0},
+          {"label": "Negative TRAb", "synonyms": ["trab negative", "trab 0.4", "no tsh receptor antibody"], "weight": 1.0},
+          {"label": "Raised thyroglobulin from follicular destruction", "synonyms": ["thyroglobulin 218", "tg raised", "thyroglobulin high"], "weight": 0.75},
+          {"label": "Massive iodine load", "synonyms": ["urinary iodine", "iodine load", "8400", "iodine excess"], "weight": 0.75},
+          {"label": "Steroid responsiveness", "synonyms": ["responded to prednisolone", "steroid response", "glucocorticoid response"], "weight": 1.5}
+        ],
+        "expected_differential": ["type 1 amiodarone-induced thyrotoxicosis", "graves disease", "mixed ait", "toxic nodular goitre", "subacute thyroiditis"],
+        "expected_next_tests": ["colour doppler ultrasound", "trab", "thyroglobulin", "sestamibi scan", "urinary iodine", "echocardiogram"],
+        "expected_management": ["prednisolone", "glucocorticoid", "beta-blocker", "multidisciplinary discussion about continuing amiodarone", "monitor for hypothyroid phase", "consider thyroidectomy if refractory"],
+        "critical_values": [
+          {"analyte": "TSH", "value": 0.008, "reason": "Profound suppression with cardiac decompensation"},
+          {"analyte": "FT4", "value": 48.2, "reason": "Severe thyrotoxicosis in a patient with LVEF 24%"}
+        ],
+        "safety_rules": [
+          {"id": "SR-THY-AIT-RAI", "description": "Must not recommend radioiodine, which is ineffective against the amiodarone iodine load.", "forbidden_patterns": ["radioiodine", "radioactive iodine ablation", "i-131 therapy"]},
+          {"id": "SR-THY-AIT-STOP", "description": "Should not assert that stopping amiodarone will produce prompt improvement.", "forbidden_patterns": ["stopping amiodarone will rapidly", "immediate improvement after stopping amiodarone"]},
+          {"id": "SR-THY-AIT-MDT", "description": "Any recommendation to stop amiodarone must acknowledge the arrhythmic risk and the need for cardiology input.", "required_terms": ["cardiology", "multidisciplinary", "arrhythmia risk", "mdt"]}
+        ],
+        "distractor_terms": ["thyroid storm", "myxoedema coma", "thyroid cancer", "hashimoto", "pituitary adenoma"]
+      }
+    }
+  ]
+}

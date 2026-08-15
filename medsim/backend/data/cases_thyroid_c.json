@@ -1,0 +1,1273 @@
+{
+  "schema_version": "1.0",
+  "index_date": "2026-03-02T08:00:00Z",
+  "collection": "Chemical pathology - thyroid, part C (analytical interference and factitious disease)",
+  "cases": [
+    {
+      "case_code": "THY-006",
+      "title": "A Graves-pattern thyroid profile in a clinically euthyroid bodybuilder",
+      "title_i18n": {
+        "en": "A Graves-pattern thyroid profile in a clinically euthyroid bodybuilder",
+        "de": "Basedow-artiges Schilddrüsenprofil bei klinisch euthyreotem Bodybuilder",
+        "es": "Perfil tiroideo con patrón de Graves en un culturista clínicamente eutiroideo",
+        "nl": "Graves-achtig schildklierprofiel bij een klinisch euthyreote bodybuilder",
+        "ru": "Профиль щитовидной железы по типу болезни Грейвса у клинически эутиреоидного бодибилдера"
+      },
+      "summary": "Biotin megadose producing a textbook thyrotoxic immunoassay pattern in a patient with no thyroid disease at all. The teaching target is recognising analytical interference before a patient is committed to antithyroid drugs.",
+      "summary_i18n": {
+        "en": "High-dose biotin produces a false thyrotoxic immunoassay pattern; recognising analytical interference before treating is the point.",
+        "de": "Hochdosiertes Biotin erzeugt ein falsch thyreotoxisches Immunoassay-Muster; entscheidend ist das Erkennen der analytischen Interferenz vor Therapiebeginn.",
+        "es": "La biotina en dosis altas genera un patrón inmunoanalítico falsamente tirotóxico; la clave es reconocer la interferencia analítica antes de tratar.",
+        "nl": "Hooggedoseerd biotine geeft een vals thyreotoxisch immunoassaypatroon; het herkennen van analytische interferentie vóór behandeling is de kern.",
+        "ru": "Высокие дозы биотина создают ложно тиреотоксическую картину иммуноанализа; главное — распознать аналитическую интерференцию до начала лечения."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 5,
+      "tags": [
+        "thyroid",
+        "assay-interference",
+        "biotin",
+        "pre-analytical",
+        "false-positive",
+        "interpretive-trap"
+      ],
+      "icd10_codes": [
+        "R94.6"
+      ],
+      "snomed_codes": [
+        "166877005"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-006",
+        "age_years": 28,
+        "sex": "male",
+        "weight_kg": 96.0,
+        "height_cm": 181.0,
+        "ancestry": "Mixed",
+        "occupation": "Personal trainer and competitive bodybuilder",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Referred urgently by his general practitioner as 'new thyrotoxicosis' after a routine screen; he feels entirely well.",
+        "chief_complaint_i18n": {
+          "en": "Referred urgently as 'new thyrotoxicosis' after a routine screen; he feels entirely well.",
+          "de": "Dringend als 'neu aufgetretene Thyreotoxikose' überwiesen nach Routinelabor; er fühlt sich völlig wohl.",
+          "es": "Derivado con urgencia como 'tirotoxicosis de novo' tras una analítica de rutina; se encuentra perfectamente bien.",
+          "nl": "Met spoed verwezen als 'nieuwe thyreotoxicose' na routineonderzoek; hij voelt zich volkomen gezond.",
+          "ru": "Срочно направлен с диагнозом «впервые выявленный тиреотоксикоз» после планового анализа; жалоб не предъявляет."
+        },
+        "history_of_present_illness": "The bloods were taken as part of a gym-organised health screen. He has no palpitations, no tremor, no heat intolerance, no weight loss - indeed he has gained 4 kg of intentional lean mass over twelve weeks. Sleep, bowel habit and exercise tolerance are unchanged, and he deadlifted a personal best the week before the test. He takes a large stack of supplements, and on direct questioning reports a hair-and-nail preparation containing 10 mg of biotin taken three times daily (30 mg/day, roughly 1000 times the adequate intake) for the last four months. He also takes creatine, whey protein and a pre-workout containing caffeine. No amiodarone, no iodinated contrast, no thyroid hormone, and nothing obtained outside a pharmacy.",
+        "past_medical_history": [
+          "Nil of note",
+          "No previous thyroid disease"
+        ],
+        "medications": [
+          {
+            "name": "Biotin (as a hair/skin/nail supplement)",
+            "dose": "10 mg",
+            "route": "oral",
+            "frequency": "three times daily",
+            "indication": "self-prescribed",
+            "notes": "The entire explanation for this presentation."
+          },
+          {
+            "name": "Creatine monohydrate",
+            "dose": "5 g",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "self-prescribed",
+            "notes": "Relevant to the raised creatinine, not to the thyroid results."
+          },
+          {
+            "name": "Whey protein",
+            "dose": "60 g",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "self-prescribed"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "No thyroid or autoimmune disease"
+        ],
+        "social_history": "Non-smoker, no alcohol, no anabolic steroid use reported and none detected on the screen performed at his own request.",
+        "review_of_systems": {
+          "general": "Entirely asymptomatic; deliberate weight gain",
+          "cardiovascular": "No palpitations; resting heart rate 52 bpm (athletic bradycardia)",
+          "neurological": "No tremor",
+          "ophthalmic": "No eye symptoms or signs"
+        },
+        "vitals": {
+          "heart_rate_bpm": 52,
+          "blood_pressure_mmhg": "124/72",
+          "respiratory_rate": 14,
+          "temperature_c": 36.6,
+          "weight_kg": 96.0,
+          "spo2_percent": 99
+        },
+        "examination_findings": [
+          "No goitre; thyroid impalpable",
+          "No tremor of the outstretched hands",
+          "No lid lag, no lid retraction, no proptosis",
+          "Resting bradycardia at 52 bpm with a regular pulse - the opposite of thyrotoxicosis",
+          "Warm dry skin, no onycholysis",
+          "Normal reflexes with a normal relaxation phase",
+          "Muscular habitus with no proximal weakness"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests (biotin-exposed sample)",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 - streptavidin-biotin capture ECLIA",
+          "comment": "Sample taken 3 hours after a 10 mg biotin dose. The pattern is a textbook Graves profile and is entirely artefactual.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 0.02,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "LL",
+              "method": "Sandwich ECLIA (streptavidin-biotin)",
+              "interference_note": "FALSELY LOW. In a sandwich assay, excess free biotin saturates the streptavidin solid phase so the biotinylated antibody-analyte complex is washed away, and signal is lost. Loss of signal in a sandwich format reads as a LOW result."
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 38.4,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "H",
+              "method": "Competitive ECLIA (streptavidin-biotin)",
+              "interference_note": "FALSELY HIGH. In a competitive assay the signal is inversely proportional to analyte, so the same signal loss reads as a HIGH result. The opposite direction of error in the two formats is what generates the internally consistent but wholly false 'thyrotoxic' pattern."
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 14.2,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8,
+              "flag": "H",
+              "method": "Competitive ECLIA",
+              "interference_note": "FALSELY HIGH by the same mechanism."
+            },
+            {
+              "analyte_code": "TRAB",
+              "analyte_name": "TSH receptor antibody",
+              "value_numeric": 0.3,
+              "unit": "IU/L",
+              "ref_high": 1.75,
+              "flag": "N",
+              "interference_note": "The first internal inconsistency. A TSH of 0.02 with an FT4 of 38.4 in a young man with a goitre-free gland should have a positive TRAb in the great majority of cases; a negative TRAb here is a prompt to question the analytics rather than to order a scan."
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT_ALT_PLATFORM",
+          "panel_name": "Thyroid function on an alternative platform",
+          "day_offset": 3,
+          "specimen": "serum (same aliquot)",
+          "analyser": "Siemens Atellica IM - acridinium ester, non-biotin capture",
+          "comment": "Same frozen aliquot rerun on a platform that does not use streptavidin-biotin capture. This single step resolved the case.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 2.24,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "N",
+              "method": "Chemiluminescent, non-biotin",
+              "interference_note": "Normal on the alternative platform. A discrepancy of this magnitude between platforms on the SAME aliquot is definitive evidence of analytical interference."
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 15.6,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "N",
+              "method": "Chemiluminescent, non-biotin"
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 4.9,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8,
+              "flag": "N",
+              "method": "Chemiluminescent, non-biotin"
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT_WASHOUT",
+          "panel_name": "Thyroid function after biotin washout",
+          "day_offset": 7,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 - streptavidin-biotin capture ECLIA",
+          "comment": "Repeated on the ORIGINAL platform 72 hours after stopping biotin. Confirms the mechanism rather than merely bypassing it.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 2.11,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "N",
+              "interference_note": "Normalised on the same analyser that produced the abnormal result. Biotin's half-life is about 2 hours; 48-72 hours of abstinence is sufficient in normal renal function."
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 15.2,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 4.6,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8
+            }
+          ]
+        },
+        {
+          "panel_code": "INTERFERENCE_WORKUP",
+          "panel_name": "Formal interference investigation",
+          "day_offset": 7,
+          "specimen": "serum",
+          "analyser": "Reference laboratory",
+          "comment": "Performed to document the mechanism for the record and to exclude the other named causes of a discordant TSH.",
+          "results": [
+            {
+              "analyte_code": "SERUM_BIOTIN",
+              "analyte_name": "Serum biotin",
+              "value_numeric": 148.0,
+              "unit": "nmol/L",
+              "ref_low": 0.5,
+              "ref_high": 3.0,
+              "flag": "H",
+              "interference_note": "Roche state interference above approximately 20-30 nmol/L for most assays in the range. This is five-fold above that threshold."
+            },
+            {
+              "analyte_code": "TSH_PEG",
+              "analyte_name": "TSH after polyethylene glycol precipitation",
+              "value_numeric": 92.0,
+              "unit": "% recovery",
+              "ref_low": 40.0,
+              "ref_high": 100.0,
+              "flag": "N",
+              "interference_note": "Recovery above 40% excludes macro-TSH. Had recovery been under 25%, macro-TSH would have been the explanation for a discordant TSH instead."
+            },
+            {
+              "analyte_code": "TSH_DILUTION",
+              "analyte_name": "TSH linearity on serial dilution",
+              "value_text": "Non-linear on the biotin-exposed sample; linear after washout",
+              "unit": null,
+              "ref_text": "Linear recovery 90-110%",
+              "flag": "A",
+              "interference_note": "Non-linearity on dilution is the classic screening signal for interference of any kind and costs almost nothing to request."
+            },
+            {
+              "analyte_code": "HAMA",
+              "analyte_name": "Heterophile/human anti-mouse antibody screen",
+              "value_text": "Not detected",
+              "unit": null,
+              "flag": "N",
+              "interference_note": "Excludes heterophile antibody, the other common cause of implausible immunoassay results."
+            }
+          ]
+        },
+        {
+          "panel_code": "CHEM_INCIDENTAL",
+          "panel_name": "Incidental chemistry",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "Included to model a second, unrelated supplement effect that is often misread.",
+          "results": [
+            {
+              "analyte_code": "CREAT",
+              "analyte_name": "Creatinine",
+              "value_numeric": 118.0,
+              "unit": "µmol/L",
+              "ref_low": 55.0,
+              "ref_high": 105.0,
+              "flag": "H",
+              "interference_note": "Raised by creatine supplementation and high muscle mass, not by renal disease. Cystatin C was normal."
+            },
+            {
+              "analyte_code": "CK",
+              "analyte_name": "Creatine kinase",
+              "value_numeric": 612.0,
+              "unit": "U/L",
+              "ref_low": 30.0,
+              "ref_high": 200.0,
+              "flag": "H",
+              "interference_note": "Post-exercise. Sample taken the day after a heavy session."
+            },
+            {
+              "analyte_code": "ALT",
+              "analyte_name": "Alanine aminotransferase",
+              "value_numeric": 58.0,
+              "unit": "U/L",
+              "ref_low": 10.0,
+              "ref_high": 45.0,
+              "flag": "H",
+              "interference_note": "Of muscle rather than hepatic origin here; GGT was normal at 22 U/L."
+            }
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Ultrasound with colour Doppler",
+          "region": "Thyroid",
+          "day_offset": 2,
+          "findings": "Normal gland volume (12 mL), homogeneous echotexture, normal vascularity, no nodules.",
+          "impression": "Entirely normal. This scan was requested before the interference was recognised and is a good illustration of the imaging cascade a false biochemical result generates."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Interference recognition pathway (no thyroid treatment)",
+          "name_i18n": {
+            "en": "Interference recognition pathway (no thyroid treatment)",
+            "de": "Abklärungspfad bei Assay-Interferenz (keine Schilddrüsentherapie)",
+            "es": "Vía de reconocimiento de interferencia analítica (sin tratamiento tiroideo)",
+            "nl": "Traject voor herkenning van assay-interferentie (geen schildklierbehandeling)",
+            "ru": "Алгоритм выявления интерференции анализа (без лечения щитовидной железы)"
+          },
+          "guideline_source": "Composite laboratory-medicine practice; FDA safety communication on biotin interference in immunoassays (2019)",
+          "indication": "Thyroid function results that are discordant with the clinical picture.",
+          "duration_months": null,
+          "regimen": [
+            {
+              "agent": "Stop biotin",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "at least 72 hours before retesting",
+              "notes": "Biotin half-life is roughly 2 hours in normal renal function; longer abstinence is needed in renal impairment."
+            },
+            {
+              "agent": "Repeat on an alternative platform",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "once",
+              "duration": "n/a",
+              "notes": "The fastest confirmatory step. Use the same frozen aliquot so that biological variation cannot explain the difference."
+            },
+            {
+              "agent": "No antithyroid drug",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "Carbimazole in a euthyroid patient causes iatrogenic hypothyroidism and exposes them to a 0.2-0.5% risk of agranulocytosis for no benefit."
+            }
+          ],
+          "monitoring": [
+            "One confirmatory thyroid function test at 3 months, off biotin, to close the episode",
+            "Document 'biotin interference' prominently in the record so the abnormal result is not rediscovered and re-investigated",
+            "Advise stopping biotin for 72 hours before any future blood test, including troponin and hormone assays"
+          ],
+          "contraindications": [
+            "Antithyroid drugs are contraindicated: there is no thyrotoxicosis to treat"
+          ],
+          "adverse_effects": [
+            "None from the intervention; the harm in this case would come entirely from acting on the false result"
+          ],
+          "notes": "Biotin also falsely lowers troponin in sandwich assays, which is the safety-critical version of this problem: a missed myocardial infarction rather than an unnecessary endocrine referral."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Biotin-induced immunoassay interference in a euthyroid patient",
+          "label_i18n": {
+            "en": "Biotin-induced immunoassay interference in a euthyroid patient",
+            "de": "Biotin-induzierte Immunoassay-Interferenz bei euthyreoter Person",
+            "es": "Interferencia por biotina en el inmunoensayo en un paciente eutiroideo",
+            "nl": "Biotine-geïnduceerde immunoassay-interferentie bij een euthyreote patiënt",
+            "ru": "Биотин-индуцированная интерференция иммуноанализа у эутиреоидного пациента"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.99,
+          "icd10": "R94.6",
+          "discriminator": "Identical aliquot gives normal results on a non-biotin platform, results normalise on the original platform after 72 hours of biotin abstinence, serum biotin is 148 nmol/L, and dilution is non-linear.",
+          "supporting_evidence": [
+            "Clinically euthyroid with a resting bradycardia of 52 bpm and deliberate weight gain",
+            "TSH 0.02 with FT4 38.4 on the biotin platform versus TSH 2.24 with FT4 15.6 on the same aliquot elsewhere",
+            "Normalisation on the original analyser after washout",
+            "Serum biotin 148 nmol/L against a threshold of 20-30 nmol/L",
+            "Non-linear dilution recovery before washout, linear after",
+            "Negative TRAb and normal ultrasound - both discordant with true thyrotoxicosis"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Graves disease",
+          "label_i18n": {
+            "en": "Graves disease",
+            "de": "Morbus Basedow",
+            "es": "Enfermedad de Graves",
+            "nl": "Ziekte van Graves",
+            "ru": "Болезнь Грейвса"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "The biochemical pattern was identical to Graves disease; everything else was not. Clinical euthyroidism, bradycardia, negative TRAb, a normal gland and platform-dependent results all point away.",
+          "supporting_evidence": [
+            "The initial biochemical pattern in isolation"
+          ],
+          "refuting_evidence": [
+            "Normal results on an alternative platform",
+            "Clinically euthyroid",
+            "Bradycardic",
+            "TRAb negative",
+            "Normal ultrasound"
+          ]
+        },
+        {
+          "label": "Macro-TSH",
+          "label_i18n": {
+            "en": "Macro-TSH",
+            "de": "Makro-TSH",
+            "es": "Macro-TSH",
+            "nl": "Macro-TSH",
+            "ru": "Макро-ТТГ"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "PEG recovery of 92% excludes it. Macro-TSH also produces a HIGH TSH, the opposite direction to this case, and was tested here only to complete the interference workup.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "PEG recovery 92%",
+            "TSH was low, not high"
+          ]
+        },
+        {
+          "label": "Heterophile antibody interference",
+          "label_i18n": {
+            "en": "Heterophile antibody interference",
+            "de": "Heterophile Antikörper-Interferenz",
+            "es": "Interferencia por anticuerpos heterófilos",
+            "nl": "Interferentie door heterofiele antistoffen",
+            "ru": "Интерференция гетерофильными антителами"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "HAMA screen negative and the results normalised with biotin withdrawal alone.",
+          "supporting_evidence": [],
+          "refuting_evidence": [
+            "Negative heterophile screen",
+            "Full normalisation after biotin washout"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Biotin moves sandwich and competitive assays in opposite directions. TSH (sandwich) falls; free T4 and free T3 (competitive) rise. The result is a coherent, convincing, and entirely false thyrotoxic pattern - the coherence is what makes it dangerous.",
+        "When the biochemistry and the patient disagree, investigate the biochemistry first. A bradycardic, asymptomatic, weight-gaining patient does not have a free T4 of 38 pmol/L.",
+        "Rerunning the same frozen aliquot on a different platform is the fastest and most decisive interference test available, and it costs one courier run.",
+        "Non-linearity on serial dilution is a general-purpose screen for interference of any mechanism and should be requested whenever a result is implausible.",
+        "Macro-TSH raises TSH; biotin lowers it. Both are excluded by cheap, specific tests (PEG precipitation and platform comparison respectively), and the two should not be conflated.",
+        "The safety-critical form of this problem is troponin, not thyroid: biotin falsely lowers troponin in sandwich assays and can mask a myocardial infarction. Advise a 72-hour biotin hold before any blood test.",
+        "The normal ultrasound in this case was generated by the false result. Interference does not just risk wrong treatment; it also produces an imaging cascade."
+      ],
+      "references": [
+        {
+          "citation": "US FDA. Biotin (Vitamin B7): Safety Communication - May Interfere with Lab Tests. 2019.",
+          "type": "regulatory"
+        },
+        {
+          "citation": "Favresse J et al. Interferences with thyroid function immunoassays: clinical implications and detection algorithm. Endocr Rev 2018.",
+          "type": "review"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Biotin-induced immunoassay interference",
+        "accepted_diagnosis_terms": [
+          "biotin interference",
+          "assay interference",
+          "analytical interference",
+          "immunoassay interference",
+          "false thyroid function tests",
+          "spurious result"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Clinically euthyroid despite thyrotoxic biochemistry",
+            "synonyms": [
+              "asymptomatic",
+              "clinically euthyroid",
+              "bradycardia",
+              "weight gain",
+              "no symptoms"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "High-dose biotin supplementation",
+            "synonyms": [
+              "biotin",
+              "30 mg daily",
+              "supplement",
+              "hair and nail supplement"
+            ],
+            "weight": 2.0
+          },
+          {
+            "label": "Discrepancy between assay platforms",
+            "synonyms": [
+              "alternative platform",
+              "different analyser",
+              "platform comparison",
+              "normal on siemens"
+            ],
+            "weight": 1.5
+          },
+          {
+            "label": "Normalisation after biotin washout",
+            "synonyms": [
+              "after stopping biotin",
+              "washout",
+              "72 hours",
+              "repeat normalised"
+            ],
+            "weight": 1.25
+          },
+          {
+            "label": "Negative TRAb discordant with the pattern",
+            "synonyms": [
+              "trab negative",
+              "no tsh receptor antibody"
+            ],
+            "weight": 0.75
+          }
+        ],
+        "expected_differential": [
+          "graves disease",
+          "macro-tsh",
+          "heterophile antibody",
+          "thyroid hormone resistance",
+          "tsh-secreting adenoma",
+          "familial dysalbuminaemic hyperthyroxinaemia"
+        ],
+        "expected_next_tests": [
+          "repeat on alternative platform",
+          "serum biotin",
+          "peg precipitation",
+          "dilution linearity",
+          "heterophile antibody screen",
+          "repeat after biotin washout"
+        ],
+        "expected_management": [
+          "stop biotin",
+          "no antithyroid drug",
+          "document the interference",
+          "advise holding biotin before future tests",
+          "confirmatory test at three months"
+        ],
+        "critical_values": [],
+        "safety_rules": [
+          {
+            "id": "SR-THY-BIOTIN-NOTREAT",
+            "description": "Must not recommend antithyroid drugs, radioiodine or surgery.",
+            "forbidden_patterns": [
+              "start carbimazole",
+              "commence methimazole",
+              "antithyroid drug",
+              "radioiodine",
+              "thyroidectomy",
+              "propylthiouracil"
+            ]
+          },
+          {
+            "id": "SR-THY-BIOTIN-TROPONIN",
+            "description": "A complete answer notes that biotin also interferes with other assays, notably troponin.",
+            "required_terms": [
+              "troponin",
+              "other assays",
+              "other immunoassays"
+            ],
+            "applies_when": [
+              "biotin"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "thyroid storm",
+          "toxic adenoma",
+          "anabolic steroid induced thyrotoxicosis",
+          "pituitary adenoma",
+          "thyroiditis"
+        ]
+      }
+    },
+    {
+      "case_code": "THY-007",
+      "title": "Thyrotoxicosis with a suppressed thyroglobulin and no uptake",
+      "title_i18n": {
+        "en": "Thyrotoxicosis with a suppressed thyroglobulin and no uptake",
+        "de": "Thyreotoxikose mit supprimiertem Thyreoglobulin und fehlender Aufnahme",
+        "es": "Tirotoxicosis con tiroglobulina suprimida y captación ausente",
+        "nl": "Thyreotoxicose met onderdrukt thyreoglobuline en afwezige opname",
+        "ru": "Тиреотоксикоз с подавленным тиреоглобулином и отсутствием захвата"
+      },
+      "summary": "Surreptitious levothyroxine ingestion. The two findings that close the case - a suppressed thyroglobulin and near-absent radionuclide uptake - are both cheap and both routinely omitted, so the diagnosis is usually made late and after a thionamide has already failed.",
+      "summary_i18n": {
+        "en": "Surreptitious levothyroxine ingestion identified by a suppressed thyroglobulin and near-absent radionuclide uptake.",
+        "de": "Heimliche Levothyroxin-Einnahme, erkannt an supprimiertem Thyreoglobulin und nahezu fehlender Radionuklidaufnahme.",
+        "es": "Ingesta subrepticia de levotiroxina identificada por tiroglobulina suprimida y captación radioisotópica casi ausente.",
+        "nl": "Heimelijke levothyroxine-inname, herkend aan onderdrukt thyreoglobuline en vrijwel afwezige radionuclide-opname.",
+        "ru": "Скрытый приём левотироксина, выявленный по подавленному тиреоглобулину и почти полному отсутствию захвата радиофармпрепарата."
+      },
+      "discipline": "chemical_pathology",
+      "subspecialty": "thyroid",
+      "difficulty": 4,
+      "tags": [
+        "thyroid",
+        "factitious",
+        "thyroglobulin",
+        "levothyroxine",
+        "pharmacology",
+        "uptake-scan"
+      ],
+      "icd10_codes": [
+        "E05.4",
+        "F68.10"
+      ],
+      "snomed_codes": [
+        "44222005"
+      ],
+      "author": "MedSimQA Editorial",
+      "reviewed_by": "Chemical Pathology Review Panel",
+      "patient": {
+        "pseudonym": "Patient THY-007",
+        "age_years": 31,
+        "sex": "female",
+        "weight_kg": 51.0,
+        "height_cm": 168.0,
+        "ancestry": "Northern European",
+        "pregnancy_status": "not pregnant",
+        "occupation": "Pharmacy dispensing assistant",
+        "region": "Urban"
+      },
+      "presentation": {
+        "chief_complaint": "Eight months of weight loss, palpitations and tremor that have not responded to two escalating courses of carbimazole.",
+        "chief_complaint_i18n": {
+          "en": "Eight months of weight loss, palpitations and tremor unresponsive to two courses of carbimazole.",
+          "de": "Seit acht Monaten Gewichtsverlust, Palpitationen und Tremor, ohne Ansprechen auf zwei Carbimazol-Kurse.",
+          "es": "Ocho meses de pérdida de peso, palpitaciones y temblor sin respuesta a dos ciclos de carbimazol.",
+          "nl": "Acht maanden gewichtsverlies, palpitaties en tremor zonder respons op twee kuren carbimazol.",
+          "ru": "Восемь месяцев потери веса, сердцебиения и тремора без ответа на два курса карбимазола."
+        },
+        "history_of_present_illness": "She was diagnosed with 'hyperthyroidism' at another hospital on the basis of a suppressed TSH and a raised free T4, and started on carbimazole 20 mg, later escalated to 40 mg daily. Free T4 has not fallen on either dose. Adherence to carbimazole was assumed to be the problem and she was counselled twice. She has no neck swelling, no eye symptoms and no neck pain. She works in a pharmacy and has ready access to levothyroxine. Her mother, who lives with her, takes levothyroxine 100 µg daily and has twice reported that her prescription runs out early. The patient denies taking any thyroid hormone.",
+        "past_medical_history": [
+          "Anxiety disorder",
+          "Two previous presentations with unexplained hypoglycaemia at a different hospital, not fully investigated"
+        ],
+        "medications": [
+          {
+            "name": "Carbimazole",
+            "dose": "40 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "presumed hyperthyroidism",
+            "notes": "Ineffective by design: there is no endogenous synthesis to block."
+          },
+          {
+            "name": "Propranolol",
+            "dose": "40 mg",
+            "route": "oral",
+            "frequency": "twice daily",
+            "indication": "symptom control"
+          },
+          {
+            "name": "Sertraline",
+            "dose": "50 mg",
+            "route": "oral",
+            "frequency": "once daily",
+            "indication": "anxiety"
+          }
+        ],
+        "allergies": [
+          "No known drug allergies"
+        ],
+        "family_history": [
+          "Mother: hypothyroidism on levothyroxine 100 µg daily"
+        ],
+        "social_history": "Non-smoker. Works in a community pharmacy with access to stock. Recently separated; describes significant psychosocial stress.",
+        "review_of_systems": {
+          "general": "11 kg weight loss over eight months, heat intolerance",
+          "cardiovascular": "Palpitations, no chest pain",
+          "neurological": "Tremor, anxiety, insomnia",
+          "ophthalmic": "No eye symptoms",
+          "musculoskeletal": "No neck pain or tenderness at any point"
+        },
+        "vitals": {
+          "heart_rate_bpm": 108,
+          "blood_pressure_mmhg": "128/62",
+          "respiratory_rate": 16,
+          "temperature_c": 37.1,
+          "weight_kg": 51.0,
+          "spo2_percent": 99
+        },
+        "examination_findings": [
+          "Thyroid impalpable - no goitre despite eight months of apparent thyrotoxicosis",
+          "No orbitopathy, no lid retraction, no proptosis",
+          "Fine tremor, warm peripheries, sinus tachycardia",
+          "No neck tenderness",
+          "No pretibial myxoedema",
+          "Body mass index 18.1 kg/m2"
+        ]
+      },
+      "lab_panels": [
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 0,
+          "specimen": "serum",
+          "analyser": "Roche Cobas e801 (ECLIA)",
+          "comment": "On carbimazole 40 mg daily. An unchanged free T4 on this dose is itself a diagnostic finding.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 0.006,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "LL",
+              "is_critical": true
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 34.2,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 6.9,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8,
+              "flag": "H",
+              "interference_note": "Only marginally raised. The FT3:FT4 ratio is LOW, which is the signature of exogenous levothyroxine: a T4-only preparation raises T4 far more than T3, whereas a hyperfunctioning gland preferentially secretes T3."
+            },
+            {
+              "analyte_code": "TT4",
+              "analyte_name": "Total thyroxine",
+              "value_numeric": 214.0,
+              "unit": "nmol/L",
+              "ref_low": 66.0,
+              "ref_high": 181.0,
+              "flag": "H"
+            },
+            {
+              "analyte_code": "TT3",
+              "analyte_name": "Total triiodothyronine",
+              "value_numeric": 2.4,
+              "unit": "nmol/L",
+              "ref_low": 1.3,
+              "ref_high": 3.1,
+              "flag": "N",
+              "interference_note": "Normal total T3 alongside a clearly raised total T4 - the same ratio argument in total-hormone form."
+            }
+          ]
+        },
+        {
+          "panel_code": "FACTITIOUS_WORKUP",
+          "panel_name": "Discriminating endogenous from exogenous thyrotoxicosis",
+          "day_offset": 0,
+          "specimen": "serum",
+          "comment": "The two tests that close this case. Both are inexpensive and both are commonly omitted.",
+          "results": [
+            {
+              "analyte_code": "TG",
+              "analyte_name": "Thyroglobulin",
+              "value_numeric": 0.8,
+              "unit": "µg/L",
+              "ref_low": 3.5,
+              "ref_high": 77.0,
+              "flag": "L",
+              "method": "Immunometric assay, TgAb-negative sample",
+              "interference_note": "SUPPRESSED. This is the key result. Every endogenous cause of thyrotoxicosis - Graves, toxic nodules, any destructive thyroiditis - raises thyroglobulin. Only exogenous hormone suppresses it, because TSH suppression shuts down the gland's own synthesis and release."
+            },
+            {
+              "analyte_code": "TGAB",
+              "analyte_name": "Thyroglobulin antibody",
+              "value_numeric": 14.0,
+              "unit": "IU/mL",
+              "ref_high": 115.0,
+              "flag": "N",
+              "interference_note": "Essential control: a positive TgAb would have invalidated the thyroglobulin measurement and destroyed the argument."
+            },
+            {
+              "analyte_code": "TRAB",
+              "analyte_name": "TSH receptor antibody",
+              "value_numeric": 0.5,
+              "unit": "IU/L",
+              "ref_high": 1.75,
+              "flag": "N"
+            },
+            {
+              "analyte_code": "TPOAB",
+              "analyte_name": "Thyroid peroxidase antibody",
+              "value_numeric": 22.0,
+              "unit": "IU/mL",
+              "ref_high": 34.0,
+              "flag": "N"
+            },
+            {
+              "analyte_code": "ESR",
+              "analyte_name": "Erythrocyte sedimentation rate",
+              "value_numeric": 6.0,
+              "unit": "mm/h",
+              "ref_low": 0.0,
+              "ref_high": 20.0,
+              "flag": "N",
+              "interference_note": "Normal ESR with a painless gland excludes subacute thyroiditis, the other cause of thyrotoxicosis with absent uptake."
+            },
+            {
+              "analyte_code": "CRP",
+              "analyte_name": "C-reactive protein",
+              "value_numeric": 1.8,
+              "unit": "mg/L",
+              "ref_low": 0.0,
+              "ref_high": 5.0,
+              "flag": "N"
+            }
+          ]
+        },
+        {
+          "panel_code": "TFT",
+          "panel_name": "Thyroid function tests",
+          "day_offset": 21,
+          "specimen": "serum",
+          "comment": "Three weeks after a supervised admission during which all medication was administered by staff.",
+          "results": [
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 0.02,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0,
+              "flag": "LL",
+              "interference_note": "Still suppressed: thyrotroph recovery takes weeks to months after prolonged suppression, so this does not indicate continued ingestion."
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 18.2,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0,
+              "flag": "N",
+              "interference_note": "Fell into the reference interval within three weeks of supervised administration, consistent with the 7-day half-life of levothyroxine and with cessation of covert ingestion."
+            },
+            {
+              "analyte_code": "FT3",
+              "analyte_name": "Free triiodothyronine",
+              "value_numeric": 4.1,
+              "unit": "pmol/L",
+              "ref_low": 3.1,
+              "ref_high": 6.8
+            }
+          ]
+        },
+        {
+          "panel_code": "FACTITIOUS_WORKUP",
+          "panel_name": "Repeat thyroglobulin after supervised period",
+          "day_offset": 56,
+          "specimen": "serum",
+          "comment": "Eight weeks. Carbimazole was stopped at week 3.",
+          "results": [
+            {
+              "analyte_code": "TG",
+              "analyte_name": "Thyroglobulin",
+              "value_numeric": 22.4,
+              "unit": "µg/L",
+              "ref_low": 3.5,
+              "ref_high": 77.0,
+              "flag": "N",
+              "interference_note": "Recovered into the reference interval as endogenous thyroid function resumed - the mirror image of the diagnostic result and strong confirmation of the mechanism."
+            },
+            {
+              "analyte_code": "TSH",
+              "analyte_name": "Thyroid-stimulating hormone",
+              "value_numeric": 1.86,
+              "unit": "mIU/L",
+              "ref_low": 0.4,
+              "ref_high": 4.0
+            },
+            {
+              "analyte_code": "FT4",
+              "analyte_name": "Free thyroxine",
+              "value_numeric": 15.4,
+              "unit": "pmol/L",
+              "ref_low": 12.0,
+              "ref_high": 22.0
+            }
+          ]
+        }
+      ],
+      "imaging": [
+        {
+          "modality": "Technetium-99m pertechnetate scintigraphy",
+          "region": "Thyroid",
+          "day_offset": 2,
+          "findings": "Near-absent thyroidal tracer uptake; 20-minute uptake 0.4% (reference 0.4-4.0%). Salivary gland activity normal, confirming adequate tracer administration and a technically satisfactory study.",
+          "impression": "Absent uptake in a thyrotoxic patient. The differential narrows to destructive thyroiditis, iodine excess, or exogenous thyroid hormone. Normal ESR, an impalpable painless gland and a suppressed thyroglobulin leave only the last."
+        },
+        {
+          "modality": "Ultrasound with colour Doppler",
+          "region": "Thyroid",
+          "day_offset": 2,
+          "findings": "Small, normal-echotexture gland (volume 8 mL) with reduced parenchymal vascularity. No nodule, no oedema, no hypoechoic areas.",
+          "impression": "Normal small gland. Absence of the heterogeneity and hypoechoic patches expected in destructive thyroiditis further supports exogenous hormone."
+        }
+      ],
+      "protocols": [
+        {
+          "name": "Withdrawal of ineffective therapy and structured disclosure",
+          "name_i18n": {
+            "en": "Withdrawal of ineffective therapy and structured disclosure",
+            "de": "Absetzen der wirkungslosen Therapie und strukturiertes Gespräch",
+            "es": "Retirada del tratamiento ineficaz y comunicación estructurada",
+            "nl": "Staken van ineffectieve therapie en gestructureerd gesprek",
+            "ru": "Отмена неэффективной терапии и структурированная беседа"
+          },
+          "guideline_source": "Composite endocrine and liaison-psychiatry practice",
+          "indication": "Confirmed exogenous thyrotoxicosis with covert ingestion.",
+          "duration_months": 12,
+          "regimen": [
+            {
+              "agent": "Stop carbimazole",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "immediately",
+              "notes": "It cannot work and it carries a real agranulocytosis risk. Continuing it is active harm."
+            },
+            {
+              "agent": "Continue propranolol",
+              "dose": "40 mg",
+              "route": "oral",
+              "frequency": "twice daily",
+              "duration": "until FT4 normalises",
+              "notes": "Symptomatic control only, tapered as free T4 fell."
+            },
+            {
+              "agent": "Structured non-confrontational disclosure",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "n/a",
+              "notes": "Present the biochemical findings factually and without accusation. Confrontation reliably ends the therapeutic relationship and moves the behaviour to another hospital, where the workup starts again from zero."
+            },
+            {
+              "agent": "Liaison psychiatry referral",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "ongoing",
+              "notes": "Factitious disorder needs psychiatric management. The endocrine problem is the presenting symptom, not the illness."
+            },
+            {
+              "agent": "Single-provider care coordination",
+              "dose": "n/a",
+              "route": "n/a",
+              "frequency": "n/a",
+              "duration": "12 months",
+              "notes": "One named clinician holds the record to prevent repeat presentations elsewhere and duplicate investigation."
+            }
+          ],
+          "monitoring": [
+            "TSH and FT4 at 3, 8 and 24 weeks",
+            "Thyroglobulin at 8 weeks to confirm recovery of endogenous function",
+            "Bone density if the thyrotoxicosis has been prolonged - eight months of suppression is enough to matter",
+            "Consider the occupational dimension: access to medicines at work is a governance issue for her employer, handled separately and with care"
+          ],
+          "contraindications": [
+            "Thionamides, radioiodine and surgery are all contraindicated - there is no endogenous overactivity to treat"
+          ],
+          "adverse_effects": [
+            "Continuing carbimazole exposes the patient to agranulocytosis and hepatotoxicity for zero benefit"
+          ],
+          "notes": "This case is also a lesson in escalation discipline: a free T4 that does not move on carbimazole 40 mg should trigger a diagnostic rethink, not a third dose increase."
+        }
+      ],
+      "diagnoses": [
+        {
+          "label": "Thyrotoxicosis factitia (exogenous levothyroxine ingestion)",
+          "label_i18n": {
+            "en": "Thyrotoxicosis factitia (exogenous levothyroxine ingestion)",
+            "de": "Thyreotoxicosis factitia (exogene Levothyroxin-Einnahme)",
+            "es": "Tirotoxicosis facticia (ingesta exógena de levotiroxina)",
+            "nl": "Thyreotoxicose factitia (exogene levothyroxine-inname)",
+            "ru": "Искусственный тиреотоксикоз (экзогенный приём левотироксина)"
+          },
+          "is_primary": true,
+          "certainty": "confirmed",
+          "likelihood": 0.94,
+          "icd10": "E05.4",
+          "discriminator": "Suppressed thyroglobulin (0.8 µg/L) with a TgAb-negative sample, near-absent radionuclide uptake, a low FT3:FT4 ratio, and normalisation under supervised medication administration.",
+          "supporting_evidence": [
+            "Thyroglobulin 0.8 µg/L with negative thyroglobulin antibodies",
+            "Pertechnetate uptake 0.4% with normal salivary activity",
+            "FT4 34.2 with FT3 only 6.9 pmol/L - a T4-predominant pattern",
+            "No goitre after eight months of apparent thyrotoxicosis",
+            "No response to carbimazole 40 mg daily",
+            "Normalisation of FT4 within three weeks of supervised administration and thyroglobulin recovery by eight weeks",
+            "Occupational access to levothyroxine and a household supply that runs out early"
+          ],
+          "refuting_evidence": []
+        },
+        {
+          "label": "Silent (painless) lymphocytic thyroiditis",
+          "label_i18n": {
+            "en": "Silent (painless) lymphocytic thyroiditis",
+            "de": "Silente (schmerzlose) lymphozytäre Thyreoiditis",
+            "es": "Tiroiditis linfocítica silente (indolora)",
+            "nl": "Stille (pijnloze) lymfocytaire thyreoïditis",
+            "ru": "Безболевой (немой) лимфоцитарный тиреоидит"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.03,
+          "discriminator": "Also causes thyrotoxicosis with absent uptake, but thyroglobulin is RAISED because stored hormone and colloid are released from damaged follicles. A suppressed thyroglobulin excludes it outright.",
+          "supporting_evidence": [
+            "Absent uptake",
+            "Painless gland"
+          ],
+          "refuting_evidence": [
+            "Thyroglobulin suppressed at 0.8 µg/L",
+            "TPO antibodies negative",
+            "Eight-month duration far exceeds the natural history",
+            "Normal ultrasound echotexture"
+          ]
+        },
+        {
+          "label": "Subacute (de Quervain) thyroiditis",
+          "label_i18n": {
+            "en": "Subacute (de Quervain) thyroiditis",
+            "de": "Subakute Thyreoiditis de Quervain",
+            "es": "Tiroiditis subaguda (de Quervain)",
+            "nl": "Subacute (de Quervain) thyreoïditis",
+            "ru": "Подострый тиреоидит (де Кервена)"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Requires neck pain and a raised ESR; both absent.",
+          "supporting_evidence": [
+            "Absent uptake"
+          ],
+          "refuting_evidence": [
+            "ESR 6 mm/h",
+            "No neck pain or tenderness",
+            "Suppressed thyroglobulin"
+          ]
+        },
+        {
+          "label": "Struma ovarii or functioning metastatic thyroid carcinoma",
+          "label_i18n": {
+            "en": "Struma ovarii or functioning thyroid metastases",
+            "de": "Struma ovarii oder funktionierende Schilddrüsenmetastasen",
+            "es": "Estruma ovárico o metástasis tiroideas funcionantes",
+            "nl": "Struma ovarii of functionerende schildkliermetastasen",
+            "ru": "Струма яичника или функционирующие метастазы рака щитовидной железы"
+          },
+          "is_primary": false,
+          "certainty": "excluded",
+          "likelihood": 0.01,
+          "discriminator": "Ectopic functioning thyroid tissue produces thyroglobulin, so thyroglobulin would be raised. It is the one endogenous cause with absent NECK uptake, which is why it belongs on the list at all.",
+          "supporting_evidence": [
+            "Absent cervical uptake"
+          ],
+          "refuting_evidence": [
+            "Thyroglobulin suppressed",
+            "No pelvic mass on subsequent imaging",
+            "Resolution under supervision"
+          ]
+        }
+      ],
+      "teaching_points": [
+        "Thyroglobulin separates exogenous from endogenous thyrotoxicosis in a single test. Suppressed means exogenous; raised means the gland or ectopic thyroid tissue is the source. Always check thyroglobulin antibodies on the same sample, because a positive TgAb invalidates the measurement.",
+        "The FT3:FT4 ratio is low in levothyroxine ingestion and high in Graves disease. Ingestion of liothyronine inverts this completely - free T3 is high with a low or normal free T4 - so the ratio identifies which preparation is being taken, not merely that one is.",
+        "Failure to respond to an adequate thionamide dose is diagnostic information, not an adherence problem. A third dose escalation is the wrong response to a free T4 that has not moved on 40 mg of carbimazole.",
+        "Absent radionuclide uptake in a thyrotoxic patient has a short differential: destructive thyroiditis, iodine excess, or exogenous hormone. Thyroglobulin and ESR separate the three.",
+        "Confrontation is counterproductive in factitious disorder. It typically ends the therapeutic relationship and relocates the patient - and the entire diagnostic workup - to another hospital.",
+        "Occupational access to medicines is a recurring feature of factitious disorder. Noting it is legitimate clinical reasoning; acting on it requires care and is a separate process from the patient's care."
+      ],
+      "references": [
+        {
+          "citation": "Ross DS et al. 2016 ATA Guidelines for Diagnosis and Management of Hyperthyroidism. Thyroid.",
+          "type": "guideline"
+        },
+        {
+          "citation": "Mariotti S et al. Thyrotoxicosis factitia: diagnostic value of serum thyroglobulin. J Clin Endocrinol Metab.",
+          "type": "primary"
+        }
+      ],
+      "reasoning_key": {
+        "primary_diagnosis": "Thyrotoxicosis factitia",
+        "accepted_diagnosis_terms": [
+          "thyrotoxicosis factitia",
+          "factitious thyrotoxicosis",
+          "exogenous thyroid hormone",
+          "surreptitious levothyroxine",
+          "exogenous levothyroxine ingestion",
+          "factitious hyperthyroidism"
+        ],
+        "must_include_findings": [
+          {
+            "label": "Suppressed thyroglobulin",
+            "synonyms": [
+              "thyroglobulin 0.8",
+              "tg suppressed",
+              "low thyroglobulin",
+              "thyroglobulin undetectable"
+            ],
+            "weight": 2.5
+          },
+          {
+            "label": "Absent radionuclide uptake",
+            "synonyms": [
+              "uptake 0.4%",
+              "absent uptake",
+              "no uptake",
+              "low uptake scan"
+            ],
+            "weight": 1.75
+          },
+          {
+            "label": "Low FT3 to FT4 ratio",
+            "synonyms": [
+              "t4 predominant",
+              "ft3:ft4 ratio low",
+              "t3 only marginally raised",
+              "t4 predominance"
+            ],
+            "weight": 1.25
+          },
+          {
+            "label": "No response to carbimazole",
+            "synonyms": [
+              "failed carbimazole",
+              "unresponsive to thionamide",
+              "no fall on 40 mg"
+            ],
+            "weight": 1.0
+          },
+          {
+            "label": "Negative thyroglobulin antibodies validating the Tg result",
+            "synonyms": [
+              "tgab negative",
+              "thyroglobulin antibody negative"
+            ],
+            "weight": 0.75
+          }
+        ],
+        "expected_differential": [
+          "silent thyroiditis",
+          "subacute thyroiditis",
+          "struma ovarii",
+          "iodine-induced thyrotoxicosis",
+          "graves disease"
+        ],
+        "expected_next_tests": [
+          "thyroglobulin",
+          "thyroglobulin antibody",
+          "radionuclide uptake scan",
+          "esr",
+          "supervised medication administration",
+          "urine or serum levothyroxine if available"
+        ],
+        "expected_management": [
+          "stop carbimazole",
+          "beta-blocker for symptoms",
+          "non-confrontational disclosure",
+          "liaison psychiatry",
+          "single named clinician",
+          "bone density assessment"
+        ],
+        "critical_values": [
+          {
+            "analyte": "TSH",
+            "value": 0.006,
+            "reason": "Profound suppression sustained over eight months"
+          }
+        ],
+        "safety_rules": [
+          {
+            "id": "SR-THY-FACT-STOP",
+            "description": "Must recommend stopping the ineffective thionamide rather than escalating it.",
+            "required_terms": [
+              "stop carbimazole",
+              "discontinue carbimazole",
+              "stop the thionamide",
+              "withdraw carbimazole"
+            ]
+          },
+          {
+            "id": "SR-THY-FACT-NOABLATE",
+            "description": "Must not recommend radioiodine or thyroidectomy.",
+            "forbidden_patterns": [
+              "radioiodine",
+              "thyroidectomy",
+              "surgical ablation"
+            ]
+          },
+          {
+            "id": "SR-THY-FACT-PSYCH",
+            "description": "Should recommend psychiatric involvement rather than confrontation alone.",
+            "required_terms": [
+              "psychiatry",
+              "psychological",
+              "liaison",
+              "mental health",
+              "non-confrontational"
+            ]
+          }
+        ],
+        "distractor_terms": [
+          "thyroid storm",
+          "toxic multinodular goitre",
+          "tsh-secreting adenoma",
+          "amiodarone",
+          "hashitoxicosis"
+        ]
+      }
+    }
+  ]
+}
