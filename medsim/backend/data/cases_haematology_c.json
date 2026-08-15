@@ -689,7 +689,10 @@
             "required_terms": [
               "before plasma exchange",
               "prior to exchange",
-              "pre-exchange sample"
+              "pre-exchange sample",
+              "before exchange",
+              "drawn before",
+              "before starting exchange"
             ]
           }
         ],

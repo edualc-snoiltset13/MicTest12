@@ -1,0 +1,605 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medsimqa.dev/schemas/clinical_media_annotation/1.0.0",
+  "title": "Clinical media annotation",
+  "description": "Annotation format for medical video and audio: segmented audio transcription of patient interviews, and labelled hand actions during clinical examinations. Designed so that a single document carries the media, its segmentation, the labels, and the provenance needed to audit or re-adjudicate any label later. Strict throughout: additionalProperties is false at every level, because a training corpus that silently accepts a misspelled key ships a silently empty field.",
+  "type": "object",
+  "required": ["schema_version", "annotation_id", "media", "provenance", "segments"],
+  "additionalProperties": false,
+
+  "properties": {
+    "schema_version": {
+      "description": "Semantic version of THIS schema that the document conforms to. Pinned per document rather than assumed, so a corpus can contain documents written against different versions and a loader can migrate them.",
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "annotation_id": {
+      "description": "Stable identifier for this annotation document. Distinct from media_id: the same media may be annotated several times, by different annotators or under different guidelines.",
+      "type": "string",
+      "pattern": "^ann_[0-9a-f]{8,32}$"
+    },
+
+    "case_code": {
+      "description": "Optional link to a MedSimQA case study, e.g. THY-001. When present, the evaluator can score a model's reading of the media against that case's reasoning key.",
+      "type": ["string", "null"],
+      "pattern": "^[A-Z]{3}-[0-9]{3}$"
+    },
+
+    "media": {
+      "type": "object",
+      "required": ["media_id", "modality", "duration_seconds", "checksum"],
+      "additionalProperties": false,
+      "properties": {
+        "media_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "modality": {
+          "description": "audio: interview recording. video: examination recording. audiovisual: both streams in one file, which is the common case for a recorded consultation.",
+          "enum": ["audio", "video", "audiovisual"]
+        },
+        "uri": {
+          "description": "Where the media lives. Deliberately optional: a de-identified corpus is often distributed without the source media, carrying only the annotations and derived features.",
+          "type": ["string", "null"],
+          "format": "uri-reference"
+        },
+        "duration_seconds": { "type": "number", "exclusiveMinimum": 0, "maximum": 43200 },
+        "checksum": {
+          "description": "SHA-256 of the media file. This is what makes an annotation verifiable: a timestamp into a file you cannot prove is the same file is not evidence.",
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "sample_rate_hz": { "type": ["integer", "null"], "minimum": 8000, "maximum": 192000 },
+        "channels": { "type": ["integer", "null"], "minimum": 1, "maximum": 8 },
+        "frame_rate_fps": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 240 },
+        "resolution": {
+          "type": ["object", "null"],
+          "required": ["width", "height"],
+          "additionalProperties": false,
+          "properties": {
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "recording_context": {
+          "enum": ["consultation_room", "ward", "simulation_suite", "operating_theatre", "telehealth", "other", null]
+        }
+      }
+    },
+
+    "provenance": {
+      "description": "Who produced this annotation, under which guideline, and how it was adjudicated. Required, not optional: an unattributed label cannot be audited, and a training corpus of unattributed labels cannot be corrected.",
+      "type": "object",
+      "required": ["annotator_id", "annotated_at", "guideline_version", "consent"],
+      "additionalProperties": false,
+      "properties": {
+        "annotator_id": {
+          "description": "Pseudonymous, stable per annotator. Real names never enter the corpus.",
+          "type": "string",
+          "pattern": "^anno_[0-9a-z]{4,32}$"
+        },
+        "annotator_role": {
+          "enum": ["clinician", "trained_lay_annotator", "speech_pathologist", "model", "consensus", null]
+        },
+        "annotated_at": { "type": "string", "format": "date-time" },
+        "guideline_version": {
+          "description": "Version of the annotation guideline in force. Labels are only comparable within a guideline version; conflating versions is how inter-annotator agreement is silently destroyed.",
+          "type": "string",
+          "minLength": 1
+        },
+        "tool": { "type": ["string", "null"], "maxLength": 128 },
+        "review_status": {
+          "enum": ["draft", "single_pass", "double_annotated", "adjudicated", "gold"],
+          "default": "draft"
+        },
+        "adjudication": {
+          "type": ["object", "null"],
+          "required": ["adjudicator_id", "resolved_at", "disagreement_count"],
+          "additionalProperties": false,
+          "properties": {
+            "adjudicator_id": { "type": "string", "pattern": "^anno_[0-9a-z]{4,32}$" },
+            "resolved_at": { "type": "string", "format": "date-time" },
+            "disagreement_count": { "type": "integer", "minimum": 0 },
+            "notes": { "type": "string", "maxLength": 2000 }
+          }
+        },
+        "consent": {
+          "description": "Explicit, per-document. A media annotation corpus without a consent record is not usable, and making the field required forces the question to be answered rather than assumed.",
+          "type": "object",
+          "required": ["basis", "deidentified"],
+          "additionalProperties": false,
+          "properties": {
+            "basis": {
+              "enum": ["synthetic", "explicit_research_consent", "broad_consent", "waiver_irb_approved", "simulation_actor"]
+            },
+            "deidentified": { "type": "boolean" },
+            "deidentification_method": {
+              "type": ["array", "null"],
+              "items": { "enum": ["face_blur", "voice_conversion", "name_redaction", "date_shift", "metadata_strip"] },
+              "uniqueItems": true
+            },
+            "irb_reference": { "type": ["string", "null"], "maxLength": 128 },
+            "retention_expires": { "type": ["string", "null"], "format": "date" }
+          }
+        }
+      }
+    },
+
+    "speakers": {
+      "description": "Speaker roster for diarisation. Referenced by id from audio segments.",
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "required": ["speaker_id", "role"],
+        "additionalProperties": false,
+        "properties": {
+          "speaker_id": { "type": "string", "pattern": "^spk_[0-9a-z]{1,16}$" },
+          "role": {
+            "enum": ["clinician", "patient", "relative", "interpreter", "nurse", "student", "unknown"]
+          },
+          "language": {
+            "description": "BCP-47. Interpreter-mediated consultations legitimately contain more than one language, and a schema that assumes one silently mislabels them.",
+            "type": ["string", "null"],
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+          },
+          "notes": { "type": ["string", "null"], "maxLength": 500 }
+        }
+      }
+    },
+
+    "segments": {
+      "description": "The annotation payload. A heterogeneous list rather than parallel arrays, so that an audio segment and a temporally overlapping hand action are siblings on one timeline and their relationship is expressible.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/segment" }
+    },
+
+    "quality": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "audio_snr_db": { "type": ["number", "null"] },
+        "audio_issues": {
+          "type": "array",
+          "items": { "enum": ["clipping", "background_noise", "crosstalk", "dropout", "low_volume", "reverberation"] },
+          "uniqueItems": true,
+          "default": []
+        },
+        "video_issues": {
+          "type": "array",
+          "items": { "enum": ["occlusion", "motion_blur", "out_of_frame", "poor_lighting", "camera_shake", "obscured_hands"] },
+          "uniqueItems": true,
+          "default": []
+        },
+        "usable_for_training": {
+          "description": "The annotator's overall judgement. A segment-level label can be correct while the media is still unusable, and that distinction has to be recordable.",
+          "type": "boolean",
+          "default": true
+        },
+        "exclusion_reason": { "type": ["string", "null"], "maxLength": 500 }
+      }
+    },
+
+    "inter_annotator": {
+      "description": "Agreement statistics, present when the document is double-annotated or adjudicated.",
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "cohen_kappa": { "type": ["number", "null"], "minimum": -1, "maximum": 1 },
+        "krippendorff_alpha": { "type": ["number", "null"], "minimum": -1, "maximum": 1 },
+        "transcription_wer": { "type": ["number", "null"], "minimum": 0 },
+        "temporal_iou": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "compared_against": { "type": ["string", "null"], "pattern": "^ann_[0-9a-f]{8,32}$" }
+      }
+    }
+  },
+
+  "$defs": {
+    "timespan": {
+      "type": "object",
+      "required": ["start_seconds", "end_seconds"],
+      "additionalProperties": false,
+      "properties": {
+        "start_seconds": { "type": "number", "minimum": 0 },
+        "end_seconds": { "type": "number", "minimum": 0 }
+      }
+    },
+
+    "confidence": {
+      "description": "Annotator or model confidence. Distinct from the label itself: 'I am sure this is palpation' and 'this is probably palpation' are different training signals, and collapsing them throws away the uncertainty a model most needs.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+
+    "segment": {
+      "type": "object",
+      "required": ["segment_id", "kind", "span"],
+      "additionalProperties": false,
+      "properties": {
+        "segment_id": { "type": "string", "pattern": "^seg_[0-9a-z]{1,32}$" },
+        "kind": { "enum": ["audio_transcript", "hand_action", "clinical_event", "region_of_interest"] },
+        "span": { "$ref": "#/$defs/timespan" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "annotator_id": {
+          "description": "Overrides the document-level annotator when segments were split between people.",
+          "type": ["string", "null"],
+          "pattern": "^anno_[0-9a-z]{4,32}$"
+        },
+        "flags": {
+          "type": "array",
+          "items": { "enum": ["uncertain", "disputed", "inaudible", "occluded", "out_of_scope", "safety_relevant"] },
+          "uniqueItems": true,
+          "default": []
+        },
+        "links": {
+          "description": "Relations to other segments, e.g. a hand action co-occurring with the utterance that describes it. This is what makes cross-modal training possible from a single document.",
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "required": ["relation", "target_segment_id"],
+            "additionalProperties": false,
+            "properties": {
+              "relation": { "enum": ["co_occurs_with", "responds_to", "describes", "precedes", "corrects"] },
+              "target_segment_id": { "type": "string", "pattern": "^seg_[0-9a-z]{1,32}$" }
+            }
+          }
+        },
+        "audio": { "$ref": "#/$defs/audio_payload" },
+        "hand_action": { "$ref": "#/$defs/hand_action_payload" },
+        "clinical_event": { "$ref": "#/$defs/clinical_event_payload" },
+        "region_of_interest": { "$ref": "#/$defs/roi_payload" }
+      },
+
+      "allOf": [
+        {
+          "description": "A segment must carry exactly the payload its kind declares. Without this, a document can claim kind=hand_action and carry only a transcript, and the loader discovers it at training time instead of at validation time.",
+          "if": { "properties": { "kind": { "const": "audio_transcript" } } },
+          "then": {
+            "required": ["audio"],
+            "not": { "anyOf": [{ "required": ["hand_action"] }, { "required": ["clinical_event"] }, { "required": ["region_of_interest"] }] }
+          }
+        },
+        {
+          "if": { "properties": { "kind": { "const": "hand_action" } } },
+          "then": {
+            "required": ["hand_action"],
+            "not": { "anyOf": [{ "required": ["audio"] }, { "required": ["clinical_event"] }, { "required": ["region_of_interest"] }] }
+          }
+        },
+        {
+          "if": { "properties": { "kind": { "const": "clinical_event" } } },
+          "then": { "required": ["clinical_event"] }
+        },
+        {
+          "if": { "properties": { "kind": { "const": "region_of_interest" } } },
+          "then": { "required": ["region_of_interest"] }
+        }
+      ]
+    },
+
+    "audio_payload": {
+      "type": "object",
+      "required": ["speaker_id", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "speaker_id": { "type": "string", "pattern": "^spk_[0-9a-z]{1,16}$" },
+        "text": {
+          "description": "Verbatim transcription. Disfluencies are retained: 'I get, um, short of breath' carries clinical information that a cleaned transcript destroys.",
+          "type": "string",
+          "maxLength": 5000
+        },
+        "language": { "type": ["string", "null"], "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$" },
+        "normalised_text": {
+          "description": "Optional cleaned form for models that cannot handle disfluency. The verbatim text remains authoritative.",
+          "type": ["string", "null"],
+          "maxLength": 5000
+        },
+        "is_inaudible": { "type": "boolean", "default": false },
+        "words": {
+          "description": "Optional word-level alignment, for models trained on timing.",
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "required": ["word", "start_seconds", "end_seconds"],
+            "additionalProperties": false,
+            "properties": {
+              "word": { "type": "string", "minLength": 1, "maxLength": 100 },
+              "start_seconds": { "type": "number", "minimum": 0 },
+              "end_seconds": { "type": "number", "minimum": 0 },
+              "confidence": { "$ref": "#/$defs/confidence" }
+            }
+          }
+        },
+        "dialogue_act": {
+          "description": "Consultation structure. Distinguishing an open from a closed question is what makes a transcript useful for assessing interview technique rather than only content.",
+          "enum": ["open_question", "closed_question", "clarification", "summarising", "empathic_statement", "explanation", "instruction", "patient_narrative", "patient_response", "interruption", null]
+        },
+        "clinical_content": {
+          "description": "Structured extraction from the utterance. Terms are recorded as spoken AND as a coded concept where one applies, because a model trained only on codes cannot learn how patients actually describe symptoms.",
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "mentions": {
+              "type": "array",
+              "default": [],
+              "items": {
+                "type": "object",
+                "required": ["surface_form", "category"],
+                "additionalProperties": false,
+                "properties": {
+                  "surface_form": { "type": "string", "minLength": 1, "maxLength": 200 },
+                  "category": {
+                    "enum": ["symptom", "sign", "medication", "allergy", "procedure", "diagnosis", "anatomy", "duration", "severity", "negation", "family_history", "social_history"]
+                  },
+                  "snomed_code": { "type": ["string", "null"], "pattern": "^[0-9]{6,18}$" },
+                  "negated": {
+                    "description": "'No chest pain' mentions chest pain. A pipeline that ignores negation learns the opposite of what was said.",
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "uncertain": { "type": "boolean", "default": false },
+                  "experiencer": { "enum": ["patient", "family", "other"], "default": "patient" },
+                  "temporality": { "enum": ["current", "historical", "hypothetical"], "default": "current" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "hand_action_payload": {
+      "description": "A labelled hand action during clinical examination. The taxonomy is deliberately examination-specific rather than a generic activity taxonomy: 'palpation' and 'percussion' are different clinical acts that look similar to a generic action recogniser.",
+      "type": "object",
+      "required": ["action", "hand", "body_region"],
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "enum": [
+            "inspection",
+            "palpation_light",
+            "palpation_deep",
+            "percussion",
+            "auscultation",
+            "range_of_motion_passive",
+            "range_of_motion_active",
+            "reflex_testing",
+            "pulse_taking",
+            "blood_pressure_cuff",
+            "otoscopy",
+            "ophthalmoscopy",
+            "instrument_handling",
+            "hand_hygiene",
+            "gloving",
+            "positioning_patient",
+            "draping",
+            "venepuncture",
+            "injection",
+            "writing_documenting",
+            "gesturing_explanatory",
+            "no_contact",
+            "other"
+          ]
+        },
+        "hand": { "enum": ["left", "right", "both", "unclear"] },
+        "body_region": {
+          "enum": [
+            "head", "face", "eye", "ear", "neck", "thyroid", "chest_anterior", "chest_posterior",
+            "precordium", "abdomen_upper", "abdomen_lower", "back", "spine", "shoulder", "elbow",
+            "wrist", "hand", "hip", "knee", "ankle", "foot", "skin_generalised", "not_applicable"
+          ]
+        },
+        "contact": {
+          "description": "Whether the hand contacted the patient. Separating this from the action lets a model learn the hygiene-relevant distinction between contact and non-contact activity.",
+          "enum": ["direct_skin", "over_clothing", "through_glove", "instrument_mediated", "none"],
+          "default": "direct_skin"
+        },
+        "technique_quality": {
+          "description": "Assessment against the guideline in force, where the annotator is qualified to make it. Null where they are not - an unqualified quality judgement is worse than none.",
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "rating": { "enum": ["correct", "acceptable", "suboptimal", "incorrect"] },
+            "deviations": {
+              "type": "array",
+              "default": [],
+              "items": { "enum": ["insufficient_pressure", "excessive_pressure", "wrong_landmark", "wrong_sequence", "patient_not_warned", "hygiene_omitted", "incomplete_coverage", "poor_positioning"] },
+              "uniqueItems": true
+            },
+            "rater_qualified": { "type": "boolean" }
+          }
+        },
+        "keypoints": {
+          "description": "Optional per-frame hand landmarks, in the 21-point topology used by common hand-tracking models. Normalised to the frame so the annotation survives re-encoding at a different resolution.",
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "required": ["frame_index", "points"],
+            "additionalProperties": false,
+            "properties": {
+              "frame_index": { "type": "integer", "minimum": 0 },
+              "points": {
+                "type": "array",
+                "minItems": 21,
+                "maxItems": 21,
+                "items": {
+                  "type": "object",
+                  "required": ["x", "y"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "x": { "type": "number", "minimum": 0, "maximum": 1 },
+                    "y": { "type": "number", "minimum": 0, "maximum": 1 },
+                    "z": { "type": ["number", "null"] },
+                    "visible": { "type": "boolean", "default": true }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "clinical_event_payload": {
+      "description": "A discrete event on the consultation timeline that is neither speech nor a hand action: a result being shown, a decision being made, a safety-relevant moment.",
+      "type": "object",
+      "required": ["event"],
+      "additionalProperties": false,
+      "properties": {
+        "event": {
+          "enum": ["consent_obtained", "chaperone_offered", "result_disclosed", "decision_made", "safety_netting_given", "referral_made", "prescription_issued", "patient_distress", "interruption", "handover"]
+        },
+        "detail": { "type": ["string", "null"], "maxLength": 1000 },
+        "case_link": {
+          "description": "Optional link to a diagnosis or protocol in a MedSimQA case, so that a recorded decision can be scored against the case's reasoning key.",
+          "type": ["string", "null"],
+          "maxLength": 128
+        }
+      }
+    },
+
+    "roi_payload": {
+      "description": "A spatial region of interest in a video frame range - a lesion, a device, an anatomical landmark.",
+      "type": "object",
+      "required": ["label", "boxes"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "boxes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["frame_index", "x", "y", "width", "height"],
+            "additionalProperties": false,
+            "properties": {
+              "frame_index": { "type": "integer", "minimum": 0 },
+              "x": { "type": "number", "minimum": 0, "maximum": 1 },
+              "y": { "type": "number", "minimum": 0, "maximum": 1 },
+              "width": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+              "height": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "schema_version": "1.0.0",
+      "annotation_id": "ann_0a1b2c3d4e5f6071",
+      "case_code": "THY-001",
+      "media": {
+        "media_id": "sim-consult-0042",
+        "modality": "audiovisual",
+        "uri": "s3://medsimqa-corpus/sim-consult-0042.mp4",
+        "duration_seconds": 412.5,
+        "checksum": "sha256:9f2c1a7e4b6d8f03a5c7e9b1d3f5a7c9e1b3d5f7a9c1e3b5d7f9a1c3e5b7d9f1",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "frame_rate_fps": 30,
+        "resolution": { "width": 1920, "height": 1080 },
+        "recording_context": "simulation_suite"
+      },
+      "provenance": {
+        "annotator_id": "anno_k4t9",
+        "annotator_role": "clinician",
+        "annotated_at": "2026-08-14T10:22:00Z",
+        "guideline_version": "medsim-annotation-guide-2.1",
+        "tool": "ELAN 6.8",
+        "review_status": "double_annotated",
+        "consent": {
+          "basis": "simulation_actor",
+          "deidentified": true,
+          "deidentification_method": ["name_redaction", "metadata_strip"],
+          "irb_reference": null,
+          "retention_expires": "2031-08-14"
+        }
+      },
+      "speakers": [
+        { "speaker_id": "spk_c1", "role": "clinician", "language": "en-GB", "notes": null },
+        { "speaker_id": "spk_p1", "role": "patient", "language": "en-GB", "notes": null }
+      ],
+      "segments": [
+        {
+          "segment_id": "seg_001",
+          "kind": "audio_transcript",
+          "span": { "start_seconds": 12.4, "end_seconds": 18.9 },
+          "confidence": 0.97,
+          "flags": [],
+          "audio": {
+            "speaker_id": "spk_p1",
+            "text": "I've been, um, really hot all the time and I've lost about nine kilos without trying.",
+            "language": "en-GB",
+            "dialogue_act": "patient_narrative",
+            "clinical_content": {
+              "mentions": [
+                { "surface_form": "really hot all the time", "category": "symptom", "snomed_code": "24184005", "negated": false, "uncertain": false, "experiencer": "patient", "temporality": "current" },
+                { "surface_form": "lost about nine kilos", "category": "symptom", "snomed_code": "89362005", "negated": false, "uncertain": false, "experiencer": "patient", "temporality": "current" }
+              ]
+            }
+          }
+        },
+        {
+          "segment_id": "seg_002",
+          "kind": "hand_action",
+          "span": { "start_seconds": 96.0, "end_seconds": 118.2 },
+          "confidence": 0.91,
+          "flags": [],
+          "links": [{ "relation": "co_occurs_with", "target_segment_id": "seg_003" }],
+          "hand_action": {
+            "action": "palpation_light",
+            "hand": "both",
+            "body_region": "thyroid",
+            "contact": "direct_skin",
+            "technique_quality": {
+              "rating": "acceptable",
+              "deviations": ["patient_not_warned"],
+              "rater_qualified": true
+            }
+          }
+        },
+        {
+          "segment_id": "seg_003",
+          "kind": "audio_transcript",
+          "span": { "start_seconds": 95.5, "end_seconds": 99.0 },
+          "confidence": 0.95,
+          "audio": {
+            "speaker_id": "spk_c1",
+            "text": "Could you swallow for me?",
+            "language": "en-GB",
+            "dialogue_act": "instruction"
+          }
+        },
+        {
+          "segment_id": "seg_004",
+          "kind": "clinical_event",
+          "span": { "start_seconds": 355.0, "end_seconds": 372.0 },
+          "clinical_event": {
+            "event": "safety_netting_given",
+            "detail": "Advised to seek same-day review for sore throat or fever while on carbimazole.",
+            "case_link": "THY-001/protocol/agranulocytosis"
+          }
+        }
+      ],
+      "quality": {
+        "audio_snr_db": 24.5,
+        "audio_issues": [],
+        "video_issues": ["occlusion"],
+        "usable_for_training": true,
+        "exclusion_reason": null
+      },
+      "inter_annotator": {
+        "cohen_kappa": 0.84,
+        "krippendorff_alpha": 0.81,
+        "transcription_wer": 0.043,
+        "temporal_iou": 0.88,
+        "compared_against": "ann_1b2c3d4e5f607182"
+      }
+    }
+  ]
+}

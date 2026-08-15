@@ -742,6 +742,13 @@
               "full blood count",
               "fbc",
               "white cell"
+            ],
+            "applies_when": [
+              "carbimazole",
+              "methimazole",
+              "propylthiouracil",
+              "thionamide",
+              "antithyroid drug"
             ]
           },
           {
