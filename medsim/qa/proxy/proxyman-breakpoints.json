@@ -1,0 +1,104 @@
+{
+  "_comment": [
+    "Proxyman scenarios for the MedSimQA dashboard.",
+    "Import via: Proxyman > Tools > Map Local / Breakpoint > Import.",
+    "",
+    "Proxyman's Map Local and Breakpoint tools cover the same ground as the",
+    "Charles rewrite rules, with two capabilities Charles lacks that matter",
+    "here: scriptable responses (so a fault can depend on the request) and",
+    "per-scenario network throttling presets.",
+    "",
+    "As with Charles, enable exactly ONE scenario at a time."
+  ],
+  "version": "1.0",
+  "scenarios": [
+    {
+      "name": "01 - Malformed JSON on the case list",
+      "enabled": false,
+      "tool": "map-local",
+      "match": { "method": "GET", "urlPattern": "*/api/v1/cases*" },
+      "response": {
+        "statusCode": 200,
+        "headers": { "Content-Type": "application/json" },
+        "bodyFile": "../cypress/fixtures/malformed-case-list.json"
+      },
+      "expectedBehaviour": "Dashboard shows a parse error state naming a proxy as the likely cause, with the raw body inspectable. It must NOT show a blank grid."
+    },
+    {
+      "name": "02 - Captive portal HTML",
+      "enabled": false,
+      "tool": "map-local",
+      "match": { "method": "GET", "urlPattern": "*/api/v1/*" },
+      "response": {
+        "statusCode": 200,
+        "headers": { "Content-Type": "text/html" },
+        "body": "<!doctype html><html><body><h1>Sign in to continue</h1></body></html>"
+      },
+      "expectedBehaviour": "Parse error state. This is the most common real-world instance of the failure - hotel and hospital guest wifi."
+    },
+    {
+      "name": "03 - RFC-7807 503",
+      "enabled": false,
+      "tool": "map-local",
+      "match": { "urlPattern": "*/api/v1/cases*" },
+      "response": {
+        "statusCode": 503,
+        "headers": { "Content-Type": "application/json" },
+        "bodyFile": "../cypress/fixtures/rfc7807-error.json"
+      },
+      "expectedBehaviour": "Server error state quoting request id fixture-request-id-0001, with a working retry."
+    },
+    {
+      "name": "04 - Truncated body",
+      "enabled": false,
+      "tool": "scripting",
+      "match": { "urlPattern": "*/api/v1/cases*" },
+      "script": "function onResponse(context, url, request, response) {\n  // Cut the body to a third of its length while leaving Content-Length\n  // untouched, which is what a dropped packet mid-transfer looks like.\n  const body = response.bodyAsString();\n  response.body = body.substring(0, Math.floor(body.length / 3));\n  return response;\n}",
+      "expectedBehaviour": "Parse error state, not a partially-rendered grid."
+    },
+    {
+      "name": "05 - Slow 3G",
+      "enabled": false,
+      "tool": "throttling",
+      "preset": {
+        "name": "3G Slow",
+        "downloadKbps": 400,
+        "uploadKbps": 400,
+        "latencyMs": 400
+      },
+      "expectedBehaviour": "Skeleton placeholders while loading; changing a filter mid-load must not let the stale response repaint the grid."
+    },
+    {
+      "name": "06 - Offline",
+      "enabled": false,
+      "tool": "throttling",
+      "preset": { "name": "Offline", "downloadKbps": 0, "uploadKbps": 0, "latencyMs": 0 },
+      "expectedBehaviour": "Offline banner plus a network error state with a retry. Recovery on reconnect must not require a reload."
+    },
+    {
+      "name": "07 - Stall past the client timeout",
+      "enabled": false,
+      "tool": "breakpoint",
+      "match": { "urlPattern": "*/api/v1/cases*" },
+      "action": "pause-response",
+      "holdSeconds": 20,
+      "expectedBehaviour": "The client's 15s AbortController fires and a timeout error state appears. A spinner that persists past 15s is a failure."
+    },
+    {
+      "name": "08 - Strip X-Request-ID",
+      "enabled": false,
+      "tool": "scripting",
+      "match": { "urlPattern": "*/api/v1/*" },
+      "script": "function onResponse(context, url, request, response) {\n  delete response.headers['X-Request-ID'];\n  return response;\n}",
+      "expectedBehaviour": "Error states fall back to the request_id in the RFC-7807 body, so the tester still has an identifier."
+    },
+    {
+      "name": "09 - SSL decryption failure",
+      "enabled": false,
+      "tool": "ssl-proxying",
+      "match": { "urlPattern": "*" },
+      "note": "Enable SSL proxying but do NOT install the Proxyman CA on the device (or revoke it first). The TLS handshake fails before any HTTP request exists.",
+      "expectedBehaviour": "A network error state identical to a dropped connection. The application must not claim to know it was a certificate problem - the browser does not tell it."
+    }
+  ]
+}

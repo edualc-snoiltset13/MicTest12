@@ -274,13 +274,6 @@
     min-height: 2.25rem;
   }
 
-  @media (pointer: coarse) {
-    .btn,
-    .segmented-option {
-      min-height: 2.75rem;
-    }
-  }
-
   .btn-primary {
     @apply btn bg-accent text-white hover:bg-accent-hover;
   }
@@ -468,6 +461,29 @@
 }
 
 @layer utilities {
+  /* Coarse-pointer target sizing.
+     ------------------------------------------------------------------------
+     This lives in the utilities layer, not alongside the component classes,
+     because within a single layer the LAST declaration wins - and `.input`
+     declares its own `min-height: 2.25rem` further down the components layer.
+     Putting the override here makes the cascade order explicit rather than
+     dependent on the order the component classes happen to be written in.
+
+     44px is the WCAG 2.2 AA target-size floor. The language switcher is a
+     <select> styled with `.input`, and at 36px it is reliably mis-tapped with
+     a thumb - on the one control a reader needs in order to escape a language
+     they cannot read. */
+  @media (pointer: coarse) {
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    .btn-ghost,
+    .segmented-option,
+    .input {
+      min-height: 2.75rem;
+    }
+  }
+
   /* Wide content - tables, charts, code - scrolls inside its own container so
      the page body never scrolls horizontally. */
   .scroll-x {

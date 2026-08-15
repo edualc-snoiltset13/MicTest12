@@ -79,8 +79,13 @@ export function StatTile({
   hint?: string;
 }) {
   return (
-    <div className="card-padded" data-testid="stat-tile">
-      <div className="overline">{label}</div>
+    <div className="card-padded min-w-0" data-testid="stat-tile">
+      {/* `break-clinical` is required, not defensive. German and Dutch produce
+          single compound words longer than a narrow grid column
+          ("Laboratoriumuitslagen", "Laborergebnisse") and an unbreakable word
+          widens its track rather than wrapping, pushing the page into
+          horizontal scroll at 320px. */}
+      <div className="overline break-clinical">{label}</div>
       {/* A hero number with no plot needs no chart chrome - the number IS the
           visualisation. Proportional figures, per the type rules. */}
       <div className="mt-1 text-2xl font-semibold">{value}</div>

@@ -77,6 +77,8 @@ export const ru: Messages = {
       many: '{count} случаев',
       other: '{count} случая',
     },
+    // Agreement follows {total}, not {count}: "1 из 25 случаев". The caller
+    // passes pluralCount={total} so the selector uses the right number.
     resultCountFiltered: {
       one: '{count} из {total} случая',
       few: '{count} из {total} случаев',

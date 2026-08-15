@@ -261,7 +261,11 @@ export function LabTrendChart({ series, title, normalise = false, className = ''
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* Wraps at narrow widths. Without flex-wrap the "latest value +
+            view toggle" group is ~330px wide with German labels, which
+            overflows a 320px viewport - the narrowest device still in real
+            use. */}
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
           {!isMulti && (
             <div className="text-right">
               <div className="overline">{t('chart.latest')}</div>

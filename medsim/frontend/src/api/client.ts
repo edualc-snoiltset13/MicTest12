@@ -161,7 +161,10 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
       // rather than our API. Still a status error; the body is just unusable.
       body = null;
     }
-    throw new ApiStatusError(response.status, body, requestId);
+    // Prefer the header, but fall back to the body. An intermediary that
+    // strips X-Request-ID must not cost the tester the one identifier that
+    // makes a server log searchable.
+    throw new ApiStatusError(response.status, body, requestId ?? body?.request_id ?? null);
   }
 
   if (response.status === 204 || text.length === 0) {

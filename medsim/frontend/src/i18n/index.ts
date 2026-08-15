@@ -214,8 +214,19 @@ export function createTranslator(locale: Locale, messages: Messages) {
   function t(key: MessageKey, values?: TranslateValues): string {
     let template: string | undefined;
 
-    if (values && typeof values.count === 'number') {
-      const category = pluralRules.select(values.count);
+    // Which number drives plural selection is not always `count`. In the
+    // "N of M cases" construction, Russian agreement follows the TOTAL, not
+    // the count: "1 из 25 случаев", never "1 из 25 случая". Callers pass
+    // `pluralCount` to say which number the noun agrees with.
+    const selector =
+      values && typeof values.pluralCount === 'number'
+        ? values.pluralCount
+        : values && typeof values.count === 'number'
+          ? values.count
+          : undefined;
+
+    if (selector !== undefined) {
+      const category = pluralRules.select(selector);
       template = resolve(messages, `${key}.${category}`) ?? resolve(messages, `${key}.other`);
     }
 

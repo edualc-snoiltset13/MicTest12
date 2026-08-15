@@ -1,0 +1,9 @@
+{
+  "type": "https://medsimqa.dev/errors/503",
+  "title": "Service unavailable",
+  "status": 503,
+  "detail": "The case repository is temporarily unavailable.",
+  "instance": "/api/v1/cases",
+  "errors": [],
+  "request_id": "fixture-request-id-0001"
+}

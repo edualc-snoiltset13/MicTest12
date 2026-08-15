@@ -1,0 +1,4 @@
+{
+  "_comment": "Deliberately invalid. Used by the network specs to assert the dashboard survives a proxy that rewrites a response body. The trailing comma and unbalanced brace are what JSON.parse chokes on, at a plausible offset rather than byte 0.",
+  "meta": { "total": 25, "limit": 50, "offset": 0, "returned": 2, "has_more": true },
+  "items": [ { "id": 1, "case_code": "HEM-001", "title": "Truncated by an intermediary",,

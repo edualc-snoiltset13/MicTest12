@@ -243,6 +243,8 @@ export function DashboardPage() {
                   ? t('dashboard.resultCountFiltered', {
                       count: cases.data.meta.returned,
                       total: stats.data?.total_cases ?? cases.data.meta.total,
+                      // The noun agrees with the total in Russian.
+                      pluralCount: stats.data?.total_cases ?? cases.data.meta.total,
                     })
                   : t('dashboard.resultCount', { count: cases.data.meta.total })
                 : t('dashboard.loading')}
