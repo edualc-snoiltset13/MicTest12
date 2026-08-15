@@ -119,7 +119,11 @@ wait_for_boot() {
 timestamp() { date +%Y%m%d-%H%M%S; }
 
 artifact_dir() {
-  local dir="${MEDSIM_ARTIFACTS:-./artifacts}/$(timestamp)"
+  # Declared and assigned separately on purpose: `local dir="$(...)"` makes the
+  # exit status that of `local`, not of the substitution, so a failing
+  # `timestamp` would be swallowed and we would mkdir a truncated path.
+  local dir
+  dir="${MEDSIM_ARTIFACTS:-./artifacts}/$(timestamp)"
   mkdir -p "$dir"
   printf '%s\n' "$dir"
 }

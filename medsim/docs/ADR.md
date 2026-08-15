@@ -493,6 +493,32 @@ tester the one piece of information that makes the incident traceable. The
 Charles rule set includes a rule that strips the header specifically so this
 fallback is exercised rather than assumed.
 
+### ADR-029: The kiosk unit installs behind a flag, and is enabled but not started
+
+`medsim-kiosk.service` is installed only under `--with-kiosk`, which also creates
+the `kiosk` user and refuses to combine with `--skip-browsers`. Install enables
+the unit; it does not start it.
+
+**Rejected:** installing it unconditionally alongside the API unit.
+
+**Why.** The unit declares `Requires=graphical.target` and runs as a user with a
+real home directory, because Chrome needs a writable profile and an
+`.Xauthority`. On a headless server — the common case — installing it
+unconditionally produces a permanently failing unit and a red `systemctl status`
+that the next operator has to investigate and then dismiss. A deployment that
+ships known-broken state teaches people to ignore the health output.
+
+Enabling without starting is the same reasoning applied to timing: the display
+is rarely attached at the moment of deployment, so starting immediately would
+spend the unit's 120-second `ExecStartPre` readiness budget only to fail. It
+comes up with `graphical.target`, which is when a display actually exists.
+
+`verify` checks the unit is *enabled* rather than active, for the same reason —
+asserting "running" here would report a failure that is the intended state.
+Under `--port` the install rewrites the unit's URL, because the failure mode of
+getting that wrong is a fullscreen "unable to connect" on a wall display with no
+keyboard attached to clear it.
+
 ---
 
 ## Revisit triggers

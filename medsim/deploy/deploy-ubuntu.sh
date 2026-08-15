@@ -24,6 +24,7 @@
 #   sudo ./deploy-ubuntu.sh                      full install
 #   sudo ./deploy-ubuntu.sh --skip-browsers      no Chrome/Brave
 #   sudo ./deploy-ubuntu.sh --with-obs           add OBS + virtual camera
+#   sudo ./deploy-ubuntu.sh --with-kiosk         fullscreen Chrome on the console
 #   sudo ./deploy-ubuntu.sh --domain medsim.example.org --with-tls
 #   sudo ./deploy-ubuntu.sh --uninstall
 #   sudo ./deploy-ubuntu.sh --dry-run            print actions, change nothing
@@ -37,6 +38,7 @@ set -euo pipefail
 APP_NAME="medsim"
 APP_USER="medsim"
 APP_GROUP="medsim"
+KIOSK_USER="kiosk"
 APP_ROOT="/opt/medsim"
 DATA_ROOT="/var/lib/medsim"
 LOG_ROOT="/var/log/medsim"
@@ -52,6 +54,7 @@ NODE_MAJOR=20
 SKIP_BROWSERS=0
 WITH_OBS=0
 WITH_TLS=0
+WITH_KIOSK=0
 UNINSTALL=0
 DRY_RUN=0
 
@@ -105,16 +108,22 @@ while [[ $# -gt 0 ]]; do
     --skip-browsers) SKIP_BROWSERS=1; shift ;;
     --with-obs)      WITH_OBS=1; shift ;;
     --with-tls)      WITH_TLS=1; shift ;;
+    --with-kiosk)    WITH_KIOSK=1; shift ;;
     --domain)        DOMAIN="$2"; shift 2 ;;
     --port)          FRONTEND_PORT="$2"; shift 2 ;;
     --uninstall)     UNINSTALL=1; shift ;;
     --dry-run)       DRY_RUN=1; shift ;;
-    -h|--help)       sed -n '2,30p' "$0"; exit 0 ;;
+    -h|--help)       sed -n '2,31p' "$0"; exit 0 ;;
     *) die "Unknown argument: $1 (try --help)" ;;
   esac
 done
 
 [[ "$WITH_TLS" == "1" && -z "$DOMAIN" ]] && die "--with-tls requires --domain"
+# The kiosk unit's ExecStart is google-chrome-stable by absolute path. Catching
+# this here is far kinder than a unit that installs cleanly and then fails at
+# graphical.target on a machine nobody is sitting in front of.
+[[ "$WITH_KIOSK" == "1" && "$SKIP_BROWSERS" == "1" ]] \
+  && die "--with-kiosk needs Chrome; drop --skip-browsers"
 
 # ---------------------------------------------------------------------------
 # Preflight
@@ -203,6 +212,9 @@ uninstall() {
   warn "Left in place: ${DATA_ROOT} (database) and ${LOG_ROOT} (logs)"
   warn "Remove them manually if intended:  sudo rm -rf ${DATA_ROOT} ${LOG_ROOT}"
   warn "The '${APP_USER}' system user was also left in place."
+  if id "$KIOSK_USER" >/dev/null 2>&1; then
+    warn "So was '${KIOSK_USER}', along with its Chrome profile in /home/${KIOSK_USER}."
+  fi
 
   ok "uninstall complete"
   exit 0
@@ -416,6 +428,26 @@ create_user_and_dirs() {
   done
   # nginx (www-data) must traverse the app root to serve the built frontend.
   run chmod 0755 "$APP_ROOT"
+
+  if [[ "$WITH_KIOSK" == "1" ]]; then
+    # Unlike the service account this one is NOT --system and does have a real
+    # home: Chrome needs a writable profile directory and an .Xauthority, both
+    # of which the unit references under /home/kiosk. It still gets no
+    # password, so it cannot be logged into interactively.
+    if id "$KIOSK_USER" >/dev/null 2>&1; then
+      ok "user ${KIOSK_USER} exists"
+    else
+      run useradd --create-home --home-dir "/home/${KIOSK_USER}" \
+        --shell /usr/sbin/nologin --comment "MedSimQA kiosk display" "$KIOSK_USER"
+      run passwd --lock "$KIOSK_USER"
+      ok "created kiosk user ${KIOSK_USER}"
+    fi
+    # video and audio: the display session and any OBS capture need both.
+    run usermod -aG video,audio "$KIOSK_USER"
+    run install -d -o "$KIOSK_USER" -g "$KIOSK_USER" -m 0700 \
+      "/home/${KIOSK_USER}/.config/medsim-kiosk"
+  fi
+
   ok "directories ready"
 }
 
@@ -542,7 +574,14 @@ install_systemd_units() {
   local src="${SCRIPT_DIR}/systemd"
   [[ -d "$src" ]] || die "systemd unit templates not found at ${src}"
 
-  for unit in "${APP_NAME}-api.service"; do
+  # The API unit always goes in. The kiosk unit only goes in behind
+  # --with-kiosk, because it Requires=graphical.target and runs as the `kiosk`
+  # user: enabling it on a headless server produces a permanently failing unit
+  # and a red `systemctl status` that an operator then has to explain away.
+  local units=("${APP_NAME}-api.service")
+  [[ "$WITH_KIOSK" == "1" ]] && units+=("${APP_NAME}-kiosk.service")
+
+  for unit in "${units[@]}"; do
     info "installing ${unit}"
     run install -m 0644 "${src}/${unit}" "/etc/systemd/system/${unit}"
   done
@@ -550,6 +589,25 @@ install_systemd_units() {
   run systemctl daemon-reload
   run systemctl enable "${APP_NAME}-api.service"
   run systemctl restart "${APP_NAME}-api.service"
+
+  if [[ "$WITH_KIOSK" == "1" ]]; then
+    # The unit ships pointing at http://localhost/ because port 80 is the
+    # default. Under --port that is simply the wrong address, and the failure
+    # mode is a fullscreen "unable to connect" on a wall display with no
+    # keyboard, so rewrite it rather than document it.
+    if [[ "$FRONTEND_PORT" != "80" ]]; then
+      run sed -i "s#http://localhost/?lang=#http://localhost:${FRONTEND_PORT}/?lang=#" \
+        "/etc/systemd/system/${APP_NAME}-kiosk.service"
+      run systemctl daemon-reload
+      info "kiosk URL retargeted to port ${FRONTEND_PORT}"
+    fi
+
+    # Enabled but not started: the display is almost never attached at the
+    # moment of deployment, and ExecStartPre would burn its 120s readiness
+    # budget before failing. It comes up with graphical.target on next boot.
+    run systemctl enable "${APP_NAME}-kiosk.service"
+    info "kiosk unit enabled; it starts with graphical.target"
+  fi
 
   if [[ "$DRY_RUN" != "1" ]]; then
     info "waiting for the API to become healthy"
@@ -807,6 +865,14 @@ verify() {
   check "SPA deep link falls back"    curl -sf "http://127.0.0.1:${FRONTEND_PORT}/cases/THY-001"
   check "database is present"         test -f "${DATA_ROOT}/medsim.db"
 
+  # Checked as *enabled*, not active: the kiosk is deliberately left for
+  # graphical.target, so "not running right now" is the expected state here.
+  if [[ "$WITH_KIOSK" == "1" ]]; then
+    check "kiosk unit is enabled"     systemctl is-enabled --quiet "${APP_NAME}-kiosk"
+    check "kiosk user exists"         id "$KIOSK_USER"
+    check "Chrome is installed"       test -x /usr/bin/google-chrome-stable
+  fi
+
   # The production configuration must actually be production.
   if curl -sf "http://127.0.0.1:${BACKEND_PORT}/readyz" | grep -q '"chaos":"disabled"'; then
     ok "chaos layer disabled"
@@ -828,7 +894,10 @@ verify() {
 }
 
 summary() {
-  local address="http://$(hostname -I 2>/dev/null | awk '{print $1}'):${FRONTEND_PORT}"
+  # Separate declaration: assigning in the `local` line would mask a failing
+  # `hostname -I`, which happens on hosts with no non-loopback address.
+  local address
+  address="http://$(hostname -I 2>/dev/null | awk '{print $1}'):${FRONTEND_PORT}"
   [[ -n "$DOMAIN" ]] && address="http${WITH_TLS:+s}://${DOMAIN}"
 
   cat <<EOF
@@ -849,6 +918,16 @@ ${C_BOLD}MedSimQA is deployed.${C_RESET}
   Remove with: sudo $0 --uninstall
 
 EOF
+
+  if [[ "$WITH_KIOSK" == "1" ]]; then
+    cat <<EOF
+  Kiosk       enabled, starts with graphical.target (reboot, or:
+              systemctl start ${APP_NAME}-kiosk)
+              The ${KIOSK_USER} user needs an X session on DISPLAY=:0 with
+              /home/${KIOSK_USER}/.Xauthority readable by it.
+
+EOF
+  fi
 }
 
 # ---------------------------------------------------------------------------

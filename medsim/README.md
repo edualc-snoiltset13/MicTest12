@@ -20,7 +20,7 @@ reasoning against the same corpus.
 | `qa/` | 50 Cypress edge cases, proxy fault-injection configs, Samsung ADB scripts |
 | `ml/` | Clinical media annotation schema, LLM evaluator, 42 tests |
 | `deploy/` | Ubuntu deployment script, systemd units, nginx config, OBS profile |
-| `docs/ADR.md` | Architectural decision record: 28 decisions, with the rejected alternatives |
+| `docs/ADR.md` | Architectural decision record: 29 decisions, with the rejected alternatives |
 
 ## The corpus
 
@@ -74,6 +74,11 @@ Deploy to Ubuntu 22.04/24.04:
 
 ```bash
 sudo ./deploy/deploy-ubuntu.sh --domain medsim.example.org --with-tls
+
+# Optional extras
+sudo ./deploy/deploy-ubuntu.sh --with-obs      # OBS + v4l2loopback virtual camera
+sudo ./deploy/deploy-ubuntu.sh --with-kiosk    # fullscreen Chrome on the console
+sudo ./deploy/deploy-ubuntu.sh --dry-run       # print every action, change nothing
 ```
 
 ## What the tests actually check
