@@ -75,6 +75,35 @@ Supported formats: JPEG, PNG, GIF, WebP (max 20 MB). Default model: `claude-sonn
 
 Exit codes: `0` success · `2` bad args / missing key · `3` image error · `4` API error · `5` network error.
 
+## Number Guessing Game
+
+Guess the secret number with higher/lower feedback. Standard library only.
+
+```bash
+python guessing_game.py                          # 1-100 in 7 guesses
+python guessing_game.py --difficulty easy        # 1-10 in 5 guesses
+python guessing_game.py --difficulty hard        # 1-1000 in 10 guesses
+python guessing_game.py --low 1 --high 50 --attempts 0   # custom range, unlimited guesses
+python guessing_game.py --seed 7                 # reproducible secret
+python guessing_game.py --secret 42              # fixed secret (practice/demo)
+```
+
+Type `q` at any prompt to give up. Non-numeric and out-of-range entries are
+re-prompted and do not cost a guess.
+
+Exit codes: `0` you won · `1` you lost or quit · `2` bad arguments.
+
+The game logic lives in the `GuessingGame` class, which is I/O-free and can be
+driven directly:
+
+```python
+from guessing_game import GuessingGame
+
+game = GuessingGame(low=1, high=100, max_attempts=7)
+verdict = game.guess(50)      # "too_low", "too_high", or "correct"
+print(game.hint(verdict), game.attempts_left)
+```
+
 ## Running Tests
 
 The test suite uses only the standard library:
@@ -83,4 +112,4 @@ The test suite uses only the standard library:
 python -m unittest discover -s tests -v
 ```
 
-Tests cover persistence, slot-conflict logic, email notifications (with mocked SMTP), search, and the `analyze_image.py` CLI's argument and format validation paths.
+Tests cover persistence, slot-conflict logic, email notifications (with mocked SMTP), search, the `analyze_image.py` CLI's argument and format validation paths, and the guessing game's scoring, hint, input-validation, and CLI exit-code paths.
